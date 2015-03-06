@@ -158,22 +158,22 @@ namespace DAL.Repositories
         private void InsertTipoDePago(TipoDePago objTipoDePago)
         {
 
-            //try
-            //{
-            //    SqlCommand cmd = new SqlCommand();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
 
-            //    //cmd.Parameters.Add(new SqlParameter("@foto", objTipoDeMaquina.Foto));
-            //    cmd.Parameters.Add(new SqlParameter("@nombre", objTipoDeMaquina.Nombre));
-            //    cmd.Parameters.Add(new SqlParameter("@descripcion", objTipoDeMaquina.Descripcion));
-            //    cmd.Parameters.Add(new SqlParameter("@habilitado", objTipoDeMaquina.Habilitado));
+                cmd.Parameters.Add(new SqlParameter("@nombre", objTipoDePago.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@monto", objTipoDePago.Monto));
+                cmd.Parameters.Add(new SqlParameter("@duracion", objTipoDePago.Duracion));
+                
 
-            //    DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "paInsertarTipoDeMaquina");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "paInsertarTipoDePago");
 
-            //}
-            //catch (Exception ex)
-            //{
+            }
+            catch (Exception ex)
+            {
 
-            //}
+            }
 
         }
 
