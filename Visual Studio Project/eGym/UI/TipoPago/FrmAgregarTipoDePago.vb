@@ -5,6 +5,7 @@
     End Sub
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
         objGestorTipoPago.insertarTipoDePago(txtNombre.Text, txtMonto.Text, txtDuracion.Text)
+        Dim ready As String
     End Sub
     Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
 

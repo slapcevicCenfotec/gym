@@ -162,12 +162,12 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@nombre", objTipoDePago.Nombre));
-                cmd.Parameters.Add(new SqlParameter("@monto", objTipoDePago.Monto));
-                cmd.Parameters.Add(new SqlParameter("@duracion", objTipoDePago.Duracion));
-                
+                cmd.Parameters.Add(new SqlParameter("@pNombre", objTipoDePago.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@pMonto", objTipoDePago.Monto));
+                cmd.Parameters.Add(new SqlParameter("@pDuracion", objTipoDePago.Duracion));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "paInsertarTipoDePago");
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarTipoDePago");
 
             }
             catch (Exception ex)

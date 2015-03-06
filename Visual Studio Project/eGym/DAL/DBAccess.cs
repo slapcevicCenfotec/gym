@@ -24,7 +24,8 @@ namespace DAL
             try
             {
                 var appSR = new AppSettingsReader();
-                //connString = ConfigurationManager.ConnectionStrings["CuerposCelestes"].ConnectionString;
+                connString = "Data Source=cantaros.no-ip.info;Initial Catalog=eGymDB;Persist Security Info=True;User ID=Cantaros;Password=cantaros123";
+                //connString = ConfigurationManager.ConnectionStrings["coneccion"].ConnectionString;
                 return connString;
             }
             catch (Exception ex)
