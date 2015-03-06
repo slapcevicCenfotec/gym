@@ -12,7 +12,7 @@ namespace EL
         #region variables
 
         private int _id;
-        private Image _foto;
+        //private Image _foto;
         private string _nombre;
         private string _descripcion;
         private Boolean _habilitado;
@@ -27,11 +27,11 @@ namespace EL
             set { _id = value; }
         }
 
-        public Image Foto
-        {
-            get { return _foto; }
-            set { _foto = value; }
-        }
+        //public Image Foto
+        //{
+        //    get { return _foto; }
+        //    set { _foto = value; }
+        //}
 
         public string Nombre
         {
@@ -53,18 +53,18 @@ namespace EL
 
         #endregion
 
-        public TipoDeMaquina(string pnombre, string pdescripcion, Image pfoto)
-        {
-            Nombre = pnombre;
-            Descripcion = pdescripcion;
-            Foto = pfoto;
-        }
+        //public TipoDeMaquina(string pnombre, string pdescripcion, Image pfoto)
+        //{
+         //   Nombre = pnombre;
+           // Descripcion = pdescripcion;
+           // Foto = pfoto;
+        //}
 
-        public TipoDeMaquina()
-        {
-            Nombre = "";
-            Descripcion = "";
-            Foto = null;
-        }
+        //public TipoDeMaquina()
+        //{
+        //    Nombre = "";
+        //    Descripcion = "";
+        //    Foto = null;
+        //}
     }
 }

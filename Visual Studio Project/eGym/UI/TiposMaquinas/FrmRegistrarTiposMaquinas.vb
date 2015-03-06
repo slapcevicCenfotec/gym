@@ -11,7 +11,7 @@ Public Class FrmRegistrarTiposMaquinas
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim tipoDeMaquinas As String = txtNombreImagen.Text
         Dim descripcion As String = rtbDescripcion.Text
-        Dim foto As Image
+        'Dim foto As Image
 
         'Dim fs As New FileStream(OpenFileDialog1.FileName, FileMode.Open, FileAccess.Read)
         'Dim bReader As New BinaryReader(fs)
