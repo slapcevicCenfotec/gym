@@ -10,7 +10,7 @@ using EL;
 
 namespace BLL
 {
-    public class GestorTipoPago
+    public class GestorTipoDePago
     {
         private UnitOfWork UoW = new UnitOfWork();
         public IEnumerable<TipoDePago> listarPagos()

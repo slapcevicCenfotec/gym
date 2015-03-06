@@ -91,6 +91,7 @@
     <Compile Include="Maquinas\FrmRegistrarMaquina.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ModuloTipoDePago.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -110,6 +111,12 @@
       <DependentUpon>FrmListarPago.vb</DependentUpon>
     </Compile>
     <Compile Include="Pago\FrmListarPago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TipoPago\FrmAgregarTipoDePago.Designer.vb">
+      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago\FrmAgregarTipoDePago.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TipoPago\FrmListarTipoPago.Designer.vb">
@@ -153,6 +160,9 @@
     <EmbeddedResource Include="Pago\FrmListarPago.resx">
       <DependentUpon>FrmListarPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TipoPago\FrmAgregarTipoDePago.resx">
+      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmListarTipoPago.resx">
       <DependentUpon>FrmListarTipoPago.vb</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +188,12 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{7193bc78-e548-4e19-9733-cdae4dfd2b7b}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
