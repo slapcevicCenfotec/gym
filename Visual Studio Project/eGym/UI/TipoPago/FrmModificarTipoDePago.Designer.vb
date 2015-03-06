@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmAgregarTipoDePago
+Partial Class FrmModificarTipoDePago
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -26,9 +26,9 @@ Partial Class FrmAgregarTipoDePago
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
-        Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
-        Me.txtMonto = New MetroFramework.Controls.MetroTextBox()
-        Me.txtDuracion = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.SuspendLayout()
@@ -38,9 +38,9 @@ Partial Class FrmAgregarTipoDePago
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.Location = New System.Drawing.Point(12, 15)
         Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(141, 19)
+        Me.MetroLabel1.Size = New System.Drawing.Size(148, 19)
         Me.MetroLabel1.TabIndex = 0
-        Me.MetroLabel1.Text = "Agregar Tipo de Pago"
+        Me.MetroLabel1.Text = "Modificar Tipo de Pago"
         '
         'MetroLabel2
         '
@@ -69,44 +69,44 @@ Partial Class FrmAgregarTipoDePago
         Me.MetroLabel4.TabIndex = 3
         Me.MetroLabel4.Text = "Diracion(Dias)"
         '
-        'txtNombre
+        'MetroTextBox1
         '
-        Me.txtNombre.Lines = New String(-1) {}
-        Me.txtNombre.Location = New System.Drawing.Point(200, 78)
-        Me.txtNombre.MaxLength = 32767
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtNombre.SelectedText = ""
-        Me.txtNombre.Size = New System.Drawing.Size(196, 23)
-        Me.txtNombre.TabIndex = 4
-        Me.txtNombre.UseSelectable = True
+        Me.MetroTextBox1.Lines = New String(-1) {}
+        Me.MetroTextBox1.Location = New System.Drawing.Point(200, 78)
+        Me.MetroTextBox1.MaxLength = 32767
+        Me.MetroTextBox1.Name = "MetroTextBox1"
+        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox1.SelectedText = ""
+        Me.MetroTextBox1.Size = New System.Drawing.Size(196, 23)
+        Me.MetroTextBox1.TabIndex = 4
+        Me.MetroTextBox1.UseSelectable = True
         '
-        'txtMonto
+        'MetroTextBox2
         '
-        Me.txtMonto.Lines = New String(-1) {}
-        Me.txtMonto.Location = New System.Drawing.Point(200, 122)
-        Me.txtMonto.MaxLength = 32767
-        Me.txtMonto.Name = "txtMonto"
-        Me.txtMonto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtMonto.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtMonto.SelectedText = ""
-        Me.txtMonto.Size = New System.Drawing.Size(196, 23)
-        Me.txtMonto.TabIndex = 5
-        Me.txtMonto.UseSelectable = True
+        Me.MetroTextBox2.Lines = New String(-1) {}
+        Me.MetroTextBox2.Location = New System.Drawing.Point(200, 122)
+        Me.MetroTextBox2.MaxLength = 32767
+        Me.MetroTextBox2.Name = "MetroTextBox2"
+        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox2.SelectedText = ""
+        Me.MetroTextBox2.Size = New System.Drawing.Size(196, 23)
+        Me.MetroTextBox2.TabIndex = 5
+        Me.MetroTextBox2.UseSelectable = True
         '
-        'txtDuracion
+        'MetroTextBox3
         '
-        Me.txtDuracion.Lines = New String(-1) {}
-        Me.txtDuracion.Location = New System.Drawing.Point(200, 168)
-        Me.txtDuracion.MaxLength = 32767
-        Me.txtDuracion.Name = "txtDuracion"
-        Me.txtDuracion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtDuracion.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtDuracion.SelectedText = ""
-        Me.txtDuracion.Size = New System.Drawing.Size(196, 23)
-        Me.txtDuracion.TabIndex = 6
-        Me.txtDuracion.UseSelectable = True
+        Me.MetroTextBox3.Lines = New String(-1) {}
+        Me.MetroTextBox3.Location = New System.Drawing.Point(200, 168)
+        Me.MetroTextBox3.MaxLength = 32767
+        Me.MetroTextBox3.Name = "MetroTextBox3"
+        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox3.SelectedText = ""
+        Me.MetroTextBox3.Size = New System.Drawing.Size(196, 23)
+        Me.MetroTextBox3.TabIndex = 6
+        Me.MetroTextBox3.UseSelectable = True
         '
         'MetroButton1
         '
@@ -126,20 +126,20 @@ Partial Class FrmAgregarTipoDePago
         Me.MetroButton2.Text = "Cancelar"
         Me.MetroButton2.UseSelectable = True
         '
-        'FrmAgregarTipoDePago
+        'FrmModificarTipoDePago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.txtDuracion)
-        Me.Controls.Add(Me.txtMonto)
-        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.MetroTextBox3)
+        Me.Controls.Add(Me.MetroTextBox2)
+        Me.Controls.Add(Me.MetroTextBox1)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.MetroLabel1)
-        Me.Name = "FrmAgregarTipoDePago"
+        Me.Name = "FrmModificarTipoDePago"
         Me.Size = New System.Drawing.Size(801, 369)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -149,9 +149,9 @@ Partial Class FrmAgregarTipoDePago
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtMonto As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtDuracion As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
 
