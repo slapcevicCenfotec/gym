@@ -24,7 +24,7 @@ namespace DAL
             try
             {
                 var appSR = new AppSettingsReader();
-                connString = ConfigurationManager.ConnectionStrings["CuerposCelestes"].ConnectionString;
+                connString = ConfigurationManager.ConnectionStrings["eGym"].ConnectionString;
                 return connString;
             }
             catch (Exception ex)

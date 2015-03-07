@@ -85,6 +85,13 @@
     <Compile Include="eGym.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Maquinas\FrmRegistrarMaquina.Designer.vb">
+      <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinas\FrmRegistrarMaquina.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuloGeneral.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -112,6 +119,18 @@
     <Compile Include="TipoPago\FrmListarTipoPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.Designer.vb">
+      <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TiposMaquinas\FrmModificarTipoDeMaquina.Designer.vb">
+      <DependentUpon>FrmModificarTipoDeMaquina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMaquinas\FrmModificarTipoDeMaquina.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="TiposMaquinas\FrmRegistrarTiposMaquinas.Designer.vb">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
     </Compile>
@@ -122,6 +141,9 @@
   <ItemGroup>
     <EmbeddedResource Include="eGym.resx">
       <DependentUpon>eGym.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
+      <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -134,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmListarTipoPago.resx">
       <DependentUpon>FrmListarTipoPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiposMaquinas\FrmListarTiposDeMaquinas.resx">
+      <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiposMaquinas\FrmModificarTipoDeMaquina.resx">
+      <DependentUpon>FrmModificarTipoDeMaquina.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TiposMaquinas\FrmRegistrarTiposMaquinas.resx">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
@@ -151,6 +179,16 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{7193bc78-e548-4e19-9733-cdae4dfd2b7b}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EL\EL.csproj">
+      <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
+      <Name>EL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

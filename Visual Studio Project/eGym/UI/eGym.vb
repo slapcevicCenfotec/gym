@@ -1,4 +1,5 @@
 ﻿Public Class eGym
+    Public Property passedIdMaquina As Integer
 
     Private Sub eGym_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InicializarMenu()
@@ -32,9 +33,9 @@
         MetroPanel1.Controls.Add(ctr)
     End Sub
 
-    Private Sub MetroLabel1_Click(sender As Object, e As EventArgs) Handles MetroLabel1.Click
+    Private Sub btnMaquinas_Click(sender As Object, e As EventArgs) Handles btnMaquinas.Click
         Dim ctr As Control
-        ctr = New FrmRegistrarTiposMaquinas
+        ctr = New FrmListarTiposDeMaquinas
         ctr.Dock = DockStyle.Fill
         MetroPanel1.Controls.Clear()
         MetroPanel1.Controls.Add(ctr)

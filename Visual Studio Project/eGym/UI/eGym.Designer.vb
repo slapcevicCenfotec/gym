@@ -29,7 +29,7 @@ Partial Class eGym
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.btnMaquinas = New MetroFramework.Controls.MetroLabel()
         Me.btnFacturacion = New MetroFramework.Controls.MetroLabel()
         Me.btnUsuarios = New MetroFramework.Controls.MetroLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -75,7 +75,7 @@ Partial Class eGym
         Me.menuPanel.Controls.Add(Me.MetroLabel4)
         Me.menuPanel.Controls.Add(Me.MetroLabel3)
         Me.menuPanel.Controls.Add(Me.MetroLabel2)
-        Me.menuPanel.Controls.Add(Me.MetroLabel1)
+        Me.menuPanel.Controls.Add(Me.btnMaquinas)
         Me.menuPanel.Controls.Add(Me.btnFacturacion)
         Me.menuPanel.Controls.Add(Me.btnUsuarios)
         Me.menuPanel.HorizontalScrollbarBarColor = True
@@ -155,18 +155,18 @@ Partial Class eGym
         Me.MetroLabel2.UseCustomBackColor = True
         Me.MetroLabel2.UseCustomForeColor = True
         '
-        'MetroLabel1
+        'btnMaquinas
         '
-        Me.MetroLabel1.BackColor = System.Drawing.Color.White
-        Me.MetroLabel1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.MetroLabel1.Location = New System.Drawing.Point(210, 0)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(100, 44)
-        Me.MetroLabel1.TabIndex = 12
-        Me.MetroLabel1.Text = "Maquinas"
-        Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MetroLabel1.UseCustomBackColor = True
-        Me.MetroLabel1.UseCustomForeColor = True
+        Me.btnMaquinas.BackColor = System.Drawing.Color.White
+        Me.btnMaquinas.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnMaquinas.Location = New System.Drawing.Point(210, 0)
+        Me.btnMaquinas.Name = "btnMaquinas"
+        Me.btnMaquinas.Size = New System.Drawing.Size(100, 44)
+        Me.btnMaquinas.TabIndex = 12
+        Me.btnMaquinas.Text = "Máquinas"
+        Me.btnMaquinas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnMaquinas.UseCustomBackColor = True
+        Me.btnMaquinas.UseCustomForeColor = True
         '
         'btnFacturacion
         '
@@ -301,7 +301,7 @@ Partial Class eGym
     Friend WithEvents menuPanel As MetroFramework.Controls.MetroPanel
     Friend WithEvents btnUsuarios As MetroFramework.Controls.MetroLabel
     Friend WithEvents btnFacturacion As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnMaquinas As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel

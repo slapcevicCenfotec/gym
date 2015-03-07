@@ -32,7 +32,6 @@ Partial Class FrmRegistrarTiposMaquinas
         Me.pbxFoto = New System.Windows.Forms.PictureBox()
         Me.ofdBuscar = New System.Windows.Forms.OpenFileDialog()
         Me.txtNombreImagen = New MetroFramework.Controls.MetroTextBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -112,10 +111,6 @@ Partial Class FrmRegistrarTiposMaquinas
         Me.pbxFoto.TabIndex = 8
         Me.pbxFoto.TabStop = False
         '
-        'ofdBuscar
-        '
-        Me.ofdBuscar.FileName = "OpenFileDialog1"
-        '
         'txtNombreImagen
         '
         Me.txtNombreImagen.Lines = New String(-1) {}
@@ -128,10 +123,6 @@ Partial Class FrmRegistrarTiposMaquinas
         Me.txtNombreImagen.Size = New System.Drawing.Size(148, 23)
         Me.txtNombreImagen.TabIndex = 9
         Me.txtNombreImagen.UseSelectable = True
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'MetroTextBox1
         '
@@ -178,7 +169,6 @@ Partial Class FrmRegistrarTiposMaquinas
     Friend WithEvents pbxFoto As System.Windows.Forms.PictureBox
     Friend WithEvents ofdBuscar As System.Windows.Forms.OpenFileDialog
     Friend WithEvents txtNombreImagen As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
 
 End Class
