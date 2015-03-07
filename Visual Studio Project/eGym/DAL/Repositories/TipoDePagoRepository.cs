@@ -42,34 +42,27 @@ namespace DAL.Repositories
 
         public IEnumerable<TipoDePago> GetAll()
         {
+            List<TipoDePago> listaTiposDePagos = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@pFlag", 1));
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTipoDePago");
 
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaTiposDePagos = new List<TipoDePago>();
 
-            return new List<TipoDePago>();
-            //List<TipoDeMaquina> listaTiposDeMaquinas = null;
-
-            //SqlCommand cmd = new SqlCommand();
-            //DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTiposDeMaquinas");
-
-
-
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    listaTiposDeMaquinas = new List<TipoDeMaquina>();
-
-            //    foreach (DataRow dr in ds.Tables[0].Rows)
-            //    {
-            //        listaTiposDeMaquinas.Add(new TipoDeMaquina
-            //        {
-            //            Id = Convert.ToInt32(dr["ID"]),
-            //            //Foto = Convert.ToByte(["FOTO"]),
-            //            Nombre = dr["NOMBRE"].ToString(),
-            //            Descripcion = dr["DESCRIPCION"].ToString(),
-            //            Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
-            //        });
-            //    }
-            //}
-
-            //return listaTiposDeMaquinas;
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    TipoDePago auxPago = new TipoDePago();
+                    auxPago.Id = Convert.ToInt32(dr["ID"]);
+                    auxPago.Nombre =Convert.ToString(dr["NOMBRE"]);
+                    auxPago.Monto = float.Parse(Convert.ToString(dr["Monto"]));
+                    auxPago.Duracion = Convert.ToInt32(dr["DURACION"]);
+                    auxPago.Habilitado = Convert.ToBoolean(dr["HABILITADO"]);
+                    listaTiposDePagos.Add(auxPago);
+                }
+            }
+            return listaTiposDePagos;
         }
 
         public TipoDePago GetById(int id)
@@ -174,11 +167,26 @@ namespace DAL.Repositories
             {
 
             }
-
         }
 
         private void UpdateTipoDePago(TipoDePago objTipoDePago)
         {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@pId", objTipoDePago.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@pNombre", objTipoDePago.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@pMonto", objTipoDePago.Monto));
+                cmd.Parameters.Add(new SqlParameter("@pDuracion", objTipoDePago.Duracion));
+                cmd.Parameters.Add(new SqlParameter("@pHabilitado", objTipoDePago.Habilitado));
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarTipoDePago");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
            
         }
 

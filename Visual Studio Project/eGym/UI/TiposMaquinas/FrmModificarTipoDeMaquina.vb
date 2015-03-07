@@ -5,11 +5,9 @@ Public Class FrmModificarTipoDeMaquina
 
     Private Sub FrmModificarTipoDeMaquina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim tipoMaquina As TipoDeMaquina = objGestorTipoDeMaquina.GetMaquinaById(eGym.passedIdMaquina)
-
         Dim foto As Image
         Dim ms As MemoryStream = New System.IO.MemoryStream(tipoMaquina.Foto)
         foto = System.Drawing.Image.FromStream(ms)
-
         txtTipoDeMaquina.Text = tipoMaquina.Nombre
         rtbDescripcion.Text = tipoMaquina.Descripcion
         pbxFoto.Image = foto

@@ -22,6 +22,13 @@ namespace EL
             this._monto = pMonto;
             this._duracion = pDuracion;
         }
+        public TipoDePago(String pNommbre, float pMonto, int pDuracion, bool pHabilitado)
+        {
+            this._nombre = pNommbre;
+            this._monto = pMonto;
+            this._duracion = pDuracion;
+            this._habilitado = pHabilitado;
+        }
         public int Id
         {
             get { return _id; }
