@@ -72,10 +72,9 @@ namespace EL
 
         public TipoDeMaquina()
         {
-            Foto = null;
             Nombre = "";
             Descripcion = "";
-            Habilitado = true;
+            Foto = null;
         }
     }
 }

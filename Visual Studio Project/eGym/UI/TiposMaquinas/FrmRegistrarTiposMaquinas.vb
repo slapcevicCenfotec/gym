@@ -14,7 +14,7 @@ Public Class FrmRegistrarTiposMaquinas
 
         Dim nombre As String = txtTipoDeMaquina.Text
         Dim descripcion As String = rtbDescripcion.Text
-        Dim habilitado As Boolean = True
+        Dim foto As Image
 
         Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
         Dim bReader As New BinaryReader(fs)
