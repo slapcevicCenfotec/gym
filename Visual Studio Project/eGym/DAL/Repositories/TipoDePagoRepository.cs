@@ -174,7 +174,7 @@ namespace DAL.Repositories
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@pId", objTipoDePago.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@pId", objTipoDePago.Id));
                 cmd.Parameters.Add(new SqlParameter("@pNombre", objTipoDePago.Nombre));
                 cmd.Parameters.Add(new SqlParameter("@pMonto", objTipoDePago.Monto));
                 cmd.Parameters.Add(new SqlParameter("@pDuracion", objTipoDePago.Duracion));

@@ -23,9 +23,9 @@ namespace BLL
             UoW.TipoDePagoRepository.Insert(tipoDePago);
             UoW.TipoDePagoRepository.Save();
         }
-        public void modificarTipoDePago(String pNombre, float pMonto, int pDuracion, bool pHabilitado)
+        public void modificarTipoDePago(int pId, String pNombre, float pMonto, int pDuracion, bool pHabilitado)
         {
-            TipoDePago tipoDePago = new TipoDePago(pNombre, pMonto, pDuracion, pHabilitado);
+            TipoDePago tipoDePago = new TipoDePago(pId, pNombre, pMonto, pDuracion, pHabilitado);
             UoW.TipoDePagoRepository.Update(tipoDePago);
             UoW.TipoDePagoRepository.Save();
         }
