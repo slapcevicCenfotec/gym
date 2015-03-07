@@ -91,6 +91,7 @@
     <Compile Include="Maquinas\FrmRegistrarMaquina.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ModuloGeneral.vb" />
     <Compile Include="ModuloTipoDePago.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -129,18 +130,6 @@
       <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
     </Compile>
     <Compile Include="TipoPago\FrmListarTipoDePago.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.Designer.vb">
-      <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TiposMaquinas\FrmModificarTipoDeMaquina.Designer.vb">
-      <DependentUpon>FrmModificarTipoDeMaquina.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TipoPago\FrmListarTipoPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.Designer.vb">
@@ -193,12 +182,6 @@
     <EmbeddedResource Include="TiposMaquinas\FrmModificarTipoDeMaquina.resx">
       <DependentUpon>FrmModificarTipoDeMaquina.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TiposMaquinas\FrmListarTiposDeMaquinas.resx">
-      <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TiposMaquinas\FrmModificarTipoDeMaquina.resx">
-      <DependentUpon>FrmModificarTipoDeMaquina.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TiposMaquinas\FrmRegistrarTiposMaquinas.resx">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +198,16 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{7193bc78-e548-4e19-9733-cdae4dfd2b7b}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EL\EL.csproj">
+      <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
+      <Name>EL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
