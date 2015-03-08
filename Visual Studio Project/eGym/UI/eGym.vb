@@ -53,11 +53,19 @@
     End Sub
 
     Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
-
+        Dim ctr As Control
+        ctr = New FrmListarMusculo
+        ctr.Dock = DockStyle.Fill
+        MetroPanel1.Controls.Clear()
+        MetroPanel1.Controls.Add(ctr)
     End Sub
 
     Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
-
+        Dim ctr As Control
+        ctr = New FrmListarEjercicio
+        ctr.Dock = DockStyle.Fill
+        MetroPanel1.Controls.Clear()
+        MetroPanel1.Controls.Add(ctr)
     End Sub
 
     Private Sub MetroLabel5_Click(sender As Object, e As EventArgs) Handles MetroLabel5.Click

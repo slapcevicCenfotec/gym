@@ -20,6 +20,9 @@ namespace DAL
         private IRepository<TipoDePago> _tipoDePagoRepository;
 >>>>>>> 729a6dbcfcd1af619261320d608516419cd4b8f7
 
+        private IRepository<Musculo> _musculoRepository;
+        private IRepository<Ejercicio> _ejercicioRepository;
+
         public IRepository<TipoDeMaquina> TipoDeMaquinaRepository
         {
             get
@@ -78,6 +81,41 @@ namespace DAL
 >>>>>>> 729a6dbcfcd1af619261320d608516419cd4b8f7
             }
         }
+
+
+        #region Musculos
+
+        public IRepository<Musculo> MusculoRepository
+        {
+            get
+            {
+                if (this._musculoRepository == null)
+                {
+                    this._musculoRepository = new MusculoRepository();
+                }
+
+                return _musculoRepository;
+            }
+
+        }
+
+        #endregion
+
+        #region Ejercicios
+        public IRepository<Ejercicio> EjercicioRepository
+        {
+            get
+            {
+                if (this._ejercicioRepository == null)
+                {
+                    this._ejercicioRepository = new EjercicioRepository();
+                }
+
+                return _ejercicioRepository;
+            }
+
+        }
+        #endregion
 
     }
 }

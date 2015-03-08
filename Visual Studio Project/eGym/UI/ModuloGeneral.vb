@@ -6,7 +6,10 @@ Public Module ModuloGeneral
 =======
 
 Public Module ModuloGeneral
-    Public objGestorTipoDeMaquina As New GestorTiposDeMaquina()
-    Public objGestorMaquina As New GestorMaquina()
->>>>>>> 729a6dbcfcd1af619261320d608516419cd4b8f7
-End Module
+        Public objGestorTipoDeMaquina As New GestorTiposDeMaquina()
+        Public objGestorMaquina As New GestorMaquina()
+
+        Public objGestorMusculo As New GestorMusculo()
+
+        Public objeGestorEjercicio As New GestorEjercicio()
+    End Module
