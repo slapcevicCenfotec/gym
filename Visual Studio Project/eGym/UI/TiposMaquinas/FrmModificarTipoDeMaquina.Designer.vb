@@ -32,15 +32,16 @@ Partial Class FrmModificarTipoDeMaquina
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.txtNombreImagen = New MetroFramework.Controls.MetroTextBox()
         Me.btnAgregarFoto = New MetroFramework.Controls.MetroButton()
-        Me.lblHabilitada = New MetroFramework.Controls.MetroLabel()
-        Me.ckbHabilitado = New System.Windows.Forms.CheckBox()
+        Me.lblValidarDescripcion = New MetroFramework.Controls.MetroLabel()
+        Me.lblValidarNombre = New MetroFramework.Controls.MetroLabel()
+        Me.lblValidarFoto = New MetroFramework.Controls.MetroLabel()
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtTipoDeMaquina
         '
         Me.txtTipoDeMaquina.Lines = New String(-1) {}
-        Me.txtTipoDeMaquina.Location = New System.Drawing.Point(260, 40)
+        Me.txtTipoDeMaquina.Location = New System.Drawing.Point(170, 74)
         Me.txtTipoDeMaquina.MaxLength = 32767
         Me.txtTipoDeMaquina.Name = "txtTipoDeMaquina"
         Me.txtTipoDeMaquina.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -52,7 +53,9 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'rtbDescripcion
         '
-        Me.rtbDescripcion.Location = New System.Drawing.Point(260, 88)
+        Me.rtbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtbDescripcion.Font = New System.Drawing.Font("Segoe UI Emoji", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rtbDescripcion.Location = New System.Drawing.Point(170, 122)
         Me.rtbDescripcion.Name = "rtbDescripcion"
         Me.rtbDescripcion.Size = New System.Drawing.Size(200, 100)
         Me.rtbDescripcion.TabIndex = 3
@@ -60,7 +63,8 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'pbxFoto
         '
-        Me.pbxFoto.Location = New System.Drawing.Point(543, 40)
+        Me.pbxFoto.BackColor = System.Drawing.Color.White
+        Me.pbxFoto.Location = New System.Drawing.Point(453, 74)
         Me.pbxFoto.Name = "pbxFoto"
         Me.pbxFoto.Size = New System.Drawing.Size(148, 148)
         Me.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -70,7 +74,7 @@ Partial Class FrmModificarTipoDeMaquina
         'lblTipoDeMaquina
         '
         Me.lblTipoDeMaquina.AutoSize = True
-        Me.lblTipoDeMaquina.Location = New System.Drawing.Point(100, 42)
+        Me.lblTipoDeMaquina.Location = New System.Drawing.Point(10, 76)
         Me.lblTipoDeMaquina.Name = "lblTipoDeMaquina"
         Me.lblTipoDeMaquina.Size = New System.Drawing.Size(109, 19)
         Me.lblTipoDeMaquina.TabIndex = 5
@@ -79,7 +83,7 @@ Partial Class FrmModificarTipoDeMaquina
         'lblDescripcion
         '
         Me.lblDescripcion.AutoSize = True
-        Me.lblDescripcion.Location = New System.Drawing.Point(100, 88)
+        Me.lblDescripcion.Location = New System.Drawing.Point(10, 122)
         Me.lblDescripcion.Name = "lblDescripcion"
         Me.lblDescripcion.Size = New System.Drawing.Size(76, 19)
         Me.lblDescripcion.TabIndex = 6
@@ -87,7 +91,7 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(593, 3)
+        Me.btnGuardar.Location = New System.Drawing.Point(433, 45)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 7
@@ -96,7 +100,7 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(674, 3)
+        Me.btnCancelar.Location = New System.Drawing.Point(526, 45)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 8
@@ -106,7 +110,7 @@ Partial Class FrmModificarTipoDeMaquina
         'txtNombreImagen
         '
         Me.txtNombreImagen.Lines = New String(-1) {}
-        Me.txtNombreImagen.Location = New System.Drawing.Point(543, 213)
+        Me.txtNombreImagen.Location = New System.Drawing.Point(453, 247)
         Me.txtNombreImagen.MaxLength = 32767
         Me.txtNombreImagen.Name = "txtNombreImagen"
         Me.txtNombreImagen.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -118,37 +122,56 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'btnAgregarFoto
         '
-        Me.btnAgregarFoto.Location = New System.Drawing.Point(597, 244)
+        Me.btnAgregarFoto.Location = New System.Drawing.Point(526, 74)
         Me.btnAgregarFoto.Name = "btnAgregarFoto"
         Me.btnAgregarFoto.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregarFoto.TabIndex = 10
-        Me.btnAgregarFoto.Text = "Agregar"
+        Me.btnAgregarFoto.Text = "Cambiar"
         Me.btnAgregarFoto.UseSelectable = True
         '
-        'lblHabilitada
+        'lblValidarDescripcion
         '
-        Me.lblHabilitada.AutoSize = True
-        Me.lblHabilitada.Location = New System.Drawing.Point(100, 217)
-        Me.lblHabilitada.Name = "lblHabilitada"
-        Me.lblHabilitada.Size = New System.Drawing.Size(68, 19)
-        Me.lblHabilitada.TabIndex = 11
-        Me.lblHabilitada.Text = "Habilitada"
+        Me.lblValidarDescripcion.AutoSize = True
+        Me.lblValidarDescripcion.BackColor = System.Drawing.Color.Transparent
+        Me.lblValidarDescripcion.ForeColor = System.Drawing.Color.Red
+        Me.lblValidarDescripcion.Location = New System.Drawing.Point(170, 229)
+        Me.lblValidarDescripcion.Name = "lblValidarDescripcion"
+        Me.lblValidarDescripcion.Size = New System.Drawing.Size(0, 0)
+        Me.lblValidarDescripcion.TabIndex = 13
+        Me.lblValidarDescripcion.UseCustomBackColor = True
+        Me.lblValidarDescripcion.UseCustomForeColor = True
         '
-        'ckbHabilitado
+        'lblValidarNombre
         '
-        Me.ckbHabilitado.AutoSize = True
-        Me.ckbHabilitado.Location = New System.Drawing.Point(260, 219)
-        Me.ckbHabilitado.Name = "ckbHabilitado"
-        Me.ckbHabilitado.Size = New System.Drawing.Size(15, 14)
-        Me.ckbHabilitado.TabIndex = 12
-        Me.ckbHabilitado.UseVisualStyleBackColor = True
+        Me.lblValidarNombre.AutoSize = True
+        Me.lblValidarNombre.BackColor = System.Drawing.Color.Transparent
+        Me.lblValidarNombre.ForeColor = System.Drawing.Color.Red
+        Me.lblValidarNombre.Location = New System.Drawing.Point(170, 99)
+        Me.lblValidarNombre.Name = "lblValidarNombre"
+        Me.lblValidarNombre.Size = New System.Drawing.Size(0, 0)
+        Me.lblValidarNombre.TabIndex = 14
+        Me.lblValidarNombre.UseCustomBackColor = True
+        Me.lblValidarNombre.UseCustomForeColor = True
+        '
+        'lblValidarFoto
+        '
+        Me.lblValidarFoto.AutoSize = True
+        Me.lblValidarFoto.BackColor = System.Drawing.Color.Transparent
+        Me.lblValidarFoto.ForeColor = System.Drawing.Color.Red
+        Me.lblValidarFoto.Location = New System.Drawing.Point(453, 225)
+        Me.lblValidarFoto.Name = "lblValidarFoto"
+        Me.lblValidarFoto.Size = New System.Drawing.Size(0, 0)
+        Me.lblValidarFoto.TabIndex = 15
+        Me.lblValidarFoto.UseCustomBackColor = True
+        Me.lblValidarFoto.UseCustomForeColor = True
         '
         'FrmModificarTipoDeMaquina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.ckbHabilitado)
-        Me.Controls.Add(Me.lblHabilitada)
+        Me.Controls.Add(Me.lblValidarFoto)
+        Me.Controls.Add(Me.lblValidarNombre)
+        Me.Controls.Add(Me.lblValidarDescripcion)
         Me.Controls.Add(Me.btnAgregarFoto)
         Me.Controls.Add(Me.txtNombreImagen)
         Me.Controls.Add(Me.btnCancelar)
@@ -159,7 +182,7 @@ Partial Class FrmModificarTipoDeMaquina
         Me.Controls.Add(Me.rtbDescripcion)
         Me.Controls.Add(Me.txtTipoDeMaquina)
         Me.Name = "FrmModificarTipoDeMaquina"
-        Me.Size = New System.Drawing.Size(968, 600)
+        Me.Size = New System.Drawing.Size(650, 400)
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -175,7 +198,8 @@ Partial Class FrmModificarTipoDeMaquina
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
     Friend WithEvents txtNombreImagen As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btnAgregarFoto As MetroFramework.Controls.MetroButton
-    Friend WithEvents lblHabilitada As MetroFramework.Controls.MetroLabel
-    Friend WithEvents ckbHabilitado As System.Windows.Forms.CheckBox
+    Friend WithEvents lblValidarDescripcion As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblValidarNombre As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblValidarFoto As MetroFramework.Controls.MetroLabel
 
 End Class

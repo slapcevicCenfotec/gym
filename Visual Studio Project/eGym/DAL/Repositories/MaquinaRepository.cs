@@ -11,89 +11,88 @@ using System.Transactions;
 
 namespace DAL.Repositories
 {
-    public class TipoDeMaquinaRepository : IRepository<TipoDeMaquina>
+    public class MaquinaRepository : IRepository<Maquina>
     {
 
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
 
-        public TipoDeMaquinaRepository()
+        public MaquinaRepository()
         {
             _insertItems = new List<IEntity>();
             _deleteItems = new List<IEntity>();
             _updateItems = new List<IEntity>();
         }
 
-        public void Insert(TipoDeMaquina entity)
+        public void Insert(Maquina entity)
         {
             _insertItems.Add(entity);
         }
 
-        public void Delete(TipoDeMaquina entity)
+        public void Delete(Maquina entity)
         {
             _deleteItems.Add(entity);
         }
 
-        public void Update(TipoDeMaquina entity)
+        public void Update(Maquina entity)
         {
             _updateItems.Add(entity);
         }
 
-        public IEnumerable<TipoDeMaquina> GetAll()
+        public IEnumerable<Maquina> GetAll()
         {
 
-            List<TipoDeMaquina> listaTiposDeMaquinas = null;
+            List<Maquina> listaMaquinas = null;
 
             SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTiposDeMaquinas");
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarMaquinas");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                listaTiposDeMaquinas = new List<TipoDeMaquina>();
+                listaMaquinas = new List<Maquina>();
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    listaTiposDeMaquinas.Add(new TipoDeMaquina
+                    listaMaquinas.Add(new Maquina
                     {
                         Id = Convert.ToInt32(dr["ID"]),
-                        Foto = (byte[])dr["FOTO"],
-                        Nombre = dr["NOMBRE"].ToString(),
-                        Descripcion = dr["DESCRIPCION"].ToString(),
+                        NumeroActivo = dr["NUMERO_ACTIVO"].ToString(),
+                        NumeroMaquina = dr["NUMERO_MAQUINA"].ToString(),
                         Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                        NombreTipoMaquina = dr["NOMBRE"].ToString(),
                     });
                 }
             }
 
-            return listaTiposDeMaquinas;
+            return listaMaquinas;
         }
 
-        public TipoDeMaquina GetById(int pId)
+        public Maquina GetById(int pId)
         {
 
-            TipoDeMaquina tipoDeMaquina = null;
+            Maquina maquina = null;
 
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@pId", pId);
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ObtenerTipoMaquinaPorId");
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_MaquinaPorId");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    tipoDeMaquina = new TipoDeMaquina
+                    maquina = new Maquina
                     {
                         Id = Convert.ToInt32(dr["ID"]),
-                        Foto = (byte[])dr["FOTO"],
-                        Nombre = dr["NOMBRE"].ToString(),
-                        Descripcion = dr["DESCRIPCION"].ToString(),
+                        NumeroActivo = dr["NUMERO_ACTIVO"].ToString(),
+                        NumeroMaquina = dr["NUMERO_MAQUINA"].ToString(),
                         Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
                     };
                 }
             }
 
-            return tipoDeMaquina;
+            return maquina;
         }
 
         public void Save()
@@ -104,25 +103,25 @@ namespace DAL.Repositories
                 {
                     if (_insertItems.Count > 0)
                     {
-                        foreach (TipoDeMaquina objTipoDeMaquina in _insertItems)
+                        foreach (Maquina objMaquina in _insertItems)
                         {
-                            InsertTipoDeMaquina(objTipoDeMaquina);
+                            InsertMaquina(objMaquina);
                         }
                     }
 
                     if (_updateItems.Count > 0)
                     {
-                        foreach (TipoDeMaquina p in _updateItems)
+                        foreach (Maquina p in _updateItems)
                         {
-                            UpdateTipoDeMaquina(p);
+                            UpdateMaquina(p);
                         }
                     }
 
                     if (_deleteItems.Count > 0)
                     {
-                        foreach (TipoDeMaquina p in _deleteItems)
+                        foreach (Maquina p in _deleteItems)
                         {
-                            DeleteTipoDeMaquina(p);
+                            DeleteMaquina(p);
                         }
                     }
 
@@ -151,19 +150,19 @@ namespace DAL.Repositories
             _updateItems.Clear();
         }
 
-        private void InsertTipoDeMaquina(TipoDeMaquina objTipoDeMaquina)
+        private void InsertMaquina(Maquina objMaquina)
         {
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@pFoto", objTipoDeMaquina.Foto));
-                cmd.Parameters.Add(new SqlParameter("@pNombre", objTipoDeMaquina.Nombre));
-                cmd.Parameters.Add(new SqlParameter("@pDescripcion", objTipoDeMaquina.Descripcion));
-                cmd.Parameters.Add(new SqlParameter("@pHabilitado", objTipoDeMaquina.Habilitado));
+                cmd.Parameters.Add(new SqlParameter("@pNumeroActivo", objMaquina.NumeroActivo));
+                cmd.Parameters.Add(new SqlParameter("@pNumeroMaquina", objMaquina.NumeroMaquina));
+                cmd.Parameters.Add(new SqlParameter("@pHabilitado", objMaquina.Habilitado));
+                cmd.Parameters.Add(new SqlParameter("@pIdTipoDeMaquina", objMaquina.TipoDeMaquina));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarTipoDeMaquina");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarMaquina");
 
             }
             catch (Exception ex)
@@ -173,18 +172,18 @@ namespace DAL.Repositories
 
         }
 
-        private void UpdateTipoDeMaquina(TipoDeMaquina objTipoDeMaquina)
+        private void UpdateMaquina(Maquina objMaquina)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@pId", objTipoDeMaquina.Id));
-                cmd.Parameters.Add(new SqlParameter("@pFoto", objTipoDeMaquina.Foto));
-                cmd.Parameters.Add(new SqlParameter("@pNombre", objTipoDeMaquina.Nombre));
-                cmd.Parameters.Add(new SqlParameter("@pDescripcion", objTipoDeMaquina.Descripcion));
-                cmd.Parameters.Add(new SqlParameter("@pHabilitado", objTipoDeMaquina.Habilitado));
+                cmd.Parameters.Add(new SqlParameter("@pId", objMaquina.Id));
+                cmd.Parameters.Add(new SqlParameter("@pNumeroActivo", objMaquina.NumeroActivo));
+                cmd.Parameters.Add(new SqlParameter("@pNumeroMaquina", objMaquina.NumeroMaquina));
+                cmd.Parameters.Add(new SqlParameter("@pHabilitado", objMaquina.Habilitado));
+                cmd.Parameters.Add(new SqlParameter("@pIdTipoDeMaquina", objMaquina.TipoDeMaquina));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarTipoDeMaquina");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarMaquina");
 
             }
             catch (Exception ex)
@@ -193,13 +192,13 @@ namespace DAL.Repositories
             }
         }
 
-        private void DeleteTipoDeMaquina(TipoDeMaquina objTipoDeMaquina)
+        private void DeleteMaquina(Maquina objMaquina)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@pId", objTipoDeMaquina.Id));
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarTipoDeMaquina");
+                cmd.Parameters.Add(new SqlParameter("@pId", objMaquina.Id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarMaquina");
 
             }
             catch (SqlException ex)
