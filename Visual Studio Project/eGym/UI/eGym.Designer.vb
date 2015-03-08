@@ -236,7 +236,7 @@ Partial Class eGym
         Me.panel.HorizontalScrollbarSize = 10
         Me.panel.Location = New System.Drawing.Point(33, 115)
         Me.panel.Name = "panel"
-        Me.panel.Size = New System.Drawing.Size(1134, 627)
+        Me.panel.Size = New System.Drawing.Size(1134, 619)
         Me.panel.TabIndex = 9
         Me.panel.UseCustomBackColor = True
         Me.panel.VerticalScrollbarBarColor = True
@@ -253,7 +253,7 @@ Partial Class eGym
         Me.MetroPanel1.HorizontalScrollbarSize = 10
         Me.MetroPanel1.Location = New System.Drawing.Point(1, 1)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(1132, 625)
+        Me.MetroPanel1.Size = New System.Drawing.Size(1132, 617)
         Me.MetroPanel1.TabIndex = 2
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
@@ -273,7 +273,7 @@ Partial Class eGym
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 780)
+        Me.ClientSize = New System.Drawing.Size(1200, 772)
         Me.Controls.Add(Me.MetroLabel9)
         Me.Controls.Add(Me.panel)
         Me.Controls.Add(Me.menuBorder)

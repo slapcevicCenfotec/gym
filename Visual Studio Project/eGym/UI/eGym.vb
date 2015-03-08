@@ -40,4 +40,20 @@
         MetroPanel1.Controls.Clear()
         MetroPanel1.Controls.Add(ctr)
     End Sub
+
+    Private Sub MetroLabel3_Click(sender As Object, e As EventArgs) Handles MetroLabel3.Click
+
+    End Sub
+
+    Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
+
+    End Sub
+
+    Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
+
+    End Sub
+
+    Private Sub MetroLabel5_Click(sender As Object, e As EventArgs) Handles MetroLabel5.Click
+
+    End Sub
 End Class
