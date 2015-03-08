@@ -14,8 +14,8 @@ Public Class FrmModificarTipoDeMaquina
         Dim ms As MemoryStream = New System.IO.MemoryStream(tipoDeMaquinaPorModificar.Foto)
         foto = System.Drawing.Image.FromStream(ms)
 
-        txtTipoDeMaquina.Text = tipoMaquina.Nombre
-        rtbDescripcion.Text = tipoMaquina.Descripcion
+        txtTipoDeMaquina.Text = tipoDeMaquinaPorModificar.Nombre
+        rtbDescripcion.Text = tipoDeMaquinaPorModificar.Descripcion
         pbxFoto.Image = foto
 
     End Sub
