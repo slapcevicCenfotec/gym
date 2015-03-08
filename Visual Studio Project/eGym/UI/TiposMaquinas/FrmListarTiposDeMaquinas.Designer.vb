@@ -29,7 +29,7 @@ Partial Class FrmListarTiposDeMaquinas
         Me.lblBuscar = New System.Windows.Forms.Label()
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.btnAgregar = New MetroFramework.Controls.MetroButton()
-        Me.btnEliminiar = New MetroFramework.Controls.MetroButton()
+        Me.btnEliminar = New MetroFramework.Controls.MetroButton()
         Me.btnModificar = New MetroFramework.Controls.MetroButton()
         CType(Me.tblTiposDeMaquinas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -109,14 +109,14 @@ Partial Class FrmListarTiposDeMaquinas
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseSelectable = True
         '
-        'btnEliminiar
+        'btnEliminar
         '
-        Me.btnEliminiar.Location = New System.Drawing.Point(526, 45)
-        Me.btnEliminiar.Name = "btnEliminiar"
-        Me.btnEliminiar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEliminiar.TabIndex = 4
-        Me.btnEliminiar.Text = "Eliminar"
-        Me.btnEliminiar.UseSelectable = True
+        Me.btnEliminar.Location = New System.Drawing.Point(526, 45)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 4
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseSelectable = True
         '
         'btnModificar
         '
@@ -132,7 +132,7 @@ Partial Class FrmListarTiposDeMaquinas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btnModificar)
-        Me.Controls.Add(Me.btnEliminiar)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.lblBuscar)
@@ -148,7 +148,7 @@ Partial Class FrmListarTiposDeMaquinas
     Friend WithEvents lblBuscar As System.Windows.Forms.Label
     Friend WithEvents txtBuscar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btnAgregar As MetroFramework.Controls.MetroButton
-    Friend WithEvents btnEliminiar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnEliminar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnModificar As MetroFramework.Controls.MetroButton
 
 End Class

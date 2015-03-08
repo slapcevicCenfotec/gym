@@ -1,14 +1,25 @@
 ﻿Imports EL
 
-Public Class FrmRegistrarMaquina
+Public Class FrmModificarMaquina
+    Private Property maquinaPorModificar As Maquina
     Private Property listaTiposDeMaquinas As List(Of TipoDeMaquina)
 
-    Private Sub FrmRegistrarMaquina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub New(ByVal pmaquina As Maquina)
+        maquinaPorModificar = pmaquina
+        InitializeComponent()
+    End Sub
+
+    Private Sub FrmModificarMaquina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         listaTiposDeMaquinas = objGestorTipoDeMaquina.listarTiposDeMaquinas()
 
         For Each tipoDeMaquina In listaTiposDeMaquinas
             cmbTipoDeMaquina.Items.Add(tipoDeMaquina.Nombre)
         Next
+
+        cmbTipoDeMaquina.SelectedItem = maquinaPorModificar.NombreTipoMaquina
+        txtNumeroDeActivo.Text = maquinaPorModificar.NumeroActivo
+        txtNumeroDeMaquina.Text = maquinaPorModificar.NumeroMaquina
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -27,9 +38,15 @@ Public Class FrmRegistrarMaquina
         resetValidarLabels()
 
         If validarFormRegistrarMaquina() Then
-            objGestorMaquina.insertarMaquina(numeroActivo, numeroMaquina, habilitado, idTipoMaquina)
+            objGestorMaquina.modificarMaquina(maquinaPorModificar.Id, numeroActivo, numeroMaquina, habilitado, idTipoMaquina)
             clearScreen()
         End If
+
+        Dim ctr As Control
+        ctr = New FrmListarMaquinas
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
 
     End Sub
 

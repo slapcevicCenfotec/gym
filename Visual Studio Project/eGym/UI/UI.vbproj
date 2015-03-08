@@ -85,6 +85,18 @@
     <Compile Include="eGym.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Maquinas\FrmListarMaquinas.Designer.vb">
+      <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinas\FrmListarMaquinas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Maquinas\FrmModificarMaquina.Designer.vb">
+      <DependentUpon>FrmModificarMaquina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinas\FrmModificarMaquina.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Maquinas\FrmRegistrarMaquina.Designer.vb">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
     </Compile>
@@ -154,6 +166,12 @@
   <ItemGroup>
     <EmbeddedResource Include="eGym.resx">
       <DependentUpon>eGym.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maquinas\FrmListarMaquinas.resx">
+      <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maquinas\FrmModificarMaquina.resx">
+      <DependentUpon>FrmModificarMaquina.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>

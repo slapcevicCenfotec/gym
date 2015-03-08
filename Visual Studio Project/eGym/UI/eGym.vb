@@ -35,7 +35,7 @@
 
     Private Sub btnMaquinas_Click(sender As Object, e As EventArgs) Handles btnMaquinas.Click
         Dim ctr As Control
-        ctr = New FrmListarTiposDeMaquinas
+        ctr = New FrmListarMaquinas
         ctr.Dock = DockStyle.Fill
         MetroPanel1.Controls.Clear()
         MetroPanel1.Controls.Add(ctr)
