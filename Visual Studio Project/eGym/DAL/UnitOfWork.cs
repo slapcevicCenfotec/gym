@@ -12,6 +12,8 @@ namespace DAL
     {
 
         private IRepository<TipoDeMaquina> _tipoDeMaquinaRepository;
+        private IRepository<Rol> _rolRepository;
+        private IRepository<Permiso> _permisoRepository;
 
         public IRepository<TipoDeMaquina> TipoDeMaquinaRepository
         {
@@ -22,6 +24,29 @@ namespace DAL
                     this._tipoDeMaquinaRepository = new TipoDeMaquinaRepository();
                 }
                 return _tipoDeMaquinaRepository;
+            }
+        }
+
+        public IRepository<Rol> RolRepository
+        {
+            get
+            {
+                if (this._rolRepository == null)
+                {
+                    this._rolRepository = new RolRepository();
+                }
+                return _rolRepository;
+            }
+        }
+
+        public IRepository<Permiso> PermisosRepository {
+            get
+            {
+                if (this._permisoRepository == null)
+                {
+                    this._permisoRepository = new PermisoRepository();
+                }
+                return _permisoRepository;
             }
         }
 

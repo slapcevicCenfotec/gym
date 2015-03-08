@@ -39,4 +39,12 @@
         MetroPanel1.Controls.Clear()
         MetroPanel1.Controls.Add(ctr)
     End Sub
+
+    Private Sub MetroLabel3_Click(sender As Object, e As EventArgs) Handles MetroLabel3.Click
+        Dim ctr As Control
+        ctr = New FrmListarRoles
+        ctr.Dock = DockStyle.Fill
+        MetroPanel1.Controls.Clear()
+        MetroPanel1.Controls.Add(ctr)
+    End Sub
 End Class
