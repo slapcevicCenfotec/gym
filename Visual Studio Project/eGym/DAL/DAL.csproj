@@ -54,8 +54,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\EjercicioRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\MaquinaRepository.cs" />
+    <Compile Include="Repositories\MusculoRepository.cs" />
     <Compile Include="Repositories\TipoDeMaquinaRepository.cs" />
     <Compile Include="Repositories\TipoDePagoRepository.cs" />
     <Compile Include="Settings.cs" />

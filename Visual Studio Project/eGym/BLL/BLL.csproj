@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestorEjercicio.cs" />
     <Compile Include="GestorMaquina.cs" />
+    <Compile Include="GestorMusculo.cs" />
     <Compile Include="GestorTipoDePago.cs" />
     <Compile Include="GestorTiposDeMaquina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

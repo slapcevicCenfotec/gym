@@ -85,6 +85,18 @@
     <Compile Include="eGym.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ejercicio\FrmListarEjercicio.Designer.vb">
+      <DependentUpon>FrmListarEjercicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicio\FrmListarEjercicio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ejercicio\FrmRegistrarEjercicio.Designer.vb">
+      <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicio\FrmRegistrarEjercicio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Maquinas\FrmListarMaquinas.Designer.vb">
       <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
     </Compile>
@@ -105,6 +117,24 @@
     </Compile>
     <Compile Include="ModuloGeneral.vb" />
     <Compile Include="ModuloTipoDePago.vb" />
+    <Compile Include="Musculo\FrmListarMusculo.Designer.vb">
+      <DependentUpon>FrmListarMusculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Musculo\FrmListarMusculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Musculo\FrmModificarMusculo.Designer.vb">
+      <DependentUpon>FrmModificarMusculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Musculo\FrmModificarMusculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Musculo\FrmRegistrarMusculo.Designer.vb">
+      <DependentUpon>FrmRegistrarMusculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Musculo\FrmRegistrarMusculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -167,6 +197,12 @@
     <EmbeddedResource Include="eGym.resx">
       <DependentUpon>eGym.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicio\FrmListarEjercicio.resx">
+      <DependentUpon>FrmListarEjercicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicio\FrmRegistrarEjercicio.resx">
+      <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maquinas\FrmListarMaquinas.resx">
       <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +211,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musculo\FrmListarMusculo.resx">
+      <DependentUpon>FrmListarMusculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musculo\FrmModificarMusculo.resx">
+      <DependentUpon>FrmModificarMusculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musculo\FrmRegistrarMusculo.resx">
+      <DependentUpon>FrmRegistrarMusculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
