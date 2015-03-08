@@ -85,6 +85,18 @@
     <Compile Include="eGym.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Maquinas\FrmListarMaquinas.Designer.vb">
+      <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinas\FrmListarMaquinas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Maquinas\FrmModificarMaquina.Designer.vb">
+      <DependentUpon>FrmModificarMaquina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinas\FrmModificarMaquina.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Maquinas\FrmRegistrarMaquina.Designer.vb">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
     </Compile>
@@ -92,6 +104,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ModuloGeneral.vb" />
+    <Compile Include="ModuloTipoDePago.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -131,10 +144,35 @@
     <Compile Include="Rol\FrmRegistrarRol.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TipoPago\FrmListarTipoPago.Designer.vb">
-      <DependentUpon>FrmListarTipoPago.vb</DependentUpon>
+ 
+    <Compile Include="TipoPago\FrmModificarTipoDePago.Designer.vb">
+      <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
     </Compile>
-    <Compile Include="TipoPago\FrmListarTipoPago.vb">
+    <Compile Include="TipoPago\FrmModificarTipoDePago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TipoPago\FrmAgregarTipoDePago.Designer.vb">
+      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago\FrmAgregarTipoDePago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TipoPago\FrmListarTipoDePago.Designer.vb">
+      <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago\FrmListarTipoDePago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.Designer.vb">
+      <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TiposMaquinas\FrmModificarTipoDeMaquina.Designer.vb">
+      <DependentUpon>FrmModificarTipoDeMaquina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMaquinas\FrmModificarTipoDeMaquina.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TiposMaquinas\FrmRegistrarTiposMaquinas.Designer.vb">
@@ -147,6 +185,12 @@
   <ItemGroup>
     <EmbeddedResource Include="eGym.resx">
       <DependentUpon>eGym.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maquinas\FrmListarMaquinas.resx">
+      <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maquinas\FrmModificarMaquina.resx">
+      <DependentUpon>FrmModificarMaquina.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
@@ -169,8 +213,20 @@
     <EmbeddedResource Include="Rol\FrmRegistrarRol.resx">
       <DependentUpon>FrmRegistrarRol.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TipoPago\FrmListarTipoPago.resx">
-      <DependentUpon>FrmListarTipoPago.vb</DependentUpon>
+    <EmbeddedResource Include="TipoPago\FrmModificarTipoDePago.resx">
+      <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoPago\FrmAgregarTipoDePago.resx">
+      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoPago\FrmListarTipoDePago.resx">
+      <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiposMaquinas\FrmListarTiposDeMaquinas.resx">
+      <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiposMaquinas\FrmModificarTipoDeMaquina.resx">
+      <DependentUpon>FrmModificarTipoDeMaquina.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TiposMaquinas\FrmRegistrarTiposMaquinas.resx">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>

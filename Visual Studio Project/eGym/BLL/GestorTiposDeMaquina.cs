@@ -14,15 +14,33 @@ namespace BLL
 
         private UnitOfWork UoW = new UnitOfWork();
 
-        public IEnumerable<TipoDeMaquina> listarMaquinas()
+        public IEnumerable<TipoDeMaquina> listarTiposDeMaquinas()
         {
             return UoW.TipoDeMaquinaRepository.GetAll();
         }
 
-        public void insertarTipoDeMaquina(string pnombre, string pdescripcion, Image pfoto)
+        public TipoDeMaquina GetMaquinaById(int pid)
         {
-            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pnombre, pdescripcion, pfoto);
+            return UoW.TipoDeMaquinaRepository.GetById(pid);
+        }
+
+        public void insertarTipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        {
+            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pfoto, pnombre, pdescripcion, phabilitado);
             UoW.TipoDeMaquinaRepository.Insert(tipoDeMaquina);
+            UoW.TipoDeMaquinaRepository.Save();
+        }
+
+        public void modificarTipoDeMaquina(int pid, byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        {
+            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pid, pfoto, pnombre, pdescripcion, phabilitado);
+            UoW.TipoDeMaquinaRepository.Update(tipoDeMaquina);
+            UoW.TipoDeMaquinaRepository.Save();
+        }
+
+        public void eliminarTipoDeMaquina(TipoDeMaquina ptipoMaquina)
+        {
+            UoW.TipoDeMaquinaRepository.Delete(ptipoMaquina);
             UoW.TipoDeMaquinaRepository.Save();
         }
 

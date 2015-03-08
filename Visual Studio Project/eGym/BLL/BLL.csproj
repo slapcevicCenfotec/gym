@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +42,9 @@
   <ItemGroup>
     <Compile Include="GestorPermiso.cs" />
     <Compile Include="GestorRol.cs" />
+    <Compile Include="GestorMaquina.cs" />
+    <Compile Include="GestorTipoDePago.cs" />
+    <Compile Include="GestorTiposDeMaquina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +56,9 @@
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,7 +12,7 @@ namespace EL
         #region variables
 
         private int _id;
-        private Image _foto;
+        private byte[] _foto;
         private string _nombre;
         private string _descripcion;
         private Boolean _habilitado;
@@ -27,7 +27,7 @@ namespace EL
             set { _id = value; }
         }
 
-        public Image Foto
+        public byte[] Foto
         {
             get { return _foto; }
             set { _foto = value; }
@@ -53,11 +53,21 @@ namespace EL
 
         #endregion
 
-        public TipoDeMaquina(string pnombre, string pdescripcion, Image pfoto)
+        public TipoDeMaquina(int pid, byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
         {
+            Id = pid;
+            Foto = pfoto;
             Nombre = pnombre;
             Descripcion = pdescripcion;
+            Habilitado = phabilitado;
+        }
+
+        public TipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        {
             Foto = pfoto;
+            Nombre = pnombre;
+            Descripcion = pdescripcion;
+            Habilitado = phabilitado;
         }
 
         public TipoDeMaquina()

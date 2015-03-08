@@ -24,21 +24,24 @@ Partial Class FrmModificarTipoDeMaquina
     Private Sub InitializeComponent()
         Me.txtTipoDeMaquina = New MetroFramework.Controls.MetroTextBox()
         Me.rtbDescripcion = New System.Windows.Forms.RichTextBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ofdBuscar = New System.Windows.Forms.OpenFileDialog()
         Me.pbxFoto = New System.Windows.Forms.PictureBox()
         Me.lblTipoDeMaquina = New MetroFramework.Controls.MetroLabel()
         Me.lblDescripcion = New MetroFramework.Controls.MetroLabel()
         Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
-        Me.MetroTextBox1txtNombreImagen = New MetroFramework.Controls.MetroTextBox()
+        Me.txtNombreImagen = New MetroFramework.Controls.MetroTextBox()
         Me.btnAgregarFoto = New MetroFramework.Controls.MetroButton()
+        Me.lblValidarDescripcion = New MetroFramework.Controls.MetroLabel()
+        Me.lblValidarNombre = New MetroFramework.Controls.MetroLabel()
+        Me.lblValidarFoto = New MetroFramework.Controls.MetroLabel()
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtTipoDeMaquina
         '
-        Me.txtTipoDeMaquina.Lines = New String() {"MetroTextBox1"}
-        Me.txtTipoDeMaquina.Location = New System.Drawing.Point(260, 40)
+        Me.txtTipoDeMaquina.Lines = New String(-1) {}
+        Me.txtTipoDeMaquina.Location = New System.Drawing.Point(170, 74)
         Me.txtTipoDeMaquina.MaxLength = 32767
         Me.txtTipoDeMaquina.Name = "txtTipoDeMaquina"
         Me.txtTipoDeMaquina.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -46,24 +49,22 @@ Partial Class FrmModificarTipoDeMaquina
         Me.txtTipoDeMaquina.SelectedText = ""
         Me.txtTipoDeMaquina.Size = New System.Drawing.Size(200, 23)
         Me.txtTipoDeMaquina.TabIndex = 2
-        Me.txtTipoDeMaquina.Text = "MetroTextBox1"
         Me.txtTipoDeMaquina.UseSelectable = True
         '
         'rtbDescripcion
         '
-        Me.rtbDescripcion.Location = New System.Drawing.Point(260, 88)
+        Me.rtbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtbDescripcion.Font = New System.Drawing.Font("Segoe UI Emoji", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rtbDescripcion.Location = New System.Drawing.Point(170, 122)
         Me.rtbDescripcion.Name = "rtbDescripcion"
         Me.rtbDescripcion.Size = New System.Drawing.Size(200, 100)
         Me.rtbDescripcion.TabIndex = 3
         Me.rtbDescripcion.Text = ""
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'pbxFoto
         '
-        Me.pbxFoto.Location = New System.Drawing.Point(543, 40)
+        Me.pbxFoto.BackColor = System.Drawing.Color.White
+        Me.pbxFoto.Location = New System.Drawing.Point(453, 74)
         Me.pbxFoto.Name = "pbxFoto"
         Me.pbxFoto.Size = New System.Drawing.Size(148, 148)
         Me.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -73,7 +74,7 @@ Partial Class FrmModificarTipoDeMaquina
         'lblTipoDeMaquina
         '
         Me.lblTipoDeMaquina.AutoSize = True
-        Me.lblTipoDeMaquina.Location = New System.Drawing.Point(100, 42)
+        Me.lblTipoDeMaquina.Location = New System.Drawing.Point(10, 76)
         Me.lblTipoDeMaquina.Name = "lblTipoDeMaquina"
         Me.lblTipoDeMaquina.Size = New System.Drawing.Size(109, 19)
         Me.lblTipoDeMaquina.TabIndex = 5
@@ -82,7 +83,7 @@ Partial Class FrmModificarTipoDeMaquina
         'lblDescripcion
         '
         Me.lblDescripcion.AutoSize = True
-        Me.lblDescripcion.Location = New System.Drawing.Point(100, 88)
+        Me.lblDescripcion.Location = New System.Drawing.Point(10, 122)
         Me.lblDescripcion.Name = "lblDescripcion"
         Me.lblDescripcion.Size = New System.Drawing.Size(76, 19)
         Me.lblDescripcion.TabIndex = 6
@@ -90,7 +91,7 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(593, 3)
+        Me.btnGuardar.Location = New System.Drawing.Point(433, 45)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 7
@@ -99,41 +100,80 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(674, 3)
+        Me.btnCancelar.Location = New System.Drawing.Point(526, 45)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 8
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseSelectable = True
         '
-        'MetroTextBox1txtNombreImagen
+        'txtNombreImagen
         '
-        Me.MetroTextBox1txtNombreImagen.Lines = New String(-1) {}
-        Me.MetroTextBox1txtNombreImagen.Location = New System.Drawing.Point(543, 213)
-        Me.MetroTextBox1txtNombreImagen.MaxLength = 32767
-        Me.MetroTextBox1txtNombreImagen.Name = "MetroTextBox1txtNombreImagen"
-        Me.MetroTextBox1txtNombreImagen.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox1txtNombreImagen.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox1txtNombreImagen.SelectedText = ""
-        Me.MetroTextBox1txtNombreImagen.Size = New System.Drawing.Size(148, 23)
-        Me.MetroTextBox1txtNombreImagen.TabIndex = 9
-        Me.MetroTextBox1txtNombreImagen.UseSelectable = True
+        Me.txtNombreImagen.Lines = New String(-1) {}
+        Me.txtNombreImagen.Location = New System.Drawing.Point(453, 247)
+        Me.txtNombreImagen.MaxLength = 32767
+        Me.txtNombreImagen.Name = "txtNombreImagen"
+        Me.txtNombreImagen.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNombreImagen.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNombreImagen.SelectedText = ""
+        Me.txtNombreImagen.Size = New System.Drawing.Size(148, 23)
+        Me.txtNombreImagen.TabIndex = 9
+        Me.txtNombreImagen.UseSelectable = True
         '
         'btnAgregarFoto
         '
-        Me.btnAgregarFoto.Location = New System.Drawing.Point(597, 244)
+        Me.btnAgregarFoto.Location = New System.Drawing.Point(526, 74)
         Me.btnAgregarFoto.Name = "btnAgregarFoto"
         Me.btnAgregarFoto.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregarFoto.TabIndex = 10
-        Me.btnAgregarFoto.Text = "Agregar"
+        Me.btnAgregarFoto.Text = "Cambiar"
         Me.btnAgregarFoto.UseSelectable = True
+        '
+        'lblValidarDescripcion
+        '
+        Me.lblValidarDescripcion.AutoSize = True
+        Me.lblValidarDescripcion.BackColor = System.Drawing.Color.Transparent
+        Me.lblValidarDescripcion.ForeColor = System.Drawing.Color.Red
+        Me.lblValidarDescripcion.Location = New System.Drawing.Point(170, 229)
+        Me.lblValidarDescripcion.Name = "lblValidarDescripcion"
+        Me.lblValidarDescripcion.Size = New System.Drawing.Size(0, 0)
+        Me.lblValidarDescripcion.TabIndex = 13
+        Me.lblValidarDescripcion.UseCustomBackColor = True
+        Me.lblValidarDescripcion.UseCustomForeColor = True
+        '
+        'lblValidarNombre
+        '
+        Me.lblValidarNombre.AutoSize = True
+        Me.lblValidarNombre.BackColor = System.Drawing.Color.Transparent
+        Me.lblValidarNombre.ForeColor = System.Drawing.Color.Red
+        Me.lblValidarNombre.Location = New System.Drawing.Point(170, 99)
+        Me.lblValidarNombre.Name = "lblValidarNombre"
+        Me.lblValidarNombre.Size = New System.Drawing.Size(0, 0)
+        Me.lblValidarNombre.TabIndex = 14
+        Me.lblValidarNombre.UseCustomBackColor = True
+        Me.lblValidarNombre.UseCustomForeColor = True
+        '
+        'lblValidarFoto
+        '
+        Me.lblValidarFoto.AutoSize = True
+        Me.lblValidarFoto.BackColor = System.Drawing.Color.Transparent
+        Me.lblValidarFoto.ForeColor = System.Drawing.Color.Red
+        Me.lblValidarFoto.Location = New System.Drawing.Point(453, 225)
+        Me.lblValidarFoto.Name = "lblValidarFoto"
+        Me.lblValidarFoto.Size = New System.Drawing.Size(0, 0)
+        Me.lblValidarFoto.TabIndex = 15
+        Me.lblValidarFoto.UseCustomBackColor = True
+        Me.lblValidarFoto.UseCustomForeColor = True
         '
         'FrmModificarTipoDeMaquina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblValidarFoto)
+        Me.Controls.Add(Me.lblValidarNombre)
+        Me.Controls.Add(Me.lblValidarDescripcion)
         Me.Controls.Add(Me.btnAgregarFoto)
-        Me.Controls.Add(Me.MetroTextBox1txtNombreImagen)
+        Me.Controls.Add(Me.txtNombreImagen)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.lblDescripcion)
@@ -142,7 +182,7 @@ Partial Class FrmModificarTipoDeMaquina
         Me.Controls.Add(Me.rtbDescripcion)
         Me.Controls.Add(Me.txtTipoDeMaquina)
         Me.Name = "FrmModificarTipoDeMaquina"
-        Me.Size = New System.Drawing.Size(968, 600)
+        Me.Size = New System.Drawing.Size(650, 400)
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -150,13 +190,16 @@ Partial Class FrmModificarTipoDeMaquina
     End Sub
     Friend WithEvents txtTipoDeMaquina As MetroFramework.Controls.MetroTextBox
     Friend WithEvents rtbDescripcion As System.Windows.Forms.RichTextBox
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ofdBuscar As System.Windows.Forms.OpenFileDialog
     Friend WithEvents pbxFoto As System.Windows.Forms.PictureBox
     Friend WithEvents lblTipoDeMaquina As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblDescripcion As MetroFramework.Controls.MetroLabel
     Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroTextBox1txtNombreImagen As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtNombreImagen As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btnAgregarFoto As MetroFramework.Controls.MetroButton
+    Friend WithEvents lblValidarDescripcion As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblValidarNombre As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblValidarFoto As MetroFramework.Controls.MetroLabel
 
 End Class

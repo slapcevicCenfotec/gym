@@ -16,7 +16,7 @@ namespace EL
         private DateTime _fechaNacimiento;
         private string _correoElectronico;
         private string _contrasena;
-        private Image _fotografia;
+      //  private Image _fotografia;
         private DateTime _fechaIngreso;
         private string _numeroTelefono;
         private string _numeroCelular;
@@ -74,11 +74,11 @@ namespace EL
             get { return _contrasena; }
             set { _contrasena = value; }
         }
-        public Image Fotografia
-        {
-            get { return _fotografia; }
-            set { _fotografia = value; }
-        }
+        //public Image Fotografia
+        //{
+        //    get { return _fotografia; }
+        //    set { _fotografia = value; }
+        //}
         public DateTime FechaIngreso
         {
             get { return _fechaIngreso; }

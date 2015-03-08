@@ -24,7 +24,11 @@ namespace DAL
             try
             {
                 var appSR = new AppSettingsReader();
+<<<<<<< HEAD
                 connString = ConfigurationManager.ConnectionStrings["eGymDB"].ConnectionString;
+=======
+                connString = ConfigurationManager.ConnectionStrings["eGym"].ConnectionString;
+>>>>>>> 729a6dbcfcd1af619261320d608516419cd4b8f7
                 return connString;
             }
             catch (Exception ex)
