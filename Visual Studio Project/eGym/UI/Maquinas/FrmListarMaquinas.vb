@@ -83,4 +83,8 @@ Public Class FrmListarMaquinas
     Private Sub txtBuscar_Click(sender As Object, e As EventArgs) Handles txtBuscar.Click
 
     End Sub
+
+    Private Sub tblMaquinas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblMaquinas.CellContentClick
+
+    End Sub
 End Class

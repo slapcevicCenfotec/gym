@@ -47,7 +47,6 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
-    <Compile Include="Repositories\TipoDeMaquinaRepository.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,7 +58,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Repositories\EjercicioRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\MaquinaRepository.cs" />
     <Compile Include="Repositories\MusculoRepository.cs" />
     <Compile Include="Repositories\TipoDeMaquinaRepository.cs" />
