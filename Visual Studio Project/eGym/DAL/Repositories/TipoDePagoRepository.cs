@@ -185,14 +185,23 @@ namespace DAL.Repositories
             }
             catch (Exception ex)
             {
-
+                
             }
            
         }
 
         private void DeleteTipoDePago(TipoDePago objTipoDePago)
         {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@pId", objTipoDePago.Id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_CambiarEstadoTipoDePago");
+            }
+            catch (Exception ex)
+            {
 
+            }
         }
 
     }
