@@ -3,9 +3,17 @@
     Private Sub FrmAgregarTipoDePago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+    Private Sub regresaListar()
+        Dim ctr As Control
+        ctr = New FrmListarTipoDePago
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
+    End Sub
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
         objGestorTipoPago.insertarTipoDePago(txtNombre.Text, txtMonto.Text, txtDuracion.Text)
-        Dim ready As String
+        Me.regresaListar()
+
     End Sub
     Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
 
@@ -26,10 +34,6 @@
 
     End Sub
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
-        Dim ctr As Control
-        ctr = New FrmListarTipoDePago
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        Me.regresaListar()
     End Sub
 End Class

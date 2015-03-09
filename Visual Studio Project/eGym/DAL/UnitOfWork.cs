@@ -12,8 +12,14 @@ namespace DAL
     {
 
         private IRepository<TipoDeMaquina> _tipoDeMaquinaRepository;
+        private IRepository<Rol> _rolRepository;
+        private IRepository<Permiso> _permisoRepository;
+        private IRepository<Maquina> _maquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
         private IRepository<Usuario> _repositoryUsuario;
+
+        private IRepository<Musculo> _musculoRepository;
+        private IRepository<Ejercicio> _ejercicioRepository;
 
         public IRepository<TipoDeMaquina> TipoDeMaquinaRepository
         {
@@ -26,15 +32,54 @@ namespace DAL
                 return _tipoDeMaquinaRepository;
             }
         }
-        public IRepository<TipoDePago> TipoDePagoRepository
+        public IRepository<Rol> RolRepository
         {
             get
             {
-                if (this._tipoDePagoRepository == null)
+                if (this._rolRepository == null)
                 {
-                    this._tipoDePagoRepository = new TipoDePagoRepository();
+                    this._rolRepository = new RolRepository();
                 }
-                return _tipoDePagoRepository;
+                return _rolRepository;
+            }
+        }
+
+        public IRepository<Permiso> PermisosRepository
+        {
+            get
+            {
+                if (this._permisoRepository == null)
+                {
+                    this._permisoRepository = new PermisoRepository();
+                }
+                return _permisoRepository;
+            }
+        }
+
+
+        public IRepository<Musculo> MusculoRepository
+        {
+            get
+            {
+                if (this._musculoRepository == null)
+                {
+                    this._musculoRepository = new MusculoRepository();
+                }
+
+                return _musculoRepository;
+            }
+
+        }
+
+        public IRepository<Ejercicio> EjercicioRepository
+        {
+            get
+            {
+                if (this._ejercicioRepository == null)
+                {
+                    this._ejercicioRepository = new EjercicioRepository();
+                }
+                return _ejercicioRepository;
             }
         }
 
@@ -50,5 +95,28 @@ namespace DAL
             }
         }
 
+        public IRepository<Maquina> MaquinaRepository
+        {
+            get
+            {
+                if (this._maquinaRepository == null)
+                {
+                    this._maquinaRepository = new MaquinaRepository();
+                }
+                return _maquinaRepository;
+            }
+        }
+
+        public IRepository<TipoDePago> TipoDePagoRepository
+        {
+            get
+            {
+                if (this._tipoDePagoRepository == null)
+                {
+                    this._tipoDePagoRepository = new TipoDePagoRepository();
+                }
+                return _tipoDePagoRepository;
+            }
+        }
     }
 }

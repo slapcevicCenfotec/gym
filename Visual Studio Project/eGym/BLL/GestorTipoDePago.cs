@@ -13,7 +13,7 @@ namespace BLL
     public class GestorTipoDePago
     {
         private UnitOfWork UoW = new UnitOfWork();
-        public IEnumerable<TipoDePago> listarPagos()
+        public IEnumerable<TipoDePago> listarTiposDePago()
         {
             return UoW.TipoDePagoRepository.GetAll();
         }
@@ -21,6 +21,12 @@ namespace BLL
         {
             TipoDePago tipoDePago = new TipoDePago(pNombre, pMonto, pDuracion);
             UoW.TipoDePagoRepository.Insert(tipoDePago);
+            UoW.TipoDePagoRepository.Save();
+        }
+        public void modificarTipoDePago(int pId, String pNombre, float pMonto, int pDuracion, bool pHabilitado)
+        {
+            TipoDePago tipoDePago = new TipoDePago(pId, pNombre, pMonto, pDuracion, pHabilitado);
+            UoW.TipoDePagoRepository.Update(tipoDePago);
             UoW.TipoDePagoRepository.Save();
         }
 

@@ -159,9 +159,7 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@pFoto", objTipoDeMaquina.Foto));
-                Console.WriteLine(objTipoDeMaquina.Foto);
                 cmd.Parameters.Add(new SqlParameter("@pNombre", objTipoDeMaquina.Nombre));
-                Console.WriteLine(objTipoDeMaquina.Nombre);
                 cmd.Parameters.Add(new SqlParameter("@pDescripcion", objTipoDeMaquina.Descripcion));
                 cmd.Parameters.Add(new SqlParameter("@pHabilitado", objTipoDeMaquina.Habilitado));
 
@@ -200,8 +198,8 @@ namespace DAL.Repositories
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@Id", objTipoDeMaquina.Id));
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "pa_borrar_TipoDeMaquina");
+                cmd.Parameters.Add(new SqlParameter("@pId", objTipoDeMaquina.Id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarTipoDeMaquina");
 
             }
             catch (SqlException ex)
