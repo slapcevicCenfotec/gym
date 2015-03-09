@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports EL.Usuario
 
 Public Class frmIniciarSesion
 
@@ -6,9 +7,21 @@ Public Class frmIniciarSesion
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
 
         Dim validado As Boolean = validarInicio()
+        If validado = True Then
+            Dim correo As String = txtNombreUsuario.Text
+            Dim contrasena As String = txtContrasena.Text
+            Dim usuario As EL.Usuario
+            usuario = objGestorSesion.iniciarSesion(correo, contrasena)
 
-        Dim correo As String = txtNombreUsuario.Text
-        Dim contrasena As String = txtContrasena.Text
+            If usuario Is Nothing Then
+                lblError.Text = "Este nombre de usuario o contraseña no son válidos" + Constants.vbCrLf
+                lblError.Visible = True
+            Else
+                
+            End If
+
+        End If
+
     End Sub
 
     Private Function validarInicio() As Boolean
@@ -20,17 +33,24 @@ Public Class frmIniciarSesion
             resul = False
             lblError.Text = "Ingrese un correo válido para el usuario" + Constants.vbCrLf
             lblError.Visible = True
+            txtNombreUsuario.BackColor = Color.Pink
         Else
             If EmailRegex.IsMatch(txtNombreUsuario.Text) = False Then
                 resul = False
                 lblError.Text = "El campo del correo debe tener formato de correo" + Constants.vbCrLf
                 lblError.Visible = True
+                txtNombreUsuario.BackColor = Color.Pink
+            Else
+                txtNombreUsuario.BackColor = Color.White
             End If
         End If
         If txtContrasena.Text = Nothing Then
             resul = False
             lblError.Text += "Debe ingresar una contraseña"
             lblError.Visible = True
+            txtContrasena.BackColor = Color.Pink
+        Else
+            txtContrasena.BackColor = Color.White
         End If
 
         Return resul

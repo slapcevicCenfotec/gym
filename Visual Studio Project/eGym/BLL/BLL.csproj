@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gestor.cs" />
+    <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorTipoDePago.cs" />
     <Compile Include="GestorTiposDeMaquina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

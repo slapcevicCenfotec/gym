@@ -100,5 +100,17 @@ namespace EL
             set { _habilitado = value; }
         }
         #endregion
+
+        public Usuario(string nombre, string apellido)
+        {
+            // TODO: Complete member initialization
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+        }
+
+        public Usuario()
+        {
+            // TODO: Complete member initialization
+        }
     }
 }

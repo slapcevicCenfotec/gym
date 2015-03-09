@@ -68,6 +68,8 @@ Partial Class frmIniciarSesion
         Me.txtNombreUsuario.SelectedText = ""
         Me.txtNombreUsuario.Size = New System.Drawing.Size(152, 23)
         Me.txtNombreUsuario.TabIndex = 3
+        Me.txtNombreUsuario.UseCustomBackColor = True
+        Me.txtNombreUsuario.UseCustomForeColor = True
         Me.txtNombreUsuario.UseSelectable = True
         '
         'txtContrasena
@@ -81,6 +83,8 @@ Partial Class frmIniciarSesion
         Me.txtContrasena.SelectedText = ""
         Me.txtContrasena.Size = New System.Drawing.Size(152, 23)
         Me.txtContrasena.TabIndex = 4
+        Me.txtContrasena.UseCustomBackColor = True
+        Me.txtContrasena.UseCustomForeColor = True
         Me.txtContrasena.UseSelectable = True
         '
         'lblError
@@ -92,6 +96,7 @@ Partial Class frmIniciarSesion
         Me.lblError.Size = New System.Drawing.Size(39, 19)
         Me.lblError.TabIndex = 5
         Me.lblError.Text = "Error"
+        Me.lblError.UseCustomForeColor = True
         Me.lblError.Visible = False
         '
         'frmIniciarSesion

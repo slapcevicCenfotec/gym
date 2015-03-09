@@ -13,6 +13,7 @@ namespace DAL
 
         private IRepository<TipoDeMaquina> _tipoDeMaquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
+        private IRepository<Usuario> _repositoryUsuario;
 
         public IRepository<TipoDeMaquina> TipoDeMaquinaRepository
         {
@@ -34,6 +35,18 @@ namespace DAL
                     this._tipoDePagoRepository = new TipoDePagoRepository();
                 }
                 return _tipoDePagoRepository;
+            }
+        }
+
+        public IRepository<Usuario> RepositoryUsuario
+        {
+            get
+            {
+                if (_repositoryUsuario == null)
+                {
+                    _repositoryUsuario = new UsuarioRepository();
+                }
+                return _repositoryUsuario;
             }
         }
 
