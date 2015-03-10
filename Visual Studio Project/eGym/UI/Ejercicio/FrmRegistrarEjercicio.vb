@@ -28,12 +28,20 @@ Public Class FrmRegistrarEjercicio
         'objGestorTipoDeMaquina.insertarTipoDeMaquina(foto, nombre, descripcion, habilitado)
         'clearScreen()
 
-
         Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
         Dim bReader As New BinaryReader(fs)
         Dim foto(fs.Length) As Byte
         bReader.Read(foto, 0, fs.Length)
         fs.Close()
+
+        Dim fs2 As New FileStream(ofdBuscar2.FileName, FileMode.Open, FileAccess.Read)
+        Dim bReader2 As New BinaryReader(fs)
+        Dim foto2(fs.Length) As Byte
+        bReader.Read(foto, 0, fs.Length)
+        fs.Close()
+
+
+
 
         objeGestorEjercicio.insertarEjercicio(foto)
 
@@ -42,7 +50,7 @@ Public Class FrmRegistrarEjercicio
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
         ofdBuscar2.Filter = "All Files (*.*)|*.*|JPEG Files (*.jpeg)|*.jpeg|JPEG Files (*.jpg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
         ofdBuscar2.ShowDialog()
-        ptbPosicionInicial.Image = Image.FromFile(ofdBuscar.FileName)
-        txtNombreImagen.Text = ofdBuscar.SafeFileName
+        ptbPosicionFinal.Image = Image.FromFile(ofdBuscar.FileName)
+        txtNombreImagen2.Text = ofdBuscar.SafeFileName
     End Sub
 End Class

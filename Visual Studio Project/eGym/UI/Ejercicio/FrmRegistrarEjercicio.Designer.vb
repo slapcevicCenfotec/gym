@@ -44,7 +44,10 @@ Partial Class FrmRegistrarEjercicio
         Me.txtNombreImagen = New MetroFramework.Controls.MetroTextBox()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.ofdBuscar2 = New System.Windows.Forms.OpenFileDialog()
+        Me.ptbPosicionFinal = New System.Windows.Forms.PictureBox()
+        Me.txtNombreImagen2 = New MetroFramework.Controls.MetroTextBox()
         CType(Me.ptbPosicionInicial, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ptbPosicionFinal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -235,7 +238,7 @@ Partial Class FrmRegistrarEjercicio
         'txtNombreImagen
         '
         Me.txtNombreImagen.Lines = New String() {"MetroTextBox7"}
-        Me.txtNombreImagen.Location = New System.Drawing.Point(339, 176)
+        Me.txtNombreImagen.Location = New System.Drawing.Point(445, 112)
         Me.txtNombreImagen.MaxLength = 32767
         Me.txtNombreImagen.Name = "txtNombreImagen"
         Me.txtNombreImagen.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -255,10 +258,34 @@ Partial Class FrmRegistrarEjercicio
         Me.MetroButton2.Text = "Agregar imagen"
         Me.MetroButton2.UseSelectable = True
         '
+        'ptbPosicionFinal
+        '
+        Me.ptbPosicionFinal.Location = New System.Drawing.Point(339, 180)
+        Me.ptbPosicionFinal.Name = "ptbPosicionFinal"
+        Me.ptbPosicionFinal.Size = New System.Drawing.Size(100, 50)
+        Me.ptbPosicionFinal.TabIndex = 20
+        Me.ptbPosicionFinal.TabStop = False
+        '
+        'txtNombreImagen2
+        '
+        Me.txtNombreImagen2.Lines = New String() {"MetroTextBox7"}
+        Me.txtNombreImagen2.Location = New System.Drawing.Point(445, 207)
+        Me.txtNombreImagen2.MaxLength = 32767
+        Me.txtNombreImagen2.Name = "txtNombreImagen2"
+        Me.txtNombreImagen2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNombreImagen2.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNombreImagen2.SelectedText = ""
+        Me.txtNombreImagen2.Size = New System.Drawing.Size(100, 23)
+        Me.txtNombreImagen2.TabIndex = 21
+        Me.txtNombreImagen2.Text = "MetroTextBox7"
+        Me.txtNombreImagen2.UseSelectable = True
+        '
         'FrmRegistrarEjercicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.txtNombreImagen2)
+        Me.Controls.Add(Me.ptbPosicionFinal)
         Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.txtNombreImagen)
         Me.Controls.Add(Me.ptbPosicionInicial)
@@ -282,6 +309,7 @@ Partial Class FrmRegistrarEjercicio
         Me.Name = "FrmRegistrarEjercicio"
         Me.Size = New System.Drawing.Size(619, 378)
         CType(Me.ptbPosicionInicial, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ptbPosicionFinal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -308,5 +336,7 @@ Partial Class FrmRegistrarEjercicio
     Friend WithEvents txtNombreImagen As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents ofdBuscar2 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ptbPosicionFinal As System.Windows.Forms.PictureBox
+    Friend WithEvents txtNombreImagen2 As MetroFramework.Controls.MetroTextBox
 
 End Class
