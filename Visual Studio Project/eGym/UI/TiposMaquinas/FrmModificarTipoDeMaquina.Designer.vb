@@ -22,6 +22,8 @@ Partial Class FrmModificarTipoDeMaquina
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmModificarTipoDeMaquina))
         Me.txtTipoDeMaquina = New MetroFramework.Controls.MetroTextBox()
         Me.rtbDescripcion = New System.Windows.Forms.RichTextBox()
         Me.ofdBuscar = New System.Windows.Forms.OpenFileDialog()
@@ -32,10 +34,9 @@ Partial Class FrmModificarTipoDeMaquina
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.txtNombreImagen = New MetroFramework.Controls.MetroTextBox()
         Me.btnAgregarFoto = New MetroFramework.Controls.MetroButton()
-        Me.lblValidarDescripcion = New MetroFramework.Controls.MetroLabel()
-        Me.lblValidarNombre = New MetroFramework.Controls.MetroLabel()
-        Me.lblValidarFoto = New MetroFramework.Controls.MetroLabel()
+        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtTipoDeMaquina
@@ -129,49 +130,17 @@ Partial Class FrmModificarTipoDeMaquina
         Me.btnAgregarFoto.Text = "Cambiar"
         Me.btnAgregarFoto.UseSelectable = True
         '
-        'lblValidarDescripcion
+        'ErrorProvider
         '
-        Me.lblValidarDescripcion.AutoSize = True
-        Me.lblValidarDescripcion.BackColor = System.Drawing.Color.Transparent
-        Me.lblValidarDescripcion.ForeColor = System.Drawing.Color.Red
-        Me.lblValidarDescripcion.Location = New System.Drawing.Point(170, 229)
-        Me.lblValidarDescripcion.Name = "lblValidarDescripcion"
-        Me.lblValidarDescripcion.Size = New System.Drawing.Size(0, 0)
-        Me.lblValidarDescripcion.TabIndex = 13
-        Me.lblValidarDescripcion.UseCustomBackColor = True
-        Me.lblValidarDescripcion.UseCustomForeColor = True
-        '
-        'lblValidarNombre
-        '
-        Me.lblValidarNombre.AutoSize = True
-        Me.lblValidarNombre.BackColor = System.Drawing.Color.Transparent
-        Me.lblValidarNombre.ForeColor = System.Drawing.Color.Red
-        Me.lblValidarNombre.Location = New System.Drawing.Point(170, 99)
-        Me.lblValidarNombre.Name = "lblValidarNombre"
-        Me.lblValidarNombre.Size = New System.Drawing.Size(0, 0)
-        Me.lblValidarNombre.TabIndex = 14
-        Me.lblValidarNombre.UseCustomBackColor = True
-        Me.lblValidarNombre.UseCustomForeColor = True
-        '
-        'lblValidarFoto
-        '
-        Me.lblValidarFoto.AutoSize = True
-        Me.lblValidarFoto.BackColor = System.Drawing.Color.Transparent
-        Me.lblValidarFoto.ForeColor = System.Drawing.Color.Red
-        Me.lblValidarFoto.Location = New System.Drawing.Point(453, 225)
-        Me.lblValidarFoto.Name = "lblValidarFoto"
-        Me.lblValidarFoto.Size = New System.Drawing.Size(0, 0)
-        Me.lblValidarFoto.TabIndex = 15
-        Me.lblValidarFoto.UseCustomBackColor = True
-        Me.lblValidarFoto.UseCustomForeColor = True
+        Me.ErrorProvider.BlinkRate = 0
+        Me.ErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider.ContainerControl = Me
+        Me.ErrorProvider.Icon = CType(resources.GetObject("ErrorProvider.Icon"), System.Drawing.Icon)
         '
         'FrmModificarTipoDeMaquina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.lblValidarFoto)
-        Me.Controls.Add(Me.lblValidarNombre)
-        Me.Controls.Add(Me.lblValidarDescripcion)
         Me.Controls.Add(Me.btnAgregarFoto)
         Me.Controls.Add(Me.txtNombreImagen)
         Me.Controls.Add(Me.btnCancelar)
@@ -184,6 +153,7 @@ Partial Class FrmModificarTipoDeMaquina
         Me.Name = "FrmModificarTipoDeMaquina"
         Me.Size = New System.Drawing.Size(650, 400)
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -198,8 +168,6 @@ Partial Class FrmModificarTipoDeMaquina
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
     Friend WithEvents txtNombreImagen As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btnAgregarFoto As MetroFramework.Controls.MetroButton
-    Friend WithEvents lblValidarDescripcion As MetroFramework.Controls.MetroLabel
-    Friend WithEvents lblValidarNombre As MetroFramework.Controls.MetroLabel
-    Friend WithEvents lblValidarFoto As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ErrorProvider As System.Windows.Forms.ErrorProvider
 
 End Class

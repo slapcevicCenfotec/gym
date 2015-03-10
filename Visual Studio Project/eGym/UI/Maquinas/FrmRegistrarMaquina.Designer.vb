@@ -22,6 +22,8 @@ Partial Class FrmRegistrarMaquina
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRegistrarMaquina))
         Me.lblTipoDeMaquina = New MetroFramework.Controls.MetroLabel()
         Me.lblNumeroDeActivo = New MetroFramework.Controls.MetroLabel()
         Me.lblNumeroDeMaquina = New MetroFramework.Controls.MetroLabel()
@@ -30,9 +32,8 @@ Partial Class FrmRegistrarMaquina
         Me.txtNumeroDeActivo = New MetroFramework.Controls.MetroTextBox()
         Me.txtNumeroDeMaquina = New MetroFramework.Controls.MetroTextBox()
         Me.cmbTipoDeMaquina = New MetroFramework.Controls.MetroComboBox()
-        Me.lblValidarTipoDeMaquina = New MetroFramework.Controls.MetroLabel()
-        Me.lblValidarNumeroActivo = New MetroFramework.Controls.MetroLabel()
-        Me.lblValidarNumeroMaquina = New MetroFramework.Controls.MetroLabel()
+        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTipoDeMaquina
@@ -116,49 +117,17 @@ Partial Class FrmRegistrarMaquina
         Me.cmbTipoDeMaquina.TabIndex = 1
         Me.cmbTipoDeMaquina.UseSelectable = True
         '
-        'lblValidarTipoDeMaquina
+        'ErrorProvider
         '
-        Me.lblValidarTipoDeMaquina.AutoSize = True
-        Me.lblValidarTipoDeMaquina.BackColor = System.Drawing.Color.Transparent
-        Me.lblValidarTipoDeMaquina.ForeColor = System.Drawing.Color.Red
-        Me.lblValidarTipoDeMaquina.Location = New System.Drawing.Point(368, 154)
-        Me.lblValidarTipoDeMaquina.Name = "lblValidarTipoDeMaquina"
-        Me.lblValidarTipoDeMaquina.Size = New System.Drawing.Size(0, 0)
-        Me.lblValidarTipoDeMaquina.TabIndex = 0
-        Me.lblValidarTipoDeMaquina.UseCustomBackColor = True
-        Me.lblValidarTipoDeMaquina.UseCustomForeColor = True
-        '
-        'lblValidarNumeroActivo
-        '
-        Me.lblValidarNumeroActivo.AutoSize = True
-        Me.lblValidarNumeroActivo.BackColor = System.Drawing.Color.Transparent
-        Me.lblValidarNumeroActivo.ForeColor = System.Drawing.Color.Red
-        Me.lblValidarNumeroActivo.Location = New System.Drawing.Point(368, 210)
-        Me.lblValidarNumeroActivo.Name = "lblValidarNumeroActivo"
-        Me.lblValidarNumeroActivo.Size = New System.Drawing.Size(0, 0)
-        Me.lblValidarNumeroActivo.TabIndex = 0
-        Me.lblValidarNumeroActivo.UseCustomBackColor = True
-        Me.lblValidarNumeroActivo.UseCustomForeColor = True
-        '
-        'lblValidarNumeroMaquina
-        '
-        Me.lblValidarNumeroMaquina.AutoSize = True
-        Me.lblValidarNumeroMaquina.BackColor = System.Drawing.Color.Transparent
-        Me.lblValidarNumeroMaquina.ForeColor = System.Drawing.Color.Red
-        Me.lblValidarNumeroMaquina.Location = New System.Drawing.Point(368, 279)
-        Me.lblValidarNumeroMaquina.Name = "lblValidarNumeroMaquina"
-        Me.lblValidarNumeroMaquina.Size = New System.Drawing.Size(0, 0)
-        Me.lblValidarNumeroMaquina.TabIndex = 0
-        Me.lblValidarNumeroMaquina.UseCustomBackColor = True
-        Me.lblValidarNumeroMaquina.UseCustomForeColor = True
+        Me.ErrorProvider.BlinkRate = 0
+        Me.ErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider.ContainerControl = Me
+        Me.ErrorProvider.Icon = CType(resources.GetObject("ErrorProvider.Icon"), System.Drawing.Icon)
         '
         'FrmRegistrarMaquina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.lblValidarNumeroMaquina)
-        Me.Controls.Add(Me.lblValidarNumeroActivo)
-        Me.Controls.Add(Me.lblValidarTipoDeMaquina)
         Me.Controls.Add(Me.cmbTipoDeMaquina)
         Me.Controls.Add(Me.txtNumeroDeMaquina)
         Me.Controls.Add(Me.txtNumeroDeActivo)
@@ -169,6 +138,7 @@ Partial Class FrmRegistrarMaquina
         Me.Controls.Add(Me.lblTipoDeMaquina)
         Me.Name = "FrmRegistrarMaquina"
         Me.Size = New System.Drawing.Size(650, 400)
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -181,8 +151,6 @@ Partial Class FrmRegistrarMaquina
     Friend WithEvents txtNumeroDeActivo As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtNumeroDeMaquina As MetroFramework.Controls.MetroTextBox
     Friend WithEvents cmbTipoDeMaquina As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents lblValidarTipoDeMaquina As MetroFramework.Controls.MetroLabel
-    Friend WithEvents lblValidarNumeroActivo As MetroFramework.Controls.MetroLabel
-    Friend WithEvents lblValidarNumeroMaquina As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ErrorProvider As System.Windows.Forms.ErrorProvider
 
 End Class

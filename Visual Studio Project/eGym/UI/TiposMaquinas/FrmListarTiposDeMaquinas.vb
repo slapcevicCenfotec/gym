@@ -1,8 +1,10 @@
 ﻿Imports EL
 Public Class FrmListarTiposDeMaquinas
+    Private Property listaTiposDeMaquinas As List(Of TipoDeMaquina)
 
     Private Sub FrmListarTiposDeMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tblTiposDeMaquinas.DataSource = objGestorTipoDeMaquina.listarTiposDeMaquinas()
+        listaTiposDeMaquinas = objGestorTipoDeMaquina.listarTiposDeMaquinas()
+        tblTiposDeMaquinas.DataSource = listaTiposDeMaquinas
         btnEliminar.Enabled = False
         btnModificar.Enabled = False
     End Sub
@@ -45,13 +47,18 @@ Public Class FrmListarTiposDeMaquinas
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim maquinaPorEliminar As TipoDeMaquina = tblTiposDeMaquinas.CurrentRow.DataBoundItem
-        objGestorTipoDeMaquina.eliminarTipoDeMaquina(maquinaPorEliminar)
-        Dim ctr As Control
-        ctr = New FrmListarTiposDeMaquinas
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+
+        Dim eliminar As MsgBoxResult = MsgBox("Desea eliminar el tipo de máquina?", MsgBoxStyle.YesNo, "Elminar")
+
+        If eliminar = MsgBoxResult.Yes Then
+            Dim maquinaPorEliminar As TipoDeMaquina = tblTiposDeMaquinas.CurrentRow.DataBoundItem
+            objGestorTipoDeMaquina.eliminarTipoDeMaquina(maquinaPorEliminar)
+            Dim ctr As Control
+            ctr = New FrmListarTiposDeMaquinas
+            ctr.Dock = DockStyle.Fill
+            Me.Controls.Clear()
+            Me.Controls.Add(ctr)
+        End If
     End Sub
 
     Private Sub tblTiposDeMaquinas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblTiposDeMaquinas.CellClick
@@ -60,24 +67,17 @@ Public Class FrmListarTiposDeMaquinas
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        aplicarFiltro(txtBuscar.Text.ToUpper)
+    End Sub
 
-        tblTiposDeMaquinas.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        tblTiposDeMaquinas.ClearSelection()
-
-        For Each myRow As DataGridViewRow In tblTiposDeMaquinas.Rows
-            For Each myCell As DataGridViewCell In myRow.Cells
-                If myCell.ColumnIndex <> 2 Then
-                    If myCell.Value <> Nothing Then
-                        If InStr(myCell.Value.ToString.ToLower, txtBuscar.Text.ToLower) Then
-                            myRow.Selected = True
-                            If txtBuscar.Text = "" Then
-                                tblTiposDeMaquinas.ClearSelection()
-                            End If
-                        End If
-                    End If
-                End If
-            Next
+    Private Sub aplicarFiltro(filtro As String)
+        Dim listaFiltrada As List(Of TipoDeMaquina) = New List(Of TipoDeMaquina)
+        For Each tipoMaquina As TipoDeMaquina In listaTiposDeMaquinas
+            If tipoMaquina.Nombre.ToUpper.Contains(filtro) Or tipoMaquina.Descripcion.ToUpper.Contains(filtro) Then
+                listaFiltrada.Add(tipoMaquina)
+            End If
         Next
+        tblTiposDeMaquinas.DataSource = listaFiltrada
     End Sub
 End Class
 

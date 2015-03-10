@@ -9,6 +9,10 @@ Public Class FrmRegistrarMaquina
         For Each tipoDeMaquina In listaTiposDeMaquinas
             cmbTipoDeMaquina.Items.Add(tipoDeMaquina.Nombre)
         Next
+
+        txtNumeroDeActivo.MaxLength = 50
+        txtNumeroDeMaquina.MaxLength = 50
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -24,8 +28,6 @@ Public Class FrmRegistrarMaquina
             End If
         Next
 
-        resetValidarLabels()
-
         If validarFormRegistrarMaquina() Then
             objGestorMaquina.insertarMaquina(numeroActivo, numeroMaquina, habilitado, idTipoMaquina)
             clearScreen()
@@ -36,18 +38,24 @@ Public Class FrmRegistrarMaquina
     Private Function validarFormRegistrarMaquina() As Boolean
         Dim validado As Boolean = True
         If txtNumeroDeActivo.Text.Length = 0 Then
-            lblValidarNumeroActivo.Text = "Número de activo es requerido"
+            ErrorProvider.SetError(txtNumeroDeActivo, "El número de activo es un campo obligatorio")
             validado = False
+        Else
+            ErrorProvider.SetError(txtNumeroDeActivo, "")
         End If
 
         If txtNumeroDeMaquina.Text.Length = 0 Then
-            lblValidarNumeroMaquina.Text = "Número de máquina es requerido"
+            ErrorProvider.SetError(txtNumeroDeMaquina, "El número de máquina es un campo obligatorio")
             validado = False
+        Else
+            ErrorProvider.SetError(txtNumeroDeMaquina, "")
         End If
 
         If cmbTipoDeMaquina.SelectedItem = Nothing Then
-            lblValidarTipoDeMaquina.Text = "Tipo de máquina es requerido"
+            ErrorProvider.SetError(cmbTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
             validado = False
+        Else
+            ErrorProvider.SetError(cmbTipoDeMaquina, "")
         End If
 
         Return validado
@@ -55,7 +63,6 @@ Public Class FrmRegistrarMaquina
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         clearScreen()
-        resetValidarLabels()
 
         Dim ctr As Control
         ctr = New FrmListarMaquinas
@@ -68,11 +75,5 @@ Public Class FrmRegistrarMaquina
         Me.txtNumeroDeActivo.Text = String.Empty
         Me.txtNumeroDeMaquina.Text = String.Empty
         Me.cmbTipoDeMaquina.SelectedItem = Nothing
-    End Sub
-
-    Sub resetValidarLabels()
-        lblValidarNumeroActivo.Text = Nothing
-        lblValidarNumeroMaquina.Text = Nothing
-        lblValidarTipoDeMaquina.Text = Nothing
     End Sub
 End Class

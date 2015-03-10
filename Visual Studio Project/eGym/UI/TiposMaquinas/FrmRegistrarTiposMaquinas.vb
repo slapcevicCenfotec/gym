@@ -2,6 +2,12 @@
 Imports System.Drawing
 Public Class FrmRegistrarTiposMaquinas
 
+    Private Sub FrmRegistrarTiposMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rtbDescripcion.MaxLength = 250
+        txtTipoDeMaquina.MaxLength = 50
+        txtNombreImagen.Enabled = False
+    End Sub
+
     Private Sub btnAgregarFoto_Click(sender As Object, e As EventArgs) Handles btnAgregarFoto.Click
         Try
             ofdBuscar.Filter = "All Files (*.*)|*.*|JPEG Files (*.jpeg)|*.jpeg|JPEG Files (*.jpg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
@@ -20,8 +26,6 @@ Public Class FrmRegistrarTiposMaquinas
         Dim descripcion As String = rtbDescripcion.Text
         Dim habilitado As Boolean = True
 
-        resetValidarLabels()
-
         If validarFormRegistrarTiposDeMaquina() Then
             Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
             Dim bReader As New BinaryReader(fs)
@@ -37,19 +41,25 @@ Public Class FrmRegistrarTiposMaquinas
 
     Private Function validarFormRegistrarTiposDeMaquina() As Boolean
         Dim validado As Boolean = True
-        If txtTipoDeMaquina.Text.Length = 0 Then
-            lblValidarNombre.Text = "Tipo de máquina es requerido"
-            validado = False
-        End If
-
-        If rtbDescripcion.TextLength = 0 Or rtbDescripcion.TextLength > 250 Then
-            lblValidarDescripcion.Text = "Descripción es requerida y no debe ser mayor a 250 caracteres"
-            validado = False
-        End If
-
         If txtNombreImagen.Text.Length = 0 Then
-            lblValidarFoto.Text = "Foto de la máquina es requerida"
+            ErrorProvider.SetError(txtNombreImagen, "La foto es un campo obligatorio")
             validado = False
+        Else
+            ErrorProvider.SetError(txtNombreImagen, "")
+        End If
+
+        If txtTipoDeMaquina.Text.Length = 0 Then
+            ErrorProvider.SetError(txtTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
+            validado = False
+        Else
+            ErrorProvider.SetError(txtTipoDeMaquina, "")
+        End If
+
+        If rtbDescripcion.Text.Length = 0 Then
+            ErrorProvider.SetError(rtbDescripcion, "La descripción es un campo obligatorio")
+            validado = False
+        Else
+            ErrorProvider.SetError(rtbDescripcion, "")
         End If
 
         Return validado
@@ -57,7 +67,6 @@ Public Class FrmRegistrarTiposMaquinas
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         clearScreen()
-        resetValidarLabels()
 
         Dim ctr As Control
         ctr = New FrmListarTiposDeMaquinas
@@ -72,11 +81,5 @@ Public Class FrmRegistrarTiposMaquinas
         Me.rtbDescripcion.Text = String.Empty
         Me.txtNombreImagen.Text = String.Empty
         Me.pbxFoto.Image = Nothing
-    End Sub
-
-    Sub resetValidarLabels()
-        lblValidarDescripcion.Text = ""
-        lblValidarFoto.Text = ""
-        lblValidarNombre.Text = ""
     End Sub
 End Class

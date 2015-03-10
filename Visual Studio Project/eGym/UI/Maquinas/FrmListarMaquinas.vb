@@ -1,16 +1,13 @@
 ﻿Imports EL
 
 Public Class FrmListarMaquinas
+    Private Property listaMaquinas As List(Of Maquina)
 
     Private Sub FrmListarMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tblMaquinas.DataSource = objGestorMaquina.listarMaquinas()
+        listaMaquinas = objGestorMaquina.listarMaquinas()
+        tblMaquinas.DataSource = listaMaquinas
         btnEliminar.Enabled = False
         btnModificar.Enabled = False
-
-        'Dim bs As New BindingSource
-        'bs.DataSource = objGestorMaquina.listarMaquinas()
-        'bs.Filter = "Número de activo LIKE'" & txtBuscar.Text & "%'"
-        'tblMaquinas.DataSource = bs
     End Sub
 
     Private Sub configurarColumnas(ByVal sender As Object, _
@@ -46,13 +43,18 @@ Public Class FrmListarMaquinas
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim maquinaPorEliminar As Maquina = tblMaquinas.CurrentRow.DataBoundItem
-        objGestorMaquina.eliminarMaquina(maquinaPorEliminar)
-        Dim ctr As Control
-        ctr = New FrmListarMaquinas
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+
+        Dim eliminar As MsgBoxResult = MsgBox("Desea eliminar la máquina?", MsgBoxStyle.YesNo, "Elminar")
+
+        If eliminar = MsgBoxResult.Yes Then
+            Dim maquinaPorEliminar As Maquina = tblMaquinas.CurrentRow.DataBoundItem
+            objGestorMaquina.eliminarMaquina(maquinaPorEliminar)
+            Dim ctr As Control
+            ctr = New FrmListarMaquinas
+            ctr.Dock = DockStyle.Fill
+            Me.Controls.Clear()
+            Me.Controls.Add(ctr)
+        End If
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -77,10 +79,16 @@ Public Class FrmListarMaquinas
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-
+        aplicarFiltro(txtBuscar.Text.ToUpper)
     End Sub
 
-    Private Sub txtBuscar_Click(sender As Object, e As EventArgs) Handles txtBuscar.Click
-
+    Private Sub aplicarFiltro(filtro As String)
+        Dim listaFiltrada As List(Of Maquina) = New List(Of Maquina)
+        For Each maquina As Maquina In listaMaquinas
+            If maquina.NombreTipoMaquina.ToUpper.Contains(filtro) Or maquina.NumeroActivo.ToUpper.Contains(filtro) Or maquina.NumeroMaquina.ToUpper.Contains(filtro) Then
+                listaFiltrada.Add(maquina)
+            End If
+        Next
+        tblMaquinas.DataSource = listaFiltrada
     End Sub
 End Class
