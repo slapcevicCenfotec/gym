@@ -22,12 +22,16 @@ Partial Class frmIniciarSesion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmIniciarSesion))
         Me.btnIngresar = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.txtNombreUsuario = New MetroFramework.Controls.MetroTextBox()
         Me.txtContrasena = New MetroFramework.Controls.MetroTextBox()
         Me.lblError = New MetroFramework.Controls.MetroLabel()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnIngresar
@@ -99,6 +103,13 @@ Partial Class frmIniciarSesion
         Me.lblError.UseCustomForeColor = True
         Me.lblError.Visible = False
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkRate = 0
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
+        '
         'frmIniciarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -112,6 +123,7 @@ Partial Class frmIniciarSesion
         Me.Controls.Add(Me.btnIngresar)
         Me.Name = "frmIniciarSesion"
         Me.Text = "eGym"
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -122,4 +134,5 @@ Partial Class frmIniciarSesion
     Friend WithEvents txtNombreUsuario As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtContrasena As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblError As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class

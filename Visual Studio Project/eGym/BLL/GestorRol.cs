@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using EL;
+using System.Data.SqlClient;
+using Exceptions.CustomExceptions;
 
 
 namespace BLL
@@ -35,10 +37,27 @@ namespace BLL
 
             objRol.ListaPermisos = listaPermisos;
 
-            UoW.RolRepository.Insert(objRol);
-            UoW.RolRepository.Save();
-
-
+            try
+            {
+                if (objRol.IsValid)
+                {
+                    UoW.RolRepository.Insert(objRol);
+                    UoW.RolRepository.Save();
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in objRol.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new BusinessLogicException(sb.ToString());
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new DataAccessException("Ha ocurrido un error agregando el rol");
+            }
         }
 
         public void ModificarRol(int pId, String pnombre, String pDescripcion, List<int> plistaPermisosxRol)

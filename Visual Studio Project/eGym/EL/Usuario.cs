@@ -21,6 +21,7 @@ namespace EL
         private string _numeroTelefono;
         private string _numeroCelular;
         private bool _habilitado;
+        private int _idRol;
         #endregion
 
         #region Propiedades
@@ -28,6 +29,11 @@ namespace EL
         {
             get { return _id; }
             set { _id = value; }
+        }
+        public int IdRol
+        {
+            get { return _idRol; }
+            set { _idRol = value; }
         }
         public string Identificacion
         {
@@ -101,11 +107,12 @@ namespace EL
         }
         #endregion
 
-        public Usuario(string nombre, string apellido)
+        public Usuario(string nombre, string apellido, int rol)
         {
             // TODO: Complete member initialization
             this.Nombre = nombre;
             this.Apellido = apellido;
+            this.IdRol = rol;
         }
 
         public Usuario()

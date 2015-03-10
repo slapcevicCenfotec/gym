@@ -2,11 +2,10 @@
     Public Property passedIdMaquina As Integer
 
     Public Sub New()
-
         ' This call is required by the designer.
         InitializeComponent()
 
-        ' Add any initialization after the InitializeComponent() call.
+
 
     End Sub
 
@@ -15,6 +14,7 @@
     End Sub
 
     Private Sub InicializarMenu()
+        lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
             AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
         Next
@@ -75,6 +75,13 @@
     End Sub
 
     Private Sub MetroLabel5_Click(sender As Object, e As EventArgs) Handles MetroLabel5.Click
+
+    End Sub
+
+    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+        Me.Hide()
+        usuarioSesion = Nothing
+        frmIniciarSesion.Show()
 
     End Sub
 End Class

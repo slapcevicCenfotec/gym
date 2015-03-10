@@ -55,6 +55,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CEL\CEL.csproj">
+      <Project>{5c9f3bc3-b17b-481e-807c-34bdb106b4df}</Project>
+      <Name>CEL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{68a72f25-4c0b-4b36-82e0-43a5ca72f4a4}</Project>
       <Name>DAL</Name>

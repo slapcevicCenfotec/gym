@@ -31,9 +31,9 @@ namespace DAL
                     else
                     {
                         String apellido = dataRow["APELLIDO"].ToString();
-                        String idRol = dataRow["ROL_ID"].ToString();
+                        int idRol = Convert.ToInt16(dataRow["ROL_ID"].ToString());
                         String nombreRol = dataRow["ROL"].ToString();
-                        usuario = new Usuario(nombre, apellido);
+                        usuario = new Usuario(nombre, apellido, idRol);
                     }
                 }
 

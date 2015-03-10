@@ -9,7 +9,7 @@ namespace EL
    public class Permiso
     {
 
-               #region Atributos 
+        #region Atributos 
 
         private int _id;
         public int Id
@@ -42,5 +42,22 @@ namespace EL
 
         #endregion Constructores
 
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
+
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (String.IsNullOrEmpty(Nombre))
+            {
+                yield return new RuleViolation("Nombre requerido", "Nombre");
+            }
+            yield break;
+        }
     }
 }
