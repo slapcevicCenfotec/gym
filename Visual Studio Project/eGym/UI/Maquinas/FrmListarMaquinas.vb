@@ -91,4 +91,8 @@ Public Class FrmListarMaquinas
         Next
         tblMaquinas.DataSource = listaFiltrada
     End Sub
+
+    Private Sub tblMaquinas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblMaquinas.CellContentClick
+
+    End Sub
 End Class

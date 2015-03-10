@@ -34,7 +34,7 @@ Partial Class eGym
         Me.btnUsuarios = New MetroFramework.Controls.MetroLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.lblUsuario = New MetroFramework.Controls.MetroLabel()
         Me.panel = New MetroFramework.Controls.MetroPanel()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
@@ -215,16 +215,16 @@ Partial Class eGym
         Me.MetroButton1.Text = "Cerrar Sesion"
         Me.MetroButton1.UseSelectable = True
         '
-        'MetroLabel7
+        'lblUsuario
         '
-        Me.MetroLabel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.Location = New System.Drawing.Point(929, 35)
-        Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(238, 19)
-        Me.MetroLabel7.TabIndex = 7
-        Me.MetroLabel7.Text = "[Nombre de usuario] - [Rol de usuario]"
-        Me.MetroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.Location = New System.Drawing.Point(929, 35)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(238, 19)
+        Me.lblUsuario.TabIndex = 7
+        Me.lblUsuario.Text = "[Nombre de usuario] - [Rol de usuario]"
+        Me.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'panel
         '
@@ -277,7 +277,7 @@ Partial Class eGym
         Me.Controls.Add(Me.MetroLabel9)
         Me.Controls.Add(Me.panel)
         Me.Controls.Add(Me.menuBorder)
-        Me.Controls.Add(Me.MetroLabel7)
+        Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.MetroButton1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -309,7 +309,7 @@ Partial Class eGym
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblUsuario As MetroFramework.Controls.MetroLabel
     Friend WithEvents panel As MetroFramework.Controls.MetroPanel
     Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
