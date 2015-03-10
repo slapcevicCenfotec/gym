@@ -44,9 +44,11 @@
     <Compile Include="Ejercicio.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="Permiso.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol.cs" />
     <Compile Include="Maquina.cs" />
     <Compile Include="Musculo.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuleViolation.cs" />
     <Compile Include="TipoDeMaquina.cs" />
     <Compile Include="TipoDePago.cs" />

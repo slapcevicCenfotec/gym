@@ -29,6 +29,12 @@ namespace BLL
             UoW.TipoDePagoRepository.Update(tipoDePago);
             UoW.TipoDePagoRepository.Save();
         }
+        public void eliminarTipoDePago(int pId) 
+        {
+            TipoDePago tipoDePago = new TipoDePago(pId);
+            UoW.TipoDePagoRepository.Delete(tipoDePago);
+            UoW.TipoDePagoRepository.Save();
+        }
 
        
     }

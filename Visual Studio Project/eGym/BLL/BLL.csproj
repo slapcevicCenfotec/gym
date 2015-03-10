@@ -41,13 +41,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestorEjercicio.cs" />
+    <Compile Include="GestorPermiso.cs" />
+    <Compile Include="GestorRol.cs" />
     <Compile Include="GestorMaquina.cs" />
     <Compile Include="GestorMusculo.cs" />
+    <Compile Include="Gestor.cs" />
+    <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorTipoDePago.cs" />
     <Compile Include="GestorTiposDeMaquina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CEL\CEL.csproj">
+      <Project>{5c9f3bc3-b17b-481e-807c-34bdb106b4df}</Project>
+      <Name>CEL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{68a72f25-4c0b-4b36-82e0-43a5ca72f4a4}</Project>
       <Name>DAL</Name>
@@ -56,9 +67,6 @@
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

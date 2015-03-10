@@ -156,11 +156,29 @@
     <Compile Include="Pago\FrmListarPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TipoPago\FrmModificarTipoDePago.Designer.vb">
-      <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
+    <Compile Include="Rol\FrmListarRoles.Designer.vb">
+      <DependentUpon>FrmListarRoles.vb</DependentUpon>
     </Compile>
-    <Compile Include="TipoPago\FrmModificarTipoDePago.vb">
+    <Compile Include="Rol\FrmListarRoles.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rol\FrmModificarRol.Designer.vb">
+      <DependentUpon>FrmModificarRol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rol\FrmModificarRol.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rol\FrmRegistrarRol.Designer.vb">
+      <DependentUpon>FrmRegistrarRol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rol\FrmRegistrarRol.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sesion\frmIniciarSesion.Designer.vb">
+      <DependentUpon>frmIniciarSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sesion\frmIniciarSesion.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="TipoPago\FrmAgregarTipoDePago.Designer.vb">
       <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
@@ -172,6 +190,12 @@
       <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
     </Compile>
     <Compile Include="TipoPago\FrmListarTipoDePago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TipoPago\FrmModificarTipoDePago.Designer.vb">
+      <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago\FrmModificarTipoDePago.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.Designer.vb">
@@ -190,6 +214,12 @@
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
     </Compile>
     <Compile Include="TiposMaquinas\FrmRegistrarTiposMaquinas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usuarios\FrmListarUsuarios.Designer.vb">
+      <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmListarUsuarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -230,14 +260,26 @@
     <EmbeddedResource Include="Pago\FrmListarPago.resx">
       <DependentUpon>FrmListarPago.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TipoPago\FrmModificarTipoDePago.resx">
-      <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
+    <EmbeddedResource Include="Rol\FrmListarRoles.resx">
+      <DependentUpon>FrmListarRoles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rol\FrmModificarRol.resx">
+      <DependentUpon>FrmModificarRol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rol\FrmRegistrarRol.resx">
+      <DependentUpon>FrmRegistrarRol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sesion\frmIniciarSesion.resx">
+      <DependentUpon>frmIniciarSesion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmAgregarTipoDePago.resx">
       <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmListarTipoDePago.resx">
       <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoPago\FrmModificarTipoDePago.resx">
+      <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TiposMaquinas\FrmListarTiposDeMaquinas.resx">
       <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
@@ -247,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TiposMaquinas\FrmRegistrarTiposMaquinas.resx">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmListarUsuarios.resx">
+      <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -266,6 +311,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{7193bc78-e548-4e19-9733-cdae4dfd2b7b}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL\CEL.csproj">
+      <Project>{5c9f3bc3-b17b-481e-807c-34bdb106b4df}</Project>
+      <Name>CEL</Name>
     </ProjectReference>
     <ProjectReference Include="..\EL\EL.csproj">
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>

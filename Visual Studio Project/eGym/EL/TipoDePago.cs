@@ -14,8 +14,12 @@ namespace EL
         private int _duracion;
         private bool _habilitado;
 
-        public TipoDePago() 
+        public TipoDePago()
         { }
+        public TipoDePago(int pId)
+        {
+            this._id = pId;
+        }
         public TipoDePago(String pNommbre, float pMonto, int pDuracion)
         {
             this._nombre = pNommbre;
