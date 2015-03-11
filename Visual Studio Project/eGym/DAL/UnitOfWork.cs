@@ -14,17 +14,17 @@ namespace DAL
         private IRepository<TipoDeMaquina> _tipoDeMaquinaRepository;
         private IRepository<Rol> _rolRepository;
         private IRepository<Permiso> _permisoRepository;
-<<<<<<< HEAD
+
         private IRepository<Pago> _pagoRepository;
         private IRepository<Maquina> _maquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
-=======
-        private IRepository<Maquina> _maquinaRepository;
-        private IRepository<TipoDePago> _tipoDePagoRepository;
+
+        
+        
         private IRepository<Usuario> _repositoryUsuario;
         private IRepository<Excepcion> _excepcionRepository;
         private IRepository<Evento> _eventoRepository;
->>>>>>> 058517ba60f6c1dc429afc532d83cf23df822938
+
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
 
@@ -63,7 +63,7 @@ namespace DAL
             }
         }
 
-<<<<<<< HEAD
+
         public IRepository<Pago> PagoRepository
         {
             get
@@ -73,8 +73,8 @@ namespace DAL
                     this._pagoRepository = new PagoRepository();
                 }
                 return _pagoRepository;
-=======
-
+            }
+        }
         public IRepository<Musculo> MusculoRepository
         {
             get
@@ -110,7 +110,7 @@ namespace DAL
                     _repositoryUsuario = new UsuarioRepository();
                 }
                 return _repositoryUsuario;
->>>>>>> 058517ba60f6c1dc429afc532d83cf23df822938
+
             }
         }
 

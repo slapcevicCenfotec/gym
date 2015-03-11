@@ -68,17 +68,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Repositories\EjercicioRepository.cs" />
-    <Compile Include="Repositories\MaquinaRepository.cs" />
-    <Compile Include="Repositories\MusculoRepository.cs" />
-    <Compile Include="Repositories\TipoDeMaquinaRepository.cs" />
     <Compile Include="Repositories\PagoRepository.cs" />
-    <Compile Include="Repositories\TipoDePagoRepository.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="UnitOfWork.cs" />
-=======
->>>>>>> 058517ba60f6c1dc429afc532d83cf23df822938
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EL\EL.csproj">

@@ -116,7 +116,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ModuloGeneral.vb" />
-    <Compile Include="ModuloTipoDePago.vb" />
     <Compile Include="Musculo\FrmListarMusculo.Designer.vb">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>
     </Compile>
