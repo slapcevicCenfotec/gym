@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Contacto.cs" />
     <Compile Include="Ejercicio.cs" />
+    <Compile Include="Evento.cs" />
+    <Compile Include="Excepcion.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Pago.cs" />

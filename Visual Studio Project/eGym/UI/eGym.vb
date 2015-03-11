@@ -1,11 +1,20 @@
 ﻿Public Class eGym
     Public Property passedIdMaquina As Integer
 
+    Public Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+
+
+
+    End Sub
+
     Private Sub eGym_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InicializarMenu()
     End Sub
 
     Private Sub InicializarMenu()
+        lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
             AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
         Next
@@ -42,13 +51,11 @@
     End Sub
 
     Private Sub MetroLabel3_Click(sender As Object, e As EventArgs) Handles MetroLabel3.Click
-
         Dim ctr As Control
         ctr = New FrmListarRoles
         ctr.Dock = DockStyle.Fill
         MetroPanel1.Controls.Clear()
         MetroPanel1.Controls.Add(ctr)
-
     End Sub
 
     Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
@@ -68,6 +75,14 @@
     End Sub
 
     Private Sub MetroLabel5_Click(sender As Object, e As EventArgs) Handles MetroLabel5.Click
+
+    End Sub
+
+    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+        objGestorSesion.cerrarSesion()
+        Me.Hide()
+        usuarioSesion = Nothing
+        frmIniciarSesion.Show()
 
     End Sub
 End Class

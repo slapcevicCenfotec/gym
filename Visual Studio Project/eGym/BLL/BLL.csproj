@@ -41,11 +41,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestorEjercicio.cs" />
+<<<<<<< HEAD
     <Compile Include="GestorPago.cs" />
+=======
+    <Compile Include="GestorEvento.cs" />
+    <Compile Include="GestorExcepcion.cs" />
+>>>>>>> 058517ba60f6c1dc429afc532d83cf23df822938
     <Compile Include="GestorPermiso.cs" />
     <Compile Include="GestorRol.cs" />
     <Compile Include="GestorMaquina.cs" />
     <Compile Include="GestorMusculo.cs" />
+    <Compile Include="Gestor.cs" />
+    <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorTipoDePago.cs" />
     <Compile Include="GestorTiposDeMaquina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +61,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CEL\CEL.csproj">
+      <Project>{5c9f3bc3-b17b-481e-807c-34bdb106b4df}</Project>
+      <Name>CEL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{68a72f25-4c0b-4b36-82e0-43a5ca72f4a4}</Project>
       <Name>DAL</Name>

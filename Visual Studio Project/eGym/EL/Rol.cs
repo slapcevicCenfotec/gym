@@ -66,6 +66,36 @@ namespace EL
         }
 
         #endregion Constructores
+
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
+
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (String.IsNullOrEmpty(Nombre))
+            {
+                yield return new RuleViolation("Nombre requerido", "Nombre");
+            }
+            if (String.IsNullOrEmpty(Descripcion))
+            {
+                yield return new RuleViolation("Descripcion requerida", "Descripcion");
+            }
+            if (Habilitado == null)
+            {
+                yield return new RuleViolation("Debe asignarse una estado", "Habilitado");
+            }
+            if (ListaPermisos == null)
+            {
+                yield return new RuleViolation("Lista de permisos requerida", "Lista de Permisos");
+            }
+            yield break;
+        }
     }
 
 

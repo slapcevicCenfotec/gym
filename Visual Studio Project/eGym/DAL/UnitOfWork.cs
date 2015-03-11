@@ -14,9 +14,17 @@ namespace DAL
         private IRepository<TipoDeMaquina> _tipoDeMaquinaRepository;
         private IRepository<Rol> _rolRepository;
         private IRepository<Permiso> _permisoRepository;
+<<<<<<< HEAD
         private IRepository<Pago> _pagoRepository;
         private IRepository<Maquina> _maquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
+=======
+        private IRepository<Maquina> _maquinaRepository;
+        private IRepository<TipoDePago> _tipoDePagoRepository;
+        private IRepository<Usuario> _repositoryUsuario;
+        private IRepository<Excepcion> _excepcionRepository;
+        private IRepository<Evento> _eventoRepository;
+>>>>>>> 058517ba60f6c1dc429afc532d83cf23df822938
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
 
@@ -31,8 +39,6 @@ namespace DAL
                 return _tipoDeMaquinaRepository;
             }
         }
-
-
         public IRepository<Rol> RolRepository
         {
             get
@@ -57,6 +63,7 @@ namespace DAL
             }
         }
 
+<<<<<<< HEAD
         public IRepository<Pago> PagoRepository
         {
             get
@@ -66,6 +73,44 @@ namespace DAL
                     this._pagoRepository = new PagoRepository();
                 }
                 return _pagoRepository;
+=======
+
+        public IRepository<Musculo> MusculoRepository
+        {
+            get
+            {
+                if (this._musculoRepository == null)
+                {
+                    this._musculoRepository = new MusculoRepository();
+                }
+
+                return _musculoRepository;
+            }
+
+        }
+
+        public IRepository<Ejercicio> EjercicioRepository
+        {
+            get
+            {
+                if (this._ejercicioRepository == null)
+                {
+                    this._ejercicioRepository = new EjercicioRepository();
+                }
+                return _ejercicioRepository;
+            }
+        }
+
+        public IRepository<Usuario> RepositoryUsuario
+        {
+            get
+            {
+                if (_repositoryUsuario == null)
+                {
+                    _repositoryUsuario = new UsuarioRepository();
+                }
+                return _repositoryUsuario;
+>>>>>>> 058517ba60f6c1dc429afc532d83cf23df822938
             }
         }
 
@@ -92,41 +137,27 @@ namespace DAL
                 return _tipoDePagoRepository;
             }
         }
-
-
-        #region Musculos
-
-        public IRepository<Musculo> MusculoRepository
+        public IRepository<Excepcion> ExcepcionRepository
         {
             get
             {
-                if (this._musculoRepository == null)
+                if (this._excepcionRepository == null)
                 {
-                    this._musculoRepository = new MusculoRepository();
+                    this._excepcionRepository = new ExcepcionRepository();
                 }
-
-                return _musculoRepository;
+                return _excepcionRepository;
             }
-
         }
-
-        #endregion
-
-        #region Ejercicios
-        public IRepository<Ejercicio> EjercicioRepository
+        public IRepository<Evento> EventoRepository
         {
             get
             {
-                if (this._ejercicioRepository == null)
+                if (this._eventoRepository == null)
                 {
-                    this._ejercicioRepository = new EjercicioRepository();
+                    this._eventoRepository = new EventoRepository();
                 }
-
-                return _ejercicioRepository;
+                return _eventoRepository;
             }
-
         }
-        #endregion
-
     }
 }
