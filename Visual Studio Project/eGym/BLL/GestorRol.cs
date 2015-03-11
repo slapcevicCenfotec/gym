@@ -14,6 +14,9 @@ namespace BLL
     public class GestorRol
     {
         private UnitOfWork UoW = new UnitOfWork();
+        private GestorExcepcion gestorExcepciones = new GestorExcepcion();
+        private GestorEvento gestorEventos = new GestorEvento();
+        private GestorSesion gestorSesion;
 
         public IEnumerable<Rol> listarRoles()
         {
@@ -43,6 +46,8 @@ namespace BLL
                 {
                     UoW.RolRepository.Insert(objRol);
                     UoW.RolRepository.Save();
+
+                    gestorEventos.insertarEvento("Insertar rol", "El usuario a insertado el rol " + objRol.Nombre + " al sistema.");
                 }
                 else
                 {
@@ -56,6 +61,12 @@ namespace BLL
             }
             catch (SqlException ex)
             {
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
+                throw new DataAccessException("Ha ocurrido un error agregando el rol");
+            }
+            catch (Exception ex)
+            {
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
                 throw new DataAccessException("Ha ocurrido un error agregando el rol");
             }
         }

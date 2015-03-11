@@ -17,7 +17,8 @@ namespace DAL
         private IRepository<Maquina> _maquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
         private IRepository<Usuario> _repositoryUsuario;
-
+        private IRepository<Excepcion> _excepcionRepository;
+        private IRepository<Evento> _eventoRepository;
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
 
@@ -116,6 +117,28 @@ namespace DAL
                     this._tipoDePagoRepository = new TipoDePagoRepository();
                 }
                 return _tipoDePagoRepository;
+            }
+        }
+        public IRepository<Excepcion> ExcepcionRepository
+        {
+            get
+            {
+                if (this._excepcionRepository == null)
+                {
+                    this._excepcionRepository = new ExcepcionRepository();
+                }
+                return _excepcionRepository;
+            }
+        }
+        public IRepository<Evento> EventoRepository
+        {
+            get
+            {
+                if (this._eventoRepository == null)
+                {
+                    this._eventoRepository = new EventoRepository();
+                }
+                return _eventoRepository;
             }
         }
     }
