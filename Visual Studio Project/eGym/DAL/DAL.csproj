@@ -61,6 +61,7 @@
     <Compile Include="Repositories\MaquinaRepository.cs" />
     <Compile Include="Repositories\MusculoRepository.cs" />
     <Compile Include="Repositories\TipoDeMaquinaRepository.cs" />
+    <Compile Include="Repositories\PagoRepository.cs" />
     <Compile Include="Repositories\TipoDePagoRepository.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UnitOfWork.cs" />

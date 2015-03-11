@@ -24,6 +24,7 @@ Partial Class FrmListarPago
     Private Sub InitializeComponent()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -44,10 +45,20 @@ Partial Class FrmListarPago
         Me.MetroButton1.Text = "Tipo de  pagos"
         Me.MetroButton1.UseSelectable = True
         '
+        'MetroButton2
+        '
+        Me.MetroButton2.Location = New System.Drawing.Point(334, 9)
+        Me.MetroButton2.Name = "MetroButton2"
+        Me.MetroButton2.Size = New System.Drawing.Size(90, 23)
+        Me.MetroButton2.TabIndex = 2
+        Me.MetroButton2.Text = "Registrar pago"
+        Me.MetroButton2.UseSelectable = True
+        '
         'FrmListarPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.MetroButton1)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Name = "FrmListarPago"
@@ -58,5 +69,6 @@ Partial Class FrmListarPago
     End Sub
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
 
 End Class

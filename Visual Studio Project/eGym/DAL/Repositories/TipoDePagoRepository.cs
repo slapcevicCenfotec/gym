@@ -64,7 +64,7 @@ namespace DAL.Repositories
             }
             return listaTiposDePagos;
         }
-
+       
         public TipoDePago GetById(int id)
         {
             return new TipoDePago();

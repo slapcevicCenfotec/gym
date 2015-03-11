@@ -12,7 +12,6 @@ namespace DAL
         public static string Route;
 
         #region Utilities
-
         public DBAccess()
         {
             connString = "";
