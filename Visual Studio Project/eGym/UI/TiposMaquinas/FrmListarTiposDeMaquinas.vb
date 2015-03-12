@@ -1,4 +1,5 @@
 ﻿Imports EL
+
 Public Class FrmListarTiposDeMaquinas
     Private Property listaTiposDeMaquinas As List(Of TipoDeMaquina)
 

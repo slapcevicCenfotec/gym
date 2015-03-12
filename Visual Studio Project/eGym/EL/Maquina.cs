@@ -60,37 +60,71 @@ namespace EL
 
         #endregion
 
-        public Maquina(int pid, string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+        #region Constructores
+
+                public Maquina(int pid, string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+                {
+                    Id = pid;
+                    NumeroActivo = pnumeroActivo;
+                    NumeroMaquina = pnumeroMaquina;
+                    Habilitado = phabilitado;
+                    TipoDeMaquina = ptipoDeMaquina;
+                }
+
+                public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+                {
+                    NumeroActivo = pnumeroActivo;
+                    NumeroMaquina = pnumeroMaquina;
+                    Habilitado = phabilitado;
+                    TipoDeMaquina = ptipoDeMaquina;
+                }
+
+                public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, string pnombretipoDeMaquina)
+                {
+                    NumeroActivo = pnumeroActivo;
+                    NumeroMaquina = pnumeroMaquina;
+                    Habilitado = phabilitado;
+                    NombreTipoMaquina = pnombretipoDeMaquina;
+                }
+
+                public Maquina()
+                {
+                    NumeroActivo = "";
+                    NumeroMaquina = "";
+                    Habilitado = true;
+                    TipoDeMaquina = 0;
+                }
+
+        #endregion
+
+        public bool IsValid
         {
-            Id = pid;
-            NumeroActivo = pnumeroActivo;
-            NumeroMaquina = pnumeroMaquina;
-            Habilitado = phabilitado;
-            TipoDeMaquina = ptipoDeMaquina;
+            get { return (GetRuleViolations().Count() == 0); }
         }
 
-        public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+        public IEnumerable<RuleViolation> GetRuleViolations()
         {
-            NumeroActivo = pnumeroActivo;
-            NumeroMaquina = pnumeroMaquina;
-            Habilitado = phabilitado;
-            TipoDeMaquina = ptipoDeMaquina;
-        }
-
-        public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, string pnombretipoDeMaquina)
-        {
-            NumeroActivo = pnumeroActivo;
-            NumeroMaquina = pnumeroMaquina;
-            Habilitado = phabilitado;
-            NombreTipoMaquina = pnombretipoDeMaquina;
-        }
-
-        public Maquina()
-        {
-            NumeroActivo = "";
-            NumeroMaquina = "";
-            Habilitado = true;
-            TipoDeMaquina = 0;
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (String.IsNullOrEmpty(NumeroMaquina))
+            {
+                yield return new RuleViolation("Número de máquina es requerido", "Número de Máquina");
+            }
+            if (String.IsNullOrEmpty(NumeroActivo))
+            {
+                yield return new RuleViolation("Número de activo es requerido", "Número de Activo");
+            }
+            if (Habilitado == null)
+            {
+                yield return new RuleViolation("Debe asignarse una estado", "Habilitado");
+            }
+            if (TipoDeMaquina == null)
+            {
+                yield return new RuleViolation("Tipo de máquina asociado es requerido", "Tipo de Máquina");
+            }
+            yield break;
         }
     }
 }

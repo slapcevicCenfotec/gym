@@ -53,6 +53,8 @@ namespace EL
 
         #endregion
 
+#region Constructores
+
         public TipoDeMaquina(int pid, byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
         {
             Id = pid;
@@ -75,6 +77,38 @@ namespace EL
             Nombre = "";
             Descripcion = "";
             Foto = null;
+        }
+
+#endregion
+        
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
+
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (Foto == null)
+            {
+                yield return new RuleViolation("La foto de la máquina es requerido", "Foto de Máquina");
+            }
+            if (String.IsNullOrEmpty(Nombre))
+            {
+                yield return new RuleViolation("Nombre de la máquina es requerido", "Nombre de máquina");
+            }
+            if (String.IsNullOrEmpty(Descripcion))
+            {
+                yield return new RuleViolation("La descripción de la máquina es requerido", "Decripción");
+            }
+            if (Habilitado == null)
+            {
+                yield return new RuleViolation("Debe asignarse una estado", "Habilitado");
+            }
+            yield break;
         }
     }
 }

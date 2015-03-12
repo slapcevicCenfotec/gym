@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub InicializarMenu()
-        lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
+        'lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
             AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
         Next

@@ -4,11 +4,9 @@ Public Class FrmRegistrarMaquina
     Private Property listaTiposDeMaquinas As List(Of TipoDeMaquina)
 
     Private Sub FrmRegistrarMaquina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        listaTiposDeMaquinas = objGestorTipoDeMaquina.listarTiposDeMaquinas()
-
-        For Each tipoDeMaquina In listaTiposDeMaquinas
-            cmbTipoDeMaquina.Items.Add(tipoDeMaquina.Nombre)
-        Next
+        cmbTipoDeMaquina.DataSource = objGestorTipoDeMaquina.listarTiposDeMaquinas()
+        cmbTipoDeMaquina.DisplayMember = "Nombre"
+        cmbTipoDeMaquina.ValueMember = "Id"
 
         txtNumeroDeActivo.MaxLength = 50
         txtNumeroDeMaquina.MaxLength = 50
@@ -18,15 +16,9 @@ Public Class FrmRegistrarMaquina
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim numeroActivo As String = txtNumeroDeActivo.Text
         Dim numeroMaquina As String = txtNumeroDeMaquina.Text
-        Dim tipoDeMaquina As String = cmbTipoDeMaquina.SelectedItem
+        Dim tipoDeMaquina As String = cmbTipoDeMaquina.SelectedValue
         Dim habilitado As Boolean = True
         Dim idTipoMaquina As Integer
-
-        For Each tipoMaquina In listaTiposDeMaquinas
-            If tipoMaquina.Nombre = tipoDeMaquina Then
-                idTipoMaquina = tipoMaquina.Id
-            End If
-        Next
 
         If validarFormRegistrarMaquina() Then
             objGestorMaquina.insertarMaquina(numeroActivo, numeroMaquina, habilitado, idTipoMaquina)
