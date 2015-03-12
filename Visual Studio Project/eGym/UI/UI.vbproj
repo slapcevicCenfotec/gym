@@ -117,7 +117,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ModuloGeneral.vb" />
-    <Compile Include="ModuloTipoDePago.vb" />
     <Compile Include="Musculo\FrmListarMusculo.Designer.vb">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>
     </Compile>
@@ -155,6 +154,12 @@
       <DependentUpon>FrmListarPago.vb</DependentUpon>
     </Compile>
     <Compile Include="Pago\FrmListarPago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pago\FrmRegistrarPago.Designer.vb">
+      <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pago\FrmRegistrarPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Rol\FrmListarRoles.Designer.vb">
@@ -260,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pago\FrmListarPago.resx">
       <DependentUpon>FrmListarPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pago\FrmRegistrarPago.resx">
+      <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rol\FrmListarRoles.resx">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>

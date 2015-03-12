@@ -17,6 +17,10 @@ namespace BLL
         {
             return UoW.TipoDePagoRepository.GetAll();
         }
+        public IEnumerable<TipoDePago> getAllTipos()
+        {
+            return UoW.TipoDePagoRepository.GetAll();
+        }
         public void insertarTipoDePago(String pNombre, float pMonto, int pDuracion)
         {
             TipoDePago tipoDePago = new TipoDePago(pNombre, pMonto, pDuracion);

@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestorEjercicio.cs" />
+    <Compile Include="GestorPago.cs" />
+    <Compile Include="GestorEvento.cs" />
+    <Compile Include="GestorExcepcion.cs" />
     <Compile Include="GestorPermiso.cs" />
     <Compile Include="GestorRol.cs" />
     <Compile Include="GestorMaquina.cs" />
