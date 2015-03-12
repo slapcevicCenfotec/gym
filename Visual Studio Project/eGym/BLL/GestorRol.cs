@@ -16,7 +16,6 @@ namespace BLL
         private UnitOfWork UoW = new UnitOfWork();
         private GestorExcepcion gestorExcepciones = new GestorExcepcion();
         private GestorEvento gestorEventos = new GestorEvento();
-        private GestorSesion gestorSesion;
 
         public IEnumerable<Rol> listarRoles()
         {
