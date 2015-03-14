@@ -42,8 +42,8 @@ Partial Class eGym
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.pnlInformacionUsuario = New System.Windows.Forms.Panel()
-        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.lblRolUsuario = New MetroFramework.Controls.MetroLabel()
+        Me.lblNombreUsuario = New MetroFramework.Controls.MetroLabel()
         Me.menuPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel.SuspendLayout()
@@ -323,8 +323,8 @@ Partial Class eGym
         '
         'pnlInformacionUsuario
         '
-        Me.pnlInformacionUsuario.Controls.Add(Me.MetroLabel8)
-        Me.pnlInformacionUsuario.Controls.Add(Me.MetroLabel7)
+        Me.pnlInformacionUsuario.Controls.Add(Me.lblRolUsuario)
+        Me.pnlInformacionUsuario.Controls.Add(Me.lblNombreUsuario)
         Me.pnlInformacionUsuario.Controls.Add(Me.MetroButton1)
         Me.pnlInformacionUsuario.Location = New System.Drawing.Point(994, 94)
         Me.pnlInformacionUsuario.Name = "pnlInformacionUsuario"
@@ -332,37 +332,37 @@ Partial Class eGym
         Me.pnlInformacionUsuario.TabIndex = 17
         Me.pnlInformacionUsuario.Visible = False
         '
-        'MetroLabel8
+        'lblRolUsuario
         '
-        Me.MetroLabel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.lblRolUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.MetroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel8.Location = New System.Drawing.Point(3, 38)
-        Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(250, 32)
-        Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel8.TabIndex = 19
-        Me.MetroLabel8.Text = "Entrenador"
-        Me.MetroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MetroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel8.UseCustomBackColor = True
+        Me.lblRolUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.lblRolUsuario.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblRolUsuario.Location = New System.Drawing.Point(3, 38)
+        Me.lblRolUsuario.Name = "lblRolUsuario"
+        Me.lblRolUsuario.Size = New System.Drawing.Size(250, 32)
+        Me.lblRolUsuario.Style = MetroFramework.MetroColorStyle.Purple
+        Me.lblRolUsuario.TabIndex = 19
+        Me.lblRolUsuario.Text = "Entrenador"
+        Me.lblRolUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblRolUsuario.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblRolUsuario.UseCustomBackColor = True
         '
-        'MetroLabel7
+        'lblNombreUsuario
         '
-        Me.MetroLabel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.lblNombreUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.MetroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel7.Location = New System.Drawing.Point(3, 3)
-        Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(250, 32)
-        Me.MetroLabel7.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel7.TabIndex = 18
-        Me.MetroLabel7.Text = "Marcos Hamilton"
-        Me.MetroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MetroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel7.UseCustomBackColor = True
+        Me.lblNombreUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.lblNombreUsuario.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblNombreUsuario.Location = New System.Drawing.Point(3, 3)
+        Me.lblNombreUsuario.Name = "lblNombreUsuario"
+        Me.lblNombreUsuario.Size = New System.Drawing.Size(250, 32)
+        Me.lblNombreUsuario.Style = MetroFramework.MetroColorStyle.Purple
+        Me.lblNombreUsuario.TabIndex = 18
+        Me.lblNombreUsuario.Text = "Marcos Hamilton"
+        Me.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblNombreUsuario.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblNombreUsuario.UseCustomBackColor = True
         '
         'eGym
         '
@@ -415,6 +415,6 @@ Partial Class eGym
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
     Friend WithEvents pnlInformacionUsuario As System.Windows.Forms.Panel
-    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblRolUsuario As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblNombreUsuario As MetroFramework.Controls.MetroLabel
 End Class
