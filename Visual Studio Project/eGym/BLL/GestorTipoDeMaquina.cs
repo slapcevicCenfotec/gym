@@ -17,8 +17,7 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-
-    public class GestorMaquina
+    public class GestorTipoDeMaquina
     {
         /// <summary>
         /// Instancia de unit of work
@@ -35,116 +34,117 @@ namespace BLL
         /// </summary>
         private GestorEvento gestorEventos = new GestorEvento();
 
+        /// Lista cada una de las instancias de tipo de máquina.
         /// <summary>
-        /// Lista cada una de las instancias de máquina.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Maquina> listarMaquinas()
+        public IEnumerable<TipoDeMaquina> listarTiposDeMaquinas()
         {
-            return UoW.MaquinaRepository.GetAll();
+            return UoW.TipoDeMaquinaRepository.GetAll();
         }
 
         /// <summary>
-        /// Obtiene una instancia de maquina por Id.
+        /// Obtiene una instancia de tipo de maquina por Id.
         /// </summary>
-        /// <param name="pid">Id de la máquina.</param>
+        /// <param name="pid">Id del tipo de máquina.</param>
         /// <returns></returns>
-        public Maquina GetMaquinaById(int pid)
+        public TipoDeMaquina GetTipoDeMaquinaById(int pid)
         {
-            return UoW.MaquinaRepository.GetById(pid);
+            return UoW.TipoDeMaquinaRepository.GetById(pid);
         }
 
         /// <summary>
-        /// Registra una instancia de máquina.
+        /// Registra una instancia de tipo de máquina.
         /// </summary>
-        /// <param name="pnumeroActivo">Número de activo de la máquina.</param>
-        /// <param name="pnumeroMaquina">Número de máquina de la máquina.</param>
-        /// <param name="ptipoDeMaquina">Id del tipo de máquina asociado a la máquina.</param>
-        /// <exception cref="BusinessLogicException"></exception>
-        /// <exception cref="DataAccessException">
-        /// Ha ocurrido un error agregando la máquina
-        /// or
-        /// Ha ocurrido un error agregando la máquina
-        /// </exception>
-        public void insertarMaquina(string pnumeroActivo, string pnumeroMaquina, int ptipoDeMaquina)
-        {
-            Maquina maquina = new Maquina(pnumeroActivo, pnumeroMaquina, ptipoDeMaquina);
-
-            try
-            {
-                if (maquina.IsValid)
-                {
-                    UoW.MaquinaRepository.Insert(maquina);
-
-                    /// <summary>
-                    ///Guarda los cambios.
-                    /// </summary>
-                    UoW.MaquinaRepository.Save();
-
-                    //Registra la acción en la bitácora de acciones.
-                    gestorEventos.insertarEvento("Insertar máquina", "El usuario ha insertado una máquina con número de activo " + maquina.NumeroActivo + " al sistema.");
-                }
-                else
-                {
-                    StringBuilder sb = new StringBuilder();
-                    foreach (RuleViolation rv in maquina.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
-                    throw new BusinessLogicException(sb.ToString());
-                }
-            }
-            catch(SqlException ex)
-            {
-                //Registra la excepción en la bitácora de excepciones.
-                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
-                throw new DataAccessException("Ha ocurrido un error agregando la máquina");
-            }
-            catch(Exception ex)
-            {
-                //Registra la excepción en la bitácora de excepciones.
-                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
-                throw new DataAccessException("Ha ocurrido un error agregando la máquina");
-            }
-
-        }
-
-        /// <summary>
-        /// Modificar una instancia de máquina.
-        /// </summary>
-        /// <param name="pid">The pid.</param>
-        /// <param name="pnumeroActivo">Número de activo de la máquina.</param>
-        /// <param name="pnumeroMaquina">Número de máquina de la máquina.</param>
+        /// <param name="pfoto">Foto del tipo de máquina.</param>
+        /// <param name="pnombre">Nombre del tipo de máquina.</param>
+        /// <param name="pdescripcion">Descripción del tipo de máquina.</param>
         /// <param name="phabilitado">Si es<c>true</c> [phabilitado].</param>
-        /// <param name="ptipoDeMaquina">Id del tipo de máquina asociado a la máquina.</param>
         /// <exception cref="BusinessLogicException"></exception>
         /// <exception cref="DataAccessException">
-        /// Ha ocurrido un error modificando la máquina
-        /// or
-        /// Ha ocurrido un error modificando la máquina
+        /// Ha ocurrido un error agregando el tipo de máquina
+        /// o
+        /// Ha ocurrido un error agregando el tipo de máquina
         /// </exception>
-        public void modificarMaquina(int pid, string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+        public void insertarTipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
         {
-            Maquina maquina = new Maquina(pid, pnumeroActivo, pnumeroMaquina, phabilitado, ptipoDeMaquina);
+            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pfoto, pnombre, pdescripcion, phabilitado);
 
             try
             {
-                if (maquina.IsValid)
+                if (tipoDeMaquina.IsValid)
                 {
-                    UoW.MaquinaRepository.Update(maquina);
+                    UoW.TipoDeMaquinaRepository.Insert(tipoDeMaquina);
 
                     /// <summary>
                     ///Guarda los cambios.
                     /// </summary>
-                    UoW.MaquinaRepository.Save();
+                    UoW.TipoDeMaquinaRepository.Save();
 
                     //Registra la acción en la bitácora de acciones.
-                    gestorEventos.insertarEvento("Modificar máquina", "El usuario ha modificado una máquina con número de activo " + maquina.NumeroActivo + " al sistema.");
+                    gestorEventos.insertarEvento("Insertar tipo de máquina", "El usuario ha insertado un tipo de máquina " + tipoDeMaquina.Nombre + " al sistema.");
                 }
                 else
                 {
                     StringBuilder sb = new StringBuilder();
-                    foreach (RuleViolation rv in maquina.GetRuleViolations())
+                    foreach (RuleViolation rv in tipoDeMaquina.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new BusinessLogicException(sb.ToString());
+                }
+            }
+            catch (SqlException ex)
+            {
+                //Registra la excepción en la bitácora de excepciones.
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
+                throw new DataAccessException("Ha ocurrido un error agregando el tipo de máquina");
+            }
+            catch (Exception ex)
+            {
+                //Registra la excepción en la bitácora de excepciones.
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
+                throw new DataAccessException("Ha ocurrido un error agregando el tipo de máquina");
+            }
+
+        }
+
+        /// <summary>
+        /// Modificar una instancia de tipo de máquina.
+        /// </summary>
+        /// <param name="pid">Id del tipo de máquina.</param>
+        /// <param name="pfoto">Foto del tipo de máquina.</param>
+        /// <param name="pnombre">Nombre del tipo de máquina.</param>
+        /// <param name="pdescripcion">Descripción del tipo de máquina.</param>
+        /// <param name="phabilitado">Si es<c>true</c> [phabilitado].</param>
+        /// <exception cref="BusinessLogicException"></exception>
+        /// <exception cref="DataAccessException">
+        /// Ha ocurrido un error modificando el tipo de máquina
+        /// o
+        /// Ha ocurrido un error modificando el tipo de máquina
+        /// </exception>
+        public void modificarTipoDeMaquina(int pid, byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        {
+            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pid, pfoto, pnombre, pdescripcion, phabilitado);
+
+            try
+            {
+                if (tipoDeMaquina.IsValid)
+                {
+                    UoW.TipoDeMaquinaRepository.Update(tipoDeMaquina);
+
+                    /// <summary>
+                    ///Guarda los cambios.
+                    /// </summary>
+                    UoW.TipoDeMaquinaRepository.Save();
+
+                    //Registra la acción en la bitácora de acciones.
+                    gestorEventos.insertarEvento("Modificar tipo de máquina", "El usuario ha modificado un tipo de máquina " + tipoDeMaquina.Nombre + " al sistema.");
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in tipoDeMaquina.GetRuleViolations())
                     {
                         sb.AppendLine(rv.ErrorMessage);
                     }
@@ -152,67 +152,67 @@ namespace BLL
 
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
-                throw new DataAccessException("Ha ocurrido un error modificando la máquina");
+                throw new DataAccessException("Ha ocurrido un error modificando el tipo de máquina");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
-                throw new DataAccessException("Ha ocurrido un error modificando la máquina");
+                throw new DataAccessException("Ha ocurrido un error modificando el tipo de máquina");
             }
         }
 
         /// <summary>
-        /// Eliminar una instancia de máquina.
+        /// Eliminar una instancia de tipo de máquina.
         /// </summary>
-        /// <param name="pmaquina">La instancia de la máquina a eliminar.</param>
+        /// <param name="ptipoMaquina">La instancia de máquina a eliminar.</param>
         /// <exception cref="BusinessLogicException"></exception>
         /// <exception cref="DataAccessException">
-        /// Ha ocurrido un error eliminando la máquina
-        /// or
-        /// Ha ocurrido un error eliminando la máquina
+        /// Ha ocurrido un error eliminando el tipo de máquina
+        /// o
+        /// Ha ocurrido un error eliminando el tipo de máquina
         /// </exception>
-        public void eliminarMaquina(Maquina pmaquina)
+        public void eliminarTipoDeMaquina(TipoDeMaquina ptipoMaquina)
         {
             try
             {
-                if (pmaquina.IsValid)
+                if (ptipoMaquina.IsValid)
                 {
-                    UoW.MaquinaRepository.Delete(pmaquina);
+                    UoW.TipoDeMaquinaRepository.Delete(ptipoMaquina);
 
                     /// <summary>
                     ///Guarda los cambios.
                     /// </summary>
-                    UoW.MaquinaRepository.Save();
+                    UoW.TipoDeMaquinaRepository.Save();
 
                     //Registra la acción en la bitácora de acciones.
-                    gestorEventos.insertarEvento("Eliminar máquina", "El usuario ha eliminado una máquina con número de activo " + pmaquina.NumeroActivo + " al sistema.");
+                    gestorEventos.insertarEvento("Eliminar tipo de máquina", "El usuario ha eliminado una máquina " + ptipoMaquina.Nombre + " al sistema.");
                 }
                 else
                 {
                     StringBuilder sb = new StringBuilder();
-                    foreach (RuleViolation rv in pmaquina.GetRuleViolations())
+                    foreach (RuleViolation rv in ptipoMaquina.GetRuleViolations())
                     {
                         sb.AppendLine(rv.ErrorMessage);
                     }
                     throw new BusinessLogicException(sb.ToString());
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
-                throw new DataAccessException("Ha ocurrido un error eliminando la máquina");
+                throw new DataAccessException("Ha ocurrido un error eliminando el tipo de máquina");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
-                throw new DataAccessException("Ha ocurrido un error eliminando la máquina");
+                throw new DataAccessException("Ha ocurrido un error eliminando el tipo de máquina");
             }
         }
 

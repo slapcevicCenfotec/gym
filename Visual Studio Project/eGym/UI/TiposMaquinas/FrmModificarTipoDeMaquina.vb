@@ -37,37 +37,6 @@ Public Class FrmModificarTipoDeMaquina
         End Try
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim nombre As String = txtTipoDeMaquina.Text
-        Dim descripcion As String = rtbDescripcion.Text
-        Dim habilitado As Boolean = True
-        Dim foto As Byte()
-
-        If txtNombreImagen.Text.Length <> 0 Then
-            Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
-            Dim bReader As New BinaryReader(fs)
-            Dim nuevaFoto(fs.Length) As Byte
-            bReader.Read(nuevaFoto, 0, fs.Length)
-            fs.Close()
-            foto = nuevaFoto
-        Else
-            foto = tipoDeMaquinaPorModificar.Foto
-        End If
-
-        If validarFormModificarTiposDeMaquina() Then
-
-            objGestorTipoDeMaquina.modificarTipoDeMaquina(tipoDeMaquinaPorModificar.Id, foto, nombre, descripcion, habilitado)
-            clearScreen()
-
-            Dim ctr As Control
-            ctr = New FrmListarTiposDeMaquinas
-            ctr.Dock = DockStyle.Fill
-            Me.Controls.Clear()
-            Me.Controls.Add(ctr)
-        End If
-
-    End Sub
-
     Private Function validarFormModificarTiposDeMaquina() As Boolean
         Dim validado As Boolean = True
 
@@ -88,6 +57,48 @@ Public Class FrmModificarTipoDeMaquina
         Return validado
     End Function
 
+    Sub clearScreen()
+        Me.txtTipoDeMaquina.Text = String.Empty
+        Me.rtbDescripcion.Text = String.Empty
+        Me.txtNombreImagen.Text = String.Empty
+        Me.pbxFoto.Image = Nothing
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim nombre As String = txtTipoDeMaquina.Text
+        Dim descripcion As String = rtbDescripcion.Text
+        Dim habilitado As Boolean = True
+        Dim foto As Byte()
+
+        If txtNombreImagen.Text.Length <> 0 Then
+            Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
+            Dim bReader As New BinaryReader(fs)
+            Dim nuevaFoto(fs.Length) As Byte
+            bReader.Read(nuevaFoto, 0, fs.Length)
+            fs.Close()
+            foto = nuevaFoto
+        Else
+            foto = tipoDeMaquinaPorModificar.Foto
+        End If
+
+        If validarFormModificarTiposDeMaquina() Then
+
+            Try
+                objGestorTipoDeMaquina.modificarTipoDeMaquina(tipoDeMaquinaPorModificar.Id, foto, nombre, descripcion, habilitado)
+                clearScreen()
+
+                Dim ctr As Control
+                ctr = New FrmListarTiposDeMaquinas
+                ctr.Dock = DockStyle.Fill
+                Me.Controls.Clear()
+                Me.Controls.Add(ctr)
+
+            Catch ex As Exception
+                ErPrExcepciones.SetError(btnGuardar, ex.Message)
+            End Try
+        End If
+    End Sub
+
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         clearScreen()
 
@@ -96,12 +107,5 @@ Public Class FrmModificarTipoDeMaquina
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
-    End Sub
-
-    Sub clearScreen()
-        Me.txtTipoDeMaquina.Text = String.Empty
-        Me.rtbDescripcion.Text = String.Empty
-        Me.txtNombreImagen.Text = String.Empty
-        Me.pbxFoto.Image = Nothing
     End Sub
 End Class

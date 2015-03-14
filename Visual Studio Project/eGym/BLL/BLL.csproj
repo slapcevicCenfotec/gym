@@ -51,7 +51,7 @@
     <Compile Include="Gestor.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorTipoDePago.cs" />
-    <Compile Include="GestorTiposDeMaquina.cs" />
+    <Compile Include="GestorTipoDeMaquina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

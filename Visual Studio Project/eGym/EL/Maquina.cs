@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-
+/// <summary>
+/// Fecha de creación: 07/03/2015:
+/// Autor: Mauricio Fernández Mora
+/// Fecha de modificación: 14/03/2015
+/// Modificado por: Mauricio Fernández Mora
+/// </summary>
+/// 
 namespace EL
 {
     public class Maquina : IEntity
     {
-        #region variables
+        #region Variables
 
         private int _id;
         private string _numeroActivo;
@@ -20,7 +26,7 @@ namespace EL
 
         #endregion
 
-        #region propiedades
+        #region Propiedades
 
         public int Id
         {
@@ -79,12 +85,12 @@ namespace EL
                     TipoDeMaquina = ptipoDeMaquina;
                 }
 
-                public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, string pnombretipoDeMaquina)
+                public Maquina(string pnumeroActivo, string pnumeroMaquina, int ptipoDeMaquina)
                 {
                     NumeroActivo = pnumeroActivo;
                     NumeroMaquina = pnumeroMaquina;
-                    Habilitado = phabilitado;
-                    NombreTipoMaquina = pnombretipoDeMaquina;
+                    Habilitado = true;
+                    TipoDeMaquina = ptipoDeMaquina;
                 }
 
                 public Maquina()
@@ -97,11 +103,23 @@ namespace EL
 
         #endregion
 
+        /// <summary>
+        /// Valida si esta instancia es válida.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> Si esta instancia es válida; de lo contrario, <c>false</c>.
+        /// </value>
         public bool IsValid
         {
             get { return (GetRuleViolations().Count() == 0); }
         }
 
+        /// <summary>
+        /// Obtiene todos los rule violations.
+        /// </summary>
+        /// <returns>
+        /// Lista tipo IEnumerable<RuleViolation>
+        /// </returns>
         public IEnumerable<RuleViolation> GetRuleViolations()
         {
             if (Id == null)
