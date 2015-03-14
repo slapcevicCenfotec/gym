@@ -14,9 +14,16 @@ namespace DAL
         private IRepository<TipoDeMaquina> _tipoDeMaquinaRepository;
         private IRepository<Rol> _rolRepository;
         private IRepository<Permiso> _permisoRepository;
+
+        private IRepository<Pago> _pagoRepository;
         private IRepository<Maquina> _maquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
+
+        
+        
         private IRepository<Usuario> _repositoryUsuario;
+        private IRepository<Excepcion> _excepcionRepository;
+        private IRepository<Evento> _eventoRepository;
 
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
@@ -57,6 +64,17 @@ namespace DAL
         }
 
 
+        public IRepository<Pago> PagoRepository
+        {
+            get
+            {
+                if (this._pagoRepository == null)
+                {
+                    this._pagoRepository = new PagoRepository();
+                }
+                return _pagoRepository;
+            }
+        }
         public IRepository<Musculo> MusculoRepository
         {
             get
@@ -92,6 +110,7 @@ namespace DAL
                     _repositoryUsuario = new UsuarioRepository();
                 }
                 return _repositoryUsuario;
+
             }
         }
 
@@ -116,6 +135,28 @@ namespace DAL
                     this._tipoDePagoRepository = new TipoDePagoRepository();
                 }
                 return _tipoDePagoRepository;
+            }
+        }
+        public IRepository<Excepcion> ExcepcionRepository
+        {
+            get
+            {
+                if (this._excepcionRepository == null)
+                {
+                    this._excepcionRepository = new ExcepcionRepository();
+                }
+                return _excepcionRepository;
+            }
+        }
+        public IRepository<Evento> EventoRepository
+        {
+            get
+            {
+                if (this._eventoRepository == null)
+                {
+                    this._eventoRepository = new EventoRepository();
+                }
+                return _eventoRepository;
             }
         }
     }

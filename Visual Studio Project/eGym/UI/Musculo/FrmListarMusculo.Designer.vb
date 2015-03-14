@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class FrmListarMusculo
-    Inherits System.Windows.Forms.UserControl
+    Inherits MetroFramework.Controls.MetroUserControl
 
     'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -27,7 +27,6 @@ Partial Class FrmListarMusculo
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.MetroUserControl1 = New MetroFramework.Controls.MetroUserControl()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.txtFiltro = New MetroFramework.Controls.MetroTextBox()
         Me.tblMusculos = New MetroFramework.Controls.MetroGrid()
@@ -42,16 +41,6 @@ Partial Class FrmListarMusculo
         Me.btnAgregar = New MetroFramework.Controls.MetroButton()
         CType(Me.tblMusculos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'MetroUserControl1
-        '
-        Me.MetroUserControl1.Location = New System.Drawing.Point(0, 0)
-        Me.MetroUserControl1.Name = "MetroUserControl1"
-        Me.MetroUserControl1.Size = New System.Drawing.Size(960, 730)
-        Me.MetroUserControl1.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroUserControl1.TabIndex = 20
-        Me.MetroUserControl1.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroUserControl1.UseSelectable = True
         '
         'MetroLabel2
         '
@@ -78,7 +67,7 @@ Partial Class FrmListarMusculo
         Me.txtFiltro.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtFiltro.SelectedText = ""
-        Me.txtFiltro.Size = New System.Drawing.Size(431, 30)
+        Me.txtFiltro.Size = New System.Drawing.Size(445, 35)
         Me.txtFiltro.TabIndex = 22
         Me.txtFiltro.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtFiltro.UseSelectable = True
@@ -237,14 +226,14 @@ Partial Class FrmListarMusculo
         Me.Controls.Add(Me.tblMusculos)
         Me.Controls.Add(Me.txtFiltro)
         Me.Controls.Add(Me.MetroLabel2)
-        Me.Controls.Add(Me.MetroUserControl1)
         Me.Name = "FrmListarMusculo"
         Me.Size = New System.Drawing.Size(960, 695)
+        Me.Style = MetroFramework.MetroColorStyle.Purple
+        Me.Theme = MetroFramework.MetroThemeStyle.Dark
         CType(Me.tblMusculos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents MetroUserControl1 As MetroFramework.Controls.MetroUserControl
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtFiltro As MetroFramework.Controls.MetroTextBox
     Friend WithEvents tblMusculos As MetroFramework.Controls.MetroGrid

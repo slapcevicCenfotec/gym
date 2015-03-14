@@ -5,7 +5,7 @@ Public Class FrmRegistrarMusculo
     Private validar As Boolean = True
 
 
-    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+    Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
         Dim resulValidation As Boolean
 
         resulValidation = validation()
@@ -55,55 +55,76 @@ Public Class FrmRegistrarMusculo
 
     End Function
 
-    Private Sub txtIrrigacion_Click(sender As Object, e As EventArgs) Handles txtIrrigacion.Click
+    Private Sub txtIrrigacion_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtInervacion_Click(sender As Object, e As EventArgs) Handles txtInervacion.Click
+    Private Sub txtInervacion_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtInserccion_Click(sender As Object, e As EventArgs) Handles txtInserccion.Click
+    Private Sub txtInserccion_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtOrigen_Click(sender As Object, e As EventArgs) Handles txtOrigen.Click
+    Private Sub txtOrigen_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtUbicacion_Click(sender As Object, e As EventArgs) Handles txtUbicacion.Click
+    Private Sub txtUbicacion_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtNombre_Click(sender As Object, e As EventArgs) Handles txtNombre.Click
+    Private Sub txtNombre_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub MetroLabel6_Click(sender As Object, e As EventArgs) Handles MetroLabel6.Click
+    Private Sub MetroLabel6_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub MetroLabel5_Click(sender As Object, e As EventArgs) Handles MetroLabel5.Click
+    Private Sub MetroLabel5_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
+    Private Sub MetroLabel4_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub MetroLabel3_Click(sender As Object, e As EventArgs) Handles MetroLabel3.Click
+    Private Sub MetroLabel3_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
+    Private Sub MetroLabel2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub MetroLabel1_Click(sender As Object, e As EventArgs) Handles MetroLabel1.Click
+    Private Sub MetroLabel1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs)
+        Dim resulValidation As Boolean
+
+        resulValidation = validation()
+
+        If resulValidation Then
+
+            Dim nombre As String = Me.txtNombre.Text
+            Dim ubicacion As String = Me.txtUbicacion.Text
+            Dim origen As String = Me.txtOrigen.Text
+            Dim inserccion As String = Me.txtInserccion.Text
+            Dim inervacion As String = Me.txtInervacion.Text
+            Dim irrigacion As String = Me.txtIrrigacion.Text
+
+            objGestorMusculo.agregarMusculo(nombre, ubicacion, origen, inserccion, inervacion, irrigacion)
+            End
+
+        End If
 
     End Sub
 End Class

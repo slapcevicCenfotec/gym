@@ -34,7 +34,7 @@ Public Class FrmListarEjercicio
         Me.Controls.Add(ctr)
     End Sub
 
-    Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub MetroButton3_Click(sender As Object, e As EventArgs)
         Dim ctr As Control
         ctr = New FrmModificarEjercicio(tblEjercicio.CurrentRow.DataBoundItem)
         ctr.Dock = DockStyle.Fill
@@ -42,7 +42,7 @@ Public Class FrmListarEjercicio
         Me.Controls.Add(ctr)
     End Sub
 
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
         Dim ctr As Control
         ctr = New FrmRegistrarEjercicio
         ctr.Dock = DockStyle.Fill
@@ -50,7 +50,7 @@ Public Class FrmListarEjercicio
         Me.Controls.Add(ctr)
     End Sub
     
-    Private Sub txtFiltro_TextChanged(sender As Object, e As EventArgs) Handles txtFiltro.TextChanged
+    Private Sub txtFiltro_TextChanged(sender As Object, e As EventArgs)
         AplicarFiltro(txtFiltro.Text.ToUpper)
     End Sub
 
@@ -67,4 +67,31 @@ Public Class FrmListarEjercicio
         tblEjercicio.DataSource = listaFiltrada
     End Sub
   
+    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
+        Dim ctr As Control
+        ctr = New FrmModificarEjercicio(tblEjercicio.CurrentRow.DataBoundItem)
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
+    End Sub
+
+    Private Sub MetroButton1_Click_1(sender As Object, e As EventArgs) Handles MetroButton1.Click
+        Dim ctr As Control
+        ctr = New FrmRegistrarEjercicio
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
+    End Sub
+
+    Private Sub MetroButton3_Click_1(sender As Object, e As EventArgs) Handles MetroButton3.Click
+
+    End Sub
+
+    Private Sub MetroTextBox1_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click
+
+    End Sub
+
+    Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
+
+    End Sub
 End Class

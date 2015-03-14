@@ -10,12 +10,50 @@ namespace BLL
 {
     public class GestorSesion
     {
+        #region variables sesion
+        static Usuario _usuario;
+        static List<Permiso> _permisos;
+
+        public static Usuario usuarioSesion
+        {
+            get
+            {
+                return _usuario;
+            }
+            set
+            {
+                _usuario = value;
+            }
+        }
+
+        public static List<Permiso> listaPermiso
+        {
+            get
+            {
+                return _permisos;
+            }
+            set
+            {
+                _permisos = value;
+            }
+        }
+        #endregion
+
         public Usuario iniciarSesion(String correo, String contrasena)
         {
-            Usuario usuario;
+            GestorEvento ge = new GestorEvento();
             AccesoSesion acceso = new AccesoSesion();
-            usuario = acceso.iniciarSesion(correo, contrasena);
-            return usuario;
+            usuarioSesion = acceso.iniciarSesion(correo, contrasena);
+            ge.insertarEvento("Iniciar sesión", "El usuario " + usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " ha iniciado sesión");
+            return usuarioSesion;
+        }
+
+        public void cerrarSesion()
+        {
+            GestorEvento ge = new GestorEvento();
+            Gestor g = new Gestor();
+            //g.enviarCorreo();
+            ge.insertarEvento("Cerrar sesión", "El usuario "+usuarioSesion.Nombre +" "+ usuarioSesion.Apellido+" ha cerrado la sesión");
         }
     }
 }

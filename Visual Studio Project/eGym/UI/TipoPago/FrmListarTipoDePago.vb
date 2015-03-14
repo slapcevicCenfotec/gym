@@ -11,8 +11,6 @@ Class FrmListarTipoDePago
     End Sub
 
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
-
-
         Dim ctr As Control
         ctr = New FrmModificarTipoDePago(tblListaTipoDePago.CurrentRow.DataBoundItem)
         ctr.Dock = DockStyle.Fill
@@ -33,11 +31,20 @@ Class FrmListarTipoDePago
 
     Private Sub FrmListarTipoDePago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tblListaTipoDePago.DataSource = objGestorTipoPago.listarTiposDePago()
+        tblListaTipoDePago.Columns("Id").Visible = False
     End Sub
 
-    Private Sub tblListaTipoDePago_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblListaTipoDePago.CellContentClick
+    Private Sub tblListaTipoDePago_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
 
+
+    End Sub
+
+    Private Sub MetroPanel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub MetroPanel1_Paint_1(sender As Object, e As PaintEventArgs) Handles MetroPanel1.Paint
 
     End Sub
 End Class

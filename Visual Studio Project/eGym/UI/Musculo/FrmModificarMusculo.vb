@@ -23,8 +23,8 @@ Public Class FrmModificarMusculo
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
     End Sub
 
-    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
-        
+    Private Sub MetroButton2_Click(sender As Object, e As EventArgs)
+
         Dim resulValidation As Boolean
 
         resulValidation = validation()
@@ -66,4 +66,16 @@ Public Class FrmModificarMusculo
         Return validar
 
     End Function
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs)
+        Dim resulValidation As Boolean
+
+        resulValidation = validation()
+
+        If resulValidation Then
+            objGestorMusculo.modificarMusculo(musculoPorModificar.Id, txtNombre.Text, txtUbicacion.Text, txtOrigen.Text, txtInserccion.Text, txtInervacion.Text, txtIrrigacion.Text)
+
+        End If
+    End Sub
+
 End Class
