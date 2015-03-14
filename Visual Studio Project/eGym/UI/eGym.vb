@@ -116,9 +116,9 @@
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
         objGestorSesion.cerrarSesion()
-        Me.Hide()
         usuarioSesion = Nothing
         frmIniciarSesion.Show()
+        Me.Close()
 
     End Sub
 
@@ -126,4 +126,7 @@
         pnlInformacionUsuario.Visible = Not pnlInformacionUsuario.Visible
     End Sub
 
+    Private Sub eGym_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+
+    End Sub
 End Class
