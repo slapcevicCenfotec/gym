@@ -22,17 +22,20 @@ Partial Class FrmRegistrarPago
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox4 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtMonto = New MetroFramework.Controls.MetroTextBox()
+        Me.txtFactura = New MetroFramework.Controls.MetroTextBox()
+        Me.txtDesde = New MetroFramework.Controls.MetroTextBox()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.seTipo = New MetroFramework.Controls.MetroComboBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -80,44 +83,44 @@ Partial Class FrmRegistrarPago
         Me.MetroLabel5.TabIndex = 5
         Me.MetroLabel5.Text = "Desde:"
         '
-        'MetroTextBox3
+        'txtMonto
         '
-        Me.MetroTextBox3.Lines = New String(-1) {}
-        Me.MetroTextBox3.Location = New System.Drawing.Point(219, 130)
-        Me.MetroTextBox3.MaxLength = 32767
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox3.SelectedText = ""
-        Me.MetroTextBox3.Size = New System.Drawing.Size(184, 23)
-        Me.MetroTextBox3.TabIndex = 8
-        Me.MetroTextBox3.UseSelectable = True
+        Me.txtMonto.Lines = New String(-1) {}
+        Me.txtMonto.Location = New System.Drawing.Point(219, 130)
+        Me.txtMonto.MaxLength = 32767
+        Me.txtMonto.Name = "txtMonto"
+        Me.txtMonto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtMonto.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtMonto.SelectedText = ""
+        Me.txtMonto.Size = New System.Drawing.Size(184, 23)
+        Me.txtMonto.TabIndex = 8
+        Me.txtMonto.UseSelectable = True
         '
-        'MetroTextBox4
+        'txtFactura
         '
-        Me.MetroTextBox4.Lines = New String(-1) {}
-        Me.MetroTextBox4.Location = New System.Drawing.Point(219, 96)
-        Me.MetroTextBox4.MaxLength = 32767
-        Me.MetroTextBox4.Name = "MetroTextBox4"
-        Me.MetroTextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox4.SelectedText = ""
-        Me.MetroTextBox4.Size = New System.Drawing.Size(184, 23)
-        Me.MetroTextBox4.TabIndex = 9
-        Me.MetroTextBox4.UseSelectable = True
+        Me.txtFactura.Lines = New String(-1) {}
+        Me.txtFactura.Location = New System.Drawing.Point(219, 96)
+        Me.txtFactura.MaxLength = 32767
+        Me.txtFactura.Name = "txtFactura"
+        Me.txtFactura.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtFactura.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtFactura.SelectedText = ""
+        Me.txtFactura.Size = New System.Drawing.Size(184, 23)
+        Me.txtFactura.TabIndex = 9
+        Me.txtFactura.UseSelectable = True
         '
-        'MetroTextBox5
+        'txtDesde
         '
-        Me.MetroTextBox5.Lines = New String(-1) {}
-        Me.MetroTextBox5.Location = New System.Drawing.Point(219, 206)
-        Me.MetroTextBox5.MaxLength = 32767
-        Me.MetroTextBox5.Name = "MetroTextBox5"
-        Me.MetroTextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox5.SelectedText = ""
-        Me.MetroTextBox5.Size = New System.Drawing.Size(184, 23)
-        Me.MetroTextBox5.TabIndex = 10
-        Me.MetroTextBox5.UseSelectable = True
+        Me.txtDesde.Lines = New String(-1) {}
+        Me.txtDesde.Location = New System.Drawing.Point(219, 206)
+        Me.txtDesde.MaxLength = 32767
+        Me.txtDesde.Name = "txtDesde"
+        Me.txtDesde.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDesde.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtDesde.SelectedText = ""
+        Me.txtDesde.Size = New System.Drawing.Size(184, 23)
+        Me.txtDesde.TabIndex = 10
+        Me.txtDesde.UseSelectable = True
         '
         'MetroButton1
         '
@@ -147,6 +150,11 @@ Partial Class FrmRegistrarPago
         Me.seTipo.TabIndex = 13
         Me.seTipo.UseSelectable = True
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'FrmRegistrarPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -154,9 +162,9 @@ Partial Class FrmRegistrarPago
         Me.Controls.Add(Me.seTipo)
         Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroTextBox5)
-        Me.Controls.Add(Me.MetroTextBox4)
-        Me.Controls.Add(Me.MetroTextBox3)
+        Me.Controls.Add(Me.txtDesde)
+        Me.Controls.Add(Me.txtFactura)
+        Me.Controls.Add(Me.txtMonto)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.MetroLabel3)
@@ -164,6 +172,7 @@ Partial Class FrmRegistrarPago
         Me.Controls.Add(Me.MetroLabel1)
         Me.Name = "FrmRegistrarPago"
         Me.Size = New System.Drawing.Size(592, 365)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,11 +182,12 @@ Partial Class FrmRegistrarPago
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox4 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox5 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtMonto As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtFactura As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtDesde As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents seTipo As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 
 End Class

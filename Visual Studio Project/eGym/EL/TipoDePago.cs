@@ -34,6 +34,33 @@ namespace EL
             this._duracion = pDuracion;
             this._habilitado = pHabilitado;
         }
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            int auxNumber;
+            bool isNumeric = int.TryParse(Duracion.ToString(), out auxNumber);
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (Nombre == null)
+            {
+                yield return new RuleViolation("Nombre es requerido", "Nombre");
+            }
+            if (Monto == null)
+            {
+                yield return new RuleViolation("Monto es requerido", "Monto");
+            }
+            if (Duracion == null)
+            {
+                yield return new RuleViolation("Duracion  es requerido", "Duracion");
+            }
+    
+            yield break;
+        }
         public int Id
         {
             get { return _id; }
