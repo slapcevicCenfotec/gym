@@ -68,6 +68,7 @@ namespace DAL.Repositories
             return listaMusculos;
         }
 
+
         public Musculo GetById(int id)
         {
             Musculo objMusculo = null;

@@ -63,7 +63,7 @@ Partial Class frmIniciarSesion
         '
         'txtNombreUsuario
         '
-        Me.txtNombreUsuario.Lines = New String(-1) {}
+        Me.txtNombreUsuario.Lines = New String() {"sebaslamu@gmail.com"}
         Me.txtNombreUsuario.Location = New System.Drawing.Point(175, 56)
         Me.txtNombreUsuario.MaxLength = 32767
         Me.txtNombreUsuario.Name = "txtNombreUsuario"
@@ -72,13 +72,14 @@ Partial Class frmIniciarSesion
         Me.txtNombreUsuario.SelectedText = ""
         Me.txtNombreUsuario.Size = New System.Drawing.Size(152, 23)
         Me.txtNombreUsuario.TabIndex = 3
+        Me.txtNombreUsuario.Text = "sebaslamu@gmail.com"
         Me.txtNombreUsuario.UseCustomBackColor = True
         Me.txtNombreUsuario.UseCustomForeColor = True
         Me.txtNombreUsuario.UseSelectable = True
         '
         'txtContrasena
         '
-        Me.txtContrasena.Lines = New String(-1) {}
+        Me.txtContrasena.Lines = New String() {"sebas"}
         Me.txtContrasena.Location = New System.Drawing.Point(175, 85)
         Me.txtContrasena.MaxLength = 32767
         Me.txtContrasena.Name = "txtContrasena"
@@ -87,6 +88,7 @@ Partial Class frmIniciarSesion
         Me.txtContrasena.SelectedText = ""
         Me.txtContrasena.Size = New System.Drawing.Size(152, 23)
         Me.txtContrasena.TabIndex = 4
+        Me.txtContrasena.Text = "sebas"
         Me.txtContrasena.UseCustomBackColor = True
         Me.txtContrasena.UseCustomForeColor = True
         Me.txtContrasena.UseSelectable = True

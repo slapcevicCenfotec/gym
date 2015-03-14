@@ -91,6 +91,12 @@
     <Compile Include="Ejercicio\FrmListarEjercicio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ejercicio\FrmModificarEjercicio.Designer.vb">
+      <DependentUpon>FrmModificarEjercicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicio\FrmModificarEjercicio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ejercicio\FrmRegistrarEjercicio.Designer.vb">
       <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
     </Compile>
@@ -222,6 +228,7 @@
     <Compile Include="Usuarios\FrmListarUsuarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="cls_validacion.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="eGym.resx">
@@ -229,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicio\FrmListarEjercicio.resx">
       <DependentUpon>FrmListarEjercicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicio\FrmModificarEjercicio.resx">
+      <DependentUpon>FrmModificarEjercicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicio\FrmRegistrarEjercicio.resx">
       <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
@@ -320,6 +330,9 @@
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

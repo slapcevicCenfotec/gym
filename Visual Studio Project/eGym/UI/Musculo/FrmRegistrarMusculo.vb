@@ -6,58 +6,54 @@ Public Class FrmRegistrarMusculo
 
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+        Dim resulValidation As Boolean
 
-        'If Not cls_validacion.validar(txtNombre) Then
-        '    MessageBox.Show("Por favor digite la nombre del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtNombre.Focus()
-        '    validar = False
-        '    Return
-        'End If
+        resulValidation = validation()
 
-        'If Not cls_validacion.validar(txtUbicacion) Then
-        '    MessageBox.Show("Por favor digite la ubicacion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtUbicacion.Focus()
-        '    validar = False
-        '    Return
-        'End If
+        If resulValidation Then
 
-        'If Not cls_validacion.validar(txtOrigen) Then
-        '    MessageBox.Show("Por favor digite el origen del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtOrigen.Focus()
-        '    validar = False
-        '    Return
-        'End If
+            Dim nombre As String = Me.txtNombre.Text
+            Dim ubicacion As String = Me.txtUbicacion.Text
+            Dim origen As String = Me.txtOrigen.Text
+            Dim inserccion As String = Me.txtInserccion.Text
+            Dim inervacion As String = Me.txtInervacion.Text
+            Dim irrigacion As String = Me.txtIrrigacion.Text
 
-        'If Not cls_validacion.validar(txtInserccion) Then
-        '    MessageBox.Show("Por favor digite la inserccion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtInserccion.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        'If Not cls_validacion.validar(txtInervacion) Then
-        '    MessageBox.Show("Por favor digite la inervacion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtInervacion.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        'If Not cls_validacion.validar(txtIrrigacion) Then
-        '    MessageBox.Show("Por favor digite la irrigacion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtInervacion.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        Dim nombre As String = Me.txtNombre.Text
-        Dim ubicacion As String = Me.txtUbicacion.Text
-        Dim origen As String = Me.txtOrigen.Text
-        Dim inserccion As String = Me.txtInserccion.Text
-        Dim inervacion As String = Me.txtInervacion.Text
-        Dim irrigacion As String = Me.txtIrrigacion.Text
-
-        objGestorMusculo.agregarMusculo(nombre, ubicacion, origen, inserccion, inervacion, irrigacion)
+            objGestorMusculo.agregarMusculo(nombre, ubicacion, origen, inserccion, inervacion, irrigacion)
+        End If
     End Sub
+
+    Private Function validation() As Boolean
+
+        Dim validar As Boolean = True
+
+        If Not cls_validacion.validar(txtNombre) Then
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtUbicacion) Then
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtOrigen) Then
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtInserccion) Then
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtInervacion) Then
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtIrrigacion) Then
+            validar = False
+        End If
+
+        Return validar
+
+    End Function
 
     Private Sub txtIrrigacion_Click(sender As Object, e As EventArgs) Handles txtIrrigacion.Click
 

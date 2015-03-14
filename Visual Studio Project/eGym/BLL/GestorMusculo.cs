@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using EL;
 using DAL;
+using Exceptions.CustomExceptions;
+using System.Data.SqlClient;
 
 namespace BLL
 {
@@ -33,18 +35,20 @@ namespace BLL
                 else
                 {
                     StringBuilder sb = new StringBuilder();
-                 
-                    //for (RuleViolation rv in objMusculo.GetRuleViolations())
-                    //{
-                    //    sb.AppendLine(rv.ErrorMessage);
-                    //}
+
+                    foreach (RuleViolation rv in objMusculo.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+
+                    throw new BusinessLogicException(sb.ToString());
                 }
 
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
 
-                throw;
+                throw new DataAccessException("Ha ocurrido un error agregando un musculo");
             }
 
         }
@@ -65,17 +69,19 @@ namespace BLL
                 {
                     StringBuilder sb = new StringBuilder();
 
-                    //for (RuleViolation rv in objMusculo.GetRuleViolations())
-                    //{
-                    //    sb.AppendLine(rv.ErrorMessage);
-                    //}
+                    foreach (RuleViolation rv in objMusculo.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+
+                    throw new BusinessLogicException(sb.ToString());
                 }
 
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
 
-                throw;
+                throw new DataAccessException("Ha ocurrido un error agregando un musculo");
             }
         
         }

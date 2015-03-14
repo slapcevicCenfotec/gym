@@ -8,7 +8,6 @@ using EL;
 using System.Data.SqlClient;
 using Exceptions.CustomExceptions;
 
-
 namespace BLL
 {
     public class GestorRol

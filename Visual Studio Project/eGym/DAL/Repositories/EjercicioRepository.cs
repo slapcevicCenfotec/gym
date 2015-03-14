@@ -67,32 +67,29 @@ namespace DAL.Repositories
             return listaEjercicios;
         }
 
-
+      
         public Ejercicio GetById(int id)
         {
-            Ejercicio objMusculo = null;
-            var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
+            Ejercicio objEjercicio = null;
+            var sqlQuery = "SELECT [POSICION_INICIAL_IMG] , [POSICION_FINAL_iMG] FROM [dbo].[T_EJERCICIO] WHERE [ID] = @idEjercicio";
             SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", id);
+            cmd.Parameters.AddWithValue("@idEjercicio", id);
 
-            //var ds = DBAccess.ExecuteQuery(cmd);
+            var ds = DBAccess.ExecuteQuery(cmd);
 
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    var dr = ds.Tables[0].Rows[0];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                var dr = ds.Tables[0].Rows[0];
 
-            //    objEstrella = new Estrella
-            //    {
-            //        Id = Convert.ToInt32(dr["Id"]),
-            //        Nombre = dr["Nombre"].ToString(),
-            //        TemperaturaPromedio = Convert.ToDouble(dr["Tipo"])
+                objEjercicio = new Ejercicio
+                {
+                    PosicionInicialImg = (byte[])dr["POSICION_INICIAL_IMG"],
+                    PosicionFinalImg = (byte[])dr["POSICION_INICIAL_IMG"] ,
 
-            //    };
-            //}
+                };
+            }
 
-
-
-            return objMusculo;
+            return objEjercicio;
         }
 
         public void Save()
@@ -152,17 +149,22 @@ namespace DAL.Repositories
 
         private void InsertEjercicio(Ejercicio objEjercicio)
         {
+   
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@pFoto", objEjercicio.PosicionInicialImg));
-                //cmd.Parameters.Add(new SqlParameter("@UBICACION", objMusculo.Ubicacion));
-                //cmd.Parameters.Add(new SqlParameter("@ORIGEN", objMusculo.Origen));
-                //cmd.Parameters.Add(new SqlParameter("@INSERCCION", objMusculo.Inserccion));
-                //cmd.Parameters.Add(new SqlParameter("@INERVACION", objMusculo.Inervacion));
-                //cmd.Parameters.Add(new SqlParameter("@IRRIGACION", objMusculo.Irrigacion));
+                cmd.Parameters.Add(new SqlParameter("@NOMBRE", objEjercicio.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@ALIAS", objEjercicio.Alias));
+                cmd.Parameters.Add(new SqlParameter("@POSICION_INICIAL", objEjercicio.PosicionInicial));
+                cmd.Parameters.Add(new SqlParameter("@POSICION_INICIAL_IMG", objEjercicio.PosicionInicialImg));
+                cmd.Parameters.Add(new SqlParameter("@POSICION_FINAL", objEjercicio.PosicionFinal));
+                cmd.Parameters.Add(new SqlParameter("@POSICION_FINAL_IMG", objEjercicio.PosicionFinalImg));
+                cmd.Parameters.Add(new SqlParameter("@ERRORES_COMUNES", objEjercicio.ErroresComunes));
+                cmd.Parameters.Add(new SqlParameter("@DESCRIPCION", objEjercicio.Descripcion));
+                cmd.Parameters.Add(new SqlParameter("@ID_MUSCULO_PRINCIPAL", objEjercicio.IdMusculoPrincipal));
+                cmd.Parameters.Add(new SqlParameter("@LISTA_MUSCULOS_SECUNDARIOS", objEjercicio.MusculosSecundarios));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarEjercicio");
 

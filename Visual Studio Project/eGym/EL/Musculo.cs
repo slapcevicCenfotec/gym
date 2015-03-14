@@ -66,7 +66,13 @@ namespace EL
 
         #region Constructor
 
-        public Musculo() { }
+        public Musculo() {}
+
+        public Musculo(int pid,string pnombre)
+        {
+            Id = pid;
+            Nombre = pnombre;
+        }
 
         public Musculo(string pnombre,string pubicacion, string porigen, string pinserccion ,string pinervacion, string pirrigacion)
         {
