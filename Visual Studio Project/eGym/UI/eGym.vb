@@ -1,9 +1,15 @@
 ﻿Public Class eGym
-    Public Property passedIdMaquina As Integer
+    Private usuarioSesion As EL.Usuario
     Private lblSelected As String
     Private showUserInfo As Boolean
 
     Public Sub New()
+        showUserInfo = False
+        InitializeComponent()
+    End Sub
+
+    Public Sub New(usuario As EL.Usuario)
+        usuarioSesion = usuario
         showUserInfo = False
         InitializeComponent()
     End Sub
