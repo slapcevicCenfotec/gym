@@ -1,37 +1,67 @@
 ﻿Public Class eGym
     Public Property passedIdMaquina As Integer
+    Private lblSelected As String
+    Private showUserInfo As Boolean
 
     Public Sub New()
-        ' This call is required by the designer.
+        showUserInfo = False
         InitializeComponent()
-
-
-
     End Sub
 
     Private Sub eGym_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InicializarMenu()
     End Sub
 
+
     Private Sub InicializarMenu()
-        lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
+        'lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
             AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
+            AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
+            AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
+
         Next
     End Sub
 
     Private Function Seleccionar(lbl As Label)
         For Each ctr As Label In menuPanel.Controls.OfType(Of Label)()
-            ctr.BackColor = Color.White
-            ctr.ForeColor = Color.Black
+            ctr.BackColor = Color.FromArgb(17, 17, 17)
+            ctr.ForeColor = Color.White
         Next
-        lbl.BackColor = Color.FromArgb(0, 170, 171)
+        lbl.BackColor = Color.FromArgb(124, 65, 153)
         lbl.ForeColor = Color.White
+        lblSelected = lbl.Name
+        Return lbl
+    End Function
+
+    Private Function Marcar(lbl As Label)
+        For Each ctr As Label In menuPanel.Controls.OfType(Of Label)()
+            If Not lblSelected Is ctr.Name Then
+                ctr.BackColor = Color.FromArgb(17, 17, 17)
+                ctr.ForeColor = Color.White
+            End If
+        Next
+        If Not lblSelected Is lbl.Name Then
+            lbl.BackColor = Color.FromArgb(34, 34, 34)
+            lbl.ForeColor = Color.White
+        End If
+        Return lbl
+    End Function
+
+    Private Function Desmarcar(lbl As Label)
+        If Not lblSelected Is lbl.Name Then
+            lbl.BackColor = Color.FromArgb(17, 17, 17)
+            lbl.ForeColor = Color.White
+        End If
         Return lbl
     End Function
 
     Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
-
+        Dim ctr As Control
+        ctr = New FrmListarUsuarios()
+        ctr.Dock = DockStyle.Fill
+        MetroPanel1.Controls.Clear()
+        MetroPanel1.Controls.Add(ctr)
     End Sub
 
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
@@ -85,4 +115,9 @@
         frmIniciarSesion.Show()
 
     End Sub
+
+    Private Sub pcbUsuario_Click(sender As Object, e As EventArgs) Handles pcbUsuario.Click
+        pnlInformacionUsuario.Visible = Not pnlInformacionUsuario.Visible
+    End Sub
+
 End Class
