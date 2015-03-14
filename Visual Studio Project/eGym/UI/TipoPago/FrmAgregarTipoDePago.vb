@@ -1,5 +1,7 @@
-﻿Public Class FrmAgregarTipoDePago
-
+﻿Imports System.Text.RegularExpressions
+Public Class FrmAgregarTipoDePago
+    Dim montoRegex As Regex = New Regex("[+-]?(?=\d*[.eE])(?=\.?\d)\d*\.?\d*(?:[eE][+-]?\d+)?")
+    Dim duracionRegex As Regex = New Regex("^[0-9]+$")
     Private Sub FrmAgregarTipoDePago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -11,9 +13,10 @@
         Me.Controls.Add(ctr)
     End Sub
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
-        objGestorTipoPago.insertarTipoDePago(txtNombre.Text, txtMonto.Text, txtDuracion.Text)
-        Me.regresaListar()
-
+        If validarAgregarTipoDePago() = True Then
+            objGestorTipoPago.insertarTipoDePago(txtNombre.Text, txtMonto.Text, txtDuracion.Text)
+            Me.regresaListar()
+        End If
     End Sub
     Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
 
@@ -36,4 +39,37 @@
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
         Me.regresaListar()
     End Sub
+
+    Private Function validarAgregarTipoDePago() As Boolean
+
+        lblError.Text = ""
+        Dim result As Boolean = True
+
+
+        If txtNombre.Text = Nothing Then
+            result = False
+            ErrorProvider1.SetError(txtNombre, "Debe ingresar un nombre")
+        End If
+        If txtMonto.Text = Nothing Then
+            result = False
+            ErrorProvider1.SetError(txtMonto, "Debe ingresar un monto")
+        Else
+            If montoRegex.IsMatch(txtMonto.Text) = False Then
+                result = False
+                ErrorProvider1.SetError(txtMonto, "El campo monto debe ser un numero")
+            End If
+        End If
+        If txtDuracion.Text = Nothing Then
+            result = False
+            ErrorProvider1.SetError(txtDuracion, "Debe ingresar una cantidad de dias.")
+        Else
+            If duracionRegex.IsMatch(txtDuracion.Text) = False Then
+                result = False
+                ErrorProvider1.SetError(txtDuracion, "El campo duracion debe ser de tipo numero")
+            End If
+        End If
+
+        Return result
+
+    End Function
 End Class

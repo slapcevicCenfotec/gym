@@ -41,10 +41,10 @@ namespace BLL
 
         public Usuario iniciarSesion(String correo, String contrasena)
         {
+            GestorEvento ge = new GestorEvento();
             AccesoSesion acceso = new AccesoSesion();
             usuarioSesion = acceso.iniciarSesion(correo, contrasena);
-            //_permisos = gr.(usuarioSesion.IdRol);
-
+            ge.insertarEvento("Iniciar sesión", "El usuario " + usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " ha iniciado sesión");
             return usuarioSesion;
         }
 
@@ -53,7 +53,7 @@ namespace BLL
             GestorEvento ge = new GestorEvento();
             Gestor g = new Gestor();
             //g.enviarCorreo();
-            ge.insertarEvento("Cerrar sesión", "El usuario ha cerrado la sesión");
+            ge.insertarEvento("Cerrar sesión", "El usuario "+usuarioSesion.Nombre +" "+ usuarioSesion.Apellido+" ha cerrado la sesión");
         }
     }
 }

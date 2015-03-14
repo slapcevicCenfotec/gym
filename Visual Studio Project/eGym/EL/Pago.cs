@@ -16,13 +16,47 @@ namespace EL
         private DateTime _desde;
         private bool _habilitado;
 
+      
+
         public Pago()
         { }
         public Pago(int pId)
         {
             this._id = pId;
         }
-       
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (Monto == null)
+            {
+                yield return new RuleViolation("Monto es requerido", "Id");
+            }
+            if (Tipo == null)
+            {
+                yield return new RuleViolation("Tipo es requerido", "Id");
+            }
+            if (Fecha == null)
+            {
+                yield return new RuleViolation("Fecha es requerido", "Id");
+            } if (Desde == null)
+            {
+                yield return new RuleViolation("Desde es requerido", "Id");
+            } if (Hasta == null)
+            {
+                yield return new RuleViolation("Hasta es requerido", "Id");
+            } if (Habilitado == null)
+            {
+                yield return new RuleViolation("Habilitado es requerido", "Id");
+            }
+            yield break;
+        }
         public int Id
         {
             get { return _id; }
@@ -42,7 +76,11 @@ namespace EL
             get { return _tipo; }
             set { _tipo = value; }
         }
-        
+        public bool Habilitado
+        {
+            get { return _habilitado; }
+            set { _habilitado = value; }
+        }
 
         public DateTime Fecha
         {

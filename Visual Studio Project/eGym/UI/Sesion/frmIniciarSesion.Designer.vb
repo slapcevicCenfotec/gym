@@ -25,83 +25,69 @@ Partial Class frmIniciarSesion
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmIniciarSesion))
         Me.btnIngresar = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.txtNombreUsuario = New MetroFramework.Controls.MetroTextBox()
         Me.txtContrasena = New MetroFramework.Controls.MetroTextBox()
-        Me.lblError = New MetroFramework.Controls.MetroLabel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnIngresar
         '
-        Me.btnIngresar.Location = New System.Drawing.Point(252, 114)
+        Me.btnIngresar.AutoSize = True
+        Me.btnIngresar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnIngresar.Location = New System.Drawing.Point(220, 253)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
-        Me.btnIngresar.TabIndex = 0
+        Me.btnIngresar.Size = New System.Drawing.Size(100, 35)
+        Me.btnIngresar.TabIndex = 3
         Me.btnIngresar.Text = "Ingresar"
+        Me.btnIngresar.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnIngresar.UseSelectable = True
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(23, 60)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(127, 19)
-        Me.MetroLabel1.TabIndex = 1
-        Me.MetroLabel1.Text = "Nombre de usuario:"
         '
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(23, 89)
+        Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel2.Location = New System.Drawing.Point(70, 159)
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(78, 19)
+        Me.MetroLabel2.Size = New System.Drawing.Size(98, 25)
         Me.MetroLabel2.TabIndex = 2
-        Me.MetroLabel2.Text = "Contraseña:"
+        Me.MetroLabel2.Text = "Contraseña"
+        Me.MetroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'txtNombreUsuario
         '
+        Me.txtNombreUsuario.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNombreUsuario.Lines = New String(-1) {}
-        Me.txtNombreUsuario.Location = New System.Drawing.Point(175, 56)
+        Me.txtNombreUsuario.Location = New System.Drawing.Point(70, 108)
         Me.txtNombreUsuario.MaxLength = 32767
         Me.txtNombreUsuario.Name = "txtNombreUsuario"
         Me.txtNombreUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNombreUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtNombreUsuario.SelectedText = ""
-        Me.txtNombreUsuario.Size = New System.Drawing.Size(152, 23)
-        Me.txtNombreUsuario.TabIndex = 3
-        Me.txtNombreUsuario.UseCustomBackColor = True
-        Me.txtNombreUsuario.UseCustomForeColor = True
+        Me.txtNombreUsuario.Size = New System.Drawing.Size(250, 35)
+        Me.txtNombreUsuario.Style = MetroFramework.MetroColorStyle.Purple
+        Me.txtNombreUsuario.TabIndex = 1
+        Me.txtNombreUsuario.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtNombreUsuario.UseSelectable = True
         '
         'txtContrasena
         '
+        Me.txtContrasena.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtContrasena.Lines = New String(-1) {}
-        Me.txtContrasena.Location = New System.Drawing.Point(175, 85)
+        Me.txtContrasena.Location = New System.Drawing.Point(70, 187)
         Me.txtContrasena.MaxLength = 32767
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContrasena.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtContrasena.SelectedText = ""
-        Me.txtContrasena.Size = New System.Drawing.Size(152, 23)
-        Me.txtContrasena.TabIndex = 4
-        Me.txtContrasena.UseCustomBackColor = True
-        Me.txtContrasena.UseCustomForeColor = True
+        Me.txtContrasena.Size = New System.Drawing.Size(250, 35)
+        Me.txtContrasena.Style = MetroFramework.MetroColorStyle.Purple
+        Me.txtContrasena.TabIndex = 2
+        Me.txtContrasena.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtContrasena.UseSelectable = True
-        '
-        'lblError
-        '
-        Me.lblError.AutoSize = True
-        Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(18, 144)
-        Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(39, 19)
-        Me.lblError.TabIndex = 5
-        Me.lblError.Text = "Error"
-        Me.lblError.UseCustomForeColor = True
-        Me.lblError.Visible = False
         '
         'ErrorProvider1
         '
@@ -110,29 +96,56 @@ Partial Class frmIniciarSesion
         Me.ErrorProvider1.ContainerControl = Me
         Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
         '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel1.Location = New System.Drawing.Point(70, 80)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(160, 25)
+        Me.MetroLabel1.TabIndex = 1
+        Me.MetroLabel1.Text = "Nombre de usuario"
+        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.AutoSize = True
+        Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnCancelar.Location = New System.Drawing.Point(70, 253)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(100, 35)
+        Me.btnCancelar.TabIndex = 4
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnCancelar.UseSelectable = True
+        '
         'frmIniciarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(350, 200)
-        Me.Controls.Add(Me.lblError)
+        Me.ClientSize = New System.Drawing.Size(379, 320)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtContrasena)
         Me.Controls.Add(Me.txtNombreUsuario)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.btnIngresar)
+        Me.MaximizeBox = False
         Me.Name = "frmIniciarSesion"
+        Me.Resizable = False
+        Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.Text = "eGym"
+        Me.Theme = MetroFramework.MetroThemeStyle.Dark
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnIngresar As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNombreUsuario As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtContrasena As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents lblError As MetroFramework.Controls.MetroLabel
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
 End Class

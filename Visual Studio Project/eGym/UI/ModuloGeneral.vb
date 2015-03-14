@@ -11,6 +11,4 @@ Public Module ModuloGeneral
     Public objGestorSesion As New GestorSesion()
     Public Gestor As Gestor = New Gestor()
 
-    Public usuarioSesion As Usuario
-
 End Module
