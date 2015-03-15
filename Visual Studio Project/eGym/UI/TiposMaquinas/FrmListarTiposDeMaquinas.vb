@@ -13,11 +13,13 @@ Public Class FrmListarTiposDeMaquinas
         tblTiposDeMaquinas.Columns(0).Visible = False
         tblTiposDeMaquinas.Columns(1).Visible = False
         tblTiposDeMaquinas.Columns(2).HeaderText = "Nombre"
-        tblTiposDeMaquinas.Columns(2).Width = (tblTiposDeMaquinas.Width) / 4
+        tblTiposDeMaquinas.Columns(2).Width = (tblTiposDeMaquinas.Width) / 3
         tblTiposDeMaquinas.Columns(3).HeaderText = "Descripción"
-        tblTiposDeMaquinas.Columns(3).Width = ((tblTiposDeMaquinas.Width) / 4) * 3
+        tblTiposDeMaquinas.Columns(3).Width = (tblTiposDeMaquinas.Width) / 3
+        tblTiposDeMaquinas.Columns(5).HeaderText = "Cantidad de máquinas"
+        tblTiposDeMaquinas.Columns(5).Width = (tblTiposDeMaquinas.Width) / 3
         tblTiposDeMaquinas.Columns(4).Visible = False
-        tblTiposDeMaquinas.Columns(5).Visible = False
+        tblTiposDeMaquinas.Columns(6).Visible = False
 
         tblTiposDeMaquinas.MultiSelect = False
         tblTiposDeMaquinas.AllowUserToResizeColumns = False
@@ -63,16 +65,22 @@ Public Class FrmListarTiposDeMaquinas
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim eliminar As MsgBoxResult = MsgBox("Desea eliminar el tipo de máquina?", MsgBoxStyle.YesNo, "Elminar")
+        'Dim eliminar As MsgBoxResult = MsgBox("Desea eliminar el tipo de máquina?", MsgBoxStyle.YesNo, "Eliminar")
+        Dim eliminar As DialogResult = MetroFramework.MetroMessageBox.Show(Me, "Desea eliminar la maquina?", "Eliminar", MessageBoxButtons.YesNo)
 
-        If eliminar = MsgBoxResult.Yes Then
-            Dim maquinaPorEliminar As TipoDeMaquina = tblTiposDeMaquinas.CurrentRow.DataBoundItem
-            objGestorTipoDeMaquina.eliminarTipoDeMaquina(maquinaPorEliminar)
-            Dim ctr As Control
-            ctr = New FrmListarTiposDeMaquinas
-            ctr.Dock = DockStyle.Fill
-            Me.Controls.Clear()
-            Me.Controls.Add(ctr)
+        If eliminar = DialogResult.Yes Then
+            Dim tipomaquinaPorEliminar As TipoDeMaquina = tblTiposDeMaquinas.CurrentRow.DataBoundItem
+
+            If tipomaquinaPorEliminar.Cantidad > 0 Then
+                Dim tipoMaquinaConMaquinas As MsgBoxResult = MsgBox("Este tipo de máquina posee máquinas asociadas.Por favor elimine las máquinas primero.", MsgBoxStyle.OkOnly, "Tipos de máquina")
+            Else
+                objGestorTipoDeMaquina.eliminarTipoDeMaquina(tipomaquinaPorEliminar)
+                Dim ctr As Control
+                ctr = New FrmListarTiposDeMaquinas
+                ctr.Dock = DockStyle.Fill
+                Me.Controls.Clear()
+                Me.Controls.Add(ctr)
+            End If
         End If
     End Sub
 End Class

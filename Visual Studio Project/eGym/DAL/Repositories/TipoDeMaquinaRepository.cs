@@ -100,6 +100,8 @@ namespace DAL.Repositories
                             Nombre = dr["NOMBRE"].ToString(),
                             Descripcion = dr["DESCRIPCION"].ToString(),
                             Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                            Cantidad = Convert.ToInt32(dr["CANTIDAD_MAQUINAS"]),
+
                         });
                     }
                 }

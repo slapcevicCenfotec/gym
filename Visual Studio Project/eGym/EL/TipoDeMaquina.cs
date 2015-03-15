@@ -22,6 +22,7 @@ namespace EL
         private string _nombre;
         private string _descripcion;
         private Boolean _habilitado;
+        private int _cantidad;
 
         #endregion
 
@@ -57,6 +58,12 @@ namespace EL
             set { _habilitado = value; }
         }
 
+        public int Cantidad
+        {
+            get { return _cantidad; }
+            set { _cantidad = value; }
+        }
+
         #endregion
 
         #region Constructores
@@ -68,6 +75,16 @@ namespace EL
             Nombre = pnombre;
             Descripcion = pdescripcion;
             Habilitado = phabilitado;
+        }
+
+        public TipoDeMaquina(int pid, byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado, int pcantidad)
+        {
+            Id = pid;
+            Foto = pfoto;
+            Nombre = pnombre;
+            Descripcion = pdescripcion;
+            Habilitado = phabilitado;
+            Cantidad = pcantidad;
         }
 
         public TipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion)

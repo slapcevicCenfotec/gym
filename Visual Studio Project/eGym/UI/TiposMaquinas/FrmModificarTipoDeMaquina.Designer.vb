@@ -143,6 +143,7 @@ Partial Class FrmModificarTipoDeMaquina
         '
         Me.pbxFoto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pbxFoto.BackColor = System.Drawing.Color.Transparent
+        Me.pbxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbxFoto.Location = New System.Drawing.Point(334, 114)
         Me.pbxFoto.Margin = New System.Windows.Forms.Padding(3, 0, 16, 0)
         Me.pbxFoto.Name = "pbxFoto"
