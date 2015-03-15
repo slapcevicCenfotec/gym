@@ -1,35 +1,16 @@
 ﻿Imports EL
 
-''' <summary>
-''' Autor: Alexis Soto
-''' Fecha: 03/15/2015
-''' Descripcion: Instancia del User COntrol para listar Rol
-''' </summary>
 Public Class FrmListarRoles
     Inherits MetroFramework.Controls.MetroUserControl
 
     Dim listaRolesOringinal As New List(Of Rol)
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Llena con los datos obtenidos de ListarRol y se los pasa el Datagridview
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub FrmListarRoles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listaRolesOringinal = objGestorRol.listarRoles()
         tblListarRoles.DataSource = listaRolesOringinal
 
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Configura el datagridview para mostrar los datos
-    ''' </summary>
-    ''' <param name="sender">The sender.</param>
-    ''' <param name="e">The <see cref="DataGridViewBindingCompleteEventArgs"/> instance containing the event data.</param>
     Private Sub configurarColumnas(ByVal sender As Object, _
     ByVal e As DataGridViewBindingCompleteEventArgs) _
     Handles tblListarRoles.DataBindingComplete
@@ -51,12 +32,6 @@ Public Class FrmListarRoles
     End Sub
 
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Filtra el datagridview y refresca los datos
-    ''' </summary>
-    ''' <param name="filtro">The filtro.</param>
     Private Sub AplicarFiltro(filtro As String)
         Dim listarFiltrada As List(Of EL.Rol) = New List(Of Rol)
         For Each rol As EL.Rol In listaRolesOringinal
@@ -68,24 +43,10 @@ Public Class FrmListarRoles
         tblListarRoles.DataSource = listarFiltrada
 
     End Sub
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Obtiene el texto a buscar y se lo envia el metodo aplicarFiltro
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         AplicarFiltro(Me.txtBuscar.Text.ToUpper)
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Crea una instacio de FrmRegistrarRol 
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim ctr As Control
         ctr = New FrmRegistrarRol
@@ -93,13 +54,6 @@ Public Class FrmListarRoles
         Me.Controls.Add(ctr)
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Crea una instacio de FrmModificarRolRol 
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim ctr As Control
         Dim idRol As Int32
@@ -110,13 +64,6 @@ Public Class FrmListarRoles
         Me.Controls.Add(ctr)
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Llama el evento EliminarRol Del GestorRol y le envia el Id de la fila que se encuentra seleccionada en el DataGridView
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim idRol As Int32
         If MsgBox("Desea Eliminar el Rol?", vbYesNo, "Eliminar Rol") = MsgBoxResult.Yes Then

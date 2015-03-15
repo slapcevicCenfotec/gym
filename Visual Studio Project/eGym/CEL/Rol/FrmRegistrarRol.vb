@@ -1,28 +1,9 @@
-﻿''' <summary>
-''' Autor: Alexis Soto
-''' Fecha: 03/15/2015
-''' Descripcion: Instancia del User COntrol Agregar un Rol
-''' </summary>
-Public Class FrmRegistrarRol
+﻿Public Class FrmRegistrarRol
     Inherits MetroFramework.Controls.MetroUserControl
-
-
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: LLama al metdod ListarPermisos para obtener lista de permisos al cargar el UserControl
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub FrmRegistrarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListarPermisos()
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Obtiene la lista de permisos y la agregar al Panel de permisos  en al User Control
-    ''' </summary>
     Private Sub ListarPermisos()
 
         Dim offset As Integer
@@ -44,20 +25,12 @@ Public Class FrmRegistrarRol
             chK.Theme = MetroFramework.MetroThemeStyle.Dark
             chK.FontSize = MetroFramework.MetroCheckBoxSize.Tall
             chK.FontWeight = MetroFramework.MetroCheckBoxWeight.Light
-            chK.UseCustomBackColor = True
-            chK.BackColor = Color.Empty
             chK.Size = New Size(150, 25)
             pnlPermisos.Controls.Add(chK)
             initiaValue = initiaValue + 20
         Next
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Valida que se haya seleccionado al menos un permiso del panel de permisos
-    ''' </summary>
-    ''' <returns></returns>
     Public Function validarPermisos() As Boolean
         Dim validarPermiso As Boolean
         validarPermiso = False
@@ -73,11 +46,6 @@ Public Class FrmRegistrarRol
 
 
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Obtiene los datos del UserControl y crea una instancia para guardar los datos
-    ''' </summary>
     Public Sub insertarRol()
         Dim nombre As String
         Dim descripcion As String
@@ -101,11 +69,6 @@ Public Class FrmRegistrarRol
     End Sub
 
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Llama al user Control ListarRoles
-    ''' </summary>
     Private Sub frmListarRoles()
         Dim ctr As Control
         ctr = New FrmListarRoles
@@ -114,13 +77,10 @@ Public Class FrmRegistrarRol
         Me.Controls.Add(ctr)
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Valida los campos y llama al metodo para insertar un Rol
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    Private Sub txtDescripcion_Click(sender As Object, e As EventArgs) Handles txtDescripcion.Click
+
+    End Sub
+
     Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
         ErrorProvider.Clear()
         If txtNombre.Text = "" Then
@@ -134,15 +94,7 @@ Public Class FrmRegistrarRol
         End If
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Lamma al metodo ListarRoles
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         frmListarRoles()
     End Sub
-
 End Class

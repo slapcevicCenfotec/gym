@@ -28,6 +28,8 @@ namespace DAL
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
 
+        private IRepository<Gimnasio> _gimnasioRepository;
+
         public IRepository<TipoDeMaquina> TipoDeMaquinaRepository
         {
             get
@@ -137,6 +139,19 @@ namespace DAL
                 return _tipoDePagoRepository;
             }
         }
+
+        public IRepository<Gimnasio> GimnasioRepository
+        {
+            get
+            {
+                if (this._gimnasioRepository == null)
+                {
+                    this._gimnasioRepository = new GimnasioRepository();
+                }
+                return _gimnasioRepository;
+            }
+        }
+
         public IRepository<Excepcion> ExcepcionRepository
         {
             get
