@@ -64,33 +64,23 @@ namespace DAL.Repositories
             }
             return listaTiposDePagos;
         }
-       
-        public TipoDePago GetById(int id)
+
+        public TipoDePago GetById(int pId)
         {
-            return new TipoDePago();
-            //TipoDeMaquina objTipoDeMaquina = null;
-            //var sqlQuery = "SELECT Id, Nombre, Masa, TemperaturaMedia, DuracionDeUnDia FROM TipoDeMaquinas WHERE ID = @id ";
-            //SqlCommand cmd = new SqlCommand(sqlQuery);
-            //cmd.Parameters.AddWithValue("@id", id);
+            TipoDePago tipo = new TipoDePago();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@pId", pId));
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTipoDePagoPorId");
 
-            //var ds = DBAccess.ExecuteQuery(cmd);
-
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    var dr = ds.Tables[0].Rows[0];
-
-            //    objTipoDeMaquina = new TipoDeMaquina
-            //    {
-            //        Id = Convert.ToInt32(dr["ID"]),
-            //        // Foto = Convert.ToByte(["FOTO"]),
-            //        Nombre = dr["NOMBRE"].ToString(),
-            //        Descripcion = dr["DESCRIPCION"].ToString(),
-            //        Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
-
-            //    };
-            //}
-
-            //return objTipoDeMaquina;
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+               tipo.Id = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"].ToString());
+               tipo.Nombre = ds.Tables[0].Rows[0]["NOMBRE"].ToString();
+               tipo.Monto = double.Parse(ds.Tables[0].Rows[0]["MONTO"].ToString());
+               tipo.Duracion = Convert.ToInt32(ds.Tables[0].Rows[0]["DURACION"]);
+               tipo.Habilitado = Convert.ToBoolean(ds.Tables[0].Rows[0]["HABILITADO"]);
+            }
+            return tipo;
         }
 
         public void Save()
