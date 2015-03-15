@@ -44,7 +44,9 @@ namespace BLL
             GestorEvento ge = new GestorEvento();
             AccesoSesion acceso = new AccesoSesion();
             usuarioSesion = acceso.iniciarSesion(correo, contrasena);
-            ge.insertarEvento("Iniciar sesión", "El usuario " + usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " ha iniciado sesión");
+            if(usuarioSesion != null){
+                ge.insertarEvento("Iniciar sesión", "El usuario " + usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " ha iniciado sesión");
+            }
             return usuarioSesion;
         }
 

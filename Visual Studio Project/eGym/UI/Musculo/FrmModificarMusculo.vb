@@ -20,52 +20,64 @@ Public Class FrmModificarMusculo
 
     End Sub
 
-    Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
+    Private Function validation() As Boolean
+
+        Dim validar As Boolean = True
+
+        If Not cls_validacion.validar(txtNombre) Then
+            ErrorProvider1.SetError(txtNombre, "Debe ingresar el nombre")
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtUbicacion) Then
+            ErrorProvider1.SetError(txtUbicacion, "Debe ingresar la ubicación")
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtOrigen) Then
+            ErrorProvider1.SetError(txtOrigen, "Debe ingresar el origen")
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtInserccion) Then
+            ErrorProvider1.SetError(txtInserccion, "Debe ingresar la insercción")
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtInervacion) Then
+            ErrorProvider1.SetError(txtInervacion, "Debe ingresar la inervación")
+            validar = False
+        End If
+
+        If Not cls_validacion.validar(txtIrrigacion) Then
+            ErrorProvider1.SetError(txtIrrigacion, "Debe ingresar la irrigación")
+            validar = False
+        End If
+
+        Return validar
+
+    End Function
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim resulValidation As Boolean
+
+        resulValidation = validation()
+
+        If resulValidation Then
+            objGestorMusculo.modificarMusculo(musculoPorModificar.Id, txtNombre.Text, txtUbicacion.Text, txtOrigen.Text, txtInserccion.Text, txtInervacion.Text, txtIrrigacion.Text)
+            Dim ctr As Control
+            ctr = New FrmListarMusculo
+            ctr.Dock = DockStyle.Fill
+            Me.Controls.Clear()
+            Me.Controls.Add(ctr)
+        End If
     End Sub
 
-    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
-        'If Not cls_validacion.validar(txtNombre) Then
-        '    MessageBox.Show("Por favor digite la nombre del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtNombre.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        'If Not cls_validacion.validar(txtUbicacion) Then
-        '    MessageBox.Show("Por favor digite la ubicacion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtUbicacion.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        'If Not cls_validacion.validar(txtOrigen) Then
-        '    MessageBox.Show("Por favor digite el origen del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtOrigen.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        'If Not cls_validacion.validar(txtInserccion) Then
-        '    MessageBox.Show("Por favor digite la inserccion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtInserccion.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        'If Not cls_validacion.validar(txtInervacion) Then
-        '    MessageBox.Show("Por favor digite la inervacion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtInervacion.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        'If Not cls_validacion.validar(txtIrrigacion) Then
-        '    MessageBox.Show("Por favor digite la irrigacion del musculo", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtInervacion.Focus()
-        '    validar = False
-        '    Return
-        'End If
-
-        objGestorMusculo.modificarMusculo(musculoPorModificar.Id, txtNombre.Text, txtUbicacion.Text, txtOrigen.Text, txtInserccion.Text, txtInervacion.Text, txtIrrigacion.Text)
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Dim ctr As Control
+        ctr = New FrmListarMusculo
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
     End Sub
 End Class

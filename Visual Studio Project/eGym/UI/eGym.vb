@@ -21,11 +21,22 @@
 
     Private Sub InicializarMenu()
         lblNombreUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido
+        Dim clear As Boolean
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
-            AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
-            AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
-            AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
+            clear = False
+            For Each permiso As EL.Permiso In usuarioSesion.Rol.ListaPermisos
+                If lbl.Text.Trim() = permiso.Nombre.Trim() Then
+                    clear = True
+                    AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
+                    AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
+                    AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
+                End If
+            Next
+            If clear = False Then
+                lbl.Visible = False
+            End If
         Next
+
     End Sub
 
     Private Function Seleccionar(lbl As Label)
@@ -124,7 +135,28 @@
         pnlInformacionUsuario.Visible = Not pnlInformacionUsuario.Visible
     End Sub
 
-    Private Sub eGym_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-
+    Private Sub MetroLabel6_Click(sender As Object, e As EventArgs) Handles MetroLabel6.Click
+        Dim listaGimnasio As List(Of EL.Gimnasio)
+        listaGimnasio = objGestorGimnasio.listarGimnasios()
+        If listaGimnasio Is Nothing Then
+            If MsgBox("No se han ingresado los datos del gimnasio. Desea agregarlos?", vbYesNo, "Datos del gimnasio") = MsgBoxResult.Yes Then
+                Dim ctr As Control
+                ctr = New FrmGimnasio("Insertar", 0)
+                ctr.Dock = DockStyle.Fill
+                MetroPanel1.Controls.Clear()
+                MetroPanel1.Controls.Add(ctr)
+            End If
+        Else
+            Dim ctr As Control
+            ctr = New FrmGimnasio("Modificar", listaGimnasio(0).Id)
+            ctr.Dock = DockStyle.Fill
+            MetroPanel1.Controls.Clear()
+            MetroPanel1.Controls.Add(ctr)
+        End If
     End Sub
+    Private Sub eGym_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        objGestorSesion.cerrarSesion()
+        usuarioSesion = Nothing
+    End Sub
+
 End Class

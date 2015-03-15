@@ -239,7 +239,7 @@ Partial Class eGym
         Me.MetroLabel9.AutoSize = True
         Me.MetroLabel9.Location = New System.Drawing.Point(571, 731)
         Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(139, 19)
+        Me.MetroLabel9.Size = New System.Drawing.Size(141, 19)
         Me.MetroLabel9.TabIndex = 10
         Me.MetroLabel9.Text = "eGym - Cantaros 2015"
         '
@@ -343,7 +343,7 @@ Partial Class eGym
         Me.lblRolUsuario.Size = New System.Drawing.Size(250, 32)
         Me.lblRolUsuario.Style = MetroFramework.MetroColorStyle.Purple
         Me.lblRolUsuario.TabIndex = 19
-        Me.lblRolUsuario.Text = "Entrenador"
+        Me.lblRolUsuario.Text = "Administrador"
         Me.lblRolUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblRolUsuario.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.lblRolUsuario.UseCustomBackColor = True

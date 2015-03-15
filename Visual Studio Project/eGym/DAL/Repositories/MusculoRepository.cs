@@ -68,29 +68,31 @@ namespace DAL.Repositories
             return listaMusculos;
         }
 
+
         public Musculo GetById(int id)
         {
             Musculo objMusculo = null;
-            var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
+            var sqlQuery = "SELECT ID ,NOMBRE, UBICACION,ORIGEN,INSERCCION, INERVACION, IRRIGACION  FROM T_Musculo WHERE ID = @idProducto";
             SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", id);
+            cmd.Parameters.AddWithValue("@Id", id);
 
-            //var ds = DBAccess.ExecuteQuery(cmd);
+            var ds = DBAccess.ExecuteQuery(cmd);
 
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    var dr = ds.Tables[0].Rows[0];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                var dr = ds.Tables[0].Rows[0];
 
-            //    objEstrella = new Estrella
-            //    {
-            //        Id = Convert.ToInt32(dr["Id"]),
-            //        Nombre = dr["Nombre"].ToString(),
-            //        TemperaturaPromedio = Convert.ToDouble(dr["Tipo"])
-
-            //    };
-            //}
-
-
+                objMusculo = new Musculo
+                {
+                    Id = Convert.ToInt32(dr["ID"]),
+                    Nombre = dr["NOMBRE"].ToString(),
+                    Ubicacion = dr["UBICACION"].ToString(),
+                    Origen = dr["ORIGEN"].ToString(),
+                    Inserccion = dr["INSERCCION"].ToString(),
+                    Inervacion = dr["INERVACION"].ToString(),
+                    Irrigacion = dr["IRRIGACION"].ToString()
+                };
+            }
 
             return objMusculo;
         }
@@ -117,13 +119,13 @@ namespace DAL.Repositories
                         }
                     }
 
-                    ////if (_deleteItems.Count > 0)
-                    ////{
-                    ////    foreach (Estrella p in _deleteItems)
-                    ////    {
-                    ////        DeleteEstrella(p);
-                    ////    }
-                    ////}
+                    if (_deleteItems.Count > 0)
+                    {
+                        foreach (Musculo p in _deleteItems)
+                        {
+                            DeleteMusculo(p);
+                        }
+                    }
 
                     scope.Complete();
                 }
@@ -196,6 +198,28 @@ namespace DAL.Repositories
 
             }
 
+        }
+
+        private void DeleteMusculo(Musculo objMusculo)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@Id", objMusculo.Id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarMusculo");
+
+            }
+            catch (SqlException ex)
+            {
+                //logear la excepcion a la bd con un Exception
+
+
+            }
+            catch (Exception ex)
+            {
+                //logear la excepcion a la bd con un Exception
+
+            }
         }
     }
 }

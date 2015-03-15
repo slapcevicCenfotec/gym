@@ -45,8 +45,11 @@
     <Compile Include="AccesoSesion.cs" />
     <Compile Include="DBAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ContactoRepository.cs" />
     <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\ExcepcionRepository.cs" />
+    <Compile Include="Repositories\HorarioRepository.cs" />
+    <Compile Include="Repositories\GimnasioRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
@@ -71,12 +74,6 @@
     <Compile Include="Repositories\PagoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EL\EL.csproj">
-      <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
-      <Name>EL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +88,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EL\EL.csproj">
+      <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
+      <Name>EL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

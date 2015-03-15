@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace DAL
     {
         public Usuario iniciarSesion(String correo, String contrasena)
         {
+            UnitOfWork uow = new UnitOfWork();
             Usuario usuario = null;
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.Add(new SqlParameter("@nombre_usuario", correo));
@@ -32,8 +34,10 @@ namespace DAL
                     {
                         String apellido = dataRow["APELLIDO"].ToString();
                         int idRol = Convert.ToInt16(dataRow["ROL_ID"].ToString());
-                        String nombreRol = dataRow["ROL"].ToString();
-                        usuario = new Usuario(nombre, apellido, idRol);
+                        //byte[] foto = (byte[])dataRow["FOTOGRAFIA"];
+                        Rol rol = uow.RolRepository.GetById(idRol);
+
+                        usuario = new Usuario() { Nombre = nombre, Apellido = apellido, Rol = rol };
                     }
                 }
 

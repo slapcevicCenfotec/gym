@@ -61,12 +61,24 @@ namespace EL
             set { _irrigacion = value; }
         }
 
+        private Boolean _habilitado;
+        public Boolean Habilitado
+        {
+            get { return _habilitado; }
+            set { _habilitado = value; }
+        }
 
         #endregion
 
         #region Constructor
 
-        public Musculo() { }
+        public Musculo() {}
+
+        public Musculo(int pid,string pnombre)
+        {
+            Id = pid;
+            Nombre = pnombre;
+        }
 
         public Musculo(string pnombre,string pubicacion, string porigen, string pinserccion ,string pinervacion, string pirrigacion)
         {
