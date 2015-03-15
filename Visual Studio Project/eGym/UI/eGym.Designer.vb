@@ -239,7 +239,7 @@ Partial Class eGym
         Me.MetroLabel9.AutoSize = True
         Me.MetroLabel9.Location = New System.Drawing.Point(571, 731)
         Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(139, 19)
+        Me.MetroLabel9.Size = New System.Drawing.Size(141, 19)
         Me.MetroLabel9.TabIndex = 10
         Me.MetroLabel9.Text = "eGym - Cantaros 2015"
         '

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class FrmRegistrarMusculo
-    Inherits System.Windows.Forms.UserControl
+    Inherits MetroFramework.Controls.MetroUserControl
 
     'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -23,229 +23,326 @@ Partial Class FrmRegistrarMusculo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.txtIrrigacion = New MetroFramework.Controls.MetroTextBox()
+        Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.txtInervacion = New MetroFramework.Controls.MetroTextBox()
         Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
+        Me.txtInserccion = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.txtUbicacion = New MetroFramework.Controls.MetroTextBox()
         Me.txtOrigen = New MetroFramework.Controls.MetroTextBox()
-        Me.txtInserccion = New MetroFramework.Controls.MetroTextBox()
-        Me.txtInervacion = New MetroFramework.Controls.MetroTextBox()
-        Me.txtIrrigacion = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Panel1.SuspendLayout()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.MetroPanel1.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(55, 45)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(66, 19)
-        Me.MetroLabel1.TabIndex = 0
-        Me.MetroLabel1.Text = "Nombre :"
-        '
-        'MetroLabel2
-        '
-        Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(55, 91)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(73, 19)
-        Me.MetroLabel2.TabIndex = 1
-        Me.MetroLabel2.Text = "Ubicacion :"
-        '
-        'MetroLabel3
-        '
-        Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(55, 134)
-        Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(57, 19)
-        Me.MetroLabel3.TabIndex = 2
-        Me.MetroLabel3.Text = "Origen :"
-        '
-        'MetroLabel4
-        '
-        Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(55, 181)
-        Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(73, 19)
-        Me.MetroLabel4.TabIndex = 3
-        Me.MetroLabel4.Text = "Insercción :"
-        '
-        'MetroLabel5
-        '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(55, 224)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(75, 19)
-        Me.MetroLabel5.TabIndex = 4
-        Me.MetroLabel5.Text = "Inervación :"
-        '
-        'MetroLabel6
-        '
-        Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(55, 272)
-        Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(71, 19)
-        Me.MetroLabel6.TabIndex = 5
-        Me.MetroLabel6.Text = "Irrigación :"
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Lines = New String(-1) {}
-        Me.txtNombre.Location = New System.Drawing.Point(180, 41)
-        Me.txtNombre.MaxLength = 32767
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtNombre.SelectedText = ""
-        Me.txtNombre.Size = New System.Drawing.Size(104, 23)
-        Me.txtNombre.TabIndex = 6
-        Me.txtNombre.UseSelectable = True
-        '
-        'txtUbicacion
-        '
-        Me.txtUbicacion.Lines = New String(-1) {}
-        Me.txtUbicacion.Location = New System.Drawing.Point(180, 87)
-        Me.txtUbicacion.MaxLength = 32767
-        Me.txtUbicacion.Name = "txtUbicacion"
-        Me.txtUbicacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtUbicacion.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtUbicacion.SelectedText = ""
-        Me.txtUbicacion.Size = New System.Drawing.Size(104, 23)
-        Me.txtUbicacion.TabIndex = 7
-        Me.txtUbicacion.UseSelectable = True
-        '
-        'txtOrigen
-        '
-        Me.txtOrigen.Lines = New String(-1) {}
-        Me.txtOrigen.Location = New System.Drawing.Point(180, 130)
-        Me.txtOrigen.MaxLength = 32767
-        Me.txtOrigen.Name = "txtOrigen"
-        Me.txtOrigen.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtOrigen.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtOrigen.SelectedText = ""
-        Me.txtOrigen.Size = New System.Drawing.Size(104, 23)
-        Me.txtOrigen.TabIndex = 8
-        Me.txtOrigen.UseSelectable = True
-        '
-        'txtInserccion
-        '
-        Me.txtInserccion.Lines = New String(-1) {}
-        Me.txtInserccion.Location = New System.Drawing.Point(180, 177)
-        Me.txtInserccion.MaxLength = 32767
-        Me.txtInserccion.Name = "txtInserccion"
-        Me.txtInserccion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtInserccion.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtInserccion.SelectedText = ""
-        Me.txtInserccion.Size = New System.Drawing.Size(104, 23)
-        Me.txtInserccion.TabIndex = 9
-        Me.txtInserccion.UseSelectable = True
-        '
-        'txtInervacion
-        '
-        Me.txtInervacion.Lines = New String(-1) {}
-        Me.txtInervacion.Location = New System.Drawing.Point(180, 224)
-        Me.txtInervacion.MaxLength = 32767
-        Me.txtInervacion.Name = "txtInervacion"
-        Me.txtInervacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtInervacion.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtInervacion.SelectedText = ""
-        Me.txtInervacion.Size = New System.Drawing.Size(104, 23)
-        Me.txtInervacion.TabIndex = 10
-        Me.txtInervacion.UseSelectable = True
-        '
-        'txtIrrigacion
-        '
-        Me.txtIrrigacion.Lines = New String(-1) {}
-        Me.txtIrrigacion.Location = New System.Drawing.Point(180, 268)
-        Me.txtIrrigacion.MaxLength = 32767
-        Me.txtIrrigacion.Name = "txtIrrigacion"
-        Me.txtIrrigacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtIrrigacion.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtIrrigacion.SelectedText = ""
-        Me.txtIrrigacion.Size = New System.Drawing.Size(104, 23)
-        Me.txtIrrigacion.TabIndex = 11
-        Me.txtIrrigacion.UseSelectable = True
-        '
-        'MetroButton1
-        '
-        Me.MetroButton1.Location = New System.Drawing.Point(341, 45)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(75, 23)
-        Me.MetroButton1.TabIndex = 12
-        Me.MetroButton1.Text = "Guardar"
-        Me.MetroButton1.UseSelectable = True
-        '
-        'MetroButton2
-        '
-        Me.MetroButton2.Location = New System.Drawing.Point(445, 45)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(75, 23)
-        Me.MetroButton2.TabIndex = 13
-        Me.MetroButton2.Text = "Cancelar"
-        Me.MetroButton2.UseSelectable = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.MetroLabel1)
-        Me.Panel1.Controls.Add(Me.MetroButton2)
-        Me.Panel1.Controls.Add(Me.MetroLabel2)
-        Me.Panel1.Controls.Add(Me.MetroButton1)
-        Me.Panel1.Controls.Add(Me.MetroLabel3)
-        Me.Panel1.Controls.Add(Me.txtIrrigacion)
-        Me.Panel1.Controls.Add(Me.MetroLabel4)
-        Me.Panel1.Controls.Add(Me.txtInervacion)
-        Me.Panel1.Controls.Add(Me.MetroLabel5)
-        Me.Panel1.Controls.Add(Me.txtInserccion)
-        Me.Panel1.Controls.Add(Me.MetroLabel6)
-        Me.Panel1.Controls.Add(Me.txtOrigen)
-        Me.Panel1.Controls.Add(Me.txtNombre)
-        Me.Panel1.Controls.Add(Me.txtUbicacion)
-        Me.Panel1.Location = New System.Drawing.Point(40, 35)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(531, 315)
-        Me.Panel1.TabIndex = 14
         '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'MetroLabel7
+        '
+        Me.MetroLabel7.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel7.AutoSize = True
+        Me.MetroLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel7.Location = New System.Drawing.Point(147, 41)
+        Me.MetroLabel7.Name = "MetroLabel7"
+        Me.MetroLabel7.Size = New System.Drawing.Size(173, 25)
+        Me.MetroLabel7.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel7.TabIndex = 59
+        Me.MetroLabel7.Text = "AGREGAR MUSCULO"
+        Me.MetroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel7.UseCustomBackColor = True
+        '
+        'MetroPanel1
+        '
+        Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.MetroPanel1.Controls.Add(Me.btnCancelar)
+        Me.MetroPanel1.Controls.Add(Me.txtIrrigacion)
+        Me.MetroPanel1.Controls.Add(Me.btnGuardar)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel2)
+        Me.MetroPanel1.Controls.Add(Me.txtInervacion)
+        Me.MetroPanel1.Controls.Add(Me.txtNombre)
+        Me.MetroPanel1.Controls.Add(Me.txtInserccion)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel1)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel6)
+        Me.MetroPanel1.Controls.Add(Me.txtUbicacion)
+        Me.MetroPanel1.Controls.Add(Me.txtOrigen)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel3)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel5)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel4)
+        Me.MetroPanel1.HorizontalScrollbarBarColor = True
+        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.HorizontalScrollbarSize = 10
+        Me.MetroPanel1.Location = New System.Drawing.Point(147, 69)
+        Me.MetroPanel1.Name = "MetroPanel1"
+        Me.MetroPanel1.Size = New System.Drawing.Size(632, 347)
+        Me.MetroPanel1.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroPanel1.TabIndex = 60
+        Me.MetroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroPanel1.UseCustomBackColor = True
+        Me.MetroPanel1.VerticalScrollbarBarColor = True
+        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.AutoSize = True
+        Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 301)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(150, 30)
+        Me.btnCancelar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnCancelar.TabIndex = 57
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnCancelar.UseSelectable = True
+        '
+        'txtIrrigacion
+        '
+        Me.txtIrrigacion.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtIrrigacion.Lines = New String(-1) {}
+        Me.txtIrrigacion.Location = New System.Drawing.Point(366, 176)
+        Me.txtIrrigacion.MaxLength = 32767
+        Me.txtIrrigacion.Name = "txtIrrigacion"
+        Me.txtIrrigacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtIrrigacion.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtIrrigacion.SelectedText = ""
+        Me.txtIrrigacion.Size = New System.Drawing.Size(250, 35)
+        Me.txtIrrigacion.TabIndex = 55
+        Me.txtIrrigacion.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtIrrigacion.UseSelectable = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.AutoSize = True
+        Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnGuardar.Location = New System.Drawing.Point(466, 301)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(150, 30)
+        Me.btnGuardar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnGuardar.TabIndex = 56
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnGuardar.UseSelectable = True
+        '
+        'MetroLabel2
+        '
+        Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel2.Location = New System.Drawing.Point(16, 16)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(75, 25)
+        Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel2.TabIndex = 44
+        Me.MetroLabel2.Text = "Nombre"
+        Me.MetroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel2.UseCustomBackColor = True
+        '
+        'txtInervacion
+        '
+        Me.txtInervacion.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtInervacion.Lines = New String(-1) {}
+        Me.txtInervacion.Location = New System.Drawing.Point(366, 110)
+        Me.txtInervacion.MaxLength = 32767
+        Me.txtInervacion.Name = "txtInervacion"
+        Me.txtInervacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtInervacion.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtInervacion.SelectedText = ""
+        Me.txtInervacion.Size = New System.Drawing.Size(250, 35)
+        Me.txtInervacion.TabIndex = 54
+        Me.txtInervacion.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtInervacion.UseSelectable = True
+        '
+        'txtNombre
+        '
+        Me.txtNombre.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtNombre.Lines = New String(-1) {}
+        Me.txtNombre.Location = New System.Drawing.Point(16, 44)
+        Me.txtNombre.MaxLength = 32767
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNombre.SelectedText = ""
+        Me.txtNombre.Size = New System.Drawing.Size(250, 35)
+        Me.txtNombre.TabIndex = 45
+        Me.txtNombre.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtNombre.UseSelectable = True
+        '
+        'txtInserccion
+        '
+        Me.txtInserccion.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtInserccion.Lines = New String(-1) {}
+        Me.txtInserccion.Location = New System.Drawing.Point(366, 44)
+        Me.txtInserccion.MaxLength = 32767
+        Me.txtInserccion.Name = "txtInserccion"
+        Me.txtInserccion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtInserccion.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtInserccion.SelectedText = ""
+        Me.txtInserccion.Size = New System.Drawing.Size(250, 35)
+        Me.txtInserccion.TabIndex = 53
+        Me.txtInserccion.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtInserccion.UseSelectable = True
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel1.Location = New System.Drawing.Point(16, 82)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(87, 25)
+        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel1.TabIndex = 46
+        Me.MetroLabel1.Text = "Ubicación"
+        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel1.UseCustomBackColor = True
+        '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel6.Location = New System.Drawing.Point(366, 82)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(83, 25)
+        Me.MetroLabel6.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel6.TabIndex = 52
+        Me.MetroLabel6.Text = "Irrigación"
+        Me.MetroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel6.UseCustomBackColor = True
+        '
+        'txtUbicacion
+        '
+        Me.txtUbicacion.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtUbicacion.Lines = New String(-1) {}
+        Me.txtUbicacion.Location = New System.Drawing.Point(16, 110)
+        Me.txtUbicacion.MaxLength = 32767
+        Me.txtUbicacion.Name = "txtUbicacion"
+        Me.txtUbicacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUbicacion.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtUbicacion.SelectedText = ""
+        Me.txtUbicacion.Size = New System.Drawing.Size(250, 35)
+        Me.txtUbicacion.TabIndex = 47
+        Me.txtUbicacion.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtUbicacion.UseSelectable = True
+        '
+        'txtOrigen
+        '
+        Me.txtOrigen.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtOrigen.Lines = New String(-1) {}
+        Me.txtOrigen.Location = New System.Drawing.Point(16, 176)
+        Me.txtOrigen.MaxLength = 32767
+        Me.txtOrigen.Name = "txtOrigen"
+        Me.txtOrigen.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtOrigen.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtOrigen.SelectedText = ""
+        Me.txtOrigen.Size = New System.Drawing.Size(250, 35)
+        Me.txtOrigen.TabIndex = 51
+        Me.txtOrigen.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtOrigen.UseSelectable = True
+        '
+        'MetroLabel3
+        '
+        Me.MetroLabel3.AutoSize = True
+        Me.MetroLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel3.Location = New System.Drawing.Point(16, 148)
+        Me.MetroLabel3.Name = "MetroLabel3"
+        Me.MetroLabel3.Size = New System.Drawing.Size(65, 25)
+        Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel3.TabIndex = 48
+        Me.MetroLabel3.Text = "Origen"
+        Me.MetroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel3.UseCustomBackColor = True
+        '
+        'MetroLabel5
+        '
+        Me.MetroLabel5.AutoSize = True
+        Me.MetroLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel5.Location = New System.Drawing.Point(366, 148)
+        Me.MetroLabel5.Name = "MetroLabel5"
+        Me.MetroLabel5.Size = New System.Drawing.Size(90, 25)
+        Me.MetroLabel5.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel5.TabIndex = 50
+        Me.MetroLabel5.Text = "Inervación"
+        Me.MetroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel5.UseCustomBackColor = True
+        '
+        'MetroLabel4
+        '
+        Me.MetroLabel4.AutoSize = True
+        Me.MetroLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel4.Location = New System.Drawing.Point(366, 16)
+        Me.MetroLabel4.Name = "MetroLabel4"
+        Me.MetroLabel4.Size = New System.Drawing.Size(88, 25)
+        Me.MetroLabel4.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel4.TabIndex = 49
+        Me.MetroLabel4.Text = "Insercción"
+        Me.MetroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel4.UseCustomBackColor = True
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'FrmRegistrarMusculo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.MetroLabel7)
+        Me.Controls.Add(Me.MetroPanel1)
         Me.Name = "FrmRegistrarMusculo"
-        Me.Size = New System.Drawing.Size(632, 457)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Size = New System.Drawing.Size(927, 457)
+        Me.Style = MetroFramework.MetroColorStyle.Purple
+        Me.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroPanel1.ResumeLayout(False)
+        Me.MetroPanel1.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
+    Friend WithEvents txtIrrigacion As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtInervacion As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtInserccion As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtUbicacion As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtOrigen As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtInserccion As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtInervacion As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtIrrigacion As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 
 End Class

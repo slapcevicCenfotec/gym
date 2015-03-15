@@ -41,14 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestorEjercicio.cs" />
+    <Compile Include="GestorGimnasio.cs" />
     <Compile Include="GestorPago.cs" />
     <Compile Include="GestorEvento.cs" />
     <Compile Include="GestorExcepcion.cs" />
     <Compile Include="GestorPermiso.cs" />
-    <Compile Include="GestorRol.cs" />
     <Compile Include="GestorMaquina.cs" />
     <Compile Include="GestorMusculo.cs" />
     <Compile Include="Gestor.cs" />
+    <Compile Include="GestorRol.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorTipoDePago.cs" />
     <Compile Include="GestorTiposDeMaquina.cs" />
@@ -70,6 +71,9 @@
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

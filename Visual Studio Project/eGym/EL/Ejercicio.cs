@@ -72,6 +72,19 @@ namespace EL
             set { _descripcion = value; }
         }
 
+        private int _idMusculoPrincipal;
+        public int IdMusculoPrincipal
+        {
+            get { return _idMusculoPrincipal; }
+            set { _idMusculoPrincipal = value; }
+        }
+
+        private string _musculosSecundarios;
+        public string MusculosSecundarios
+        {
+            get { return _musculosSecundarios; }
+            set { _musculosSecundarios = value; }
+        }
         #endregion
 
         #region Contructors
@@ -89,10 +102,77 @@ namespace EL
         }
         public Ejercicio() { }
 
-        public Ejercicio(byte[] pfoto) 
+
+        public Ejercicio(int pid, string pnombre, string palias, string pposicionInicial, byte[] pfotoPosInc, string pposicionFinal, byte[] pfotoPosFinal
+           , string perroresComunes, string pdescripcion, int pidMusculoPrincipal, String pmusculosSecundarios)
         {
-            PosicionInicialImg = pfoto;
+            Id = pid;
+            Nombre = pnombre;
+            Alias = palias;
+            PosicionInicial = pposicionInicial;
+            PosicionFinal = pposicionFinal;
+            ErroresComunes = perroresComunes;
+            Descripcion = pdescripcion;
+            PosicionInicialImg = pfotoPosInc;
+            PosicionFinalImg = pfotoPosFinal;
+            IdMusculoPrincipal = pidMusculoPrincipal;
+            MusculosSecundarios = pmusculosSecundarios;
         }
+
+        public Ejercicio(string pnombre, string palias, string pposicionInicial, byte[] pfotoPosInc, string pposicionFinal, byte[] pfotoPosFinal
+            , string perroresComunes,string pdescripcion,int pidMusculoPrincipal , String pmusculosSecundarios) 
+        {
+            Nombre = pnombre;
+            Alias = palias;
+            PosicionInicial = pposicionInicial;
+            PosicionFinal = pposicionFinal;
+            ErroresComunes = perroresComunes;
+            Descripcion = pdescripcion;
+            PosicionInicialImg = pfotoPosInc;
+            PosicionFinalImg = pfotoPosFinal;
+            IdMusculoPrincipal = pidMusculoPrincipal;
+            MusculosSecundarios = pmusculosSecundarios;
+        }
+
+        #endregion
+
+        #region Reglas de objeto
+
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }        
+        }
+
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                yield return new RuleViolation("Nombre Requerido", "Nombre");
+            }
+            if (string.IsNullOrEmpty(Alias))
+            {
+                yield return new RuleViolation("Alias Requerido", "Alias");
+            }
+            if (string.IsNullOrEmpty(PosicionInicial))
+            {
+                yield return new RuleViolation("Posicion Inicial Requerida", "PosicionInicial");
+            }
+            if (string.IsNullOrEmpty(PosicionFinal))
+            {
+                yield return new RuleViolation("Posicion Final Requerida", "PosicionFinal");
+            }
+            if (string.IsNullOrEmpty(ErroresComunes))
+            {
+                yield return new RuleViolation("Errores Comunes Requerido", "ErroresComunes");
+            }
+            if (string.IsNullOrEmpty(Descripcion))
+            {
+                yield return new RuleViolation("Descripcion Requerido", "Descripcion");
+            }
+        
+        
+        }
+
 
         #endregion
     }

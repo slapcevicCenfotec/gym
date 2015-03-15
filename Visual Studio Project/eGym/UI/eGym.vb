@@ -135,8 +135,28 @@
         pnlInformacionUsuario.Visible = Not pnlInformacionUsuario.Visible
     End Sub
 
+    Private Sub MetroLabel6_Click(sender As Object, e As EventArgs) Handles MetroLabel6.Click
+        Dim listaGimnasio As List(Of EL.Gimnasio)
+        listaGimnasio = objGestorGimnasio.listarGimnasios()
+        If listaGimnasio Is Nothing Then
+            If MsgBox("No se han ingresado los datos del gimnasio. Desea agregarlos?", vbYesNo, "Datos del gimnasio") = MsgBoxResult.Yes Then
+                Dim ctr As Control
+                ctr = New FrmGimnasio("Insertar", 0)
+                ctr.Dock = DockStyle.Fill
+                MetroPanel1.Controls.Clear()
+                MetroPanel1.Controls.Add(ctr)
+            End If
+        Else
+            Dim ctr As Control
+            ctr = New FrmGimnasio("Modificar", listaGimnasio(0).Id)
+            ctr.Dock = DockStyle.Fill
+            MetroPanel1.Controls.Clear()
+            MetroPanel1.Controls.Add(ctr)
+        End If
+    End Sub
     Private Sub eGym_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         objGestorSesion.cerrarSesion()
         usuarioSesion = Nothing
     End Sub
+
 End Class

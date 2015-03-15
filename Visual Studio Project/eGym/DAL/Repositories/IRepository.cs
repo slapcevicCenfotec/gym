@@ -15,6 +15,6 @@ namespace DAL.Repositories
         IEnumerable<T> GetAll();
         T GetById(int id);
         void Save();
-        void Clear();
+        void Clear(); 
     }
 }
