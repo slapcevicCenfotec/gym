@@ -20,7 +20,6 @@ Public Class FrmRegistrarTiposMaquinas
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim nombre As String = txtTipoDeMaquina.Text
         Dim descripcion As String = txtDescripcion.Text
-        Dim habilitado As Boolean = True
 
         If validarFormRegistrarTiposDeMaquina() Then
             Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
@@ -30,7 +29,7 @@ Public Class FrmRegistrarTiposMaquinas
             fs.Close()
 
             Try
-                objGestorTipoDeMaquina.insertarTipoDeMaquina(foto, nombre, descripcion, habilitado)
+                objGestorTipoDeMaquina.insertarTipoDeMaquina(foto, nombre, descripcion)
                 clearScreen()
 
                 Dim ctr As Control

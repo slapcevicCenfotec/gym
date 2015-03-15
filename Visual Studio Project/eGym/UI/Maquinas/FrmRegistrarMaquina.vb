@@ -13,6 +13,26 @@ Public Class lblTitulo
 
     End Sub
 
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim numeroActivo As String = txtNumeroDeActivo.Text
+        Dim numeroMaquina As String = txtNumeroDeMaquina.Text
+        Dim tipoDeMaquina As String = cmbTipoDeMaquina.SelectedValue
+
+        If validarFormRegistrarMaquina() Then
+            Try
+                objGestorMaquina.insertarMaquina(numeroActivo, numeroMaquina, tipoDeMaquina)
+                clearScreen()
+
+                Dim ctr As Control
+                ctr = New FrmListarMaquinas
+                ctr.Dock = DockStyle.Fill
+                Me.Controls.Clear()
+                Me.Controls.Add(ctr)
+            Catch ex As Exception
+                ErPrExcepciones.SetError(btnGuardar, ex.Message)
+            End Try
+        End If
+    End Sub
 
     Private Function validarFormRegistrarMaquina() As Boolean
         Dim validado As Boolean = True
@@ -44,27 +64,6 @@ Public Class lblTitulo
         Me.txtNumeroDeActivo.Text = String.Empty
         Me.txtNumeroDeMaquina.Text = String.Empty
         Me.cmbTipoDeMaquina.SelectedItem = Nothing
-    End Sub
-
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim numeroActivo As String = txtNumeroDeActivo.Text
-        Dim numeroMaquina As String = txtNumeroDeMaquina.Text
-        Dim tipoDeMaquina As String = cmbTipoDeMaquina.SelectedValue
-
-        If validarFormRegistrarMaquina() Then
-            Try
-                objGestorMaquina.insertarMaquina(numeroActivo, numeroMaquina, tipoDeMaquina)
-                clearScreen()
-
-                Dim ctr As Control
-                ctr = New FrmListarMaquinas
-                ctr.Dock = DockStyle.Fill
-                Me.Controls.Clear()
-                Me.Controls.Add(ctr)
-            Catch ex As Exception
-                ErPrExcepciones.SetError(btnGuardar, ex.Message)
-            End Try
-        End If
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click

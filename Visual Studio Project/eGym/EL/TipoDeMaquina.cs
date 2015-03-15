@@ -70,12 +70,12 @@ namespace EL
             Habilitado = phabilitado;
         }
 
-        public TipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        public TipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion)
         {
             Foto = pfoto;
             Nombre = pnombre;
             Descripcion = pdescripcion;
-            Habilitado = phabilitado;
+            Habilitado = true;
         }
 
         public TipoDeMaquina()

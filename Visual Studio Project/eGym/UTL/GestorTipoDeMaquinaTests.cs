@@ -11,43 +11,42 @@ namespace GestorMaquinaTest
     public class GestorTipoDeMaquinaTests
     {
         [TestMethod()]
-        public void assertTodos(EL.Maquina compara, EL.Maquina actual)
+        public void assertTodos(EL.TipoDeMaquina compara, EL.TipoDeMaquina actual)
         {
             Assert.AreEqual(compara.Id, actual.Id, "Prueba pasada:ID");
-            Assert.AreEqual(compara.NumeroActivo, actual.NumeroActivo, "Prueba pasada:NUMERO ACTIVO");
-            Assert.AreEqual(compara.NumeroMaquina, actual.NumeroMaquina, "Prueba pasada:NUMERO MAQUINA");
-            Assert.AreEqual(compara.TipoDeMaquina, actual.TipoDeMaquina, "Prueba pasada:TIPO DE MAQUINA");
+            Assert.AreEqual(compara.Nombre, actual.Nombre, "Prueba pasada:NOMBRE");
+            Assert.AreEqual(compara.Descripcion, actual.Descripcion, "Prueba pasada:DESCRPCION");
             Assert.AreEqual(compara.Habilitado, actual.Habilitado, "Prueba pasada:HABILITADO");
         }
         [TestMethod()]
-        public void listarTiposDeMaquinasTest()
+        public void listarTiposMaquinasTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void GetMaquinaByIdTest()
+        public void GetTipoDeMaquinaByIdTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void insertarMaquinaTest()
+        public void insertarTipoDeMaquinaTest()
         {
-            BLL.GestorMaquina gestor = new BLL.GestorMaquina();
-            gestor.insertarMaquina("1","1",1);
+            BLL.GestorTipoDeMaquina gestor = new BLL.GestorTipoDeMaquina();
+            gestor.insertarTipoDeMaquina(null, "Nombre test","Descripcion test");
         }
 
         [TestMethod()]
-        public void modificarMaquinaTest()
+        public void modificarTipoDeMaquinaTest()
         {
-            BLL.GestorMaquina gestor = new BLL.GestorMaquina();
-            EL.Maquina copia = gestor.GetMaquinaById(1);
-            gestor.modificarMaquina(1, "NUMERO DE ACTIVO TEST", "NUMERO DE MAQUINA TEST", false, 1);
-            EL.Maquina actual = new EL.Maquina(1, "NUMERO DE ACTIVO TEST", "NUMERO DE MAQUINA TEST", false, 1);
-            EL.Maquina compara = gestor.GetMaquinaById(1);
+            BLL.GestorTipoDeMaquina gestor = new BLL.GestorTipoDeMaquina();
+            EL.TipoDeMaquina copia = gestor.GetTipoDeMaquinaById(1);
+            gestor.modificarTipoDeMaquina(1, null, "NOMBRE MAQUINA TEST", "DESCRIPCION TEST", true);
+            EL.TipoDeMaquina actual = new EL.TipoDeMaquina(1, null, "NOMBRE MAQUINA TEST", "DESCRIPCION TEST", true);
+            EL.TipoDeMaquina compara = gestor.GetTipoDeMaquinaById(1);
             this.assertTodos(compara, actual);
-            gestor.modificarMaquina(copia.Id, copia.NumeroActivo, copia.NumeroMaquina, copia.Habilitado, copia.TipoDeMaquina);
+            gestor.modificarTipoDeMaquina(copia.Id, copia.Foto, copia.Nombre, copia.Descripcion, copia.Habilitado);
             Assert.Fail();
         }
 

@@ -66,9 +66,9 @@ namespace BLL
         /// o
         /// Ha ocurrido un error agregando el tipo de máquina
         /// </exception>
-        public void insertarTipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        public void insertarTipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion)
         {
-            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pfoto, pnombre, pdescripcion, phabilitado);
+            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pfoto, pnombre, pdescripcion);
 
             try
             {
