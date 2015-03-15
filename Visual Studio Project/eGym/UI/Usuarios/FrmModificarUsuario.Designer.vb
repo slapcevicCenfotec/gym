@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmAgregarUsuario
+Partial Class FrmModificarUsuario
     Inherits MetroFramework.Controls.MetroUserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -23,7 +23,8 @@ Partial Class FrmAgregarUsuario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgregarUsuario))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmModificarUsuario))
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.tabUsuario = New MetroFramework.Controls.MetroTabPage()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
@@ -79,6 +80,29 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroLabel28 = New MetroFramework.Controls.MetroLabel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
+        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.SP_ListarRolesTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarRolesTableAdapter()
+        Me.SP_ListarGenerosTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarGenerosTableAdapter()
+        Me.SP_ListarTiposIdentificacionTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarTiposIdentificacionTableAdapter()
+        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.txtDomingoSalida = New System.Windows.Forms.MaskedTextBox()
+        Me.txtDomingoEntrada = New System.Windows.Forms.MaskedTextBox()
+        Me.txtSabadoSalida = New System.Windows.Forms.MaskedTextBox()
+        Me.txtSabadoEntrada = New System.Windows.Forms.MaskedTextBox()
+        Me.txtViernesSalida = New System.Windows.Forms.MaskedTextBox()
+        Me.txtViernesEntrada = New System.Windows.Forms.MaskedTextBox()
+        Me.txtJuevesSalida = New System.Windows.Forms.MaskedTextBox()
+        Me.txtJuevesEntrada = New System.Windows.Forms.MaskedTextBox()
+        Me.txtMiercolesSalida = New System.Windows.Forms.MaskedTextBox()
+        Me.txtMiercolesEntrada = New System.Windows.Forms.MaskedTextBox()
+        Me.txtMartesSalida = New System.Windows.Forms.MaskedTextBox()
+        Me.txtMartesEntrada = New System.Windows.Forms.MaskedTextBox()
+        Me.txtLunesSalida = New System.Windows.Forms.MaskedTextBox()
+        Me.txtLunesEntrada = New System.Windows.Forms.MaskedTextBox()
         Me.MetroLabel34 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel25 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel26 = New MetroFramework.Controls.MetroLabel()
@@ -87,30 +111,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel30 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel31 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel32 = New MetroFramework.Controls.MetroLabel()
-        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
-        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
-        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.SP_ListarTiposIdentificacionTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarTiposIdentificacionTableAdapter()
-        Me.SP_ListarGenerosTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarGenerosTableAdapter()
-        Me.SP_ListarRolesTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarRolesTableAdapter()
-        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.MetroLabel28 = New MetroFramework.Controls.MetroLabel()
-        Me.txtLunesEntrada = New System.Windows.Forms.MaskedTextBox()
-        Me.txtLunesSalida = New System.Windows.Forms.MaskedTextBox()
-        Me.txtMartesSalida = New System.Windows.Forms.MaskedTextBox()
-        Me.txtMartesEntrada = New System.Windows.Forms.MaskedTextBox()
-        Me.txtMiercolesSalida = New System.Windows.Forms.MaskedTextBox()
-        Me.txtMiercolesEntrada = New System.Windows.Forms.MaskedTextBox()
-        Me.txtJuevesSalida = New System.Windows.Forms.MaskedTextBox()
-        Me.txtJuevesEntrada = New System.Windows.Forms.MaskedTextBox()
-        Me.txtViernesSalida = New System.Windows.Forms.MaskedTextBox()
-        Me.txtViernesEntrada = New System.Windows.Forms.MaskedTextBox()
-        Me.txtSabadoSalida = New System.Windows.Forms.MaskedTextBox()
-        Me.txtSabadoEntrada = New System.Windows.Forms.MaskedTextBox()
-        Me.txtDomingoSalida = New System.Windows.Forms.MaskedTextBox()
-        Me.txtDomingoEntrada = New System.Windows.Forms.MaskedTextBox()
+        Me.Panel2.SuspendLayout()
         Me.MetroTabControl1.SuspendLayout()
         Me.tabUsuario.SuspendLayout()
         CType(Me.SPListarRolesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,10 +121,18 @@ Partial Class FrmAgregarUsuario
         CType(Me.pcbFotografia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroTabPage2.SuspendLayout()
         Me.MetroTabPage3.SuspendLayout()
-        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.MetroTabControl1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1055, 526)
+        Me.Panel2.TabIndex = 25
         '
         'MetroTabControl1
         '
@@ -180,7 +189,7 @@ Partial Class FrmAgregarUsuario
         Me.tabUsuario.Controls.Add(Me.txtIdentificacion)
         Me.tabUsuario.HorizontalScrollbarBarColor = True
         Me.tabUsuario.HorizontalScrollbarHighlightOnWheel = False
-        Me.tabUsuario.HorizontalScrollbarSize = 3
+        Me.tabUsuario.HorizontalScrollbarSize = 1
         Me.tabUsuario.Location = New System.Drawing.Point(4, 47)
         Me.tabUsuario.Margin = New System.Windows.Forms.Padding(0)
         Me.tabUsuario.Name = "tabUsuario"
@@ -191,7 +200,7 @@ Partial Class FrmAgregarUsuario
         Me.tabUsuario.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.tabUsuario.VerticalScrollbarBarColor = True
         Me.tabUsuario.VerticalScrollbarHighlightOnWheel = False
-        Me.tabUsuario.VerticalScrollbarSize = 4
+        Me.tabUsuario.VerticalScrollbarSize = 1
         '
         'MetroLabel13
         '
@@ -686,7 +695,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroTabPage2.Controls.Add(Me.MetroLabel17)
         Me.MetroTabPage2.HorizontalScrollbarBarColor = True
         Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage2.HorizontalScrollbarSize = 3
+        Me.MetroTabPage2.HorizontalScrollbarSize = 1
         Me.MetroTabPage2.Location = New System.Drawing.Point(4, 47)
         Me.MetroTabPage2.Name = "MetroTabPage2"
         Me.MetroTabPage2.Size = New System.Drawing.Size(1047, 475)
@@ -696,14 +705,14 @@ Partial Class FrmAgregarUsuario
         Me.MetroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroTabPage2.VerticalScrollbarBarColor = True
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage2.VerticalScrollbarSize = 4
+        Me.MetroTabPage2.VerticalScrollbarSize = 1
         '
         'txtParentescoContacto2
         '
         Me.txtParentescoContacto2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtParentescoContacto2.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtParentescoContacto2.Lines = New String(-1) {}
-        Me.txtParentescoContacto2.Location = New System.Drawing.Point(557, 288)
+        Me.txtParentescoContacto2.Location = New System.Drawing.Point(557, 293)
         Me.txtParentescoContacto2.MaxLength = 32767
         Me.txtParentescoContacto2.Name = "txtParentescoContacto2"
         Me.txtParentescoContacto2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -720,7 +729,7 @@ Partial Class FrmAgregarUsuario
         Me.txtTelefonoContacto2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtTelefonoContacto2.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtTelefonoContacto2.Lines = New String(-1) {}
-        Me.txtTelefonoContacto2.Location = New System.Drawing.Point(557, 222)
+        Me.txtTelefonoContacto2.Location = New System.Drawing.Point(557, 227)
         Me.txtTelefonoContacto2.MaxLength = 32767
         Me.txtTelefonoContacto2.Name = "txtTelefonoContacto2"
         Me.txtTelefonoContacto2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -737,7 +746,7 @@ Partial Class FrmAgregarUsuario
         Me.txtNombreContacto2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtNombreContacto2.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNombreContacto2.Lines = New String(-1) {}
-        Me.txtNombreContacto2.Location = New System.Drawing.Point(557, 156)
+        Me.txtNombreContacto2.Location = New System.Drawing.Point(557, 161)
         Me.txtNombreContacto2.MaxLength = 32767
         Me.txtNombreContacto2.Name = "txtNombreContacto2"
         Me.txtNombreContacto2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -754,7 +763,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel21.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel21.AutoSize = True
         Me.MetroLabel21.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel21.Location = New System.Drawing.Point(557, 260)
+        Me.MetroLabel21.Location = New System.Drawing.Point(557, 265)
         Me.MetroLabel21.Name = "MetroLabel21"
         Me.MetroLabel21.Size = New System.Drawing.Size(94, 25)
         Me.MetroLabel21.Style = MetroFramework.MetroColorStyle.Purple
@@ -767,7 +776,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel22.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel22.AutoSize = True
         Me.MetroLabel22.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel22.Location = New System.Drawing.Point(557, 194)
+        Me.MetroLabel22.Location = New System.Drawing.Point(557, 199)
         Me.MetroLabel22.Name = "MetroLabel22"
         Me.MetroLabel22.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel22.Style = MetroFramework.MetroColorStyle.Purple
@@ -780,7 +789,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel23.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel23.AutoSize = True
         Me.MetroLabel23.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel23.Location = New System.Drawing.Point(557, 128)
+        Me.MetroLabel23.Location = New System.Drawing.Point(557, 133)
         Me.MetroLabel23.Name = "MetroLabel23"
         Me.MetroLabel23.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel23.Style = MetroFramework.MetroColorStyle.Purple
@@ -794,7 +803,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel24.AutoSize = True
         Me.MetroLabel24.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel24.Location = New System.Drawing.Point(557, 103)
+        Me.MetroLabel24.Location = New System.Drawing.Point(557, 108)
         Me.MetroLabel24.Name = "MetroLabel24"
         Me.MetroLabel24.Size = New System.Drawing.Size(115, 25)
         Me.MetroLabel24.Style = MetroFramework.MetroColorStyle.Purple
@@ -807,7 +816,7 @@ Partial Class FrmAgregarUsuario
         Me.txtParentescoContacto1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtParentescoContacto1.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtParentescoContacto1.Lines = New String(-1) {}
-        Me.txtParentescoContacto1.Location = New System.Drawing.Point(207, 288)
+        Me.txtParentescoContacto1.Location = New System.Drawing.Point(207, 293)
         Me.txtParentescoContacto1.MaxLength = 32767
         Me.txtParentescoContacto1.Name = "txtParentescoContacto1"
         Me.txtParentescoContacto1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -824,7 +833,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel20.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel20.AutoSize = True
         Me.MetroLabel20.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel20.Location = New System.Drawing.Point(207, 260)
+        Me.MetroLabel20.Location = New System.Drawing.Point(207, 265)
         Me.MetroLabel20.Name = "MetroLabel20"
         Me.MetroLabel20.Size = New System.Drawing.Size(94, 25)
         Me.MetroLabel20.Style = MetroFramework.MetroColorStyle.Purple
@@ -837,7 +846,7 @@ Partial Class FrmAgregarUsuario
         Me.txtTelefonoContacto1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtTelefonoContacto1.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtTelefonoContacto1.Lines = New String(-1) {}
-        Me.txtTelefonoContacto1.Location = New System.Drawing.Point(207, 222)
+        Me.txtTelefonoContacto1.Location = New System.Drawing.Point(207, 227)
         Me.txtTelefonoContacto1.MaxLength = 32767
         Me.txtTelefonoContacto1.Name = "txtTelefonoContacto1"
         Me.txtTelefonoContacto1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -854,7 +863,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel19.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel19.AutoSize = True
         Me.MetroLabel19.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel19.Location = New System.Drawing.Point(207, 194)
+        Me.MetroLabel19.Location = New System.Drawing.Point(207, 199)
         Me.MetroLabel19.Name = "MetroLabel19"
         Me.MetroLabel19.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel19.Style = MetroFramework.MetroColorStyle.Purple
@@ -867,7 +876,7 @@ Partial Class FrmAgregarUsuario
         Me.txtNombreContacto1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtNombreContacto1.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNombreContacto1.Lines = New String(-1) {}
-        Me.txtNombreContacto1.Location = New System.Drawing.Point(207, 156)
+        Me.txtNombreContacto1.Location = New System.Drawing.Point(207, 161)
         Me.txtNombreContacto1.MaxLength = 32767
         Me.txtNombreContacto1.Name = "txtNombreContacto1"
         Me.txtNombreContacto1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -884,7 +893,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel18.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel18.AutoSize = True
         Me.MetroLabel18.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel18.Location = New System.Drawing.Point(207, 128)
+        Me.MetroLabel18.Location = New System.Drawing.Point(207, 133)
         Me.MetroLabel18.Name = "MetroLabel18"
         Me.MetroLabel18.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel18.Style = MetroFramework.MetroColorStyle.Purple
@@ -898,7 +907,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroLabel17.AutoSize = True
         Me.MetroLabel17.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel17.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel17.Location = New System.Drawing.Point(207, 103)
+        Me.MetroLabel17.Location = New System.Drawing.Point(207, 108)
         Me.MetroLabel17.Name = "MetroLabel17"
         Me.MetroLabel17.Size = New System.Drawing.Size(115, 25)
         Me.MetroLabel17.Style = MetroFramework.MetroColorStyle.Purple
@@ -932,7 +941,7 @@ Partial Class FrmAgregarUsuario
         Me.MetroTabPage3.Controls.Add(Me.MetroLabel32)
         Me.MetroTabPage3.HorizontalScrollbarBarColor = True
         Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage3.HorizontalScrollbarSize = 3
+        Me.MetroTabPage3.HorizontalScrollbarSize = 1
         Me.MetroTabPage3.Location = New System.Drawing.Point(4, 47)
         Me.MetroTabPage3.Name = "MetroTabPage3"
         Me.MetroTabPage3.Size = New System.Drawing.Size(1047, 475)
@@ -942,128 +951,33 @@ Partial Class FrmAgregarUsuario
         Me.MetroTabPage3.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroTabPage3.VerticalScrollbarBarColor = True
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage3.VerticalScrollbarSize = 4
+        Me.MetroTabPage3.VerticalScrollbarSize = 1
         '
-        'MetroLabel34
+        'MetroLabel28
         '
-        Me.MetroLabel34.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel34.AutoSize = True
-        Me.MetroLabel34.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel34.Location = New System.Drawing.Point(731, 194)
-        Me.MetroLabel34.Name = "MetroLabel34"
-        Me.MetroLabel34.Size = New System.Drawing.Size(83, 25)
-        Me.MetroLabel34.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel34.TabIndex = 64
-        Me.MetroLabel34.Text = "Domingo"
-        Me.MetroLabel34.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.MetroLabel28.Dock = System.Windows.Forms.DockStyle.Top
+        Me.MetroLabel28.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel28.Location = New System.Drawing.Point(0, 0)
+        Me.MetroLabel28.Name = "MetroLabel28"
+        Me.MetroLabel28.Size = New System.Drawing.Size(1055, 50)
+        Me.MetroLabel28.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel28.TabIndex = 24
+        Me.MetroLabel28.Text = "    MODIFICAR USUARIO"
+        Me.MetroLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MetroLabel28.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel28.UseCustomBackColor = True
         '
-        'MetroLabel25
+        'Panel1
         '
-        Me.MetroLabel25.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel25.AutoSize = True
-        Me.MetroLabel25.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel25.Location = New System.Drawing.Point(731, 128)
-        Me.MetroLabel25.Name = "MetroLabel25"
-        Me.MetroLabel25.Size = New System.Drawing.Size(69, 25)
-        Me.MetroLabel25.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel25.TabIndex = 63
-        Me.MetroLabel25.Text = "Sabado"
-        Me.MetroLabel25.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'MetroLabel26
-        '
-        Me.MetroLabel26.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel26.AutoSize = True
-        Me.MetroLabel26.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel26.Location = New System.Drawing.Point(381, 194)
-        Me.MetroLabel26.Name = "MetroLabel26"
-        Me.MetroLabel26.Size = New System.Drawing.Size(68, 25)
-        Me.MetroLabel26.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel26.TabIndex = 62
-        Me.MetroLabel26.Text = "Viernes"
-        Me.MetroLabel26.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'MetroLabel27
-        '
-        Me.MetroLabel27.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel27.AutoSize = True
-        Me.MetroLabel27.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel27.Location = New System.Drawing.Point(381, 128)
-        Me.MetroLabel27.Name = "MetroLabel27"
-        Me.MetroLabel27.Size = New System.Drawing.Size(61, 25)
-        Me.MetroLabel27.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel27.TabIndex = 61
-        Me.MetroLabel27.Text = "Jueves"
-        Me.MetroLabel27.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'MetroLabel29
-        '
-        Me.MetroLabel29.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel29.AutoSize = True
-        Me.MetroLabel29.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel29.Location = New System.Drawing.Point(31, 260)
-        Me.MetroLabel29.Name = "MetroLabel29"
-        Me.MetroLabel29.Size = New System.Drawing.Size(84, 25)
-        Me.MetroLabel29.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel29.TabIndex = 59
-        Me.MetroLabel29.Text = "Miercoles"
-        Me.MetroLabel29.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'MetroLabel30
-        '
-        Me.MetroLabel30.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel30.AutoSize = True
-        Me.MetroLabel30.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel30.Location = New System.Drawing.Point(31, 194)
-        Me.MetroLabel30.Name = "MetroLabel30"
-        Me.MetroLabel30.Size = New System.Drawing.Size(64, 25)
-        Me.MetroLabel30.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel30.TabIndex = 57
-        Me.MetroLabel30.Text = "Martes"
-        Me.MetroLabel30.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'MetroLabel31
-        '
-        Me.MetroLabel31.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel31.AutoSize = True
-        Me.MetroLabel31.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel31.Location = New System.Drawing.Point(31, 128)
-        Me.MetroLabel31.Name = "MetroLabel31"
-        Me.MetroLabel31.Size = New System.Drawing.Size(56, 25)
-        Me.MetroLabel31.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel31.TabIndex = 55
-        Me.MetroLabel31.Text = "Lunes"
-        Me.MetroLabel31.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'MetroLabel32
-        '
-        Me.MetroLabel32.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroLabel32.AutoSize = True
-        Me.MetroLabel32.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel32.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel32.Location = New System.Drawing.Point(31, 103)
-        Me.MetroLabel32.Name = "MetroLabel32"
-        Me.MetroLabel32.Size = New System.Drawing.Size(137, 25)
-        Me.MetroLabel32.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel32.TabIndex = 54
-        Me.MetroLabel32.Text = "Entrada/Salida"
-        Me.MetroLabel32.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'btnAceptar
-        '
-        Me.btnAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAceptar.AutoSize = True
-        Me.btnAceptar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnAceptar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnAceptar.Location = New System.Drawing.Point(914, 16)
-        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(16)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(125, 35)
-        Me.btnAceptar.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnAceptar.TabIndex = 18
-        Me.btnAceptar.Text = "Agregar"
-        Me.btnAceptar.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnAceptar.UseSelectable = True
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCancelar)
+        Me.Panel1.Controls.Add(Me.btnAceptar)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 576)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1055, 67)
+        Me.Panel1.TabIndex = 23
         '
         'btnCancelar
         '
@@ -1081,21 +995,21 @@ Partial Class FrmAgregarUsuario
         Me.btnCancelar.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnCancelar.UseSelectable = True
         '
-        'OpenFileDialog
+        'btnAceptar
         '
-        Me.OpenFileDialog.FileName = "OpenFileDialog"
-        '
-        'SP_ListarTiposIdentificacionTableAdapter
-        '
-        Me.SP_ListarTiposIdentificacionTableAdapter.ClearBeforeFill = True
-        '
-        'SP_ListarGenerosTableAdapter
-        '
-        Me.SP_ListarGenerosTableAdapter.ClearBeforeFill = True
-        '
-        'SP_ListarRolesTableAdapter
-        '
-        Me.SP_ListarRolesTableAdapter.ClearBeforeFill = True
+        Me.btnAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAceptar.AutoSize = True
+        Me.btnAceptar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnAceptar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnAceptar.Location = New System.Drawing.Point(914, 16)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(125, 35)
+        Me.btnAceptar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnAceptar.TabIndex = 18
+        Me.btnAceptar.Text = "Modificar"
+        Me.btnAceptar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnAceptar.UseSelectable = True
         '
         'ErrorProvider
         '
@@ -1103,220 +1017,21 @@ Partial Class FrmAgregarUsuario
         Me.ErrorProvider.ContainerControl = Me
         Me.ErrorProvider.Icon = CType(resources.GetObject("ErrorProvider.Icon"), System.Drawing.Icon)
         '
-        'Panel1
+        'SP_ListarRolesTableAdapter
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnCancelar)
-        Me.Panel1.Controls.Add(Me.btnAceptar)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 576)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1055, 67)
-        Me.Panel1.TabIndex = 20
+        Me.SP_ListarRolesTableAdapter.ClearBeforeFill = True
         '
-        'Panel2
+        'SP_ListarGenerosTableAdapter
         '
-        Me.Panel2.Controls.Add(Me.MetroTabControl1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 50)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1055, 526)
-        Me.Panel2.TabIndex = 22
+        Me.SP_ListarGenerosTableAdapter.ClearBeforeFill = True
         '
-        'MetroLabel28
+        'SP_ListarTiposIdentificacionTableAdapter
         '
-        Me.MetroLabel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.MetroLabel28.Dock = System.Windows.Forms.DockStyle.Top
-        Me.MetroLabel28.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel28.Location = New System.Drawing.Point(0, 0)
-        Me.MetroLabel28.Name = "MetroLabel28"
-        Me.MetroLabel28.Size = New System.Drawing.Size(1055, 50)
-        Me.MetroLabel28.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel28.TabIndex = 21
-        Me.MetroLabel28.Text = "    AGREGAR USUARIO"
-        Me.MetroLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel28.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel28.UseCustomBackColor = True
+        Me.SP_ListarTiposIdentificacionTableAdapter.ClearBeforeFill = True
         '
-        'txtLunesEntrada
+        'OpenFileDialog
         '
-        Me.txtLunesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtLunesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtLunesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLunesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLunesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtLunesEntrada.Location = New System.Drawing.Point(31, 156)
-        Me.txtLunesEntrada.Mask = "00:00"
-        Me.txtLunesEntrada.Name = "txtLunesEntrada"
-        Me.txtLunesEntrada.Size = New System.Drawing.Size(125, 35)
-        Me.txtLunesEntrada.TabIndex = 76
-        Me.txtLunesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtLunesEntrada.ValidatingType = GetType(Date)
-        '
-        'txtLunesSalida
-        '
-        Me.txtLunesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtLunesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtLunesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLunesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLunesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtLunesSalida.Location = New System.Drawing.Point(155, 156)
-        Me.txtLunesSalida.Mask = "00:00"
-        Me.txtLunesSalida.Name = "txtLunesSalida"
-        Me.txtLunesSalida.Size = New System.Drawing.Size(125, 35)
-        Me.txtLunesSalida.TabIndex = 77
-        Me.txtLunesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtLunesSalida.ValidatingType = GetType(Date)
-        '
-        'txtMartesSalida
-        '
-        Me.txtMartesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtMartesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtMartesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMartesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMartesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtMartesSalida.Location = New System.Drawing.Point(155, 222)
-        Me.txtMartesSalida.Mask = "00:00"
-        Me.txtMartesSalida.Name = "txtMartesSalida"
-        Me.txtMartesSalida.Size = New System.Drawing.Size(125, 35)
-        Me.txtMartesSalida.TabIndex = 79
-        Me.txtMartesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtMartesSalida.ValidatingType = GetType(Date)
-        '
-        'txtMartesEntrada
-        '
-        Me.txtMartesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtMartesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtMartesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMartesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMartesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtMartesEntrada.Location = New System.Drawing.Point(31, 222)
-        Me.txtMartesEntrada.Mask = "00:00"
-        Me.txtMartesEntrada.Name = "txtMartesEntrada"
-        Me.txtMartesEntrada.Size = New System.Drawing.Size(125, 35)
-        Me.txtMartesEntrada.TabIndex = 78
-        Me.txtMartesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtMartesEntrada.ValidatingType = GetType(Date)
-        '
-        'txtMiercolesSalida
-        '
-        Me.txtMiercolesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtMiercolesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtMiercolesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMiercolesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMiercolesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtMiercolesSalida.Location = New System.Drawing.Point(155, 288)
-        Me.txtMiercolesSalida.Mask = "00:00"
-        Me.txtMiercolesSalida.Name = "txtMiercolesSalida"
-        Me.txtMiercolesSalida.Size = New System.Drawing.Size(125, 35)
-        Me.txtMiercolesSalida.TabIndex = 81
-        Me.txtMiercolesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtMiercolesSalida.ValidatingType = GetType(Date)
-        '
-        'txtMiercolesEntrada
-        '
-        Me.txtMiercolesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtMiercolesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtMiercolesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMiercolesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMiercolesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtMiercolesEntrada.Location = New System.Drawing.Point(31, 288)
-        Me.txtMiercolesEntrada.Mask = "00:00"
-        Me.txtMiercolesEntrada.Name = "txtMiercolesEntrada"
-        Me.txtMiercolesEntrada.Size = New System.Drawing.Size(125, 35)
-        Me.txtMiercolesEntrada.TabIndex = 80
-        Me.txtMiercolesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtMiercolesEntrada.ValidatingType = GetType(Date)
-        '
-        'txtJuevesSalida
-        '
-        Me.txtJuevesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtJuevesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtJuevesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtJuevesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtJuevesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtJuevesSalida.Location = New System.Drawing.Point(505, 156)
-        Me.txtJuevesSalida.Mask = "00:00"
-        Me.txtJuevesSalida.Name = "txtJuevesSalida"
-        Me.txtJuevesSalida.Size = New System.Drawing.Size(125, 35)
-        Me.txtJuevesSalida.TabIndex = 83
-        Me.txtJuevesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtJuevesSalida.ValidatingType = GetType(Date)
-        '
-        'txtJuevesEntrada
-        '
-        Me.txtJuevesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtJuevesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtJuevesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtJuevesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtJuevesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtJuevesEntrada.Location = New System.Drawing.Point(381, 156)
-        Me.txtJuevesEntrada.Mask = "00:00"
-        Me.txtJuevesEntrada.Name = "txtJuevesEntrada"
-        Me.txtJuevesEntrada.Size = New System.Drawing.Size(125, 35)
-        Me.txtJuevesEntrada.TabIndex = 82
-        Me.txtJuevesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtJuevesEntrada.ValidatingType = GetType(Date)
-        '
-        'txtViernesSalida
-        '
-        Me.txtViernesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtViernesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtViernesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtViernesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtViernesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtViernesSalida.Location = New System.Drawing.Point(505, 222)
-        Me.txtViernesSalida.Mask = "00:00"
-        Me.txtViernesSalida.Name = "txtViernesSalida"
-        Me.txtViernesSalida.Size = New System.Drawing.Size(125, 35)
-        Me.txtViernesSalida.TabIndex = 85
-        Me.txtViernesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtViernesSalida.ValidatingType = GetType(Date)
-        '
-        'txtViernesEntrada
-        '
-        Me.txtViernesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtViernesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtViernesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtViernesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtViernesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtViernesEntrada.Location = New System.Drawing.Point(381, 222)
-        Me.txtViernesEntrada.Mask = "00:00"
-        Me.txtViernesEntrada.Name = "txtViernesEntrada"
-        Me.txtViernesEntrada.Size = New System.Drawing.Size(125, 35)
-        Me.txtViernesEntrada.TabIndex = 84
-        Me.txtViernesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtViernesEntrada.ValidatingType = GetType(Date)
-        '
-        'txtSabadoSalida
-        '
-        Me.txtSabadoSalida.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtSabadoSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtSabadoSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSabadoSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSabadoSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtSabadoSalida.Location = New System.Drawing.Point(855, 156)
-        Me.txtSabadoSalida.Mask = "00:00"
-        Me.txtSabadoSalida.Name = "txtSabadoSalida"
-        Me.txtSabadoSalida.Size = New System.Drawing.Size(125, 35)
-        Me.txtSabadoSalida.TabIndex = 87
-        Me.txtSabadoSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtSabadoSalida.ValidatingType = GetType(Date)
-        '
-        'txtSabadoEntrada
-        '
-        Me.txtSabadoEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtSabadoEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.txtSabadoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSabadoEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSabadoEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtSabadoEntrada.Location = New System.Drawing.Point(731, 156)
-        Me.txtSabadoEntrada.Mask = "00:00"
-        Me.txtSabadoEntrada.Name = "txtSabadoEntrada"
-        Me.txtSabadoEntrada.Size = New System.Drawing.Size(125, 35)
-        Me.txtSabadoEntrada.TabIndex = 86
-        Me.txtSabadoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtSabadoEntrada.ValidatingType = GetType(Date)
+        Me.OpenFileDialog.FileName = "OpenFileDialog"
         '
         'txtDomingoSalida
         '
@@ -1325,11 +1040,11 @@ Partial Class FrmAgregarUsuario
         Me.txtDomingoSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDomingoSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDomingoSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtDomingoSalida.Location = New System.Drawing.Point(855, 222)
+        Me.txtDomingoSalida.Location = New System.Drawing.Point(873, 246)
         Me.txtDomingoSalida.Mask = "00:00"
         Me.txtDomingoSalida.Name = "txtDomingoSalida"
         Me.txtDomingoSalida.Size = New System.Drawing.Size(125, 35)
-        Me.txtDomingoSalida.TabIndex = 89
+        Me.txtDomingoSalida.TabIndex = 111
         Me.txtDomingoSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtDomingoSalida.ValidatingType = GetType(Date)
         '
@@ -1340,29 +1055,313 @@ Partial Class FrmAgregarUsuario
         Me.txtDomingoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDomingoEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDomingoEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.txtDomingoEntrada.Location = New System.Drawing.Point(731, 222)
+        Me.txtDomingoEntrada.Location = New System.Drawing.Point(749, 246)
         Me.txtDomingoEntrada.Mask = "00:00"
         Me.txtDomingoEntrada.Name = "txtDomingoEntrada"
         Me.txtDomingoEntrada.Size = New System.Drawing.Size(125, 35)
-        Me.txtDomingoEntrada.TabIndex = 88
+        Me.txtDomingoEntrada.TabIndex = 110
         Me.txtDomingoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtDomingoEntrada.ValidatingType = GetType(Date)
         '
-        'FrmAgregarUsuario
+        'txtSabadoSalida
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.txtSabadoSalida.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtSabadoSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtSabadoSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSabadoSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSabadoSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtSabadoSalida.Location = New System.Drawing.Point(873, 180)
+        Me.txtSabadoSalida.Mask = "00:00"
+        Me.txtSabadoSalida.Name = "txtSabadoSalida"
+        Me.txtSabadoSalida.Size = New System.Drawing.Size(125, 35)
+        Me.txtSabadoSalida.TabIndex = 109
+        Me.txtSabadoSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtSabadoSalida.ValidatingType = GetType(Date)
+        '
+        'txtSabadoEntrada
+        '
+        Me.txtSabadoEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtSabadoEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtSabadoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSabadoEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSabadoEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtSabadoEntrada.Location = New System.Drawing.Point(749, 180)
+        Me.txtSabadoEntrada.Mask = "00:00"
+        Me.txtSabadoEntrada.Name = "txtSabadoEntrada"
+        Me.txtSabadoEntrada.Size = New System.Drawing.Size(125, 35)
+        Me.txtSabadoEntrada.TabIndex = 108
+        Me.txtSabadoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtSabadoEntrada.ValidatingType = GetType(Date)
+        '
+        'txtViernesSalida
+        '
+        Me.txtViernesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtViernesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtViernesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtViernesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtViernesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtViernesSalida.Location = New System.Drawing.Point(523, 246)
+        Me.txtViernesSalida.Mask = "00:00"
+        Me.txtViernesSalida.Name = "txtViernesSalida"
+        Me.txtViernesSalida.Size = New System.Drawing.Size(125, 35)
+        Me.txtViernesSalida.TabIndex = 107
+        Me.txtViernesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtViernesSalida.ValidatingType = GetType(Date)
+        '
+        'txtViernesEntrada
+        '
+        Me.txtViernesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtViernesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtViernesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtViernesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtViernesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtViernesEntrada.Location = New System.Drawing.Point(399, 246)
+        Me.txtViernesEntrada.Mask = "00:00"
+        Me.txtViernesEntrada.Name = "txtViernesEntrada"
+        Me.txtViernesEntrada.Size = New System.Drawing.Size(125, 35)
+        Me.txtViernesEntrada.TabIndex = 106
+        Me.txtViernesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtViernesEntrada.ValidatingType = GetType(Date)
+        '
+        'txtJuevesSalida
+        '
+        Me.txtJuevesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtJuevesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtJuevesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtJuevesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtJuevesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtJuevesSalida.Location = New System.Drawing.Point(523, 180)
+        Me.txtJuevesSalida.Mask = "00:00"
+        Me.txtJuevesSalida.Name = "txtJuevesSalida"
+        Me.txtJuevesSalida.Size = New System.Drawing.Size(125, 35)
+        Me.txtJuevesSalida.TabIndex = 105
+        Me.txtJuevesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtJuevesSalida.ValidatingType = GetType(Date)
+        '
+        'txtJuevesEntrada
+        '
+        Me.txtJuevesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtJuevesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtJuevesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtJuevesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtJuevesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtJuevesEntrada.Location = New System.Drawing.Point(399, 180)
+        Me.txtJuevesEntrada.Mask = "00:00"
+        Me.txtJuevesEntrada.Name = "txtJuevesEntrada"
+        Me.txtJuevesEntrada.Size = New System.Drawing.Size(125, 35)
+        Me.txtJuevesEntrada.TabIndex = 104
+        Me.txtJuevesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtJuevesEntrada.ValidatingType = GetType(Date)
+        '
+        'txtMiercolesSalida
+        '
+        Me.txtMiercolesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtMiercolesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtMiercolesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMiercolesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMiercolesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtMiercolesSalida.Location = New System.Drawing.Point(173, 312)
+        Me.txtMiercolesSalida.Mask = "00:00"
+        Me.txtMiercolesSalida.Name = "txtMiercolesSalida"
+        Me.txtMiercolesSalida.Size = New System.Drawing.Size(125, 35)
+        Me.txtMiercolesSalida.TabIndex = 103
+        Me.txtMiercolesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtMiercolesSalida.ValidatingType = GetType(Date)
+        '
+        'txtMiercolesEntrada
+        '
+        Me.txtMiercolesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtMiercolesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtMiercolesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMiercolesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMiercolesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtMiercolesEntrada.Location = New System.Drawing.Point(49, 312)
+        Me.txtMiercolesEntrada.Mask = "00:00"
+        Me.txtMiercolesEntrada.Name = "txtMiercolesEntrada"
+        Me.txtMiercolesEntrada.Size = New System.Drawing.Size(125, 35)
+        Me.txtMiercolesEntrada.TabIndex = 102
+        Me.txtMiercolesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtMiercolesEntrada.ValidatingType = GetType(Date)
+        '
+        'txtMartesSalida
+        '
+        Me.txtMartesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtMartesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtMartesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMartesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMartesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtMartesSalida.Location = New System.Drawing.Point(173, 246)
+        Me.txtMartesSalida.Mask = "00:00"
+        Me.txtMartesSalida.Name = "txtMartesSalida"
+        Me.txtMartesSalida.Size = New System.Drawing.Size(125, 35)
+        Me.txtMartesSalida.TabIndex = 101
+        Me.txtMartesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtMartesSalida.ValidatingType = GetType(Date)
+        '
+        'txtMartesEntrada
+        '
+        Me.txtMartesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtMartesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtMartesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMartesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMartesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtMartesEntrada.Location = New System.Drawing.Point(49, 246)
+        Me.txtMartesEntrada.Mask = "00:00"
+        Me.txtMartesEntrada.Name = "txtMartesEntrada"
+        Me.txtMartesEntrada.Size = New System.Drawing.Size(125, 35)
+        Me.txtMartesEntrada.TabIndex = 100
+        Me.txtMartesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtMartesEntrada.ValidatingType = GetType(Date)
+        '
+        'txtLunesSalida
+        '
+        Me.txtLunesSalida.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtLunesSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtLunesSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLunesSalida.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLunesSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtLunesSalida.Location = New System.Drawing.Point(173, 180)
+        Me.txtLunesSalida.Mask = "00:00"
+        Me.txtLunesSalida.Name = "txtLunesSalida"
+        Me.txtLunesSalida.Size = New System.Drawing.Size(125, 35)
+        Me.txtLunesSalida.TabIndex = 99
+        Me.txtLunesSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtLunesSalida.ValidatingType = GetType(Date)
+        '
+        'txtLunesEntrada
+        '
+        Me.txtLunesEntrada.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtLunesEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtLunesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLunesEntrada.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLunesEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.txtLunesEntrada.Location = New System.Drawing.Point(49, 180)
+        Me.txtLunesEntrada.Mask = "00:00"
+        Me.txtLunesEntrada.Name = "txtLunesEntrada"
+        Me.txtLunesEntrada.Size = New System.Drawing.Size(125, 35)
+        Me.txtLunesEntrada.TabIndex = 98
+        Me.txtLunesEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtLunesEntrada.ValidatingType = GetType(Date)
+        '
+        'MetroLabel34
+        '
+        Me.MetroLabel34.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel34.AutoSize = True
+        Me.MetroLabel34.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel34.Location = New System.Drawing.Point(749, 218)
+        Me.MetroLabel34.Name = "MetroLabel34"
+        Me.MetroLabel34.Size = New System.Drawing.Size(83, 25)
+        Me.MetroLabel34.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel34.TabIndex = 97
+        Me.MetroLabel34.Text = "Domingo"
+        Me.MetroLabel34.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel25
+        '
+        Me.MetroLabel25.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel25.AutoSize = True
+        Me.MetroLabel25.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel25.Location = New System.Drawing.Point(749, 152)
+        Me.MetroLabel25.Name = "MetroLabel25"
+        Me.MetroLabel25.Size = New System.Drawing.Size(69, 25)
+        Me.MetroLabel25.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel25.TabIndex = 96
+        Me.MetroLabel25.Text = "Sabado"
+        Me.MetroLabel25.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel26
+        '
+        Me.MetroLabel26.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel26.AutoSize = True
+        Me.MetroLabel26.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel26.Location = New System.Drawing.Point(399, 218)
+        Me.MetroLabel26.Name = "MetroLabel26"
+        Me.MetroLabel26.Size = New System.Drawing.Size(68, 25)
+        Me.MetroLabel26.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel26.TabIndex = 95
+        Me.MetroLabel26.Text = "Viernes"
+        Me.MetroLabel26.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel27
+        '
+        Me.MetroLabel27.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel27.AutoSize = True
+        Me.MetroLabel27.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel27.Location = New System.Drawing.Point(399, 152)
+        Me.MetroLabel27.Name = "MetroLabel27"
+        Me.MetroLabel27.Size = New System.Drawing.Size(61, 25)
+        Me.MetroLabel27.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel27.TabIndex = 94
+        Me.MetroLabel27.Text = "Jueves"
+        Me.MetroLabel27.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel29
+        '
+        Me.MetroLabel29.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel29.AutoSize = True
+        Me.MetroLabel29.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel29.Location = New System.Drawing.Point(49, 284)
+        Me.MetroLabel29.Name = "MetroLabel29"
+        Me.MetroLabel29.Size = New System.Drawing.Size(84, 25)
+        Me.MetroLabel29.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel29.TabIndex = 93
+        Me.MetroLabel29.Text = "Miercoles"
+        Me.MetroLabel29.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel30
+        '
+        Me.MetroLabel30.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel30.AutoSize = True
+        Me.MetroLabel30.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel30.Location = New System.Drawing.Point(49, 218)
+        Me.MetroLabel30.Name = "MetroLabel30"
+        Me.MetroLabel30.Size = New System.Drawing.Size(64, 25)
+        Me.MetroLabel30.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel30.TabIndex = 92
+        Me.MetroLabel30.Text = "Martes"
+        Me.MetroLabel30.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel31
+        '
+        Me.MetroLabel31.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel31.AutoSize = True
+        Me.MetroLabel31.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel31.Location = New System.Drawing.Point(49, 152)
+        Me.MetroLabel31.Name = "MetroLabel31"
+        Me.MetroLabel31.Size = New System.Drawing.Size(56, 25)
+        Me.MetroLabel31.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel31.TabIndex = 91
+        Me.MetroLabel31.Text = "Lunes"
+        Me.MetroLabel31.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel32
+        '
+        Me.MetroLabel32.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel32.AutoSize = True
+        Me.MetroLabel32.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel32.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel32.Location = New System.Drawing.Point(49, 127)
+        Me.MetroLabel32.Name = "MetroLabel32"
+        Me.MetroLabel32.Size = New System.Drawing.Size(137, 25)
+        Me.MetroLabel32.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel32.TabIndex = 90
+        Me.MetroLabel32.Text = "Entrada/Salida"
+        Me.MetroLabel32.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'FrmModificarUsuario
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MetroLabel28)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
-        Me.Name = "FrmAgregarUsuario"
+        Me.Name = "FrmModificarUsuario"
         Me.Size = New System.Drawing.Size(1055, 643)
         Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.UseCustomBackColor = True
+        Me.Panel2.ResumeLayout(False)
         Me.MetroTabControl1.ResumeLayout(False)
         Me.tabUsuario.ResumeLayout(False)
         Me.tabUsuario.PerformLayout()
@@ -1375,71 +1374,15 @@ Partial Class FrmAgregarUsuario
         Me.MetroTabPage2.PerformLayout()
         Me.MetroTabPage3.ResumeLayout(False)
         Me.MetroTabPage3.PerformLayout()
-        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents MetroTabControl1 As MetroFramework.Controls.MetroTabControl
-    Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents MetroTabPage3 As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents btnAceptar As MetroFramework.Controls.MetroButton
-    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
-    Friend WithEvents OpenFileDialog As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents SPListarTiposIdentificacionBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents EGymDBDataSet As UI.eGymDBDataSet
-    Friend WithEvents SP_ListarTiposIdentificacionTableAdapter As UI.eGymDBDataSetTableAdapters.SP_ListarTiposIdentificacionTableAdapter
-    Friend WithEvents SPListarGenerosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents SP_ListarGenerosTableAdapter As UI.eGymDBDataSetTableAdapters.SP_ListarGenerosTableAdapter
-    Friend WithEvents SPListarRolesBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents SP_ListarRolesTableAdapter As UI.eGymDBDataSetTableAdapters.SP_ListarRolesTableAdapter
-    Friend WithEvents ErrorProvider As System.Windows.Forms.ErrorProvider
-    Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel21 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel22 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel23 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel24 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtParentescoContacto1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtTelefonoContacto1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtNombreContacto1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtParentescoContacto2 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtTelefonoContacto2 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtNombreContacto2 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents MetroLabel34 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel25 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel26 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel27 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel29 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel30 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel31 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel32 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel28 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroTabControl1 As MetroFramework.Controls.MetroTabControl
     Friend WithEvents tabUsuario As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents btnEliminarFotografia As MetroFramework.Controls.MetroButton
-    Friend WithEvents dtpFechaNacimiento As MetroFramework.Controls.MetroDateTime
-    Friend WithEvents cmbRol As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents cmbGenero As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents cmbTipoIdentificacion As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents pcbFotografia As System.Windows.Forms.PictureBox
-    Friend WithEvents txtRepetirContrasena As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtContrasena As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtCelular As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtTelefono As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtCorreoElectronico As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtAlias As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtSegundoApellido As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtApellido As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtSegundoNombre As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtIdentificacion As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLabel
@@ -1455,7 +1398,53 @@ Partial Class FrmAgregarUsuario
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtLunesEntrada As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnEliminarFotografia As MetroFramework.Controls.MetroButton
+    Friend WithEvents dtpFechaNacimiento As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents cmbRol As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents SPListarRolesBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents EGymDBDataSet As UI.eGymDBDataSet
+    Friend WithEvents cmbGenero As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents SPListarGenerosBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents cmbTipoIdentificacion As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents SPListarTiposIdentificacionBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents pcbFotografia As System.Windows.Forms.PictureBox
+    Friend WithEvents txtRepetirContrasena As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtContrasena As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtCelular As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtTelefono As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtCorreoElectronico As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtAlias As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtSegundoApellido As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtApellido As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtSegundoNombre As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtIdentificacion As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents txtParentescoContacto2 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtTelefonoContacto2 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtNombreContacto2 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel21 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel22 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel23 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel24 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtParentescoContacto1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtTelefonoContacto1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtNombreContacto1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroTabPage3 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents MetroLabel28 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnAceptar As MetroFramework.Controls.MetroButton
+    Friend WithEvents ErrorProvider As System.Windows.Forms.ErrorProvider
+    Friend WithEvents SP_ListarRolesTableAdapter As UI.eGymDBDataSetTableAdapters.SP_ListarRolesTableAdapter
+    Friend WithEvents SP_ListarGenerosTableAdapter As UI.eGymDBDataSetTableAdapters.SP_ListarGenerosTableAdapter
+    Friend WithEvents SP_ListarTiposIdentificacionTableAdapter As UI.eGymDBDataSetTableAdapters.SP_ListarTiposIdentificacionTableAdapter
+    Friend WithEvents OpenFileDialog As System.Windows.Forms.OpenFileDialog
     Friend WithEvents txtDomingoSalida As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtDomingoEntrada As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtSabadoSalida As System.Windows.Forms.MaskedTextBox
@@ -1469,5 +1458,14 @@ Partial Class FrmAgregarUsuario
     Friend WithEvents txtMartesSalida As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtMartesEntrada As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtLunesSalida As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txtLunesEntrada As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents MetroLabel34 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel25 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel26 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel27 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel29 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel30 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel31 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel32 As MetroFramework.Controls.MetroLabel
 
 End Class

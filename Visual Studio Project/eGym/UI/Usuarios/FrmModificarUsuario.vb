@@ -1,59 +1,133 @@
-﻿Imports System.IO
+﻿Imports EL
+Imports System.IO
 
-Public Class FrmAgregarUsuario
+Public Class FrmModificarUsuario
+
+    Private idUsuario As Integer
+    Private idContacto1 As Integer
+    Private idContacto2 As Integer
+    Private idHorarioLunes As Integer
+    Private idHorarioMartes As Integer
+    Private idHorarioMiercoles As Integer
+    Private idHorarioJueves As Integer
+    Private idHorarioViernes As Integer
+    Private idHorarioSabado As Integer
+    Private idHorarioDomingo As Integer
 
     Private imageByte As Byte()
 
+    Sub New(pId As Integer)
+        InitializeComponent()
 
-    Private Sub pcbFotografia_Click(sender As Object, e As EventArgs) Handles pcbFotografia.Click
-        If OpenFileDialog.ShowDialog() = DialogResult.OK Then
-            Try
-                pcbFotografia.Image = Image.FromFile(OpenFileDialog.FileName)
-                imageByte = File.ReadAllBytes(OpenFileDialog.FileName)
-            Catch ex As Exception
-                ' La imagen cargada no es valida
-            End Try
-        End If
-    End Sub
-
-    Private Sub btnEliminarFotografia_Click(sender As Object, e As EventArgs) Handles btnEliminarFotografia.Click
-        pcbFotografia.Image = Nothing
-        imageByte = Nothing
-    End Sub
-
-    Private Sub FrmAgregarUsuario_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
         SP_ListarTiposIdentificacionTableAdapter.Fill(EGymDBDataSet.SP_ListarTiposIdentificacion)
         SP_ListarGenerosTableAdapter.Fill(EGymDBDataSet.SP_ListarGeneros)
         SP_ListarRolesTableAdapter.Fill(EGymDBDataSet.SP_ListarRoles)
+
+        Dim usuario = Gestor.ObtenerUsuario(pId)
+        txtIdentificacion.Text = usuario.Identificacion
+        cmbTipoIdentificacion.SelectedValue = usuario.IdTipoIdentificacion
+        txtNombre.Text = usuario.Nombre
+        txtSegundoNombre.Text = usuario.SegundoNombre
+        txtApellido.Text = usuario.Apellido
+        txtSegundoApellido.Text = usuario.SegundoApellido
+        txtAlias.Text = usuario.Alias
+        cmbGenero.SelectedValue = usuario.IdGenero
+        dtpFechaNacimiento.Value = usuario.FechaNacimiento
+        txtCorreoElectronico.Text = usuario.CorreoElectronico
+        txtTelefono.Text = usuario.NumeroTelefono
+        txtCelular.Text = usuario.NumeroCelular
+        cmbRol.SelectedValue = usuario.Rol.Id
+        txtContrasena.Text = usuario.Contrasena
+        txtRepetirContrasena.Text = usuario.Contrasena
+        If Not usuario.Fotografia Is Nothing Then
+            imageByte = usuario.Fotografia
+            Dim memImage As New System.IO.MemoryStream(usuario.Fotografia)
+            pcbFotografia.Image = Image.FromStream(memImage)
+        End If
+        idUsuario = usuario.Id
+        If (usuario.Contactos.Count > 0) Then
+            idContacto1 = usuario.Contactos(0).Id
+            txtNombreContacto1.Text = usuario.Contactos(0).Nombre
+            txtTelefonoContacto1.Text = usuario.Contactos(0).Telefono
+            txtParentescoContacto1.Text = usuario.Contactos(0).Parentesco
+        End If
+        If (usuario.Contactos.Count > 1) Then
+            idContacto2 = usuario.Contactos(1).Id
+            txtNombreContacto2.Text = usuario.Contactos(1).Nombre
+            txtTelefonoContacto2.Text = usuario.Contactos(1).Telefono
+            txtParentescoContacto2.Text = usuario.Contactos(1).Parentesco
+        End If
+        For Each horario As Horario In usuario.Horarios
+            Select Case horario.DiaSemana
+                Case 0
+                    idHorarioDomingo = horario.Id
+                    txtDomingoEntrada.Text = horario.HoraEntrada.ToString("HH:mm")
+                    txtDomingoSalida.Text = horario.HoraSalida.ToString("HH:mm")
+                Case 1
+                    idHorarioLunes = horario.Id
+                    txtLunesEntrada.Text = horario.HoraEntrada.ToString("HH:mm")
+                    txtLunesSalida.Text = horario.HoraSalida.ToString("HH:mm")
+                Case 2
+                    idHorarioMartes = horario.Id
+                    txtMartesEntrada.Text = horario.HoraEntrada.ToString("HH:mm")
+                    txtMartesSalida.Text = horario.HoraSalida.ToString("HH:mm")
+                Case 3
+                    idHorarioMiercoles = horario.Id
+                    txtMiercolesEntrada.Text = horario.HoraEntrada.ToString("HH:mm")
+                    txtMiercolesSalida.Text = horario.HoraSalida.ToString("HH:mm")
+                Case 4
+                    idHorarioJueves = horario.Id
+                    txtJuevesEntrada.Text = horario.HoraEntrada.ToString("HH:mm")
+                    txtJuevesSalida.Text = horario.HoraSalida.ToString("HH:mm")
+                Case 5
+                    idHorarioViernes = horario.Id
+                    txtViernesEntrada.Text = horario.HoraEntrada.ToString("HH:mm")
+                    txtViernesSalida.Text = horario.HoraSalida.ToString("HH:mm")
+                Case 6
+                    idHorarioSabado = horario.Id
+                    txtSabadoEntrada.Text = horario.HoraEntrada.ToString("HH:mm")
+                    txtSabadoSalida.Text = horario.HoraSalida.ToString("HH:mm")
+            End Select
+        Next
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Dim ctr As Control = New FrmListarUsuarios()
+        ctr.Dock = DockStyle.Fill
+        Me.Parent.Controls.Add(ctr)
+        Me.Dispose()
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If Not Revisar() Then
-            Gestor.AgregarUsuario(txtIdentificacion.Text, txtNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtAlias.Text, dtpFechaNacimiento.Text, txtCorreoElectronico.Text, txtContrasena.Text, imageByte, Date.Now, txtTelefono.Text, txtCelular.Text, cmbRol.SelectedValue, cmbGenero.SelectedValue, cmbTipoIdentificacion.SelectedValue)
-            Gestor.AgregarContacto(txtNombreContacto1.Text, txtTelefonoContacto1.Text, txtParentescoContacto1.Text, Nothing)
+            Gestor.ModificarUsuario(idUsuario, txtIdentificacion.Text, txtNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtAlias.Text, dtpFechaNacimiento.Value, txtCorreoElectronico.Text, txtContrasena.Text, imageByte, Date.Now, txtTelefono.Text, txtCelular.Text, cmbRol.SelectedValue, cmbGenero.SelectedValue, cmbTipoIdentificacion.SelectedValue)
+            If idContacto1 = Nothing Then
+                Gestor.AgregarContacto(txtNombreContacto1.Text, txtTelefonoContacto1.Text, txtParentescoContacto1.Text, idUsuario)
+            Else
+                Gestor.ModificarContacto(idContacto1, txtNombreContacto1.Text, txtTelefonoContacto1.Text, txtParentescoContacto1.Text, idUsuario)
+            End If
             If (txtNombreContacto2.Text.Length > 0 And txtTelefonoContacto2.Text.Length > 0 And txtParentescoContacto2.Text.Length > 0) Then
-                Gestor.AgregarContacto(txtNombreContacto2.Text, txtTelefonoContacto2.Text, txtParentescoContacto2.Text, Nothing)
+                If idContacto2 = Nothing Then
+                    Gestor.AgregarContacto(txtNombreContacto2.Text, txtTelefonoContacto2.Text, txtParentescoContacto2.Text, idUsuario)
+                Else
+                    Gestor.ModificarContacto(idContacto2, txtNombreContacto2.Text, txtTelefonoContacto2.Text, txtParentescoContacto2.Text, idUsuario)
+                End If
+            Else
+                If Not idContacto2 = Nothing Then
+                    Dim contacto2 As Contacto = New Contacto()
+                    contacto2.Id = idContacto2
+                    Gestor.EliminarContacto(contacto2)
+                End If
             End If
+
             If IsDate(txtLunesEntrada.Text) And IsDate(txtLunesSalida.Text) Then
-                Gestor.AgregarHorario(txtLunesEntrada.Text, txtLunesSalida.Text, 1, Nothing)
-            End If
-            If IsDate(txtMartesEntrada.Text) And IsDate(txtMartesSalida.Text) Then
-                Gestor.AgregarHorario(txtMartesEntrada.Text, txtMartesSalida.Text, 2, Nothing)
-            End If
-            If IsDate(txtMiercolesEntrada.Text) And IsDate(txtMiercolesSalida.Text) Then
-                Gestor.AgregarHorario(txtMiercolesEntrada.Text, txtMiercolesSalida.Text, 3, Nothing)
-            End If
-            If IsDate(txtJuevesEntrada.Text) And IsDate(txtJuevesSalida.Text) Then
-                Gestor.AgregarHorario(txtJuevesEntrada.Text, txtJuevesSalida.Text, 4, Nothing)
-            End If
-            If IsDate(txtViernesEntrada.Text) And IsDate(txtViernesSalida.Text) Then
-                Gestor.AgregarHorario(txtViernesEntrada.Text, txtViernesSalida.Text, 5, Nothing)
-            End If
-            If IsDate(txtSabadoEntrada.Text) And IsDate(txtSabadoSalida.Text) Then
-                Gestor.AgregarHorario(txtSabadoEntrada.Text, txtSabadoSalida.Text, 6, Nothing)
-            End If
-            If IsDate(txtDomingoEntrada.Text) And IsDate(txtDomingoSalida.Text) Then
-                Gestor.AgregarHorario(txtDomingoEntrada.Text, txtDomingoSalida.Text, 0, Nothing)
+                If idHorarioLunes = Nothing Then
+                    Gestor.AgregarHorario(txtLunesEntrada.Text, txtLunesSalida.Text, 1, idUsuario)
+                Else
+                    Gestor.ModificarHorario(idHorarioLunes, txtLunesEntrada.Text, txtLunesSalida.Text, 1, idUsuario)
+                End If
+            ElseIf Not idHorarioLunes = Nothing Then
+                Gestor.EliminarHorario(idHorarioLunes)
             End If
             Dim ctr As Control = New FrmListarUsuarios()
             ctr.Dock = DockStyle.Fill
@@ -305,10 +379,19 @@ Public Class FrmAgregarUsuario
         Return conError
     End Function
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Dim ctr As Control = New FrmListarUsuarios()
-        ctr.Dock = DockStyle.Fill
-        Me.Parent.Controls.Add(ctr)
-        Me.Dispose()
+    Private Sub pcbFotografia_Click(sender As Object, e As EventArgs) Handles pcbFotografia.Click
+        If OpenFileDialog.ShowDialog() = DialogResult.OK Then
+            Try
+                pcbFotografia.Image = Image.FromFile(OpenFileDialog.FileName)
+                imageByte = File.ReadAllBytes(OpenFileDialog.FileName)
+            Catch ex As Exception
+                ' La imagen cargada no es valida
+            End Try
+        End If
+    End Sub
+
+    Private Sub btnEliminarFotografia_Click(sender As Object, e As EventArgs) Handles btnEliminarFotografia.Click
+        pcbFotografia.Image = Nothing
+        imageByte = Nothing
     End Sub
 End Class
