@@ -39,15 +39,17 @@ namespace BLL
             UoW.TipoDePagoRepository.Delete(tipoDePago);
             UoW.TipoDePagoRepository.Save();
         }
-        public TipoDePago tipoDePagoPorId(int pId)
-        {
+        public TipoDePago tipoDePagoPorId(int pId){
+        
             TipoDePago tipoDePago = UoW.TipoDePagoRepository.GetById(pId);
             return tipoDePago;
         }
-        public void habilitarTipoDePago(int pId)
+        public void habilitarTipoDePago(TipoDePago objTipo)
         {
-
-
+            //TipoDePago tipoDePago = UoW.TipoDePagoRepository.Update
+            objTipo.Habilitado = true;
+            UoW.TipoDePagoRepository.Update(objTipo);
+            UoW.TipoDePagoRepository.Save();
         }
 
        

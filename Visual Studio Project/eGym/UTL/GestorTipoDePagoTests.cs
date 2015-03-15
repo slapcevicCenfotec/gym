@@ -44,6 +44,9 @@ namespace GestorTipoDePago.Tests
             BLL.GestorTipoDePago gestor = new BLL.GestorTipoDePago();
             gestor.insertarTipoDePago("Prueba", 2.2, 9);
 
+            //TipoDePago auxPago = gestor.tipoDePagoPorId();
+
+
         }
 
         [TestMethod()]
@@ -67,7 +70,7 @@ namespace GestorTipoDePago.Tests
             EL.TipoDePago compara = gestor.tipoDePagoPorId(1);
             actual.Habilitado = false;
             this.assertTodos(compara, actual);
-            gestor.habilitarTipoDePago(1);
+            gestor.habilitarTipoDePago(actual);
 
         }
     }
