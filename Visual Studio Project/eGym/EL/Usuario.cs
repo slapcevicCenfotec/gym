@@ -16,12 +16,12 @@ namespace EL
         private DateTime _fechaNacimiento;
         private string _correoElectronico;
         private string _contrasena;
-      //  private Image _fotografia;
+        private Image _fotografia;
         private DateTime _fechaIngreso;
         private string _numeroTelefono;
         private string _numeroCelular;
         private bool _habilitado;
-        private int _idRol;
+        private Rol _rol;
         #endregion
 
         #region Propiedades
@@ -30,10 +30,10 @@ namespace EL
             get { return _id; }
             set { _id = value; }
         }
-        public int IdRol
+        public Rol Rol
         {
-            get { return _idRol; }
-            set { _idRol = value; }
+            get { return _rol; }
+            set { _rol = value; }
         }
         public string Identificacion
         {
@@ -80,11 +80,11 @@ namespace EL
             get { return _contrasena; }
             set { _contrasena = value; }
         }
-        //public Image Fotografia
-        //{
-        //    get { return _fotografia; }
-        //    set { _fotografia = value; }
-        //}
+        public Image Fotografia
+        {
+            get { return _fotografia; }
+            set { _fotografia = value; }
+        }
         public DateTime FechaIngreso
         {
             get { return _fechaIngreso; }
@@ -107,12 +107,13 @@ namespace EL
         }
         #endregion
 
-        public Usuario(string nombre, string apellido, int rol)
+        public Usuario(string pnombre, string papellido, Rol prol)
         {
             // TODO: Complete member initialization
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.IdRol = rol;
+            this.Nombre = pnombre;
+            this.Apellido = papellido;
+            this.Rol = prol;
+            //this.Fotografia = pfoto;
         }
 
         public Usuario()

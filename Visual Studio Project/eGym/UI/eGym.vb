@@ -21,11 +21,22 @@
 
     Private Sub InicializarMenu()
         lblNombreUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido
+        Dim clear As Boolean
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
-            AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
-            AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
-            AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
+            clear = False
+            For Each permiso As EL.Permiso In usuarioSesion.Rol.ListaPermisos
+                If lbl.Text.Trim() = permiso.Nombre.Trim() Then
+                    clear = True
+                    AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
+                    AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
+                    AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
+                End If
+            Next
+            If clear = False Then
+                lbl.Visible = False
+            End If
         Next
+
     End Sub
 
     Private Function Seleccionar(lbl As Label)
@@ -124,7 +135,8 @@
         pnlInformacionUsuario.Visible = Not pnlInformacionUsuario.Visible
     End Sub
 
-    Private Sub eGym_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-
+    Private Sub eGym_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        objGestorSesion.cerrarSesion()
+        usuarioSesion = Nothing
     End Sub
 End Class
