@@ -9,6 +9,7 @@ Public Module ModuloGeneral
     Public objGestorMusculo As New GestorMusculo()
     Public objeGestorEjercicio As New GestorEjercicio()
     Public objGestorSesion As New GestorSesion()
+    Public objGestorGimnasio As New GestorGimnasio()
     Public Gestor As Gestor = New Gestor()
 
 End Module

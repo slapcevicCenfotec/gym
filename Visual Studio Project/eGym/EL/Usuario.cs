@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace EL
 {
     public class Usuario
     {
-        #region Variables 
+        #region Variables
         private int _id;
         private string _identificacion;
         private string _nombre;
@@ -16,12 +17,53 @@ namespace EL
         private DateTime _fechaNacimiento;
         private string _correoElectronico;
         private string _contrasena;
-        private Image _fotografia;
+        private byte[] _fotografia;
         private DateTime _fechaIngreso;
         private string _numeroTelefono;
         private string _numeroCelular;
         private bool _habilitado;
         private Rol _rol;
+        private int _idGenero;
+        private int _idTipoIdentificacion;
+        private List<Contacto> _contactos;
+        private List<Horario> _horarios;
+
+        public List<Horario> Horarios
+        {
+            get { return _horarios; }
+            set { _horarios = value; }
+        }
+
+        public List<Contacto> Contactos
+        {
+            get { return _contactos; }
+            set { _contactos = value; }
+        }
+
+        public Usuario()
+        {
+            Contactos = new List<Contacto>();
+            Horarios = new List<Horario>();
+        }
+
+
+        public int IdTipoIdentificacion
+        {
+            get { return _idTipoIdentificacion; }
+            set { _idTipoIdentificacion = value; }
+        }
+
+        public int IdGenero
+        {
+            get { return _idGenero; }
+            set { _idGenero = value; }
+        }
+
+        public Rol Rol
+        {
+            get { return _rol; }
+            set { _rol = value; }
+        }
         #endregion
 
         #region Propiedades
@@ -29,11 +71,6 @@ namespace EL
         {
             get { return _id; }
             set { _id = value; }
-        }
-        public Rol Rol
-        {
-            get { return _rol; }
-            set { _rol = value; }
         }
         public string Identificacion
         {
@@ -80,7 +117,7 @@ namespace EL
             get { return _contrasena; }
             set { _contrasena = value; }
         }
-        public Image Fotografia
+        public byte[] Fotografia
         {
             get { return _fotografia; }
             set { _fotografia = value; }
@@ -105,20 +142,38 @@ namespace EL
             get { return _habilitado; }
             set { _habilitado = value; }
         }
+        public string NombreCompleto
+        {
+            get
+            {
+                string nombreCompleto = string.Empty;
+                nombreCompleto += Nombre;
+                if (!string.IsNullOrEmpty(SegundoNombre))
+                {
+                    nombreCompleto += " " + SegundoNombre;
+                }
+                nombreCompleto += " " + Apellido;
+                if (!string.IsNullOrEmpty(SegundoApellido))
+                {
+                    nombreCompleto += " " + SegundoApellido;
+                }
+                return nombreCompleto;
+            }
+        }
+        public string HabilitadoString
+        {
+            get
+            {
+                if (Habilitado)
+                {
+                    return "Activo";
+                }
+                else
+                {
+                    return "No activo";
+                }
+            }
+        }
         #endregion
-
-        public Usuario(string pnombre, string papellido, Rol prol)
-        {
-            // TODO: Complete member initialization
-            this.Nombre = pnombre;
-            this.Apellido = papellido;
-            this.Rol = prol;
-            //this.Fotografia = pfoto;
-        }
-
-        public Usuario()
-        {
-            // TODO: Complete member initialization
-        }
     }
 }

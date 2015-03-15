@@ -86,16 +86,33 @@
     <Compile Include="eGym.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="eGymDBDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ejercicio\FrmListarEjercicio.Designer.vb">
       <DependentUpon>FrmListarEjercicio.vb</DependentUpon>
     </Compile>
     <Compile Include="Ejercicio\FrmListarEjercicio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ejercicio\FrmModificarEjercicio.Designer.vb">
+      <DependentUpon>FrmModificarEjercicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicio\FrmModificarEjercicio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ejercicio\FrmRegistrarEjercicio.Designer.vb">
       <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
     </Compile>
     <Compile Include="Ejercicio\FrmRegistrarEjercicio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gimnasio\FrmGimnasio.Designer.vb">
+      <DependentUpon>FrmGimnasio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gimnasio\FrmGimnasio.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Maquinas\FrmListarMaquinas.Designer.vb">
@@ -222,22 +239,42 @@
     <Compile Include="TiposMaquinas\FrmRegistrarTiposMaquinas.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Usuarios\FrmAgregarUsuario.Designer.vb">
+      <DependentUpon>FrmAgregarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmAgregarUsuario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Usuarios\FrmListarUsuarios.Designer.vb">
       <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\FrmListarUsuarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.Designer.vb">
+      <DependentUpon>FrmModificarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cls_validacion.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="eGym.resx">
       <DependentUpon>eGym.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicio\FrmListarEjercicio.resx">
       <DependentUpon>FrmListarEjercicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicio\FrmModificarEjercicio.resx">
+      <DependentUpon>FrmModificarEjercicio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ejercicio\FrmRegistrarEjercicio.resx">
       <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gimnasio\FrmGimnasio.resx">
+      <DependentUpon>FrmGimnasio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maquinas\FrmListarMaquinas.resx">
       <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
@@ -299,11 +336,28 @@
     <EmbeddedResource Include="TiposMaquinas\FrmRegistrarTiposMaquinas.resx">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmAgregarUsuario.resx">
+      <DependentUpon>FrmAgregarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\FrmListarUsuarios.resx">
       <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmModificarUsuario.resx">
+      <DependentUpon>FrmModificarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="eGymDBDataSet.xsc">
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="eGymDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eGymDBDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="eGymDBDataSet.xss">
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -313,7 +367,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -329,6 +385,9 @@
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

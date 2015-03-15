@@ -11,6 +11,11 @@ using EL;
 
 namespace DAL.Repositories
 {
+    /// <summary>
+    /// Autor: Alexis Soto
+    /// Fecha: 03/15/2015
+    /// Descricpcion: Este Clase se encarga del acceso a datos de los Roles. Contiene los metodos de listar,ObtenerRolPorId Insertar, modificar e eliminar
+    /// </summary>
     public class RolRepository : IRepository<Rol>
     {
 
@@ -18,6 +23,11 @@ namespace DAL.Repositories
         private List<IEntity> _updateItems;
         private List<IEntity> _deleteItems;
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Inicializa una nueva instancia de <see cref="RolRepository"/> class.
+        /// </summary>
         public RolRepository()
         {
             _insertItems = new List<IEntity>();
@@ -25,20 +35,42 @@ namespace DAL.Repositories
             _deleteItems = new List<IEntity>();
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Inserta una entidad Especifica.
+        /// <param name="entity">Entidad Roly.</param>
         public void Insert(Rol entity)
         {
             _insertItems.Add(entity);
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Actualiza una entidad especifica
+        /// </summary>
+        /// <param name="entity">Entidad Rol.</param>
         public void Update(Rol entity)
         {
             _updateItems.Add(entity);
         }
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Elimina una entidad especifica
+        /// </summary>
+        /// <param name="entity">Entidad Rol.</param>
         public void Delete(Rol entity)
         {
             _deleteItems.Add(entity);
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion: Guarda el conjunto de instancias Rol.
+        /// </summary>
         public void Save()
         {
             using (TransactionScope scope = new TransactionScope())
@@ -87,11 +119,23 @@ namespace DAL.Repositories
             }
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Clears Limpia la lista de instacias Rol.
+        /// </summary>
         public void Clear()
         {
             _insertItems.Clear();
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo inserta una instancia Rol en la base de datos
+        /// </summary>
+        /// <param name="objRol">Rol.</param>
+        /// <returns></returns>
         private int InsertRol(Rol objRol)
         {
             DataSet ds;
@@ -118,9 +162,13 @@ namespace DAL.Repositories
             return id;
 
         }
-
-
-
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo inserta una instancia RolPorPermiso en la base de datos
+        /// </summary>
+        /// <param name="pIdRol">The p identifier rol.</param>
+        /// <param name="listaRolesXPermiso">Lista roles x permiso.</param>
         public void InsertarRolesPorPermiso(int pIdRol,List<Permiso> listaRolesXPermiso) {
 
             foreach (Permiso permiso in listaRolesXPermiso)
@@ -145,6 +193,13 @@ namespace DAL.Repositories
         
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo mosifica una instancia RolPorPermiso en la base de datos
+        /// </summary>
+        /// <param name="pIdRol">The p identifier rol.</param>
+        /// <param name="listaRolesXPermiso">The lista roles x permiso.</param>
         public void ModificarRolesPorPermiso(int pIdRol, List<Permiso> listaRolesXPermiso)
         {
             SqlCommand cmd;
@@ -181,8 +236,15 @@ namespace DAL.Repositories
 
 
 
-        
 
+
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo mosifica una instancia Rol en la base de datos
+        /// </summary>
+        /// <param name="objRol">The object rol.</param>
+        /// <returns></returns>
         private int UpdateRol(Rol objRol)
         {
             int id;
@@ -225,11 +287,16 @@ namespace DAL.Repositories
             }
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este Devuelve una lista de Roles de la base de datos
+        /// </summary>
+        /// <returns>IEnumerable<Rol></returns>
         public IEnumerable<Rol> GetAll()
         {
 
             List<Rol> listaRoles = null;
-
             SqlCommand cmd = new SqlCommand();
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarRoles");
             if (ds.Tables[0].Rows.Count > 0)
@@ -250,6 +317,13 @@ namespace DAL.Repositories
             return listaRoles;
         }
 
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este Devuelve una lista un Rol de la base de datos
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Rol</returns>
         public Rol GetById(int id)
         {
             Rol objRol = null;
@@ -273,7 +347,6 @@ namespace DAL.Repositories
                     Habilitado = Convert.ToBoolean(dr["HABILITADO"])
                 };
 
-
                  sqlQuery = "select A.ID_PERMISO AS ID,B.NOMBRE from [dbo].[T_PERMISO_ROL] A INNER JOIN T_PERMISO B ON A.ID_PERMISO = B.ID where A.ID_ROL = @ID_ROL";
                  cmd = new SqlCommand(sqlQuery);
                  cmd.Parameters.AddWithValue("@ID_ROL", objRol.Id);
@@ -291,7 +364,6 @@ namespace DAL.Repositories
                          };
                          listaPermisos.Add(objPermiso);
                      }
-                    
                  }
                  objRol.ListaPermisos = listaPermisos;
             }
