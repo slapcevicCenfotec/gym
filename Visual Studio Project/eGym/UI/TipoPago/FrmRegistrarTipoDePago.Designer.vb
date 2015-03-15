@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmModificarTipoDePago
+Partial Class FrmRegistrarTipoDePago
     Inherits MetroFramework.Controls.MetroUserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -23,66 +23,27 @@ Partial Class FrmModificarTipoDePago
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmModificarTipoDePago))
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRegistrarTipoDePago))
         Me.lblTipoDePagoNombre = New MetroFramework.Controls.MetroLabel()
         Me.lblTipoDePagoMonto = New MetroFramework.Controls.MetroLabel()
         Me.lblTipoDePagoDuracion = New MetroFramework.Controls.MetroLabel()
         Me.txtMonto = New MetroFramework.Controls.MetroTextBox()
         Me.txtDuracion = New MetroFramework.Controls.MetroTextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ErPrValidaciones = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErPrExcepciones = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2.SuspendLayout()
         CType(Me.ErPrValidaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErPrExcepciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(12, 15)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(0, 0)
-        Me.MetroLabel1.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.txtNombre)
-        Me.Panel2.Controls.Add(Me.lblTipoDePagoNombre)
-        Me.Panel2.Controls.Add(Me.lblTipoDePagoMonto)
-        Me.Panel2.Controls.Add(Me.lblTipoDePagoDuracion)
-        Me.Panel2.Controls.Add(Me.txtMonto)
-        Me.Panel2.Controls.Add(Me.txtDuracion)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 67)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(432, 345)
-        Me.Panel2.TabIndex = 24
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtNombre.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.txtNombre.Lines = New String(-1) {}
-        Me.txtNombre.Location = New System.Drawing.Point(91, 103)
-        Me.txtNombre.MaxLength = 32767
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtNombre.SelectedText = ""
-        Me.txtNombre.Size = New System.Drawing.Size(250, 35)
-        Me.txtNombre.TabIndex = 4
-        Me.txtNombre.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.txtNombre.UseSelectable = True
         '
         'lblTipoDePagoNombre
         '
@@ -158,19 +119,6 @@ Partial Class FrmModificarTipoDePago
         Me.txtDuracion.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtDuracion.UseSelectable = True
         '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(432, 67)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "MODIFICAR TIPO DE PAGO"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ErPrValidaciones
         '
         Me.ErPrValidaciones.BlinkRate = 0
@@ -233,6 +181,49 @@ Partial Class FrmModificarTipoDePago
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.txtNombre)
+        Me.Panel2.Controls.Add(Me.lblTipoDePagoNombre)
+        Me.Panel2.Controls.Add(Me.lblTipoDePagoMonto)
+        Me.Panel2.Controls.Add(Me.lblTipoDePagoDuracion)
+        Me.Panel2.Controls.Add(Me.txtMonto)
+        Me.Panel2.Controls.Add(Me.txtDuracion)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 67)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(432, 345)
+        Me.Panel2.TabIndex = 24
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.txtNombre.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtNombre.Lines = New String(-1) {}
+        Me.txtNombre.Location = New System.Drawing.Point(91, 103)
+        Me.txtNombre.MaxLength = 32767
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNombre.SelectedText = ""
+        Me.txtNombre.Size = New System.Drawing.Size(250, 35)
+        Me.txtNombre.TabIndex = 4
+        Me.txtNombre.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtNombre.UseSelectable = True
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(432, 67)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "AGREGAR TIPO DE PAGO"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
@@ -244,39 +235,34 @@ Partial Class FrmModificarTipoDePago
         Me.Panel1.Size = New System.Drawing.Size(432, 67)
         Me.Panel1.TabIndex = 23
         '
-        'FrmModificarTipoDePago
+        'registrar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.Controls.Add(Me.MetroPanel1)
-        Me.Controls.Add(Me.MetroLabel1)
-        Me.Font = New System.Drawing.Font("Segoe UI Light", 18.0!)
-        Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.Name = "FrmModificarTipoDePago"
+        Me.Name = "registrar"
         Me.Size = New System.Drawing.Size(960, 695)
         Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         CType(Me.ErPrValidaciones, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErPrExcepciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroPanel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblTipoDePagoNombre As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblTipoDePagoMonto As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblTipoDePagoDuracion As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtMonto As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtDuracion As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ErPrValidaciones As System.Windows.Forms.ErrorProvider
     Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton

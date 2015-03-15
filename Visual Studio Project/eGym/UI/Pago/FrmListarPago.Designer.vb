@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class FrmListarPago
-    Inherits System.Windows.Forms.UserControl
+    Inherits MetroFramework.Controls.MetroUserControl
 
     'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _

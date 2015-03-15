@@ -185,12 +185,6 @@
     <Compile Include="Sesion\frmIniciarSesion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TipoPago\FrmAgregarTipoDePago.Designer.vb">
-      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TipoPago\FrmAgregarTipoDePago.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="TipoPago\FrmListarTipoDePago.Designer.vb">
       <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
     </Compile>
@@ -201,6 +195,12 @@
       <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
     </Compile>
     <Compile Include="TipoPago\FrmModificarTipoDePago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TipoPago\FrmRegistrarTipoDePago.Designer.vb">
+      <DependentUpon>FrmRegistrarTipoDePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago\FrmRegistrarTipoDePago.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.Designer.vb">
@@ -280,14 +280,14 @@
     <EmbeddedResource Include="Sesion\frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TipoPago\FrmAgregarTipoDePago.resx">
-      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmListarTipoDePago.resx">
       <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmModificarTipoDePago.resx">
       <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoPago\FrmRegistrarTipoDePago.resx">
+      <DependentUpon>FrmRegistrarTipoDePago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TiposMaquinas\FrmListarTiposDeMaquinas.resx">
       <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
