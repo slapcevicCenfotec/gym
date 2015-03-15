@@ -23,7 +23,7 @@ namespace DAL
             try
             {
                 var appSR = new AppSettingsReader();
-                connString = ConfigurationManager.ConnectionStrings["eGymDB"].ConnectionString;
+                connString = "Data Source=cantaros.no-ip.info;Initial Catalog=eGymDB;Persist Security Info=True;User ID=Cantaros;Password=cantaros123";
                 return connString;
             }
             catch (Exception ex)

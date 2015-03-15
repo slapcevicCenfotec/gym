@@ -20,13 +20,23 @@
 
 
     Private Sub InicializarMenu()
-        'lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
+        lblNombreUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido
+        Dim clear As Boolean
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
-            AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
-            AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
-            AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
-
+            clear = False
+            For Each permiso As EL.Permiso In usuarioSesion.Rol.ListaPermisos
+                If lbl.Text.Trim() = permiso.Nombre.Trim() Then
+                    clear = True
+                    AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
+                    AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
+                    AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
+                End If
+            Next
+            If clear = False Then
+                lbl.Visible = False
+            End If
         Next
+
     End Sub
 
     Private Function Seleccionar(lbl As Label)
@@ -116,10 +126,9 @@
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
         objGestorSesion.cerrarSesion()
-        Me.Hide()
         usuarioSesion = Nothing
         frmIniciarSesion.Show()
-
+        Me.Close()
     End Sub
 
     Private Sub pcbUsuario_Click(sender As Object, e As EventArgs) Handles pcbUsuario.Click
@@ -145,4 +154,9 @@
             MetroPanel1.Controls.Add(ctr)
         End If
     End Sub
+    Private Sub eGym_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        objGestorSesion.cerrarSesion()
+        usuarioSesion = Nothing
+    End Sub
+
 End Class

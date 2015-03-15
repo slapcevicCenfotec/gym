@@ -47,10 +47,10 @@ Public Class frmIniciarSesion
                 ErrorProvider1.SetError(btnIngresar, "Este nombre de usuario o contraseña no son válidos")
             Else
                 ErrorProvider1.SetError(btnIngresar, "")
-                Me.Hide()
                 txtContrasena.Text = Nothing
                 Dim main As eGym = New eGym(usuario)
                 main.Show()
+                Me.Close()
             End If
         End If
     End Sub
@@ -63,5 +63,9 @@ Public Class frmIniciarSesion
 
     Private Sub frmIniciarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtNombreUsuario.Select()
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.Close()
     End Sub
 End Class

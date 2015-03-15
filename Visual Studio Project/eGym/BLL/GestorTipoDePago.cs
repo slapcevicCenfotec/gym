@@ -21,13 +21,13 @@ namespace BLL
         {
             return UoW.TipoDePagoRepository.GetAll();
         }
-        public void insertarTipoDePago(String pNombre, float pMonto, int pDuracion)
+        public void insertarTipoDePago(String pNombre, double pMonto, int pDuracion)
         {
             TipoDePago tipoDePago = new TipoDePago(pNombre, pMonto, pDuracion);
             UoW.TipoDePagoRepository.Insert(tipoDePago);
             UoW.TipoDePagoRepository.Save();
         }
-        public void modificarTipoDePago(int pId, String pNombre, float pMonto, int pDuracion, bool pHabilitado)
+        public void modificarTipoDePago(int pId, String pNombre, double pMonto, int pDuracion, bool pHabilitado)
         {
             TipoDePago tipoDePago = new TipoDePago(pId, pNombre, pMonto, pDuracion, pHabilitado);
             UoW.TipoDePagoRepository.Update(tipoDePago);
@@ -38,6 +38,16 @@ namespace BLL
             TipoDePago tipoDePago = new TipoDePago(pId);
             UoW.TipoDePagoRepository.Delete(tipoDePago);
             UoW.TipoDePagoRepository.Save();
+        }
+        public TipoDePago tipoDePagoPorId(int pId)
+        {
+            TipoDePago tipoDePago = UoW.TipoDePagoRepository.GetById(pId);
+            return tipoDePago;
+        }
+        public void habilitarTipoDePago(int pId)
+        {
+
+
         }
 
        
