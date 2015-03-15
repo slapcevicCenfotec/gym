@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EL", "EL\EL.csproj", "{FD8D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEL", "CEL\CEL.csproj", "{5C9F3BC3-B17B-481E-807C-34BDB106B4DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTL", "UTL\UTL.csproj", "{C74E9625-355C-4DF4-9F06-81BBE782B66A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5C9F3BC3-B17B-481E-807C-34BDB106B4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C9F3BC3-B17B-481E-807C-34BDB106B4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C9F3BC3-B17B-481E-807C-34BDB106B4DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C74E9625-355C-4DF4-9F06-81BBE782B66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74E9625-355C-4DF4-9F06-81BBE782B66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74E9625-355C-4DF4-9F06-81BBE782B66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74E9625-355C-4DF4-9F06-81BBE782B66A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
