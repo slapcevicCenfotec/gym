@@ -85,6 +85,11 @@
     <Compile Include="eGym.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="eGymDBDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ejercicio\FrmListarEjercicio.Designer.vb">
       <DependentUpon>FrmListarEjercicio.vb</DependentUpon>
     </Compile>
@@ -221,10 +226,22 @@
     <Compile Include="TiposMaquinas\FrmRegistrarTiposMaquinas.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Usuarios\FrmAgregarUsuario.Designer.vb">
+      <DependentUpon>FrmAgregarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmAgregarUsuario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Usuarios\FrmListarUsuarios.Designer.vb">
       <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\FrmListarUsuarios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.Designer.vb">
+      <DependentUpon>FrmModificarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -298,11 +315,28 @@
     <EmbeddedResource Include="TiposMaquinas\FrmRegistrarTiposMaquinas.resx">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmAgregarUsuario.resx">
+      <DependentUpon>FrmAgregarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\FrmListarUsuarios.resx">
       <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmModificarUsuario.resx">
+      <DependentUpon>FrmModificarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="eGymDBDataSet.xsc">
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="eGymDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eGymDBDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="eGymDBDataSet.xss">
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
