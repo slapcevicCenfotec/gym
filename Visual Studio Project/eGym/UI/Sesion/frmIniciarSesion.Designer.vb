@@ -38,7 +38,8 @@ Partial Class frmIniciarSesion
         '
         Me.btnIngresar.AutoSize = True
         Me.btnIngresar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnIngresar.Location = New System.Drawing.Point(220, 253)
+        Me.btnIngresar.FontWeight = MetroFramework.MetroButtonWeight.Regular
+        Me.btnIngresar.Location = New System.Drawing.Point(399, 200)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(100, 35)
         Me.btnIngresar.TabIndex = 3
@@ -50,7 +51,7 @@ Partial Class frmIniciarSesion
         '
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(70, 159)
+        Me.MetroLabel2.Location = New System.Drawing.Point(70, 140)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(98, 25)
         Me.MetroLabel2.TabIndex = 2
@@ -60,7 +61,7 @@ Partial Class frmIniciarSesion
         'txtNombreUsuario
         '
         Me.txtNombreUsuario.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.txtNombreUsuario.Lines = New String() {"sebaslamu@gmail.com"}
+        Me.txtNombreUsuario.Lines = New String(-1) {}
         Me.txtNombreUsuario.Location = New System.Drawing.Point(249, 84)
         Me.txtNombreUsuario.MaxLength = 32767
         Me.txtNombreUsuario.Name = "txtNombreUsuario"
@@ -70,24 +71,22 @@ Partial Class frmIniciarSesion
         Me.txtNombreUsuario.Size = New System.Drawing.Size(250, 35)
         Me.txtNombreUsuario.Style = MetroFramework.MetroColorStyle.Purple
         Me.txtNombreUsuario.TabIndex = 1
-        Me.txtNombreUsuario.Text = "sebaslamu@gmail.com"
         Me.txtNombreUsuario.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtNombreUsuario.UseSelectable = True
         '
         'txtContrasena
         '
         Me.txtContrasena.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.txtContrasena.Lines = New String() {"sebas"}
+        Me.txtContrasena.Lines = New String(-1) {}
         Me.txtContrasena.Location = New System.Drawing.Point(249, 135)
         Me.txtContrasena.MaxLength = 32767
         Me.txtContrasena.Name = "txtContrasena"
-        Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtContrasena.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtContrasena.SelectedText = ""
         Me.txtContrasena.Size = New System.Drawing.Size(250, 35)
         Me.txtContrasena.Style = MetroFramework.MetroColorStyle.Purple
         Me.txtContrasena.TabIndex = 2
-        Me.txtContrasena.Text = "sebas"
         Me.txtContrasena.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtContrasena.UseSelectable = True
         '
@@ -113,7 +112,8 @@ Partial Class frmIniciarSesion
         '
         Me.btnCancelar.AutoSize = True
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnCancelar.Location = New System.Drawing.Point(70, 253)
+        Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Regular
+        Me.btnCancelar.Location = New System.Drawing.Point(70, 200)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(100, 35)
         Me.btnCancelar.TabIndex = 4
@@ -125,7 +125,7 @@ Partial Class frmIniciarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(379, 320)
+        Me.ClientSize = New System.Drawing.Size(550, 264)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtContrasena)
         Me.Controls.Add(Me.txtNombreUsuario)
