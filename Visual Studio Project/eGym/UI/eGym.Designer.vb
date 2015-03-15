@@ -82,9 +82,10 @@ Partial Class eGym
         'btnUsuarios
         '
         Me.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnUsuarios.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.btnUsuarios.ForeColor = System.Drawing.Color.White
-        Me.btnUsuarios.Location = New System.Drawing.Point(0, 0)
+        Me.btnUsuarios.Location = New System.Drawing.Point(785, 0)
         Me.btnUsuarios.Name = "btnUsuarios"
         Me.btnUsuarios.Size = New System.Drawing.Size(104, 44)
         Me.btnUsuarios.TabIndex = 10
@@ -97,9 +98,10 @@ Partial Class eGym
         'MetroLabel6
         '
         Me.MetroLabel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.MetroLabel6.Dock = System.Windows.Forms.DockStyle.Left
         Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel6.ForeColor = System.Drawing.Color.White
-        Me.MetroLabel6.Location = New System.Drawing.Point(752, 0)
+        Me.MetroLabel6.Location = New System.Drawing.Point(641, 0)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(144, 44)
         Me.MetroLabel6.TabIndex = 17
@@ -112,9 +114,10 @@ Partial Class eGym
         'MetroLabel5
         '
         Me.MetroLabel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.MetroLabel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel5.ForeColor = System.Drawing.Color.White
-        Me.MetroLabel5.Location = New System.Drawing.Point(647, 0)
+        Me.MetroLabel5.Location = New System.Drawing.Point(537, 0)
         Me.MetroLabel5.Name = "MetroLabel5"
         Me.MetroLabel5.Size = New System.Drawing.Size(104, 44)
         Me.MetroLabel5.TabIndex = 16
@@ -127,9 +130,10 @@ Partial Class eGym
         'MetroLabel4
         '
         Me.MetroLabel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.MetroLabel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel4.ForeColor = System.Drawing.Color.White
-        Me.MetroLabel4.Location = New System.Drawing.Point(463, 0)
+        Me.MetroLabel4.Location = New System.Drawing.Point(432, 0)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(105, 44)
         Me.MetroLabel4.TabIndex = 15
@@ -142,9 +146,10 @@ Partial Class eGym
         'MetroLabel3
         '
         Me.MetroLabel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.MetroLabel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.MetroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel3.ForeColor = System.Drawing.Color.White
-        Me.MetroLabel3.Location = New System.Drawing.Point(569, 0)
+        Me.MetroLabel3.Location = New System.Drawing.Point(355, 0)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(77, 44)
         Me.MetroLabel3.TabIndex = 14
@@ -157,9 +162,10 @@ Partial Class eGym
         'MetroLabel2
         '
         Me.MetroLabel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.MetroLabel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel2.ForeColor = System.Drawing.Color.White
-        Me.MetroLabel2.Location = New System.Drawing.Point(357, 0)
+        Me.MetroLabel2.Location = New System.Drawing.Point(250, 0)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(105, 44)
         Me.MetroLabel2.TabIndex = 13
@@ -172,9 +178,10 @@ Partial Class eGym
         'btnMaquinas
         '
         Me.btnMaquinas.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.btnMaquinas.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnMaquinas.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.btnMaquinas.ForeColor = System.Drawing.Color.White
-        Me.btnMaquinas.Location = New System.Drawing.Point(246, 0)
+        Me.btnMaquinas.Location = New System.Drawing.Point(140, 0)
         Me.btnMaquinas.Name = "btnMaquinas"
         Me.btnMaquinas.Size = New System.Drawing.Size(110, 44)
         Me.btnMaquinas.TabIndex = 12
@@ -187,9 +194,10 @@ Partial Class eGym
         'btnFacturacion
         '
         Me.btnFacturacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.btnFacturacion.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnFacturacion.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.btnFacturacion.ForeColor = System.Drawing.Color.White
-        Me.btnFacturacion.Location = New System.Drawing.Point(105, 0)
+        Me.btnFacturacion.Location = New System.Drawing.Point(0, 0)
         Me.btnFacturacion.Name = "btnFacturacion"
         Me.btnFacturacion.Size = New System.Drawing.Size(140, 44)
         Me.btnFacturacion.TabIndex = 11
@@ -201,7 +209,7 @@ Partial Class eGym
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(16, Byte), Integer))
         Me.Panel1.Location = New System.Drawing.Point(0, 17)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(896, 13)
@@ -210,7 +218,6 @@ Partial Class eGym
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(30, 30)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
@@ -239,7 +246,7 @@ Partial Class eGym
         Me.MetroLabel9.AutoSize = True
         Me.MetroLabel9.Location = New System.Drawing.Point(571, 731)
         Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(141, 19)
+        Me.MetroLabel9.Size = New System.Drawing.Size(139, 19)
         Me.MetroLabel9.TabIndex = 10
         Me.MetroLabel9.Text = "eGym - Cantaros 2015"
         '
@@ -280,7 +287,9 @@ Partial Class eGym
         'pcbUsuario
         '
         Me.pcbUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.pcbUsuario.Image = CType(resources.GetObject("pcbUsuario.Image"), System.Drawing.Image)
+        Me.pcbUsuario.ErrorImage = CType(resources.GetObject("pcbUsuario.ErrorImage"), System.Drawing.Image)
+        Me.pcbUsuario.Image = Global.UI.My.Resources.Resources.photo
+        Me.pcbUsuario.InitialImage = CType(resources.GetObject("pcbUsuario.InitialImage"), System.Drawing.Image)
         Me.pcbUsuario.Location = New System.Drawing.Point(1186, 30)
         Me.pcbUsuario.Margin = New System.Windows.Forms.Padding(0)
         Me.pcbUsuario.Name = "pcbUsuario"
