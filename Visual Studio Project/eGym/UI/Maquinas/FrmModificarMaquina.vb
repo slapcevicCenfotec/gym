@@ -23,39 +23,6 @@ Public Class FrmModificarMaquina
         txtNumeroDeMaquina.Text = maquinaPorModificar.NumeroMaquina
     End Sub
 
-
-    Private Function validarFormRegistrarMaquina() As Boolean
-        Dim validado As Boolean = True
-        If txtNumeroDeActivo.Text.Length = 0 Then
-            ErPrValidacion.SetError(txtNumeroDeActivo, "El número de activo es un campo obligatorio")
-            validado = False
-        Else
-            ErPrValidacion.SetError(txtNumeroDeActivo, "")
-        End If
-
-        If txtNumeroDeMaquina.Text.Length = 0 Then
-            ErPrValidacion.SetError(txtNumeroDeMaquina, "El número de máquina es un campo obligatorio")
-            validado = False
-        Else
-            ErPrValidacion.SetError(txtNumeroDeMaquina, "")
-        End If
-
-        If cmbTipoDeMaquina.SelectedValue = Nothing Then
-            ErPrValidacion.SetError(cmbTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
-            validado = False
-        Else
-            ErPrValidacion.SetError(cmbTipoDeMaquina, "")
-        End If
-
-        Return validado
-    End Function
-
-    Sub clearScreen()
-        Me.txtNumeroDeActivo.Text = String.Empty
-        Me.txtNumeroDeMaquina.Text = String.Empty
-        Me.cmbTipoDeMaquina.SelectedItem = Nothing
-    End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim numeroActivo As String = txtNumeroDeActivo.Text
         Dim numeroMaquina As String = txtNumeroDeMaquina.Text
@@ -88,5 +55,37 @@ Public Class FrmModificarMaquina
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
+    End Sub
+
+    Private Function validarFormRegistrarMaquina() As Boolean
+        Dim validado As Boolean = True
+        If txtNumeroDeActivo.Text.Length = 0 Then
+            ErPrValidacion.SetError(txtNumeroDeActivo, "El número de activo es un campo obligatorio")
+            validado = False
+        Else
+            ErPrValidacion.SetError(txtNumeroDeActivo, "")
+        End If
+
+        If txtNumeroDeMaquina.Text.Length = 0 Then
+            ErPrValidacion.SetError(txtNumeroDeMaquina, "El número de máquina es un campo obligatorio")
+            validado = False
+        Else
+            ErPrValidacion.SetError(txtNumeroDeMaquina, "")
+        End If
+
+        If cmbTipoDeMaquina.SelectedValue = Nothing Then
+            ErPrValidacion.SetError(cmbTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
+            validado = False
+        Else
+            ErPrValidacion.SetError(cmbTipoDeMaquina, "")
+        End If
+
+        Return validado
+    End Function
+
+    Sub clearScreen()
+        Me.txtNumeroDeActivo.Text = String.Empty
+        Me.txtNumeroDeMaquina.Text = String.Empty
+        Me.cmbTipoDeMaquina.SelectedItem = Nothing
     End Sub
 End Class

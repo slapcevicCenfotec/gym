@@ -3,59 +3,23 @@ Imports System.Drawing
 Public Class FrmRegistrarTiposMaquinas
 
     Private Sub FrmRegistrarTiposMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        rtbDescripcion.MaxLength = 250
+        txtDescripcion.MaxLength = 250
         txtTipoDeMaquina.MaxLength = 50
-        txtNombreImagen.Enabled = False
     End Sub
 
-    Private Sub btnAgregarFoto_Click(sender As Object, e As EventArgs) Handles btnAgregarFoto.Click
+    Private Sub pbxFoto_Click(sender As Object, e As EventArgs) Handles pbxFoto.Click
         Try
             ofdBuscar.Filter = "All Files (*.*)|*.*|JPEG Files (*.jpeg)|*.jpeg|JPEG Files (*.jpg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
             ofdBuscar.ShowDialog()
             pbxFoto.Image = Image.FromFile(ofdBuscar.FileName)
-            txtNombreImagen.Text = ofdBuscar.SafeFileName
         Catch ex As Exception
-
+            'Si no agrega la foto tira una excepción
         End Try
-
-    End Sub
-
-    Private Function validarFormRegistrarTiposDeMaquina() As Boolean
-        Dim validado As Boolean = True
-        If txtNombreImagen.Text.Length = 0 Then
-            ErPrValidaciones.SetError(txtNombreImagen, "La foto es un campo obligatorio")
-            validado = False
-        Else
-            ErPrValidaciones.SetError(txtNombreImagen, "")
-        End If
-
-        If txtTipoDeMaquina.Text.Length = 0 Then
-            ErPrValidaciones.SetError(txtTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
-            validado = False
-        Else
-            ErPrValidaciones.SetError(txtTipoDeMaquina, "")
-        End If
-
-        If rtbDescripcion.Text.Length = 0 Then
-            ErPrValidaciones.SetError(rtbDescripcion, "La descripción es un campo obligatorio")
-            validado = False
-        Else
-            ErPrValidaciones.SetError(rtbDescripcion, "")
-        End If
-
-        Return validado
-    End Function
-
-    Sub clearScreen()
-        Me.txtTipoDeMaquina.Text = String.Empty
-        Me.rtbDescripcion.Text = String.Empty
-        Me.txtNombreImagen.Text = String.Empty
-        Me.pbxFoto.Image = Nothing
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim nombre As String = txtTipoDeMaquina.Text
-        Dim descripcion As String = rtbDescripcion.Text
+        Dim descripcion As String = txtDescripcion.Text
         Dim habilitado As Boolean = True
 
         If validarFormRegistrarTiposDeMaquina() Then
@@ -88,5 +52,41 @@ Public Class FrmRegistrarTiposMaquinas
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
+    End Sub
+
+    Private Function validarFormRegistrarTiposDeMaquina() As Boolean
+        Dim validado As Boolean = True
+        If pbxFoto.Image Is Nothing Then
+            ErPrValidaciones.SetError(lblFoto, "La foto es un campo obligatorio")
+            validado = False
+        Else
+            ErPrValidaciones.SetError(pbxFoto, "")
+        End If
+
+        If txtTipoDeMaquina.Text.Length = 0 Then
+            ErPrValidaciones.SetError(txtTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
+            validado = False
+        Else
+            ErPrValidaciones.SetError(txtTipoDeMaquina, "")
+        End If
+
+        If txtDescripcion.Text.Length = 0 Then
+            ErPrValidaciones.SetError(txtDescripcion, "La descripción es un campo obligatorio")
+            validado = False
+        Else
+            ErPrValidaciones.SetError(txtDescripcion, "")
+        End If
+
+        Return validado
+    End Function
+
+    Sub clearScreen()
+        Me.txtTipoDeMaquina.Text = String.Empty
+        Me.txtDescripcion.Text = String.Empty
+        Me.pbxFoto.Image = Nothing
+    End Sub
+
+    Private Sub btnEliminarFoto_Click(sender As Object, e As EventArgs) Handles btnEliminarFoto.Click
+        pbxFoto.Image = Nothing
     End Sub
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports EL
 
-Public Class FrmRegistrarMaquina
+Public Class lblTitulo
 
     Private Sub FrmRegistrarMaquina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbTipoDeMaquina.DataSource = objGestorTipoDeMaquina.listarTiposDeMaquinas()

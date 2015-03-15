@@ -49,7 +49,7 @@ Public Class FrmListarMaquinas
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim ctr As Control
-        ctr = New FrmRegistrarMaquina
+        ctr = New lblTitulo
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
