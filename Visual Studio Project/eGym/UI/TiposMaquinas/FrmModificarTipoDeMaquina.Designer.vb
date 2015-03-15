@@ -153,6 +153,7 @@ Partial Class FrmModificarTipoDeMaquina
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.Panel3.Controls.Add(Me.btnCancelar)
         Me.Panel3.Controls.Add(Me.btnGuardar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom

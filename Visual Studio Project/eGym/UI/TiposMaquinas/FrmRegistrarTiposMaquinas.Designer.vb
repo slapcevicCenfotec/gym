@@ -39,7 +39,7 @@ Partial Class FrmRegistrarTiposMaquinas
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         CType(Me.pbxFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErPrValidaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErPrExcepciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,6 +204,7 @@ Partial Class FrmRegistrarTiposMaquinas
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.Panel3.Controls.Add(Me.btnCancelar)
         Me.Panel3.Controls.Add(Me.btnGuardar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -214,25 +215,25 @@ Partial Class FrmRegistrarTiposMaquinas
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.lblTitulo)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(600, 67)
         Me.Panel2.TabIndex = 0
         '
-        'Label1
+        'lblTitulo
         '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(600, 67)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "AGREGAR TIPO DE MAQUINA"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTitulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblTitulo.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.lblTitulo.Location = New System.Drawing.Point(0, 0)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(600, 67)
+        Me.lblTitulo.TabIndex = 1
+        Me.lblTitulo.Text = "AGREGAR TIPO DE MAQUINA"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FrmRegistrarTiposMaquinas
         '
@@ -267,6 +268,6 @@ Partial Class FrmRegistrarTiposMaquinas
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 
 End Class

@@ -20,12 +20,11 @@
 
 
     Private Sub InicializarMenu()
-        'lblUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido + " - ROL"
+        lblNombreUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
             AddHandler lbl.Click, Function(senderObj, args) Seleccionar(lbl)
             AddHandler lbl.MouseEnter, Function(senderObj, args) Marcar(lbl)
             AddHandler lbl.MouseLeave, Function(senderObj, args) Desmarcar(lbl)
-
         Next
     End Sub
 
@@ -119,7 +118,6 @@
         usuarioSesion = Nothing
         frmIniciarSesion.Show()
         Me.Close()
-
     End Sub
 
     Private Sub pcbUsuario_Click(sender As Object, e As EventArgs) Handles pcbUsuario.Click

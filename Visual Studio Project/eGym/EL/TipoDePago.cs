@@ -10,7 +10,7 @@ namespace EL
     {
         private int _id;
         private String _nombre;
-        private float _monto;
+        private double _monto;
         private int _duracion;
         private bool _habilitado;
 
@@ -20,13 +20,13 @@ namespace EL
         {
             this._id = pId;
         }
-        public TipoDePago(String pNommbre, float pMonto, int pDuracion)
+        public TipoDePago(String pNommbre, double pMonto, int pDuracion)
         {
             this._nombre = pNommbre;
             this._monto = pMonto;
             this._duracion = pDuracion;
         }
-        public TipoDePago(int pId, String pNommbre, float pMonto, int pDuracion, bool pHabilitado)
+        public TipoDePago(int pId, String pNommbre, double pMonto, int pDuracion, bool pHabilitado)
         {
             this._id = pId;
             this._nombre = pNommbre;
@@ -71,7 +71,7 @@ namespace EL
             get { return _nombre; }
             set { _nombre = value; }
         }
-        public float Monto
+        public double Monto
         {
             get { return _monto; }
             set { _monto = value; }
