@@ -1,68 +1,64 @@
 ﻿Imports EL
 
-Public Class FrmRegistrarMaquina
-    Private Property listaTiposDeMaquinas As List(Of TipoDeMaquina)
+Public Class lblTitulo
 
     Private Sub FrmRegistrarMaquina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        listaTiposDeMaquinas = objGestorTipoDeMaquina.listarTiposDeMaquinas()
+        cmbTipoDeMaquina.DataSource = objGestorTipoDeMaquina.listarTiposDeMaquinas()
+        cmbTipoDeMaquina.DisplayMember = "Nombre"
+        cmbTipoDeMaquina.ValueMember = "Id"
 
-        For Each tipoDeMaquina In listaTiposDeMaquinas
-            cmbTipoDeMaquina.Items.Add(tipoDeMaquina.Nombre)
-        Next
+        txtNumeroDeActivo.MaxLength = 50
+        txtNumeroDeMaquina.MaxLength = 50
+        cmbTipoDeMaquina.SelectedItem = Nothing
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim numeroActivo As String = txtNumeroDeActivo.Text
         Dim numeroMaquina As String = txtNumeroDeMaquina.Text
-        Dim tipoDeMaquina As String = cmbTipoDeMaquina.SelectedItem
-        Dim habilitado As Boolean = True
-        Dim idTipoMaquina As Integer
-
-        For Each tipoMaquina In listaTiposDeMaquinas
-            If tipoMaquina.Nombre = tipoDeMaquina Then
-                idTipoMaquina = tipoMaquina.Id
-            End If
-        Next
-
-        resetValidarLabels()
+        Dim tipoDeMaquina As String = cmbTipoDeMaquina.SelectedValue
 
         If validarFormRegistrarMaquina() Then
-            objGestorMaquina.insertarMaquina(numeroActivo, numeroMaquina, habilitado, idTipoMaquina)
-            clearScreen()
-        End If
+            Try
+                objGestorMaquina.insertarMaquina(numeroActivo, numeroMaquina, tipoDeMaquina)
+                clearScreen()
 
+                Dim ctr As Control
+                ctr = New FrmListarMaquinas
+                ctr.Dock = DockStyle.Fill
+                Me.Controls.Clear()
+                Me.Controls.Add(ctr)
+            Catch ex As Exception
+                ErPrExcepciones.SetError(btnGuardar, ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Function validarFormRegistrarMaquina() As Boolean
         Dim validado As Boolean = True
         If txtNumeroDeActivo.Text.Length = 0 Then
-            lblValidarNumeroActivo.Text = "Número de activo es requerido"
+            ErPrValidaciones.SetError(txtNumeroDeActivo, "El número de activo es un campo obligatorio")
             validado = False
+        Else
+            ErPrValidaciones.SetError(txtNumeroDeActivo, "")
         End If
 
         If txtNumeroDeMaquina.Text.Length = 0 Then
-            lblValidarNumeroMaquina.Text = "Número de máquina es requerido"
+            ErPrValidaciones.SetError(txtNumeroDeMaquina, "El número de máquina es un campo obligatorio")
             validado = False
+        Else
+            ErPrValidaciones.SetError(txtNumeroDeMaquina, "")
         End If
 
-        If cmbTipoDeMaquina.SelectedItem = Nothing Then
-            lblValidarTipoDeMaquina.Text = "Tipo de máquina es requerido"
+        If cmbTipoDeMaquina.SelectedValue = Nothing Then
+            ErPrValidaciones.SetError(cmbTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
             validado = False
+        Else
+            ErPrValidaciones.SetError(cmbTipoDeMaquina, "")
         End If
 
         Return validado
     End Function
-
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        clearScreen()
-        resetValidarLabels()
-
-        Dim ctr As Control
-        ctr = New FrmListarMaquinas
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
-    End Sub
 
     Sub clearScreen()
         Me.txtNumeroDeActivo.Text = String.Empty
@@ -70,9 +66,13 @@ Public Class FrmRegistrarMaquina
         Me.cmbTipoDeMaquina.SelectedItem = Nothing
     End Sub
 
-    Sub resetValidarLabels()
-        lblValidarNumeroActivo.Text = Nothing
-        lblValidarNumeroMaquina.Text = Nothing
-        lblValidarTipoDeMaquina.Text = Nothing
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        clearScreen()
+
+        Dim ctr As Control
+        ctr = New FrmListarMaquinas
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
     End Sub
 End Class

@@ -19,14 +19,14 @@ namespace BLL
             return UoW.TipoDeMaquinaRepository.GetAll();
         }
 
-        public TipoDeMaquina GetMaquinaById(int pid)
+        public TipoDeMaquina GetTipoDeMaquinaById(int pid)
         {
             return UoW.TipoDeMaquinaRepository.GetById(pid);
         }
 
-        public void insertarTipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        public void insertarTipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion)
         {
-            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pfoto, pnombre, pdescripcion, phabilitado);
+            TipoDeMaquina tipoDeMaquina = new TipoDeMaquina(pfoto, pnombre, pdescripcion);
             UoW.TipoDeMaquinaRepository.Insert(tipoDeMaquina);
             UoW.TipoDeMaquinaRepository.Save();
         }
