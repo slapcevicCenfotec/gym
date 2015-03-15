@@ -97,6 +97,12 @@
     <Compile Include="Ejercicio\FrmRegistrarEjercicio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Gimnasio\FrmGimnasio.Designer.vb">
+      <DependentUpon>FrmGimnasio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gimnasio\FrmGimnasio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Maquinas\FrmListarMaquinas.Designer.vb">
       <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
     </Compile>
@@ -238,6 +244,9 @@
     <EmbeddedResource Include="Ejercicio\FrmRegistrarEjercicio.resx">
       <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gimnasio\FrmGimnasio.resx">
+      <DependentUpon>FrmGimnasio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maquinas\FrmListarMaquinas.resx">
       <DependentUpon>FrmListarMaquinas.vb</DependentUpon>
     </EmbeddedResource>
@@ -312,7 +321,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -328,6 +339,9 @@
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

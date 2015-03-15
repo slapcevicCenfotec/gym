@@ -1,28 +1,13 @@
-﻿''' <summary>
-''' Autor: Alexis Soto
-''' Fecha: 03/15/2015
-''' Descripcion: Instancia del User COntrol Modificar Rol
-''' </summary>
-Public Class FrmModificarRol
+﻿Public Class FrmModificarRol
     Inherits MetroFramework.Controls.MetroUserControl
     Dim idRol As Integer
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Inizializa una instacia de <see cref="FrmModificarRol"/> class.
-    ''' </summary>
-    ''' <param name="pIdRol">The p identifier rol.</param>
+
     Public Sub New(pIdRol As Int32)
         InitializeComponent()
         llenarCampos(pIdRol)
     End Sub
 
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Agrega a una instancia Rol los datso del formulario y llama al metodo modificarRol
-    ''' </summary>
     Public Sub modificarRol()
         Dim nombre As String
         Dim descripcion As String
@@ -45,12 +30,6 @@ Public Class FrmModificarRol
 
 
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Valida que se haya seleccionado al menos un rol
-    ''' </summary>
-    ''' <returns></returns>
     Public Function validarPermisos() As Boolean
         Dim validarPermiso As Boolean
         validarPermiso = False
@@ -67,27 +46,17 @@ Public Class FrmModificarRol
 
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Obtiene la lista de permisoPorRol enviando como parametro el id del Rol
-    ''' </summary>
-    ''' <param name="pIdRol">The p identifier rol.</param>
     Private Sub llenarCampos(pIdRol As Int32)
         For Each item In objGestorRol.obtenerRol(pIdRol)
             txtNombre.Text = item.Nombre
             txtDescripcion.Text = item.Descripcion
             idRol = item.Id
             ListarPermisos(item.ListaPermisos)
+
+
         Next
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Obtiene la lista de permisoPorRol enviando como parametro el id del Rol
-    ''' </summary>
-    ''' <param name="plistaPermisoRol">The plista permiso rol.</param>
     Private Sub ListarPermisos(plistaPermisoRol As Object)
         Dim offset As Integer
         Dim initiaValue As Integer
@@ -110,8 +79,6 @@ Public Class FrmModificarRol
             chK.FontSize = MetroFramework.MetroCheckBoxSize.Tall
             chK.FontWeight = MetroFramework.MetroCheckBoxWeight.Light
             chK.Size = New Size(150, 25)
-            chK.UseCustomBackColor = True
-            chK.BackColor = Color.Empty
             For Each permiso In plistaPermisoRol
                 idChecked = CType(permiso, EL.Permiso).Id
                 If item.Id = idChecked Then
@@ -123,25 +90,14 @@ Public Class FrmModificarRol
         Next
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Crea una instancia FrmListarRoles para volver a la lista de roles
-    ''' </summary>
     Private Sub frmListarRoles()
+
         Dim ctr As Control
         ctr = New FrmListarRoles
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: Valida los campos del formulario y posteriormente llama al metodo ModificarRol
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
         ErrorProvider.Clear()
         If txtNombre.Text = "" Then
@@ -155,13 +111,6 @@ Public Class FrmModificarRol
         End If
     End Sub
 
-    ''' <summary>
-    ''' Autor: Alexis Soto
-    ''' Fecha: 03/15/2015
-    ''' Descripcion: LLama al User Control FrmListarRoles
-    ''' </summary>
-    ''' <param name="sender">The source of the event.</param>
-    ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
         frmListarRoles()
     End Sub
