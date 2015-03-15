@@ -39,20 +39,25 @@ Public Class FrmModificarEjercicio
         cbListaMusculosPrincipales.ValueMember = "Id"
 
         Dim musculo As Musculo = objeGestorEjercicio.getMusculoPrincipal(ejercicioModificar.Id)
-
         cbListaMusculosPrincipales.SelectedValue = musculo.Id
 
+        cbListaMusculosSecundarios.DataSource = objGestorMusculo.listarMusculos()
+        cbListaMusculosSecundarios.DisplayMember = "Nombre"
+        cbListaMusculosSecundarios.ValueMember = "Id"
 
-        'lbMusculosSecundarios.DataSource = objeGestorEjercicio.
-        'cbListaMusculosPrincipales.DisplayMember = "Nombre"
-        'cbListaMusculosPrincipales.ValueMember = "Id"
+        Dim listaMusculosSecundarios As List(Of Musculo)
 
+        listaMusculosSecundarios = objeGestorEjercicio.getMusculoSecundarios(ejercicioModificar.Id)
 
+        For Each Muscle As Musculo In listaMusculosSecundarios
+            cbListaMusculosSecundarios.SelectedValue = Muscle.Id
+            cbListaMusculosSecundarios.SetItemChecked(cbListaMusculosSecundarios.SelectedIndex, True)
+        Next
 
     End Sub
 
    
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs)
         Dim resulValidation As Boolean
 
         resulValidation = validation()

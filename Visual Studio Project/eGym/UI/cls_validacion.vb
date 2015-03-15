@@ -7,6 +7,16 @@
         Else
             Return True
         End If
+    End Function
+
+    Public Shared Function validar(ByVal cb As MetroFramework.Controls.MetroComboBox) As Boolean
+
+        If cb.SelectedIndex = -1 Then
+            Return False
+        Else
+            Return True
+        End If
+
 
     End Function
 

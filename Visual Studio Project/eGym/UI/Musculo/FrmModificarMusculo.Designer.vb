@@ -22,8 +22,9 @@ Partial Class FrmModificarMusculo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnModificar = New MetroFramework.Controls.MetroButton()
-        Me.btnEliminar = New MetroFramework.Controls.MetroButton()
+        Me.components = New System.ComponentModel.Container()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.txtIrrigacion = New MetroFramework.Controls.MetroTextBox()
         Me.txtInervacion = New MetroFramework.Controls.MetroTextBox()
         Me.txtInserccion = New MetroFramework.Controls.MetroTextBox()
@@ -38,40 +39,42 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.MetroPanel1.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnModificar
+        'btnCancelar
         '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.AutoSize = True
-        Me.btnModificar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnModificar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnModificar.Location = New System.Drawing.Point(16, 301)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(16)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(150, 30)
-        Me.btnModificar.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnModificar.TabIndex = 57
-        Me.btnModificar.Text = "Cancelar"
-        Me.btnModificar.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnModificar.UseSelectable = True
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.AutoSize = True
+        Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 301)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(150, 30)
+        Me.btnCancelar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnCancelar.TabIndex = 57
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnCancelar.UseSelectable = True
         '
-        'btnEliminar
+        'btnGuardar
         '
-        Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEliminar.AutoSize = True
-        Me.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnEliminar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminar.Location = New System.Drawing.Point(466, 301)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(16)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(150, 30)
-        Me.btnEliminar.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnEliminar.TabIndex = 56
-        Me.btnEliminar.Text = "Guardar"
-        Me.btnEliminar.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnEliminar.UseSelectable = True
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.AutoSize = True
+        Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnGuardar.Location = New System.Drawing.Point(466, 301)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(150, 30)
+        Me.btnGuardar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnGuardar.TabIndex = 56
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnGuardar.UseSelectable = True
         '
         'txtIrrigacion
         '
@@ -251,9 +254,9 @@ Partial Class FrmModificarMusculo
         '
         Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.MetroPanel1.Controls.Add(Me.btnModificar)
+        Me.MetroPanel1.Controls.Add(Me.btnCancelar)
         Me.MetroPanel1.Controls.Add(Me.txtIrrigacion)
-        Me.MetroPanel1.Controls.Add(Me.btnEliminar)
+        Me.MetroPanel1.Controls.Add(Me.btnGuardar)
         Me.MetroPanel1.Controls.Add(Me.MetroLabel2)
         Me.MetroPanel1.Controls.Add(Me.txtInervacion)
         Me.MetroPanel1.Controls.Add(Me.txtNombre)
@@ -294,6 +297,11 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel7.UseCustomBackColor = True
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'FrmModificarMusculo
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -305,12 +313,13 @@ Partial Class FrmModificarMusculo
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnModificar As MetroFramework.Controls.MetroButton
-    Friend WithEvents btnEliminar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
     Friend WithEvents txtIrrigacion As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtInervacion As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtInserccion As MetroFramework.Controls.MetroTextBox
@@ -325,5 +334,6 @@ Partial Class FrmModificarMusculo
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 
 End Class

@@ -119,33 +119,40 @@ namespace BLL
 
         }
 
-        //public List<Musculo> getMusculoSecundarios(int pid)
-        //{
+        public List<Musculo> getMusculoSecundarios(int pid)
+        {
 
-        //   List <Musculo> objMusculos = null;
+            List<Musculo> objMusculos = new List<Musculo>();
 
+            var sqlQuery = "SELECT E.ID_MUSCULO, M.[NOMBRE] FROM [T_MUSCULO_EJERCICIO] E JOIN [dbo].[T_MUSCULO] M ON(E.ID_MUSCULO=M.ID) WHERE E.ID_EJERCICIO = @idEjercicio AND E.[tipoRelacion] = 'Secundario'";
+            SqlCommand cmd = new SqlCommand(sqlQuery);
+            cmd.Parameters.AddWithValue("@idEjercicio", pid);
 
-        //    var sqlQuery = "SELECT E.ID_MUSCULO, M.[NOMBRE] FROM [T_MUSCULO_EJERCICIO] E JOIN [dbo].[T_MUSCULO] M ON(E.ID_MUSCULO=M.ID) WHERE E.ID_EJERCICIO = @idEjercicio AND E.[tipoRelacion] = 'Secundario'";
-        //    SqlCommand cmd = new SqlCommand(sqlQuery);
-        //    cmd.Parameters.AddWithValue("@idEjercicio", pid);
+            var ds = DBAccess.ExecuteQuery(cmd);
 
-        //    var ds = DBAccess.ExecuteQuery(cmd);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                var dr = ds.Tables[0].Rows[0];
 
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        var dr = ds.Tables[0].Rows[0];
+                objMusculos.Add(new Musculo
+                {
+                    Id = Convert.ToInt32(dr["ID_MUSCULO"]),
+                    Nombre = dr["NOMBRE"].ToString(),
+                });
+            }
 
-        //        objMusculos.Add( new Musculo
-        //        {
-        //            Id = Convert.ToInt32(dr["ID_MUSCULO"]),
-        //            Nombre = dr["NOMBRE"].ToString(),
-        //        });
-        //    }
+            return objMusculos;
 
-        //    return objMusculo;
+        }
 
-        //}
+        public void eliminarEjercicio(Ejercicio pEjercicio)
+        {
+            Uow.EjercicioRepository.Delete(pEjercicio);
+            Uow.EjercicioRepository.Save();
 
+            //Uow.MusculoRepository.Delete(pEjercicio);
+            //Uow.MusculoRepository.Save();
+        }
 
     }
 }

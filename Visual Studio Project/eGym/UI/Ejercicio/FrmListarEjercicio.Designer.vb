@@ -36,7 +36,7 @@ Partial Class FrmListarEjercicio
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
+        Me.btnEliminar = New MetroFramework.Controls.MetroButton()
         Me.txtFiltro = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         CType(Me.tblEjercicio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,20 +171,20 @@ Partial Class FrmListarEjercicio
         Me.MetroButton2.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroButton2.UseSelectable = True
         '
-        'MetroButton3
+        'btnEliminar
         '
-        Me.MetroButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroButton3.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.MetroButton3.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton3.Location = New System.Drawing.Point(548, 88)
-        Me.MetroButton3.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
-        Me.MetroButton3.Name = "MetroButton3"
-        Me.MetroButton3.Size = New System.Drawing.Size(125, 30)
-        Me.MetroButton3.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroButton3.TabIndex = 29
-        Me.MetroButton3.Text = "Eliminar"
-        Me.MetroButton3.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroButton3.UseSelectable = True
+        Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnEliminar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnEliminar.Location = New System.Drawing.Point(548, 88)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(125, 30)
+        Me.btnEliminar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnEliminar.TabIndex = 29
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnEliminar.UseSelectable = True
         '
         'txtFiltro
         '
@@ -222,7 +222,7 @@ Partial Class FrmListarEjercicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.Controls.Add(Me.MetroButton1)
         Me.Controls.Add(Me.MetroButton2)
-        Me.Controls.Add(Me.MetroButton3)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.txtFiltro)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.tblEjercicio)
@@ -243,7 +243,7 @@ Partial Class FrmListarEjercicio
     Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnEliminar As MetroFramework.Controls.MetroButton
     Friend WithEvents txtFiltro As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
 

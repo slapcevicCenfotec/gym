@@ -71,7 +71,7 @@ namespace DAL.Repositories
         public Ejercicio GetById(int id)
         {
             Ejercicio objEjercicio = null;
-            var sqlQuery = "SELECT [POSICION_INICIAL_IMG] , [POSICION_FINAL_iMG] FROM [dbo].[T_EJERCICIO] WHERE [ID] = @idEjercicio";
+            var sqlQuery = "SELECT [POSICION_INICIAL_IMG] , [POSICION_FINAL_iMG] FROM [dbo].[T_EJERCICIO] WHERE [ID] = @idEjercicio POSICION_INICIAL_IMG is not null and POSICION_INICIAL_IMG is not null ";
             SqlCommand cmd = new SqlCommand(sqlQuery);
             cmd.Parameters.AddWithValue("@idEjercicio", id);
 
@@ -114,13 +114,13 @@ namespace DAL.Repositories
                     //    }
                     //}
 
-                    ////if (_deleteItems.Count > 0)
-                    ////{
-                    ////    foreach (Estrella p in _deleteItems)
-                    ////    {
-                    ////        DeleteEstrella(p);
-                    ////    }
-                    ////}
+                    if (_deleteItems.Count > 0)
+                    {
+                        foreach (Ejercicio p in _deleteItems)
+                        {
+                            DeleteEjercicio(p);
+                        }
+                    }
 
                     scope.Complete();
                 }
@@ -174,6 +174,28 @@ namespace DAL.Repositories
 
             }
 
+        }
+
+        private void DeleteEjercicio(Ejercicio objEjercicio)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@Id", objEjercicio.Id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarEjercicio");
+
+            }
+            catch (SqlException ex)
+            {
+                //logear la excepcion a la bd con un Exception
+
+
+            }
+            catch (Exception ex)
+            {
+                //logear la excepcion a la bd con un Exception
+
+            }
         }
     }
 }

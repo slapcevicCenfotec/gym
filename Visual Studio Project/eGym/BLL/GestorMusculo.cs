@@ -85,5 +85,24 @@ namespace BLL
             }
         
         }
+
+        public void eliminarMusculo(Musculo pMusculo)
+        {
+
+            Uow.MusculoRepository.Delete(pMusculo);
+            Uow.MusculoRepository.Save();
+        }
+
+        public Musculo musculoPorId(int pId)
+        {
+            Musculo musculo = Uow.MusculoRepository.GetById(pId);
+            return musculo;
+        }
+
+        public void habilitarMusculo(int pId)
+        {
+
+
+        }
     }
 }

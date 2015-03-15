@@ -61,6 +61,12 @@ namespace EL
             set { _irrigacion = value; }
         }
 
+        private Boolean _habilitado;
+        public Boolean Habilitado
+        {
+            get { return _habilitado; }
+            set { _habilitado = value; }
+        }
 
         #endregion
 

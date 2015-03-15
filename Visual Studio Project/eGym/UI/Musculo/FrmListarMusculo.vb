@@ -8,7 +8,7 @@ Public Class FrmListarMusculo
 
         tblMusculos.AutoGenerateColumns = False
         tblMusculos.DataSource = listaOriginal
-        tblMusculos.Columns("Nombre").DataPropertyName = "Name"
+        tblMusculos.Columns("Nombre").DataPropertyName = "Nombre"
         tblMusculos.Columns("Ubicacion").DataPropertyName = "Ubicacion"
         tblMusculos.Columns("Origen").DataPropertyName = "Origen"
         tblMusculos.Columns("Inserccion").DataPropertyName = "Inserccion"
@@ -66,8 +66,13 @@ Public Class FrmListarMusculo
     End Sub
   
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-
+        Dim musculoPorEliminar As Musculo = tblMusculos.CurrentRow.DataBoundItem
+        objGestorMusculo.eliminarMusculo(musculoPorEliminar)
+        Dim ctr As Control
+        ctr = New FrmListarMusculo
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
     End Sub
-
 
 End Class

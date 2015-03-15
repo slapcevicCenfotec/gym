@@ -83,15 +83,13 @@ Public Class FrmListarEjercicio
         Me.Controls.Add(ctr)
     End Sub
 
-    Private Sub MetroButton3_Click_1(sender As Object, e As EventArgs) Handles MetroButton3.Click
-
-    End Sub
-
-    Private Sub MetroTextBox1_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click
-
-    End Sub
-
-    Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
-
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim ejercicioPorEliminar As Ejercicio = tblEjercicio.CurrentRow.DataBoundItem
+        objeGestorEjercicio.eliminarEjercicio(ejercicioPorEliminar)
+        Dim ctr As Control
+        ctr = New FrmListarEjercicio
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
     End Sub
 End Class
