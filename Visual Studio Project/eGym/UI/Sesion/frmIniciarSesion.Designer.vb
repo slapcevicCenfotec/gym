@@ -60,8 +60,8 @@ Partial Class frmIniciarSesion
         'txtNombreUsuario
         '
         Me.txtNombreUsuario.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.txtNombreUsuario.Lines = New String() {"mauriciofer@gmail.com"}
-        Me.txtNombreUsuario.Location = New System.Drawing.Point(70, 108)
+        Me.txtNombreUsuario.Lines = New String() {"sebaslamu@gmail.com"}
+        Me.txtNombreUsuario.Location = New System.Drawing.Point(249, 84)
         Me.txtNombreUsuario.MaxLength = 32767
         Me.txtNombreUsuario.Name = "txtNombreUsuario"
         Me.txtNombreUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -70,15 +70,15 @@ Partial Class frmIniciarSesion
         Me.txtNombreUsuario.Size = New System.Drawing.Size(250, 35)
         Me.txtNombreUsuario.Style = MetroFramework.MetroColorStyle.Purple
         Me.txtNombreUsuario.TabIndex = 1
-        Me.txtNombreUsuario.Text = "mauriciofer@gmail.com"
+        Me.txtNombreUsuario.Text = "sebaslamu@gmail.com"
         Me.txtNombreUsuario.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtNombreUsuario.UseSelectable = True
         '
         'txtContrasena
         '
         Me.txtContrasena.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.txtContrasena.Lines = New String() {"123"}
-        Me.txtContrasena.Location = New System.Drawing.Point(70, 187)
+        Me.txtContrasena.Lines = New String() {"sebas"}
+        Me.txtContrasena.Location = New System.Drawing.Point(249, 135)
         Me.txtContrasena.MaxLength = 32767
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -87,7 +87,7 @@ Partial Class frmIniciarSesion
         Me.txtContrasena.Size = New System.Drawing.Size(250, 35)
         Me.txtContrasena.Style = MetroFramework.MetroColorStyle.Purple
         Me.txtContrasena.TabIndex = 2
-        Me.txtContrasena.Text = "123"
+        Me.txtContrasena.Text = "sebas"
         Me.txtContrasena.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtContrasena.UseSelectable = True
         '

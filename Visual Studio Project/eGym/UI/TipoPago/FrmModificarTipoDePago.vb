@@ -13,65 +13,101 @@ Public Class FrmModificarTipoDePago
         txtMonto.Text = actual.Monto
         txtDuracion.Text = actual.Duracion
     End Sub
-    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+    Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
         If validarModificarTipoDePago() = True Then
             objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
         End If
     End Sub
-    Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
+    Private Sub MetroLabel4_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Private Sub MetroTextBox1_Click(sender As Object, e As EventArgs) Handles txtNombre.Click
+    Private Sub MetroTextBox1_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Private Sub MetroTextBox2_Click(sender As Object, e As EventArgs) Handles txtMonto.Click
+    Private Sub MetroTextBox2_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Private Sub MetroLabel3_Click(sender As Object, e As EventArgs) Handles MetroLabel3.Click
+    Private Sub MetroLabel3_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Private Sub MetroTextBox3_Click(sender As Object, e As EventArgs) Handles txtDuracion.Click
+    Private Sub MetroTextBox3_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
+    Private Sub MetroLabel2_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
+    Private Sub MetroButton2_Click(sender As Object, e As EventArgs)
         Dim ctr As Control
         ctr = New FrmListarTipoDePago
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
     End Sub
-    Private Function validarModificarTipoDePago() As Boolean
-
-        Dim result As Boolean = True
 
 
-        If txtNombre.Text = Nothing Then
-            result = False
-            ErrorProvider1.SetError(txtNombre, "Debe ingresar un nombre")
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
+        Dim ctr As Control
+        ctr = New FrmListarTipoDePago
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs)
+        If validarModificarTipoDePago() = True Then
+            objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
         End If
-        If txtMonto.Text = Nothing Then
-            result = False
-            ErrorProvider1.SetError(txtMonto, "Debe ingresar un monto")
+    End Sub
+
+    Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        If validarModificarTipoDePago() = True Then
+            objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Dim ctr As Control
+        ctr = New FrmListarTipoDePago
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
+    End Sub
+
+
+    Private Function validarModificarTipoDePago() As Boolean
+        Dim validado As Boolean = True
+        If txtNombre.Text.Length = 0 Then
+            ErPrValidaciones.SetError(txtNombre, "El nombre es un campo obligatorio")
+            validado = False
+        Else
+            ErPrValidaciones.SetError(txtNombre, "")
+        End If
+
+        If txtMonto.Text.Length = 0 Then
+            ErPrValidaciones.SetError(txtMonto, "El monto es un campo obligatorio")
+            validado = False
         Else
             If montoRegex.IsMatch(txtMonto.Text) = False Then
-                result = False
-                ErrorProvider1.SetError(txtMonto, "El campo monto debe ser un numero")
+                validado = False
+                ErPrValidaciones.SetError(txtMonto, "Monto debe ser un numero")
             End If
+            ErPrValidaciones.SetError(txtMonto, "")
         End If
-        If txtDuracion.Text = Nothing Then
-            result = False
-            ErrorProvider1.SetError(txtDuracion, "Debe ingresar una cantidad de dias.")
+
+        If txtDuracion.Text.Length = 0 Then
+            ErPrValidaciones.SetError(txtDuracion, "La duracion es un dato obligatorio")
+            validado = False
         Else
             If duracionRegex.IsMatch(txtDuracion.Text) = False Then
-                result = False
-                ErrorProvider1.SetError(txtDuracion, "El campo duracion debe ser de tipo numero")
+                validado = False
+                ErPrValidaciones.SetError(txtDuracion, "Duracion debe ser un numero")
             End If
+            ErPrValidaciones.SetError(txtDuracion, "")
         End If
-
-        Return result
-
+        Return validado
     End Function
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class

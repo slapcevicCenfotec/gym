@@ -186,7 +186,7 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@pId", objTipoDePago.Id));
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_CambiarEstadoTipoDePago");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarTipoDePago");
             }
             catch (Exception ex)
             {
