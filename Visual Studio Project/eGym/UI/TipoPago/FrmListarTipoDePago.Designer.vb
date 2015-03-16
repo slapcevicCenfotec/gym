@@ -134,7 +134,7 @@ Partial Class FrmListarTipoDePago
         Me.tblListaTipoDePago.EnableHeadersVisualStyles = False
         Me.tblListaTipoDePago.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.tblListaTipoDePago.GridColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.tblListaTipoDePago.Location = New System.Drawing.Point(16, 62)
+        Me.tblListaTipoDePago.Location = New System.Drawing.Point(16, 61)
         Me.tblListaTipoDePago.Margin = New System.Windows.Forms.Padding(16)
         Me.tblListaTipoDePago.MultiSelect = False
         Me.tblListaTipoDePago.Name = "tblListaTipoDePago"

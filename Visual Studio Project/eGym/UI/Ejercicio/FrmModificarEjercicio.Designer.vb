@@ -44,6 +44,11 @@ Partial Class FrmModificarEjercicio
         Me.ptbPosicionFinal = New System.Windows.Forms.PictureBox()
         Me.ptbPosicionInicial = New System.Windows.Forms.PictureBox()
         Me.cbListaMusculosSecundarios = New System.Windows.Forms.CheckedListBox()
+        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
+        Me.ofdBuscar2 = New System.Windows.Forms.OpenFileDialog()
+        Me.ofdBuscar = New System.Windows.Forms.OpenFileDialog()
+        Me.btnGuardar = New MetroFramework.Controls.MetroButton()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         CType(Me.ptbPosicionFinal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ptbPosicionInicial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,7 +59,7 @@ Partial Class FrmModificarEjercicio
         Me.MetroButton1.AutoSize = True
         Me.MetroButton1.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton1.Location = New System.Drawing.Point(640, 179)
+        Me.MetroButton1.Location = New System.Drawing.Point(640, 159)
         Me.MetroButton1.Margin = New System.Windows.Forms.Padding(16)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(40, 40)
@@ -68,7 +73,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel6.Location = New System.Drawing.Point(124, 292)
+        Me.MetroLabel6.Location = New System.Drawing.Point(124, 272)
         Me.MetroLabel6.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(180, 30)
@@ -81,7 +86,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel5.Location = New System.Drawing.Point(124, 217)
+        Me.MetroLabel5.Location = New System.Drawing.Point(124, 197)
         Me.MetroLabel5.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel5.Name = "MetroLabel5"
         Me.MetroLabel5.Size = New System.Drawing.Size(147, 30)
@@ -95,7 +100,7 @@ Partial Class FrmModificarEjercicio
         Me.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtDescripcion.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtDescripcion.Lines = New String(-1) {}
-        Me.txtDescripcion.Location = New System.Drawing.Point(430, 465)
+        Me.txtDescripcion.Location = New System.Drawing.Point(430, 445)
         Me.txtDescripcion.MaxLength = 32767
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
@@ -111,7 +116,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel7.Location = New System.Drawing.Point(430, 432)
+        Me.MetroLabel7.Location = New System.Drawing.Point(430, 412)
         Me.MetroLabel7.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel7.Name = "MetroLabel7"
         Me.MetroLabel7.Size = New System.Drawing.Size(147, 30)
@@ -125,7 +130,7 @@ Partial Class FrmModificarEjercicio
         Me.txtErroresComunes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtErroresComunes.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtErroresComunes.Lines = New String(-1) {}
-        Me.txtErroresComunes.Location = New System.Drawing.Point(715, 465)
+        Me.txtErroresComunes.Location = New System.Drawing.Point(715, 445)
         Me.txtErroresComunes.MaxLength = 32767
         Me.txtErroresComunes.Multiline = True
         Me.txtErroresComunes.Name = "txtErroresComunes"
@@ -141,7 +146,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel15.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel15.Location = New System.Drawing.Point(715, 432)
+        Me.MetroLabel15.Location = New System.Drawing.Point(715, 412)
         Me.MetroLabel15.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel15.Name = "MetroLabel15"
         Me.MetroLabel15.Size = New System.Drawing.Size(147, 30)
@@ -154,7 +159,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel4.Location = New System.Drawing.Point(430, 146)
+        Me.MetroLabel4.Location = New System.Drawing.Point(430, 126)
         Me.MetroLabel4.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(220, 30)
@@ -167,7 +172,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel3.Location = New System.Drawing.Point(430, 75)
+        Me.MetroLabel3.Location = New System.Drawing.Point(430, 55)
         Me.MetroLabel3.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(133, 30)
@@ -181,7 +186,7 @@ Partial Class FrmModificarEjercicio
         Me.txtPosFinal.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtPosFinal.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtPosFinal.Lines = New String(-1) {}
-        Me.txtPosFinal.Location = New System.Drawing.Point(430, 108)
+        Me.txtPosFinal.Location = New System.Drawing.Point(430, 88)
         Me.txtPosFinal.MaxLength = 32767
         Me.txtPosFinal.Name = "txtPosFinal"
         Me.txtPosFinal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -196,7 +201,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(715, 146)
+        Me.MetroLabel2.Location = New System.Drawing.Point(715, 126)
         Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(220, 30)
@@ -211,7 +216,7 @@ Partial Class FrmModificarEjercicio
         Me.MetroButton3.AutoSize = True
         Me.MetroButton3.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton3.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton3.Location = New System.Drawing.Point(925, 179)
+        Me.MetroButton3.Location = New System.Drawing.Point(925, 159)
         Me.MetroButton3.Margin = New System.Windows.Forms.Padding(16)
         Me.MetroButton3.Name = "MetroButton3"
         Me.MetroButton3.Size = New System.Drawing.Size(40, 40)
@@ -225,7 +230,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel1.Location = New System.Drawing.Point(715, 75)
+        Me.MetroLabel1.Location = New System.Drawing.Point(715, 55)
         Me.MetroLabel1.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(133, 30)
@@ -239,7 +244,7 @@ Partial Class FrmModificarEjercicio
         Me.txtPosInicial.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtPosInicial.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtPosInicial.Lines = New String(-1) {}
-        Me.txtPosInicial.Location = New System.Drawing.Point(715, 108)
+        Me.txtPosInicial.Location = New System.Drawing.Point(715, 88)
         Me.txtPosInicial.MaxLength = 32767
         Me.txtPosInicial.Name = "txtPosInicial"
         Me.txtPosInicial.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -255,7 +260,7 @@ Partial Class FrmModificarEjercicio
         Me.txtAlias.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtAlias.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtAlias.Lines = New String(-1) {}
-        Me.txtAlias.Location = New System.Drawing.Point(124, 179)
+        Me.txtAlias.Location = New System.Drawing.Point(124, 159)
         Me.txtAlias.MaxLength = 32767
         Me.txtAlias.Name = "txtAlias"
         Me.txtAlias.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -270,7 +275,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel14.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel14.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel14.Location = New System.Drawing.Point(124, 146)
+        Me.MetroLabel14.Location = New System.Drawing.Point(124, 126)
         Me.MetroLabel14.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel14.Name = "MetroLabel14"
         Me.MetroLabel14.Size = New System.Drawing.Size(100, 30)
@@ -284,7 +289,7 @@ Partial Class FrmModificarEjercicio
         Me.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtNombre.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNombre.Lines = New String(-1) {}
-        Me.txtNombre.Location = New System.Drawing.Point(124, 108)
+        Me.txtNombre.Location = New System.Drawing.Point(124, 88)
         Me.txtNombre.MaxLength = 32767
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -299,7 +304,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.MetroLabel13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel13.Location = New System.Drawing.Point(124, 75)
+        Me.MetroLabel13.Location = New System.Drawing.Point(124, 55)
         Me.MetroLabel13.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel13.Name = "MetroLabel13"
         Me.MetroLabel13.Size = New System.Drawing.Size(100, 30)
@@ -315,7 +320,7 @@ Partial Class FrmModificarEjercicio
         Me.cbListaMusculosPrincipales.ForeColor = System.Drawing.Color.YellowGreen
         Me.cbListaMusculosPrincipales.FormattingEnabled = True
         Me.cbListaMusculosPrincipales.ItemHeight = 29
-        Me.cbListaMusculosPrincipales.Location = New System.Drawing.Point(124, 250)
+        Me.cbListaMusculosPrincipales.Location = New System.Drawing.Point(124, 230)
         Me.cbListaMusculosPrincipales.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
         Me.cbListaMusculosPrincipales.Name = "cbListaMusculosPrincipales"
         Me.cbListaMusculosPrincipales.Size = New System.Drawing.Size(250, 35)
@@ -327,7 +332,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.ptbPosicionFinal.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ptbPosicionFinal.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.ptbPosicionFinal.Location = New System.Drawing.Point(430, 179)
+        Me.ptbPosicionFinal.Location = New System.Drawing.Point(430, 159)
         Me.ptbPosicionFinal.Name = "ptbPosicionFinal"
         Me.ptbPosicionFinal.Size = New System.Drawing.Size(250, 250)
         Me.ptbPosicionFinal.TabIndex = 72
@@ -337,7 +342,7 @@ Partial Class FrmModificarEjercicio
         '
         Me.ptbPosicionInicial.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ptbPosicionInicial.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.ptbPosicionInicial.Location = New System.Drawing.Point(715, 179)
+        Me.ptbPosicionInicial.Location = New System.Drawing.Point(715, 159)
         Me.ptbPosicionInicial.Name = "ptbPosicionInicial"
         Me.ptbPosicionInicial.Size = New System.Drawing.Size(250, 250)
         Me.ptbPosicionInicial.TabIndex = 71
@@ -348,15 +353,67 @@ Partial Class FrmModificarEjercicio
         Me.cbListaMusculosSecundarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.cbListaMusculosSecundarios.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.cbListaMusculosSecundarios.FormattingEnabled = True
-        Me.cbListaMusculosSecundarios.Location = New System.Drawing.Point(118, 325)
+        Me.cbListaMusculosSecundarios.Location = New System.Drawing.Point(118, 305)
         Me.cbListaMusculosSecundarios.Name = "cbListaMusculosSecundarios"
         Me.cbListaMusculosSecundarios.Size = New System.Drawing.Size(250, 244)
         Me.cbListaMusculosSecundarios.TabIndex = 93
+        '
+        'MetroLabel8
+        '
+        Me.MetroLabel8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel8.AutoSize = True
+        Me.MetroLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel8.Location = New System.Drawing.Point(124, 30)
+        Me.MetroLabel8.Name = "MetroLabel8"
+        Me.MetroLabel8.Size = New System.Drawing.Size(184, 25)
+        Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel8.TabIndex = 94
+        Me.MetroLabel8.Text = "MODIFICAR EJERCICIO"
+        Me.MetroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel8.UseCustomBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.AutoSize = True
+        Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnGuardar.Location = New System.Drawing.Point(815, 555)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(150, 40)
+        Me.btnGuardar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnGuardar.TabIndex = 95
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnGuardar.UseSelectable = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.AutoSize = True
+        Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnCancelar.Location = New System.Drawing.Point(118, 552)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(150, 40)
+        Me.btnCancelar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnCancelar.TabIndex = 96
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnCancelar.UseSelectable = True
         '
         'FrmModificarEjercicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.MetroLabel8)
         Me.Controls.Add(Me.cbListaMusculosSecundarios)
         Me.Controls.Add(Me.MetroButton1)
         Me.Controls.Add(Me.MetroLabel6)
@@ -411,5 +468,10 @@ Partial Class FrmModificarEjercicio
     Friend WithEvents ptbPosicionFinal As System.Windows.Forms.PictureBox
     Friend WithEvents ptbPosicionInicial As System.Windows.Forms.PictureBox
     Friend WithEvents cbListaMusculosSecundarios As System.Windows.Forms.CheckedListBox
+    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ofdBuscar2 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ofdBuscar As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
 
 End Class

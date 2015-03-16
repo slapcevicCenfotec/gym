@@ -23,6 +23,7 @@ Partial Class FrmRegistrarEjercicio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRegistrarEjercicio))
         Me.ofdBuscar = New System.Windows.Forms.OpenFileDialog()
         Me.ptbPosicionInicial = New System.Windows.Forms.PictureBox()
         Me.ofdBuscar2 = New System.Windows.Forms.OpenFileDialog()
@@ -71,7 +72,7 @@ Partial Class FrmRegistrarEjercicio
         '
         Me.ptbPosicionFinal.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ptbPosicionFinal.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.ptbPosicionFinal.Location = New System.Drawing.Point(412, 150)
+        Me.ptbPosicionFinal.Location = New System.Drawing.Point(400, 140)
         Me.ptbPosicionFinal.Name = "ptbPosicionFinal"
         Me.ptbPosicionFinal.Size = New System.Drawing.Size(250, 250)
         Me.ptbPosicionFinal.TabIndex = 20
@@ -410,6 +411,7 @@ Partial Class FrmRegistrarEjercicio
         '
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
         '
         'lbMusculosSecundarios
         '

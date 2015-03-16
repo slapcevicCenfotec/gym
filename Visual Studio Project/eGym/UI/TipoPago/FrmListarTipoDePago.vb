@@ -32,7 +32,11 @@ Class FrmListarTipoDePago
     Private Sub FrmListarTipoDePago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tblListaTipoDePago.DataSource = objGestorTipoPago.listarTiposDePago()
         tblListaTipoDePago.Columns("Id").Visible = False
+        tblListaTipoDePago.Columns("isValid").Visible = False
+        tblListaTipoDePago.Columns("Habilitado").Visible = False
+
     End Sub
+ 
 
     Private Sub tblListaTipoDePago_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
