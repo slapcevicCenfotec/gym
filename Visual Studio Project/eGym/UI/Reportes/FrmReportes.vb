@@ -10,10 +10,10 @@
     End Sub
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
-        'Dim ctr As Control
-        ''ctr = New FrmReporteDeExcepciones
-        'ctr.Dock = DockStyle.Fill
-        'MetroPanel1.Controls.Clear()
-        'MetroPanel1.Controls.Add(ctr)
+        Dim ctr As Control
+        ctr = New FrmReporteExcepciones
+        ctr.Dock = DockStyle.Fill
+        Me.Parent.Controls.Add(ctr)
+        Me.Dispose()
     End Sub
 End Class
