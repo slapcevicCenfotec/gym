@@ -85,7 +85,7 @@ Partial Class FrmGimnasio
         Me.txtTelefono.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTelefono.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtTelefono.SelectedText = ""
-        Me.txtTelefono.Size = New System.Drawing.Size(282, 35)
+        Me.txtTelefono.Size = New System.Drawing.Size(290, 35)
         Me.txtTelefono.TabIndex = 20
         Me.txtTelefono.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtTelefono.UseSelectable = True
@@ -144,7 +144,7 @@ Partial Class FrmGimnasio
         Me.MetroLabel5.Size = New System.Drawing.Size(78, 25)
         Me.MetroLabel5.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel5.TabIndex = 16
-        Me.MetroLabel5.Text = "Telefono"
+        Me.MetroLabel5.Text = "Teléfono"
         Me.MetroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel5.UseCustomBackColor = True
         '
@@ -172,7 +172,7 @@ Partial Class FrmGimnasio
         Me.MetroLabel3.Size = New System.Drawing.Size(127, 25)
         Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel3.TabIndex = 14
-        Me.MetroLabel3.Text = "Cedula Jurídica"
+        Me.MetroLabel3.Text = "Cédula Jurídica"
         Me.MetroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel3.UseCustomBackColor = True
         '
@@ -201,7 +201,7 @@ Partial Class FrmGimnasio
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(491, 319)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 354)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(125, 30)
@@ -213,10 +213,10 @@ Partial Class FrmGimnasio
         '
         'btnGuardar
         '
-        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(16, 319)
+        Me.btnGuardar.Location = New System.Drawing.Point(491, 354)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(125, 30)
@@ -228,7 +228,7 @@ Partial Class FrmGimnasio
         '
         'MetroPanel1
         '
-        Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.MetroPanel1.Controls.Add(Me.btnCancelar)
         Me.MetroPanel1.Controls.Add(Me.btnGuardar)
@@ -237,9 +237,9 @@ Partial Class FrmGimnasio
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(147, 36)
+        Me.MetroPanel1.Location = New System.Drawing.Point(160, 30)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(632, 365)
+        Me.MetroPanel1.Size = New System.Drawing.Size(632, 400)
         Me.MetroPanel1.TabIndex = 30
         Me.MetroPanel1.UseCustomBackColor = True
         Me.MetroPanel1.VerticalScrollbarBarColor = True
@@ -251,7 +251,7 @@ Partial Class FrmGimnasio
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(16, 3)
+        Me.MetroLabel2.Location = New System.Drawing.Point(0, 16)
         Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(0, 16, 0, 0)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(282, 25)
@@ -278,7 +278,7 @@ Partial Class FrmGimnasio
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(0, 33)
+        Me.MetroPanel2.Location = New System.Drawing.Point(0, 60)
         Me.MetroPanel2.Name = "MetroPanel2"
         Me.MetroPanel2.Size = New System.Drawing.Size(632, 265)
         Me.MetroPanel2.TabIndex = 31
@@ -293,7 +293,7 @@ Partial Class FrmGimnasio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.Controls.Add(Me.MetroPanel1)
         Me.Name = "FrmGimnasio"
-        Me.Size = New System.Drawing.Size(927, 457)
+        Me.Size = New System.Drawing.Size(960, 695)
         Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()

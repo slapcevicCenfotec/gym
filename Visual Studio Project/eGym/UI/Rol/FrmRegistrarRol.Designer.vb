@@ -138,7 +138,7 @@ Partial Class FrmRegistrarRol
         Me.MetroLabel3.Location = New System.Drawing.Point(291, 16)
         Me.MetroLabel3.Margin = New System.Windows.Forms.Padding(16, 100, 16, 0)
         Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(80, 25)
+        Me.MetroLabel3.Size = New System.Drawing.Size(79, 25)
         Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel3.TabIndex = 24
         Me.MetroLabel3.Text = "Permisos"
@@ -150,7 +150,7 @@ Partial Class FrmRegistrarRol
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(491, 319)
+        Me.btnGuardar.Location = New System.Drawing.Point(491, 357)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(125, 30)
@@ -165,7 +165,7 @@ Partial Class FrmRegistrarRol
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 319)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 357)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(125, 30)
@@ -192,10 +192,10 @@ Partial Class FrmRegistrarRol
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(0, 33)
+        Me.MetroPanel1.Location = New System.Drawing.Point(0, 60)
         Me.MetroPanel1.Margin = New System.Windows.Forms.Padding(3, 67, 3, 67)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(632, 265)
+        Me.MetroPanel1.Size = New System.Drawing.Size(632, 278)
         Me.MetroPanel1.TabIndex = 27
         Me.MetroPanel1.UseCustomBackColor = True
         Me.MetroPanel1.VerticalScrollbar = True
@@ -212,7 +212,7 @@ Partial Class FrmRegistrarRol
         Me.MetroLabel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.MetroLabel4.Location = New System.Drawing.Point(16, 3)
+        Me.MetroLabel4.Location = New System.Drawing.Point(0, 16)
         Me.MetroLabel4.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(124, 25)
@@ -224,7 +224,7 @@ Partial Class FrmRegistrarRol
         '
         'MetroPanel2
         '
-        Me.MetroPanel2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.MetroPanel2.Controls.Add(Me.MetroPanel1)
         Me.MetroPanel2.Controls.Add(Me.btnCancelar)
@@ -233,9 +233,9 @@ Partial Class FrmRegistrarRol
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(147, 36)
+        Me.MetroPanel2.Location = New System.Drawing.Point(164, 30)
         Me.MetroPanel2.Name = "MetroPanel2"
-        Me.MetroPanel2.Size = New System.Drawing.Size(632, 365)
+        Me.MetroPanel2.Size = New System.Drawing.Size(632, 403)
         Me.MetroPanel2.TabIndex = 29
         Me.MetroPanel2.UseCustomBackColor = True
         Me.MetroPanel2.VerticalScrollbarBarColor = True
@@ -248,7 +248,7 @@ Partial Class FrmRegistrarRol
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.Controls.Add(Me.MetroPanel2)
         Me.Name = "FrmRegistrarRol"
-        Me.Size = New System.Drawing.Size(927, 457)
+        Me.Size = New System.Drawing.Size(960, 695)
         Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()

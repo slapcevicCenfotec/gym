@@ -95,6 +95,7 @@ Public Class FrmListarEjercicio
 
     End Sub
 
+
     Private Sub txtFiltro_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click
 
     End Sub

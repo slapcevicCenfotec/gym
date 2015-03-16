@@ -115,7 +115,7 @@ Partial Class FrmListarRoles
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(819, 16)
+        Me.btnGuardar.Location = New System.Drawing.Point(540, 15)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(125, 30)
@@ -145,7 +145,7 @@ Partial Class FrmListarRoles
         Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnEliminar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminar.Location = New System.Drawing.Point(539, 16)
+        Me.btnEliminar.Location = New System.Drawing.Point(819, 15)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(0)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(125, 30)

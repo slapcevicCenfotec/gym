@@ -16,4 +16,28 @@
         Me.Parent.Controls.Add(ctr)
         Me.Dispose()
     End Sub
+
+    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
+        Dim ctr As Control
+        ctr = New FrmReporteEventos
+        ctr.Dock = DockStyle.Fill
+        Me.Parent.Controls.Add(ctr)
+        Me.Dispose()
+    End Sub
+
+    Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles MetroButton3.Click
+        Dim ctr As Control
+        ctr = New FrmReporteFuncionarios
+        ctr.Dock = DockStyle.Fill
+        Me.Parent.Controls.Add(ctr)
+        Me.Dispose()
+    End Sub
+
+    Private Sub MetroButton4_Click(sender As Object, e As EventArgs) Handles MetroButton4.Click
+        Dim ctr As Control
+        ctr = New FrmReporteHorariosFuncionarios
+        ctr.Dock = DockStyle.Fill
+        Me.Parent.Controls.Add(ctr)
+        Me.Dispose()
+    End Sub
 End Class

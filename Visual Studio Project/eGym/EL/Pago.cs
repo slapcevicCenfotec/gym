@@ -17,7 +17,7 @@ namespace EL
         private DateTime _fecha;
         private bool _habilitado;
         private int _usuario;
-        private TipoDePago _tipoDePago;
+        private string _tipoDePago;
         private string _nombreCliente;
 
        
@@ -34,7 +34,7 @@ namespace EL
             set { _nombreCliente = value; }
         }
 
-        public TipoDePago TipoDePago
+        public string TipoDePago
         {
             get { return _tipoDePago; }
             set { _tipoDePago = value; }
@@ -73,16 +73,13 @@ namespace EL
             {
                 yield return new RuleViolation("Tipo es requerido", "Id");
             }
-            if (Desde == null)
+            if (String.IsNullOrEmpty(Desde.ToString()))
             {
                 yield return new RuleViolation("Desde es requerido", "Id");
-            } if (Hasta == null)
+            } if (String.IsNullOrEmpty(Hasta.ToString()))
             {
                 yield return new RuleViolation("Hasta es requerido", "Id");
-            } if (Habilitado == null)
-            {
-                yield return new RuleViolation("Habilitado es requerido", "Id");
-            }
+            } 
             yield break;
         }
         public int Id

@@ -22,22 +22,22 @@ Partial Class FrmListarUsuarios
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tblUsuarios = New MetroFramework.Controls.MetroGrid()
-        Me.txtFiltro = New MetroFramework.Controls.MetroTextBox()
-        Me.btnCambiarEstado = New MetroFramework.Controls.MetroButton()
-        Me.btnModificar = New MetroFramework.Controls.MetroButton()
-        Me.btnAgregar = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AliasUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Habilitado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtFiltro = New MetroFramework.Controls.MetroTextBox()
+        Me.btnCambiarEstado = New MetroFramework.Controls.MetroButton()
+        Me.btnModificar = New MetroFramework.Controls.MetroButton()
+        Me.btnAgregar = New MetroFramework.Controls.MetroButton()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         CType(Me.tblUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,11 +46,11 @@ Partial Class FrmListarUsuarios
         Me.tblUsuarios.AllowUserToAddRows = False
         Me.tblUsuarios.AllowUserToDeleteRows = False
         Me.tblUsuarios.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.tblUsuarios.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.tblUsuarios.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.tblUsuarios.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -59,24 +59,24 @@ Partial Class FrmListarUsuarios
         Me.tblUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tblUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.tblUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.tblUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.tblUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificacion, Me.Nombre, Me.AliasUsuario, Me.FechaIngreso, Me.Habilitado})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.tblUsuarios.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.tblUsuarios.DefaultCellStyle = DataGridViewCellStyle3
         Me.tblUsuarios.EnableHeadersVisualStyles = False
         Me.tblUsuarios.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.tblUsuarios.GridColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
@@ -86,98 +86,23 @@ Partial Class FrmListarUsuarios
         Me.tblUsuarios.Name = "tblUsuarios"
         Me.tblUsuarios.ReadOnly = True
         Me.tblUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.tblUsuarios.RowHeadersVisible = False
         Me.tblUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.tblUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.tblUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.tblUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tblUsuarios.Size = New System.Drawing.Size(928, 617)
         Me.tblUsuarios.Style = MetroFramework.MetroColorStyle.Silver
         Me.tblUsuarios.TabIndex = 13
         Me.tblUsuarios.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'txtFiltro
-        '
-        Me.txtFiltro.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtFiltro.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.txtFiltro.Lines = New String(-1) {}
-        Me.txtFiltro.Location = New System.Drawing.Point(93, 16)
-        Me.txtFiltro.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
-        Me.txtFiltro.MaxLength = 32767
-        Me.txtFiltro.Name = "txtFiltro"
-        Me.txtFiltro.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtFiltro.SelectedText = ""
-        Me.txtFiltro.Size = New System.Drawing.Size(431, 30)
-        Me.txtFiltro.TabIndex = 14
-        Me.txtFiltro.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.txtFiltro.UseSelectable = True
-        '
-        'btnCambiarEstado
-        '
-        Me.btnCambiarEstado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCambiarEstado.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnCambiarEstado.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCambiarEstado.Location = New System.Drawing.Point(539, 16)
-        Me.btnCambiarEstado.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
-        Me.btnCambiarEstado.Name = "btnCambiarEstado"
-        Me.btnCambiarEstado.Size = New System.Drawing.Size(125, 30)
-        Me.btnCambiarEstado.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnCambiarEstado.TabIndex = 15
-        Me.btnCambiarEstado.Text = "Cambiar estado"
-        Me.btnCambiarEstado.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnCambiarEstado.UseSelectable = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnModificar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnModificar.Location = New System.Drawing.Point(679, 16)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(125, 30)
-        Me.btnModificar.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnModificar.TabIndex = 16
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnModificar.UseSelectable = True
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAgregar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnAgregar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnAgregar.Location = New System.Drawing.Point(819, 16)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(125, 30)
-        Me.btnAgregar.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnAgregar.TabIndex = 17
-        Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnAgregar.UseSelectable = True
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel1.Location = New System.Drawing.Point(16, 16)
-        Me.MetroLabel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(62, 30)
-        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel1.TabIndex = 18
-        Me.MetroLabel1.Text = "Buscar"
-        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'Identificacion
         '
@@ -208,6 +133,81 @@ Partial Class FrmListarUsuarios
         Me.Habilitado.HeaderText = "ESTADO"
         Me.Habilitado.Name = "Habilitado"
         Me.Habilitado.ReadOnly = True
+        '
+        'txtFiltro
+        '
+        Me.txtFiltro.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtFiltro.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtFiltro.Lines = New String(-1) {}
+        Me.txtFiltro.Location = New System.Drawing.Point(93, 16)
+        Me.txtFiltro.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
+        Me.txtFiltro.MaxLength = 32767
+        Me.txtFiltro.Name = "txtFiltro"
+        Me.txtFiltro.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtFiltro.SelectedText = ""
+        Me.txtFiltro.Size = New System.Drawing.Size(431, 30)
+        Me.txtFiltro.TabIndex = 14
+        Me.txtFiltro.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtFiltro.UseSelectable = True
+        '
+        'btnCambiarEstado
+        '
+        Me.btnCambiarEstado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCambiarEstado.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnCambiarEstado.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnCambiarEstado.Location = New System.Drawing.Point(819, 16)
+        Me.btnCambiarEstado.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
+        Me.btnCambiarEstado.Name = "btnCambiarEstado"
+        Me.btnCambiarEstado.Size = New System.Drawing.Size(125, 30)
+        Me.btnCambiarEstado.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnCambiarEstado.TabIndex = 15
+        Me.btnCambiarEstado.Text = "Cambiar estado"
+        Me.btnCambiarEstado.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnCambiarEstado.UseSelectable = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnModificar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnModificar.Location = New System.Drawing.Point(679, 16)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(125, 30)
+        Me.btnModificar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnModificar.TabIndex = 16
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnModificar.UseSelectable = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAgregar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnAgregar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnAgregar.Location = New System.Drawing.Point(539, 16)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(125, 30)
+        Me.btnAgregar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnAgregar.TabIndex = 17
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnAgregar.UseSelectable = True
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel1.Location = New System.Drawing.Point(16, 16)
+        Me.MetroLabel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(62, 30)
+        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel1.TabIndex = 18
+        Me.MetroLabel1.Text = "Buscar"
+        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'FrmListarUsuarios
         '

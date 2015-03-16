@@ -145,7 +145,7 @@ Partial Class FrmModificarUsuario
         Me.MetroTabControl1.Location = New System.Drawing.Point(0, 0)
         Me.MetroTabControl1.Margin = New System.Windows.Forms.Padding(16)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.SelectedIndex = 2
         Me.MetroTabControl1.Size = New System.Drawing.Size(1055, 526)
         Me.MetroTabControl1.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroTabControl1.TabIndex = 0
@@ -211,7 +211,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel13.Size = New System.Drawing.Size(153, 25)
         Me.MetroLabel13.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel13.TabIndex = 48
-        Me.MetroLabel13.Text = "Repetir contrasena"
+        Me.MetroLabel13.Text = "Repetir contraseña"
         Me.MetroLabel13.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel14
@@ -223,7 +223,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel14.Size = New System.Drawing.Size(98, 25)
         Me.MetroLabel14.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel14.TabIndex = 47
-        Me.MetroLabel14.Text = "Contrasena"
+        Me.MetroLabel14.Text = "Contraseña"
         Me.MetroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel15
@@ -247,7 +247,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel35.Size = New System.Drawing.Size(88, 25)
         Me.MetroLabel35.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel35.TabIndex = 43
-        Me.MetroLabel35.Text = "Fotografia"
+        Me.MetroLabel35.Text = "Fotografía"
         Me.MetroLabel35.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel7
@@ -271,7 +271,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel8.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel8.TabIndex = 41
-        Me.MetroLabel8.Text = "Telefono"
+        Me.MetroLabel8.Text = "Teléfono"
         Me.MetroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel9
@@ -283,7 +283,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel9.Size = New System.Drawing.Size(152, 25)
         Me.MetroLabel9.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel9.TabIndex = 40
-        Me.MetroLabel9.Text = "Correo electronico"
+        Me.MetroLabel9.Text = "Correo electrónico"
         Me.MetroLabel9.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel10
@@ -307,7 +307,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel11.Size = New System.Drawing.Size(68, 25)
         Me.MetroLabel11.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel11.TabIndex = 38
-        Me.MetroLabel11.Text = "Genero"
+        Me.MetroLabel11.Text = "Género"
         Me.MetroLabel11.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel12
@@ -379,7 +379,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel2.Size = New System.Drawing.Size(174, 25)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel2.TabIndex = 32
-        Me.MetroLabel2.Text = "Tipo de identificacion"
+        Me.MetroLabel2.Text = "Tipo de identificación"
         Me.MetroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel1
@@ -391,7 +391,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel1.Size = New System.Drawing.Size(112, 25)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel1.TabIndex = 31
-        Me.MetroLabel1.Text = "Identificacion"
+        Me.MetroLabel1.Text = "Identificación"
         Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'btnEliminarFotografia
@@ -781,7 +781,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel22.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel22.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel22.TabIndex = 17
-        Me.MetroLabel22.Text = "Telefono"
+        Me.MetroLabel22.Text = "Teléfono"
         Me.MetroLabel22.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel23
@@ -868,7 +868,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel19.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel19.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel19.TabIndex = 5
-        Me.MetroLabel19.Text = "Telefono"
+        Me.MetroLabel19.Text = "Teléfono"
         Me.MetroLabel19.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'txtNombreContacto1
@@ -1225,7 +1225,7 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel29.Size = New System.Drawing.Size(84, 25)
         Me.MetroLabel29.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel29.TabIndex = 93
-        Me.MetroLabel29.Text = "Miercoles"
+        Me.MetroLabel29.Text = "Miércoles"
         Me.MetroLabel29.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'MetroLabel30

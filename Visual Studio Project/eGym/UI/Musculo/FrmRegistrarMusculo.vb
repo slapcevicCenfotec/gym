@@ -100,7 +100,7 @@ Public Class FrmRegistrarMusculo
             ctr.Dock = DockStyle.Fill
             Me.Controls.Clear()
             Me.Controls.Add(ctr)
-            
+
         End If
     End Sub
     ''' <summary>
@@ -117,5 +117,5 @@ Public Class FrmRegistrarMusculo
         Me.Controls.Add(ctr)
     End Sub
 
-   
+
 End Class

@@ -60,4 +60,16 @@ Public Class FrmRegistrarTipoDePago
         End If
         Return validado
     End Function
+
+    Private Sub txtNombre_Click(sender As Object, e As EventArgs) Handles txtNombre.Click
+
+    End Sub
+
+    Private Sub lblTipoDePagoNombre_Click(sender As Object, e As EventArgs) Handles lblTipoDePagoNombre.Click
+
+    End Sub
+
+    Private Sub MetroPanel1_Paint(sender As Object, e As PaintEventArgs) Handles MetroPanel1.Paint
+
+    End Sub
 End Class
