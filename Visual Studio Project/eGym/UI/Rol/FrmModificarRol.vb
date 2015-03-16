@@ -109,7 +109,7 @@ Public Class FrmModificarRol
             chK.Theme = MetroFramework.MetroThemeStyle.Dark
             chK.FontSize = MetroFramework.MetroCheckBoxSize.Tall
             chK.FontWeight = MetroFramework.MetroCheckBoxWeight.Light
-            chK.Size = New Size(150, 25)
+            chK.Size = New Size(250, 25)
             chK.UseCustomBackColor = True
             chK.BackColor = Color.Empty
             For Each permiso In plistaPermisoRol
@@ -165,4 +165,5 @@ Public Class FrmModificarRol
     Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
         frmListarRoles()
     End Sub
+
 End Class
