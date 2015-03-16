@@ -14,6 +14,15 @@
 
     Private Sub FrmListarPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        
+        tblPago.DataSource = objGestorPago.listarPagos()
+
+
+        tblPago.Columns("Id").Visible = False
+        tblPago.Columns("isValid").Visible = False
+        tblPago.Columns("Habilitado").Visible = False
+        tblPago.Columns("Tipo").Visible = False
+        tblPago.Columns("User").Visible = False
 
     End Sub
 

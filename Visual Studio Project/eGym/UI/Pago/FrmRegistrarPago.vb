@@ -7,26 +7,22 @@ Public Class FrmRegistrarPago
         dbTipo.DisplayMember = "Nombre"
         dbTipo.ValueMember = "Id"
         Dim auxlist As List(Of Usuario)
-
-
+        Dim clean As List(Of Usuario) = New List(Of Usuario)
         auxlist = Gestor.ListarUsuarios()
-        For Each Usuario In auxlist
-            If Usuario.Rol.Id <> 19 Then
-                auxlist.Remove(Usuario)
+
+        For Each user In auxlist
+            If user.Rol.Id = 19 Then
+                clean.Add(user)
             End If
         Next
-        lbclientes.DataSource = auxlist
+
+
+        lbclientes.DataSource = clean
         lbclientes.DisplayMember = "Nombre"
         lbclientes.ValueMember = "Id"
-        
 
-        'For Each Usuario In auxlist
-        '    If Usuario.Rol.Id = 19 Then
-        '        lbclientes.Items.Add(Usuario)
-        '    End If
-        'Next
-        'Dim auxlist2 As List(Of Usuario)
-        'auxlist2 = lbclientes.DataSource
+
+
     End Sub
     Private Sub lbMusculosSecundarios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbclientes.SelectedIndexChanged
 
