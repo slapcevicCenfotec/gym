@@ -94,4 +94,8 @@ Public Class FrmRegistrarMusculo
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
     End Sub
+
+    Private Sub MetroLabel7_Click(sender As Object, e As EventArgs) Handles MetroLabel7.Click
+
+    End Sub
 End Class

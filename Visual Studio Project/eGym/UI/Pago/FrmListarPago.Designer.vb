@@ -32,6 +32,13 @@ Partial Class FrmListarPago
         Me.btnTipoDePago = New MetroFramework.Controls.MetroButton()
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.tblPago = New MetroFramework.Controls.MetroGrid()
+        Me.nombreCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoDePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Desde = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Hasta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.tblPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -122,6 +129,7 @@ Partial Class FrmListarPago
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.tblPago.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.tblPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tblPago.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombreCliente, Me.tipoDePago, Me.Factura, Me.Monto, Me.Fecha, Me.Desde, Me.Hasta})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -157,6 +165,48 @@ Partial Class FrmListarPago
         Me.tblPago.TabIndex = 31
         Me.tblPago.Theme = MetroFramework.MetroThemeStyle.Dark
         '
+        'nombreCliente
+        '
+        Me.nombreCliente.HeaderText = "Cliente"
+        Me.nombreCliente.Name = "nombreCliente"
+        Me.nombreCliente.ReadOnly = True
+        '
+        'tipoDePago
+        '
+        Me.tipoDePago.HeaderText = "Tipo de pago"
+        Me.tipoDePago.Name = "tipoDePago"
+        Me.tipoDePago.ReadOnly = True
+        '
+        'Factura
+        '
+        Me.Factura.HeaderText = "Factura"
+        Me.Factura.Name = "Factura"
+        Me.Factura.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.Name = "Monto"
+        Me.Monto.ReadOnly = True
+        '
+        'Fecha
+        '
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.ReadOnly = True
+        '
+        'Desde
+        '
+        Me.Desde.HeaderText = "Desde"
+        Me.Desde.Name = "Desde"
+        Me.Desde.ReadOnly = True
+        '
+        'Hasta
+        '
+        Me.Hasta.HeaderText = "Hasta"
+        Me.Hasta.Name = "Hasta"
+        Me.Hasta.ReadOnly = True
+        '
         'FrmListarPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -179,5 +229,12 @@ Partial Class FrmListarPago
     Friend WithEvents btnTipoDePago As MetroFramework.Controls.MetroButton
     Friend WithEvents txtBuscar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents tblPago As MetroFramework.Controls.MetroGrid
+    Friend WithEvents nombreCliente As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tipoDePago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Factura As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Monto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Fecha As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Desde As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Hasta As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

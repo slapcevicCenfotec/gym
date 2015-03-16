@@ -59,7 +59,7 @@ Partial Class FrmRegistrarMusculo
         Me.MetroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel7.Location = New System.Drawing.Point(147, 41)
         Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(173, 25)
+        Me.MetroLabel7.Size = New System.Drawing.Size(172, 25)
         Me.MetroLabel7.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel7.TabIndex = 59
         Me.MetroLabel7.Text = "AGREGAR MUSCULO"
@@ -283,7 +283,7 @@ Partial Class FrmRegistrarMusculo
         Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel5.Location = New System.Drawing.Point(366, 148)
         Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(90, 25)
+        Me.MetroLabel5.Size = New System.Drawing.Size(91, 25)
         Me.MetroLabel5.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel5.TabIndex = 50
         Me.MetroLabel5.Text = "Inervación"

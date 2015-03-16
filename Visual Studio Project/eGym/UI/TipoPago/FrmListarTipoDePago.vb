@@ -1,5 +1,6 @@
 ﻿Imports EL
 Class FrmListarTipoDePago
+    Private listaOriginal As List(Of TipoDePago)
 
     Public Property tipoPagoToPass As TipoDePago
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
@@ -30,13 +31,32 @@ Class FrmListarTipoDePago
     End Sub
 
     Private Sub FrmListarTipoDePago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tblListaTipoDePago.DataSource = objGestorTipoPago.listarTiposDePago()
-        tblListaTipoDePago.Columns("Id").Visible = False
-        tblListaTipoDePago.Columns("isValid").Visible = False
-        tblListaTipoDePago.Columns("Habilitado").Visible = False
+        listaOriginal = objGestorTipoPago.listarTiposDePago()
+
+
+        tblListaTipoDePago.AutoGenerateColumns = False
+        tblListaTipoDePago.DataSource = listaOriginal
+        tblListaTipoDePago.Columns("Nombre").DataPropertyName = "Nombre"
+        tblListaTipoDePago.Columns("Monto").DataPropertyName = "Monto"
+        tblListaTipoDePago.Columns("Duracion").DataPropertyName = "Duracion"
+       
 
     End Sub
- 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        AplicarFiltro(txtBuscar.Text.ToUpper)
+    End Sub
+
+    Private Sub AplicarFiltro(filtro As String)
+        Dim listaFiltrada As List(Of EL.TipoDePago) = New List(Of EL.TipoDePago)
+        If Not listaOriginal Is Nothing Then
+            For Each tipo As TipoDePago In listaOriginal
+                If tipo.Nombre.ToUpper.Contains(filtro) Or tipo.Monto.ToString().Contains(filtro) Or tipo.Duracion.ToString().Contains(filtro) Then
+                    listaFiltrada.Add(tipo)
+                End If
+            Next
+        End If
+        tblListaTipoDePago.DataSource = listaFiltrada
+    End Sub
 
     Private Sub tblListaTipoDePago_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 

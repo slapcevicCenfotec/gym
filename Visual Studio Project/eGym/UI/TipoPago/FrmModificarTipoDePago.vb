@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Public Class FrmModificarTipoDePago
     Public actual As TipoDePago
-    Dim montoRegex As Regex = New Regex("[+-]?(?=\d*[.eE])(?=\.?\d)\d*\.?\d*(?:[eE][+-]?\d+)?")
+    Dim montoRegex As Regex = New Regex("[-+]?([0-9]*\.[0-9]+|[0-9]+)")
     Dim duracionRegex As Regex = New Regex("^[0-9]+$")
     Public Sub New(ByVal ptipoDePago As TipoDePago)
         actual = ptipoDePago
@@ -62,7 +62,13 @@ Public Class FrmModificarTipoDePago
     Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If validarModificarTipoDePago() = True Then
             objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
+            Dim ctr As Control
+            ctr = New FrmListarTipoDePago
+            ctr.Dock = DockStyle.Fill
+            Me.Controls.Clear()
+            Me.Controls.Add(ctr)
         End If
+
     End Sub
 
     Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -107,7 +113,11 @@ Public Class FrmModificarTipoDePago
         Return validado
     End Function
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub MetroPanel1_Paint(sender As Object, e As PaintEventArgs) Handles MetroPanel1.Paint
 
     End Sub
 End Class
