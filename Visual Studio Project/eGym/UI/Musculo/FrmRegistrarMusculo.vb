@@ -94,4 +94,8 @@ Public Class FrmRegistrarMusculo
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
     End Sub
+
+    Private Sub FrmRegistrarMusculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
