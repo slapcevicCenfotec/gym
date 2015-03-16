@@ -28,7 +28,6 @@ Partial Class FrmRegistrarEjercicio
         Me.ofdBuscar2 = New System.Windows.Forms.OpenFileDialog()
         Me.ptbPosicionFinal = New System.Windows.Forms.PictureBox()
         Me.cbListaMusculosPrincipales = New MetroFramework.Controls.MetroComboBox()
-        Me.lbMusculosSecundarios = New System.Windows.Forms.ListBox()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
         Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
@@ -52,6 +51,7 @@ Partial Class FrmRegistrarEjercicio
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.lbMusculosSecundarios = New System.Windows.Forms.ListBox()
         CType(Me.ptbPosicionInicial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ptbPosicionFinal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,24 +88,10 @@ Partial Class FrmRegistrarEjercicio
         Me.cbListaMusculosPrincipales.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
         Me.cbListaMusculosPrincipales.Name = "cbListaMusculosPrincipales"
         Me.cbListaMusculosPrincipales.Size = New System.Drawing.Size(250, 35)
+        Me.cbListaMusculosPrincipales.Style = MetroFramework.MetroColorStyle.Purple
         Me.cbListaMusculosPrincipales.TabIndex = 23
         Me.cbListaMusculosPrincipales.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.cbListaMusculosPrincipales.UseSelectable = True
-        '
-        'lbMusculosSecundarios
-        '
-        Me.lbMusculosSecundarios.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbMusculosSecundarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.lbMusculosSecundarios.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lbMusculosSecundarios.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lbMusculosSecundarios.FormattingEnabled = True
-        Me.lbMusculosSecundarios.ItemHeight = 30
-        Me.lbMusculosSecundarios.Location = New System.Drawing.Point(106, 300)
-        Me.lbMusculosSecundarios.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
-        Me.lbMusculosSecundarios.Name = "lbMusculosSecundarios"
-        Me.lbMusculosSecundarios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.lbMusculosSecundarios.Size = New System.Drawing.Size(250, 240)
-        Me.lbMusculosSecundarios.TabIndex = 25
         '
         'MetroLabel13
         '
@@ -425,11 +411,22 @@ Partial Class FrmRegistrarEjercicio
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'lbMusculosSecundarios
+        '
+        Me.lbMusculosSecundarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.lbMusculosSecundarios.FormattingEnabled = True
+        Me.lbMusculosSecundarios.ItemHeight = 30
+        Me.lbMusculosSecundarios.Location = New System.Drawing.Point(103, 300)
+        Me.lbMusculosSecundarios.Name = "lbMusculosSecundarios"
+        Me.lbMusculosSecundarios.Size = New System.Drawing.Size(250, 214)
+        Me.lbMusculosSecundarios.TabIndex = 74
+        '
         'FrmRegistrarEjercicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.Controls.Add(Me.lbMusculosSecundarios)
         Me.Controls.Add(Me.MetroLabel8)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnGuardar)
@@ -451,7 +448,6 @@ Partial Class FrmRegistrarEjercicio
         Me.Controls.Add(Me.MetroLabel14)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.MetroLabel13)
-        Me.Controls.Add(Me.lbMusculosSecundarios)
         Me.Controls.Add(Me.cbListaMusculosPrincipales)
         Me.Controls.Add(Me.ptbPosicionFinal)
         Me.Controls.Add(Me.ptbPosicionInicial)
@@ -473,7 +469,6 @@ Partial Class FrmRegistrarEjercicio
     Friend WithEvents ofdBuscar2 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents ptbPosicionFinal As System.Windows.Forms.PictureBox
     Friend WithEvents cbListaMusculosPrincipales As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents lbMusculosSecundarios As System.Windows.Forms.ListBox
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
@@ -497,5 +492,6 @@ Partial Class FrmRegistrarEjercicio
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents lbMusculosSecundarios As System.Windows.Forms.ListBox
 
 End Class
