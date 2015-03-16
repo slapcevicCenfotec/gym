@@ -23,6 +23,7 @@ Partial Class FrmRegistrarMusculo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRegistrarMusculo))
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
@@ -307,6 +308,7 @@ Partial Class FrmRegistrarMusculo
         '
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
         '
         'FrmRegistrarMusculo
         '

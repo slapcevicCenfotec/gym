@@ -4,8 +4,9 @@ Imports EL
 
 Public Class FrmRegistrarEjercicio
 
-    Private imageByte As Byte()
-    Private imageByte2 As Byte()
+    Private imageByte As Byte() = Nothing
+    Private imageByte2 As Byte() = Nothing
+
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
         ofdBuscar.Filter = "All Files (*.*)|*.*|JPEG Files (*.jpeg)|*.jpeg|JPEG Files (*.jpg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
@@ -113,20 +114,42 @@ Public Class FrmRegistrarEjercicio
     End Sub
 
     Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim idsMusculosSecundarios As String = ""
+
         Dim resulValidation As Boolean
 
         resulValidation = validation()
 
         If resulValidation Then
 
-            'Dim nombre As String = Me.txtNombre.Text
-            'Dim ubicacion As String = Me.txtUbicacion.Text
-            'Dim origen As String = Me.txtOrigen.Text
-            'Dim inserccion As String = Me.txtInserccion.Text
-            'Dim inervacion As String = Me.txtInervacion.Text
-            'Dim irrigacion As String = Me.txtIrrigacion.Text
+            Dim nombre As String = Me.txtNombre.Text
+            Dim _alias As String = Me.txtAlias.Text
+            Dim musculoPrincipal As String = Me.cbListaMusculosPrincipales.SelectedValue
 
-            'objGestorMusculo.agregarMusculo(nombre, ubicacion, origen, inserccion, inervacion, irrigacion)
+            For Each li As Musculo In lbMusculosSecundarios.SelectedItems
+
+                idsMusculosSecundarios &= li.Id & ","
+
+            Next
+
+            Dim posicionInicial As String = Me.txtPosInicial.Text
+            Dim posicionFinal As String = Me.txtPosFinal.Text
+            Dim descripcion As String = Me.txtDescripcion.Text
+            Dim erroresComunes As String = Me.txtErroresComunes.Text
+
+            'Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
+            'Dim bReader As New BinaryReader(fs)
+            'Dim foto(fs.Length) As Byte
+            'bReader.Read(foto, 0, fs.Length)
+            'fs.Close()
+
+            'Dim fs2 As New FileStream(ofdBuscar2.FileName, FileMode.Open, FileAccess.Read)
+            'Dim bReader2 As New BinaryReader(fs2)
+            'Dim foto2(fs2.Length) As Byte
+            'bReader2.Read(foto2, 0, fs2.Length)
+            'fs2.Close()
+
+            objeGestorEjercicio.insertarEjercicio(nombre, _alias, posicionInicial, imageByte, posicionFinal, imageByte2, erroresComunes, descripcion, musculoPrincipal, idsMusculosSecundarios)
 
             Dim ctr As Control
             ctr = New FrmListarEjercicio
@@ -135,5 +158,13 @@ Public Class FrmRegistrarEjercicio
             Me.Controls.Add(ctr)
 
         End If
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Dim ctr As Control
+        ctr = New FrmListarEjercicio
+        ctr.Dock = DockStyle.Fill
+        Me.Controls.Clear()
+        Me.Controls.Add(ctr)
     End Sub
 End Class
