@@ -91,6 +91,9 @@ Public Class FrmListarRoles
         ctr = New FrmRegistrarRol
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
+        ctr.Dock = DockStyle.Fill
+        Me.Parent.Controls.Add(ctr)
+        Me.Dispose()
     End Sub
 
     ''' <summary>
@@ -106,8 +109,8 @@ Public Class FrmListarRoles
         idRol = Convert.ToInt32(tblListarRoles.CurrentRow.Cells(0).Value)
         ctr = New FrmModificarRol(idRol)
         ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        Me.Parent.Controls.Add(ctr)
+        Me.Dispose()
     End Sub
 
     ''' <summary>

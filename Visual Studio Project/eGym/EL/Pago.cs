@@ -14,15 +14,32 @@ namespace EL
         private int _tipo;
         private DateTime _hasta;
         private DateTime _desde;
+        private DateTime _fecha;
         private bool _habilitado;
-        private int _user;
+        private int _usuario;
+        private TipoDePago _tipoDePago;
+        private string _nombreCliente;
 
+       
+        
         
 
       
 
         public Pago()
         { }
+        public string NombreCliente
+        {
+            get { return _nombreCliente; }
+            set { _nombreCliente = value; }
+        }
+
+        public TipoDePago TipoDePago
+        {
+            get { return _tipoDePago; }
+            set { _tipoDePago = value; }
+        }
+
 
         public Pago(int pId)
         {
@@ -93,8 +110,8 @@ namespace EL
         }
         public int User
         {
-            get { return _user; }
-            set { _user = value; }
+            get { return _usuario; }
+            set { _usuario = value; }
         }
         public bool Habilitado
         {
@@ -102,20 +119,24 @@ namespace EL
             set { _habilitado = value; }
         }
 
-      
+
         public DateTime Desde
         {
             get { return _desde; }
             set { _desde = value; }
         }
-        
+
 
         public DateTime Hasta
         {
             get { return _hasta; }
             set { _hasta = value; }
         }
-
+        public DateTime Fecha
+        {
+            get { return _fecha; }
+            set { _fecha = value; }
+        }
        
        
     }

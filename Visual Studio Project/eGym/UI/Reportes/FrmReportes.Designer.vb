@@ -38,7 +38,7 @@ Partial Class FrmReportes
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroButton1.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton1.Location = New System.Drawing.Point(244, 13)
+        Me.MetroButton1.Location = New System.Drawing.Point(257, 13)
         Me.MetroButton1.Margin = New System.Windows.Forms.Padding(3, 16, 3, 3)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(188, 39)
@@ -106,7 +106,7 @@ Partial Class FrmReportes
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroButton3.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton3.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton3.Location = New System.Drawing.Point(244, 129)
+        Me.MetroButton3.Location = New System.Drawing.Point(257, 129)
         Me.MetroButton3.Margin = New System.Windows.Forms.Padding(3, 16, 3, 3)
         Me.MetroButton3.Name = "MetroButton3"
         Me.MetroButton3.Size = New System.Drawing.Size(188, 39)
@@ -122,7 +122,7 @@ Partial Class FrmReportes
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroButton2.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton2.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton2.Location = New System.Drawing.Point(244, 71)
+        Me.MetroButton2.Location = New System.Drawing.Point(257, 71)
         Me.MetroButton2.Margin = New System.Windows.Forms.Padding(3, 16, 3, 3)
         Me.MetroButton2.Name = "MetroButton2"
         Me.MetroButton2.Size = New System.Drawing.Size(188, 39)

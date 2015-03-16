@@ -1,5 +1,5 @@
 ﻿Imports EL
-Public Class FrmMensaje
+Public Class FrmMensajeSiNo
     Private Property elementoPorEliminar As IEntity
     Public Sub New(ByVal pmensaje As String, ByVal pmaquinaPorEliminar As IEntity)
         elementoPorEliminar = pmaquinaPorEliminar
@@ -16,7 +16,16 @@ Public Class FrmMensaje
             Case TypeOf elementoPorEliminar Is Maquina
                 objGestorMaquina.eliminarMaquina(elementoPorEliminar)
             Case TypeOf elementoPorEliminar Is TipoDeMaquina
-                objGestorTipoDeMaquina.eliminarTipoDeMaquina(elementoPorEliminar)
+                Dim tipoDeMaquinaPorEliminar As TipoDeMaquina = elementoPorEliminar
+                Dim msg As String = "Borre las máquinas asociadas primero."
+                If tipoDeMaquinaPorEliminar.Cantidad > 0 Then
+                    Me.Close()
+                    Dim mensaje As New FrmMensajeOk(msg)
+                    mensaje.ShowDialog()
+                Else
+                    objGestorTipoDeMaquina.eliminarTipoDeMaquina(elementoPorEliminar)
+                End If
+
         End Select
         Me.Close()
     End Sub
