@@ -39,7 +39,7 @@ Partial Class frmIniciarSesion
         Me.btnIngresar.AutoSize = True
         Me.btnIngresar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnIngresar.FontWeight = MetroFramework.MetroButtonWeight.Regular
-        Me.btnIngresar.Location = New System.Drawing.Point(399, 186)
+        Me.btnIngresar.Location = New System.Drawing.Point(399, 200)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(100, 35)
         Me.btnIngresar.TabIndex = 3
@@ -51,7 +51,7 @@ Partial Class frmIniciarSesion
         '
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(64, 140)
+        Me.MetroLabel2.Location = New System.Drawing.Point(70, 140)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(98, 25)
         Me.MetroLabel2.TabIndex = 2
@@ -101,7 +101,7 @@ Partial Class frmIniciarSesion
         '
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel1.Location = New System.Drawing.Point(64, 89)
+        Me.MetroLabel1.Location = New System.Drawing.Point(70, 80)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(160, 25)
         Me.MetroLabel1.TabIndex = 1
@@ -113,7 +113,7 @@ Partial Class frmIniciarSesion
         Me.btnCancelar.AutoSize = True
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Regular
-        Me.btnCancelar.Location = New System.Drawing.Point(64, 186)
+        Me.btnCancelar.Location = New System.Drawing.Point(70, 200)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(100, 35)
         Me.btnCancelar.TabIndex = 4
@@ -125,7 +125,7 @@ Partial Class frmIniciarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(569, 243)
+        Me.ClientSize = New System.Drawing.Size(550, 264)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtContrasena)
         Me.Controls.Add(Me.txtNombreUsuario)

@@ -8,16 +8,35 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Transactions;
+/// <summary>
+/// Fecha de creación: 07/03/2015
+/// Autor: Mauricio Fernández Mora
+/// Fecha de modificación:  14/03/2015
+/// Modificado por: Mauricio Fernández Mora
+/// </summary>
 
 namespace DAL.Repositories
 {
     public class MaquinaRepository : IRepository<Maquina>
     {
-
+        /// <summary>
+        /// Lista de entidades para registrar.
+        /// </summary>
         private List<IEntity> _insertItems;
+
+        /// <summary>
+        /// Lista de entidades para eliminar.
+        /// </summary>
         private List<IEntity> _deleteItems;
+
+        /// <summary>
+        /// Lista de entidades para modificar.
+        /// </summary>
         private List<IEntity> _updateItems;
 
+        /// <summary>
+        /// Inicializa una nueva instancia de clase <ver cref="TipoDeMaquinaRepository"/>.
+        /// </summary>
         public MaquinaRepository()
         {
             _insertItems = new List<IEntity>();
@@ -25,49 +44,82 @@ namespace DAL.Repositories
             _updateItems = new List<IEntity>();
         }
 
+        /// <summary>
+        /// Inserta la entidad a la lista de _insertItems.
+        /// </summary>
+        /// <param name="entity">Instancia de máquina.</param>
         public void Insert(Maquina entity)
         {
             _insertItems.Add(entity);
         }
 
+        /// <summary>
+        /// Inserta la entidad a la lista de _deleteItems.
+        /// </summary>
+        /// <param name="entity">Instancia de máquina.</param>
         public void Delete(Maquina entity)
         {
             _deleteItems.Add(entity);
         }
 
+        /// <summary>
+        /// Inserta la entidad a la lista de _updateItems.
+        /// </summary>
+        /// <param name="entity">Instancia de máquina.</param>
         public void Update(Maquina entity)
         {
             _updateItems.Add(entity);
         }
 
+        /// <summary>
+        /// Lista cada una de las instancias de máquina.
+        /// </summary>
+        /// <returns>
+        /// Devuelve una lista de tipo IEnumerable<Maquina>.
+        /// </returns>
         public IEnumerable<Maquina> GetAll()
         {
-
             List<Maquina> listaMaquinas = null;
 
             SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarMaquinas");
 
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                listaMaquinas = new List<Maquina>();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarMaquinas");
 
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    listaMaquinas.Add(new Maquina
+                    listaMaquinas = new List<Maquina>();
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        Id = Convert.ToInt32(dr["ID"]),
-                        NumeroActivo = dr["NUMERO_ACTIVO"].ToString(),
-                        NumeroMaquina = dr["NUMERO_MAQUINA"].ToString(),
-                        Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
-                        NombreTipoMaquina = dr["NOMBRE"].ToString(),
-                    });
+                        listaMaquinas.Add(new Maquina
+                        {
+                            Id = Convert.ToInt32(dr["ID"]),
+                            NumeroActivo = dr["NUMERO_ACTIVO"].ToString(),
+                            NumeroMaquina = dr["NUMERO_MAQUINA"].ToString(),
+                            Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                            NombreTipoMaquina = dr["NOMBRE"].ToString(),
+                            TipoDeMaquina = Convert.ToInt32(dr["TIPO_MAQUINA"]),
+                        });
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
             }
 
             return listaMaquinas;
         }
 
+        /// <summary>
+        /// Obtiene una instancia de máquina por su Id.
+        /// </summary>
+        /// <param name="pId">Id de la máquina.</param>
+        /// <returns>
+        /// Devuelve la instancia de la máquina.
+        /// </returns>
         public Maquina GetById(int pId)
         {
 
@@ -75,26 +127,37 @@ namespace DAL.Repositories
 
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@pId", pId);
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_MaquinaPorId");
 
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_MaquinaPorId");
 
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    maquina = new Maquina
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        Id = Convert.ToInt32(dr["ID"]),
-                        NumeroActivo = dr["NUMERO_ACTIVO"].ToString(),
-                        NumeroMaquina = dr["NUMERO_MAQUINA"].ToString(),
-                        Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
-                    };
+                        maquina = new Maquina
+                        {
+                            Id = Convert.ToInt32(dr["ID"]),
+                            NumeroActivo = dr["NUMERO_ACTIVO"].ToString(),
+                            NumeroMaquina = dr["NUMERO_MAQUINA"].ToString(),
+                            Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                        };
+                    }
                 }
             }
+                catch(Exception ex)
+                {
+
+                }
 
             return maquina;
         }
 
+        /// <summary>
+        /// Guarda los cambios.
+        /// </summary>
         public void Save()
         {
             using (TransactionScope scope = new TransactionScope())
@@ -139,10 +202,12 @@ namespace DAL.Repositories
                 {
                     Clear();
                 }
-
             }
         }
 
+        /// <summary>
+        /// Limpia las listas de insert, delete y update.
+        /// </summary>
         public void Clear()
         {
             _insertItems.Clear();
@@ -150,6 +215,10 @@ namespace DAL.Repositories
             _updateItems.Clear();
         }
 
+        /// <summary>
+        /// Registra una instancia de máquina.
+        /// </summary>
+        /// <param name="objMaquina">Objeto maquina.</param>
         private void InsertMaquina(Maquina objMaquina)
         {
 
@@ -172,6 +241,10 @@ namespace DAL.Repositories
 
         }
 
+        /// <summary>
+        /// Modifica una instancia de máquina.
+        /// </summary>
+        /// <param name="objMaquina">Objecto maquina.</param>
         private void UpdateMaquina(Maquina objMaquina)
         {
             try
@@ -192,6 +265,10 @@ namespace DAL.Repositories
             }
         }
 
+        /// <summary>
+        /// Elimina una instancia de máquina.
+        /// </summary>
+        /// <param name="objMaquina">Objecto maquina.</param>
         private void DeleteMaquina(Maquina objMaquina)
         {
             try
@@ -203,13 +280,10 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-                //logear la excepcion a la bd con un Exception
-
 
             }
             catch (Exception ex)
             {
-                //logear la excepcion a la bd con un Exception
 
             }
         }

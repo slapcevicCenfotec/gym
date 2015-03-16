@@ -8,16 +8,35 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Transactions;
+/// <summary>
+/// Fecha de creación: 07/03/2015
+/// Autor: Mauricio Fernández Mora
+/// Fecha de modificación:  14/03/2015
+/// Modificado por: Mauricio Fernández Mora
+/// </summary>
 
 namespace DAL.Repositories
 {
     public class TipoDeMaquinaRepository : IRepository<TipoDeMaquina>
     {
-
+        /// <summary>
+        /// Lista de entidades para registrar.
+        /// </summary>
         private List<IEntity> _insertItems;
+
+        /// <summary>
+        /// Lista de entidades para eliminar.
+        /// </summary>
         private List<IEntity> _deleteItems;
+
+        /// <summary>
+        /// Lista de entidades para modificar.
+        /// </summary>
         private List<IEntity> _updateItems;
 
+        /// <summary>
+        /// Inicializa una nueva instancia de clase <ver cref="TipoDeMaquinaRepository"/>.
+        /// </summary>
         public TipoDeMaquinaRepository()
         {
             _insertItems = new List<IEntity>();
@@ -25,77 +44,121 @@ namespace DAL.Repositories
             _updateItems = new List<IEntity>();
         }
 
+        /// <summary>
+        /// Inserta la entidad a la lista de _insertItems.
+        /// </summary>
+        /// <param name="entity">Instancia de tipo de máquina.</param>
         public void Insert(TipoDeMaquina entity)
         {
             _insertItems.Add(entity);
         }
 
+        /// <summary>
+        /// Inserta la entidad a la lista de _deleteItems.
+        /// </summary>
+        /// <param name="entity">Instancia de tipo de máquina.</param>
         public void Delete(TipoDeMaquina entity)
         {
             _deleteItems.Add(entity);
         }
 
+        /// <summary>
+        /// Inserta la entidad a la lista de _updateItems.
+        /// </summary>
+        /// <param name="entity">Instancia de tipo de máquina.</param>
         public void Update(TipoDeMaquina entity)
         {
             _updateItems.Add(entity);
         }
 
+        /// <summary>
+        /// Lista cada una de las instancias de tipo de máquina.
+        /// </summary>
+        /// <returns>
+        /// Devuelve una lista de tipo IEnumerable<TipoDeMaquina>.
+        /// </returns>
         public IEnumerable<TipoDeMaquina> GetAll()
         {
 
             List<TipoDeMaquina> listaTiposDeMaquinas = null;
-
             SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTiposDeMaquinas");
 
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                listaTiposDeMaquinas = new List<TipoDeMaquina>();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTiposDeMaquinas");
 
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    listaTiposDeMaquinas.Add(new TipoDeMaquina
+                    listaTiposDeMaquinas = new List<TipoDeMaquina>();
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        Id = Convert.ToInt32(dr["ID"]),
-                        Foto = (byte[])dr["FOTO"],
-                        Nombre = dr["NOMBRE"].ToString(),
-                        Descripcion = dr["DESCRIPCION"].ToString(),
-                        Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
-                    });
+                        listaTiposDeMaquinas.Add(new TipoDeMaquina
+                        {
+                            Id = Convert.ToInt32(dr["ID"]),
+                            Foto = (byte[])dr["FOTO"],
+                            Nombre = dr["NOMBRE"].ToString(),
+                            Descripcion = dr["DESCRIPCION"].ToString(),
+                            Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                            Cantidad = Convert.ToInt32(dr["CANTIDAD_MAQUINAS"]),
+
+                        });
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+
             }
 
             return listaTiposDeMaquinas;
         }
 
+        /// <summary>
+        /// Obtiene una instancia de tipo de máquina por su Id.
+        /// </summary>
+        /// <param name="pId">Id del tipo de máquina.</param>
+        /// <returns>
+        /// Devuelve la instancia de tipo de máquina.
+        /// </returns>
         public TipoDeMaquina GetById(int pId)
         {
-
             TipoDeMaquina tipoDeMaquina = null;
-
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@pId", pId);
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ObtenerTipoMaquinaPorId");
 
-            if (ds.Tables[0].Rows.Count > 0)
+            try
+            {
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ObtenerTipoMaquinaPorId");
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        tipoDeMaquina = new TipoDeMaquina
+                        {
+                            Id = Convert.ToInt32(dr["ID"]),
+                            Foto = (byte[])dr["FOTO"],
+                            Nombre = dr["NOMBRE"].ToString(),
+                            Descripcion = dr["DESCRIPCION"].ToString(),
+                            Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                        };
+                    }
+                }
+
+            }
+            catch(Exception ex)
             {
 
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    tipoDeMaquina = new TipoDeMaquina
-                    {
-                        Id = Convert.ToInt32(dr["ID"]),
-                        Foto = (byte[])dr["FOTO"],
-                        Nombre = dr["NOMBRE"].ToString(),
-                        Descripcion = dr["DESCRIPCION"].ToString(),
-                        Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
-                    };
-                }
             }
 
             return tipoDeMaquina;
         }
 
+        /// <summary>
+        /// Guarda los cambios.
+        /// </summary>
         public void Save()
         {
             using (TransactionScope scope = new TransactionScope())
@@ -144,6 +207,9 @@ namespace DAL.Repositories
             }
         }
 
+        /// <summary>
+        /// Limpia las listas de insert, delete y update.
+        /// </summary>
         public void Clear()
         {
             _insertItems.Clear();
@@ -151,6 +217,10 @@ namespace DAL.Repositories
             _updateItems.Clear();
         }
 
+        /// <summary>
+        /// Registra una instancia de tipo de máquina.
+        /// </summary>
+        /// <param name="objTipoDeMaquina">Objeto tipo de máquina.</param>
         private void InsertTipoDeMaquina(TipoDeMaquina objTipoDeMaquina)
         {
 
@@ -173,6 +243,10 @@ namespace DAL.Repositories
 
         }
 
+        /// <summary>
+        /// Modifica una instancia de tipo de máquina.
+        /// </summary>
+        /// <param name="objTipoDeMaquina">Objeto tipo de máquina.</param>
         private void UpdateTipoDeMaquina(TipoDeMaquina objTipoDeMaquina)
         {
             try
@@ -193,6 +267,10 @@ namespace DAL.Repositories
             }
         }
 
+        /// <summary>
+        /// Elimina una instancia de tipo de máquina.
+        /// </summary>
+        /// <param name="objTipoDeMaquina">Objeto de tipo de máquina.</param>
         private void DeleteTipoDeMaquina(TipoDeMaquina objTipoDeMaquina)
         {
             try
@@ -204,13 +282,10 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-                //logear la excepcion a la bd con un Exception
-
 
             }
             catch (Exception ex)
             {
-                //logear la excepcion a la bd con un Exception
 
             }
         }
