@@ -179,6 +179,12 @@
     <Compile Include="Pago\FrmRegistrarPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReportes.Designer.vb">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReportes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Rol\FrmListarRoles.Designer.vb">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>
     </Compile>
@@ -306,6 +312,9 @@
     <EmbeddedResource Include="Pago\FrmRegistrarPago.resx">
       <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReportes.resx">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rol\FrmListarRoles.resx">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>
     </EmbeddedResource>
@@ -386,9 +395,7 @@
       <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\photo.jpg" />
   </ItemGroup>
