@@ -41,8 +41,11 @@ Partial Class FrmModificarMusculo
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnCancelar
@@ -51,7 +54,7 @@ Partial Class FrmModificarMusculo
         Me.btnCancelar.AutoSize = True
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 301)
+        Me.btnCancelar.Location = New System.Drawing.Point(13, 24)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(150, 30)
@@ -67,7 +70,7 @@ Partial Class FrmModificarMusculo
         Me.btnGuardar.AutoSize = True
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(466, 301)
+        Me.btnGuardar.Location = New System.Drawing.Point(463, 24)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(150, 30)
@@ -255,9 +258,8 @@ Partial Class FrmModificarMusculo
         '
         Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.MetroPanel1.Controls.Add(Me.btnCancelar)
+        Me.MetroPanel1.Controls.Add(Me.Panel3)
         Me.MetroPanel1.Controls.Add(Me.txtIrrigacion)
-        Me.MetroPanel1.Controls.Add(Me.btnGuardar)
         Me.MetroPanel1.Controls.Add(Me.MetroLabel2)
         Me.MetroPanel1.Controls.Add(Me.txtInervacion)
         Me.MetroPanel1.Controls.Add(Me.txtNombre)
@@ -304,9 +306,35 @@ Partial Class FrmModificarMusculo
         Me.ErrorProvider1.ContainerControl = Me
         Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
         '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.btnGuardar)
+        Me.Panel3.Controls.Add(Me.btnCancelar)
+        Me.Panel3.Location = New System.Drawing.Point(3, 277)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(626, 67)
+        Me.Panel3.TabIndex = 62
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblTitulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.lblTitulo.Font = New System.Drawing.Font("Segoe UI Light", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.lblTitulo.Location = New System.Drawing.Point(100, 31)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(632, 44)
+        Me.lblTitulo.TabIndex = 62
+        Me.lblTitulo.Text = "MODIFICAR MÚSCULO"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'FrmModificarMusculo
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.MetroLabel7)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Name = "FrmModificarMusculo"
@@ -316,6 +344,8 @@ Partial Class FrmModificarMusculo
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -337,5 +367,7 @@ Partial Class FrmModificarMusculo
     Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 
 End Class
