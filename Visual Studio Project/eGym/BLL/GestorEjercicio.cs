@@ -64,6 +64,8 @@ namespace BLL
                 {
                     Uow.EjercicioRepository.Insert(objEjercicio);
                     Uow.EjercicioRepository.Save();
+
+                    gestorEventos.insertarEvento("Insertar ejercicio", "El usuario ha insertado un ejercicio " + objEjercicio.Nombre + " al sistema.");
                 }
                 else 
                 {
@@ -136,6 +138,8 @@ namespace BLL
                 {
                     Uow.EjercicioRepository.Update(objEjercicio);
                     Uow.EjercicioRepository.Save();
+
+                    gestorEventos.insertarEvento("Modificar Ejercicio", "El usuario ha modificado el ejercicio " + objEjercicio.Nombre + " al sistema.");
                 }
                 else
                 {
@@ -244,8 +248,36 @@ namespace BLL
         /// <param name="pEjercicio"></param>
         public void eliminarEjercicio(Ejercicio pEjercicio)
         {
-            Uow.EjercicioRepository.Delete(pEjercicio);
-            Uow.EjercicioRepository.Save();
+            try
+            {
+                if (pEjercicio.IsValid)
+                {
+                    Uow.EjercicioRepository.Delete(pEjercicio);
+                    Uow.EjercicioRepository.Save();
+                    gestorEventos.insertarEvento("Eliminar ejercicio", "El usuario ha Eliminado el ejercicio " + pEjercicio.Nombre + " al sistema.");
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in pEjercicio.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new BusinessLogicException(sb.ToString());
+                }
+               
+            }
+            catch (SqlException ex)
+            {
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
+                throw new DataAccessException("Ha ocurrido un error Eliminando el ejercicio");
+            }
+            catch (Exception ex)
+            {
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
+                throw new DataAccessException("Ha ocurrido un error Eliminiado el ejercicio");
+            }
+            
         }
 
     }

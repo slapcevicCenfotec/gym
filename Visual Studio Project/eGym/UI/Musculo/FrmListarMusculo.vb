@@ -66,13 +66,14 @@ Public Class FrmListarMusculo
     End Sub
   
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim msg As String = "Desea eliminar el tipo de Musculo?"
         Dim musculoPorEliminar As Musculo = tblMusculos.CurrentRow.DataBoundItem
-        objGestorMusculo.eliminarMusculo(musculoPorEliminar)
-        Dim ctr As Control
-        ctr = New FrmListarMusculo
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        Dim mensaje As New FrmMensajeSiNo(msg, musculoPorEliminar)
+        mensaje.ShowDialog()
+        listaOriginal = objGestorMusculo.listarMusculos()
+        tblMusculos.AutoGenerateColumns = False
+        tblMusculos.DataSource = listaOriginal
+
     End Sub
 
     Private Sub txtFiltro_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click

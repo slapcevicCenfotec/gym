@@ -57,7 +57,7 @@ namespace BLL
                 {
                     Uow.MusculoRepository.Insert(objMusculo);
                     Uow.MusculoRepository.Save();
-
+                    gestorEventos.insertarEvento("Insertar Músculo", "El usuario a insertado el musculo " + objMusculo.Nombre + " al sistema.");
                 }
                 else
                 {
@@ -111,6 +111,7 @@ namespace BLL
                 {
                     Uow.MusculoRepository.Update(objMusculo);
                     Uow.MusculoRepository.Save();
+                    gestorEventos.insertarEvento("Modificar Músculo", "El usuario a modificado el músculo " + objMusculo.Nombre + " al sistema.");
 
                 }
                 else
@@ -146,9 +147,37 @@ namespace BLL
         /// <param name="pMusculo">Objeto Musculo que va a ser eliminado</param>
         public void eliminarMusculo(Musculo pMusculo)
         {
+            try
+            {
+                if (pMusculo.IsValid)
+                {
+                    Uow.MusculoRepository.Delete(pMusculo);
+                    Uow.MusculoRepository.Save();
+                    gestorEventos.insertarEvento("Eliminar Musculo", "El usuario ha Eliminado el músculo " + pMusculo.Nombre + " al sistema.");
+                }
+                else 
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in pMusculo.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new BusinessLogicException(sb.ToString());
+                
+                }
 
-            Uow.MusculoRepository.Delete(pMusculo);
-            Uow.MusculoRepository.Save();
+            }
+            catch (SqlException ex)
+            {
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
+                throw new DataAccessException("Ha ocurrido un error Eliminando el músuclo");
+            }
+            catch (Exception ex)
+            {
+                gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
+                throw new DataAccessException("Ha ocurrido un error Eliminiado el músuclo");
+            }
+           
         }
         /// <summary>
         /// Autor : Danny Espinoza

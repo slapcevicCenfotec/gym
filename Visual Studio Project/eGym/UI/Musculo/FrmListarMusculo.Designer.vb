@@ -67,7 +67,7 @@ Partial Class FrmListarMusculo
         Me.txtFiltro.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtFiltro.SelectedText = ""
-        Me.txtFiltro.Size = New System.Drawing.Size(445, 35)
+        Me.txtFiltro.Size = New System.Drawing.Size(445, 30)
         Me.txtFiltro.TabIndex = 22
         Me.txtFiltro.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtFiltro.UseSelectable = True
