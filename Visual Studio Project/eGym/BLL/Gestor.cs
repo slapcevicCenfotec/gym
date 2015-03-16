@@ -26,6 +26,8 @@ namespace BLL
             return unitOfWork.RepositoryUsuario.GetAll();
         }
 
+        
+
         public Usuario ObtenerUsuario(int pId)
         {
             var usuario = unitOfWork.RepositoryUsuario.GetById(pId);

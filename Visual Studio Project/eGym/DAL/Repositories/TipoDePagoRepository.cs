@@ -44,7 +44,6 @@ namespace DAL.Repositories
         {
             List<TipoDePago> listaTiposDePagos = null;
             SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.Add(new SqlParameter("@pFlag", 1));
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTipoDePago");
 
             if (ds.Tables[0].Rows.Count > 0)

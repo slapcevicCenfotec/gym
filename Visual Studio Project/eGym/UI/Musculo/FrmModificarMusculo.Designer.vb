@@ -23,6 +23,7 @@ Partial Class FrmModificarMusculo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmModificarMusculo))
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.txtIrrigacion = New MetroFramework.Controls.MetroTextBox()
@@ -301,6 +302,7 @@ Partial Class FrmModificarMusculo
         '
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
         '
         'FrmModificarMusculo
         '
