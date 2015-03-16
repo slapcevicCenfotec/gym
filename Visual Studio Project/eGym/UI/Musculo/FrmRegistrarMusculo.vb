@@ -1,10 +1,18 @@
 ﻿Imports EL
-
+''' <summary>
+''' 
+''' </summary>
+''' <remarks></remarks>
 Public Class FrmRegistrarMusculo
 
     Private validar As Boolean = True
 
-
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
         Dim resulValidation As Boolean
 
@@ -22,7 +30,11 @@ Public Class FrmRegistrarMusculo
             objGestorMusculo.agregarMusculo(nombre, ubicacion, origen, inserccion, inervacion, irrigacion)
         End If
     End Sub
-
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Private Function validation() As Boolean
 
         Dim validar As Boolean = True
@@ -61,7 +73,12 @@ Public Class FrmRegistrarMusculo
 
     End Function
 
-    
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim resulValidation As Boolean
 
@@ -83,10 +100,15 @@ Public Class FrmRegistrarMusculo
             ctr.Dock = DockStyle.Fill
             Me.Controls.Clear()
             Me.Controls.Add(ctr)
-            
+
         End If
     End Sub
-
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Dim ctr As Control
         ctr = New FrmListarMusculo
@@ -95,7 +117,5 @@ Public Class FrmRegistrarMusculo
         Me.Controls.Add(ctr)
     End Sub
 
-    Private Sub MetroLabel7_Click(sender As Object, e As EventArgs) Handles MetroLabel7.Click
 
-    End Sub
 End Class

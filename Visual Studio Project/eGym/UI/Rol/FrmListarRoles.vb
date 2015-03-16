@@ -121,12 +121,13 @@ Public Class FrmListarRoles
     ''' <param name="sender">The source of the event.</param>
     ''' <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim idRol As Int32
-        If MsgBox("Desea Eliminar el Rol?", vbYesNo, "Eliminar Rol") = MsgBoxResult.Yes Then
-            idRol = Convert.ToInt32(tblListarRoles.CurrentRow.Cells(0).Value)
-            objGestorRol.EliminarRol(Convert.ToInt32(tblListarRoles.CurrentRow.Cells(0).Value), tblListarRoles.CurrentRow.Cells(1).Value, tblListarRoles.CurrentRow.Cells(2).Value)
-            Me.Refresh()
-        End If
+        Dim msg As String = "Desea eliminar el Rol?"
+        Dim rolPorEliminar As Rol = tblListarRoles.CurrentRow.DataBoundItem
+        Dim mensaje As New FrmMensajeSiNo(msg, rolPorEliminar)
+        mensaje.ShowDialog()
+        listaRolesOringinal = objGestorRol.listarRoles()
+        tblListarRoles.AutoGenerateColumns = False
+        tblListarRoles.DataSource = listaRolesOringinal
     End Sub
 
 End Class
