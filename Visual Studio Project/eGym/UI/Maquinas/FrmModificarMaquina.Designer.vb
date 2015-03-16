@@ -26,23 +26,21 @@ Partial Class FrmModificarMaquina
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmModificarMaquina))
         Me.ErPrValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErPrExcepciones = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblTipoDeMaquina = New MetroFramework.Controls.MetroLabel()
         Me.lblNumeroDeActivo = New MetroFramework.Controls.MetroLabel()
         Me.lblNumeroDeMaquina = New MetroFramework.Controls.MetroLabel()
         Me.txtNumeroDeActivo = New MetroFramework.Controls.MetroTextBox()
         Me.cmbTipoDeMaquina = New MetroFramework.Controls.MetroComboBox()
         Me.txtNumeroDeMaquina = New MetroFramework.Controls.MetroTextBox()
-        Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.btnGuardar = New MetroFramework.Controls.MetroButton()
+        Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
+        Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel()
+        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         CType(Me.ErPrValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErPrExcepciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MetroPanel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.MetroPanel2.SuspendLayout()
+        Me.MetroPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'ErPrValidacion
@@ -59,45 +57,13 @@ Partial Class FrmModificarMaquina
         Me.ErPrExcepciones.ContainerControl = Me
         Me.ErPrExcepciones.Icon = CType(resources.GetObject("ErPrExcepciones.Icon"), System.Drawing.Icon)
         '
-        'MetroPanel1
-        '
-        Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.MetroPanel1.Controls.Add(Me.Panel2)
-        Me.MetroPanel1.Controls.Add(Me.lblTitulo)
-        Me.MetroPanel1.Controls.Add(Me.Panel1)
-        Me.MetroPanel1.HorizontalScrollbarBarColor = True
-        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(322, 71)
-        Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(432, 479)
-        Me.MetroPanel1.TabIndex = 23
-        Me.MetroPanel1.UseCustomBackColor = True
-        Me.MetroPanel1.VerticalScrollbarBarColor = True
-        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.VerticalScrollbarSize = 10
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.lblTipoDeMaquina)
-        Me.Panel2.Controls.Add(Me.lblNumeroDeActivo)
-        Me.Panel2.Controls.Add(Me.lblNumeroDeMaquina)
-        Me.Panel2.Controls.Add(Me.txtNumeroDeActivo)
-        Me.Panel2.Controls.Add(Me.cmbTipoDeMaquina)
-        Me.Panel2.Controls.Add(Me.txtNumeroDeMaquina)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 67)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(432, 345)
-        Me.Panel2.TabIndex = 24
-        '
         'lblTipoDeMaquina
         '
         Me.lblTipoDeMaquina.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblTipoDeMaquina.AutoSize = True
         Me.lblTipoDeMaquina.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.lblTipoDeMaquina.ForeColor = System.Drawing.Color.Transparent
-        Me.lblTipoDeMaquina.Location = New System.Drawing.Point(91, 75)
+        Me.lblTipoDeMaquina.Location = New System.Drawing.Point(106, 16)
         Me.lblTipoDeMaquina.Name = "lblTipoDeMaquina"
         Me.lblTipoDeMaquina.Size = New System.Drawing.Size(141, 25)
         Me.lblTipoDeMaquina.TabIndex = 0
@@ -111,7 +77,7 @@ Partial Class FrmModificarMaquina
         Me.lblNumeroDeActivo.AutoSize = True
         Me.lblNumeroDeActivo.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.lblNumeroDeActivo.ForeColor = System.Drawing.Color.Transparent
-        Me.lblNumeroDeActivo.Location = New System.Drawing.Point(91, 141)
+        Me.lblNumeroDeActivo.Location = New System.Drawing.Point(106, 82)
         Me.lblNumeroDeActivo.Name = "lblNumeroDeActivo"
         Me.lblNumeroDeActivo.Size = New System.Drawing.Size(148, 25)
         Me.lblNumeroDeActivo.TabIndex = 0
@@ -125,7 +91,7 @@ Partial Class FrmModificarMaquina
         Me.lblNumeroDeMaquina.AutoSize = True
         Me.lblNumeroDeMaquina.BackColor = System.Drawing.Color.Transparent
         Me.lblNumeroDeMaquina.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.lblNumeroDeMaquina.Location = New System.Drawing.Point(91, 207)
+        Me.lblNumeroDeMaquina.Location = New System.Drawing.Point(106, 148)
         Me.lblNumeroDeMaquina.Name = "lblNumeroDeMaquina"
         Me.lblNumeroDeMaquina.Size = New System.Drawing.Size(171, 25)
         Me.lblNumeroDeMaquina.TabIndex = 0
@@ -138,7 +104,7 @@ Partial Class FrmModificarMaquina
         Me.txtNumeroDeActivo.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtNumeroDeActivo.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNumeroDeActivo.Lines = New String(-1) {}
-        Me.txtNumeroDeActivo.Location = New System.Drawing.Point(91, 169)
+        Me.txtNumeroDeActivo.Location = New System.Drawing.Point(106, 110)
         Me.txtNumeroDeActivo.MaxLength = 32767
         Me.txtNumeroDeActivo.Name = "txtNumeroDeActivo"
         Me.txtNumeroDeActivo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -155,7 +121,7 @@ Partial Class FrmModificarMaquina
         Me.cmbTipoDeMaquina.FontSize = MetroFramework.MetroComboBoxSize.Tall
         Me.cmbTipoDeMaquina.FormattingEnabled = True
         Me.cmbTipoDeMaquina.ItemHeight = 29
-        Me.cmbTipoDeMaquina.Location = New System.Drawing.Point(91, 103)
+        Me.cmbTipoDeMaquina.Location = New System.Drawing.Point(106, 44)
         Me.cmbTipoDeMaquina.Name = "cmbTipoDeMaquina"
         Me.cmbTipoDeMaquina.Size = New System.Drawing.Size(250, 35)
         Me.cmbTipoDeMaquina.Style = MetroFramework.MetroColorStyle.Purple
@@ -168,7 +134,7 @@ Partial Class FrmModificarMaquina
         Me.txtNumeroDeMaquina.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtNumeroDeMaquina.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNumeroDeMaquina.Lines = New String(-1) {}
-        Me.txtNumeroDeMaquina.Location = New System.Drawing.Point(91, 235)
+        Me.txtNumeroDeMaquina.Location = New System.Drawing.Point(106, 176)
         Me.txtNumeroDeMaquina.MaxLength = 32767
         Me.txtNumeroDeMaquina.Name = "txtNumeroDeMaquina"
         Me.txtNumeroDeMaquina.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -179,36 +145,12 @@ Partial Class FrmModificarMaquina
         Me.txtNumeroDeMaquina.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtNumeroDeMaquina.UseSelectable = True
         '
-        'lblTitulo
-        '
-        Me.lblTitulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblTitulo.Font = New System.Drawing.Font("Segoe UI Light", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.lblTitulo.Location = New System.Drawing.Point(0, 0)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(432, 67)
-        Me.lblTitulo.TabIndex = 0
-        Me.lblTitulo.Text = "MODIFICAR MAQUINA"
-        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnCancelar)
-        Me.Panel1.Controls.Add(Me.btnGuardar)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 412)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(432, 67)
-        Me.Panel1.TabIndex = 23
-        '
         'btnCancelar
         '
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 16)
+        Me.btnCancelar.Location = New System.Drawing.Point(65, 352)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(150, 35)
@@ -223,7 +165,7 @@ Partial Class FrmModificarMaquina
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(264, 16)
+        Me.btnGuardar.Location = New System.Drawing.Point(247, 352)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(150, 35)
@@ -233,36 +175,102 @@ Partial Class FrmModificarMaquina
         Me.btnGuardar.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnGuardar.UseSelectable = True
         '
+        'MetroPanel2
+        '
+        Me.MetroPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.MetroPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.MetroPanel2.Controls.Add(Me.btnCancelar)
+        Me.MetroPanel2.Controls.Add(Me.btnGuardar)
+        Me.MetroPanel2.Controls.Add(Me.MetroPanel3)
+        Me.MetroPanel2.Controls.Add(Me.MetroLabel4)
+        Me.MetroPanel2.HorizontalScrollbarBarColor = True
+        Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel2.HorizontalScrollbarSize = 10
+        Me.MetroPanel2.Location = New System.Drawing.Point(249, 30)
+        Me.MetroPanel2.Name = "MetroPanel2"
+        Me.MetroPanel2.Size = New System.Drawing.Size(463, 403)
+        Me.MetroPanel2.TabIndex = 30
+        Me.MetroPanel2.UseCustomBackColor = True
+        Me.MetroPanel2.VerticalScrollbarBarColor = True
+        Me.MetroPanel2.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel2.VerticalScrollbarSize = 10
+        '
+        'MetroPanel3
+        '
+        Me.MetroPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroPanel3.AutoScroll = True
+        Me.MetroPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.MetroPanel3.Controls.Add(Me.lblTipoDeMaquina)
+        Me.MetroPanel3.Controls.Add(Me.lblNumeroDeActivo)
+        Me.MetroPanel3.Controls.Add(Me.txtNumeroDeActivo)
+        Me.MetroPanel3.Controls.Add(Me.lblNumeroDeMaquina)
+        Me.MetroPanel3.Controls.Add(Me.txtNumeroDeMaquina)
+        Me.MetroPanel3.Controls.Add(Me.cmbTipoDeMaquina)
+        Me.MetroPanel3.HorizontalScrollbar = True
+        Me.MetroPanel3.HorizontalScrollbarBarColor = True
+        Me.MetroPanel3.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel3.HorizontalScrollbarSize = 10
+        Me.MetroPanel3.Location = New System.Drawing.Point(0, 60)
+        Me.MetroPanel3.Margin = New System.Windows.Forms.Padding(3, 67, 3, 67)
+        Me.MetroPanel3.Name = "MetroPanel3"
+        Me.MetroPanel3.Size = New System.Drawing.Size(463, 278)
+        Me.MetroPanel3.TabIndex = 27
+        Me.MetroPanel3.UseCustomBackColor = True
+        Me.MetroPanel3.VerticalScrollbar = True
+        Me.MetroPanel3.VerticalScrollbarBarColor = True
+        Me.MetroPanel3.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel3.VerticalScrollbarSize = 10
+        '
+        'MetroLabel4
+        '
+        Me.MetroLabel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel4.AutoSize = True
+        Me.MetroLabel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.MetroLabel4.Location = New System.Drawing.Point(0, 16)
+        Me.MetroLabel4.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
+        Me.MetroLabel4.Name = "MetroLabel4"
+        Me.MetroLabel4.Size = New System.Drawing.Size(186, 25)
+        Me.MetroLabel4.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel4.TabIndex = 28
+        Me.MetroLabel4.Text = "MODIFICAR MÁQUINA"
+        Me.MetroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel4.UseCustomBackColor = True
+        '
         'FrmModificarMaquina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.Controls.Add(Me.MetroPanel1)
+        Me.Controls.Add(Me.MetroPanel2)
         Me.Name = "FrmModificarMaquina"
         Me.Size = New System.Drawing.Size(960, 695)
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         CType(Me.ErPrValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErPrExcepciones, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MetroPanel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
+        Me.MetroPanel2.ResumeLayout(False)
+        Me.MetroPanel2.PerformLayout()
+        Me.MetroPanel3.ResumeLayout(False)
+        Me.MetroPanel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ErPrValidacion As System.Windows.Forms.ErrorProvider
     Friend WithEvents ErPrExcepciones As System.Windows.Forms.ErrorProvider
-    Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents lblTipoDeMaquina As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblNumeroDeActivo As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblNumeroDeMaquina As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNumeroDeActivo As MetroFramework.Controls.MetroTextBox
     Friend WithEvents cmbTipoDeMaquina As MetroFramework.Controls.MetroComboBox
     Friend WithEvents txtNumeroDeMaquina As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents lblTitulo As System.Windows.Forms.Label
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroPanel2 As MetroFramework.Controls.MetroPanel
+    Friend WithEvents MetroPanel3 As MetroFramework.Controls.MetroPanel
+    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
 
 End Class
