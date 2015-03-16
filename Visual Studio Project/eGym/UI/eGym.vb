@@ -128,7 +128,11 @@
     End Sub
 
     Private Sub MetroLabel5_Click(sender As Object, e As EventArgs) Handles MetroLabel5.Click
-
+        Dim ctr As Control
+        ctr = New FrmReportes
+        ctr.Dock = DockStyle.Fill
+        MetroPanel1.Controls.Clear()
+        MetroPanel1.Controls.Add(ctr)
     End Sub
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
