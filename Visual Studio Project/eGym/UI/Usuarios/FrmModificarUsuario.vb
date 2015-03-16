@@ -22,6 +22,8 @@ Public Class FrmModificarUsuario
         SP_ListarTiposIdentificacionTableAdapter.Fill(EGymDBDataSet.SP_ListarTiposIdentificacion)
         SP_ListarGenerosTableAdapter.Fill(EGymDBDataSet.SP_ListarGeneros)
         SP_ListarRolesTableAdapter.Fill(EGymDBDataSet.SP_ListarRoles)
+        MetroTabControl1.TabPages.Remove(MetroTabPage3)
+        RevisarRol()
 
         Dim usuario = Gestor.ObtenerUsuario(pId)
         txtIdentificacion.Text = usuario.Identificacion
@@ -393,5 +395,28 @@ Public Class FrmModificarUsuario
     Private Sub btnEliminarFotografia_Click(sender As Object, e As EventArgs) Handles btnEliminarFotografia.Click
         pcbFotografia.Image = Nothing
         imageByte = Nothing
+    End Sub
+
+    Private Sub RevisarRol()
+        Try
+            Dim rol As EL.Rol = objGestorRol.obtenerRol(cmbRol.SelectedValue)(0)
+            Dim mostrar As Boolean = False
+            For Each permiso As EL.Permiso In rol.ListaPermisos
+                If permiso.Id = 10 Then
+                    mostrar = True
+                End If
+            Next
+            If mostrar Then
+                MetroTabControl1.TabPages.Add(MetroTabPage3)
+            Else
+                MetroTabControl1.TabPages.Remove(MetroTabPage3)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub cmbRol_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRol.SelectedIndexChanged
+        RevisarRol()
     End Sub
 End Class

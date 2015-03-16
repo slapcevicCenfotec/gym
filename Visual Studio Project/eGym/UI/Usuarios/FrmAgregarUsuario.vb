@@ -4,7 +4,6 @@ Public Class FrmAgregarUsuario
 
     Private imageByte As Byte()
 
-
     Private Sub pcbFotografia_Click(sender As Object, e As EventArgs) Handles pcbFotografia.Click
         If OpenFileDialog.ShowDialog() = DialogResult.OK Then
             Try
@@ -25,6 +24,8 @@ Public Class FrmAgregarUsuario
         SP_ListarTiposIdentificacionTableAdapter.Fill(EGymDBDataSet.SP_ListarTiposIdentificacion)
         SP_ListarGenerosTableAdapter.Fill(EGymDBDataSet.SP_ListarGeneros)
         SP_ListarRolesTableAdapter.Fill(EGymDBDataSet.SP_ListarRoles)
+        MetroTabControl1.TabPages.Remove(MetroTabPage3)
+        RevisarRol()
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
@@ -310,5 +311,28 @@ Public Class FrmAgregarUsuario
         ctr.Dock = DockStyle.Fill
         Me.Parent.Controls.Add(ctr)
         Me.Dispose()
+    End Sub
+
+    Private Sub cmbRol_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRol.SelectedIndexChanged
+        RevisarRol()
+    End Sub
+
+    Private Sub RevisarRol()
+        Try
+            Dim rol As EL.Rol = objGestorRol.obtenerRol(cmbRol.SelectedValue)(0)
+            Dim mostrar As Boolean = False
+            For Each permiso As EL.Permiso In rol.ListaPermisos
+                If permiso.Id = 10 Then
+                    mostrar = True
+                End If
+            Next
+            If mostrar Then
+                MetroTabControl1.TabPages.Add(MetroTabPage3)
+            Else
+                MetroTabControl1.TabPages.Remove(MetroTabPage3)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
