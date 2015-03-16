@@ -42,8 +42,34 @@ namespace DAL.Repositories
 
         public IEnumerable<Pago> GetAll()
         {
-           List<Pago> listaAux = null;
-           return listaAux;
+            List<Pago> pagos = null;
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarPago");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                pagos = new List<Pago>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Pago auxPago = new Pago();
+                    auxPago.Id = Convert.ToInt32(dr["ID"]);
+                    auxPago.Factura = dr["Factura"].ToString();
+                    auxPago.Monto = float.Parse(Convert.ToString(dr["Monto"]));
+                    auxPago.Tipo = Convert.ToInt32(dr["TIPO"]);
+                    auxPago.Desde = Convert.ToDateTime(dr["DESDE"]);
+                    auxPago.Hasta = Convert.ToDateTime(dr["HASTA"]);
+                    auxPago.Fecha = Convert.ToDateTime(dr["FECHA"]);
+                    auxPago.User = Convert.ToInt32(dr["USUARIO"]);
+                    auxPago.Habilitado = Convert.ToBoolean(dr["HABILITADO"]);
+                  //  auxPago.TipoDePago.Nombre = new TipoDePago() { Nombre = dr["Tipo de pago"].ToString() };
+
+                 
+                    auxPago.NombreCliente = dr["Nombre del cliente"].ToString();
+                    pagos.Add(auxPago);
+                }
+            }
+            return pagos;
         }
 
         public Pago GetById(int id)

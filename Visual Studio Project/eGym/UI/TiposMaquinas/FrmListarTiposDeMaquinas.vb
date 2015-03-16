@@ -67,7 +67,7 @@ Public Class FrmListarTiposDeMaquinas
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim msg As String = "Desea eliminar el tipo de máquina?"
         Dim tipoMaquinaPorEliminar As TipoDeMaquina = tblTiposDeMaquinas.CurrentRow.DataBoundItem
-        Dim mensaje As New FrmMensaje(msg, tipoMaquinaPorEliminar)
+        Dim mensaje As New FrmMensajeSiNo(msg, tipoMaquinaPorEliminar)
         mensaje.ShowDialog()
         listaTiposDeMaquinas = objGestorTipoDeMaquina.listarTiposDeMaquinas()
         tblTiposDeMaquinas.DataSource = listaTiposDeMaquinas
