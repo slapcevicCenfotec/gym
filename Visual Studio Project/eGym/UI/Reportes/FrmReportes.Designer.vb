@@ -36,7 +36,7 @@ Partial Class FrmReportes
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroButton1.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton1.Location = New System.Drawing.Point(244, 13)
+        Me.MetroButton1.Location = New System.Drawing.Point(257, 13)
         Me.MetroButton1.Margin = New System.Windows.Forms.Padding(3, 16, 3, 3)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(188, 39)
@@ -69,7 +69,7 @@ Partial Class FrmReportes
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel1.Location = New System.Drawing.Point(293, 16)
+        Me.MetroLabel1.Location = New System.Drawing.Point(312, 16)
         Me.MetroLabel1.Margin = New System.Windows.Forms.Padding(16)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(78, 25)
