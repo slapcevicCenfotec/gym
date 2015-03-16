@@ -7,12 +7,26 @@ Public Class FrmRegistrarPago
         dbTipo.DisplayMember = "Nombre"
         dbTipo.ValueMember = "Id"
         Dim auxlist As List(Of Usuario)
+
+
         auxlist = Gestor.ListarUsuarios()
         For Each Usuario In auxlist
-            If Usuario.Rol.Id = 19 Then
-                lbclientes.Items.Add(Usuario.Nombre)
+            If Usuario.Rol.Id <> 19 Then
+                auxlist.Remove(Usuario)
             End If
         Next
+        lbclientes.DataSource = auxlist
+        lbclientes.DisplayMember = "Nombre"
+        lbclientes.ValueMember = "Id"
+        
+
+        'For Each Usuario In auxlist
+        '    If Usuario.Rol.Id = 19 Then
+        '        lbclientes.Items.Add(Usuario)
+        '    End If
+        'Next
+        'Dim auxlist2 As List(Of Usuario)
+        'auxlist2 = lbclientes.DataSource
     End Sub
     Private Sub lbMusculosSecundarios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbclientes.SelectedIndexChanged
 
@@ -44,7 +58,7 @@ Public Class FrmRegistrarPago
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        objGestorPago.insertarPago(txtFactura.Text, txtMonto.Text, dbTipo.SelectedValue, dtHasta.Text, dtDesde.Text, lbclientes.SelectedValue.ToString())
+        objGestorPago.insertarPago(txtFactura.Text, txtMonto.Text, dbTipo.SelectedValue, dtHasta.Text, dtDesde.Text, lbclientes.SelectedValue)
 
     End Sub
 

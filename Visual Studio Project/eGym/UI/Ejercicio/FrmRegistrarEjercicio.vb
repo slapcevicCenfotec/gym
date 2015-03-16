@@ -141,4 +141,8 @@ Public Class FrmRegistrarEjercicio
     Private Sub cbListaMusculosPrincipales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbListaMusculosPrincipales.SelectedIndexChanged
 
     End Sub
+
+    Private Sub lbMusculosSecundarios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbMusculosSecundarios.SelectedIndexChanged
+
+    End Sub
 End Class
