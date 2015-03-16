@@ -53,7 +53,7 @@ Partial Class FrmModificarMusculo
         Me.btnCancelar.AutoSize = True
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 357)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 363)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(150, 30)
@@ -69,7 +69,7 @@ Partial Class FrmModificarMusculo
         Me.btnGuardar.AutoSize = True
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(466, 357)
+        Me.btnGuardar.Location = New System.Drawing.Point(466, 363)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(150, 30)
@@ -83,7 +83,7 @@ Partial Class FrmModificarMusculo
         '
         Me.txtIrrigacion.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtIrrigacion.Lines = New String(-1) {}
-        Me.txtIrrigacion.Location = New System.Drawing.Point(366, 201)
+        Me.txtIrrigacion.Location = New System.Drawing.Point(366, 176)
         Me.txtIrrigacion.MaxLength = 32767
         Me.txtIrrigacion.Name = "txtIrrigacion"
         Me.txtIrrigacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -98,7 +98,7 @@ Partial Class FrmModificarMusculo
         '
         Me.txtInervacion.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtInervacion.Lines = New String(-1) {}
-        Me.txtInervacion.Location = New System.Drawing.Point(366, 135)
+        Me.txtInervacion.Location = New System.Drawing.Point(366, 110)
         Me.txtInervacion.MaxLength = 32767
         Me.txtInervacion.Name = "txtInervacion"
         Me.txtInervacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -113,7 +113,7 @@ Partial Class FrmModificarMusculo
         '
         Me.txtInserccion.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtInserccion.Lines = New String(-1) {}
-        Me.txtInserccion.Location = New System.Drawing.Point(366, 69)
+        Me.txtInserccion.Location = New System.Drawing.Point(366, 44)
         Me.txtInserccion.MaxLength = 32767
         Me.txtInserccion.Name = "txtInserccion"
         Me.txtInserccion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -129,7 +129,7 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel6.AutoSize = True
         Me.MetroLabel6.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel6.Location = New System.Drawing.Point(366, 107)
+        Me.MetroLabel6.Location = New System.Drawing.Point(366, 82)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(83, 25)
         Me.MetroLabel6.Style = MetroFramework.MetroColorStyle.Purple
@@ -142,7 +142,7 @@ Partial Class FrmModificarMusculo
         '
         Me.txtOrigen.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtOrigen.Lines = New String(-1) {}
-        Me.txtOrigen.Location = New System.Drawing.Point(16, 201)
+        Me.txtOrigen.Location = New System.Drawing.Point(16, 176)
         Me.txtOrigen.MaxLength = 32767
         Me.txtOrigen.Name = "txtOrigen"
         Me.txtOrigen.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -158,7 +158,7 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel5.AutoSize = True
         Me.MetroLabel5.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel5.Location = New System.Drawing.Point(366, 173)
+        Me.MetroLabel5.Location = New System.Drawing.Point(366, 148)
         Me.MetroLabel5.Name = "MetroLabel5"
         Me.MetroLabel5.Size = New System.Drawing.Size(91, 25)
         Me.MetroLabel5.Style = MetroFramework.MetroColorStyle.Purple
@@ -172,7 +172,7 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel4.AutoSize = True
         Me.MetroLabel4.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel4.Location = New System.Drawing.Point(366, 41)
+        Me.MetroLabel4.Location = New System.Drawing.Point(366, 16)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(88, 25)
         Me.MetroLabel4.Style = MetroFramework.MetroColorStyle.Purple
@@ -186,7 +186,7 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel3.AutoSize = True
         Me.MetroLabel3.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel3.Location = New System.Drawing.Point(16, 173)
+        Me.MetroLabel3.Location = New System.Drawing.Point(16, 148)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(65, 25)
         Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Purple
@@ -199,7 +199,7 @@ Partial Class FrmModificarMusculo
         '
         Me.txtUbicacion.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtUbicacion.Lines = New String(-1) {}
-        Me.txtUbicacion.Location = New System.Drawing.Point(16, 135)
+        Me.txtUbicacion.Location = New System.Drawing.Point(16, 110)
         Me.txtUbicacion.MaxLength = 32767
         Me.txtUbicacion.Name = "txtUbicacion"
         Me.txtUbicacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -215,7 +215,7 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel1.Location = New System.Drawing.Point(16, 107)
+        Me.MetroLabel1.Location = New System.Drawing.Point(16, 82)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(87, 25)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Purple
@@ -228,7 +228,7 @@ Partial Class FrmModificarMusculo
         '
         Me.txtNombre.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNombre.Lines = New String(-1) {}
-        Me.txtNombre.Location = New System.Drawing.Point(16, 69)
+        Me.txtNombre.Location = New System.Drawing.Point(16, 44)
         Me.txtNombre.MaxLength = 32767
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -244,7 +244,7 @@ Partial Class FrmModificarMusculo
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(16, 41)
+        Me.MetroLabel2.Location = New System.Drawing.Point(16, 16)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(75, 25)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Purple
@@ -270,9 +270,9 @@ Partial Class FrmModificarMusculo
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(163, 30)
+        Me.MetroPanel2.Location = New System.Drawing.Point(164, 30)
         Me.MetroPanel2.Name = "MetroPanel2"
-        Me.MetroPanel2.Size = New System.Drawing.Size(632, 403)
+        Me.MetroPanel2.Size = New System.Drawing.Size(632, 409)
         Me.MetroPanel2.TabIndex = 63
         Me.MetroPanel2.UseCustomBackColor = True
         Me.MetroPanel2.VerticalScrollbarBarColor = True
@@ -324,7 +324,7 @@ Partial Class FrmModificarMusculo
         Me.MetroPanel3.Location = New System.Drawing.Point(0, 60)
         Me.MetroPanel3.Margin = New System.Windows.Forms.Padding(3, 67, 3, 67)
         Me.MetroPanel3.Name = "MetroPanel3"
-        Me.MetroPanel3.Size = New System.Drawing.Size(632, 278)
+        Me.MetroPanel3.Size = New System.Drawing.Size(632, 269)
         Me.MetroPanel3.TabIndex = 27
         Me.MetroPanel3.UseCustomBackColor = True
         Me.MetroPanel3.VerticalScrollbar = True

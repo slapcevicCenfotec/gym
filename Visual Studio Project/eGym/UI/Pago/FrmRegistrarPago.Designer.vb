@@ -85,7 +85,6 @@ Partial Class FrmRegistrarPago
         Me.lbclientes.Location = New System.Drawing.Point(16, 77)
         Me.lbclientes.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
         Me.lbclientes.Name = "lbclientes"
-        Me.lbclientes.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.lbclientes.Size = New System.Drawing.Size(400, 275)
         Me.lbclientes.TabIndex = 29
         '
@@ -217,6 +216,7 @@ Partial Class FrmRegistrarPago
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.MetroPanel1.Controls.Add(Me.MetroLabel5)
         Me.MetroPanel1.Controls.Add(Me.btnCancelar)
@@ -236,7 +236,7 @@ Partial Class FrmRegistrarPago
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(145, 70)
+        Me.MetroPanel1.Location = New System.Drawing.Point(82, 58)
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(796, 465)
         Me.MetroPanel1.TabIndex = 27
@@ -306,11 +306,11 @@ Partial Class FrmRegistrarPago
         '
         'MetroLabel7
         '
-        Me.MetroLabel7.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroLabel7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel7.AutoSize = True
         Me.MetroLabel7.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel7.Location = New System.Drawing.Point(145, 42)
+        Me.MetroLabel7.Location = New System.Drawing.Point(82, 30)
         Me.MetroLabel7.Name = "MetroLabel7"
         Me.MetroLabel7.Size = New System.Drawing.Size(146, 25)
         Me.MetroLabel7.Style = MetroFramework.MetroColorStyle.Purple
@@ -334,7 +334,7 @@ Partial Class FrmRegistrarPago
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Name = "FrmRegistrarPago"
-        Me.Size = New System.Drawing.Size(1052, 650)
+        Me.Size = New System.Drawing.Size(960, 695)
         Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroPanel1.ResumeLayout(False)

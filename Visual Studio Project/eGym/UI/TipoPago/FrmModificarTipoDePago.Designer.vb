@@ -37,9 +37,11 @@ Partial Class FrmModificarTipoDePago
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.ErPrValidaciones = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
         CType(Me.ErPrExcepciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.ErPrValidaciones, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MetroPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -55,7 +57,7 @@ Partial Class FrmModificarTipoDePago
         Me.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtNombre.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtNombre.Lines = New String(-1) {}
-        Me.txtNombre.Location = New System.Drawing.Point(91, 74)
+        Me.txtNombre.Location = New System.Drawing.Point(91, 44)
         Me.txtNombre.MaxLength = 32767
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -72,7 +74,7 @@ Partial Class FrmModificarTipoDePago
         Me.lblTipoDePagoNombre.AutoSize = True
         Me.lblTipoDePagoNombre.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.lblTipoDePagoNombre.ForeColor = System.Drawing.Color.Transparent
-        Me.lblTipoDePagoNombre.Location = New System.Drawing.Point(91, 46)
+        Me.lblTipoDePagoNombre.Location = New System.Drawing.Point(91, 16)
         Me.lblTipoDePagoNombre.Name = "lblTipoDePagoNombre"
         Me.lblTipoDePagoNombre.Size = New System.Drawing.Size(75, 25)
         Me.lblTipoDePagoNombre.TabIndex = 0
@@ -86,7 +88,7 @@ Partial Class FrmModificarTipoDePago
         Me.lblTipoDePagoMonto.AutoSize = True
         Me.lblTipoDePagoMonto.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.lblTipoDePagoMonto.ForeColor = System.Drawing.Color.Transparent
-        Me.lblTipoDePagoMonto.Location = New System.Drawing.Point(91, 112)
+        Me.lblTipoDePagoMonto.Location = New System.Drawing.Point(91, 82)
         Me.lblTipoDePagoMonto.Name = "lblTipoDePagoMonto"
         Me.lblTipoDePagoMonto.Size = New System.Drawing.Size(62, 25)
         Me.lblTipoDePagoMonto.TabIndex = 0
@@ -100,7 +102,7 @@ Partial Class FrmModificarTipoDePago
         Me.lblTipoDePagoDuracion.AutoSize = True
         Me.lblTipoDePagoDuracion.BackColor = System.Drawing.Color.Transparent
         Me.lblTipoDePagoDuracion.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.lblTipoDePagoDuracion.Location = New System.Drawing.Point(91, 178)
+        Me.lblTipoDePagoDuracion.Location = New System.Drawing.Point(91, 148)
         Me.lblTipoDePagoDuracion.Name = "lblTipoDePagoDuracion"
         Me.lblTipoDePagoDuracion.Size = New System.Drawing.Size(123, 25)
         Me.lblTipoDePagoDuracion.TabIndex = 0
@@ -113,7 +115,7 @@ Partial Class FrmModificarTipoDePago
         Me.txtMonto.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtMonto.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtMonto.Lines = New String(-1) {}
-        Me.txtMonto.Location = New System.Drawing.Point(91, 140)
+        Me.txtMonto.Location = New System.Drawing.Point(91, 110)
         Me.txtMonto.MaxLength = 32767
         Me.txtMonto.Name = "txtMonto"
         Me.txtMonto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -129,7 +131,7 @@ Partial Class FrmModificarTipoDePago
         Me.txtDuracion.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtDuracion.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtDuracion.Lines = New String(-1) {}
-        Me.txtDuracion.Location = New System.Drawing.Point(91, 206)
+        Me.txtDuracion.Location = New System.Drawing.Point(91, 176)
         Me.txtDuracion.MaxLength = 32767
         Me.txtDuracion.Name = "txtDuracion"
         Me.txtDuracion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -152,7 +154,7 @@ Partial Class FrmModificarTipoDePago
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 307)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 358)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(150, 35)
@@ -167,7 +169,7 @@ Partial Class FrmModificarTipoDePago
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(266, 307)
+        Me.btnGuardar.Location = New System.Drawing.Point(266, 358)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(150, 35)
@@ -179,9 +181,10 @@ Partial Class FrmModificarTipoDePago
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.MetroPanel1.Controls.Add(Me.btnGuardar)
-        Me.MetroPanel1.Controls.Add(Me.btnCancelar)
         Me.MetroPanel1.Controls.Add(Me.txtNombre)
         Me.MetroPanel1.Controls.Add(Me.lblTipoDePagoNombre)
         Me.MetroPanel1.Controls.Add(Me.lblTipoDePagoDuracion)
@@ -191,9 +194,9 @@ Partial Class FrmModificarTipoDePago
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(264, 108)
+        Me.MetroPanel1.Location = New System.Drawing.Point(0, 60)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(432, 358)
+        Me.MetroPanel1.Size = New System.Drawing.Size(432, 279)
         Me.MetroPanel1.TabIndex = 23
         Me.MetroPanel1.UseCustomBackColor = True
         Me.MetroPanel1.VerticalScrollbarBarColor = True
@@ -205,7 +208,7 @@ Partial Class FrmModificarTipoDePago
         Me.MetroLabel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(264, 80)
+        Me.MetroLabel2.Location = New System.Drawing.Point(0, 16)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(219, 25)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Purple
@@ -220,13 +223,32 @@ Partial Class FrmModificarTipoDePago
         Me.ErPrValidaciones.ContainerControl = Me
         Me.ErPrValidaciones.Icon = CType(resources.GetObject("ErPrValidaciones.Icon"), System.Drawing.Icon)
         '
+        'MetroPanel2
+        '
+        Me.MetroPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.MetroPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.MetroPanel2.Controls.Add(Me.MetroPanel1)
+        Me.MetroPanel2.Controls.Add(Me.MetroLabel2)
+        Me.MetroPanel2.Controls.Add(Me.btnGuardar)
+        Me.MetroPanel2.Controls.Add(Me.btnCancelar)
+        Me.MetroPanel2.HorizontalScrollbarBarColor = True
+        Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel2.HorizontalScrollbarSize = 10
+        Me.MetroPanel2.Location = New System.Drawing.Point(264, 30)
+        Me.MetroPanel2.Name = "MetroPanel2"
+        Me.MetroPanel2.Size = New System.Drawing.Size(432, 409)
+        Me.MetroPanel2.TabIndex = 31
+        Me.MetroPanel2.UseCustomBackColor = True
+        Me.MetroPanel2.VerticalScrollbarBarColor = True
+        Me.MetroPanel2.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel2.VerticalScrollbarSize = 10
+        '
         'FrmModificarTipoDePago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.Controls.Add(Me.MetroLabel2)
-        Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroLabel1)
+        Me.Controls.Add(Me.MetroPanel2)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 18.0!)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Name = "FrmModificarTipoDePago"
@@ -237,6 +259,8 @@ Partial Class FrmModificarTipoDePago
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
         CType(Me.ErPrValidaciones, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MetroPanel2.ResumeLayout(False)
+        Me.MetroPanel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -254,5 +278,6 @@ Partial Class FrmModificarTipoDePago
     Friend WithEvents ErPrExcepciones As System.Windows.Forms.ErrorProvider
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents ErPrValidaciones As System.Windows.Forms.ErrorProvider
+    Friend WithEvents MetroPanel2 As MetroFramework.Controls.MetroPanel
 
 End Class
