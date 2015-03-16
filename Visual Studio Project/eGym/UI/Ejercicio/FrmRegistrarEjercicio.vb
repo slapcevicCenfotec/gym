@@ -68,6 +68,7 @@ Public Class FrmRegistrarEjercicio
     End Sub
 
     Private Sub FrmRegistrarEjercicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         cbListaMusculosPrincipales.DataSource = objGestorMusculo.listarMusculos()
         cbListaMusculosPrincipales.DisplayMember = "Nombre"
         cbListaMusculosPrincipales.ValueMember = "Id"

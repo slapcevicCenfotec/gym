@@ -16,6 +16,7 @@ namespace DAL
             UnitOfWork uow = new UnitOfWork();
             Usuario usuario = null;
             SqlCommand cmd = new SqlCommand();
+            byte[] foto = null;
             cmd.Parameters.Add(new SqlParameter("@nombre_usuario", correo));
             cmd.Parameters.Add(new SqlParameter("@contrasenna", contrasena));
 
@@ -34,13 +35,14 @@ namespace DAL
                     {
                         String apellido = dataRow["APELLIDO"].ToString();
                         int idRol = Convert.ToInt16(dataRow["ROL_ID"].ToString());
-                        //byte[] foto = (byte[])dataRow["FOTOGRAFIA"];
+                        if (dataRow["FOTOGRAFIA"] != System.DBNull.Value)
+                        {
+                            foto = (byte[])dataRow["FOTOGRAFIA"];
+                        }
                         Rol rol = uow.RolRepository.GetById(idRol);
-
-                        usuario = new Usuario(nombre, apellido, rol);
+                        usuario = new Usuario() { Nombre = nombre, Apellido = apellido, Rol = rol, Fotografia = foto };
                     }
                 }
-
             }
             return usuario;
         }

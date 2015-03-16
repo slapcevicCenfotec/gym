@@ -44,7 +44,6 @@ namespace DAL.Repositories
         {
             List<TipoDePago> listaTiposDePagos = null;
             SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.Add(new SqlParameter("@pFlag", 1));
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarTipoDePago");
 
             if (ds.Tables[0].Rows.Count > 0)
@@ -186,7 +185,7 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@pId", objTipoDePago.Id));
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_CambiarEstadoTipoDePago");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarTipoDePago");
             }
             catch (Exception ex)
             {

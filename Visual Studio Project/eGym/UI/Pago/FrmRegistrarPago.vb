@@ -1,60 +1,69 @@
 ﻿Imports EL
-Imports System.Text.RegularExpressions
 Public Class FrmRegistrarPago
-    Dim montoRegex As Regex = New Regex("[+-]?(?=\d*[.eE])(?=\.?\d)\d*\.?\d*(?:[eE][+-]?\d+)?")
-    Dim duracionRegex As Regex = New Regex("^[0-9]+$")
-    Private Sub MetroLabel3_Click(sender As Object, e As EventArgs) Handles MetroLabel3.Click
 
-    End Sub
-
-    Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
-
-    End Sub
-
-    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
-        If validarRegistrarPago() = True Then
-            MsgBox(seTipo.SelectedValue)
-        End If
-
-    End Sub
-
+   
     Private Sub FrmRegistrarPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim listTipo As New List(Of TipoDePago)
-        listTipo = objGestorTipoPago.listarTiposDePago()
-        seTipo.DataSource = listTipo
-        seTipo.DisplayMember = "Nombre"
-        seTipo.ValueMember = "Id"
+        dbTipo.DataSource = objGestorTipoPago.listarTiposDePago()
+        dbTipo.DisplayMember = "Nombre"
+        dbTipo.ValueMember = "Id"
+        Dim auxlist As List(Of Usuario)
+
+
+        auxlist = Gestor.ListarUsuarios()
+        For Each Usuario In auxlist
+            If Usuario.Rol.Id <> 19 Then
+                auxlist.Remove(Usuario)
+            End If
+        Next
+        lbclientes.DataSource = auxlist
+        lbclientes.DisplayMember = "Nombre"
+        lbclientes.ValueMember = "Id"
+        
+
+        'For Each Usuario In auxlist
+        '    If Usuario.Rol.Id = 19 Then
+        '        lbclientes.Items.Add(Usuario)
+        '    End If
+        'Next
+        'Dim auxlist2 As List(Of Usuario)
+        'auxlist2 = lbclientes.DataSource
+    End Sub
+    Private Sub lbMusculosSecundarios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbclientes.SelectedIndexChanged
+
     End Sub
 
-    Private Sub seTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles seTipo.SelectedIndexChanged
+    Private Sub lblTxtFactura_Click(sender As Object, e As EventArgs) Handles lblTxtFactura.Click
 
     End Sub
 
-    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+    Private Sub cmbTipoDeMaquina_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dbTipo.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub lblTipoDePagoDuracion_Click(sender As Object, e As EventArgs) Handles lblTipoDePagoDuracion.Click
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Dim ctr As Control
         ctr = New FrmListarPago
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
     End Sub
-    Private Function validarRegistrarPago() As Boolean
 
-        Dim result As Boolean = True
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtFactura.Text = Nothing Then
-            result = False
-            ErrorProvider1.SetError(txtFactura, "Debe ingresar una factura")
-        End If
-        If txtMonto.Text = Nothing Then
-            result = False
-            ErrorProvider1.SetError(txtMonto, "Debe ingresar un monto")
-        End If
-        If txtDesde.Text = Nothing Then
-            result = False
-            ErrorProvider1.SetError(txtDesde, "Debe ingresar un desde")
+        objGestorPago.insertarPago(txtFactura.Text, txtMonto.Text, dbTipo.SelectedValue, dtHasta.Text, dtDesde.Text, lbclientes.SelectedValue)
+
+    End Sub
+
+    Private Function validarAgregarTipoDePago() As Boolean
         
-        End If
-        Return result
-
     End Function
 End Class
+

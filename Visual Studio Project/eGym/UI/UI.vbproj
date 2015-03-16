@@ -55,10 +55,14 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\packages\MetroModernUI.1.3.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -84,6 +88,11 @@
     </Compile>
     <Compile Include="eGym.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eGymDBDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Ejercicio\FrmListarEjercicio.Designer.vb">
       <DependentUpon>FrmListarEjercicio.vb</DependentUpon>
@@ -126,6 +135,12 @@
     </Compile>
     <Compile Include="Maquinas\FrmRegistrarMaquina.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mensaje\FrmMensaje.Designer.vb">
+      <DependentUpon>FrmMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje\FrmMensaje.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModuloGeneral.vb" />
     <Compile Include="Musculo\FrmListarMusculo.Designer.vb">
@@ -173,6 +188,18 @@
     <Compile Include="Pago\FrmRegistrarPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteExcepciones.Designer.vb">
+      <DependentUpon>FrmReporteExcepciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteExcepciones.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReportes.Designer.vb">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReportes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Rol\FrmListarRoles.Designer.vb">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>
     </Compile>
@@ -197,12 +224,6 @@
     <Compile Include="Sesion\frmIniciarSesion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TipoPago\FrmAgregarTipoDePago.Designer.vb">
-      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TipoPago\FrmAgregarTipoDePago.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="TipoPago\FrmListarTipoDePago.Designer.vb">
       <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
     </Compile>
@@ -213,6 +234,12 @@
       <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
     </Compile>
     <Compile Include="TipoPago\FrmModificarTipoDePago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TipoPago\FrmRegistrarTipoDePago.Designer.vb">
+      <DependentUpon>FrmRegistrarTipoDePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago\FrmRegistrarTipoDePago.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TiposMaquinas\FrmListarTiposDeMaquinas.Designer.vb">
@@ -233,10 +260,22 @@
     <Compile Include="TiposMaquinas\FrmRegistrarTiposMaquinas.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Usuarios\FrmAgregarUsuario.Designer.vb">
+      <DependentUpon>FrmAgregarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmAgregarUsuario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Usuarios\FrmListarUsuarios.Designer.vb">
       <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\FrmListarUsuarios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.Designer.vb">
+      <DependentUpon>FrmModificarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="cls_validacion.vb" />
@@ -267,6 +306,9 @@
     <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\FrmMensaje.resx">
+      <DependentUpon>FrmMensaje.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musculo\FrmListarMusculo.resx">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +330,13 @@
     <EmbeddedResource Include="Pago\FrmRegistrarPago.resx">
       <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteExcepciones.resx">
+      <DependentUpon>FrmReporteExcepciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReportes.resx">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteExcepciones.rdlc" />
     <EmbeddedResource Include="Rol\FrmListarRoles.resx">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>
     </EmbeddedResource>
@@ -300,14 +349,14 @@
     <EmbeddedResource Include="Sesion\frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TipoPago\FrmAgregarTipoDePago.resx">
-      <DependentUpon>FrmAgregarTipoDePago.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmListarTipoDePago.resx">
       <DependentUpon>FrmListarTipoDePago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\FrmModificarTipoDePago.resx">
       <DependentUpon>FrmModificarTipoDePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoPago\FrmRegistrarTipoDePago.resx">
+      <DependentUpon>FrmRegistrarTipoDePago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TiposMaquinas\FrmListarTiposDeMaquinas.resx">
       <DependentUpon>FrmListarTiposDeMaquinas.vb</DependentUpon>
@@ -318,11 +367,28 @@
     <EmbeddedResource Include="TiposMaquinas\FrmRegistrarTiposMaquinas.resx">
       <DependentUpon>FrmRegistrarTiposMaquinas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmAgregarUsuario.resx">
+      <DependentUpon>FrmAgregarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\FrmListarUsuarios.resx">
       <DependentUpon>FrmListarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmModificarUsuario.resx">
+      <DependentUpon>FrmModificarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="eGymDBDataSet.xsc">
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="eGymDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eGymDBDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="eGymDBDataSet.xss">
+      <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -351,8 +417,9 @@
       <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reportes\" />
+    <None Include="Resources\photo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -19,15 +19,52 @@ namespace DAL
         private IRepository<Maquina> _maquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
 
-        
-        
         private IRepository<Usuario> _repositoryUsuario;
+        private IRepository<Contacto> _repositoryContacto;
+        private IRepository<Horario> _repositoryHorario;
+
+        
+        
         private IRepository<Excepcion> _excepcionRepository;
         private IRepository<Evento> _eventoRepository;
 
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
 
+        public IRepository<Usuario> RepositoryUsuario
+        {
+            get
+            {
+                if (_repositoryUsuario == null)
+                {
+                    _repositoryUsuario = new UsuarioRepository();
+                }
+                return _repositoryUsuario;
+            }
+        }
+        public IRepository<Contacto> RepositoryContacto
+        {
+            get
+            {
+                if (_repositoryContacto == null)
+                {
+                    _repositoryContacto = new ContactoRepository();
+                }
+                return _repositoryContacto;
+            }
+        }
+        public IRepository<Horario> RepositoryHorario
+        {
+            get
+            {
+                if (_repositoryHorario == null)
+                {
+                    _repositoryHorario = new HorarioRepository();
+                }
+                return _repositoryHorario;
+            }
+        }
+ 
         private IRepository<Gimnasio> _gimnasioRepository;
 
         public IRepository<TipoDeMaquina> TipoDeMaquinaRepository
@@ -100,19 +137,6 @@ namespace DAL
                     this._ejercicioRepository = new EjercicioRepository();
                 }
                 return _ejercicioRepository;
-            }
-        }
-
-        public IRepository<Usuario> RepositoryUsuario
-        {
-            get
-            {
-                if (_repositoryUsuario == null)
-                {
-                    _repositoryUsuario = new UsuarioRepository();
-                }
-                return _repositoryUsuario;
-
             }
         }
 

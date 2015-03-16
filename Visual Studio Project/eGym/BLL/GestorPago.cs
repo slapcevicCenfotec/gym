@@ -16,8 +16,13 @@ namespace BLL
         {
             return UoW.PagoRepository.GetAll();
         }
-        public void insertarPago(string pFactura, float pMonto,int tipo) 
-        { }
+
+        public void insertarPago(string pFactura, double pMonto, int pTipo, DateTime pHasta, DateTime pDesde, int pUsuario) 
+        {
+            Pago pago = new Pago(pFactura, pMonto, pTipo, pHasta, pDesde, pUsuario);
+            UoW.PagoRepository.Insert(pago);
+            UoW.PagoRepository.Save();
+        }
         
     }
 }

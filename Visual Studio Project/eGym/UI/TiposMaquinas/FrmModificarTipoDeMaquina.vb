@@ -14,91 +14,106 @@ Public Class FrmModificarTipoDeMaquina
         Dim ms As MemoryStream = New System.IO.MemoryStream(tipoDeMaquinaPorModificar.Foto)
         foto = System.Drawing.Image.FromStream(ms)
 
+        txtDescripcion.MaxLength = 250
+        txtTipoDeMaquina.MaxLength = 50
+        txtNombreImagen.Visible = False
+        txtNombreImagen.Enabled = False
+
         txtTipoDeMaquina.Text = tipoDeMaquinaPorModificar.Nombre
-        rtbDescripcion.Text = tipoDeMaquinaPorModificar.Descripcion
+        txtDescripcion.Text = tipoDeMaquinaPorModificar.Descripcion
         pbxFoto.Image = foto
 
     End Sub
 
-    Private Sub btnAgregarFoto_Click(sender As Object, e As EventArgs) Handles btnAgregarFoto.Click
+    Private Sub pbxFoto_Click(sender As Object, e As EventArgs) Handles pbxFoto.Click
         Try
             ofdBuscar.Filter = "All Files (*.*)|*.*|JPEG Files (*.jpeg)|*.jpeg|JPEG Files (*.jpg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
             ofdBuscar.ShowDialog()
             pbxFoto.Image = Image.FromFile(ofdBuscar.FileName)
             txtNombreImagen.Text = ofdBuscar.SafeFileName
         Catch ex As Exception
-
+            'Si no agrega la foto tira una excepción
         End Try
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim nombre As String = txtTipoDeMaquina.Text
-        Dim descripcion As String = rtbDescripcion.Text
+        Dim descripcion As String = txtDescripcion.Text
         Dim habilitado As Boolean = True
+        Dim foto As Byte()
 
-        resetValidarLabels()
-
-        If validarFormRegistrarTiposDeMaquina() Then
+        If txtNombreImagen.Text.Length <> 0 Then
             Dim fs As New FileStream(ofdBuscar.FileName, FileMode.Open, FileAccess.Read)
             Dim bReader As New BinaryReader(fs)
-            Dim foto(fs.Length) As Byte
-            bReader.Read(foto, 0, fs.Length)
+            Dim nuevaFoto(fs.Length) As Byte
+            bReader.Read(nuevaFoto, 0, fs.Length)
             fs.Close()
-
-            objGestorTipoDeMaquina.modificarTipoDeMaquina(tipoDeMaquinaPorModificar.Id, foto, nombre, descripcion, habilitado)
-            clearScreen()
+            foto = nuevaFoto
+        Else
+            foto = tipoDeMaquinaPorModificar.Foto
         End If
 
-        Dim ctr As Control
-        ctr = New FrmListarTiposDeMaquinas
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        If validarFormModificarTiposDeMaquina() Then
 
+            Try
+                objGestorTipoDeMaquina.modificarTipoDeMaquina(tipoDeMaquinaPorModificar.Id, foto, nombre, descripcion, habilitado)
+                clearScreen()
+
+                Dim ctr As Control
+                ctr = New FrmListarTiposDeMaquinas
+                ctr.Dock = DockStyle.Fill
+                Me.Controls.Clear()
+                Me.Controls.Add(ctr)
+
+            Catch ex As Exception
+                ErPrExcepciones.SetError(btnGuardar, ex.Message)
+            End Try
+        End If
     End Sub
 
-    Private Function validarFormRegistrarTiposDeMaquina() As Boolean
+    Private Function validarFormModificarTiposDeMaquina() As Boolean
         Dim validado As Boolean = True
-        If txtTipoDeMaquina.Text = "" Then
-            lblValidarNombre.Text = "Tipo de máquina es requerido"
-            lblValidarNombre.ForeColor = Color.Red
+
+        If pbxFoto.Image Is Nothing Then
+            ErrorProvider.SetError(lblFoto, "La foto es un campo obligatorio")
             validado = False
         End If
 
-        If rtbDescripcion.Text = "" Or rtbDescripcion.TextLength > 250 Then
-            lblValidarDescripcion.Text = "Descripción es requerida y no debe ser mayor a 250 caracteres"
+        If txtTipoDeMaquina.Text.Length = 0 Then
+            ErrorProvider.SetError(txtTipoDeMaquina, "El tipo de máquina es un campo obligatorio")
             validado = False
+        Else
+            ErrorProvider.SetError(txtTipoDeMaquina, "")
         End If
 
-        If txtNombreImagen.Text = "" Then
-            lblValidarFoto.Text = "Foto de la máquina es requerida"
+        If txtDescripcion.Text.Length = 0 Then
+            ErrorProvider.SetError(txtDescripcion, "La descripción es un campo obligatorio")
             validado = False
+        Else
+            ErrorProvider.SetError(txtDescripcion, "")
         End If
 
         Return validado
     End Function
 
+    Sub clearScreen()
+        Me.txtTipoDeMaquina.Text = String.Empty
+        Me.txtDescripcion.Text = String.Empty
+        Me.txtNombreImagen.Text = String.Empty
+        Me.pbxFoto.Image = Nothing
+    End Sub
+
+    Private Sub btnEliminarFoto_Click(sender As Object, e As EventArgs) Handles btnEliminarFoto.Click
+        pbxFoto.Image = Nothing
+    End Sub
+
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         clearScreen()
-        resetValidarLabels()
 
         Dim ctr As Control
         ctr = New FrmListarTiposDeMaquinas
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
-    End Sub
-
-    Sub clearScreen()
-        Me.txtTipoDeMaquina.Text = String.Empty
-        Me.rtbDescripcion.Text = String.Empty
-        Me.txtNombreImagen.Text = String.Empty
-        Me.pbxFoto.Image = Nothing
-    End Sub
-
-    Sub resetValidarLabels()
-        lblValidarDescripcion.Text = ""
-        lblValidarFoto.Text = ""
-        lblValidarNombre.Text = ""
     End Sub
 End Class

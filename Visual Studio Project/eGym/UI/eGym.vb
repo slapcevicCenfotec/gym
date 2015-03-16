@@ -21,6 +21,13 @@
 
     Private Sub InicializarMenu()
         lblNombreUsuario.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido
+        lblRolUsuario.Text = usuarioSesion.Rol.Nombre
+
+        If Not usuarioSesion.Fotografia Is Nothing Then
+            Dim imageByte = usuarioSesion.Fotografia
+            Dim memImage As New System.IO.MemoryStream(usuarioSesion.Fotografia)
+            pcbUsuario.Image = Image.FromStream(memImage)
+        End If
         Dim clear As Boolean
         For Each lbl As Label In menuPanel.Controls.OfType(Of Label)()
             clear = False
@@ -121,7 +128,11 @@
     End Sub
 
     Private Sub MetroLabel5_Click(sender As Object, e As EventArgs) Handles MetroLabel5.Click
-
+        Dim ctr As Control
+        ctr = New FrmReportes
+        ctr.Dock = DockStyle.Fill
+        MetroPanel1.Controls.Clear()
+        MetroPanel1.Controls.Add(ctr)
     End Sub
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click

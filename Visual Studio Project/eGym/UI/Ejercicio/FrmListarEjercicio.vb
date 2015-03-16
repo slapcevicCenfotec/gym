@@ -58,7 +58,6 @@ Public Class FrmListarEjercicio
         Dim listaFiltrada As List(Of EL.Ejercicio) = New List(Of EL.Ejercicio)
         If Not listaOriginal Is Nothing Then
             For Each ejercicio As Ejercicio In listaOriginal
-
                 If ejercicio.Nombre.ToUpper.Contains(filtro) Or ejercicio.Alias.ToUpper.Contains(filtro) Or ejercicio.PosicionInicial.ToUpper.Contains(filtro) Or ejercicio.PosicionFinal.ToUpper.Contains(filtro) Or ejercicio.ErroresComunes.ToUpper.Contains(filtro) Or ejercicio.Descripcion.ToUpper.Contains(filtro) Then
                     listaFiltrada.Add(ejercicio)
                 End If
