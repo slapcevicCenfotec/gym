@@ -4,22 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+/// <summary>
+/// Fecha de creación: 07/03/2015:
+/// Autor: Mauricio Fernández Mora
+/// Fecha de modificación: 14/03/2015
+/// Modificado por: Mauricio Fernández Mora
+/// </summary>
 
 namespace EL
 {
     public class TipoDeMaquina : IEntity
     {
-        #region variables
+        #region Variables
 
         private int _id;
         private byte[] _foto;
         private string _nombre;
         private string _descripcion;
         private Boolean _habilitado;
+        private int _cantidad;
 
         #endregion
 
-        #region propiedades
+        #region Propiedades
 
         public int Id
         {
@@ -51,7 +58,15 @@ namespace EL
             set { _habilitado = value; }
         }
 
+        public int Cantidad
+        {
+            get { return _cantidad; }
+            set { _cantidad = value; }
+        }
+
         #endregion
+
+        #region Constructores
 
         public TipoDeMaquina(int pid, byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
         {
@@ -62,12 +77,22 @@ namespace EL
             Habilitado = phabilitado;
         }
 
-        public TipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado)
+        public TipoDeMaquina(int pid, byte[] pfoto, string pnombre, string pdescripcion, Boolean phabilitado, int pcantidad)
         {
+            Id = pid;
             Foto = pfoto;
             Nombre = pnombre;
             Descripcion = pdescripcion;
             Habilitado = phabilitado;
+            Cantidad = pcantidad;
+        }
+
+        public TipoDeMaquina(byte[] pfoto, string pnombre, string pdescripcion)
+        {
+            Foto = pfoto;
+            Nombre = pnombre;
+            Descripcion = pdescripcion;
+            Habilitado = true;
         }
 
         public TipoDeMaquina()
@@ -75,6 +100,50 @@ namespace EL
             Nombre = "";
             Descripcion = "";
             Foto = null;
+        }
+
+#endregion
+
+        /// <summary>
+        /// Valida si esta instancia es válida.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> Si esta instancia es válida; de lo contrario, <c>false</c>.
+        /// </value>
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
+
+        /// <summary>
+        /// Obtiene todos los rule violations.
+        /// </summary>
+        /// <returns>
+        /// Lista tipo IEnumerable<RuleViolation>
+        /// </returns>
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (Foto == null)
+            {
+                yield return new RuleViolation("La foto de la máquina es requerido", "Foto de Máquina");
+            }
+            if (String.IsNullOrEmpty(Nombre))
+            {
+                yield return new RuleViolation("Nombre de la máquina es requerido", "Nombre de máquina");
+            }
+            if (String.IsNullOrEmpty(Descripcion))
+            {
+                yield return new RuleViolation("La descripción de la máquina es requerido", "Decripción");
+            }
+            if (Habilitado == null)
+            {
+                yield return new RuleViolation("Debe asignarse una estado", "Habilitado");
+            }
+            yield break;
         }
     }
 }

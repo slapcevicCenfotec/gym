@@ -59,6 +59,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -132,6 +133,12 @@
     <Compile Include="Maquinas\FrmRegistrarMaquina.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Mensaje\FrmMensaje.Designer.vb">
+      <DependentUpon>FrmMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje\FrmMensaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModuloGeneral.vb" />
     <Compile Include="Musculo\FrmListarMusculo.Designer.vb">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>
@@ -176,6 +183,12 @@
       <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
     </Compile>
     <Compile Include="Pago\FrmRegistrarPago.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReportes.Designer.vb">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReportes.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Rol\FrmListarRoles.Designer.vb">
@@ -284,6 +297,9 @@
     <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\FrmMensaje.resx">
+      <DependentUpon>FrmMensaje.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musculo\FrmListarMusculo.resx">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pago\FrmRegistrarPago.resx">
       <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReportes.resx">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rol\FrmListarRoles.resx">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>
@@ -385,8 +404,9 @@
       <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reportes\" />
+    <None Include="Resources\photo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

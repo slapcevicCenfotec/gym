@@ -80,15 +80,6 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
-        Me.MetroLabel28 = New MetroFramework.Controls.MetroLabel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
-        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
-        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.SP_ListarRolesTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarRolesTableAdapter()
-        Me.SP_ListarGenerosTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarGenerosTableAdapter()
-        Me.SP_ListarTiposIdentificacionTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarTiposIdentificacionTableAdapter()
-        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.txtDomingoSalida = New System.Windows.Forms.MaskedTextBox()
         Me.txtDomingoEntrada = New System.Windows.Forms.MaskedTextBox()
         Me.txtSabadoSalida = New System.Windows.Forms.MaskedTextBox()
@@ -111,6 +102,15 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel30 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel31 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel32 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel28 = New MetroFramework.Controls.MetroLabel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
+        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.SP_ListarRolesTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarRolesTableAdapter()
+        Me.SP_ListarGenerosTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarGenerosTableAdapter()
+        Me.SP_ListarTiposIdentificacionTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarTiposIdentificacionTableAdapter()
+        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.Panel2.SuspendLayout()
         Me.MetroTabControl1.SuspendLayout()
         Me.tabUsuario.SuspendLayout()
@@ -145,7 +145,7 @@ Partial Class FrmModificarUsuario
         Me.MetroTabControl1.Location = New System.Drawing.Point(0, 0)
         Me.MetroTabControl1.Margin = New System.Windows.Forms.Padding(16)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 2
+        Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(1055, 526)
         Me.MetroTabControl1.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroTabControl1.TabIndex = 0
@@ -953,86 +953,6 @@ Partial Class FrmModificarUsuario
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.VerticalScrollbarSize = 1
         '
-        'MetroLabel28
-        '
-        Me.MetroLabel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.MetroLabel28.Dock = System.Windows.Forms.DockStyle.Top
-        Me.MetroLabel28.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel28.Location = New System.Drawing.Point(0, 0)
-        Me.MetroLabel28.Name = "MetroLabel28"
-        Me.MetroLabel28.Size = New System.Drawing.Size(1055, 50)
-        Me.MetroLabel28.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroLabel28.TabIndex = 24
-        Me.MetroLabel28.Text = "    MODIFICAR USUARIO"
-        Me.MetroLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel28.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel28.UseCustomBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnCancelar)
-        Me.Panel1.Controls.Add(Me.btnAceptar)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 576)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1055, 67)
-        Me.Panel1.TabIndex = 23
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelar.AutoSize = True
-        Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 16)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(125, 35)
-        Me.btnCancelar.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnCancelar.TabIndex = 19
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnCancelar.UseSelectable = True
-        '
-        'btnAceptar
-        '
-        Me.btnAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAceptar.AutoSize = True
-        Me.btnAceptar.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnAceptar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnAceptar.Location = New System.Drawing.Point(914, 16)
-        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(16)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(125, 35)
-        Me.btnAceptar.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnAceptar.TabIndex = 18
-        Me.btnAceptar.Text = "Modificar"
-        Me.btnAceptar.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnAceptar.UseSelectable = True
-        '
-        'ErrorProvider
-        '
-        Me.ErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
-        Me.ErrorProvider.ContainerControl = Me
-        Me.ErrorProvider.Icon = CType(resources.GetObject("ErrorProvider.Icon"), System.Drawing.Icon)
-        '
-        'SP_ListarRolesTableAdapter
-        '
-        Me.SP_ListarRolesTableAdapter.ClearBeforeFill = True
-        '
-        'SP_ListarGenerosTableAdapter
-        '
-        Me.SP_ListarGenerosTableAdapter.ClearBeforeFill = True
-        '
-        'SP_ListarTiposIdentificacionTableAdapter
-        '
-        Me.SP_ListarTiposIdentificacionTableAdapter.ClearBeforeFill = True
-        '
-        'OpenFileDialog
-        '
-        Me.OpenFileDialog.FileName = "OpenFileDialog"
-        '
         'txtDomingoSalida
         '
         Me.txtDomingoSalida.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -1347,6 +1267,86 @@ Partial Class FrmModificarUsuario
         Me.MetroLabel32.TabIndex = 90
         Me.MetroLabel32.Text = "Entrada/Salida"
         Me.MetroLabel32.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'MetroLabel28
+        '
+        Me.MetroLabel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.MetroLabel28.Dock = System.Windows.Forms.DockStyle.Top
+        Me.MetroLabel28.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel28.Location = New System.Drawing.Point(0, 0)
+        Me.MetroLabel28.Name = "MetroLabel28"
+        Me.MetroLabel28.Size = New System.Drawing.Size(1055, 50)
+        Me.MetroLabel28.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroLabel28.TabIndex = 24
+        Me.MetroLabel28.Text = "    MODIFICAR USUARIO"
+        Me.MetroLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MetroLabel28.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel28.UseCustomBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCancelar)
+        Me.Panel1.Controls.Add(Me.btnAceptar)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 576)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1055, 67)
+        Me.Panel1.TabIndex = 23
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.AutoSize = True
+        Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 16)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(125, 35)
+        Me.btnCancelar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnCancelar.TabIndex = 19
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnCancelar.UseSelectable = True
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAceptar.AutoSize = True
+        Me.btnAceptar.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnAceptar.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnAceptar.Location = New System.Drawing.Point(914, 16)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(16)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(125, 35)
+        Me.btnAceptar.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnAceptar.TabIndex = 18
+        Me.btnAceptar.Text = "Modificar"
+        Me.btnAceptar.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnAceptar.UseSelectable = True
+        '
+        'ErrorProvider
+        '
+        Me.ErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider.ContainerControl = Me
+        Me.ErrorProvider.Icon = CType(resources.GetObject("ErrorProvider.Icon"), System.Drawing.Icon)
+        '
+        'SP_ListarRolesTableAdapter
+        '
+        Me.SP_ListarRolesTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ListarGenerosTableAdapter
+        '
+        Me.SP_ListarGenerosTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ListarTiposIdentificacionTableAdapter
+        '
+        Me.SP_ListarTiposIdentificacionTableAdapter.ClearBeforeFill = True
+        '
+        'OpenFileDialog
+        '
+        Me.OpenFileDialog.FileName = "OpenFileDialog"
         '
         'FrmModificarUsuario
         '

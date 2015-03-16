@@ -45,8 +45,12 @@ Partial Class FrmAgregarUsuario
         Me.btnEliminarFotografia = New MetroFramework.Controls.MetroButton()
         Me.dtpFechaNacimiento = New MetroFramework.Controls.MetroDateTime()
         Me.cmbRol = New MetroFramework.Controls.MetroComboBox()
+        Me.SPListarRolesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EGymDBDataSet = New UI.eGymDBDataSet()
         Me.cmbGenero = New MetroFramework.Controls.MetroComboBox()
+        Me.SPListarGenerosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.cmbTipoIdentificacion = New MetroFramework.Controls.MetroComboBox()
+        Me.SPListarTiposIdentificacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.pcbFotografia = New System.Windows.Forms.PictureBox()
         Me.txtRepetirContrasena = New MetroFramework.Controls.MetroTextBox()
         Me.txtContrasena = New MetroFramework.Controls.MetroTextBox()
@@ -104,25 +108,21 @@ Partial Class FrmAgregarUsuario
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MetroLabel28 = New MetroFramework.Controls.MetroLabel()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.EGymDBDataSet = New UI.eGymDBDataSet()
-        Me.SPListarTiposIdentificacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ListarTiposIdentificacionTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarTiposIdentificacionTableAdapter()
-        Me.SPListarGenerosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ListarGenerosTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarGenerosTableAdapter()
-        Me.SPListarRolesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ListarRolesTableAdapter = New UI.eGymDBDataSetTableAdapters.SP_ListarRolesTableAdapter()
         Me.MetroTabControl1.SuspendLayout()
         Me.tabUsuario.SuspendLayout()
+        CType(Me.SPListarRolesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EGymDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPListarGenerosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPListarTiposIdentificacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbFotografia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroTabPage2.SuspendLayout()
         Me.MetroTabPage3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EGymDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPListarTiposIdentificacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPListarGenerosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPListarRolesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroTabControl1
@@ -427,6 +427,16 @@ Partial Class FrmAgregarUsuario
         Me.cmbRol.UseSelectable = True
         Me.cmbRol.ValueMember = "ID"
         '
+        'SPListarRolesBindingSource
+        '
+        Me.SPListarRolesBindingSource.DataMember = "SP_ListarRoles"
+        Me.SPListarRolesBindingSource.DataSource = Me.EGymDBDataSet
+        '
+        'EGymDBDataSet
+        '
+        Me.EGymDBDataSet.DataSetName = "eGymDBDataSet"
+        Me.EGymDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'cmbGenero
         '
         Me.cmbGenero.DataSource = Me.SPListarGenerosBindingSource
@@ -442,6 +452,11 @@ Partial Class FrmAgregarUsuario
         Me.cmbGenero.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.cmbGenero.UseSelectable = True
         Me.cmbGenero.ValueMember = "ID"
+        '
+        'SPListarGenerosBindingSource
+        '
+        Me.SPListarGenerosBindingSource.DataMember = "SP_ListarGeneros"
+        Me.SPListarGenerosBindingSource.DataSource = Me.EGymDBDataSet
         '
         'cmbTipoIdentificacion
         '
@@ -460,6 +475,11 @@ Partial Class FrmAgregarUsuario
         Me.cmbTipoIdentificacion.UseCustomBackColor = True
         Me.cmbTipoIdentificacion.UseSelectable = True
         Me.cmbTipoIdentificacion.ValueMember = "ID"
+        '
+        'SPListarTiposIdentificacionBindingSource
+        '
+        Me.SPListarTiposIdentificacionBindingSource.DataMember = "SP_ListarTiposIdentificacion"
+        Me.SPListarTiposIdentificacionBindingSource.DataSource = Me.EGymDBDataSet
         '
         'pcbFotografia
         '
@@ -1316,33 +1336,13 @@ Partial Class FrmAgregarUsuario
         Me.ErrorProvider.ContainerControl = Me
         Me.ErrorProvider.Icon = CType(resources.GetObject("ErrorProvider.Icon"), System.Drawing.Icon)
         '
-        'EGymDBDataSet
-        '
-        Me.EGymDBDataSet.DataSetName = "eGymDBDataSet"
-        Me.EGymDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SPListarTiposIdentificacionBindingSource
-        '
-        Me.SPListarTiposIdentificacionBindingSource.DataMember = "SP_ListarTiposIdentificacion"
-        Me.SPListarTiposIdentificacionBindingSource.DataSource = Me.EGymDBDataSet
-        '
         'SP_ListarTiposIdentificacionTableAdapter
         '
         Me.SP_ListarTiposIdentificacionTableAdapter.ClearBeforeFill = True
         '
-        'SPListarGenerosBindingSource
-        '
-        Me.SPListarGenerosBindingSource.DataMember = "SP_ListarGeneros"
-        Me.SPListarGenerosBindingSource.DataSource = Me.EGymDBDataSet
-        '
         'SP_ListarGenerosTableAdapter
         '
         Me.SP_ListarGenerosTableAdapter.ClearBeforeFill = True
-        '
-        'SPListarRolesBindingSource
-        '
-        Me.SPListarRolesBindingSource.DataMember = "SP_ListarRoles"
-        Me.SPListarRolesBindingSource.DataSource = Me.EGymDBDataSet
         '
         'SP_ListarRolesTableAdapter
         '
@@ -1366,6 +1366,10 @@ Partial Class FrmAgregarUsuario
         Me.MetroTabControl1.ResumeLayout(False)
         Me.tabUsuario.ResumeLayout(False)
         Me.tabUsuario.PerformLayout()
+        CType(Me.SPListarRolesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EGymDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPListarGenerosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPListarTiposIdentificacionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbFotografia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroTabPage2.ResumeLayout(False)
         Me.MetroTabPage2.PerformLayout()
@@ -1375,10 +1379,6 @@ Partial Class FrmAgregarUsuario
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EGymDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPListarTiposIdentificacionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPListarGenerosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPListarRolesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

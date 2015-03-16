@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-
+/// <summary>
+/// Fecha de creación: 07/03/2015:
+/// Autor: Mauricio Fernández Mora
+/// Fecha de modificación: 14/03/2015
+/// Modificado por: Mauricio Fernández Mora
+/// </summary>
+/// 
 namespace EL
 {
     public class Maquina : IEntity
     {
-        #region variables
+        #region Variables
 
         private int _id;
         private string _numeroActivo;
@@ -20,7 +26,7 @@ namespace EL
 
         #endregion
 
-        #region propiedades
+        #region Propiedades
 
         public int Id
         {
@@ -60,37 +66,83 @@ namespace EL
 
         #endregion
 
-        public Maquina(int pid, string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+        #region Constructores
+
+                public Maquina(int pid, string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+                {
+                    Id = pid;
+                    NumeroActivo = pnumeroActivo;
+                    NumeroMaquina = pnumeroMaquina;
+                    Habilitado = phabilitado;
+                    TipoDeMaquina = ptipoDeMaquina;
+                }
+
+                public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+                {
+                    NumeroActivo = pnumeroActivo;
+                    NumeroMaquina = pnumeroMaquina;
+                    Habilitado = phabilitado;
+                    TipoDeMaquina = ptipoDeMaquina;
+                }
+
+                public Maquina(string pnumeroActivo, string pnumeroMaquina, int ptipoDeMaquina)
+                {
+                    NumeroActivo = pnumeroActivo;
+                    NumeroMaquina = pnumeroMaquina;
+                    Habilitado = true;
+                    TipoDeMaquina = ptipoDeMaquina;
+                }
+
+                public Maquina()
+                {
+                    NumeroActivo = "";
+                    NumeroMaquina = "";
+                    Habilitado = true;
+                    TipoDeMaquina = 0;
+                }
+
+        #endregion
+
+        /// <summary>
+        /// Valida si esta instancia es válida.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> Si esta instancia es válida; de lo contrario, <c>false</c>.
+        /// </value>
+        public bool IsValid
         {
-            Id = pid;
-            NumeroActivo = pnumeroActivo;
-            NumeroMaquina = pnumeroMaquina;
-            Habilitado = phabilitado;
-            TipoDeMaquina = ptipoDeMaquina;
+            get { return (GetRuleViolations().Count() == 0); }
         }
 
-        public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, int ptipoDeMaquina)
+        /// <summary>
+        /// Obtiene todos los rule violations.
+        /// </summary>
+        /// <returns>
+        /// Lista tipo IEnumerable<RuleViolation>
+        /// </returns>
+        public IEnumerable<RuleViolation> GetRuleViolations()
         {
-            NumeroActivo = pnumeroActivo;
-            NumeroMaquina = pnumeroMaquina;
-            Habilitado = phabilitado;
-            TipoDeMaquina = ptipoDeMaquina;
-        }
-
-        public Maquina(string pnumeroActivo, string pnumeroMaquina, Boolean phabilitado, string pnombretipoDeMaquina)
-        {
-            NumeroActivo = pnumeroActivo;
-            NumeroMaquina = pnumeroMaquina;
-            Habilitado = phabilitado;
-            NombreTipoMaquina = pnombretipoDeMaquina;
-        }
-
-        public Maquina()
-        {
-            NumeroActivo = "";
-            NumeroMaquina = "";
-            Habilitado = true;
-            TipoDeMaquina = 0;
+            if (Id == null)
+            {
+                yield return new RuleViolation("Id es requerido", "Id");
+            }
+            if (String.IsNullOrEmpty(NumeroMaquina))
+            {
+                yield return new RuleViolation("Número de máquina es requerido", "Número de Máquina");
+            }
+            if (String.IsNullOrEmpty(NumeroActivo))
+            {
+                yield return new RuleViolation("Número de activo es requerido", "Número de Activo");
+            }
+            if (Habilitado == null)
+            {
+                yield return new RuleViolation("Debe asignarse una estado", "Habilitado");
+            }
+            if (TipoDeMaquina == null)
+            {
+                yield return new RuleViolation("Tipo de máquina asociado es requerido", "Tipo de Máquina");
+            }
+            yield break;
         }
     }
 }
