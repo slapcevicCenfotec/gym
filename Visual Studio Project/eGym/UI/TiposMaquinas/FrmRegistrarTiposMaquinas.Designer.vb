@@ -234,7 +234,7 @@ Partial Class FrmRegistrarTiposMaquinas
         Me.lblTitulo.Size = New System.Drawing.Size(600, 67)
         Me.lblTitulo.TabIndex = 1
         Me.lblTitulo.Text = "AGREGAR TIPO DE MAQUINA"
-        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FrmRegistrarTiposMaquinas
         '

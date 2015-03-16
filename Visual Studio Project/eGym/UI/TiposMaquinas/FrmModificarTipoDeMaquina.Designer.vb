@@ -212,7 +212,7 @@ Partial Class FrmModificarTipoDeMaquina
         Me.Label1.Size = New System.Drawing.Size(600, 67)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "MODIFICAR TIPO DE MAQUINA"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblTipoDeMaquina
         '
