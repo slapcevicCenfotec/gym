@@ -212,6 +212,12 @@
     <Compile Include="Reportes\FrmReporteFuncionarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteHorariosFuncionarios.Designer.vb">
+      <DependentUpon>FrmReporteHorariosFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteHorariosFuncionarios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Reportes\FrmReportes.Designer.vb">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </Compile>
@@ -360,9 +366,13 @@
     <EmbeddedResource Include="Reportes\FrmReporteFuncionarios.resx">
       <DependentUpon>FrmReporteFuncionarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteHorariosFuncionarios.resx">
+      <DependentUpon>FrmReporteHorariosFuncionarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReportes.resx">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteHorarios.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEventos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteExcepciones.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteFuncionarios.rdlc" />
