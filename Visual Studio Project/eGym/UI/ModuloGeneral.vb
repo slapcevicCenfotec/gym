@@ -5,6 +5,7 @@ Public Module ModuloGeneral
     Public objGestorPermiso As New GestorPermiso()
     Public objGestorTipoDeMaquina As New GestorTiposDeMaquina()
     Public objGestorTipoPago As New GestorTipoDePago()
+    Public objGestorPago As New GestorPago()
     Public objGestorMaquina As New GestorMaquina()
     Public objGestorMusculo As New GestorMusculo()
     Public objeGestorEjercicio As New GestorEjercicio()

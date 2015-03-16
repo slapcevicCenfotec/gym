@@ -75,4 +75,7 @@ Public Class FrmListarMusculo
         Me.Controls.Add(ctr)
     End Sub
 
+    Private Sub txtFiltro_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click
+
+    End Sub
 End Class

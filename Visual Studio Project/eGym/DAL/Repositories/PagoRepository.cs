@@ -96,7 +96,6 @@ namespace DAL.Repositories
                 {
                     Clear();
                 }
-
             }
         }
 
@@ -113,12 +112,13 @@ namespace DAL.Repositories
             try
             {
                 SqlCommand cmd = new SqlCommand();
-
+                cmd.Parameters.Add(new SqlParameter("@pFactura", objPago.Factura));
                 cmd.Parameters.Add(new SqlParameter("@pMonto", objPago.Monto));
-
-
+                cmd.Parameters.Add(new SqlParameter("@pTipo", objPago.Tipo));
+                cmd.Parameters.Add(new SqlParameter("@pDesde", objPago.Desde));
+                cmd.Parameters.Add(new SqlParameter("@pHasta", objPago.Hasta));
+                cmd.Parameters.Add(new SqlParameter("@pUsuario", objPago.User));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarPago");
-
             }
             catch (Exception ex)
             {
@@ -141,7 +141,6 @@ namespace DAL.Repositories
             {
                 
             }
-           
         }
 
         private void DeletePago(TipoDePago objPago)

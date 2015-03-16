@@ -67,6 +67,7 @@ Public Class FrmRegistrarEjercicio
     End Sub
 
     Private Sub FrmRegistrarEjercicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         cbListaMusculosPrincipales.DataSource = objGestorMusculo.listarMusculos()
         cbListaMusculosPrincipales.DisplayMember = "Nombre"
         cbListaMusculosPrincipales.ValueMember = "Id"
@@ -135,5 +136,9 @@ Public Class FrmRegistrarEjercicio
             Me.Controls.Add(ctr)
 
         End If
+    End Sub
+
+    Private Sub cbListaMusculosPrincipales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbListaMusculosPrincipales.SelectedIndexChanged
+
     End Sub
 End Class
