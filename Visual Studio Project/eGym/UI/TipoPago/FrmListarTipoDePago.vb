@@ -89,6 +89,10 @@ Class FrmListarTipoDePago
     End Sub
 
     Private Sub btnEliminarTipoDePago_Click(sender As Object, e As EventArgs) Handles btnEliminarTipoDePago.Click
+        Dim msg As String = "¿Desea eliminar el tipo de pago?"
+        Dim musculoPorEliminar As TipoDePago = tblListaTipoDePago.CurrentRow.DataBoundItem
+        Dim mensaje As New FrmMensajeSiNo(msg, musculoPorEliminar)
+        mensaje.ShowDialog()
         Dim auxTipoDePago As TipoDePago
         auxTipoDePago = tblListaTipoDePago.CurrentRow.DataBoundItem
         objGestorTipoPago.eliminarTipoDePago(auxTipoDePago.Id)
