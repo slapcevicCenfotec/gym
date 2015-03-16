@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Public Class FrmModificarTipoDePago
     Public actual As TipoDePago
-    Dim montoRegex As Regex = New Regex("[-+]?([0-9]*\.[0-9]+|[0-9]+)")
+    Dim montoRegex As Regex = New Regex("^[0-9]+$")
     Dim duracionRegex As Regex = New Regex("^[0-9]+$")
     Public Sub New(ByVal ptipoDePago As TipoDePago)
         actual = ptipoDePago
@@ -85,8 +85,10 @@ Public Class FrmModificarTipoDePago
             If montoRegex.IsMatch(txtMonto.Text) = False Then
                 validado = False
                 ErPrValidaciones.SetError(txtMonto, "Monto debe ser un numero")
+            Else
+                ErPrValidaciones.SetError(txtMonto, "")
             End If
-            ErPrValidaciones.SetError(txtMonto, "")
+
         End If
 
         If txtDuracion.Text.Length = 0 Then
@@ -96,8 +98,10 @@ Public Class FrmModificarTipoDePago
             If duracionRegex.IsMatch(txtDuracion.Text) = False Then
                 validado = False
                 ErPrValidaciones.SetError(txtDuracion, "Duracion debe ser un numero")
+            Else
+                ErPrValidaciones.SetError(txtDuracion, "")
             End If
-            ErPrValidaciones.SetError(txtDuracion, "")
+
         End If
         Return validado
     End Function

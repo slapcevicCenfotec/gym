@@ -43,8 +43,10 @@ Public Class FrmRegistrarPago
             If montoRegex.IsMatch(txtMonto.Text) = False Then
                 validado = False
                 ErPrValidaciones.SetError(txtMonto, "Monto debe ser un numero")
+            Else
+                ErPrValidaciones.SetError(txtMonto, "")
             End If
-            ErPrValidaciones.SetError(txtMonto, "")
+            
         End If
 
         If txtFactura.Text.Length = 0 Then
@@ -65,19 +67,19 @@ Public Class FrmRegistrarPago
         Else
             ErPrValidaciones.SetError(dtHasta, "")
         End If
-        ErPrValidaciones.SetError(dtHasta, "")
-        If dtHasta.Value.Date <= dtDesde.Value.Date Then
+        If dtHasta.Value.Date < dtDesde.Value.Date Then
             ErPrValidaciones.SetError(dtHasta, "La fecha desde debe ser menor que la fechas hasta")
             ErPrValidaciones.SetError(dtDesde, "La fecha desde debe ser menor que la fechas hasta")
             validado = False
         Else
             ErPrValidaciones.SetError(dtHasta, "")
+            ErPrValidaciones.SetError(dtDesde, "")
         End If
         If lbclientes.SelectedValue Is Nothing Then
             ErPrValidaciones.SetError(lbclientes, "Debe seleccionar por lo menos un cliente")
             validado = False
         Else
-            ErPrValidaciones.SetError(dtHasta, "")
+            ErPrValidaciones.SetError(lbclientes, "")
         End If
         Return validado
     End Function
