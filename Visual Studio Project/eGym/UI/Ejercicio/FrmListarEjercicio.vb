@@ -83,14 +83,18 @@ Public Class FrmListarEjercicio
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
+        Dim msg As String = "Desea eliminar el tipo de Ejercicio?"
         Dim ejercicioPorEliminar As Ejercicio = tblEjercicio.CurrentRow.DataBoundItem
-        objeGestorEjercicio.eliminarEjercicio(ejercicioPorEliminar)
-        Dim ctr As Control
-        ctr = New FrmListarEjercicio
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        Dim mensaje As New FrmMensajeSiNo(msg, ejercicioPorEliminar)
+        mensaje.ShowDialog()
+
+        listaOriginal = objeGestorEjercicio.listarEjercicios()
+        tblEjercicio.AutoGenerateColumns = False
+        tblEjercicio.DataSource = listaOriginal
+
     End Sub
+
 
     Private Sub txtFiltro_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click
 

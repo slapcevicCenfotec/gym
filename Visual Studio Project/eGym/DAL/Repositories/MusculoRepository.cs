@@ -10,6 +10,11 @@ using System.Data;
 
 namespace DAL.Repositories
 {
+    // Autor: Danny Espinoza
+    /// Fecha: 03/15/2015
+    /// Descricpcion: Este Clase se encarga del acceso a datos de los Musculos. 
+    /// Contiene los metodos de listar,ObtenerRolPorId Insertar, modificar e relimina 
+    /// </summary>
     public class MusculoRepository : IRepository<Musculo>
     {
         private List<IEntity> _insertItems;

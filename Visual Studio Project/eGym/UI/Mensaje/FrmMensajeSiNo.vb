@@ -25,6 +25,10 @@ Public Class FrmMensajeSiNo
                 Else
                     objGestorTipoDeMaquina.eliminarTipoDeMaquina(elementoPorEliminar)
                 End If
+            Case TypeOf elementoPorEliminar Is Ejercicio
+                objeGestorEjercicio.eliminarEjercicio(elementoPorEliminar)
+            Case TypeOf elementoPorEliminar Is Musculo
+                objGestorMusculo.eliminarMusculo(elementoPorEliminar)
 
         End Select
         Me.Close()
