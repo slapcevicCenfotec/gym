@@ -1,7 +1,7 @@
 ﻿Imports EL
 Imports System.Text.RegularExpressions
 Public Class FrmRegistrarTipoDePago
-    Dim montoRegex As Regex = New Regex("[+-]?(?=\d*[.eE])(?=\.?\d)\d*\.?\d*(?:[eE][+-]?\d+)?")
+    Dim montoRegex As Regex = New Regex("[-+]?([0-9]*\.[0-9]+|[0-9]+)")
     Dim duracionRegex As Regex = New Regex("^[0-9]+$")
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -9,10 +9,15 @@ Public Class FrmRegistrarTipoDePago
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If validarAgregarTipoDePago() = True Then
-            objGestorTipoPago.insertarTipoDePago(txtNombre.Text, txtMonto.Text, txtDuracion.Text)
-            Me.regresaListar()
-        End If
+        Try
+            If validarAgregarTipoDePago() = True Then
+                objGestorTipoPago.insertarTipoDePago(txtNombre.Text, txtMonto.Text, txtDuracion.Text)
+                Me.regresaListar()
+            End If
+        Catch ex As Exception
+            ErPrExcepciones.SetError(btnGuardar, ex.Message)
+        End Try
+        
     End Sub
     Sub clearScreen()
         Me.txtMonto.Text = String.Empty

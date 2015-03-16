@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Public Class FrmRegistrarPago
     Private listaOriginal As List(Of Usuario)
-    Dim montoRegex As Regex = New Regex("[+-]?(?=\d*[.eE])(?=\.?\d)\d*\.?\d*(?:[eE][+-]?\d+)?")
+    Dim montoRegex As Regex = New Regex("[-+]?([0-9]*\.[0-9]+|[0-9]+)")
 
     Private Sub FrmRegistrarPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dbTipo.DataSource = objGestorTipoPago.listarTiposDePago()
@@ -144,10 +144,14 @@ Public Class FrmRegistrarPago
         Me.Controls.Add(ctr)
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If validarRegistarPago() = True Then
-            objGestorPago.insertarPago(txtFactura.Text, txtMonto.Text, dbTipo.SelectedValue, dtHasta.Text, dtDesde.Text, lbclientes.SelectedValue)
-            Me.regresaListar()
-        End If
+        Try
+            If validarRegistarPago() = True Then
+                objGestorPago.insertarPago(txtFactura.Text, txtMonto.Text, dbTipo.SelectedValue, dtHasta.Text, dtDesde.Text, lbclientes.SelectedValue)
+                Me.regresaListar()
+            End If
+        Catch ex As Exception
+            ErPrExcepciones.SetError(btnGuardar, ex.Message)
+        End Try
     End Sub
 
     Private Function validarAgregarTipoDePago() As Boolean
