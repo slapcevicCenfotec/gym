@@ -132,13 +132,17 @@ namespace BLL
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                var dr = ds.Tables[0].Rows[0];
-
-                objMusculos.Add(new Musculo
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
-                    Id = Convert.ToInt32(dr["ID_MUSCULO"]),
-                    Nombre = dr["NOMBRE"].ToString(),
-                });
+                    var dr = ds.Tables[0].Rows[i];
+
+                    objMusculos.Add(new Musculo
+                    {
+                        Id = Convert.ToInt32(dr["ID_MUSCULO"]),
+                        Nombre = dr["NOMBRE"].ToString(),
+                    });
+                }
+                
             }
 
             return objMusculos;
@@ -149,9 +153,6 @@ namespace BLL
         {
             Uow.EjercicioRepository.Delete(pEjercicio);
             Uow.EjercicioRepository.Save();
-
-            //Uow.MusculoRepository.Delete(pEjercicio);
-            //Uow.MusculoRepository.Save();
         }
 
     }

@@ -136,10 +136,16 @@
     <Compile Include="Maquinas\FrmRegistrarMaquina.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Mensaje\FrmMensaje.Designer.vb">
-      <DependentUpon>FrmMensaje.vb</DependentUpon>
+    <Compile Include="Mensaje\FrmMensajeOk.Designer.vb">
+      <DependentUpon>FrmMensajeOk.vb</DependentUpon>
     </Compile>
-    <Compile Include="Mensaje\FrmMensaje.vb">
+    <Compile Include="Mensaje\FrmMensajeOk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensaje\FrmMensajeSiNo.Designer.vb">
+      <DependentUpon>FrmMensajeSiNo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje\FrmMensajeSiNo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModuloGeneral.vb" />
@@ -306,8 +312,11 @@
     <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mensaje\FrmMensaje.resx">
-      <DependentUpon>FrmMensaje.vb</DependentUpon>
+    <EmbeddedResource Include="Mensaje\FrmMensajeOk.resx">
+      <DependentUpon>FrmMensajeOk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\FrmMensajeSiNo.resx">
+      <DependentUpon>FrmMensajeSiNo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Musculo\FrmListarMusculo.resx">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>

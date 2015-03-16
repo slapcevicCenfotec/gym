@@ -66,7 +66,7 @@ Public Class FrmListarMaquinas
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim msg As String = "Desea eliminar la máquina?"
         Dim maquinaPorEliminar As Maquina = tblMaquinas.CurrentRow.DataBoundItem
-        Dim mensaje As New FrmMensaje(msg, maquinaPorEliminar)
+        Dim mensaje As New FrmMensajeSiNo(msg, maquinaPorEliminar)
         mensaje.ShowDialog()
         listaMaquinas = objGestorMaquina.listarMaquinas()
         tblMaquinas.DataSource = listaMaquinas

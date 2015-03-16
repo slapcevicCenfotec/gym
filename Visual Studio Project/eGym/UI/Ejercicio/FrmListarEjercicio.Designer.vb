@@ -81,7 +81,7 @@ Partial Class FrmListarEjercicio
         Me.tblEjercicio.EnableHeadersVisualStyles = False
         Me.tblEjercicio.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.tblEjercicio.GridColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.tblEjercicio.Location = New System.Drawing.Point(16, 140)
+        Me.tblEjercicio.Location = New System.Drawing.Point(16, 75)
         Me.tblEjercicio.Margin = New System.Windows.Forms.Padding(16)
         Me.tblEjercicio.MultiSelect = False
         Me.tblEjercicio.Name = "tblEjercicio"
@@ -146,7 +146,7 @@ Partial Class FrmListarEjercicio
         Me.MetroButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroButton1.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton1.Location = New System.Drawing.Point(821, 88)
+        Me.MetroButton1.Location = New System.Drawing.Point(821, 16)
         Me.MetroButton1.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(125, 30)
@@ -161,7 +161,7 @@ Partial Class FrmListarEjercicio
         Me.MetroButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroButton2.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton2.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton2.Location = New System.Drawing.Point(685, 88)
+        Me.MetroButton2.Location = New System.Drawing.Point(685, 16)
         Me.MetroButton2.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.MetroButton2.Name = "MetroButton2"
         Me.MetroButton2.Size = New System.Drawing.Size(125, 30)
@@ -176,7 +176,7 @@ Partial Class FrmListarEjercicio
         Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnEliminar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminar.Location = New System.Drawing.Point(548, 88)
+        Me.btnEliminar.Location = New System.Drawing.Point(548, 16)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(125, 30)
@@ -192,7 +192,7 @@ Partial Class FrmListarEjercicio
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtFiltro.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtFiltro.Lines = New String(-1) {}
-        Me.txtFiltro.Location = New System.Drawing.Point(88, 88)
+        Me.txtFiltro.Location = New System.Drawing.Point(88, 16)
         Me.txtFiltro.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.txtFiltro.MaxLength = 32767
         Me.txtFiltro.Name = "txtFiltro"
@@ -207,8 +207,8 @@ Partial Class FrmListarEjercicio
         'MetroLabel2
         '
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(18, 88)
-        Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.MetroLabel2.Location = New System.Drawing.Point(18, 16)
+        Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(16)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(62, 30)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Purple

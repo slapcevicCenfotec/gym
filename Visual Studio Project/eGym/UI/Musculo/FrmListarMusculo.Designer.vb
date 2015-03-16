@@ -45,7 +45,7 @@ Partial Class FrmListarMusculo
         'MetroLabel2
         '
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(12, 76)
+        Me.MetroLabel2.Location = New System.Drawing.Point(12, 20)
         Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(62, 30)
@@ -60,7 +60,7 @@ Partial Class FrmListarMusculo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtFiltro.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtFiltro.Lines = New String(-1) {}
-        Me.txtFiltro.Location = New System.Drawing.Point(82, 76)
+        Me.txtFiltro.Location = New System.Drawing.Point(82, 20)
         Me.txtFiltro.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.txtFiltro.MaxLength = 32767
         Me.txtFiltro.Name = "txtFiltro"
@@ -111,7 +111,7 @@ Partial Class FrmListarMusculo
         Me.tblMusculos.EnableHeadersVisualStyles = False
         Me.tblMusculos.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.tblMusculos.GridColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.tblMusculos.Location = New System.Drawing.Point(17, 122)
+        Me.tblMusculos.Location = New System.Drawing.Point(17, 66)
         Me.tblMusculos.Margin = New System.Windows.Forms.Padding(16)
         Me.tblMusculos.MultiSelect = False
         Me.tblMusculos.Name = "tblMusculos"
@@ -176,7 +176,7 @@ Partial Class FrmListarMusculo
         Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnEliminar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminar.Location = New System.Drawing.Point(542, 76)
+        Me.btnEliminar.Location = New System.Drawing.Point(542, 20)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(125, 30)
@@ -191,7 +191,7 @@ Partial Class FrmListarMusculo
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnModificar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnModificar.Location = New System.Drawing.Point(679, 76)
+        Me.btnModificar.Location = New System.Drawing.Point(679, 20)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(125, 30)
@@ -206,7 +206,7 @@ Partial Class FrmListarMusculo
         Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnAgregar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnAgregar.Location = New System.Drawing.Point(815, 76)
+        Me.btnAgregar.Location = New System.Drawing.Point(815, 20)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(125, 30)
