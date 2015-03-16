@@ -145,4 +145,7 @@ Public Class FrmRegistrarRol
         frmListarRoles()
     End Sub
 
+    Private Sub txtNombre_Click(sender As Object, e As EventArgs) Handles txtNombre.Click
+
+    End Sub
 End Class
