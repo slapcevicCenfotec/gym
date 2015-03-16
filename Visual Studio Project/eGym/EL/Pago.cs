@@ -17,7 +17,7 @@ namespace EL
         private DateTime _fecha;
         private bool _habilitado;
         private int _usuario;
-        private TipoDePago _tipoDePago;
+        private string _tipoDePago;
         private string _nombreCliente;
 
        
@@ -34,7 +34,7 @@ namespace EL
             set { _nombreCliente = value; }
         }
 
-        public TipoDePago TipoDePago
+        public string TipoDePago
         {
             get { return _tipoDePago; }
             set { _tipoDePago = value; }

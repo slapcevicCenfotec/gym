@@ -53,6 +53,7 @@ namespace DAL.Repositories
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     Pago auxPago = new Pago();
+                    
                     auxPago.Id = Convert.ToInt32(dr["ID"]);
                     auxPago.Factura = dr["Factura"].ToString();
                     auxPago.Monto = float.Parse(Convert.ToString(dr["Monto"]));
@@ -62,9 +63,7 @@ namespace DAL.Repositories
                     auxPago.Fecha = Convert.ToDateTime(dr["FECHA"]);
                     auxPago.User = Convert.ToInt32(dr["USUARIO"]);
                     auxPago.Habilitado = Convert.ToBoolean(dr["HABILITADO"]);
-                  //  auxPago.TipoDePago.Nombre = new TipoDePago() { Nombre = dr["Tipo de pago"].ToString() };
-
-                 
+                    auxPago.TipoDePago = dr["Tipo de pago"].ToString();
                     auxPago.NombreCliente = dr["Nombre del cliente"].ToString();
                     pagos.Add(auxPago);
                 }

@@ -16,6 +16,12 @@ namespace EL
 
         public TipoDePago()
         { }
+
+        public TipoDePago(string pNombre)
+        {
+            this.Nombre = pNombre;
+        
+        }
         public TipoDePago(int pId)
         {
             this._id = pId;
