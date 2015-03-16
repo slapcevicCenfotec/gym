@@ -188,10 +188,22 @@
     <Compile Include="Pago\FrmRegistrarPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteEventos.Designer.vb">
+      <DependentUpon>FrmReporteEventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteEventos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Reportes\FrmReporteExcepciones.Designer.vb">
       <DependentUpon>FrmReporteExcepciones.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmReporteExcepciones.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFuncionarios.Designer.vb">
+      <DependentUpon>FrmReporteFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFuncionarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Reportes\FrmReportes.Designer.vb">
@@ -330,13 +342,21 @@
     <EmbeddedResource Include="Pago\FrmRegistrarPago.resx">
       <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteEventos.resx">
+      <DependentUpon>FrmReporteEventos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteExcepciones.resx">
       <DependentUpon>FrmReporteExcepciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteFuncionarios.resx">
+      <DependentUpon>FrmReporteFuncionarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReportes.resx">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteEventos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteExcepciones.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteFuncionarios.rdlc" />
     <EmbeddedResource Include="Rol\FrmListarRoles.resx">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>
     </EmbeddedResource>
