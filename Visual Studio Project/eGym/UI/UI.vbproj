@@ -133,6 +133,12 @@
     <Compile Include="Maquinas\FrmRegistrarMaquina.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Mensaje\FrmMensaje.Designer.vb">
+      <DependentUpon>FrmMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje\FrmMensaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModuloGeneral.vb" />
     <Compile Include="Musculo\FrmListarMusculo.Designer.vb">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maquinas\FrmRegistrarMaquina.resx">
       <DependentUpon>FrmRegistrarMaquina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\FrmMensaje.resx">
+      <DependentUpon>FrmMensaje.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Musculo\FrmListarMusculo.resx">
       <DependentUpon>FrmListarMusculo.vb</DependentUpon>
