@@ -227,14 +227,14 @@ Partial Class FrmRegistrarTiposMaquinas
         '
         Me.lblTitulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblTitulo.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Font = New System.Drawing.Font("Segoe UI Light", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.lblTitulo.Location = New System.Drawing.Point(0, 0)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(600, 67)
         Me.lblTitulo.TabIndex = 1
         Me.lblTitulo.Text = "AGREGAR TIPO DE MAQUINA"
-        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FrmRegistrarTiposMaquinas
         '

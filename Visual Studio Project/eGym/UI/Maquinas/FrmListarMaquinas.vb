@@ -64,17 +64,12 @@ Public Class FrmListarMaquinas
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim eliminar As MsgBoxResult = MsgBox("Desea eliminar la máquina?", MsgBoxStyle.YesNo, "Elminar")
-
-        If eliminar = MsgBoxResult.Yes Then
-            Dim maquinaPorEliminar As Maquina = tblMaquinas.CurrentRow.DataBoundItem
-            objGestorMaquina.eliminarMaquina(maquinaPorEliminar)
-            Dim ctr As Control
-            ctr = New FrmListarMaquinas
-            ctr.Dock = DockStyle.Fill
-            Me.Controls.Clear()
-            Me.Controls.Add(ctr)
-        End If
+        Dim msg As String = "Desea eliminar la máquina?"
+        Dim maquinaPorEliminar As Maquina = tblMaquinas.CurrentRow.DataBoundItem
+        Dim mensaje As New FrmMensaje(msg, maquinaPorEliminar)
+        mensaje.ShowDialog()
+        listaMaquinas = objGestorMaquina.listarMaquinas()
+        tblMaquinas.DataSource = listaMaquinas
     End Sub
 
     Private Sub tblMaquinas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblMaquinas.CellClick
@@ -82,15 +77,11 @@ Public Class FrmListarMaquinas
         btnModificar.Enabled = True
     End Sub
 
-    Private Sub btnTiposDeMaquina_Click_1(sender As Object, e As EventArgs) Handles btnTiposDeMaquina.Click
+    Private Sub btnTiposDeMaquina_Click(sender As Object, e As EventArgs) Handles btnTiposDeMaquina.Click
         Dim ctr As Control
         ctr = New FrmListarTiposDeMaquinas
         ctr.Dock = DockStyle.Fill
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
-    End Sub
-
-    Private Sub tblMaquinas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblMaquinas.CellContentClick
-
     End Sub
 End Class
