@@ -1,8 +1,20 @@
 ﻿Imports EL
+''' <summary>
+''' Autor: Danny Espinoza
+''' Fecha: 03/15/2015
+''' Descripcion: Instancia del User COntrol para listar Musculos
+''' </summary>
 Public Class FrmListarMusculo
 
     Private listaOriginal As List(Of Musculo)
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Carga de datos inicial
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub FrmListarMusculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listaOriginal = objGestorMusculo.listarMusculos()
 
@@ -16,21 +28,21 @@ Public Class FrmListarMusculo
         tblMusculos.Columns("Irrigacion").DataPropertyName = "Irrigacion"
     End Sub
 
-    Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
-        Dim ctr As Control
-        ctr = New FrmModificarMusculo(tblMusculos.CurrentRow.DataBoundItem)
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
-    End Sub
+    'Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
+    '    Dim ctr As Control
+    '    ctr = New FrmModificarMusculo(tblMusculos.CurrentRow.DataBoundItem)
+    '    ctr.Dock = DockStyle.Fill
+    '    Me.Controls.Clear()
+    '    Me.Controls.Add(ctr)
+    'End Sub
 
-    Private Sub MetroButton2_Click(sender As Object, e As EventArgs)
-        Dim ctr As Control
-        ctr = New FrmRegistrarMusculo
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
-    End Sub
+    'Private Sub MetroButton2_Click(sender As Object, e As EventArgs)
+    '    Dim ctr As Control
+    '    ctr = New FrmRegistrarMusculo
+    '    ctr.Dock = DockStyle.Fill
+    '    Me.Controls.Clear()
+    '    Me.Controls.Add(ctr)
+    'End Sub
 
     Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim ctr As Control
@@ -51,7 +63,12 @@ Public Class FrmListarMusculo
     Private Sub txtFiltro_TextChanged(sender As Object, e As EventArgs) Handles txtFiltro.TextChanged
         AplicarFiltro(txtFiltro.Text.ToUpper)
     End Sub
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Filtra el datagridview y refresca los datos
+    ''' </summary>
+    ''' <param name="filtro">The filtro.</param>
     Private Sub AplicarFiltro(filtro As String)
         Dim listaFiltrada As List(Of EL.Musculo) = New List(Of EL.Musculo)
         If Not listaOriginal Is Nothing Then
