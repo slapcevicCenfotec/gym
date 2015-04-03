@@ -44,6 +44,7 @@
     <Compile Include="Ejercicio.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Excepcion.cs" />
+    <Compile Include="FichaMedicion.cs" />
     <Compile Include="Gimnasio.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="IEntity.cs" />

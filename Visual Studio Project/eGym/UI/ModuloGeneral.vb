@@ -12,5 +12,5 @@ Public Module ModuloGeneral
     Public objGestorSesion As New GestorSesion()
     Public objGestorGimnasio As New GestorGimnasio()
     Public Gestor As Gestor = New Gestor()
-
+    Public objGestorFichaMedicion As New GestorFichaMedicion()
 End Module

@@ -14,22 +14,18 @@ namespace DAL
         private IRepository<TipoDeMaquina> _tipoDeMaquinaRepository;
         private IRepository<Rol> _rolRepository;
         private IRepository<Permiso> _permisoRepository;
-
         private IRepository<Pago> _pagoRepository;
         private IRepository<Maquina> _maquinaRepository;
         private IRepository<TipoDePago> _tipoDePagoRepository;
-
         private IRepository<Usuario> _repositoryUsuario;
         private IRepository<Contacto> _repositoryContacto;
         private IRepository<Horario> _repositoryHorario;
-
-        
-        
         private IRepository<Excepcion> _excepcionRepository;
         private IRepository<Evento> _eventoRepository;
-
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
+        private IRepository<FichaMedicion> _fichaMedicionRepository;
+
 
         public IRepository<Usuario> RepositoryUsuario
         {
@@ -187,6 +183,7 @@ namespace DAL
                 return _excepcionRepository;
             }
         }
+
         public IRepository<Evento> EventoRepository
         {
             get
@@ -196,6 +193,17 @@ namespace DAL
                     this._eventoRepository = new EventoRepository();
                 }
                 return _eventoRepository;
+            }
+        }
+        public IRepository<FichaMedicion> FichaMedicionRepository
+        {
+            get
+            {
+                if (this._fichaMedicionRepository == null)
+                {
+                    this._fichaMedicionRepository = new FichaMedicionRepository();
+                }
+                return _fichaMedicionRepository;
             }
         }
     }
