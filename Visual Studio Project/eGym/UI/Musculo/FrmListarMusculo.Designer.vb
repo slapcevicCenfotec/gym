@@ -176,7 +176,7 @@ Partial Class FrmListarMusculo
         Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnEliminar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminar.Location = New System.Drawing.Point(542, 20)
+        Me.btnEliminar.Location = New System.Drawing.Point(819, 20)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(125, 30)
@@ -206,7 +206,7 @@ Partial Class FrmListarMusculo
         Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnAgregar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnAgregar.Location = New System.Drawing.Point(815, 20)
+        Me.btnAgregar.Location = New System.Drawing.Point(539, 20)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(125, 30)

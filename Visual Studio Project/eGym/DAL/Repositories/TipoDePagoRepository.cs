@@ -11,6 +11,11 @@ using System.Transactions;
 
 namespace DAL.Repositories
 {
+    // Autor: Alberto Arias S
+    /// Fecha: 03/15/2015
+    /// Descricpcion: Este Clase se encarga del acceso a datos de los pagos. 
+    /// Contiene los metodos de listar, modificar e relimina 
+    /// </summary>
     public class TipoDePagoRepository : IRepository<TipoDePago>
     {
 
@@ -18,6 +23,11 @@ namespace DAL.Repositories
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
 
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Inicializa una nueva instancia de <see cref="TipoDePagoRepository"/> class.
+        /// </summary>
         public TipoDePagoRepository()
         {
             _insertItems = new List<IEntity>();
@@ -25,21 +35,42 @@ namespace DAL.Repositories
             _updateItems = new List<IEntity>();
         }
 
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Inserta una entidad Especifica.
+        /// <param name="entity">Entidad TipoDePago.</param>
         public void Insert(TipoDePago entity)
         {
             _insertItems.Add(entity);
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Elimina una entidad especifica
+        /// </summary>
+        /// <param name="entity">Entidad TipoDePago.</param>
         public void Delete(TipoDePago entity)
         {
             _deleteItems.Add(entity);
         }
 
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Actualiza una entidad especifica
+        /// </summary>
+        /// <param name="entity">Entidad TipoDePago.</param>
         public void Update(TipoDePago entity)
         {
             _updateItems.Add(entity);
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este Devuelve una lista de TipoDePago de la base de datos
+        /// </summary>
+        /// <returns>IEnumerable<TipoDePago></returns>
         public IEnumerable<TipoDePago> GetAll()
         {
             List<TipoDePago> listaTiposDePagos = null;
@@ -63,7 +94,13 @@ namespace DAL.Repositories
             }
             return listaTiposDePagos;
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este Devuelve una lista un TipoDePago de la base de datos
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Rol</returns>
         public TipoDePago GetById(int pId)
         {
             TipoDePago tipo = new TipoDePago();
@@ -81,7 +118,11 @@ namespace DAL.Repositories
             }
             return tipo;
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion: Guarda el conjunto de instancias TipoDePago.
+        /// </summary>
         public void Save()
         {
             using (TransactionScope scope = new TransactionScope())
@@ -129,14 +170,24 @@ namespace DAL.Repositories
 
             }
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Clears Limpia la lista de instacias TipoDePago.
+        /// </summary>
         public void Clear()
         {
             _insertItems.Clear();
             _deleteItems.Clear();
             _updateItems.Clear();
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo inserta una instancia TipoDePago en la base de datos
+        /// </summary>
+        /// <param name="objPago">TipoDePago.</param>
+        /// <returns></returns>
         private void InsertTipoDePago(TipoDePago objTipoDePago)
         {
 
@@ -157,7 +208,12 @@ namespace DAL.Repositories
 
             }
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo modifica una instancia tipoDePago en la base de datos
+        /// </summary>
+        /// <param name="objTipoDePago">The p identifier TipoDePago.</param>
         private void UpdateTipoDePago(TipoDePago objTipoDePago)
         {
             try

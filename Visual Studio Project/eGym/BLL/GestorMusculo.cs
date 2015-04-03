@@ -15,7 +15,7 @@ namespace BLL
     /// Fecha:03/15/2015
     /// Descripcion: Esta clase se encarga de manejar los metodos de insercion, modificaion y eliminación de los músculos de sistema
     /// </summary>
-    public class GestorMusculo
+    public class GestorMusculo    
     {
         private UnitOfWork Uow = new UnitOfWork();
         private GestorExcepcion gestorExcepciones = new GestorExcepcion();
@@ -26,9 +26,9 @@ namespace BLL
         /// Descripcion: Este metodo devuelve una lista de músculos.
         /// </summary>
         /// <returns>List<Musculo></returns>
-        public IEnumerable<Musculo> listarMusculos()
+        public List<Musculo> listarMusculos()
         {
-            return Uow.MusculoRepository.GetAll();      
+            return Uow.MusculoRepository.GetAll().ToList<Musculo>();      
         }
         /// <summary>
         /// Autor : Danny Espinoza

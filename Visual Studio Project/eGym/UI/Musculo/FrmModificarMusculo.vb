@@ -1,15 +1,34 @@
 ﻿Imports EL
 
+''' <summary>
+''' Autor: Danny Espinoza
+''' Fecha: 03/15/2015
+''' Descripcion: Instancia del User COntrol Modificar Musculo
+''' </summary>
+''' <remarks></remarks>
 Public Class FrmModificarMusculo
 
     Private musculoPorModificar As Musculo
     Private validar As Boolean
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Recibi el musculo que se desea modificar
+    ''' </summary>
+    ''' <param name="pMusculo"></param>
+    ''' <remarks></remarks>
     Public Sub New(ByVal pMusculo As Musculo)
         Me.musculoPorModificar = pMusculo
         InitializeComponent()
     End Sub
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Carga informacíon del objeto que se va a modificar
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub FrmModificarMusculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtNombre.Text = musculoPorModificar.Nombre
         txtUbicacion.Text = musculoPorModificar.Ubicacion
@@ -19,7 +38,13 @@ Public Class FrmModificarMusculo
         txtIrrigacion.Text = musculoPorModificar.Irrigacion
 
     End Sub
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Instancia del User COntrol Modificar Musculo
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Private Function validation() As Boolean
 
         Dim validar As Boolean = True
@@ -57,7 +82,14 @@ Public Class FrmModificarMusculo
         Return validar
 
     End Function
-
+   ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Botón de evento que modificar el músculo
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim resulValidation As Boolean
 
@@ -72,7 +104,14 @@ Public Class FrmModificarMusculo
             Me.Controls.Add(ctr)
         End If
     End Sub
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Botón de evento que retorna al formulario de listar músculos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Dim ctr As Control
         ctr = New FrmListarMusculo

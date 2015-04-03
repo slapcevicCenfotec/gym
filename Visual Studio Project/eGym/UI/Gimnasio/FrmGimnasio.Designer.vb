@@ -141,7 +141,7 @@ Partial Class FrmGimnasio
         Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel5.Location = New System.Drawing.Point(16, 148)
         Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(75, 25)
+        Me.MetroLabel5.Size = New System.Drawing.Size(78, 25)
         Me.MetroLabel5.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel5.TabIndex = 16
         Me.MetroLabel5.Text = "Teléfono"
@@ -155,7 +155,7 @@ Partial Class FrmGimnasio
         Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel4.Location = New System.Drawing.Point(340, 16)
         Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(36, 25)
+        Me.MetroLabel4.Size = New System.Drawing.Size(37, 25)
         Me.MetroLabel4.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel4.TabIndex = 15
         Me.MetroLabel4.Text = "Fax"
@@ -201,7 +201,7 @@ Partial Class FrmGimnasio
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnCancelar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnCancelar.Location = New System.Drawing.Point(491, 354)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 354)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(125, 30)
@@ -213,10 +213,10 @@ Partial Class FrmGimnasio
         '
         'btnGuardar
         '
-        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnGuardar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnGuardar.Location = New System.Drawing.Point(16, 354)
+        Me.btnGuardar.Location = New System.Drawing.Point(491, 354)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(16)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(125, 30)
@@ -254,7 +254,7 @@ Partial Class FrmGimnasio
         Me.MetroLabel2.Location = New System.Drawing.Point(0, 16)
         Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(0, 16, 0, 0)
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(279, 25)
+        Me.MetroLabel2.Size = New System.Drawing.Size(282, 25)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroLabel2.TabIndex = 30
         Me.MetroLabel2.Text = "MODIFICAR DATOS DEL GIMNASIO"

@@ -29,7 +29,10 @@ Public Class FrmMensajeSiNo
                 objeGestorEjercicio.eliminarEjercicio(elementoPorEliminar)
             Case TypeOf elementoPorEliminar Is Musculo
                 objGestorMusculo.eliminarMusculo(elementoPorEliminar)
-
+            Case TypeOf elementoPorEliminar Is Rol
+                Dim rol As New Rol
+                rol = elementoPorEliminar
+                objGestorRol.EliminarRol(rol.Id, rol.Nombre, rol.Descripcion)
         End Select
         Me.Close()
     End Sub

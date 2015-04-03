@@ -67,11 +67,14 @@ Public Class FrmListarEjercicio
     End Sub
   
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
-        Dim ctr As Control
-        ctr = New FrmModificarEjercicio(tblEjercicio.CurrentRow.DataBoundItem)
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        If tblEjercicio.RowCount > 0 Then
+            Dim ctr As Control
+            ctr = New FrmModificarEjercicio(tblEjercicio.CurrentRow.DataBoundItem)
+            ctr.Dock = DockStyle.Fill
+            Me.Controls.Clear()
+            Me.Controls.Add(ctr)
+        End If
+
     End Sub
 
     Private Sub MetroButton1_Click_1(sender As Object, e As EventArgs) Handles MetroButton1.Click
@@ -98,5 +101,9 @@ Public Class FrmListarEjercicio
 
     Private Sub txtFiltro_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click
 
+    End Sub
+
+    Private Sub txtFiltro_TextChanged_1(sender As Object, e As EventArgs) Handles txtFiltro.TextChanged
+        AplicarFiltro(txtFiltro.Text.ToUpper)
     End Sub
 End Class

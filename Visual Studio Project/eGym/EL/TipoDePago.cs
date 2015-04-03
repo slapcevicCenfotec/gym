@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace EL
 {
+    /// <summary>
+    /// Autor:Alberto Arias
+    /// Fecha:03/15/2015
+    /// Descripcion: Esta clase es la clase TipoDePago,atributos y procedimientos.
+    /// </summary>
     public class TipoDePago : IEntity
     {
         private int _id;

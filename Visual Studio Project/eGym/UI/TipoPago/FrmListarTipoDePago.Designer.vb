@@ -22,20 +22,20 @@ Partial Class FrmListarTipoDePago
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblBuscar = New MetroFramework.Controls.MetroLabel()
         Me.btnModificarTipoDePago = New MetroFramework.Controls.MetroButton()
         Me.btnAgregarTipoDePago = New MetroFramework.Controls.MetroButton()
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.tblListaTipoDePago = New MetroFramework.Controls.MetroGrid()
-        Me.btnEliminarTipoDePago = New MetroFramework.Controls.MetroButton()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Duracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEliminarTipoDePago = New MetroFramework.Controls.MetroButton()
         CType(Me.tblListaTipoDePago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,7 +56,7 @@ Partial Class FrmListarTipoDePago
         Me.btnModificarTipoDePago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificarTipoDePago.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnModificarTipoDePago.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnModificarTipoDePago.Location = New System.Drawing.Point(674, 15)
+        Me.btnModificarTipoDePago.Location = New System.Drawing.Point(534, 16)
         Me.btnModificarTipoDePago.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnModificarTipoDePago.Name = "btnModificarTipoDePago"
         Me.btnModificarTipoDePago.Size = New System.Drawing.Size(130, 30)
@@ -71,7 +71,7 @@ Partial Class FrmListarTipoDePago
         Me.btnAgregarTipoDePago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregarTipoDePago.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnAgregarTipoDePago.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnAgregarTipoDePago.Location = New System.Drawing.Point(534, 15)
+        Me.btnAgregarTipoDePago.Location = New System.Drawing.Point(389, 16)
         Me.btnAgregarTipoDePago.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnAgregarTipoDePago.Name = "btnAgregarTipoDePago"
         Me.btnAgregarTipoDePago.Size = New System.Drawing.Size(130, 30)
@@ -104,11 +104,11 @@ Partial Class FrmListarTipoDePago
         Me.tblListaTipoDePago.AllowUserToAddRows = False
         Me.tblListaTipoDePago.AllowUserToDeleteRows = False
         Me.tblListaTipoDePago.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.tblListaTipoDePago.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.tblListaTipoDePago.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.tblListaTipoDePago.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -117,24 +117,24 @@ Partial Class FrmListarTipoDePago
         Me.tblListaTipoDePago.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tblListaTipoDePago.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.tblListaTipoDePago.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblListaTipoDePago.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblListaTipoDePago.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.tblListaTipoDePago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.tblListaTipoDePago.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Monto, Me.Duracion})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.tblListaTipoDePago.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.tblListaTipoDePago.DefaultCellStyle = DataGridViewCellStyle3
         Me.tblListaTipoDePago.EnableHeadersVisualStyles = False
         Me.tblListaTipoDePago.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.tblListaTipoDePago.GridColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
@@ -144,38 +144,23 @@ Partial Class FrmListarTipoDePago
         Me.tblListaTipoDePago.Name = "tblListaTipoDePago"
         Me.tblListaTipoDePago.ReadOnly = True
         Me.tblListaTipoDePago.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblListaTipoDePago.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblListaTipoDePago.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.tblListaTipoDePago.RowHeadersVisible = False
         Me.tblListaTipoDePago.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.tblListaTipoDePago.RowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.tblListaTipoDePago.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.tblListaTipoDePago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tblListaTipoDePago.Size = New System.Drawing.Size(928, 617)
         Me.tblListaTipoDePago.Style = MetroFramework.MetroColorStyle.Silver
         Me.tblListaTipoDePago.TabIndex = 25
         Me.tblListaTipoDePago.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'btnEliminarTipoDePago
-        '
-        Me.btnEliminarTipoDePago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEliminarTipoDePago.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnEliminarTipoDePago.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminarTipoDePago.Location = New System.Drawing.Point(389, 15)
-        Me.btnEliminarTipoDePago.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
-        Me.btnEliminarTipoDePago.Name = "btnEliminarTipoDePago"
-        Me.btnEliminarTipoDePago.Size = New System.Drawing.Size(130, 30)
-        Me.btnEliminarTipoDePago.Style = MetroFramework.MetroColorStyle.Purple
-        Me.btnEliminarTipoDePago.TabIndex = 30
-        Me.btnEliminarTipoDePago.Text = "Eliminar"
-        Me.btnEliminarTipoDePago.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnEliminarTipoDePago.UseSelectable = True
         '
         'Nombre
         '
@@ -194,6 +179,21 @@ Partial Class FrmListarTipoDePago
         Me.Duracion.HeaderText = "Duración"
         Me.Duracion.Name = "Duracion"
         Me.Duracion.ReadOnly = True
+        '
+        'btnEliminarTipoDePago
+        '
+        Me.btnEliminarTipoDePago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEliminarTipoDePago.FontSize = MetroFramework.MetroButtonSize.Tall
+        Me.btnEliminarTipoDePago.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.btnEliminarTipoDePago.Location = New System.Drawing.Point(679, 16)
+        Me.btnEliminarTipoDePago.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
+        Me.btnEliminarTipoDePago.Name = "btnEliminarTipoDePago"
+        Me.btnEliminarTipoDePago.Size = New System.Drawing.Size(130, 30)
+        Me.btnEliminarTipoDePago.Style = MetroFramework.MetroColorStyle.Purple
+        Me.btnEliminarTipoDePago.TabIndex = 30
+        Me.btnEliminarTipoDePago.Text = "Eliminar"
+        Me.btnEliminarTipoDePago.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnEliminarTipoDePago.UseSelectable = True
         '
         'FrmListarTipoDePago
         '

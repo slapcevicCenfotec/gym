@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Public Class FrmRegistrarPago
     Private listaOriginal As List(Of Usuario)
-    Dim montoRegex As Regex = New Regex("[+-]?(?=\d*[.eE])(?=\.?\d)\d*\.?\d*(?:[eE][+-]?\d+)?")
+    Dim montoRegex As Regex = New Regex("[-+]?([0-9]*\.[0-9]+|[0-9]+)")
 
     Private Sub FrmRegistrarPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dbTipo.DataSource = objGestorTipoPago.listarTiposDePago()
@@ -43,8 +43,10 @@ Public Class FrmRegistrarPago
             If montoRegex.IsMatch(txtMonto.Text) = False Then
                 validado = False
                 ErPrValidaciones.SetError(txtMonto, "Monto debe ser un numero")
+            Else
+                ErPrValidaciones.SetError(txtMonto, "")
             End If
-            ErPrValidaciones.SetError(txtMonto, "")
+            
         End If
 
         If txtFactura.Text.Length = 0 Then
@@ -65,19 +67,19 @@ Public Class FrmRegistrarPago
         Else
             ErPrValidaciones.SetError(dtHasta, "")
         End If
-        ErPrValidaciones.SetError(dtHasta, "")
-        If dtHasta.Value.Date <= dtDesde.Value.Date Then
+        If dtHasta.Value.Date < dtDesde.Value.Date Then
             ErPrValidaciones.SetError(dtHasta, "La fecha desde debe ser menor que la fechas hasta")
             ErPrValidaciones.SetError(dtDesde, "La fecha desde debe ser menor que la fechas hasta")
             validado = False
         Else
             ErPrValidaciones.SetError(dtHasta, "")
+            ErPrValidaciones.SetError(dtDesde, "")
         End If
         If lbclientes.SelectedValue Is Nothing Then
             ErPrValidaciones.SetError(lbclientes, "Debe seleccionar por lo menos un cliente")
             validado = False
         Else
-            ErPrValidaciones.SetError(dtHasta, "")
+            ErPrValidaciones.SetError(lbclientes, "")
         End If
         Return validado
     End Function
@@ -144,10 +146,14 @@ Public Class FrmRegistrarPago
         Me.Controls.Add(ctr)
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If validarRegistarPago() = True Then
-            objGestorPago.insertarPago(txtFactura.Text, txtMonto.Text, dbTipo.SelectedValue, dtHasta.Text, dtDesde.Text, lbclientes.SelectedValue)
-            Me.regresaListar()
-        End If
+        Try
+            If validarRegistarPago() = True Then
+                objGestorPago.insertarPago(txtFactura.Text, txtMonto.Text, dbTipo.SelectedValue, dtHasta.Text, dtDesde.Text, lbclientes.SelectedValue)
+                Me.regresaListar()
+            End If
+        Catch ex As Exception
+            ErPrExcepciones.SetError(btnGuardar, ex.Message)
+        End Try
     End Sub
 
     Private Function validarAgregarTipoDePago() As Boolean
