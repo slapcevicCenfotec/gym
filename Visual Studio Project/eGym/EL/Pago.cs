@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace EL
 {
+    /// <summary>
+    /// Autor:Alberto Arias
+    /// Fecha:03/15/2015
+    /// Descripcion: Esta clase es la clase pago,atributos y procedimientos.
+    /// </summary>
     public class Pago : IEntity
     {
         private int _id;
@@ -14,15 +19,32 @@ namespace EL
         private int _tipo;
         private DateTime _hasta;
         private DateTime _desde;
+        private DateTime _fecha;
         private bool _habilitado;
-        private int _user;
+        private int _usuario;
+        private string _tipoDePago;
+        private string _nombreCliente;
 
+       
+        
         
 
       
 
         public Pago()
         { }
+        public string NombreCliente
+        {
+            get { return _nombreCliente; }
+            set { _nombreCliente = value; }
+        }
+
+        public string TipoDePago
+        {
+            get { return _tipoDePago; }
+            set { _tipoDePago = value; }
+        }
+
 
         public Pago(int pId)
         {
@@ -56,16 +78,13 @@ namespace EL
             {
                 yield return new RuleViolation("Tipo es requerido", "Id");
             }
-            if (Desde == null)
+            if (String.IsNullOrEmpty(Desde.ToString()))
             {
                 yield return new RuleViolation("Desde es requerido", "Id");
-            } if (Hasta == null)
+            } if (String.IsNullOrEmpty(Hasta.ToString()))
             {
                 yield return new RuleViolation("Hasta es requerido", "Id");
-            } if (Habilitado == null)
-            {
-                yield return new RuleViolation("Habilitado es requerido", "Id");
-            }
+            } 
             yield break;
         }
         public int Id
@@ -93,8 +112,8 @@ namespace EL
         }
         public int User
         {
-            get { return _user; }
-            set { _user = value; }
+            get { return _usuario; }
+            set { _usuario = value; }
         }
         public bool Habilitado
         {
@@ -102,20 +121,24 @@ namespace EL
             set { _habilitado = value; }
         }
 
-      
+
         public DateTime Desde
         {
             get { return _desde; }
             set { _desde = value; }
         }
-        
+
 
         public DateTime Hasta
         {
             get { return _hasta; }
             set { _hasta = value; }
         }
-
+        public DateTime Fecha
+        {
+            get { return _fecha; }
+            set { _fecha = value; }
+        }
        
        
     }

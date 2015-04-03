@@ -12,6 +12,27 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\espindan\Desktop\eGym_Publicado\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\Users\espindan\Desktop\eGym_Publicado\</InstallUrl>
+    <UpdateUrl>\\Users\espindan\Desktop\eGym_Publicado\</UpdateUrl>
+    <ProductName>eGym</ProductName>
+    <PublisherName>Cantaros</PublisherName>
+    <SuiteName>Development</SuiteName>
+    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,6 +65,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D40DFEBCAB73390889BB2A3415FA23FB632CABBE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework">
@@ -194,10 +227,28 @@
     <Compile Include="Pago\FrmRegistrarPago.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteEventos.Designer.vb">
+      <DependentUpon>FrmReporteEventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteEventos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Reportes\FrmReporteExcepciones.Designer.vb">
       <DependentUpon>FrmReporteExcepciones.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmReporteExcepciones.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFuncionarios.Designer.vb">
+      <DependentUpon>FrmReporteFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFuncionarios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteHorariosFuncionarios.Designer.vb">
+      <DependentUpon>FrmReporteHorariosFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteHorariosFuncionarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Reportes\FrmReportes.Designer.vb">
@@ -339,13 +390,26 @@
     <EmbeddedResource Include="Pago\FrmRegistrarPago.resx">
       <DependentUpon>FrmRegistrarPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteEventos.resx">
+      <DependentUpon>FrmReporteEventos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteExcepciones.resx">
       <DependentUpon>FrmReporteExcepciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteFuncionarios.resx">
+      <DependentUpon>FrmReporteFuncionarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteHorariosFuncionarios.resx">
+      <DependentUpon>FrmReporteHorariosFuncionarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReportes.resx">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteHorariosFuncionarios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHorarios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEventos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteExcepciones.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteFuncionarios.rdlc" />
     <EmbeddedResource Include="Rol\FrmListarRoles.resx">
       <DependentUpon>FrmListarRoles.vb</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +475,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="UI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -426,7 +491,23 @@
       <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo.jpg" />
   </ItemGroup>

@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Public Class FrmModificarTipoDePago
     Public actual As TipoDePago
-    Dim montoRegex As Regex = New Regex("[+-]?(?=\d*[.eE])(?=\.?\d)\d*\.?\d*(?:[eE][+-]?\d+)?")
+    Dim montoRegex As Regex = New Regex("^[0-9]+$")
     Dim duracionRegex As Regex = New Regex("^[0-9]+$")
     Public Sub New(ByVal ptipoDePago As TipoDePago)
         actual = ptipoDePago
@@ -45,7 +45,7 @@ Public Class FrmModificarTipoDePago
     End Sub
 
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Dim ctr As Control
         ctr = New FrmListarTipoDePago
         ctr.Dock = DockStyle.Fill
@@ -53,24 +53,19 @@ Public Class FrmModificarTipoDePago
         Me.Controls.Add(ctr)
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs)
-        If validarModificarTipoDePago() = True Then
-            objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
-        End If
-    End Sub
-
-    Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If validarModificarTipoDePago() = True Then
-            objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
-        End If
-    End Sub
-
-    Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Dim ctr As Control
-        ctr = New FrmListarTipoDePago
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Try
+            If validarModificarTipoDePago() = True Then
+                objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
+                Dim ctr As Control
+                ctr = New FrmListarTipoDePago
+                ctr.Dock = DockStyle.Fill
+                Me.Controls.Clear()
+                Me.Controls.Add(ctr)
+            End If
+        Catch ex As Exception
+            ErPrExcepciones.SetError(btnGuardar, ex.Message)
+        End Try
     End Sub
 
 
@@ -90,8 +85,10 @@ Public Class FrmModificarTipoDePago
             If montoRegex.IsMatch(txtMonto.Text) = False Then
                 validado = False
                 ErPrValidaciones.SetError(txtMonto, "Monto debe ser un numero")
+            Else
+                ErPrValidaciones.SetError(txtMonto, "")
             End If
-            ErPrValidaciones.SetError(txtMonto, "")
+
         End If
 
         If txtDuracion.Text.Length = 0 Then
@@ -101,13 +98,13 @@ Public Class FrmModificarTipoDePago
             If duracionRegex.IsMatch(txtDuracion.Text) = False Then
                 validado = False
                 ErPrValidaciones.SetError(txtDuracion, "Duracion debe ser un numero")
+            Else
+                ErPrValidaciones.SetError(txtDuracion, "")
             End If
-            ErPrValidaciones.SetError(txtDuracion, "")
+
         End If
         Return validado
     End Function
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
-    End Sub
 End Class

@@ -11,6 +11,11 @@ using System.Transactions;
 
 namespace DAL.Repositories
 {
+    // Autor: Alberto Arias S
+    /// Fecha: 03/15/2015
+    /// Descricpcion: Este Clase se encarga del acceso a datos de los pagos. 
+    /// Contiene los metodos de listar, modificar e relimina 
+    /// </summary>
     public class PagoRepository : IRepository<Pago>
     {
 
@@ -18,6 +23,11 @@ namespace DAL.Repositories
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
 
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Inicializa una nueva instancia de <see cref="PagoRepository"/> class.
+        /// </summary>
         public PagoRepository()
         {
             _insertItems = new List<IEntity>();
@@ -25,25 +35,71 @@ namespace DAL.Repositories
             _updateItems = new List<IEntity>();
         }
 
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Inserta una entidad Especifica.
+        /// <param name="entity">Entidad Pago.</param>
         public void Insert(Pago entity)
         {
             _insertItems.Add(entity);
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Elimina una entidad especifica
+        /// </summary>
+        /// <param name="entity">Entidad Pago.</param>
         public void Delete(Pago entity)
         {
             _deleteItems.Add(entity);
         }
 
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Actualiza una entidad especifica
+        /// </summary>
+        /// <param name="entity">Entidad Pago.</param>
         public void Update(Pago entity)
         {
             _updateItems.Add(entity);
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este Devuelve una lista de Pago de la base de datos
+        /// </summary>
+        /// <returns>IEnumerable<Pago></returns>
         public IEnumerable<Pago> GetAll()
         {
-           List<Pago> listaAux = null;
-           return listaAux;
+            List<Pago> pagos = null;
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarPago");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                pagos = new List<Pago>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Pago auxPago = new Pago();
+                    
+                    auxPago.Id = Convert.ToInt32(dr["ID"]);
+                    auxPago.Factura = dr["Factura"].ToString();
+                    auxPago.Monto = float.Parse(Convert.ToString(dr["Monto"]));
+                    auxPago.Tipo = Convert.ToInt32(dr["TIPO"]);
+                    auxPago.Desde = Convert.ToDateTime(dr["DESDE"]);
+                    auxPago.Hasta = Convert.ToDateTime(dr["HASTA"]);
+                    auxPago.Fecha = Convert.ToDateTime(dr["FECHA"]);
+                    auxPago.User = Convert.ToInt32(dr["USUARIO"]);
+                    auxPago.Habilitado = Convert.ToBoolean(dr["HABILITADO"]);
+                    auxPago.TipoDePago = dr["Tipo de pago"].ToString();
+                    auxPago.NombreCliente = dr["Nombre del cliente"].ToString();
+                    pagos.Add(auxPago);
+                }
+            }
+            return pagos;
         }
 
         public Pago GetById(int id)
@@ -52,6 +108,11 @@ namespace DAL.Repositories
             return new Pago();
         }
 
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion: Guarda el conjunto de instancias Pago.
+        /// </summary>
         public void Save()
         {
             using (TransactionScope scope = new TransactionScope())
@@ -98,14 +159,24 @@ namespace DAL.Repositories
                 }
             }
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Clears Limpia la lista de instacias TipoDePago.
+        /// </summary>
         public void Clear()
         {
             _insertItems.Clear();
             _deleteItems.Clear();
             _updateItems.Clear();
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo inserta una instancia Pago en la base de datos
+        /// </summary>
+        /// <param name="objPago">Pago.</param>
+        /// <returns></returns>
         private void InsertPago(Pago objPago)
         {
 
@@ -125,7 +196,12 @@ namespace DAL.Repositories
 
             }
         }
-
+        /// <summary>
+        /// Autor: Alberto Arias S
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo modifica una instancia tipoDePago en la base de datos
+        /// </summary>
+        /// <param name="objPago">The p identifier Pago.</param>
         private void UpdatePago(Pago objPago)
         {
             try

@@ -9,12 +9,12 @@ namespace EL
     public class Contacto
     {
         private int _id;
-
         public int Id
         {
             get { return _id; }
-            set { _id = value; }
+            set{ _id=value;}        
         }
+
         private string nombre;
 
         public string Nombre

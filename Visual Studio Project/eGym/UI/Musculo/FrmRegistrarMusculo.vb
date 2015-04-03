@@ -1,10 +1,22 @@
 ﻿Imports EL
-
+''' <summary>
+''' Autor: Danny Espinoza
+''' Fecha: 03/15/2015
+''' Descripcion: Instancia del User COntrol para registrar músculo
+''' </summary>
+''' <remarks></remarks>
 Public Class FrmRegistrarMusculo
 
     Private validar As Boolean = True
 
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Botón de evento que agregar el músculo
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
         Dim resulValidation As Boolean
 
@@ -22,7 +34,13 @@ Public Class FrmRegistrarMusculo
             objGestorMusculo.agregarMusculo(nombre, ubicacion, origen, inserccion, inervacion, irrigacion)
         End If
     End Sub
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: metodo que valida los campos de formulario
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Private Function validation() As Boolean
 
         Dim validar As Boolean = True
@@ -61,7 +79,14 @@ Public Class FrmRegistrarMusculo
 
     End Function
 
-    
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Botón de evento que agregar el músculo
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim resulValidation As Boolean
 
@@ -83,10 +108,17 @@ Public Class FrmRegistrarMusculo
             ctr.Dock = DockStyle.Fill
             Me.Controls.Clear()
             Me.Controls.Add(ctr)
-            
+
         End If
     End Sub
-
+    ''' <summary>
+    ''' Autor: Danny Espinoza
+    ''' Fecha: 03/15/2015
+    ''' Descripcion: Botón de evento que returna al formulario de lista
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Dim ctr As Control
         ctr = New FrmListarMusculo
@@ -94,4 +126,6 @@ Public Class FrmRegistrarMusculo
         Me.Controls.Clear()
         Me.Controls.Add(ctr)
     End Sub
+
+
 End Class

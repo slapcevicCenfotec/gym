@@ -52,7 +52,7 @@ Partial Class FrmRegistrarEjercicio
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lbMusculosSecundarios = New System.Windows.Forms.ListBox()
+        Me.lbMusculosSecundarios = New System.Windows.Forms.CheckedListBox()
         CType(Me.ptbPosicionInicial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ptbPosicionFinal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,9 +62,10 @@ Partial Class FrmRegistrarEjercicio
         '
         Me.ptbPosicionInicial.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ptbPosicionInicial.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.ptbPosicionInicial.Location = New System.Drawing.Point(697, 150)
+        Me.ptbPosicionInicial.Location = New System.Drawing.Point(697, 142)
         Me.ptbPosicionInicial.Name = "ptbPosicionInicial"
         Me.ptbPosicionInicial.Size = New System.Drawing.Size(250, 250)
+        Me.ptbPosicionInicial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ptbPosicionInicial.TabIndex = 17
         Me.ptbPosicionInicial.TabStop = False
         '
@@ -75,6 +76,7 @@ Partial Class FrmRegistrarEjercicio
         Me.ptbPosicionFinal.Location = New System.Drawing.Point(400, 140)
         Me.ptbPosicionFinal.Name = "ptbPosicionFinal"
         Me.ptbPosicionFinal.Size = New System.Drawing.Size(250, 250)
+        Me.ptbPosicionFinal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ptbPosicionFinal.TabIndex = 20
         Me.ptbPosicionFinal.TabStop = False
         '
@@ -348,7 +350,7 @@ Partial Class FrmRegistrarEjercicio
         Me.MetroButton1.AutoSize = True
         Me.MetroButton1.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton1.Location = New System.Drawing.Point(622, 150)
+        Me.MetroButton1.Location = New System.Drawing.Point(610, 140)
         Me.MetroButton1.Margin = New System.Windows.Forms.Padding(16)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(40, 40)
@@ -416,12 +418,12 @@ Partial Class FrmRegistrarEjercicio
         'lbMusculosSecundarios
         '
         Me.lbMusculosSecundarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.lbMusculosSecundarios.ForeColor = System.Drawing.SystemColors.ScrollBar
         Me.lbMusculosSecundarios.FormattingEnabled = True
-        Me.lbMusculosSecundarios.ItemHeight = 30
-        Me.lbMusculosSecundarios.Location = New System.Drawing.Point(103, 300)
+        Me.lbMusculosSecundarios.Location = New System.Drawing.Point(106, 288)
         Me.lbMusculosSecundarios.Name = "lbMusculosSecundarios"
-        Me.lbMusculosSecundarios.Size = New System.Drawing.Size(250, 214)
-        Me.lbMusculosSecundarios.TabIndex = 74
+        Me.lbMusculosSecundarios.Size = New System.Drawing.Size(250, 244)
+        Me.lbMusculosSecundarios.TabIndex = 94
         '
         'FrmRegistrarEjercicio
         '
@@ -494,6 +496,6 @@ Partial Class FrmRegistrarEjercicio
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-    Friend WithEvents lbMusculosSecundarios As System.Windows.Forms.ListBox
+    Friend WithEvents lbMusculosSecundarios As System.Windows.Forms.CheckedListBox
 
 End Class

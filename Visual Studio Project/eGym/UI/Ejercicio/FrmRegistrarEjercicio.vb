@@ -127,11 +127,13 @@ Public Class FrmRegistrarEjercicio
             Dim _alias As String = Me.txtAlias.Text
             Dim musculoPrincipal As String = Me.cbListaMusculosPrincipales.SelectedValue
 
-            For Each li As Musculo In lbMusculosSecundarios.SelectedItems
+            For Each li As Musculo In lbMusculosSecundarios.CheckedItems
 
                 idsMusculosSecundarios &= li.Id & ","
 
             Next
+
+
 
             Dim posicionInicial As String = Me.txtPosInicial.Text
             Dim posicionFinal As String = Me.txtPosFinal.Text

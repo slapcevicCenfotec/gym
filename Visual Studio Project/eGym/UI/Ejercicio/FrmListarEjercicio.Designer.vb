@@ -81,7 +81,7 @@ Partial Class FrmListarEjercicio
         Me.tblEjercicio.EnableHeadersVisualStyles = False
         Me.tblEjercicio.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.tblEjercicio.GridColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.tblEjercicio.Location = New System.Drawing.Point(16, 75)
+        Me.tblEjercicio.Location = New System.Drawing.Point(16, 62)
         Me.tblEjercicio.Margin = New System.Windows.Forms.Padding(16)
         Me.tblEjercicio.MultiSelect = False
         Me.tblEjercicio.Name = "tblEjercicio"
@@ -146,7 +146,7 @@ Partial Class FrmListarEjercicio
         Me.MetroButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroButton1.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.MetroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.MetroButton1.Location = New System.Drawing.Point(821, 16)
+        Me.MetroButton1.Location = New System.Drawing.Point(548, 16)
         Me.MetroButton1.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(125, 30)
@@ -176,7 +176,7 @@ Partial Class FrmListarEjercicio
         Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnEliminar.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminar.Location = New System.Drawing.Point(548, 16)
+        Me.btnEliminar.Location = New System.Drawing.Point(819, 15)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(125, 30)
@@ -199,7 +199,7 @@ Partial Class FrmListarEjercicio
         Me.txtFiltro.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtFiltro.SelectedText = ""
-        Me.txtFiltro.Size = New System.Drawing.Size(445, 35)
+        Me.txtFiltro.Size = New System.Drawing.Size(445, 30)
         Me.txtFiltro.TabIndex = 28
         Me.txtFiltro.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtFiltro.UseSelectable = True

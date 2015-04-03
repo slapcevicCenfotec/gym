@@ -67,11 +67,14 @@ Public Class FrmListarEjercicio
     End Sub
   
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
-        Dim ctr As Control
-        ctr = New FrmModificarEjercicio(tblEjercicio.CurrentRow.DataBoundItem)
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        If tblEjercicio.RowCount > 0 Then
+            Dim ctr As Control
+            ctr = New FrmModificarEjercicio(tblEjercicio.CurrentRow.DataBoundItem)
+            ctr.Dock = DockStyle.Fill
+            Me.Controls.Clear()
+            Me.Controls.Add(ctr)
+        End If
+
     End Sub
 
     Private Sub MetroButton1_Click_1(sender As Object, e As EventArgs) Handles MetroButton1.Click
@@ -83,12 +86,24 @@ Public Class FrmListarEjercicio
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
+        Dim msg As String = "Desea eliminar el tipo de Ejercicio?"
         Dim ejercicioPorEliminar As Ejercicio = tblEjercicio.CurrentRow.DataBoundItem
-        objeGestorEjercicio.eliminarEjercicio(ejercicioPorEliminar)
-        Dim ctr As Control
-        ctr = New FrmListarEjercicio
-        ctr.Dock = DockStyle.Fill
-        Me.Controls.Clear()
-        Me.Controls.Add(ctr)
+        Dim mensaje As New FrmMensajeSiNo(msg, ejercicioPorEliminar)
+        mensaje.ShowDialog()
+
+        listaOriginal = objeGestorEjercicio.listarEjercicios()
+        tblEjercicio.AutoGenerateColumns = False
+        tblEjercicio.DataSource = listaOriginal
+
+    End Sub
+
+
+    Private Sub txtFiltro_Click(sender As Object, e As EventArgs) Handles txtFiltro.Click
+
+    End Sub
+
+    Private Sub txtFiltro_TextChanged_1(sender As Object, e As EventArgs) Handles txtFiltro.TextChanged
+        AplicarFiltro(txtFiltro.Text.ToUpper)
     End Sub
 End Class

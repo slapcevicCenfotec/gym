@@ -32,6 +32,9 @@ Partial Class FrmListarTipoDePago
         Me.btnAgregarTipoDePago = New MetroFramework.Controls.MetroButton()
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.tblListaTipoDePago = New MetroFramework.Controls.MetroGrid()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Duracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnEliminarTipoDePago = New MetroFramework.Controls.MetroButton()
         CType(Me.tblListaTipoDePago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,7 +56,7 @@ Partial Class FrmListarTipoDePago
         Me.btnModificarTipoDePago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificarTipoDePago.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnModificarTipoDePago.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnModificarTipoDePago.Location = New System.Drawing.Point(674, 15)
+        Me.btnModificarTipoDePago.Location = New System.Drawing.Point(534, 16)
         Me.btnModificarTipoDePago.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnModificarTipoDePago.Name = "btnModificarTipoDePago"
         Me.btnModificarTipoDePago.Size = New System.Drawing.Size(130, 30)
@@ -68,7 +71,7 @@ Partial Class FrmListarTipoDePago
         Me.btnAgregarTipoDePago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAgregarTipoDePago.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnAgregarTipoDePago.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnAgregarTipoDePago.Location = New System.Drawing.Point(534, 15)
+        Me.btnAgregarTipoDePago.Location = New System.Drawing.Point(389, 16)
         Me.btnAgregarTipoDePago.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnAgregarTipoDePago.Name = "btnAgregarTipoDePago"
         Me.btnAgregarTipoDePago.Size = New System.Drawing.Size(130, 30)
@@ -123,6 +126,7 @@ Partial Class FrmListarTipoDePago
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.tblListaTipoDePago.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.tblListaTipoDePago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tblListaTipoDePago.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Monto, Me.Duracion})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -158,12 +162,30 @@ Partial Class FrmListarTipoDePago
         Me.tblListaTipoDePago.TabIndex = 25
         Me.tblListaTipoDePago.Theme = MetroFramework.MetroThemeStyle.Dark
         '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.Name = "Monto"
+        Me.Monto.ReadOnly = True
+        '
+        'Duracion
+        '
+        Me.Duracion.HeaderText = "Duración"
+        Me.Duracion.Name = "Duracion"
+        Me.Duracion.ReadOnly = True
+        '
         'btnEliminarTipoDePago
         '
         Me.btnEliminarTipoDePago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminarTipoDePago.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnEliminarTipoDePago.FontWeight = MetroFramework.MetroButtonWeight.Light
-        Me.btnEliminarTipoDePago.Location = New System.Drawing.Point(389, 15)
+        Me.btnEliminarTipoDePago.Location = New System.Drawing.Point(679, 16)
         Me.btnEliminarTipoDePago.Margin = New System.Windows.Forms.Padding(15, 15, 0, 0)
         Me.btnEliminarTipoDePago.Name = "btnEliminarTipoDePago"
         Me.btnEliminarTipoDePago.Size = New System.Drawing.Size(130, 30)
@@ -197,5 +219,8 @@ Partial Class FrmListarTipoDePago
     Friend WithEvents txtBuscar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents tblListaTipoDePago As MetroFramework.Controls.MetroGrid
     Friend WithEvents btnEliminarTipoDePago As MetroFramework.Controls.MetroButton
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Monto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Duracion As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

@@ -351,7 +351,7 @@ Partial Class FrmModificarEjercicio
         'cbListaMusculosSecundarios
         '
         Me.cbListaMusculosSecundarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.cbListaMusculosSecundarios.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.cbListaMusculosSecundarios.ForeColor = System.Drawing.SystemColors.ScrollBar
         Me.cbListaMusculosSecundarios.FormattingEnabled = True
         Me.cbListaMusculosSecundarios.Location = New System.Drawing.Point(118, 305)
         Me.cbListaMusculosSecundarios.Name = "cbListaMusculosSecundarios"
