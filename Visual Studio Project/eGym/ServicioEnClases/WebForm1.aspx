@@ -18,7 +18,7 @@
     <script type="text/javascript" src="Scripts/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/jquery.js">
     </script>
-    <script type="text/javascript" src="Scripts/buscarMusculos.js">
+    <script type="text/javascript" src="localScripts/buscarMusculos.js">
     </script>
 
 </head>
