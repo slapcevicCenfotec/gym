@@ -22,9 +22,9 @@ namespace BLL
         /// Descripcion: Devuelve una lista de todo los pago habilitados.
         /// </summary>
         /// <returns>IEnumerable<Pago></returns>
-        public IEnumerable<Pago> listarPagos()
+        public List<Pago> listarPagos()
         {
-            return UoW.PagoRepository.GetAll();
+            return UoW.PagoRepository.GetAll().ToList<Pago>();
         }
         /// <summary>
         /// Autor:Alberto Arias

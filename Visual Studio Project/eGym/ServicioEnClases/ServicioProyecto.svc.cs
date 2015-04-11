@@ -31,7 +31,7 @@ namespace ServicioEnClases
             List<Musculo> listaMusculos = new List<Musculo>();
             listaMusculos = objGestorMusculo.listarMusculos();
             return new JavaScriptSerializer().Serialize(listaMusculos);
-            
+ 
         }
         [WebGet()]
         [OperationContract]

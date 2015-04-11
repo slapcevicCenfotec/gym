@@ -81,4 +81,8 @@ Public Class FrmRegistrarTipoDePago
     Private Sub MetroPanel1_Paint(sender As Object, e As PaintEventArgs) Handles MetroPanel1.Paint
 
     End Sub
+
+    Private Sub FrmRegistrarTipoDePago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

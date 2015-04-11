@@ -191,7 +191,7 @@ Partial Class FrmListarPago
         '
         'Fecha
         '
-        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.HeaderText = "Realizada "
         Me.Fecha.Name = "Fecha"
         Me.Fecha.ReadOnly = True
         '
