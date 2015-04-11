@@ -24,9 +24,9 @@ namespace BLL
         /// Descripcion: Devuelve una lista de todo los tipos de pago habilitados.
         /// </summary>
         /// <returns>IEnumerable<TipoDePago></returns>
-        public IEnumerable<TipoDePago> listarTiposDePago()
+        public List<TipoDePago> listarTiposDePago()
         {
-            return UoW.TipoDePagoRepository.GetAll();
+            return UoW.TipoDePagoRepository.GetAll().ToList<TipoDePago>();
         }
         
         /// <summary>
