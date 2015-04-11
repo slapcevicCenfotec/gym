@@ -12,18 +12,18 @@ using System.Web.Script.Serialization;
 
 namespace ServicioEnClases
 {
-    [ServiceContract(Namespace = "")]
+    [ServiceContract(Namespace = "ServicioUsuario")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    [System.Web.Script.Services.ScriptService]
     public class ServicioUsuario
     {
-        //Gestor gestor = new Gestor();
-        //[WebGet()]
-        //[OperationContract]
-        //public string obtenerUsuarios()
-        //{
-        //    //List<Usuario> usuarios = new List<Usuario>();
-        //    //usuarios = gestor.ListarUsuarios();
-        //    //return new JavaScriptSerializer()
-        //}
+        [WebGet()]
+        [OperationContract]
+        public string obtenerUsuarios()
+        {
+            return new JavaScriptSerializer().Serialize(new Gestor().ListarUsuarios());
+        }
+
+        // Add more operations here and mark them with [OperationContract]
     }
 }

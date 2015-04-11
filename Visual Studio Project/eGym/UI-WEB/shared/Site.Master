@@ -77,8 +77,9 @@
     </header>
     <div id="base">
         <div id="content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <form id="Form1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </form>
         </div>
         <div id="menubar" class="menubar-inverse  animate">
             <div class="menubar-fixed-panel">
@@ -214,7 +215,7 @@
     <script src="<%= Page.ResolveUrl("~/js/core/source/AppVendor.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/Demo.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
-        <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoTableDynamic.js")%>"></script>
+
     <!-- END JAVASCRIPT -->
 
 </body>
