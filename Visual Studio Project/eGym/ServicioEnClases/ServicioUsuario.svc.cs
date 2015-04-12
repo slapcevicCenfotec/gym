@@ -12,7 +12,7 @@ using System.Web.Script.Serialization;
 
 namespace ServicioEnClases
 {
-    [ServiceContract(Namespace = "ServicioUsuario")]
+    [ServiceContract(Namespace = "ServicioEnClases")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     [System.Web.Script.Services.ScriptService]
     public class ServicioUsuario

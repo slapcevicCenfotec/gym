@@ -26,7 +26,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server">
             <Services>
-                <asp:ServiceReference Path="~/ServicioProyecto.svc" />
+                <asp:ServiceReference Path="~/ServicioUsuario.svc" />
             </Services>
         </asp:ScriptManager>
     <div>
