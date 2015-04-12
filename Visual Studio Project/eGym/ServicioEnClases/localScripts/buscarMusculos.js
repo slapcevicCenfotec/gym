@@ -6,6 +6,7 @@ function buscarMusculos() {
       service.obtenerMusculos(onSuccessDioses, null, null);
 }
 
+
 function load() {
     //var el = document.getElementById("tblDioses");
     //el.addEventListener("click", function () { modificarMusculo($(this).find("td").eq(2).html()) }, false);
@@ -22,7 +23,6 @@ function load() {
         }
     });
 }
-
 
 
 function modificarMusculo() {
@@ -97,7 +97,7 @@ function onSuccessDioses(result) {
     var tbody = "";
     $.each(objeto, function (i, item) {
         tbody += '<tr>';
-        tbody += '<td>' + objeto[i].Id + '</td>';
+        tbody += '<td>' + objeto[i].Identificacion + '</td>';
         tbody += '<td>' + objeto[i].Nombre + '</td>';
         tbody += '<td>' + objeto[i].Ubicacion + '</td>';
         tbody += '<td>' + objeto[i].Origen + '</td>';

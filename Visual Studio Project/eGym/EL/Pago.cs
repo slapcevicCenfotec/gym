@@ -22,30 +22,11 @@ namespace EL
         private DateTime _fecha;
         private bool _habilitado;
         private int _usuario;
-        private string _tipoDePago;
-        private string _nombreCliente;
-
-       
-        
-        
-
-      
 
         public Pago()
-        { }
-        public string NombreCliente
-        {
-            get { return _nombreCliente; }
-            set { _nombreCliente = value; }
+        { 
         }
-
-        public string TipoDePago
-        {
-            get { return _tipoDePago; }
-            set { _tipoDePago = value; }
-        }
-
-
+       
         public Pago(int pId)
         {
             this._id = pId;

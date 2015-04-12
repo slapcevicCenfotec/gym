@@ -108,6 +108,8 @@ Public Class FrmRegistrarPago
     Private Sub dbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dbTipo.SelectedIndexChanged
         Dim auxTipo As TipoDePago = New TipoDePago()
         Dim auxLista As List(Of TipoDePago) = objGestorTipoPago.listarTiposDePago()
+
+
         If dbTipo.SelectedValue.GetType() Is auxTipo.GetType() Then
             For Each item In auxLista
                 auxTipo = dbTipo.SelectedValue

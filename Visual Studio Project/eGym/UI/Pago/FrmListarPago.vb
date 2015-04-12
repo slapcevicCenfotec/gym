@@ -34,7 +34,7 @@ Public Class FrmListarPago
         Dim listaFiltrada As List(Of EL.Pago) = New List(Of EL.Pago)
         If Not listaOriginal Is Nothing Then
             For Each pago As Pago In listaOriginal
-                If pago.Factura.ToUpper.Contains(filtro) Or pago.Monto.ToString().Contains(filtro) Or pago.Fecha.ToString().Contains(filtro) Or pago.Desde.ToString().Contains(filtro) Or pago.Hasta.ToString().Contains(filtro) Or pago.TipoDePago.ToString().Contains(filtro) Or pago.NombreCliente.ToString().Contains(filtro) Then
+                If pago.Factura.ToUpper.Contains(filtro) Or pago.Monto.ToString().Contains(filtro) Or pago.Fecha.ToString().Contains(filtro) Or pago.Desde.ToString().Contains(filtro) Or pago.Hasta.ToString().Contains(filtro) Then
                     listaFiltrada.Add(pago)
                 End If
             Next
