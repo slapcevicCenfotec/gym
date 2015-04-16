@@ -24,13 +24,12 @@ namespace BLL
         /// <summary>
         /// Autor:Danny Espinoza
         /// Fecha:03/15/2015
-        /// Descripcion: Esta metodo devuelve una lista de ejercicios
+        /// Descripcion: Esta metodo devuelve una lista de eC:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\DAL\Repositories\EjercicioRepository.csjercicios
         /// </summary>
         /// <returns>List<Ejercicio></returns>
-        public IEnumerable<Ejercicio> listarEjercicios()
+        public List<Ejercicio> listarEjercicios()
         {
-
-            return Uow.EjercicioRepository.GetAll();
+            return Uow.EjercicioRepository.GetAll().ToList<Ejercicio>();
         }
         /// <summary>
         /// Autor:Danny Espinoza
@@ -60,23 +59,23 @@ namespace BLL
             Ejercicio objEjercicio = new Ejercicio(pnombre, palias, pposicionInc, pposIncImg, pposicionFinal, pposicionFinalImg, perroresComunes, pdescripcion, pidMusculoPrincipal, pmusculosSecundarios);
             try
             {
-                if (objEjercicio.IsValid)
-                {
+                //if (objEjercicio.IsValid)
+                //{
                     Uow.EjercicioRepository.Insert(objEjercicio);
                     Uow.EjercicioRepository.Save();
 
-                    gestorEventos.insertarEvento("Insertar ejercicio", "El usuario ha insertado un ejercicio " + objEjercicio.Nombre + " al sistema.");
-                }
-                else 
-                {
-                    StringBuilder sb = new StringBuilder();
-                    foreach (RuleViolation rv in objEjercicio.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
-                    throw new BusinessLogicException(sb.ToString());
+                //    gestorEventos.insertarEvento("Insertar ejercicio", "El usuario ha insertado un ejercicio " + objEjercicio.Nombre + " al sistema.");
+                //}
+                //else 
+                //{
+                //    StringBuilder sb = new StringBuilder();
+                //    foreach (RuleViolation rv in objEjercicio.GetRuleViolations())
+                //    {
+                //        sb.AppendLine(rv.ErrorMessage);
+                //    }
+                //    throw new BusinessLogicException(sb.ToString());
                 
-                }
+                //}
             }
             catch (SqlException ex)
             {

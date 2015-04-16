@@ -20,16 +20,48 @@
     </script>
     <script type="text/javascript" src="localScripts/buscarMusculos.js">
     </script>
-
+   
 </head>
 <body>
+  <button type="button" class="btn btn-default" onclick="ingresarMusculo()">Submit</button>
+   
+     <script>
+         $(document).ready(function () {
+             dibujarCanvas();
+            var servcio = new Ser
+         });
+
+
+         function dibujarCanvas() {
+             var canvas = document.getElementById('miCanvas');
+             var contexto = canvas.getContext('2d');
+             // imagen
+             var imagen = new Image();
+             imagen.onload = function () {
+                 contexto.drawImage(imagen, 0, 0);  // imagen completa en la posición (0,0) 
+                 contexto.drawImage(imagen, 285, 0, 150, 107); // escalado
+                 contexto.drawImage(imagen, 130, 85, 80, 60, 285, 205, 150, 107); // escalado de una porción
+                 contexto.strokeStyle = 'yellow';
+                 contexto.strokeRect(130, 85, 80, 60); // rectángulo amarillo
+             }
+             imagen.src = 'http://www.aulaclic.es/articulos/graficos/cabeza_pato.png';
+         }
+    </script>
+
+    <canvas id="miCanvas" width="450" height="350">Su navegador no soporta Canvas.</canvas>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server">
             <Services>
-                <asp:ServiceReference Path="~/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="~/ServicioProyecto.svc" />
             </Services>
         </asp:ScriptManager>
-    <div>
+   
      <input type="button" id="btnBuscarMusculos" onclick="buscarMusculos()" value="Buscar Musculos" />
 
     <input type="button" id="btnModificarMusculo" onclick="modificarMusculo()" value="Modificar" />
@@ -53,8 +85,8 @@
     </table>
     
     <br />
-   
-  <div class="form-group">
+   </form>
+ <%-- <div class="form-group">
     <label for="">Nombre</label>
     <input type="text" class="form-control" id="txtnombreMusculo" placeholder="Enter nombre">
   </div>
@@ -80,6 +112,6 @@
   </div>
   <button type="button" class="btn btn-default" onclick="ingresarMusculo()">Submit</button>
     </div>
-    </form>
+    </form>--%>
 </body>
 </html>

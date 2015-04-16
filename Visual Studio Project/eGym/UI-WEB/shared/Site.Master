@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="/assets/js/libs/utils/html5shiv.js"></script>
 		<script type="text/javascript" src="/assets/js/libs/utils/respond.min.js"></script>
 		<![endif]-->
+    <script src="../js/localScripts/ejercicios.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -76,8 +77,10 @@
         </div>
     </header>
     <div id="base">
+        <q>content</q>
         <div id="content">
             <form id="Form1" runat="server">
+                
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
             </form>
         </div>
