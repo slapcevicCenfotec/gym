@@ -30,7 +30,7 @@
 
 function search() {
     var service = new ServicioEnClases.ServicioUsuario();
-    service.obtenerUsuarios(onSuccess, null, null);
+    service.ObtenerUsuarios(onSuccess, null, null);
 }
 
 function error(result) {
@@ -67,4 +67,52 @@ function formattedDate(date) {
     if (day.length < 2) day = '0' + day;
 
     return [month, day, year].join('/');
+}
+
+function ingresarUsuario() {
+    var identificacion = $('#txtIdentificacion').val();
+    var tipoIdentificacion = $('#txtTipoIdentificacion').val();
+    var primerNombre = $('#txtPrimerNombre').val();
+    var segundoNombre = $('#txtSegundoNombre').val();
+    var primerApellido = $('#txtPrimerApellido').val();
+    var segundoApellido = $('#txtSegundoApellido').val();
+    var alias = $('#txtAlias').val();
+    var genero = $('#txtGenero').val();
+    var fechaNacimiento = $('#txtFechaNacimiento').val();
+    var correoElectronico = $('#txtCorreoElectronico').val();
+    var numeroTelefono = $('#txtNumeroTelefono').val();
+    var numeroCelular = $('#txtNumeroCelular').val();
+    var rol = $('#txtRol').val();
+    var contrasena = $('#txtContrasena').val();
+    var repetirContrasena = $('#txtRepetirContrasena').val();
+
+    var servicio = new ServicioEnClases.ServicioUsuario();
+
+    var datos = JSON.stringify({
+        pIdentificacion: identificacion,
+        pTipoIdentificacion: tipoIdentificacion,
+        pPrimerNombre: primerNombre,
+        pSegundoNombre: segundoNombre,
+        pSegundoApellido: segundoApellido,
+        pPrimerApellido: primerApellido,
+        pAlias: alias,
+        pIdGenero: genero,
+        pFechaNacimiento: fechaNacimiento,
+        pCorreoElectronico: correoElectronico,
+        pNumeroTelefono: numeroTelefono,
+        pNumeroCelular: numeroCelular,
+        pIdRol: rol,
+        pContrasena: contrasena
+    });
+    var respuesta = servicio.InsertarUsuario(datos, onSuccesIngresar, errorMessage, null, null);
+    
+    var object = $.parseJSON(respuesta);
+}
+
+function onSuccesIngresar(result) {
+    alert(result);
+}
+
+function errorMessage(resul) {
+    alert(resul.get_message());
 }

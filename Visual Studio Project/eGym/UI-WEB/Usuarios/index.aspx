@@ -33,19 +33,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                       
                             </tbody>
                         </table>
                     </div>
-                    <!--end .table-responsive -->
                 </div>
-                <!--end .col -->
             </div>
-            <!--end .row -->
-            <!-- END DATATABLE 1 -->
-
         </div>
-        <!--end .section-body -->
     </section>
     <form runat="server">
         <asp:ScriptManager runat="server" >
