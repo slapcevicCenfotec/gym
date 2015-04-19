@@ -78,9 +78,9 @@ namespace ServicioEnClases
             Boolean habilitado = Boolean.Parse(dictionary["phabilitado"]);
             int tipoMaquina = int.Parse(dictionary["ptipoMaquina"]);
 
-            Maquina maquinaPorElminar = new Maquina(id, numeroActivo, numeroMaquina, habilitado, tipoMaquina);
+            Maquina maquinaPorEliminar = new Maquina(id, numeroActivo, numeroMaquina, habilitado, tipoMaquina);
 
-            objGestorMaquinas.eliminarMaquina(maquinaPorElminar);
+            objGestorMaquinas.eliminarMaquina(maquinaPorEliminar);
 
         }
 

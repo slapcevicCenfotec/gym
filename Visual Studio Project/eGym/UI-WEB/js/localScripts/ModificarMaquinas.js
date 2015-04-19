@@ -29,7 +29,7 @@ function onSuccessObtenerMaquina(result) {
     $('#cmbTiposDeMaquinas').val(objeto['TipoDeMaquina']);
 }
 
-$('#btnModificarMaquina').click(function () {
+$('#btnGuardar').click(function () {
     var numeroActivo = $('#txtNumeroActivo').val(),
         numeroMaquina = $('#txtNumeroMaquina').val(),
         tipoMaquina = $('#cmbTiposDeMaquinas option:selected').val();

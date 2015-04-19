@@ -1,31 +1,21 @@
-﻿var selected = [];
-var table;
-
-$(function () {
-    var service = new ServicioEnClases.ServiciosTiposDeMaquinas();
-    service.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
-});
-
-function onSuccessTiposDeMaquinas(result) {
-    var objeto = $.parseJSON(result);
-    var tbody = "";
-    $.each(objeto, function (i, item) {
-        tbody += '<tr>';
-        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
-        tbody += '<td style="display:none">' + objeto[i].Foto + '</td>';
-        tbody += '<td>' + objeto[i].Nombre + '</td>';
-        tbody += '<td>' + objeto[i].Descripcion + '</td>';
-        tbody += '<td style="display:none">' + objeto[i].Habilitado + '</td>';
-        tbody += '<td>' + objeto[i].Cantidad + '</td>';
-        tbody += '</tr>';
+﻿function load() {
+    var table = $('#tblTiposDeMaquinas').DataTable({
+        "dom": 'lCfrtip',
+        "order": [],
+        "colVis": {
+            "buttonText": "Columnas",
+            "overlayFade": 0,
+            "align": "right"
+        },
+        "language": {
+            "lengthMenu": '_MENU_ entradas por página',
+            "search": '<i class="fa fa-search"></i>',
+            "paginate": {
+                "Anterior": '<i class="fa fa-angle-left"></i>',
+                "Siguiente": '<i class="fa fa-angle-right"></i>'
+            }
+        }
     });
-    $('#tblTiposDeMaquinas tbody').append(tbody);
-    load();
-}
-
-function load() {
-
-    table = $('#tblTiposDeMaquinas').DataTable();
 
     $('#tblTiposDeMaquinas tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
@@ -38,20 +28,61 @@ function load() {
     });
 }
 
-$('#btnAgregarTipoDeMaquina').click(function () {
-    window.location = 'FrmRegistrarTipoDeMaquinaWeb.aspx';
+function search() {
+    var service = new ServicioEnClases.ServiciosTiposDeMaquinas();
+    service.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
+}
+
+function error(result) {
+    alert(result);
+}
+
+function onSuccessTiposDeMaquinas(result) {
+    var objeto = $.parseJSON(result);
+    var tbody = "";
+    $.each(objeto, function (i, item) {
+        tbody += '<tr>';
+        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td>' + objeto[i].Nombre + '</td>';
+        tbody += '<td>' + objeto[i].Descripcion + '</td>';
+        tbody += '<td>' + objeto[i].Cantidad + '</td>';
+        tbody += '</tr>';
+    });
+    $('#tblTiposDeMaquinas tbody').append(tbody);
+    load();
+}
+
+$('#btnAgregar').click(function () {
+    window.location = 'TiposDeMaquinas/Registrar.aspx';
 })
 
 
-$('#btnModificarMaquina').click(function () {
+$('#btnModificar').click(function () {
     var rows = $('tr.selected');
-    var table = $('#tblMaquinas').DataTable();
+    var table = $('#tblTiposDeMaquinas').DataTable();
+    var rowData = table.rows(rows).data();
+    var idTipoDeMaquina = rowData[0][0];
+    window.location = "TiposDeMaquinas/Modificar.aspx?id=" + idTipoDeMaquina;
+})
+
+$('#btnEliminarMaquina').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblTiposDeMaquinas').DataTable();
     var rowData = table.rows(rows).data();
     var idMaquina = rowData[0][0];
-    var numeroActivo = rowData[0][1];
-    var numeroMaquina = rowData[0][2];
-    var habilitado = rowData[0][3];
-    var tipoMaquina = rowData[0][4];
-    var nombreMaquina = rowData[0][5];
-    window.location = "FrmModificarMaquinaWeb.aspx?id=" + idMaquina;
+
+    var serviceBuscarTipoDeMaquinaPorId = new ServicioEnClases.ServiciosMaquina();
+    var tipoDeMaquinaPorEliminar = serviceBuscarMaquinaPorId.obtenerTipoDeMaquinaById(idMaquina, onSuccessObtenerMaquina, null, null);
+
+    var serviceEliminar = new ServicioEnClases.ServiciosTiposDeMaquinas();
+
+    serviceEliminar.eliminarTipoDeMaquina(tipoDeMaquinaPorEliminar, onSuccesEliminarTipoMaquina, errorMessage, null, null);
 })
+
+function onSuccesEliminarTipoMaquina(result) {
+    alert('Se eliminó correctamente el tipo de máquina');
+}
+
+function errorMessage(resul) {
+    alert(resul.get_message());
+}

@@ -1,31 +1,21 @@
-﻿var selected = [];
-var table;
-
-$(document).ready(function () {
-    var service = new ServicioEnClases.ServiciosMaquinas();
-    service.obtenerMaquinas(onSuccessMaquinas, null, null);
-});
-
-function onSuccessMaquinas(result) {
-    var objeto = $.parseJSON(result);
-    var tbody = "";
-    $.each(objeto, function (i, item) {
-        tbody += '<tr>';
-        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
-        tbody += '<td>' + objeto[i].NumeroActivo + '</td>';
-        tbody += '<td>' + objeto[i].NumeroMaquina + '</td>';
-        tbody += '<td style="display:none">' + objeto[i].Habilitado + '</td>';
-        tbody += '<td style="display:none">' + objeto[i].TipoDeMaquina + '</td>';
-        tbody += '<td>' + objeto[i].NombreTipoMaquina + '</td>';
-        tbody += '</tr>';
+﻿function load() {
+    var table = $('#tblMaquinas').DataTable({
+        "dom": 'lCfrtip',
+        "order": [],
+        "colVis": {
+            "buttonText": "Columnas",
+            "overlayFade": 0,
+            "align": "right"
+        },
+        "language": {
+            "lengthMenu": '_MENU_ entradas por página',
+            "search": '<i class="fa fa-search"></i>',
+            "paginate": {
+                "Anterior": '<i class="fa fa-angle-left"></i>',
+                "Siguiente": '<i class="fa fa-angle-right"></i>'
+            }
+        }
     });
-    $('#tblMaquinas tbody').append(tbody);
-    load();
-}
-
-function load() {
-
-    table = $('#tblMaquinas').DataTable();
 
     $('#tblMaquinas tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
@@ -38,8 +28,32 @@ function load() {
     });
 }
 
-$('#btnAgregarMaquina').click(function () {
-    window.location = 'FrmRegistrarMaquinaWeb.aspx';
+function search() {
+    var service = new ServicioEnClases.ServiciosMaquinas();
+    service.obtenerMaquinas(onSuccessMaquinas, null, null);
+}
+
+function error(result) {
+    alert(result);
+}
+
+function onSuccessMaquinas(result) {
+    var object = $.parseJSON(result);
+    var tbody = "";
+    $.each(object, function (i, item) {
+        tbody += '<tr>';
+        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td>' + object[i].NumeroActivo + '</td>';
+        tbody += '<td>' + object[i].NumeroMaquina + '</td>';
+        tbody += '<td>' + objeto[i].NombreTipoMaquina + '</td>';
+        tbody += '</tr>';
+    });
+    $('#tblMaquinas tbody').append(tbody);
+    load();
+}
+
+$('#btnAgregar').click(function () {
+    window.location = 'Maquinas/Registrar.aspx';
 })
 
 $('#btnModificarMaquina').click(function () {
@@ -47,12 +61,7 @@ $('#btnModificarMaquina').click(function () {
     var table = $('#tblMaquinas').DataTable();
     var rowData = table.rows(rows).data();
     var idMaquina = rowData[0][0];
-    var numeroActivo = rowData[0][1];
-    var numeroMaquina = rowData[0][2];
-    var habilitado = rowData[0][3];
-    var tipoMaquina = rowData[0][4];
-    var nombreMaquina = rowData[0][5];
-    window.location = "FrmModificarMaquinaWeb.aspx?id=" + idMaquina;
+    window.location = "Maquinas/Modificar.aspx?id=" + idMaquina;
 })
 
 $('#btnEliminarMaquina').click(function () {
@@ -60,22 +69,21 @@ $('#btnEliminarMaquina').click(function () {
     var table = $('#tblMaquinas').DataTable();
     var rowData = table.rows(rows).data();
     var idMaquina = rowData[0][0];
-    var numeroActivo = rowData[0][1];
-    var numeroMaquina = rowData[0][2];
-    var habilitado = rowData[0][3];
-    var tipoMaquina = rowData[0][4];
+
+    var serviceBuscarMaquinaPorId = new ServicioEnClases.ServiciosMaquina();
+    var maquinaPorEliminar = serviceBuscarMaquinaPorId.obtenerMaquinaById(idMaquina, onSuccessObtenerMaquina, null, null);
+
     var serviceEliminar = new ServicioEnClases.ServiciosMaquina();
 
-    datos = JSON.stringify({ pid: idMaquina, pnumeroActivo: numeroActivo, pnumeroMaquina: numeroMaquina, phabilitado: habilitado, ptipoMaquina: tipoMaquina });
-    serviceEliminar.eliminarMaquina(datos, onSuccesEliminarMaquina, errorMessage, null, null);
+    serviceEliminar.eliminarMaquina(maquinaPorEliminar, onSuccesEliminarMaquina, errorMessage, null, null);
 })
 
 $('#btnTiposDeMaquinas').click(function () {
-    window.location = "FrmListarTiposDeMaquinasWeb.aspx?";
+    window.location = "TiposDeMaquinas/Index.aspx?";
 })
 
 function onSuccesEliminarMaquina(result) {
-    alert('Se eliminó correctamente el Musculo');
+    alert('Se eliminó correctamente la máquina');
 }
 
 function errorMessage(resul) {

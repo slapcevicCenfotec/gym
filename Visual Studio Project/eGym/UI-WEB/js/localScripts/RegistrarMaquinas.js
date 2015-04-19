@@ -1,7 +1,4 @@
-﻿var selected = [];
-var table;
-
-$(function () {
+﻿$(function () {
     var serviceBuscar = new ServicioEnClases.ServiciosTiposDeMaquinas();
     serviceBuscar.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
 });
@@ -19,22 +16,7 @@ function onSuccessTiposDeMaquinas(result) {
     });
 }
 
-function load() {
-
-    table = $('#tblTipoDeMaquinas').DataTable();
-
-    $('#tblTipoDeMaquinas tbody').on('click', 'tr', function () {
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-        }
-        else {
-            table.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-        }
-    });
-}
-
-$('#btnAgregarMaquina').click(function () {
+$('#btnGuardar').click(function () {
     var numeroActivo = $('#txtNumeroActivo').val(),
         numeroMaquina = $('#txtNumeroMaquina').val(),
         tipoMaquina = $('#cmbTiposDeMaquinas option:selected').val();

@@ -14,6 +14,7 @@ namespace ServicioEnClases
 {
     [ServiceContract(Namespace = "ServicioEnClases")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    [System.Web.Script.Services.ScriptService]
     public class ServiciosTiposDeMaquinas
     {
         GestorTipoDeMaquina objGestorTiposMaquinas = new GestorTipoDeMaquina();
@@ -41,12 +42,23 @@ namespace ServicioEnClases
 
         }
 
-        public static string FixBase64ForImage(string image)
+        [OperationContract]
+        public void eliminarTipoDeMaquina(string datosSerializados)
         {
-            StringBuilder sbText = new StringBuilder(image, image.Length);
-            sbText.Replace("\r\n", String.Empty);
-            sbText.Replace(" ", String.Empty);
-            return sbText.ToString();
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            int id = int.Parse(dictionary["pid"]);
+            string nombre = dictionary["pnombre"];
+            string descripcion = dictionary["pdescripcion"];
+            byte[] foto = System.Convert.FromBase64String(dictionary["pfoto"]);
+            Boolean habilitado = Convert.ToBoolean(dictionary["pdescripcion"]);
+            int tipoMaquina = int.Parse(dictionary["ptipoMaquina"]);
+
+            TipoDeMaquina tipoMaquinaPorEliminar = new TipoDeMaquina(id, foto, nombre, descripcion, habilitado);
+
+            objGestorTiposMaquinas.eliminarTipoDeMaquina(tipoMaquinaPorEliminar);
+
         }
     }
 }

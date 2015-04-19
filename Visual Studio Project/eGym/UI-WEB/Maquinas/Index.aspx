@@ -17,6 +17,9 @@
                     <article class="margin-bottom-xxl">
                         <p class="lead">Máquinas</p>
                     </article>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnAgregar">Agregar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnModificar">Modificar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnEliminar">Eliminar</button>
                 </div>
             </div>
             <div class="row">
@@ -49,7 +52,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/eGymServices/ServiciosMaquinas.svc" />
+                <asp:ServiceReference Path="http://localhost/ServiciosMaquinas.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
