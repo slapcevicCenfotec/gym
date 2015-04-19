@@ -35,7 +35,7 @@ namespace ServicioEnClases
             string correo = dictionary["pcorreo"];
             string contrasena = dictionary["pcontrasena"];
 
-            objGestorSesion.iniciarSesion(correo, contrasena);
+            Usuario usuario =  objGestorSesion.iniciarSesion(correo, contrasena);
 
         }
     }
