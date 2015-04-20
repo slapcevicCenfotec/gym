@@ -8,8 +8,10 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Http;
 using System.Web.Script.Serialization;
 using System.Web.Services;
+
 
 namespace ServicioEnClases
 {
@@ -27,6 +29,15 @@ namespace ServicioEnClases
             return serializer.Serialize(gestor.ListarUsuarios());
         }
 
+        [WebGet()]
+        [OperationContract]
+        public string ObtenerRoles()
+        {
+            var gestor = new GestorRol();
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(gestor.listarRoles());
+        }
+
         [WebMethod]
         [OperationContract]
         public String InsertarUsuario(string datos)
@@ -42,25 +53,28 @@ namespace ServicioEnClases
                 string pPrimerNombre = Convert.ToString(diccionario["pPrimerNombre"]);
                 string pSegundoNombre = Convert.ToString(diccionario["pSegundoNombre"]);
                 string pPrimerApellido = Convert.ToString(diccionario["pPrimerApellido"]);
-               // string pSegundoApellido = Convert.ToString(diccionario["pSegundoApellido"]);
+                string pSegundoApellido = Convert.ToString(diccionario["pSegundoApellido"]);
                 string pAlias = Convert.ToString(diccionario["pAlias"]);
-               // DateTime pFechaNacimiento = Convert.ToDateTime(diccionario["pFechaNacimiento"]);
+                DateTime pFechaNacimiento = DateTime.ParseExact(diccionario["pFechaNacimiento"], "dd/MM/yyyy", null);
                 string pCorreoElectronico = Convert.ToString(diccionario["pCorreoElectronico"]);
                 string pContrasena = Convert.ToString(diccionario["pContrasena"]);
-               // byte[] pFotografia = ConvertToByteArray(diccionario["pFotografia"]);
-               // DateTime pFechaIngreso = Convert.ToDateTime(diccionario["pFechaIngreso"]);
+                string pFotografia = diccionario["pFoto"];
+                //byte[] pFotografia = ConvertToByteArray(diccionario["pFotografia"]);
+                //byte[] pFotografia = null;
+
+                DateTime pFechaIngreso = DateTime.Now;
                 string pNumeroTelefono = Convert.ToString(diccionario["pNumeroTelefono"]);
                 string pNumeroCelular = Convert.ToString(diccionario["pNumeroCelular"]);
-                //int pIdRol = Convert.ToInt32(diccionario["pIdRol"]);
-                //int pIdGenero = Convert.ToInt32(diccionario["pIdGenero"]);
-                //int pTipoIdentificacion = Convert.ToInt32(diccionario["pTipoIdentificacion"]);
+                int pIdRol = Convert.ToInt32(diccionario["pIdRol"]);
+                int pIdGenero = Convert.ToInt32(diccionario["pIdGenero"]);
+                int pTipoIdentificacion = Convert.ToInt32(diccionario["pTipoIdentificacion"]);
 
-                //gestor.AgregarUsuario(pIdentificacion, pPrimerNombre, pSegundoNombre, 
-                //    pPrimerApellido, pSegundoApellido, pAlias, pFechaNacimiento, 
-                //    pCorreoElectronico, pContrasena, pFotografia, pFechaIngreso, pNumeroTelefono, 
-                //    pNumeroCelular, pIdRol, pIdGenero, pTipoIdentificacion);
+                gestor.AgregarUsuario(pIdentificacion, pPrimerNombre, pSegundoNombre, 
+                    pPrimerApellido, pSegundoApellido, pAlias, pFechaNacimiento, 
+                    pCorreoElectronico, pContrasena, System.Convert.FromBase64String(pFotografia.Split(',')[1]), pFechaIngreso, pNumeroTelefono, 
+                    pNumeroCelular, pIdRol, pIdGenero, pTipoIdentificacion);
 
-                return new JavaScriptSerializer().Serialize("Todo bien");
+                return new JavaScriptSerializer().Serialize("Todod bien");
             }
             catch (Exception ex)
             {
