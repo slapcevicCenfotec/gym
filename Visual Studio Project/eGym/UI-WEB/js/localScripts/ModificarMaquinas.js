@@ -1,4 +1,4 @@
-﻿$(function () {
+﻿$(document).ready(function () {
     var serviceBuscarTiposMaquina = new ServicioEnClases.ServiciosTiposDeMaquinas();
     serviceBuscarTiposMaquina.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
 

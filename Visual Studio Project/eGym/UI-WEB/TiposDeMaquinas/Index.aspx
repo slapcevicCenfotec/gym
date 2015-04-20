@@ -52,7 +52,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost:49179/ServiciosTiposDeMaquinas.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
@@ -64,4 +64,9 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/localScripts/ListarTiposDeMaquinas.js")%>"></script>
+    <script>
+        $(document).ready(function () {
+            search();
+        });
+    </script>
 </asp:Content>

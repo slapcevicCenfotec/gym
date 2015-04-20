@@ -429,7 +429,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosFichasDeMedicion.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
