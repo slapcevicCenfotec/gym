@@ -52,24 +52,25 @@ namespace BLL
             try
             {
                 Musculo objMusculo = new Musculo(pnombre, ubicacion,origen, inserccion, inervacion, irrigacion);
+                Uow.MusculoRepository.Insert(objMusculo);
+                Uow.MusculoRepository.Save();
 
-                if (objMusculo.IsValid)
-                {
-                    Uow.MusculoRepository.Insert(objMusculo);
-                    Uow.MusculoRepository.Save();
-                    gestorEventos.insertarEvento("Insertar Músculo", "El usuario a insertado el musculo " + objMusculo.Nombre + " al sistema.");
-                }
-                else
-                {
-                    StringBuilder sb = new StringBuilder();
+                //if (objMusculo.IsValid)
+                //{
+                   
+                //    gestorEventos.insertarEvento("Insertar Músculo", "El usuario a insertado el musculo " + objMusculo.Nombre + " al sistema.");
+                //}
+                //else
+                //{
+                //    StringBuilder sb = new StringBuilder();
 
-                    foreach (RuleViolation rv in objMusculo.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
+                //    foreach (RuleViolation rv in objMusculo.GetRuleViolations())
+                //    {
+                //        sb.AppendLine(rv.ErrorMessage);
+                //    }
 
-                    throw new BusinessLogicException(sb.ToString());
-                }
+                //    throw new BusinessLogicException(sb.ToString());
+                //}
 
             }
             catch (SqlException ex)

@@ -29,17 +29,64 @@ namespace ServicioEnClases
 
         }
 
-        [WebMethod]
+        [WebGet()]
         [OperationContract]
-        public void insertarMusculo(string datosSerializados)
+        public string obtenerEjercicioByID(string datosSerializados)
         {
             var jss = new JavaScriptSerializer();
             var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-            Byte[] image = Convert.FromBase64String(dictionary["pnombre"]);
-
-            objGestorEjercicio.insertarEjercicio("nombre", "Alias", "pos", image, "p", image, "p", "p", 1, "1");
+            int id = Convert.ToInt32(dictionary["pid"]);
             
+            Ejercicio objEjercicio = new Ejercicio();
+            objEjercicio = objGestorEjercicio.getEjercicio(id);
+            return new JavaScriptSerializer().Serialize(objEjercicio);
+
+        }
+
+        [WebMethod]
+        [OperationContract]
+        public void insertarEjercicio(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            string nombre = dictionary["pnombre"];
+            string alias = dictionary["palias"];
+            string descripcion = dictionary["pdescripcion"];
+            string erroresComunes = dictionary["perroresComunes"];
+            string posInicial = dictionary["pposInicial"];
+            string posFinal = dictionary["pposFinal"];
+            int musculoPrincipal= Convert.ToInt32(dictionary["pmusculoPrincipal"]);
+            string musculosSecundarios= dictionary["pmusculosSecundarios"];;
+       
+            Byte[] image = Convert.FromBase64String(dictionary["pimagen"]);
+            Byte[] image2 = Convert.FromBase64String(dictionary["pimagen2"]);
+
+            objGestorEjercicio.insertarEjercicio(nombre, alias, posInicial, image, posFinal, image2, erroresComunes, descripcion, musculoPrincipal, musculosSecundarios);
+        
+        }
+
+        [WebMethod]
+        [OperationContract]
+        public void modificarEjercicio(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            int id = Convert.ToInt32(dictionary["pid"]);
+            string nombre = dictionary["pnombre"];
+            string alias = dictionary["palias"];
+            string descripcion = dictionary["pdescripcion"];
+            string erroresComunes = dictionary["perroresComunes"];
+            string posInicial = dictionary["pposInicial"];
+            string posFinal = dictionary["pposFinal"];
+            int musculoPrincipal = Convert.ToInt32(dictionary["pposFinal"]);
+            string musculosSecundarios = dictionary["pmusculosSecundarios"]; ;
+
+            Byte[] image = Convert.FromBase64String(dictionary["pimagen"]);
+
+            objGestorEjercicio.modificarEjercicio(id,nombre, alias, posInicial, image, posFinal, image, erroresComunes, descripcion, musculoPrincipal, musculosSecundarios);
 
         }
 

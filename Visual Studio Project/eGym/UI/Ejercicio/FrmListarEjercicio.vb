@@ -106,4 +106,8 @@ Public Class FrmListarEjercicio
     Private Sub txtFiltro_TextChanged_1(sender As Object, e As EventArgs) Handles txtFiltro.TextChanged
         AplicarFiltro(txtFiltro.Text.ToUpper)
     End Sub
+
+    Private Sub tblEjercicio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblEjercicio.CellContentClick
+
+    End Sub
 End Class

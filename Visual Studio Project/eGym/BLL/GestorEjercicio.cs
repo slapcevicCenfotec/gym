@@ -100,10 +100,12 @@ namespace BLL
         /// <param name="pid"></param>
         /// <returns>Ejericio</returns>
         /// 
-        public Ejercicio getImagenes(int pid)
+        public Ejercicio getEjercicio(int pid)
         {
             return Uow.EjercicioRepository.GetById(pid);
         }
+
+       
         /// <summary>
         /// Autor:Danny Espinoza
         /// Fecha:03/15/2015

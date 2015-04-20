@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ListarEjercicios
+Partial Public Class InsertarEjercicio
 End Class
