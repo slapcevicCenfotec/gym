@@ -55,16 +55,16 @@ namespace BLL
         }
 
         /// <summary>FALTA COMENTAR
-        public void insertarFichaMedicion(int pid, int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
-                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
-                            float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
-                            float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
-                            float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
-                            float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
-                            float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
+        public void insertarFichaMedicion(int pcliente, DateTime pfecha, decimal ppeso, decimal paltura, decimal pimc, string pclasificacionimc,
+                            decimal pporcentajeGrasaCorporal, decimal pporcentajeMasaMuscular, decimal ppesoGraso, decimal pperBicepsIzquierdo,
+                            decimal pperBicepsDerecho, decimal pperBicepsIzqContraido, decimal pperBicepsDerContraido, decimal pperPantorrillaIzquierda,
+                            decimal pperPantorrillaDerecha, decimal pperMusloIzquierdo, decimal pperMusloDerecho, decimal pperCintura, decimal pperAbdomen,
+                            decimal pperCadera, decimal pperPecho, decimal pperEspalda, decimal ppliTricepsIzquierdo, decimal ppliTricepsDerecho,
+                            decimal ppliSubescapularIzquierdo, decimal ppliSubescapularDerecho, decimal ppliSupraespinalIzquierdo, decimal ppliSupraespinalDerecho,
+                            decimal ppliAbdominalIzquierdo, decimal ppliAbdominalDerecho, decimal ppliMusloIzquierdo, decimal ppliMusloDerecho,
+                            decimal ppliPantorrillaIzquierda, decimal ppliPantorrillaDerecha)
         {
-            FichaMedicion fichaMedicion = new FichaMedicion(pid, pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
+            FichaMedicion fichaMedicion = new FichaMedicion(pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
                             pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperBicepsIzquierdo,
                             pperBicepsDerecho, pperBicepsIzqContraido, pperBicepsDerContraido, pperPantorrillaIzquierda,
                             pperPantorrillaDerecha, pperMusloIzquierdo, pperMusloDerecho, pperCintura, pperAbdomen,
@@ -113,14 +113,14 @@ namespace BLL
         }
 
         /// FALTA COMENTAR
-        public void modificarFichaMedicion(int pid, int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
-                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
-                            float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
-                            float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
-                            float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
-                            float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
-                            float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
+        public void modificarFichaMedicion(int pid, int pcliente, DateTime pfecha, decimal ppeso, decimal paltura, decimal pimc, string pclasificacionimc,
+                            decimal pporcentajeGrasaCorporal, decimal pporcentajeMasaMuscular, decimal ppesoGraso, decimal pperBicepsIzquierdo,
+                            decimal pperBicepsDerecho, decimal pperBicepsIzqContraido, decimal pperBicepsDerContraido, decimal pperPantorrillaIzquierda,
+                            decimal pperPantorrillaDerecha, decimal pperMusloIzquierdo, decimal pperMusloDerecho, decimal pperCintura, decimal pperAbdomen,
+                            decimal pperCadera, decimal pperPecho, decimal pperEspalda, decimal ppliTricepsIzquierdo, decimal ppliTricepsDerecho,
+                            decimal ppliSubescapularIzquierdo, decimal ppliSubescapularDerecho, decimal ppliSupraespinalIzquierdo, decimal ppliSupraespinalDerecho,
+                            decimal ppliAbdominalIzquierdo, decimal ppliAbdominalDerecho, decimal ppliMusloIzquierdo, decimal ppliMusloDerecho,
+                            decimal ppliPantorrillaIzquierda, decimal ppliPantorrillaDerecha, Boolean phabilitado)
         {
             FichaMedicion fichaMedicion = new FichaMedicion(pid, pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
                             pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperBicepsIzquierdo,
@@ -129,7 +129,7 @@ namespace BLL
                             pperCadera, pperPecho, pperEspalda, ppliTricepsIzquierdo, ppliTricepsDerecho,
                             ppliSubescapularIzquierdo, ppliSubescapularDerecho, ppliSupraespinalIzquierdo, ppliSupraespinalDerecho,
                             ppliAbdominalIzquierdo, ppliAbdominalDerecho, ppliMusloIzquierdo, ppliMusloDerecho,
-                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha);
+                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha, phabilitado);
 
             try
             {

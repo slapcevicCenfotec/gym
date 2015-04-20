@@ -20,13 +20,18 @@
     </script>
     <script type="text/javascript" src="localScripts/buscarMusculos.js">
     </script>
+    <script>
+        $(document).ready(function () {
+            var servicio = new ser
+        });
+    </script>
 
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager runat="server">
+         <asp:ScriptManager runat="server">
             <Services>
-                <asp:ServiceReference Path="~/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="~/ServicioProyecto.svc" />
             </Services>
         </asp:ScriptManager>
     <div>

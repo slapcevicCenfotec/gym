@@ -85,7 +85,7 @@ namespace DAL.Repositories
 
             try
             {
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarFichaMedicion");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarFichasDeMedicion");
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -98,38 +98,38 @@ namespace DAL.Repositories
                             Id = Convert.ToInt32(dr["ID"]),
                             Cliente = Convert.ToInt32(dr["CLIENTE"]),
                             FechaCreacion = Convert.ToDateTime(dr["FECHA"]),
-                            Peso = float.Parse(Convert.ToString(dr["PESO"])),
-                            Altura = float.Parse(Convert.ToString(dr["ALTURA"])),
-                            Imc = float.Parse(Convert.ToString(dr["IMC"])),
+                            Peso = decimal.Parse(Convert.ToString(dr["PESO"])),
+                            Altura = decimal.Parse(Convert.ToString(dr["ALTURA"])),
+                            Imc = decimal.Parse(Convert.ToString(dr["IMC"])),
                             ClasificacionIMC = dr["CLASIFICACION_IMC"].ToString(),
-                            PorcentajeGrasaCorporal = float.Parse(Convert.ToString(dr["PORCENTAJE_GRASA_CORPORAL"])),
-                            PorcentajeMasaMuscular = float.Parse(Convert.ToString(dr["PORCENTAJE_MASA_MUSCULAR"])),
-                            PesoGraso = float.Parse(Convert.ToString(dr["PESO_GRASO"])),
-                            PerBicepsIzquierdo = float.Parse(Convert.ToString(dr["PER_BICEPS_IZQUIERDO"])),
-                            PerBicepsDerecho = float.Parse(Convert.ToString(dr["PER_BICEPS_DERECHO"])),
-                            PerBicepsIzqContraido = float.Parse(Convert.ToString(dr["PER_BICEPS_IZQUIERDO_CONTRAIDO"])),
-                            PerBicepsDerContraido = float.Parse(Convert.ToString(dr["PER_BICEPS_DERECHO_CONTRAIDO"])),
-                            PerPantorrillaIzquierda = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_IZQUIERDA"])),
-                            PerPantorrillaDerecha = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_DERECHA"])),
-                            PerMusloIzquierdo = float.Parse(Convert.ToString(dr["PER_MUSLO_IZQUIERDO"])),
-                            PerMusloDerecho = float.Parse(Convert.ToString(dr["PER_MUSLO_DERECHO"])),
-                            PerCintura = float.Parse(Convert.ToString(dr["PER_CINTURA"])),
-                            PerAbdomen = float.Parse(Convert.ToString(dr["PER_ABDOMEN"])),
-                            PerCadera = float.Parse(Convert.ToString(dr["PER_CADERA"])),
-                            PerPecho = float.Parse(Convert.ToString(dr["PER_PECHO"])),
-                            PerEspalda = float.Parse(Convert.ToString(dr["PER_ESPALDA"])),
-                            PliTricepsIzquierdo = float.Parse(Convert.ToString(dr["PER_TRICEPS_IZQUIERDO"])),
-                            PliTricepsDerecho = float.Parse(Convert.ToString(dr["PER_TRICEPS_DERECHO"])),
-                            PliSubescapularIzquierdo = float.Parse(Convert.ToString(dr["PER_SUBESCAPULAR_IZQUIERDO"])),
-                            PliSubescapularDerecho = float.Parse(Convert.ToString(dr["PER_SUBESCAPULAR_DERECHO"])),
-                            PliSupraespinalIzquierdo = float.Parse(Convert.ToString(dr["PER_SUPRAESPINAL_IZQUIERDO"])),
-                            PliSupraespinalDerecho = float.Parse(Convert.ToString(dr["PER_SUPRAESPINAL_DERECHO"])),
-                            PliAbdominalIzquierdo = float.Parse(Convert.ToString(dr["PER_ABDOMINAL_IZQUIERDO"])),
-                            PliAbdominalDerecho = float.Parse(Convert.ToString(dr["PER_ABDOMINAL_DERECHO"])),
-                            PliMusloIzquierdo = float.Parse(Convert.ToString(dr["PER_MUSLO_IZQUIERDO"])),
-                            PliMusloDerecho = float.Parse(Convert.ToString(dr["PER_MUSLO_DERECHO"])),
-                            PliPantorrillaIzquierda = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_IZQUIERDA"])),
-                            PliPantorrillaDerecha = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_DERECHA"])),
+                            PorcentajeGrasaCorporal = decimal.Parse(Convert.ToString(dr["PORCENTAJE_GRASA_CORPORAL"])),
+                            PorcentajeMasaMuscular = decimal.Parse(Convert.ToString(dr["PORCENTAJE_MASA_MUSCULAR"])),
+                            PesoGraso = decimal.Parse(Convert.ToString(dr["PESO_GRASO"])),
+                            PerCintura = decimal.Parse(Convert.ToString(dr["PER_CINTURA"])),
+                            PerCadera = decimal.Parse(Convert.ToString(dr["PER_CADERA"])),
+                            PerAbdomen = decimal.Parse(Convert.ToString(dr["PER_ABDOMEN"])),
+                            PerPecho = decimal.Parse(Convert.ToString(dr["PER_PECHO"])),
+                            PerEspalda = decimal.Parse(Convert.ToString(dr["PER_ESPALDA"])),
+                            PerMusloIzquierdo = decimal.Parse(Convert.ToString(dr["PER_MUSLO_IZQ"])),
+                            PerMusloDerecho = decimal.Parse(Convert.ToString(dr["PER_MUSLO_DER"])),
+                            PerBicepsIzquierdo = decimal.Parse(Convert.ToString(dr["PER_BICEPS_IZQ"])),
+                            PerBicepsDerecho = decimal.Parse(Convert.ToString(dr["PER_BICEPS_DER"])),
+                            PerBicepsIzqContraido = decimal.Parse(Convert.ToString(dr["PER_BICEPS_IZQ_CONTRAIDO"])),
+                            PerBicepsDerContraido = decimal.Parse(Convert.ToString(dr["PER_BICEPS_DER_CONTRAIDO"])),
+                            PerPantorrillaIzquierda = decimal.Parse(Convert.ToString(dr["PER_PANTORRILLA_IZQ"])),
+                            PerPantorrillaDerecha = decimal.Parse(Convert.ToString(dr["PER_PANTORRILLA_DER"])),
+                            PliAbdominalIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_ABDOMINAL_IZQ"])),
+                            PliAbdominalDerecho = decimal.Parse(Convert.ToString(dr["PLI_ABDOMINAL_DER"])),
+                            PliMusloIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_MUSLO_IZQ"])),
+                            PliMusloDerecho = decimal.Parse(Convert.ToString(dr["PLI_MUSLO_DERECHO"])),
+                            PliTricepsIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_TRICEPS_IZQ"])),
+                            PliTricepsDerecho = decimal.Parse(Convert.ToString(dr["PLI_TRICEPS_DER"])),
+                            PliSubescapularIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_SUBESCAPULAR_IZQ"])),
+                            PliSubescapularDerecho = decimal.Parse(Convert.ToString(dr["PLI_SUBESCAPULAR_DER"])),
+                            PliSupraespinalIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_SUPRAESPINAL_IZQ"])),
+                            PliSupraespinalDerecho = decimal.Parse(Convert.ToString(dr["PLI_SUPRAESPINAL_DER"])),
+                            PliPantorrillaIzquierda = decimal.Parse(Convert.ToString(dr["PLI_PANTORRILLA_IZQ"])),
+                            PliPantorrillaDerecha = decimal.Parse(Convert.ToString(dr["PLI_PANTORRILLA_DER"])),
                         });
                     }
                 }
@@ -159,7 +159,7 @@ namespace DAL.Repositories
 
             try
             {
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_FichaMedicionPorId");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ObtenerFichaDeMedicionPorId");
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -171,38 +171,38 @@ namespace DAL.Repositories
                             Id = Convert.ToInt32(dr["ID"]),
                             Cliente = Convert.ToInt32(dr["CLIENTE"]),
                             FechaCreacion = Convert.ToDateTime(dr["FECHA"]),
-                            Peso = float.Parse(Convert.ToString(dr["PESO"])),
-                            Altura = float.Parse(Convert.ToString(dr["ALTURA"])),
-                            Imc = float.Parse(Convert.ToString(dr["IMC"])),
+                            Peso = decimal.Parse(Convert.ToString(dr["PESO"])),
+                            Altura = decimal.Parse(Convert.ToString(dr["ALTURA"])),
+                            Imc = decimal.Parse(Convert.ToString(dr["IMC"])),
                             ClasificacionIMC = dr["CLASIFICACION_IMC"].ToString(),
-                            PorcentajeGrasaCorporal = float.Parse(Convert.ToString(dr["PORCENTAJE_GRASA_CORPORAL"])),
-                            PorcentajeMasaMuscular = float.Parse(Convert.ToString(dr["PORCENTAJE_MASA_MUSCULAR"])),
-                            PesoGraso = float.Parse(Convert.ToString(dr["PESO_GRASO"])),
-                            PerBicepsIzquierdo = float.Parse(Convert.ToString(dr["PER_BICEPS_IZQUIERDO"])),
-                            PerBicepsDerecho = float.Parse(Convert.ToString(dr["PER_BICEPS_DERECHO"])),
-                            PerBicepsIzqContraido = float.Parse(Convert.ToString(dr["PER_BICEPS_IZQUIERDO_CONTRAIDO"])),
-                            PerBicepsDerContraido = float.Parse(Convert.ToString(dr["PER_BICEPS_DERECHO_CONTRAIDO"])),
-                            PerPantorrillaIzquierda = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_IZQUIERDA"])),
-                            PerPantorrillaDerecha = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_DERECHA"])),
-                            PerMusloIzquierdo = float.Parse(Convert.ToString(dr["PER_MUSLO_IZQUIERDO"])),
-                            PerMusloDerecho = float.Parse(Convert.ToString(dr["PER_MUSLO_DERECHO"])),
-                            PerCintura = float.Parse(Convert.ToString(dr["PER_CINTURA"])),
-                            PerAbdomen = float.Parse(Convert.ToString(dr["PER_ABDOMEN"])),
-                            PerCadera = float.Parse(Convert.ToString(dr["PER_CADERA"])),
-                            PerPecho = float.Parse(Convert.ToString(dr["PER_PECHO"])),
-                            PerEspalda = float.Parse(Convert.ToString(dr["PER_ESPALDA"])),
-                            PliTricepsIzquierdo = float.Parse(Convert.ToString(dr["PER_TRICEPS_IZQUIERDO"])),
-                            PliTricepsDerecho = float.Parse(Convert.ToString(dr["PER_TRICEPS_DERECHO"])),
-                            PliSubescapularIzquierdo = float.Parse(Convert.ToString(dr["PER_SUBESCAPULAR_IZQUIERDO"])),
-                            PliSubescapularDerecho = float.Parse(Convert.ToString(dr["PER_SUBESCAPULAR_DERECHO"])),
-                            PliSupraespinalIzquierdo = float.Parse(Convert.ToString(dr["PER_SUPRAESPINAL_IZQUIERDO"])),
-                            PliSupraespinalDerecho = float.Parse(Convert.ToString(dr["PER_SUPRAESPINAL_DERECHO"])),
-                            PliAbdominalIzquierdo = float.Parse(Convert.ToString(dr["PER_ABDOMINAL_IZQUIERDO"])),
-                            PliAbdominalDerecho = float.Parse(Convert.ToString(dr["PER_ABDOMINAL_DERECHO"])),
-                            PliMusloIzquierdo = float.Parse(Convert.ToString(dr["PER_MUSLO_IZQUIERDO"])),
-                            PliMusloDerecho = float.Parse(Convert.ToString(dr["PER_MUSLO_DERECHO"])),
-                            PliPantorrillaIzquierda = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_IZQUIERDA"])),
-                            PliPantorrillaDerecha = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_DERECHA"])),
+                            PorcentajeGrasaCorporal = decimal.Parse(Convert.ToString(dr["PORCENTAJE_GRASA_CORPORAL"])),
+                            PorcentajeMasaMuscular = decimal.Parse(Convert.ToString(dr["PORCENTAJE_MASA_MUSCULAR"])),
+                            PesoGraso = decimal.Parse(Convert.ToString(dr["PESO_GRASO"])),
+                            PerCintura = decimal.Parse(Convert.ToString(dr["PER_CINTURA"])),
+                            PerCadera = decimal.Parse(Convert.ToString(dr["PER_CADERA"])),
+                            PerAbdomen = decimal.Parse(Convert.ToString(dr["PER_ABDOMEN"])),
+                            PerPecho = decimal.Parse(Convert.ToString(dr["PER_PECHO"])),
+                            PerEspalda = decimal.Parse(Convert.ToString(dr["PER_ESPALDA"])),
+                            PerMusloIzquierdo = decimal.Parse(Convert.ToString(dr["PER_MUSLO_IZQ"])),
+                            PerMusloDerecho = decimal.Parse(Convert.ToString(dr["PER_MUSLO_DER"])),
+                            PerBicepsIzquierdo = decimal.Parse(Convert.ToString(dr["PER_BICEPS_IZQ"])),
+                            PerBicepsDerecho = decimal.Parse(Convert.ToString(dr["PER_BICEPS_DER"])),
+                            PerBicepsIzqContraido = decimal.Parse(Convert.ToString(dr["PER_BICEPS_IZQ_CONTRAIDO"])),
+                            PerBicepsDerContraido = decimal.Parse(Convert.ToString(dr["PER_BICEPS_DER_CONTRAIDO"])),
+                            PerPantorrillaIzquierda = decimal.Parse(Convert.ToString(dr["PER_PANTORRILLA_IZQ"])),
+                            PerPantorrillaDerecha = decimal.Parse(Convert.ToString(dr["PER_PANTORRILLA_DER"])),
+                            PliAbdominalIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_ABDOMINAL_IZQ"])),
+                            PliAbdominalDerecho = decimal.Parse(Convert.ToString(dr["PLI_ABDOMINAL_DER"])),
+                            PliMusloIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_MUSLO_IZQ"])),
+                            PliMusloDerecho = decimal.Parse(Convert.ToString(dr["PLI_MUSLO_DERECHO"])),
+                            PliTricepsIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_TRICEPS_IZQ"])),
+                            PliTricepsDerecho = decimal.Parse(Convert.ToString(dr["PLI_TRICEPS_DER"])),
+                            PliSubescapularIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_SUBESCAPULAR_IZQ"])),
+                            PliSubescapularDerecho = decimal.Parse(Convert.ToString(dr["PLI_SUBESCAPULAR_DER"])),
+                            PliSupraespinalIzquierdo = decimal.Parse(Convert.ToString(dr["PLI_SUPRAESPINAL_IZQ"])),
+                            PliSupraespinalDerecho = decimal.Parse(Convert.ToString(dr["PLI_SUPRAESPINAL_DER"])),
+                            PliPantorrillaIzquierda = decimal.Parse(Convert.ToString(dr["PLI_PANTORRILLA_IZQ"])),
+                            PliPantorrillaDerecha = decimal.Parse(Convert.ToString(dr["PLI_PANTORRILLA_DER"])),
                         };
                     }
                 }
@@ -286,7 +286,6 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@pId", objFichaMedicion.Id));
                 cmd.Parameters.Add(new SqlParameter("@pCliente", objFichaMedicion.Cliente));
                 cmd.Parameters.Add(new SqlParameter("@pFechaCreacion", objFichaMedicion.FechaCreacion));
                 cmd.Parameters.Add(new SqlParameter("@pAltura", objFichaMedicion.Peso));
@@ -295,33 +294,33 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@pPorcentajeGrasaCorporal", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPorcentajeMasaMuscular", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPesoGraso", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPerCintura", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPerCadera", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPerAbdomen", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPerPecho", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPerEspalda", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPerMusloIzquierdo", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPerMusloDerecho", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzquierdo", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerecho", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzqContraido", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerContraido", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaIzquierda", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaDerecha", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerMusloIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerMusloDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerCintura", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerAbdomen", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerCadera", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerPecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerEspalda", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliTricepsIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliTricepsDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalDerecho", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPliAbdominalIzquierdo", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPliAbdominalDerecho", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPliMusloIzquierdo", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPliMusloDerecho", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaIzquierda", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaDerecha", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPliTricepsIzquierdo", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPliTricepsDerecho", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularIzquierdo", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularDerecho", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalIzquierdo", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalDerecho", objFichaMedicion.Peso));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarFichaMedicion");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarFichaDeMedicion");
 
             }
             catch (Exception ex)
@@ -375,7 +374,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaIzquierda", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaDerecha", objFichaMedicion.Peso));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarFichaMedicion");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarFichaDeMedicion");
 
             }
             catch (Exception ex)
@@ -394,7 +393,7 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@pId", objFichaMedicion.Id));
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarFichaMedicion");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarFichaDeMedicion");
 
             }
             catch (SqlException ex)

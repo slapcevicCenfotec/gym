@@ -43,6 +43,11 @@ namespace BLL
             return UoW.TipoDeMaquinaRepository.GetAll();
         }
 
+        public List<TipoDeMaquina> listarTiposDeMaquinasServices()
+        {
+            return UoW.TipoDeMaquinaRepository.GetAll().ToList<TipoDeMaquina>();
+        }
+
         /// <summary>
         /// Obtiene una instancia de tipo de maquina por Id.
         /// </summary>

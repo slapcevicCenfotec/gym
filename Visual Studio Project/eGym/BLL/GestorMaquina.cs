@@ -45,6 +45,15 @@ namespace BLL
         }
 
         /// <summary>
+        /// Lista cada una de las instancias de máquina para web services.
+        /// </summary>
+        /// <returns></returns>
+        public List<Maquina> listarMaquinasServices()
+        {
+            return UoW.MaquinaRepository.GetAll().ToList<Maquina>();
+        }
+
+        /// <summary>
         /// Obtiene una instancia de maquina por Id.
         /// </summary>
         /// <param name="pid">Id de la máquina.</param>
@@ -94,13 +103,13 @@ namespace BLL
                     throw new BusinessLogicException(sb.ToString());
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
                 throw new DataAccessException("Ha ocurrido un error agregando la máquina");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
@@ -152,13 +161,13 @@ namespace BLL
 
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
                 throw new DataAccessException("Ha ocurrido un error modificando la máquina");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
@@ -202,13 +211,13 @@ namespace BLL
                     throw new BusinessLogicException(sb.ToString());
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
                 throw new DataAccessException("Ha ocurrido un error eliminando la máquina");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Registra la excepción en la bitácora de excepciones.
                 gestorExcepciones.insertarExcepcion(ex.Message, ex.StackTrace);
