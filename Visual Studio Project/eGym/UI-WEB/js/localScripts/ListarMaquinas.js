@@ -30,62 +30,24 @@
 
 function search() {
     var service = new ServicioEnClases.ServiciosMaquinas();
-    service.obtenerMaquinas(onSuccessMaquinas, null, null);
+    service.obtenerMaquinas(onSuccess, null, null);
 }
 
 function error(result) {
     alert(result);
 }
 
-function onSuccessMaquinas(result) {
+function onSuccess(result) {
     var object = $.parseJSON(result);
     var tbody = "";
     $.each(object, function (i, item) {
         tbody += '<tr>';
-        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td style="display:none">' + object[i].Id + '</td>';
         tbody += '<td>' + object[i].NumeroActivo + '</td>';
         tbody += '<td>' + object[i].NumeroMaquina + '</td>';
-        tbody += '<td>' + objeto[i].NombreTipoMaquina + '</td>';
+        tbody += '<td>' + object[i].NombreTipoMaquina + '</td>';
         tbody += '</tr>';
     });
     $('#tblMaquinas tbody').append(tbody);
     load();
-}
-
-$('#btnAgregar').click(function () {
-    window.location = 'Maquinas/Registrar.aspx';
-})
-
-$('#btnModificarMaquina').click(function () {
-    var rows = $('tr.selected');
-    var table = $('#tblMaquinas').DataTable();
-    var rowData = table.rows(rows).data();
-    var idMaquina = rowData[0][0];
-    window.location = "Maquinas/Modificar.aspx?id=" + idMaquina;
-})
-
-$('#btnEliminarMaquina').click(function () {
-    var rows = $('tr.selected');
-    var table = $('#tblMaquinas').DataTable();
-    var rowData = table.rows(rows).data();
-    var idMaquina = rowData[0][0];
-
-    var serviceBuscarMaquinaPorId = new ServicioEnClases.ServiciosMaquina();
-    var maquinaPorEliminar = serviceBuscarMaquinaPorId.obtenerMaquinaById(idMaquina, onSuccessObtenerMaquina, null, null);
-
-    var serviceEliminar = new ServicioEnClases.ServiciosMaquina();
-
-    serviceEliminar.eliminarMaquina(maquinaPorEliminar, onSuccesEliminarMaquina, errorMessage, null, null);
-})
-
-$('#btnTiposDeMaquinas').click(function () {
-    window.location = "TiposDeMaquinas/Index.aspx?";
-})
-
-function onSuccesEliminarMaquina(result) {
-    alert('Se eliminó correctamente la máquina');
-}
-
-function errorMessage(resul) {
-    alert(resul.get_message());
 }

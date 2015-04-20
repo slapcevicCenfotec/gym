@@ -1,4 +1,9 @@
-﻿function load() {
+﻿$(document).ready(function () {
+    var service = new ServicioEnClases.ServiciosTiposDeMaquinas();
+    service.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
+});
+
+function load() {
     var table = $('#tblTiposDeMaquinas').DataTable({
         "dom": 'lCfrtip',
         "order": [],
@@ -28,24 +33,19 @@
     });
 }
 
-function search() {
-    var service = new ServicioEnClases.ServiciosTiposDeMaquinas();
-    service.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
-}
-
 function error(result) {
     alert(result);
 }
 
 function onSuccessTiposDeMaquinas(result) {
-    var objeto = $.parseJSON(result);
+    var object = $.parseJSON(result);
     var tbody = "";
-    $.each(objeto, function (i, item) {
+    $.each(object, function (i, item) {
         tbody += '<tr>';
-        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
-        tbody += '<td>' + objeto[i].Nombre + '</td>';
-        tbody += '<td>' + objeto[i].Descripcion + '</td>';
-        tbody += '<td>' + objeto[i].Cantidad + '</td>';
+        tbody += '<td style="display:none">' + object[i].Id + '</td>';
+        tbody += '<td>' + object[i].Nombre + '</td>';
+        tbody += '<td>' + object[i].Descripcion + '</td>';
+        tbody += '<td>' + object[i].Cantidad + '</td>';
         tbody += '</tr>';
     });
     $('#tblTiposDeMaquinas tbody').append(tbody);
