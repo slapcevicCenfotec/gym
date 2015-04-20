@@ -9,10 +9,10 @@
         },
         "language": {
             "lengthMenu": '_MENU_ entradas por página',
-            "search": '<i class="fa fa-search"></i>',
+            "Buscar": '<i class="fa fa-search"></i>',
             "paginate": {
-                "previous": '<i class="fa fa-angle-left"></i>',
-                "next": '<i class="fa fa-angle-right"></i>'
+                "Anterior": '<i class="fa fa-angle-left"></i>',
+                "Siguiente": '<i class="fa fa-angle-right"></i>'
             }
         }
     });

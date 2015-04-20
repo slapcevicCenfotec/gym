@@ -52,9 +52,11 @@
         <asp:ScriptManager runat="server" >
             <Services>
                 <asp:ServiceReference Path="http://localhost/egymServices/ServiciosMaquinas.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc"/>
             </Services>
         </asp:ScriptManager>
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
+    <script src="<%= Page.ResolveUrl("~/js/localScripts/ModificarMaquinas.js")%>"></script>
 </asp:Content>
