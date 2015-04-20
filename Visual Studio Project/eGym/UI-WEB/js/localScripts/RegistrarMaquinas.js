@@ -1,7 +1,7 @@
-﻿$(function () {
-    var serviceBuscar = new ServicioEnClases.ServiciosTiposDeMaquinas();
+﻿function search() {
+    var serviceBuscar = new ServiciosTiposDeMaquinas();
     serviceBuscar.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
-});
+}
 
 function onSuccessTiposDeMaquinas(result) {
     var objeto = $.parseJSON(result);
@@ -20,7 +20,7 @@ $('#btnGuardar').click(function () {
     var numeroActivo = $('#txtNumeroActivo').val(),
         numeroMaquina = $('#txtNumeroMaquina').val(),
         tipoMaquina = $('#cmbTiposDeMaquinas option:selected').val();
-        serviceInsertar = new ServicioEnClases.ServiciosMaquina();
+        serviceInsertar = new ServiciosMaquinas();
 
         datos = JSON.stringify({ pnumeroActivo: numeroActivo, pnumeroMaquina: numeroMaquina, ptipoMaquina: tipoMaquina });
         serviceInsertar.insertarMaquina(datos, onSuccesIngresarMaquina, errorMessage, null, null);

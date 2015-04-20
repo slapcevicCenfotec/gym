@@ -9,7 +9,7 @@
         },
         "language": {
             "lengthMenu": '_MENU_ entradas por página',
-            "search": '<i class="fa fa-search"></i>',
+            "Buscar": '<i class="fa fa-search"></i>',
             "paginate": {
                 "Anterior": '<i class="fa fa-angle-left"></i>',
                 "Siguiente": '<i class="fa fa-angle-right"></i>'
@@ -29,42 +29,46 @@
 }
 
 function search() {
-    var service = new ServicioEnClases.ServiciosMaquinas();
-    service.obtenerMaquinas(onSuccessMaquinas, null, null);
+    var service = new ServiciosMaquinas();
+    service.obtenerMaquinas(onSuccess, null, null);
 }
 
 function error(result) {
     alert(result);
 }
 
-function onSuccessMaquinas(result) {
+function onSuccess(result) {
     var object = $.parseJSON(result);
     var tbody = "";
     $.each(object, function (i, item) {
         tbody += '<tr>';
-        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td style="display:none">' + object[i].Id + '</td>';
         tbody += '<td>' + object[i].NumeroActivo + '</td>';
         tbody += '<td>' + object[i].NumeroMaquina + '</td>';
-        tbody += '<td>' + objeto[i].NombreTipoMaquina + '</td>';
+        tbody += '<td>' + object[i].NombreTipoMaquina + '</td>';
         tbody += '</tr>';
     });
     $('#tblMaquinas tbody').append(tbody);
     load();
 }
 
-$('#btnAgregar').click(function () {
-    window.location = 'Maquinas/Registrar.aspx';
+$('#btnTiposDeMaquina').click(function () {
+    window.location = "/egym/TiposDeMaquinas/Index.aspx";
 })
 
-$('#btnModificarMaquina').click(function () {
+$('#btnAgregar').click(function () {
+    window.location = "Registrar.aspx";
+})
+
+$('#btnModificar').click(function () {
     var rows = $('tr.selected');
     var table = $('#tblMaquinas').DataTable();
     var rowData = table.rows(rows).data();
     var idMaquina = rowData[0][0];
-    window.location = "Maquinas/Modificar.aspx?id=" + idMaquina;
+    window.location = "Modificar.aspx?id=" + idMaquina;
 })
 
-$('#btnEliminarMaquina').click(function () {
+$('#btnEliminar').click(function () {
     var rows = $('tr.selected');
     var table = $('#tblMaquinas').DataTable();
     var rowData = table.rows(rows).data();
@@ -77,15 +81,3 @@ $('#btnEliminarMaquina').click(function () {
 
     serviceEliminar.eliminarMaquina(maquinaPorEliminar, onSuccesEliminarMaquina, errorMessage, null, null);
 })
-
-$('#btnTiposDeMaquinas').click(function () {
-    window.location = "TiposDeMaquinas/Index.aspx?";
-})
-
-function onSuccesEliminarMaquina(result) {
-    alert('Se eliminó correctamente la máquina');
-}
-
-function errorMessage(resul) {
-    alert(resul.get_message());
-}

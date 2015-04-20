@@ -51,10 +51,17 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosMaquinas.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc"/>
             </Services>
         </asp:ScriptManager>
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
+    <script src="<%= Page.ResolveUrl("~/js/localScripts/RegistrarMaquinas.js")%>"></script>
+    <script>
+        $(document).ready(function () {
+            search();
+        });
+    </script>
 </asp:Content>

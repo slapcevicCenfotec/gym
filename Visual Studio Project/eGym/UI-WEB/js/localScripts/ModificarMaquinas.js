@@ -1,10 +1,10 @@
-﻿$(function () {
-    var serviceBuscarTiposMaquina = new ServicioEnClases.ServiciosTiposDeMaquinas();
+﻿$(document).ready(function () {
+    var serviceBuscarTiposMaquina = new ServiciosTiposDeMaquinas();
     serviceBuscarTiposMaquina.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
 
     var idMaquina = getQueryVariable('id');
 
-    var serviceBuscarMaquinaPorId = new ServicioEnClases.ServiciosMaquina();
+    var serviceBuscarMaquinaPorId = new ServiciosMaquina();
     serviceBuscarMaquinaPorId.obtenerMaquinaById(idMaquina, onSuccessObtenerMaquina, null , null);
 });
 
@@ -33,7 +33,7 @@ $('#btnGuardar').click(function () {
     var numeroActivo = $('#txtNumeroActivo').val(),
         numeroMaquina = $('#txtNumeroMaquina').val(),
         tipoMaquina = $('#cmbTiposDeMaquinas option:selected').val();
-    serviceModificar = new ServicioEnClases.ServiciosMaquina();
+    serviceModificar = new ServiciosMaquinas();
 
     id = getQueryVariable('id');
     habilitado = getQueryVariable('habilitado');
