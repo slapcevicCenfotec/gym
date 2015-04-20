@@ -130,7 +130,7 @@ namespace DAL.Repositories
 
             try
             {
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_MaquinaPorId");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ObtenerMaquinaPorId");
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
