@@ -52,6 +52,7 @@ namespace EL
         private float _pliMusloDerecho;
         private float _pliPantorrillaIzquierda;
         private float _pliPantorrillaDerecha;
+        private Boolean _habilitado;
 
         #endregion
 
@@ -267,6 +268,12 @@ namespace EL
           set { _pliPantorrillaDerecha = value; }
         }
 
+        public Boolean Habilitado
+        {
+            get { return _habilitado; }
+            set { _habilitado = value; }
+        }
+
         #endregion
 
         #region Constructores
@@ -278,7 +285,7 @@ namespace EL
                             float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
                             float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
                             float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
+                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha, Boolean phabilitado)
         {
             Id = pid;
             Cliente = pcliente;
@@ -315,6 +322,7 @@ namespace EL
             PliMusloDerecho = ppliMusloDerecho;
             PliPantorrillaIzquierda = ppliPantorrillaIzquierda;
             PliPantorrillaDerecha = ppliPantorrillaDerecha;
+            Habilitado = phabilitado;
         }
 
         public FichaMedicion(int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
@@ -360,6 +368,7 @@ namespace EL
             PliMusloDerecho = ppliMusloDerecho;
             PliPantorrillaIzquierda = ppliPantorrillaIzquierda;
             PliPantorrillaDerecha = ppliPantorrillaDerecha;
+            Habilitado = true;
         }
 
         public FichaMedicion()
@@ -373,31 +382,32 @@ namespace EL
             PorcentajeGrasaCorporal = 0;
             PorcentajeMasaMuscular = 0;
             PesoGraso = 0;
+            PerCintura = 0;
+            PerCadera = 0;
+            PerAbdomen = 0;
+            PerPecho = 0;
+            PerEspalda = 0;
+            PerMusloIzquierdo = 0;
+            PerMusloDerecho = 0;
             PerBicepsIzquierdo = 0;
             PerBicepsDerecho = 0;
             PerBicepsIzqContraido = 0;
             PerBicepsDerContraido = 0;
             PerPantorrillaIzquierda = 0;
             PerPantorrillaDerecha = 0;
-            PerMusloIzquierdo = 0;
-            PerMusloDerecho = 0;
-            PerCintura = 0;
-            PerAbdomen = 0;
-            PerCadera = 0;
-            PerPecho = 0;
-            PerEspalda = 0;
-            PliTricepsIzquierdo = 0;
-            PliTricepsDerecho = 0;
-            PliSubescapularIzquierdo = 0;
-            PliSubescapularDerecho = 0;
-            PliSupraespinalIzquierdo = 0;
-            PliSupraespinalDerecho = 0;
             PliAbdominalIzquierdo = 0;
             PliAbdominalDerecho = 0;
             PliMusloIzquierdo = 0;
             PliMusloDerecho = 0;
             PliPantorrillaIzquierda = 0;
             PliPantorrillaDerecha = 0;
+            PliTricepsIzquierdo = 0;
+            PliTricepsDerecho = 0;
+            PliSubescapularIzquierdo = 0;
+            PliSubescapularDerecho = 0;
+            PliSupraespinalIzquierdo = 0;
+            PliSupraespinalDerecho = 0;
+            Habilitado = true;
         }
 
         #endregion

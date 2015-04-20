@@ -140,14 +140,16 @@
                             </div>
                         </fieldset>
                     </div>
-                    <asp:ScriptManager runat="server">
-                        <Services>
-                            <asp:ServiceReference Path="http://localhost:85/eGym/ServicioEjercicio.svc" />
-                        </Services>
-                        <Services>
-                            <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
-                        </Services>
-                    </asp:ScriptManager>
+                    <form action="/" runat="server" method="post">
+                        <asp:ScriptManager runat="server">
+                            <Services>
+                                <asp:ServiceReference Path="http://localhost:85/eGym/ServicioEjercicio.svc" />
+                            </Services>
+                            <Services>
+                                <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
+                            </Services>
+                        </asp:ScriptManager>
+                    </form>
                 </div>
 
             </div>

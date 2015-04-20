@@ -33,27 +33,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                       
                             </tbody>
                         </table>
                     </div>
-                    <!--end .table-responsive -->
                 </div>
-                <!--end .col -->
             </div>
-            <!--end .row -->
-            <!-- END DATATABLE 1 -->
-
         </div>
-        <!--end .section-body -->
     </section>
-    <div>
+    <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
                 <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
             </Services>
         </asp:ScriptManager>
-    </div>
+    </form>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">

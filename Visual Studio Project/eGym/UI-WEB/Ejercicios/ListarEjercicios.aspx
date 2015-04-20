@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="ListarEjercicios.aspx.vb" Inherits="UI_WEB.ListarEjercicios" %>
 
+<%@ Register Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI" TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 
@@ -52,12 +54,13 @@
         </div>
     </section>
     <div>
-
-        <asp:ScriptManager runat="server">
+        <form action="/" runat="server" method="post">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
                 <asp:ServiceReference Path="http://localhost:85/eGym/ServicioEjercicio.svc" />
             </Services>
         </asp:ScriptManager>
+      </form>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">

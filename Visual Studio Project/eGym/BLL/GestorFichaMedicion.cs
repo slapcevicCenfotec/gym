@@ -39,9 +39,9 @@ namespace BLL
         /// Lista cada una de las instancias de fichas de medición.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<FichaMedicion> listarFichasMedicion()
+        public List<FichaMedicion> listarFichasMedicion()
         {
-            return UoW.FichaMedicionRepository.GetAll();
+            return UoW.FichaMedicionRepository.GetAll().ToList<FichaMedicion>();
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace BLL
         }
 
         /// <summary>FALTA COMENTAR
-        public void insertarFichaMedicion(int pid, int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
+        public void insertarFichaMedicion(int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
                             float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
                             float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
                             float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
@@ -64,7 +64,7 @@ namespace BLL
                             float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
                             float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
         {
-            FichaMedicion fichaMedicion = new FichaMedicion(pid, pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
+            FichaMedicion fichaMedicion = new FichaMedicion(pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
                             pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperBicepsIzquierdo,
                             pperBicepsDerecho, pperBicepsIzqContraido, pperBicepsDerContraido, pperPantorrillaIzquierda,
                             pperPantorrillaDerecha, pperMusloIzquierdo, pperMusloDerecho, pperCintura, pperAbdomen,
@@ -120,7 +120,7 @@ namespace BLL
                             float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
                             float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
                             float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
+                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha, Boolean phabilitado)
         {
             FichaMedicion fichaMedicion = new FichaMedicion(pid, pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
                             pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperBicepsIzquierdo,
@@ -129,7 +129,7 @@ namespace BLL
                             pperCadera, pperPecho, pperEspalda, ppliTricepsIzquierdo, ppliTricepsDerecho,
                             ppliSubescapularIzquierdo, ppliSubescapularDerecho, ppliSupraespinalIzquierdo, ppliSupraespinalDerecho,
                             ppliAbdominalIzquierdo, ppliAbdominalDerecho, ppliMusloIzquierdo, ppliMusloDerecho,
-                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha);
+                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha, phabilitado);
 
             try
             {

@@ -1,14 +1,15 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="ModificarEjercicio.aspx.vb" Inherits="UI_WEB.ModificarEjercicio" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
     <script src="../Scripts/jquery-1.9.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="section-body">
+    <div class="section-body">
         <div class="section-header">
             <h2 class="text-primary">Modificar ejercicio</h2>
         </div>
@@ -139,14 +140,16 @@
                             </div>
                         </fieldset>
                     </div>
-                    <asp:ScriptManager runat="server">
-                        <Services>
-                            <asp:ServiceReference Path="http://localhost:85/eGym/ServicioEjercicio.svc" />
-                        </Services>
-                        <Services>
-                            <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
-                        </Services>
-                    </asp:ScriptManager>
+                    <form action="/" runat="server" method="post">
+                        <asp:ScriptManager runat="server">
+                            <Services>
+                                <asp:ServiceReference Path="http://localhost:85/eGym/ServicioEjercicio.svc" />
+                            </Services>
+                            <Services>
+                                <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
+                            </Services>
+                        </asp:ScriptManager>
+                    </form>
                 </div>
 
             </div>
@@ -156,7 +159,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
-    
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="../Scripts/jquery.validate.min.js"></script>
@@ -241,7 +244,7 @@
             //$(':text').val('foo');
 
             var idMaquina = getQueryVariable('id');
-          
+
             var service1 = new ServicioEjercicio();
             var datos = JSON.stringify({ pid: idMaquina });
             service1.obtenerEjercicioByID(datos, onSuccess, errorMessage, null, null);
@@ -257,7 +260,7 @@
             $('#txtPosInicial').val(objeto.PosicionInicial);
             $('#txtPosFinal').val(objeto.PosicionFinal);
 
-          
+
         }
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);

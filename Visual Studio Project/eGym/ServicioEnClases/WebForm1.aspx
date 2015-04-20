@@ -20,7 +20,16 @@
     </script>
     <script type="text/javascript" src="localScripts/buscarMusculos.js">
     </script>
+<<<<<<< HEAD
    
+=======
+    <script>
+        $(document).ready(function () {
+            var servicio = new ser
+        });
+    </script>
+
+>>>>>>> 8a45440a6f1d37283acc90a90bcee3b315368374
 </head>
 <body>
   <button type="button" class="btn btn-default" onclick="ingresarMusculo()">Submit</button>
@@ -56,7 +65,7 @@
     <br />
     <br />
     <form id="form1" runat="server">
-        <asp:ScriptManager runat="server">
+         <asp:ScriptManager runat="server">
             <Services>
                 <asp:ServiceReference Path="~/ServicioProyecto.svc" />
             </Services>

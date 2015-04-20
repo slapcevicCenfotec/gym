@@ -50,12 +50,13 @@
         </div>
     </section>
     <div>
-
-        <asp:ScriptManager runat="server">
-            <Services>
-                <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
-            </Services>
-        </asp:ScriptManager>
+        <form action="/" method="post" runat="server">
+            <asp:ScriptManager runat="server">
+                <Services>
+                    <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
+                </Services>
+            </asp:ScriptManager>
+        </form>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
