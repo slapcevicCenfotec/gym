@@ -15,7 +15,7 @@
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
     <!--Font Awesome Icon Font-->
-    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />
+    <%--<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />--%>
     <!--Material Design Iconic Font-->
     <!-- Additional CSS includes -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
