@@ -61,33 +61,32 @@
                         day: 'dia'
 
                     },
-                    dayClick: function (date, view) {
-                        $('#calendar').fullCalendar('changeView', 'agendaDay');
-                        $('#calendar').fullCalendar('gotoDate', date);
+                    //dayClick: function (date, view) {
+                    //    $('#calendar').fullCalendar('changeView', 'agendaDay');
+                    //    $('#calendar').fullCalendar('gotoDate', date);
 
-                        var moment = $('#calendar').fullCalendar('getDate');
-                        alert("The current date of the calendar is " + moment.format());
+                    //    var moment = $('#calendar').fullCalendar('getDate');
+                    //    alert("The current date of the calendar is " + moment.format());
 
-                        alert(date);
-                    }, select: function (start, end, jsEvent, view) {
+                    //    alert(date);
+                    //}, 
+                    selectable: true,
+                    selectHelper: true,
+                    select: function (start, end) {
                         alert(start);
-                    //    var title = prompt('Event Title:');
-                    //    if (title) {
-
-                    //        //calendar.fullCalendar('renderEvent',
-                    //        calendar.fullCalendar('renderEvent',
-                    //        {
-                    //            title: title,
-                    //            start: start,
-                    //            end: end,
-                    //            allDay: allDay
-                    //        },
-                    //        true // make the event "stick"
-                    //    );
-
-                    //    }
-                    //    calendar.fullCalendar('unselect');
-                    }
+                        alert(end);
+                        var title = prompt('Event Title:');
+                        var eventData;
+                        if (title) {
+                            eventData = {
+                                title: title,
+                                start: start,
+                                end: end
+                            };
+                            $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                        }
+                        $('#calendar').fullCalendar('unselect');
+                    },
             })
 
         });
