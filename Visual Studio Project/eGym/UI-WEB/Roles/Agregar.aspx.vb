@@ -1,5 +1,5 @@
-﻿Public Class Site
-    Inherits System.Web.UI.MasterPage
+﻿Public Class Agregar2
+    Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
