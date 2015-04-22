@@ -144,7 +144,6 @@ function onSuccessRoles(result) {
         tbody += '</tr>';
     });
     $('#tblRoles tbody').append(tbody);
-    load();
     //$('#divMostrarHuesos').removeClass('ocultar');
 }
 

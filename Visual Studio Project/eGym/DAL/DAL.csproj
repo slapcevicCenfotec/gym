@@ -49,6 +49,7 @@
     <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\ExcepcionRepository.cs" />
     <Compile Include="Repositories\FichaMedicionRepository.cs" />
+    <Compile Include="Repositories\FormulasRepository.cs" />
     <Compile Include="Repositories\HorarioRepository.cs" />
     <Compile Include="Repositories\GimnasioRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />

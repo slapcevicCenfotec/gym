@@ -25,6 +25,7 @@ namespace DAL
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
         private IRepository<FichaMedicion> _fichaMedicionRepository;
+        private IRepository<Formula> _formulasRepository;
 
 
         public IRepository<Usuario> RepositoryUsuario
@@ -204,6 +205,17 @@ namespace DAL
                     this._fichaMedicionRepository = new FichaMedicionRepository();
                 }
                 return _fichaMedicionRepository;
+            }
+        }
+        public IRepository<Formula> FormulasRepository
+        {
+            get
+            {
+                if (this._formulasRepository == null)
+                {
+                    this._formulasRepository = new FormulasRepository();
+                }
+                return _formulasRepository;
             }
         }
     }
