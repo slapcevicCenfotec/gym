@@ -90,6 +90,20 @@ namespace ServicioEnClases
 
         }
 
+        [WebMethod]
+        [OperationContract]
+        public void eliminarEjercicio(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            int id = Convert.ToInt32(dictionary["pid"]);
+            Ejercicio objEjercicio = new Ejercicio();
+            objEjercicio.Id = id;
+
+            objGestorEjercicio.eliminarEjercicio(objEjercicio);
+
+        }
 
     }
 }

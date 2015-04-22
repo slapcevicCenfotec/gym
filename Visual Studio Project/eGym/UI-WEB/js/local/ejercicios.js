@@ -213,3 +213,21 @@ function buscarEjercicioByID() {
 $('#btnAgregarEjer').click(function () {
     location.href = "InsertarEjercicio.aspx";
 })
+$('#btnEliminarEjer').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblEjercicios').DataTable();
+
+    var rowData = table.rows(rows).data();
+
+    var id = rowData[0][0];
+
+
+
+    var service4 = new ServicioEjercicio();
+
+    var datos = JSON.stringify({ pid: id});
+    service4.eliminarEjercicio(datos, onSucessEli, errorMessage, null, null);
+})
+function onSucessEli(result) {
+    alert("Ejercicio Eliminado");
+}

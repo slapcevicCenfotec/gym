@@ -68,8 +68,32 @@ function submit()
 
 };
 $('#btnAgregarMusculo').click(function () {
-   
+    location.href = "InsertarMusculo.aspx";
 })
 function onSuccesIngresar(result) {
     alert('Se registró correctamente el demonio');
+}
+
+$('#btnEliminarMus').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblMusculos').DataTable();
+
+    var rowData = table.rows(rows).data();
+
+    var id = rowData[0][0];
+
+    var service3 = new ServicioEnClases.ServicioProyecto();
+
+    var datos = JSON.stringify({ pid: id});
+
+    service3.eliminarMusculo(datos, onSuccesEliminar, errorMessage, null);
+
+})
+
+function onSuccesEliminar (result)
+{
+    alert("Musculo fue eliminado");
+}
+function errorMessage(result) {
+    alert("Error" + result);
 }

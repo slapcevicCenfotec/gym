@@ -1,15 +1,72 @@
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index6" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="css/modal.css">
+    <style>
+        #aceptarCita {
+            width: 240px;
+            background: #7f8c8d;
+            border-radius: 5px;
+            opacity: .9;
+        }
+
+            #aceptarCita fieldset {
+                border: 0;
+            }
+
+            #aceptarCita input {
+                color: #000;
+                width: 200px;
+                display: inline-block;
+            }
+
+            #aceptarCita label {
+                width: 200px;
+                display: inline-block;
+            }
+            #aceptarCita #modalCancelarCita {
+                float: left;
+                width: 90px;
+            }
+
+            #aceptarCita #modalAceptarCita {
+                float: right;
+                width: 90px;
+            }
+        .isHidden {
+            display: none;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card tabs-left style-default-light">
 
 
         <div class="col-md-8">
-    <div id="calendar" class="fc fc-ltr fc-unthemed">
-    </div>
+            <div id="calendar" class="fc fc-ltr fc-unthemed">
+            </div>
         </div>
+    </div>
+
+    <div id="aceptarCita" class="isHidden">
+        <fieldset>
+            <label for="startTime">Hora de inicio:</label>
+            <input id="startTime" name="startTime" type="time">
+            <span class="error isHidden errorMessage"></span>
+        </fieldset>
+        <fieldset>
+            <label for="endTime">Hora de conclusión:</label>
+            <input id="endTime" name="endTime" type="time">
+            <span class="error isHidden errorMessage"></span>
+        </fieldset>
+        <fieldset>
+            <label for="place">Lugar: </label>
+            <input id="place" name="place" type="text">
+        </fieldset>
+        <fieldset>
+            <a href="#" id="modalCancelarCita" class="botonModal">Cancelar</a>
+            <a href="#" id="modalAceptarCita" class="botonModal">Aceptar</a>
+        </fieldset>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
@@ -31,62 +88,64 @@
     <script src="<%= Page.ResolveUrl("~/js/local/calendar/fullcalendar.js")%>"></script>
     <link href="../css/calendar/fullcalendar.css" rel="stylesheet" />
 
-
-
+    <script src="../js/local/calendar/jquery.simplemodal.js"></script>
+    
     <script>
         $(document).ready(function () {
             $('#calendar').fullCalendar({
-                    height:650,
-                    contentHeight: 465,
-                    aspectRatio: 3,
-                    theme: true,
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
-                    editable: true,
-                    disableDragging: true,
-                    firstDay: 1,
-                    weekends: true,
-                    defaultEventMinutes:30,
-                    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio','Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                    monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun','Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-                    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles','Jueves', 'Viernes', 'Sabado'],
-                    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-                    buttonText: {
-                        today: 'hoy',
-                        month: 'mes',
-                        week: 'semana',
-                        day: 'dia'
+                height: 650,
+                contentHeight: 465,
+                aspectRatio: 3,
+                theme: true,
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: true,
+                disableDragging: true,
+                firstDay: 1,
+                weekends: true,
+                defaultEventMinutes: 30,
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                buttonText: {
+                    today: 'hoy',
+                    month: 'mes',
+                    week: 'semana',
+                    day: 'dia'
 
-                    },
-                    //dayClick: function (date, view) {
-                    //    $('#calendar').fullCalendar('changeView', 'agendaDay');
-                    //    $('#calendar').fullCalendar('gotoDate', date);
+                },
+                //dayClick: function (date, view) {
+                //    $('#calendar').fullCalendar('changeView', 'agendaDay');
+                //    $('#calendar').fullCalendar('gotoDate', date);
 
-                    //    var moment = $('#calendar').fullCalendar('getDate');
-                    //    alert("The current date of the calendar is " + moment.format());
+                //    var moment = $('#calendar').fullCalendar('getDate');
+                //    alert("The current date of the calendar is " + moment.format());
 
-                    //    alert(date);
-                    //}, 
-                    selectable: true,
-                    selectHelper: true,
-                    select: function (start, end) {
-                        alert(start);
-                        alert(end);
-                        var title = prompt('Event Title:');
-                        var eventData;
-                        if (title) {
-                            eventData = {
-                                title: title,
-                                start: start,
-                                end: end
-                            };
-                            $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-                        }
-                        $('#calendar').fullCalendar('unselect');
-                    },
+                //    alert(date);
+                //}, 
+                selectable: true,
+                selectHelper: true,
+                select: function (start, end) {
+                    
+                    $("#aceptarCita").modal();
+                    alert(start);
+                    alert(end);
+                    var title = prompt('Event Title:');
+                    var eventData;
+                    if (title) {
+                        eventData = {
+                            title: title,
+                            start: start,
+                            end: end
+                        };
+                        $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                    }
+                    $('#calendar').fullCalendar('unselect');
+                },
             })
 
         });

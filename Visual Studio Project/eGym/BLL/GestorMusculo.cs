@@ -150,22 +150,22 @@ namespace BLL
         {
             try
             {
-                if (pMusculo.IsValid)
-                {
+                //if (pMusculo.IsValid)
+                //{
                     Uow.MusculoRepository.Delete(pMusculo);
                     Uow.MusculoRepository.Save();
-                    gestorEventos.insertarEvento("Eliminar Musculo", "El usuario ha Eliminado el músculo " + pMusculo.Nombre + " al sistema.");
-                }
-                else 
-                {
-                    StringBuilder sb = new StringBuilder();
-                    foreach (RuleViolation rv in pMusculo.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
-                    throw new BusinessLogicException(sb.ToString());
+                    //gestorEventos.insertarEvento("Eliminar Musculo", "El usuario ha Eliminado el músculo " + pMusculo.Nombre + " al sistema.");
+                //}
+                //else 
+                //{
+                //    StringBuilder sb = new StringBuilder();
+                //    foreach (RuleViolation rv in pMusculo.GetRuleViolations())
+                //    {
+                //        sb.AppendLine(rv.ErrorMessage);
+                //    }
+                //    throw new BusinessLogicException(sb.ToString());
                 
-                }
+                //}
 
             }
             catch (SqlException ex)

@@ -251,21 +251,21 @@ namespace BLL
         {
             try
             {
-                if (pEjercicio.IsValid)
-                {
+            //    if (pEjercicio.IsValid)
+            //    {
                     Uow.EjercicioRepository.Delete(pEjercicio);
                     Uow.EjercicioRepository.Save();
-                    gestorEventos.insertarEvento("Eliminar ejercicio", "El usuario ha Eliminado el ejercicio " + pEjercicio.Nombre + " al sistema.");
-                }
-                else
-                {
-                    StringBuilder sb = new StringBuilder();
-                    foreach (RuleViolation rv in pEjercicio.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
-                    throw new BusinessLogicException(sb.ToString());
-                }
+                    //gestorEventos.insertarEvento("Eliminar ejercicio", "El usuario ha Eliminado el ejercicio " + pEjercicio.Nombre + " al sistema.");
+                //}
+                //else
+                //{
+                //    StringBuilder sb = new StringBuilder();
+                //    foreach (RuleViolation rv in pEjercicio.GetRuleViolations())
+                //    {
+                //        sb.AppendLine(rv.ErrorMessage);
+                //    }
+                //    throw new BusinessLogicException(sb.ToString());
+                //}
                
             }
             catch (SqlException ex)

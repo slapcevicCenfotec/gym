@@ -2,7 +2,7 @@
 function buscarEjercicios()
 {
     var servicio = new Prueba();
-    //servicio.obtenerMaquinas(onSuccess, null, null);
+    servicio.obtenerMaquinas(onSuccess, null, null);
     //servicio.obtenerEjercicios(onSuccess, null, null);
 }
 function onSuccess(result) {
