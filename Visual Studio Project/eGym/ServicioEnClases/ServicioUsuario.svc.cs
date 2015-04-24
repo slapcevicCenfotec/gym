@@ -37,6 +37,23 @@ namespace ServicioEnClases
             return serializer.Serialize(gestor.listarRoles());
         }
 
+        [WebGet()]
+        [OperationContract]
+        public string ObtenerUsuario(string id)
+        {
+            var gestor = new Gestor();
+            var idInt = Convert.ToInt32(id);
+            var serializer = new JavaScriptSerializer();
+            try
+            {
+                return serializer.Serialize(gestor.ObtenerUsuario(idInt));
+            }
+            catch(Exception ex)
+            {
+                return new JavaScriptSerializer().Serialize(ex.Message);
+            }
+        }
+
         [WebMethod]
         [OperationContract]
         public String InsertarUsuario(string datos)
