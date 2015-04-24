@@ -22,6 +22,7 @@ namespace DAL
         private IRepository<Horario> _repositoryHorario;
         private IRepository<Excepcion> _excepcionRepository;
         private IRepository<Evento> _eventoRepository;
+        private IRepository<EventoCalendario> _eventoRepositoryCalendario;
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
         private IRepository<FichaMedicion> _fichaMedicionRepository;
@@ -37,6 +38,17 @@ namespace DAL
                     _repositoryUsuario = new UsuarioRepository();
                 }
                 return _repositoryUsuario;
+            }
+        }
+        public IRepository<EventoCalendario> RepositoryEventoCalendario
+        {
+            get
+            {
+                if (_repositoryUsuario == null)
+                {
+                    _eventoRepositoryCalendario = new EventoCalendarioRepository();
+                }
+                return _eventoRepositoryCalendario;
             }
         }
         public IRepository<Contacto> RepositoryContacto
