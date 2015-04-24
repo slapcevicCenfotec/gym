@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Modificar.aspx.vb" Inherits="UI_WEB.Modificar" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Modificar.aspx.vb" Inherits="UI_WEB.Modificar2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -51,10 +51,16 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
+<<<<<<< HEAD
+                <asp:ServiceReference Path="http://localhost/ServiciosMaquinas.svc" />
+=======
                 <asp:ServiceReference Path="http://localhost/egymServices/ServiciosMaquinas.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc"/>
+>>>>>>> 1fdb59a9e63945ac6d5b2c8ba451d703f08bceff
             </Services>
         </asp:ScriptManager>
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
+    <script src="<%= Page.ResolveUrl("~/js/localScripts/ModificarMaquinas.js")%>"></script>
 </asp:Content>

@@ -46,9 +46,11 @@
     <Compile Include="DBAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ContactoRepository.cs" />
+    <Compile Include="Repositories\EventoCalendarioRepository.cs" />
     <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\ExcepcionRepository.cs" />
     <Compile Include="Repositories\FichaMedicionRepository.cs" />
+    <Compile Include="Repositories\FormulasRepository.cs" />
     <Compile Include="Repositories\HorarioRepository.cs" />
     <Compile Include="Repositories\GimnasioRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />

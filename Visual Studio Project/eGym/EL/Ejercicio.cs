@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace EL
 {
+    [Serializable]
+    [DataContract]
     public class Ejercicio:IEntity
     {
         #region Attributes
         private int _id;
+        [DataMember]
         public int Id
         {
             get { return _id; }
@@ -17,6 +21,7 @@ namespace EL
         }
 
         private string _nombre;
+        [DataMember]
         public string Nombre 
         {
             get { return _nombre; }
@@ -24,6 +29,7 @@ namespace EL
         }
 
         private string _alias;
+        [DataMember]
         public string Alias
         {
             get { return _alias; }
@@ -31,6 +37,7 @@ namespace EL
         }
 
         private string _posicionInicial;
+        [DataMember]
         public string PosicionInicial
         {
             get { return _posicionInicial; }
@@ -38,6 +45,7 @@ namespace EL
         }
 
         private byte[] _posicionInicialImg;
+        [DataMember]
         public byte[] PosicionInicialImg
         {
             get { return _posicionInicialImg; }
@@ -45,6 +53,7 @@ namespace EL
         }
 
         private string _posicionFinal;
+        [DataMember]
         public string PosicionFinal
         {
             get { return _posicionFinal; }
@@ -52,6 +61,7 @@ namespace EL
         }
 
         private byte[] _posicionFinalImg;
+        [DataMember]
         public byte[] PosicionFinalImg
         {
             get { return _posicionFinalImg; }
@@ -59,6 +69,7 @@ namespace EL
         }
 
         private string _erroresComunes;
+        [DataMember]
         public string ErroresComunes
         {
             get { return _erroresComunes; }
@@ -66,6 +77,7 @@ namespace EL
         }
 
         private string _descripcion;
+        [DataMember]
         public string Descripcion
         {
             get { return _descripcion; }
@@ -73,6 +85,7 @@ namespace EL
         }
 
         private int _idMusculoPrincipal;
+        [DataMember]
         public int IdMusculoPrincipal
         {
             get { return _idMusculoPrincipal; }
@@ -80,6 +93,7 @@ namespace EL
         }
 
         private string _musculosSecundarios;
+        [DataMember]
         public string MusculosSecundarios
         {
             get { return _musculosSecundarios; }

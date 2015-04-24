@@ -71,7 +71,7 @@ namespace DAL.Repositories
         public Ejercicio GetById(int id)
         {
             Ejercicio objEjercicio = null;
-            var sqlQuery = "SELECT [POSICION_INICIAL_IMG] , [POSICION_FINAL_iMG] FROM [dbo].[T_EJERCICIO] WHERE [ID] = @idEjercicio ";
+            var sqlQuery = "Select [ID],[NOMBRE],[ALIAS],[POSICION_INICIAL],[POSICION_INICIAL_IMG],[POSICION_FINAL],[POSICION_FINAL_iMG],[ERRORES_COMUNES],[DESCRIPCION] FROM [dbo].[T_EJERCICIO] WHERE [ID] = @idEjercicio ";
             SqlCommand cmd = new SqlCommand(sqlQuery);
             cmd.Parameters.AddWithValue("@idEjercicio", id);
             byte[] fotoPosInic=null, fotoPosFinal=null; 
@@ -95,9 +95,15 @@ namespace DAL.Repositories
               
                 objEjercicio = new Ejercicio
                 {
+                    Id = Convert.ToInt32(dr["ID"]),
+                    Nombre = dr["NOMBRE"].ToString(),
+                    Alias = dr["ALIAS"].ToString(),
+                    PosicionInicial = dr["POSICION_INICIAL"].ToString(),
+                    PosicionFinal = dr["POSICION_FINAL"].ToString(),
+                    ErroresComunes = dr["ERRORES_COMUNES"].ToString(),
+                    Descripcion = dr["DESCRIPCION"].ToString(),
                     PosicionInicialImg = fotoPosInic,
                     PosicionFinalImg = fotoPosFinal ,
-
                 };
             }
 

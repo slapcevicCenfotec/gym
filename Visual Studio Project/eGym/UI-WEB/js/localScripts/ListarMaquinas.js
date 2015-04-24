@@ -9,7 +9,7 @@
         },
         "language": {
             "lengthMenu": '_MENU_ entradas por página',
-            "search": '<i class="fa fa-search"></i>',
+            "Buscar": '<i class="fa fa-search"></i>',
             "paginate": {
                 "Anterior": '<i class="fa fa-angle-left"></i>',
                 "Siguiente": '<i class="fa fa-angle-right"></i>'
@@ -29,7 +29,7 @@
 }
 
 function search() {
-    var service = new ServicioEnClases.ServiciosMaquinas();
+    var service = new ServiciosMaquinas();
     service.obtenerMaquinas(onSuccess, null, null);
 }
 
@@ -51,3 +51,33 @@ function onSuccess(result) {
     $('#tblMaquinas tbody').append(tbody);
     load();
 }
+
+$('#btnTiposDeMaquina').click(function () {
+    window.location = "/egym/TiposDeMaquinas/Index.aspx";
+})
+
+$('#btnAgregar').click(function () {
+    window.location = "Registrar.aspx";
+})
+
+$('#btnModificar').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblMaquinas').DataTable();
+    var rowData = table.rows(rows).data();
+    var idMaquina = rowData[0][0];
+    window.location = "Modificar.aspx?id=" + idMaquina;
+})
+
+$('#btnEliminar').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblMaquinas').DataTable();
+    var rowData = table.rows(rows).data();
+    var idMaquina = rowData[0][0];
+
+    var serviceBuscarMaquinaPorId = new ServicioEnClases.ServiciosMaquina();
+    var maquinaPorEliminar = serviceBuscarMaquinaPorId.obtenerMaquinaById(idMaquina, onSuccessObtenerMaquina, null, null);
+
+    var serviceEliminar = new ServicioEnClases.ServiciosMaquina();
+
+    serviceEliminar.eliminarMaquina(maquinaPorEliminar, onSuccesEliminarMaquina, errorMessage, null, null);
+})
