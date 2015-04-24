@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,8 +45,10 @@
     <Compile Include="Ejercicio.cs" />
     <Compile Include="EjercicioPrograma.cs" />
     <Compile Include="Evento.cs" />
+    <Compile Include="EventoCalendario.cs" />
     <Compile Include="Excepcion.cs" />
     <Compile Include="FichaMedicion.cs" />
+    <Compile Include="Formula.cs" />
     <Compile Include="Gimnasio.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="IEntity.cs" />

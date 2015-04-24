@@ -75,6 +75,7 @@ namespace BLL
                     UoW.RolRepository.Insert(objRol);
                     UoW.RolRepository.Save();
 
+                    //gestorEventos.insertarEvento("Insertar rol", "El usuario a insertado el rol " + objRol.Nombre + " al sistema.");
                     gestorEventos.insertarEvento("Insertar rol", "El usuario a insertado el rol " + objRol.Nombre + " al sistema.");
                 }
                 else

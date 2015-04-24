@@ -25,7 +25,7 @@ Public Class FrmModificarEjercicio
         txtErroresComunes.Text = ejercicioModificar.ErroresComunes
         txtDescripcion.Text = ejercicioModificar.Descripcion
 
-        ejercicioImagenes = objeGestorEjercicio.getImagenes(ejercicioModificar.Id)
+        ejercicioImagenes = objeGestorEjercicio.getEjercicio(ejercicioModificar.Id)
 
         If Not ejercicioImagenes.PosicionInicialImg Is Nothing Then
 

@@ -2,8 +2,10 @@
 var table;
 
 function buscarMusculos() {
+
+
     var service = new ServicioEnClases.ServicioProyecto();
-      service.obtenerMusculos(onSuccessDioses, null, null);
+    service.obtenerMusculos(onSuccessDioses, null, null);
 }
 
 
@@ -63,13 +65,15 @@ function eliminarMusculo() {
     service3.eliminarMusculo(id, onSuccesEliminar, errorMessage, null);
 
 }
+
 function ingresarMusculo() {
-    var nombre = $('#txtnombreMusculo').val(),
-         ubicacion = $('#txtubicacionMusculo').val(),
-         origen = $('#txtorigenMusculo').val(),
-         inserccion = $('#txtinserccionMusculo').val(),
-         inervacion = $('#txtinervacionMusculo').val(),
-         irrigacion = $('#txtirrigacionMusculo').val(),
+    var nombre ="",
+         ubicacion = "",
+         origen = "",
+         inserccion = "",
+         inervacion = "",
+         irrigacion = "",
+
         service4 = new ServicioEnClases.ServicioProyecto();
 
     var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });

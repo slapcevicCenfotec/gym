@@ -1,9 +1,4 @@
-﻿$(document).ready(function () {
-    var service = new ServicioEnClases.ServiciosTiposDeMaquinas();
-    service.obtenerTiposDeMaquinas(onSuccessTiposDeMaquinas, null, null);
-});
-
-function load() {
+﻿function load() {
     var table = $('#tblTiposDeMaquinas').DataTable({
         "dom": 'lCfrtip',
         "order": [],
@@ -33,11 +28,16 @@ function load() {
     });
 }
 
+function search() {
+    var service = new ServiciosTiposDeMaquinas();
+    service.obtenerTiposDeMaquinas(onSuccess, null, null);
+}
+
 function error(result) {
     alert(result);
 }
 
-function onSuccessTiposDeMaquinas(result) {
+function onSuccess(result) {
     var object = $.parseJSON(result);
     var tbody = "";
     $.each(object, function (i, item) {
@@ -53,7 +53,7 @@ function onSuccessTiposDeMaquinas(result) {
 }
 
 $('#btnAgregar').click(function () {
-    window.location = 'TiposDeMaquinas/Registrar.aspx';
+    window.location = 'Registrar.aspx';
 })
 
 
@@ -62,7 +62,7 @@ $('#btnModificar').click(function () {
     var table = $('#tblTiposDeMaquinas').DataTable();
     var rowData = table.rows(rows).data();
     var idTipoDeMaquina = rowData[0][0];
-    window.location = "TiposDeMaquinas/Modificar.aspx?id=" + idTipoDeMaquina;
+    window.location = "Modificar.aspx?id=" + idTipoDeMaquina;
 })
 
 $('#btnEliminarMaquina').click(function () {
