@@ -108,24 +108,24 @@ namespace BLL
             {
                 Musculo objMusculo = new Musculo(pid, pnombre, ubicacion, origen, inserccion, inervacion, irrigacion);
 
-                if (objMusculo.IsValid)
-                {
+                //if (objMusculo.IsValid)
+                //{
                     Uow.MusculoRepository.Update(objMusculo);
                     Uow.MusculoRepository.Save();
-                    gestorEventos.insertarEvento("Modificar Músculo", "El usuario a modificado el músculo " + objMusculo.Nombre + " al sistema.");
+                //    gestorEventos.insertarEvento("Modificar Músculo", "El usuario a modificado el músculo " + objMusculo.Nombre + " al sistema.");
 
-                }
-                else
-                {
-                    StringBuilder sb = new StringBuilder();
+                //}
+                //else
+                //{
+                //    StringBuilder sb = new StringBuilder();
 
-                    foreach (RuleViolation rv in objMusculo.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
+                //    foreach (RuleViolation rv in objMusculo.GetRuleViolations())
+                //    {
+                //        sb.AppendLine(rv.ErrorMessage);
+                //    }
 
-                    throw new BusinessLogicException(sb.ToString());
-                }
+                //    throw new BusinessLogicException(sb.ToString());
+                //}
 
             }
             catch (SqlException ex)
@@ -189,8 +189,7 @@ namespace BLL
         /// <returns></returns>
         public Musculo musculoPorId(int pId)
         {
-            Musculo musculo = Uow.MusculoRepository.GetById(pId);
-            return musculo;
+            return Uow.MusculoRepository.GetById(pId);
         }
 
         public void habilitarMusculo(int pId)

@@ -60,9 +60,9 @@ function eliminarMusculo() {
     
     var service3 = new ServicioEnClases.ServicioProyecto();
 
-    //var datos = JSON.stringify({ pid: id});
+    var datos = JSON.stringify({ pid : id });
 
-    service3.eliminarMusculo(id, onSuccesEliminar, errorMessage, null);
+    service3.eliminarMusculo(datos, onSuccesEliminar, errorMessage, null);
 
 }
 

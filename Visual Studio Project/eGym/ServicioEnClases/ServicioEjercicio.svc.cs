@@ -43,6 +43,21 @@ namespace ServicioEnClases
             return new JavaScriptSerializer().Serialize(objEjercicio);
 
         }
+        [WebGet()]
+        [OperationContract]
+        public string obtenerMusculosSecundarios(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            int id = Convert.ToInt32(dictionary["pid"]);
+
+            List<Musculo> objEjercicio = new List<Musculo>();
+            objEjercicio = objGestorEjercicio.getMusculoSecundarios(id);
+            return new JavaScriptSerializer().Serialize(objEjercicio);
+
+        }
+
 
         [WebMethod]
         [OperationContract]

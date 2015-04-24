@@ -77,9 +77,9 @@ namespace DAL.Repositories
         public Musculo GetById(int id)
         {
             Musculo objMusculo = null;
-            var sqlQuery = "SELECT ID ,NOMBRE, UBICACION,ORIGEN,INSERCCION, INERVACION, IRRIGACION  FROM T_Musculo WHERE ID = @idProducto";
+            var sqlQuery = "SELECT ID ,NOMBRE, UBICACION,ORIGEN,INSERCCION, INERVACION, IRRIGACION  FROM T_Musculo WHERE [ID] = @idMusculo ";
             SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@idMusculo", id);
 
             var ds = DBAccess.ExecuteQuery(cmd);
 
@@ -171,7 +171,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@INERVACION", objMusculo.Inervacion));
                 cmd.Parameters.Add(new SqlParameter("@IRRIGACION", objMusculo.Irrigacion));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarMusculo");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "insertarMedicamento");
 
             }
             catch (Exception ex)
