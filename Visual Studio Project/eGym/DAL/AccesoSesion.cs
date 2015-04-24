@@ -39,8 +39,9 @@ namespace DAL
                         {
                             foto = (byte[])dataRow["FOTOGRAFIA"];
                         }
+                        int idUsuario = Convert.ToInt16(dataRow["ID"].ToString());
                         Rol rol = uow.RolRepository.GetById(idRol);
-                        usuario = new Usuario() { Nombre = nombre, Apellido = apellido, Rol = rol, Fotografia = foto };
+                        usuario = new Usuario() { Nombre = nombre, Apellido = apellido, Rol = rol, Fotografia = foto, Id = idUsuario };
                     }
                 }
             }

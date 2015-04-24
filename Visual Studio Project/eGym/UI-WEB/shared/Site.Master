@@ -63,7 +63,7 @@
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-fw fa-lock"></i> Cambiar contraseña</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-fw fa-power-off text-danger"></i> Cerrar sesion</a>
+                            <li><a id="logOff"><i class="fa fa-fw fa-power-off text-danger"></i> Cerrar sesión</a>
                             </li>
                         </ul>
                         <!--end .dropdown-menu -->
@@ -225,7 +225,20 @@
     <script src="<%= Page.ResolveUrl("~/js/core/source/AppVendor.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/Demo.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
+    <script>
 
+        $('#logOff').click(function () {
+
+            $.ajax({
+                type: "POST",
+                url: '<%= Page.ResolveUrl("~/Session.aspx/LogOff")%>',
+                data: '{ }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: location.reload()
+            });
+        })
+    </script>
     <!-- END JAVASCRIPT -->
 
 </body>

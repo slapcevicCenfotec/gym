@@ -46,7 +46,7 @@
                         <div class="form floating-label">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="txtCorreo">
-                                <label>Nombre de usuario</label>
+                                <label>Correo electrónico</label>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" id="txtContrasena">
@@ -121,7 +121,6 @@
     <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/localScripts/inicioSesion.js")%>"></script>
     <!-- END JAVASCRIPT -->
-
 </body>
 
 </html>
