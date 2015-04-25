@@ -167,74 +167,74 @@
     <script src="<%= Page.ResolveUrl("~/js/local/ejercicios.js")%>"></script>
 
     <script>
-        $('form').validate({
-            rules: {
-                name: {
-                    required: true
-                },
-                alias: {
-                    required: true
-                },
-                descripcion: {
-                    required: true
-                },
-                erroresComunes: {
-                    required: true
-                },
-                txtPosInicial: {
-                    required: true
-                },
-                txtPosFinal: {
-                    required: true
-                },
-                Musculo: {
-                    required: true
-                }
-            },
-            messages: {
-                name: {
-                    required: "Campo es requerido"
-                },
-                alias: {
-                    required: "Campo es requerido"
-                },
-                descripcion: {
-                    required: "Campo es requerido"
-                },
-                erroresComunes: {
-                    required: "Campo es requerido"
-                },
-                txtPosInicial: {
-                    required: "Campo es requerido"
-                },
-                txtPosFinal: {
-                    required: "Campo es requerido"
-                },
-                Musculo: {
-                    required: "Debe selecionar a menos un musculo"
-                }
-            },
-            submitHandler: function (form) {
-                alert('ajax get called');
-            },
-            highlight: function (element, errorClass) {
-                $(element).closest('.form-group').addClass('has-error');
-            },
-            unhighlight: function (element, errorClass) {
-                $(element).closest('.form-group').removeClass('has-error');
-            },
+        //$('form').validate({
+        //    rules: {
+        //        name: {
+        //            required: true
+        //        },
+        //        alias: {
+        //            required: true
+        //        },
+        //        descripcion: {
+        //            required: true
+        //        },
+        //        erroresComunes: {
+        //            required: true
+        //        },
+        //        txtPosInicial: {
+        //            required: true
+        //        },
+        //        txtPosFinal: {
+        //            required: true
+        //        },
+        //        Musculo: {
+        //            required: true
+        //        }
+        //    },
+        //    messages: {
+        //        name: {
+        //            required: "Campo es requerido"
+        //        },
+        //        alias: {
+        //            required: "Campo es requerido"
+        //        },
+        //        descripcion: {
+        //            required: "Campo es requerido"
+        //        },
+        //        erroresComunes: {
+        //            required: "Campo es requerido"
+        //        },
+        //        txtPosInicial: {
+        //            required: "Campo es requerido"
+        //        },
+        //        txtPosFinal: {
+        //            required: "Campo es requerido"
+        //        },
+        //        Musculo: {
+        //            required: "Debe selecionar a menos un musculo"
+        //        }
+        //    },
+        //    submitHandler: function (form) {
+        //        alert('ajax get called');
+        //    },
+        //    highlight: function (element, errorClass) {
+        //        $(element).closest('.form-group').addClass('has-error');
+        //    },
+        //    unhighlight: function (element, errorClass) {
+        //        $(element).closest('.form-group').removeClass('has-error');
+        //    },
 
-            errorPlacement: function (error, element) {
+        //    errorPlacement: function (error, element) {
 
-                if (element.attr('type') == 'checkbox') {
-                    element.closest('.form-group').children(0).prepend(error)
-                }
-                else
-                    error.insertAfter(element);
+        //        if (element.attr('type') == 'checkbox') {
+        //            element.closest('.form-group').children(0).prepend(error)
+        //        }
+        //        else
+        //            error.insertAfter(element);
 
-                error.appendTo(element.parent().next());
-            }
-        });
+        //        error.appendTo(element.parent().next());
+        //    }
+        //});
         //$(':input').change(function(){
         //    $(this).css('border', '3px solid red');
         //});

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Index.aspx.vb" Inherits="UI_WEB.Index5" %>
+=======
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Index.aspx.vb" Inherits="UI_WEB.Index3" %>
+>>>>>>> 05960df001edd0b9431c7e735ae96a64c437cec1
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%>' />
@@ -20,7 +24,7 @@
                     <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnAgregar">Agregar</button>
                     <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnModificar">Modificar</button>
                     <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnEliminar">Eliminar</button>
-                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnTiposDeMaquina">Tipos de máquina</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnTiposDeMaquinas">Tipos de máquina</button>
                 </div>
             </div>
             <div class="row">
@@ -30,6 +34,7 @@
                         <table id="tblMaquinas" class="table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th style="display:none">Id</th>
                                     <th>Número de activo</th>
                                     <th>Número de máquina</th>
                                     <th>Tipo de máquina</th>

@@ -28,20 +28,22 @@
             <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnCancelar">Cancelar</button>
 			<div class="card">
 				<div class="card-body">
-					<form class="form" role="form">
+					<form class="form form-validate" role="form" id="ModificarForm">
 						<div class="form-group floating-label">
-							<select id="cmbTiposDeMaquinas" name="cmbTiposDeMaquinas" class="form-control">
+							<select id="cmbTiposDeMaquinas" name="cmbTiposDeMaquinas" class="form-control" required>
 								<option value="">&nbsp;</option>
                             </select>
                             <label for="cmbTiposDeMaquinas">Tipo de máquina</label>
 						</div>
 						<div class="form-group floating-label">
-                            <input type="text" class="form-control" id="txtNumeroActivo"/>
+                            <input type="text" class="form-control" id="txtNumeroActivo" required/>
 							<label for="txtNumeroActivo">Número de activo</label>
 						</div>
 						<div class="form-group floating-label">
-							<input type="text" class="form-control" id="txtNumeroMaquina">
+							<input type="text" class="form-control" id="txtNumeroMaquina" required>
 							<label for="txtNumeroMaquina">Número de máquina</label>
+							<label id="idMaquina" style="display:none"></label>
+							<label id="habilitado" style="display:none"></label>
 						</div>
 					</form>
 				</div><!--end .card-body -->
@@ -63,4 +65,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
     <script src="<%= Page.ResolveUrl("~/js/localScripts/ModificarMaquinas.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/jquery.validate.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/additional-methods.min.js")%>"></script>
 </asp:Content>

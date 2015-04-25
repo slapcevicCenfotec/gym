@@ -102,6 +102,15 @@ namespace EL
             Foto = null;
         }
 
+        public TipoDeMaquina(int pid)
+        {
+            Id = pid;
+            Foto = null;
+            Nombre = "eliminar";
+            Descripcion = "eliminar";
+            Habilitado = false;
+        }
+
 #endregion
 
         /// <summary>
@@ -126,10 +135,6 @@ namespace EL
             if (Id == null)
             {
                 yield return new RuleViolation("Id es requerido", "Id");
-            }
-            if (Foto == null)
-            {
-                yield return new RuleViolation("La foto de la máquina es requerido", "Foto de Máquina");
             }
             if (String.IsNullOrEmpty(Nombre))
             {

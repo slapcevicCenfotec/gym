@@ -53,6 +53,7 @@
     <Compile Include="Repositories\FormulasRepository.cs" />
     <Compile Include="Repositories\HorarioRepository.cs" />
     <Compile Include="Repositories\GimnasioRepository.cs" />
+    <Compile Include="Repositories\IGraficos.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />

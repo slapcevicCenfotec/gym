@@ -5,6 +5,12 @@
 
     <script src="../Scripts/jquery-1.9.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
+
+     <style>
+        #txtIdMusculo {
+            display:none;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="section-body">
@@ -29,6 +35,7 @@
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Nombre:</label>
                             <div class="col-sm-7">
+                                 <input type="text" name="name" id="txtIdMusculo">
                                 <input type="text" name="name" id="txtnombreMusculo" class="form-control" placeholder="Nombre?">
                             </div>
                             <div class="col-sm-3">
@@ -76,13 +83,20 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <input type="submit" id="btnAgregarMusculo" class="btn btn-primary" value="Guardar" />
+                                <input type="submit" id="btnModificarMusculo" class="btn btn-primary" value="Guardar" />
                             </div>
                         </div>
                     </fieldset>
                 </div>
             </div>
         </div>
+         <form action="/" method="post" runat="server">
+            <asp:ScriptManager runat="server">
+                <Services>
+                    <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
+                </Services>
+            </asp:ScriptManager>
+        </form>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
@@ -90,4 +104,49 @@
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="../Scripts/jquery.validate.min.js"></script>
     <script src="<%= Page.ResolveUrl("~/js/local/musculos.js")%>"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            //alert($('form').serialize());
+            //$(':text').val('foo');
+
+            var idMusculo = getQueryVariable('id');
+
+            alert(idMusculo)
+
+            var service5 = new ServicioEnClases.ServicioProyecto();
+            var datos = JSON.stringify({ pid: idMusculo });
+
+            service5.obtenerMusculoByID(datos, onSuccess, errorMessage, null, null);
+
+        });
+
+        function onSuccess(result) {
+            alert(result);
+            var objeto = $.parseJSON(result);
+            $('#txtIdMusculo').val(objeto.Id);
+            $('#txtnombreMusculo').val(objeto.Nombre);
+            $('#txtubicacionMusculo').val(objeto.Ubicacion);
+            $('#txtorigenMusculo').val(objeto.Origen);
+            $('#txtinserccionMusculo').val(objeto.Inserccion);
+            $('#txtinervacionMusculo').val(objeto.Inervacion);
+            $('#txtirrigacionMusculo').val(objeto.Irrigacion);
+
+        }
+        function errorMessage(resul) {
+            alert(resul.get_message());
+        }
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
+        }
+    </script>
+
 </asp:Content>

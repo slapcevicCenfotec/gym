@@ -77,9 +77,9 @@ namespace DAL.Repositories
         public Musculo GetById(int id)
         {
             Musculo objMusculo = null;
-            var sqlQuery = "SELECT ID ,NOMBRE, UBICACION,ORIGEN,INSERCCION, INERVACION, IRRIGACION  FROM T_Musculo WHERE ID = @idProducto";
+            var sqlQuery = "SELECT ID ,NOMBRE, UBICACION,ORIGEN,INSERCCION, INERVACION, IRRIGACION  FROM T_Musculo WHERE [ID] = @idMusculo ";
             SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@idMusculo", id);
 
             var ds = DBAccess.ExecuteQuery(cmd);
 
