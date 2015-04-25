@@ -45,7 +45,7 @@
                         <br />
                         <form id="formLogin" class="form floating-label form-validate">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="txtCorreo" required>
+                                <input type="email" class="form-control" id="txtCorreo" required>
                                 <label>Correo electrónico</label>
                             </div>
                             <div class="form-group">

@@ -1,22 +1,24 @@
 ﻿$('#bntIniciarSesion').click(function () {
-    var userId = $('#txtCorreo').val
+    $("#formLogin").validate();
+    if ($("#formLogin").valid()) {
+        var contrasena = $('#txtContrasena').val();
+        var correo = $('#txtCorreo').val();
 
-    var contrasena = $('#txtContrasena').val();
-    var correo = $('#txtCorreo').val();
-
-    if (validateEmail(correo)) {
         datos = JSON.stringify({ pcontrasena: contrasena, pcorreo: correo });
         serviceLogin = new ServicioLogin.ServicioSesion();
         serviceLogin.iniciarSesion(datos, onSuccess, errorMessage, null, null);
     } else {
-
+        $('#txtContrasena').focus();
+        $('#txtContrasena').blur();
+        $('#txtCorreo').focus();
     };
-})
+
+});
 
 function onSuccess(result) {
     var object = $.parseJSON(result);
-    console.log(object.Id);
     if (result !== 'null') {
+        console.log(object.Id);
         $.ajax({
             type: "POST",
             url: "Session.aspx/SetUserId",
