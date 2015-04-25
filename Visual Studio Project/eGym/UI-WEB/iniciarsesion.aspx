@@ -43,13 +43,13 @@
                         <span class="text-lg text-bold text-primary">EGYM - NOMBRE GIMNASIO</span>
                         <br />
                         <br />
-                        <div class="form floating-label">
+                        <form id="formLogin" class="form floating-label form-validate">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="txtCorreo">
+                                <input type="text" class="form-control" id="txtCorreo" required>
                                 <label>Correo electrónico</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="txtContrasena">
+                                <input type="password" class="form-control" id="txtContrasena" required>
                                 <label>Contraseña</label>
                                 <p class="help-block">
                                     <a href="#">Olvidó su contraseña?</a>
@@ -58,12 +58,6 @@
                             <br />
                             <div class="row">
                                 <div class="col-xs-6 text-left">
-                                    <div class="checkbox checkbox-inline checkbox-styled">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span>Recordarme</span>
-                                        </label>
-                                    </div>
                                 </div>
                                 <!--end .col -->
                                 <div class="col-xs-6 text-right">
@@ -72,8 +66,7 @@
                                 <!--end .col -->
                             </div>
                             <!--end .row -->
-
-                        </div>
+                        </form>
                     </div>
                     <!--end .col -->
                     <div class="col-sm-5 col-sm-offset-1 text-center">
@@ -95,7 +88,7 @@
         <form runat="server">
             <asp:ScriptManager runat="server">
                 <Services>
-                    <asp:ServiceReference Path="http://localhost:60166/ServicioSesion.svc" />
+                    <asp:ServiceReference Path="http://localhost/egymServices/ServicioSesion.svc" />
                 </Services>
             </asp:ScriptManager>
         </form>
@@ -120,6 +113,7 @@
     <script src="<%= Page.ResolveUrl("~/js/core/demo/Demo.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/localScripts/inicioSesion.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/jquery.validate.js")%>"></script>
     <!-- END JAVASCRIPT -->
 </body>
 

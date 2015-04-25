@@ -44,16 +44,17 @@ namespace ServicioEnClases
         {
             var gestor = new Gestor();
             var idInt = Convert.ToInt32(id);
-            var serializer = new JavaScriptSerializer();
+            Usuario usuario = gestor.ObtenerUsuario(idInt);
             try
             {
-                return serializer.Serialize(gestor.ObtenerUsuario(idInt));
+                return new JavaScriptSerializer().Serialize(usuario);
             }
             catch(Exception ex)
             {
                 return new JavaScriptSerializer().Serialize(ex.Message);
             }
         }
+
 
         [WebMethod]
         [OperationContract]
