@@ -63,7 +63,7 @@ function onSuccessMusculos(result) {
     $.each(objeto, function (i, item) {
         Ulist += '<li>';
         Ulist += '<label>';
-        Ulist += '<input name="chkboxName" type="checkbox" value ="' + objeto[i].Id + '">';
+        Ulist += '<input name="chkboxName" type="checkbox" id ="' + objeto[i].Id + '">';
         Ulist += '<span>' + objeto[i].Nombre + '</span>';
         Ulist += '</label>';
         Ulist += '</li>';
@@ -72,6 +72,7 @@ function onSuccessMusculos(result) {
 
     $.each(objeto, function (i, item) {
         $("#musculo-principal").append("<option value=\"" + objeto[i].Id + "\">" + objeto[i].Nombre + "</option>");
+
     });
 
 }
@@ -157,7 +158,7 @@ function onSuccesIngresar(result) {
     alert("congratulations");
 }
 function errorMessage(result) {
-    alert("error  : " + result.responseText);
+    alert(result.get_message());
 }
 function getBase64Image() {
 
@@ -201,7 +202,6 @@ $('#btnModificarEjer').click(function () {
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
-    alert(id);
     location.href = "ModificarEjercicio.aspx?id="+id;
 })
 
@@ -220,9 +220,6 @@ $('#btnEliminarEjer').click(function () {
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
-
-
-
     var service4 = new ServicioEjercicio();
 
     var datos = JSON.stringify({ pid: id});
@@ -231,3 +228,7 @@ $('#btnEliminarEjer').click(function () {
 function onSucessEli(result) {
     alert("Ejercicio Eliminado");
 }
+$('#btnModificarEjercicio').click(function () {
+    alert($('#txtIdEjercicio').val());
+
+})

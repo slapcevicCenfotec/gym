@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Index.aspx.vb" Inherits="UI_WEB.Index5" %>
+=======
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Index.aspx.vb" Inherits="UI_WEB.IndexMaquina" %>
+>>>>>>> c5d508946dbceacf78a075aeb1afaf8e841b2b6f
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%>' />

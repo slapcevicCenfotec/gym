@@ -20,41 +20,38 @@
     </script>
     <script type="text/javascript" src="localScripts/buscarMusculos.js">
     </script>
-<<<<<<< HEAD
-   
-=======
+
     <script>
         $(document).ready(function () {
-            var servicio = new ser
+            var servicio = new ServicioEnClases.ServicioProyecto();
+           
         });
     </script>
-
->>>>>>> 8a45440a6f1d37283acc90a90bcee3b315368374
 </head>
 <body>
   <button type="button" class="btn btn-default" onclick="ingresarMusculo()">Submit</button>
    
      <script>
-         $(document).ready(function () {
-             dibujarCanvas();
-            var servcio = new Ser
-         });
+         //$(document).ready(function () {
+         //    dibujarCanvas();
+         //   var servcio = new Ser
+         //});
 
 
-         function dibujarCanvas() {
-             var canvas = document.getElementById('miCanvas');
-             var contexto = canvas.getContext('2d');
-             // imagen
-             var imagen = new Image();
-             imagen.onload = function () {
-                 contexto.drawImage(imagen, 0, 0);  // imagen completa en la posición (0,0) 
-                 contexto.drawImage(imagen, 285, 0, 150, 107); // escalado
-                 contexto.drawImage(imagen, 130, 85, 80, 60, 285, 205, 150, 107); // escalado de una porción
-                 contexto.strokeStyle = 'yellow';
-                 contexto.strokeRect(130, 85, 80, 60); // rectángulo amarillo
-             }
-             imagen.src = 'http://www.aulaclic.es/articulos/graficos/cabeza_pato.png';
-         }
+         //function dibujarCanvas() {
+         //    var canvas = document.getElementById('miCanvas');
+         //    var contexto = canvas.getContext('2d');
+         //    // imagen
+         //    var imagen = new Image();
+         //    imagen.onload = function () {
+         //        contexto.drawImage(imagen, 0, 0);  // imagen completa en la posición (0,0) 
+         //        contexto.drawImage(imagen, 285, 0, 150, 107); // escalado
+         //        contexto.drawImage(imagen, 130, 85, 80, 60, 285, 205, 150, 107); // escalado de una porción
+         //        contexto.strokeStyle = 'yellow';
+         //        contexto.strokeRect(130, 85, 80, 60); // rectángulo amarillo
+         //    }
+         //    imagen.src = 'http://www.aulaclic.es/articulos/graficos/cabeza_pato.png';
+         //}
     </script>
 
     <canvas id="miCanvas" width="450" height="350">Su navegador no soporta Canvas.</canvas>

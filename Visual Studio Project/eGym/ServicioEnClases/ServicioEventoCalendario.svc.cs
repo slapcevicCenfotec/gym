@@ -33,7 +33,7 @@ namespace ServicioEnClases
             var jss = new JavaScriptSerializer();
             var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-            int usuario = int.Parse(dictionary["USUARIO"]);
+           int usuario = int.Parse(dictionary["USUARIO"]);
             int tipo = int.Parse(dictionary["TIPO"]);
             String titulo = dictionary["TITULO"];
             String descripcion = dictionary["DESCRIPCION"];

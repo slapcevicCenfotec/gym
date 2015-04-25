@@ -33,7 +33,7 @@ namespace ServicioEnClases
             return new JavaScriptSerializer().Serialize(listaMusculos);
  
         }
-        [WebGet()]
+        [WebMethod]
         [OperationContract]
         public void modificarMusculo(string datosSerializados)
         {
@@ -51,7 +51,7 @@ namespace ServicioEnClases
             objGestorMusculo.modificarMusculo(id, pnombre, ubicacion, origen, inserccion, inervacion, irrigacion);           
 
         }
-        [WebGet()]
+        [WebMethod]
         [OperationContract]
         public void eliminarMusculo(string datosSerializados)
         {
@@ -63,6 +63,21 @@ namespace ServicioEnClases
             Musculo objmusculo = new Musculo(id,"");
             
             objGestorMusculo.eliminarMusculo(objmusculo);
+
+        }
+
+        [WebGet()]
+        [OperationContract]
+        public string obtenerMusculoByID(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            int id = Convert.ToInt32(dictionary["pid"]);
+
+            Musculo objMusculo = new Musculo();
+            objMusculo = objGestorMusculo.musculoPorId(id);
+            return new JavaScriptSerializer().Serialize(objMusculo);
 
         }
 
