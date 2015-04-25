@@ -72,6 +72,7 @@ function onSuccessMusculos(result) {
 
     $.each(objeto, function (i, item) {
         $("#musculo-principal").append("<option value=\"" + objeto[i].Id + "\">" + objeto[i].Nombre + "</option>");
+
     });
 
 }
@@ -157,7 +158,7 @@ function onSuccesIngresar(result) {
     alert("congratulations");
 }
 function errorMessage(result) {
-    alert("error  : " + result.responseText);
+    alert(result.get_message());
 }
 function getBase64Image() {
 

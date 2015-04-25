@@ -171,7 +171,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@INERVACION", objMusculo.Inervacion));
                 cmd.Parameters.Add(new SqlParameter("@IRRIGACION", objMusculo.Irrigacion));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "insertarMedicamento");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarMusculo");
 
             }
             catch (Exception ex)

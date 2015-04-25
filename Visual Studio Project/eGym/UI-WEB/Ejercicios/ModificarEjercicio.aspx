@@ -268,9 +268,18 @@
             $('#txtPosInicial').val(objeto.PosicionInicial );
             $('#txtPosFinal').val(objeto.PosicionFinal);
             
+            $("#musculo-principal option[value=" + objeto.IdMusculoPrincipal + "]").attr("selected", true);
+
+            var image1 = drawImage(objeto['Foto']);
+            $('#myCanvas').val(image1);
+            
+
+
             var service1 = new ServicioEjercicio();
             var datos = JSON.stringify({ pid: objeto.Id });
             service1.obtenerMusculosSecundarios(datos, onSuccessMuscSecundarios, errorMessage, null, null);
+
+
     
         }
 
@@ -297,6 +306,35 @@
                     this.checked = true;
                 }
             });
+
+        }
+
+        function drawImage(imgData) {
+            "use strict";
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+
+            //var uInt8Array = new Uint8Array(imgData);
+            var uInt8Array = imgData;
+            var i = uInt8Array.length;
+            var binaryString = [i];
+            while (i--) {
+                binaryString[i] = String.fromCharCode(uInt8Array[i]);
+            }
+            var data = binaryString.join('');
+
+            var base64 = window.btoa(data);
+
+            var img = new Image();
+            img.src = "data:image/png;base64," + base64;
+            canvas.width = img.width;
+            canvas.height = img.height;
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+            img.onerror = function (stuff) {
+                console.log("Img Onerror:", stuff);
+            };
 
         }
 
