@@ -279,13 +279,13 @@ namespace EL
         #region Constructores
 
         public FichaMedicion(int pid, int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
-                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
-                            float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
-                            float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
-                            float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
-                            float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
-                            float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha, Boolean phabilitado)
+                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
+                            float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
+                            float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
+                            float pperPantorrillaIzquierda, float pperPantorrillaDerecha, float ppliAbdominalIzquierdo, float ppliAbdominalDerecho,
+                            float ppliMusloIzquierdo, float ppliMusloDerecho, float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha,
+                            float ppliTricepsIzquierdo, float ppliTricepsDerecho, float ppliSubescapularIzquierdo, float ppliSubescapularDerecho,
+                            float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho, Boolean phabilitado)
         {
             Id = pid;
             Cliente = pcliente;
@@ -297,42 +297,42 @@ namespace EL
             PorcentajeGrasaCorporal = pporcentajeGrasaCorporal;
             PorcentajeMasaMuscular = pporcentajeMasaMuscular;
             PesoGraso = ppesoGraso;
+            PerCintura = pperCintura;
+            PerCadera = pperCadera;
+            PerAbdomen = pperAbdomen;
+            PerPecho = pperPecho;
+            PerEspalda = pperEspalda;
+            PerMusloIzquierdo = pperMusloIzquierdo;
+            PerMusloDerecho = pperMusloDerecho;
             PerBicepsIzquierdo = pperBicepsIzquierdo;
             PerBicepsDerecho = pperBicepsDerecho;
             PerBicepsIzqContraido = pperBicepsIzqContraido;
             PerBicepsDerContraido = pperBicepsDerContraido;
             PerPantorrillaIzquierda = pperPantorrillaIzquierda;
             PerPantorrillaDerecha = pperPantorrillaDerecha;
-            PerMusloIzquierdo = pperMusloIzquierdo;
-            PerMusloDerecho = pperMusloDerecho;
-            PerCintura = pperCintura;
-            PerAbdomen = pperAbdomen;
-            PerCadera = pperCadera;
-            PerPecho = pperPecho;
-            PerEspalda = pperEspalda;
-            PliTricepsIzquierdo = ppliTricepsIzquierdo;
-            PliTricepsDerecho = ppliTricepsDerecho;
-            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
-            PliSubescapularDerecho = ppliSubescapularDerecho;
-            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
-            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             PliAbdominalIzquierdo = ppliAbdominalIzquierdo;
             PliAbdominalDerecho = ppliAbdominalDerecho;
             PliMusloIzquierdo = ppliMusloIzquierdo;
             PliMusloDerecho = ppliMusloDerecho;
             PliPantorrillaIzquierda = ppliPantorrillaIzquierda;
             PliPantorrillaDerecha = ppliPantorrillaDerecha;
+            PliTricepsIzquierdo = ppliTricepsIzquierdo;
+            PliTricepsDerecho = ppliTricepsDerecho;
+            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
+            PliSubescapularDerecho = ppliSubescapularDerecho;
+            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
+            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             Habilitado = phabilitado;
         }
 
         public FichaMedicion(int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
-                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
-                            float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
-                            float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
-                            float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
-                            float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
-                            float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
+                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
+                            float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
+                            float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
+                            float pperPantorrillaIzquierda, float pperPantorrillaDerecha, float ppliAbdominalIzquierdo, float ppliAbdominalDerecho,
+                            float ppliMusloIzquierdo, float ppliMusloDerecho, float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha,
+                            float ppliTricepsIzquierdo, float ppliTricepsDerecho, float ppliSubescapularIzquierdo, float ppliSubescapularDerecho,
+                            float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho)
         {
             Cliente = pcliente;
             FechaCreacion = pfecha;
@@ -343,31 +343,31 @@ namespace EL
             PorcentajeGrasaCorporal = pporcentajeGrasaCorporal;
             PorcentajeMasaMuscular = pporcentajeMasaMuscular;
             PesoGraso = ppesoGraso;
+            PerCintura = pperCintura;
+            PerCadera = pperCadera;
+            PerAbdomen = pperAbdomen;
+            PerPecho = pperPecho;
+            PerEspalda = pperEspalda;
+            PerMusloIzquierdo = pperMusloIzquierdo;
+            PerMusloDerecho = pperMusloDerecho;
             PerBicepsIzquierdo = pperBicepsIzquierdo;
             PerBicepsDerecho = pperBicepsDerecho;
             PerBicepsIzqContraido = pperBicepsIzqContraido;
             PerBicepsDerContraido = pperBicepsDerContraido;
             PerPantorrillaIzquierda = pperPantorrillaIzquierda;
             PerPantorrillaDerecha = pperPantorrillaDerecha;
-            PerMusloIzquierdo = pperMusloIzquierdo;
-            PerMusloDerecho = pperMusloDerecho;
-            PerCintura = pperCintura;
-            PerAbdomen = pperAbdomen;
-            PerCadera = pperCadera;
-            PerPecho = pperPecho;
-            PerEspalda = pperEspalda;
-            PliTricepsIzquierdo = ppliTricepsIzquierdo;
-            PliTricepsDerecho = ppliTricepsDerecho;
-            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
-            PliSubescapularDerecho = ppliSubescapularDerecho;
-            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
-            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             PliAbdominalIzquierdo = ppliAbdominalIzquierdo;
             PliAbdominalDerecho = ppliAbdominalDerecho;
             PliMusloIzquierdo = ppliMusloIzquierdo;
             PliMusloDerecho = ppliMusloDerecho;
             PliPantorrillaIzquierda = ppliPantorrillaIzquierda;
             PliPantorrillaDerecha = ppliPantorrillaDerecha;
+            PliTricepsIzquierdo = ppliTricepsIzquierdo;
+            PliTricepsDerecho = ppliTricepsDerecho;
+            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
+            PliSubescapularDerecho = ppliSubescapularDerecho;
+            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
+            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             Habilitado = true;
         }
 
@@ -408,6 +408,46 @@ namespace EL
             PliSupraespinalIzquierdo = 0;
             PliSupraespinalDerecho = 0;
             Habilitado = true;
+        }
+
+        public FichaMedicion(int pid)
+        {
+            Id = pid;
+            Cliente = 0;
+            FechaCreacion = DateTime.MinValue;
+            Peso = 0;
+            Altura = 0;
+            Imc = 0;
+            ClasificacionIMC = "eliminar";
+            PorcentajeGrasaCorporal = 0;
+            PorcentajeMasaMuscular = 0;
+            PesoGraso = 0;
+            PerCintura = 0;
+            PerCadera = 0;
+            PerAbdomen = 0;
+            PerPecho = 0;
+            PerEspalda = 0;
+            PerMusloIzquierdo = 0;
+            PerMusloDerecho = 0;
+            PerBicepsIzquierdo = 0;
+            PerBicepsDerecho = 0;
+            PerBicepsIzqContraido = 0;
+            PerBicepsDerContraido = 0;
+            PerPantorrillaIzquierda = 0;
+            PerPantorrillaDerecha = 0;
+            PliAbdominalIzquierdo = 0;
+            PliAbdominalDerecho = 0;
+            PliMusloIzquierdo = 0;
+            PliMusloDerecho = 0;
+            PliPantorrillaIzquierda = 0;
+            PliPantorrillaDerecha = 0;
+            PliTricepsIzquierdo = 0;
+            PliTricepsDerecho = 0;
+            PliSubescapularIzquierdo = 0;
+            PliSubescapularDerecho = 0;
+            PliSupraespinalIzquierdo = 0;
+            PliSupraespinalDerecho = 0;
+            Habilitado = false;
         }
 
         #endregion

@@ -65,24 +65,25 @@ $('#btnModificar').click(function () {
     window.location = "Modificar.aspx?id=" + idTipoDeMaquina;
 })
 
-$('#btnEliminarMaquina').click(function () {
+function errorMessage(resul) {
+    alert(resul.get_message());
+}
+
+$('#btnEliminar').click(function () {
     var rows = $('tr.selected');
     var table = $('#tblTiposDeMaquinas').DataTable();
     var rowData = table.rows(rows).data();
-    var idMaquina = rowData[0][0];
+    var idTipoMaquina = rowData[0][0];
 
-    var serviceBuscarTipoDeMaquinaPorId = new ServicioEnClases.ServiciosMaquina();
-    var tipoDeMaquinaPorEliminar = serviceBuscarMaquinaPorId.obtenerTipoDeMaquinaById(idMaquina, onSuccessObtenerMaquina, null, null);
+    datos = JSON.stringify({ pidTipoMaquina: idTipoMaquina });
 
-    var serviceEliminar = new ServicioEnClases.ServiciosTiposDeMaquinas();
+    var serviceEliminar = new ServiciosTiposDeMaquinas();
 
-    serviceEliminar.eliminarTipoDeMaquina(tipoDeMaquinaPorEliminar, onSuccesEliminarTipoMaquina, errorMessage, null, null);
+    serviceEliminar.eliminarTipoDeMaquina(datos, onSuccesEliminarTipoMaquina, errorMessage, null, null);
+
+    location.reload();
 })
 
 function onSuccesEliminarTipoMaquina(result) {
-    alert('Se eliminó correctamente el tipo de máquina');
-}
-
-function errorMessage(resul) {
-    alert(resul.get_message());
+    alert('Se eliminó correctamente la máquina');
 }

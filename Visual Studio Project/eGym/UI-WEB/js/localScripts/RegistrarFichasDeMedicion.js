@@ -118,9 +118,12 @@ function calcularPorcGrasa() {
 };
 
 $('#btnGuardar').click(function () {
-    var cliente = 1;
-    var fecha = null;
-    var peso = parseFloat($('#txtPeso').val()),
+    $("#fichasForm").validate();
+
+    if ($("#fichasForm").valid()) {
+        var cliente = 122,
+        fecha = '04/04/2015',
+        peso = parseFloat($('#txtPeso').val()),
         altura = parseFloat($('#txtAltura').val()),
         imc = parseFloat($('#txtIMC').val()),
         clasificacionIMC = parseFloat($('#txtClasificacionIMC').val()),
@@ -153,44 +156,55 @@ $('#btnGuardar').click(function () {
         supraespinalIzquierdo = parseFloat($('#txtSupraespinalIzquierdo').val()),
         supraespinalDerecho = parseFloat($('#txtSupraespinalDerecho').val());
 
-    var servicioIngresar = new ServicioEnClases.ServicioFichasDeMedicion();
+        var servicioIngresar = new ServicioFichasDeMedicion();
 
-    var datos = JSON.stringify({
-        pcliente: cliente,
-        pfecha: fecha,
-        ppeso: peso,
-        paltura: altura,
-        pimc: imc,
-        pclasificacionIMC: clasificacionIMC,
-        pporcentajeGrasa: porcentajeGrasa,
-        pporcentajeMasa: porcentajeMasa,
-        ppesoGraso: pesoGraso,
-        pcintura: cintura,
-        pcadera: cadera,
-        pabdomen: abdomen,
-        ppecho: pecho,
-        pespalda: espalda,
-        pmusloIzquierdo: musloIzquierdo,
-        pmusloDerecho: musloDerecho,
-        pbicepsIzquierdo: bicepsIzquierdo,
-        pbicepsDerecho: bicepsDerecho,
-        pbicepIzquierdoContr: bicepIzquierdoContr,
-        pbicepDerechoContr: bicepDerechoContr,
-        ppantorrillaIzquierda: pantorrillaIzquierda,
-        ppantorrillaDerecha: pantorrillaDerecha,
-        pabdominalIzquierdo: abdominalIzquierdo,
-        pabdominalDerecho: abdominalDerecho,
-        ppliegueMusloIzquierdo: pliegueMusloIzquierdo,
-        ppliegueMusloDerecho: pliegueMusloDerecho,
-        pplieguePantorrillaIzquierda: plieguePantorrillaIzquierda,
-        pplieguePantorrillaDerecha: plieguePantorrillaDerecha,
-        ptricepsIzquierdo: tricepsIzquierdo,
-        ptricepsDerecho: tricepsDerecho,
-        psubescapularIzquierdo: subescapularIzquierdo,
-        psubescapularDerecho: subescapularDerecho,
-        psupraespinalIzquierdo: supraespinalIzquierdo,
-        psupraespinalDerecho: supraespinalDerecho
-    });
-    //servicioIngresar.InsertarFichaDeMedicion(datos, onSuccesIngresar, errorMessage, null, null);
+        var datos = JSON.stringify({
+            pcliente: cliente,
+            pfecha: fecha,
+            ppeso: peso,
+            paltura: altura,
+            pimc: imc,
+            pclasificacionIMC: clasificacionIMC,
+            pporcentajeGrasa: porcentajeGrasa,
+            pporcentajeMasa: porcentajeMasa,
+            ppesoGraso: pesoGraso,
+            pcintura: cintura,
+            pcadera: cadera,
+            pabdomen: abdomen,
+            ppecho: pecho,
+            pespalda: espalda,
+            pmusloIzquierdo: musloIzquierdo,
+            pmusloDerecho: musloDerecho,
+            pbicepsIzquierdo: bicepsIzquierdo,
+            pbicepsDerecho: bicepsDerecho,
+            pbicepIzquierdoContr: bicepIzquierdoContr,
+            pbicepDerechoContr: bicepDerechoContr,
+            ppantorrillaIzquierda: pantorrillaIzquierda,
+            ppantorrillaDerecha: pantorrillaDerecha,
+            pabdominalIzquierdo: abdominalIzquierdo,
+            pabdominalDerecho: abdominalDerecho,
+            ppliegueMusloIzquierdo: pliegueMusloIzquierdo,
+            ppliegueMusloDerecho: pliegueMusloDerecho,
+            pplieguePantorrillaIzquierda: plieguePantorrillaIzquierda,
+            pplieguePantorrillaDerecha: plieguePantorrillaDerecha,
+            ptricepsIzquierdo: tricepsIzquierdo,
+            ptricepsDerecho: tricepsDerecho,
+            psubescapularIzquierdo: subescapularIzquierdo,
+            psubescapularDerecho: subescapularDerecho,
+            psupraespinalIzquierdo: supraespinalIzquierdo,
+            psupraespinalDerecho: supraespinalDerecho
+        });
+
+
+        servicioIngresar.insertarFichaDeMedicion(datos, onSuccesIngresar, errorMessage, null, null);
+    }
 
 })
+
+function onSuccesIngresar(result) {
+    alert('Se registró correctamente la ficha de medición');
+}
+
+function errorMessage(resul) {
+    alert(resul.get_message());
+}

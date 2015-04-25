@@ -17,6 +17,10 @@
                     <article class="margin-bottom-xxl">
                     </article>
                         <p class="lead">Todas las fichas de medición de un cliente</p>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnAgregar">Agregar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnModificar">Modificar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnEliminar">Eliminar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnGraficos">Gráficos</button>
                 </div>
             </div>
             <div class="row">
@@ -26,6 +30,7 @@
                         <table id="tblFichasDeMedicion" class="table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th style="display:none">Id</th>
                                     <th>Fecha</th>
                                     <th>Peso</th>
                                     <th>Altura</th>

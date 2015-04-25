@@ -28,6 +28,15 @@ namespace ServicioEnClases
             return new JavaScriptSerializer().Serialize(listaTiposMaquinas);
         }
 
+        [WebGet()]
+        [OperationContract]
+        public string obtenerTipoDeMaquinaById(string pid)
+        {
+            TipoDeMaquina tipoMaquina = new TipoDeMaquina();
+            tipoMaquina = objGestorTiposMaquinas.GetTipoDeMaquinaById(Convert.ToInt32(pid));
+            return new JavaScriptSerializer().Serialize(tipoMaquina);
+        }
+
         [OperationContract]
         public void insertarTiposDeMaquina(string datosSerializados)
         {
@@ -38,7 +47,7 @@ namespace ServicioEnClases
             string descripcion = dictionary["pdescripcion"];
             byte[] foto = System.Convert.FromBase64String(dictionary["pfoto"]);
 
-            //objGestorTiposMaquinas.insertarTipoDeMaquina(foto, nombre, descripcion);
+            objGestorTiposMaquinas.insertarTipoDeMaquina(foto, nombre, descripcion);
 
         }
 
@@ -48,14 +57,9 @@ namespace ServicioEnClases
             var jss = new JavaScriptSerializer();
             var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-            int id = int.Parse(dictionary["pid"]);
-            string nombre = dictionary["pnombre"];
-            string descripcion = dictionary["pdescripcion"];
-            byte[] foto = System.Convert.FromBase64String(dictionary["pfoto"]);
-            Boolean habilitado = Convert.ToBoolean(dictionary["pdescripcion"]);
-            int tipoMaquina = int.Parse(dictionary["ptipoMaquina"]);
+            int id = int.Parse(dictionary["pidTipoMaquina"]);
 
-            TipoDeMaquina tipoMaquinaPorEliminar = new TipoDeMaquina(id, foto, nombre, descripcion, habilitado);
+            TipoDeMaquina tipoMaquinaPorEliminar = new TipoDeMaquina(id);
 
             objGestorTiposMaquinas.eliminarTipoDeMaquina(tipoMaquinaPorEliminar);
 
