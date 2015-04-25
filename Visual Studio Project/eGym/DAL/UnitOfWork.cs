@@ -230,5 +230,14 @@ namespace DAL
                 return _formulasRepository;
             }
         }
+
+        public DAL.Repositories.FichaMedicionRepository FichaMedicionRepositoryOriginal
+        {
+            get
+            {
+                return (DAL.Repositories.FichaMedicionRepository)FichaMedicionRepository;
+            }
+        }
+
     }
 }
