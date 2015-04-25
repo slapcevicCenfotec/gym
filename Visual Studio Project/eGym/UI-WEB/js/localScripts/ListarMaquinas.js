@@ -52,12 +52,8 @@ function onSuccess(result) {
     load();
 }
 
-$('#btnTiposDeMaquina').click(function () {
-    window.location = "/egym/TiposDeMaquinas/Index.aspx";
-})
-
 $('#btnAgregar').click(function () {
-    window.location = "Registrar.aspx";
+    window.location = 'Registrar.aspx';
 })
 
 $('#btnModificar').click(function () {
@@ -74,10 +70,26 @@ $('#btnEliminar').click(function () {
     var rowData = table.rows(rows).data();
     var idMaquina = rowData[0][0];
 
-    var serviceBuscarMaquinaPorId = new ServicioEnClases.ServiciosMaquina();
-    var maquinaPorEliminar = serviceBuscarMaquinaPorId.obtenerMaquinaById(idMaquina, onSuccessObtenerMaquina, null, null);
+    var serviceBuscarMaquinaPorId = new ServiciosMaquinas();
+    serviceBuscarMaquinaPorId.obtenerMaquinaById(idMaquina, onSuccessObtenerMaquina, null, null);
 
-    var serviceEliminar = new ServicioEnClases.ServiciosMaquina();
+    function onSuccessObtenerMaquina(result) {
+        var serviceEliminar = new ServiciosMaquinas();
 
-    serviceEliminar.eliminarMaquina(maquinaPorEliminar, onSuccesEliminarMaquina, errorMessage, null, null);
+        serviceEliminar.eliminarMaquina(result, onSuccesEliminarMaquina, errorMessage, null, null);
+
+        location.reload();
+    }
 })
+
+$('#btnTiposDeMaquinas').click(function () {
+    window.location = "/egym/TiposDeMaquinas/Index.aspx";
+})
+
+function onSuccesEliminarMaquina(result) {
+    alert('Se eliminó correctamente la máquina');
+}
+
+function errorMessage(resul) {
+    alert(resul.get_message());
+}

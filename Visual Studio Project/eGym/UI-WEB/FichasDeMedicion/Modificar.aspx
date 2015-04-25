@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Registrar.aspx.vb" Inherits="UI_WEB.agregar" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Modificar.aspx.vb" Inherits="UI_WEB.Modificar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/select2/select2.css")%>' />
@@ -18,7 +17,7 @@
         <!-- BEGIN INTRO -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="text-primary">Registrar fichas de medición</h1>
+                <h1 class="text-primary">Modificar fichas de medición</h1>
             </div>
             <!--end .col -->
             <div class="col-lg-8">
@@ -37,7 +36,7 @@
 
             <!-- BEGIN LAYOUT RIGHT SIDEBAR -->
             <div class="col-md-12">
-            <form class="form form-validate" role="form" id="fichasForm">
+            <form class="form form-validate" role="form" id="modificarFichasForm">
                 <div class="card tabs-left style-default-light">
                     <ul class="card-head nav nav-tabs text-center" data-toggle="tabs">
                         <li class="active"><a href="#first"><i class="fa fa-lg fa-user"></i>
@@ -59,6 +58,11 @@
                             <a><i class="fa fa-lg fa-check-circle"></i>
                                 <br />
                                 <button class="btn btn-default" type="button" id="btnGuardar">Guardar</button>
+                                
+						        <label id="idFichaModificar" style="display:none"></label>
+						        <label id="clienteModificar" style="display:none"></label>
+						        <label id="fechaCreacionModificar" style="display:none"></label>
+						        <label id="habilitadoModificar" style="display:none"></label>
                             </a>
                         </li>
                     </ul>
@@ -73,7 +77,7 @@
                                         <div class="form-group">
                                             <div class="input-group">
 	                                            <div class="input-group-content">
-		                                            <input type="text" class="form-control soloNumeros" id="txtPeso" required>
+		                                            <input type="text" class="form-control soloNumeros" id="txtPeso" required/>
 		                                            <label for="txtPeso">Peso</label>
 	                                            </div>
 	                                            <span class="input-group-addon">kg</span>
@@ -81,7 +85,7 @@
                                         </div>
                                         <div class="form-group">
 	                                        <div class="input-group-content">
-                                                <input type="text" class="form-control soloNumeros" id="txtAltura" required>
+                                                <input type="text" class="form-control soloNumeros" id="txtAltura" required/>
                                                 <label for="txtAltura">Altura</label>
 	                                        </div>
 	                                        <span class="input-group-addon">cm</span>
@@ -445,7 +449,7 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/moment/moment.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/localScripts/RegistrarFichasDeMedicion.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/localScripts/ModificarFichasDeMedicion.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/jquery.validate.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/additional-methods.min.js")%>"></script>
     <script>

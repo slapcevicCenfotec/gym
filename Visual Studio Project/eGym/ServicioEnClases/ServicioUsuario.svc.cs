@@ -8,7 +8,6 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
-using System.Web.Http;
 using System.Web.Script.Serialization;
 using System.Web.Services;
 

@@ -143,6 +143,7 @@ namespace DAL.Repositories
                             NumeroActivo = dr["NUMERO_ACTIVO"].ToString(),
                             NumeroMaquina = dr["NUMERO_MAQUINA"].ToString(),
                             Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                            TipoDeMaquina = Convert.ToInt32(dr["TIPO_MAQUINA"])
                         };
                     }
                 }

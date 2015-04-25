@@ -155,6 +155,12 @@
     <Compile Include="Ejercicio\FrmRegistrarEjercicio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gimnasio\FrmGimnasio.Designer.vb">
       <DependentUpon>FrmGimnasio.vb</DependentUpon>
     </Compile>
@@ -361,6 +367,9 @@
     <EmbeddedResource Include="Ejercicio\FrmRegistrarEjercicio.resx">
       <DependentUpon>FrmRegistrarEjercicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gimnasio\FrmGimnasio.resx">
       <DependentUpon>FrmGimnasio.vb</DependentUpon>
     </EmbeddedResource>
@@ -499,6 +508,10 @@
     <ProjectReference Include="..\EL\EL.csproj">
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicioEnClases\ServicioEnClases.csproj">
+      <Project>{b160c356-9239-4c13-8179-a9af849a8195}</Project>
+      <Name>ServicioEnClases</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -206,5 +206,13 @@ namespace DAL
                 return _fichaMedicionRepository;
             }
         }
+
+        public DAL.Repositories.FichaMedicionRepository FichaMedicionRepositoryOriginal
+        {
+            get
+            {
+                return (DAL.Repositories.FichaMedicionRepository)FichaMedicionRepository;
+            }
+        }
     }
 }
