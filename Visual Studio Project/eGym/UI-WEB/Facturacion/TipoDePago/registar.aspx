@@ -88,11 +88,6 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
-    <script src="<%= Page.ResolveUrl("~/js/local/usuarios.js")%>"></script>
-    <script>
-        $('#demo-date').datepicker({ autoclose: true, todayHighlight: true });
-        $('txtTipoIdentificacion').select2();
-        $('txtGenero').select2();
-        $('txtRol').select2();
-    </script>
+    <script src="<%= Page.ResolveUrl("~/js/local/validaciones/validacionRegistrarTipoPago.js")%>"></script>
+    
 </asp:Content>
