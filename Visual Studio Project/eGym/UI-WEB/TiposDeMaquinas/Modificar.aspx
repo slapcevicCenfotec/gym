@@ -10,6 +10,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="text-primary">Modificar tipo de máquina</h1>
+                <label id="txtIdTipoMaquina" style="display:none"></label>
+                <label id="txtHabilitado" style="display:none"></label>
             </div>
             <!--end .col -->
             <div class="col-lg-8">
@@ -60,7 +62,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/ServiciosTiposDeMaquinas.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc"/>
             </Services>
         </asp:ScriptManager>
     </form>
