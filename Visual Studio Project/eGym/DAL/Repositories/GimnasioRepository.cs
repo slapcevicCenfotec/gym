@@ -16,7 +16,7 @@ namespace DAL.Repositories
     /// Fecha: 03/15/2015
     /// Descricpcion: Este Clase se encarga del acceso a datos del gimnasio. Contiene los metodos de Insertar y modificar
     /// </summary>
-    class GimnasioRepository : IRepository<Gimnasio>
+    public class GimnasioRepository : IRepository<Gimnasio>
     {
         private List<IEntity> _insertItems;
         private List<IEntity> _updateItems;

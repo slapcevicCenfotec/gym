@@ -83,9 +83,7 @@ namespace DAL.Repositories
 
             SqlCommand cmd = new SqlCommand();
 
-            try
-            {
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarMaquinas");
+              DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarMaquinas");
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -104,11 +102,7 @@ namespace DAL.Repositories
                         });
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-
-            }
+            
 
             return listaMaquinas;
         }

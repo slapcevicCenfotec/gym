@@ -17,7 +17,8 @@ namespace BLL
         public void insertarEvento(String ptitulo, String pdescripcion)
         {
 
-            String nombreUsuario = "test";
+            //String nombreUsuario = GestorSesion.usuarioSesion.Nombre + " " + GestorSesion.usuarioSesion.Apellido;
+            String nombreUsuario = "Alexis";
             Evento objEvento = new Evento(ptitulo, pdescripcion, nombreUsuario);
 
             try

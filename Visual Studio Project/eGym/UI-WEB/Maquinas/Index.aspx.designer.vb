@@ -11,5 +11,9 @@ Option Strict On
 Option Explicit On
 
 
+<<<<<<< HEAD
 Partial Public Class Index5
+=======
+Partial Public Class Index3
+>>>>>>> 05960df001edd0b9431c7e735ae96a64c437cec1
 End Class

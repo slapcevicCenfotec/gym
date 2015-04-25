@@ -39,9 +39,9 @@ namespace BLL
         /// Lista cada una de las instancias de máquina.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Maquina> listarMaquinas()
+        public List<Maquina> listarMaquinas()
         {
-            return UoW.MaquinaRepository.GetAll();
+            return UoW.MaquinaRepository.GetAll().ToList<Maquina>();
         }
 
         /// <summary>

@@ -116,7 +116,7 @@
 			width = $(document).width() - 8;
 			$(id + '.active').css({'width': width});
 		}
-		width = (leftOffcanvas) ? width : '-' + width;
+		width = '-' + width;
 
 		// Translate position offcanvas pane
 		var translate = 'translate(' + width + 'px, 0)';

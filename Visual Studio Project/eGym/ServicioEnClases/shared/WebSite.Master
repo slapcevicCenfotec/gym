@@ -1,8 +1,9 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="UI_WEB.Site" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebSite.master.cs" Inherits="ServicioEnClases.shared.WebSite" %>
 
 <!DOCTYPE html>
 <html lang="es">
 
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Egym - Cantaros</title>
     <!-- BEGIN META -->
@@ -26,7 +27,6 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-
 <body class="menubar-hoverable header-fixed">
     <header id="header">
         <div class="headerbar">
@@ -77,7 +77,8 @@
     </header>
     <div id="base">
         <div id="content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
         <div id="menubar" class="menubar-inverse  animate">
             <div class="menubar-fixed-panel">
@@ -118,25 +119,13 @@
                             <!-- END USUARIOS -->
                             <!-- BEGIN FACTURACION -->
                             <li>
-                                <a href="<%= Page.ResolveUrl("~/Facturacion/index.aspx")%>">
+                                <a href="#">
                                     <div class="gui-icon"><i class="fa fa-dollar"></i>
                                     </div>
                                     <span class="title">Facturación</span>
                                 </a>
                             </li>
                             <!-- END FACTURACION -->
-                            <!-- BEGIN CALENDARIO -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Agenda/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-wrench"></i>
-                                    </div>
-                                    <span class="title">Agenda</span>
-                                </a>
-                            </li>
-                            <!-- END CALENDARIO -->
-
-
-
                             <!-- BEGIN MAQUINAS -->
                             <li>
                                 <a href="#">
@@ -166,7 +155,7 @@
                             <!-- END EJERCICIOS -->
                             <!-- BEGIN ROLES -->
                             <li>
-                                <a href="#">
+                                <a href="<%= Page.ResolveUrl("~/Roles/FrmListarRolesWeb.aspx")%>">
                                     <div class="gui-icon"><i class="fa fa-key"></i>
                                     </div>
                                     <span class="title">Roles</span>
@@ -184,7 +173,7 @@
                             <!-- END REPORTES -->
                             <!-- BEGIN CONFIGURACION -->
                             <li>
-                                <a href="#">
+                                <a href="<%= Page.ResolveUrl("~/Configuracion/FrmModificarGimnasioWeb.aspx")%>">
                                     <div class="gui-icon"><i class="fa fa-cog"></i>
                                     </div>
                                     <span class="title">Configuración</span>
@@ -225,9 +214,8 @@
     <script src="<%= Page.ResolveUrl("~/js/core/source/AppVendor.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/Demo.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
-
+        <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoTableDynamic.js")%>"></script>
     <!-- END JAVASCRIPT -->
 
 </body>
-
 </html>
