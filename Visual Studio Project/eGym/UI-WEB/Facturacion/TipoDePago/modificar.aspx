@@ -55,7 +55,7 @@
                         <div class="card-actionbar">
                                 <div data-toggle="tabs" class="card-actionbar-row">
                                     <a class="btn btn-flat btn-primary ink-reaction" href="index.aspx">Volver</a>
-                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="ingresarTipoDePago()" type="button">Registrar</button>
+                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="" type="button" id='btnModificarTipoDePago'>Registrar</button>
                                 </div>
                             </div>
 							</form>
@@ -85,10 +85,5 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
     <script src="<%= Page.ResolveUrl("~/js/local/usuarios.js")%>"></script>
-    <script>
-        $('#demo-date').datepicker({ autoclose: true, todayHighlight: true });
-        $('txtTipoIdentificacion').select2();
-        $('txtGenero').select2();
-        $('txtRol').select2();
-    </script>
+    <script src="<%= Page.ResolveUrl("~/js/local/validaciones/validacionModificarTipoPago.js")%>"></script>
 </asp:Content>
