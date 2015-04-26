@@ -12,12 +12,5 @@ Option Explicit On
 
 
 
-<<<<<<< HEAD
 Partial Public Class Index5
-=======
-'Partial Public Class Index5
-
-Partial Public Class IndexMaquina
-
->>>>>>> c5d508946dbceacf78a075aeb1afaf8e841b2b6f
 End Class
