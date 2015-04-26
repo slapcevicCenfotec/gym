@@ -12,5 +12,7 @@ Option Explicit On
 
 
 
-Partial Public Class Index5
+
+Partial Public Class IndexMaquina
+
 End Class

@@ -9,8 +9,8 @@
             <div class="overlay overlay-shade-top stick-top-left height-3"></div>
             <div class="row">
                 <div class="col-md-3 col-xs-5">
-                    <img class="img-circle border-white border-xl img-responsive auto-width" src="img/avatar1.jpg" alt="" />
-                    <h3>Melvin Salas<br /><small>Administrador</small></h3>
+                    <img class="img-circle border-white border-xl img-responsive auto-width" src="img/UGM-default-user.png" alt="" />
+                    <h3><span id="indexNombreUsuario"> </span> <br /><small id="indexNombreRol"></small></h3>
                 </div>
             </div>
             <div class="overlay overlay-shade-bottom stick-bottom-left force-padding text-right">
