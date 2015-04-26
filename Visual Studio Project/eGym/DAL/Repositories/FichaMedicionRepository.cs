@@ -288,7 +288,6 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@pCliente", objFichaMedicion.Cliente));
-                cmd.Parameters.Add(new SqlParameter("@pFechaCreacion", objFichaMedicion.FechaCreacion));
                 cmd.Parameters.Add(new SqlParameter("@pPeso", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pAltura", objFichaMedicion.Altura));
                 cmd.Parameters.Add(new SqlParameter("@pImc", objFichaMedicion.Imc));
@@ -345,7 +344,6 @@ namespace DAL.Repositories
 
                 cmd.Parameters.Add(new SqlParameter("@pId", objFichaMedicion.Id));
                 cmd.Parameters.Add(new SqlParameter("@pCliente", objFichaMedicion.Cliente));
-                cmd.Parameters.Add(new SqlParameter("@pFechaCreacion", objFichaMedicion.FechaCreacion));
                 cmd.Parameters.Add(new SqlParameter("@pPeso", objFichaMedicion.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pAltura", objFichaMedicion.Altura));
                 cmd.Parameters.Add(new SqlParameter("@pImc", objFichaMedicion.Imc));

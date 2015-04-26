@@ -12,6 +12,7 @@ namespace EL
         private int _idUsuario;
         private TipoAcondicionamiento _tipoAcondicionamiento;        
         private List<EjercicioPrograma> _listaEjercicios;
+        private int _estado;
 
         public int Id
         {
@@ -32,6 +33,12 @@ namespace EL
         {
             get { return _listaEjercicios; }
             set { _listaEjercicios = value; }
+        }
+
+        public int Estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
         }
 
     }
