@@ -43,6 +43,10 @@
                             <br />
                             <h4>Medidas<br />
                                 <small>generales</small></h4>
+						        <label id="idFichaModificar" style="display:none"></label>
+						        <label id="clienteModificar" style="display:none"></label>
+						        <label id="fechaCreacionModificar" style="display:none"></label>
+						        <label id="habilitadoModificar" style="display:none"></label>
                         </a></li>
                         <li><a href="#second"><i class="fa fa-lg fa-pencil-square"></i>
                             <br />
@@ -58,11 +62,12 @@
                             <a><i class="fa fa-lg fa-check-circle"></i>
                                 <br />
                                 <button class="btn btn-default" type="button" id="btnGuardar">Guardar</button>
-                                
-						        <label id="idFichaModificar" style="display:none"></label>
-						        <label id="clienteModificar" style="display:none"></label>
-						        <label id="fechaCreacionModificar" style="display:none"></label>
-						        <label id="habilitadoModificar" style="display:none"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a><i class="fa fa-lg fa-close (alias)"></i>
+                                <br />
+                                <button class="btn btn-default" type="button" id="btnCancelar">Cancelar</button>
                             </a>
                         </li>
                     </ul>

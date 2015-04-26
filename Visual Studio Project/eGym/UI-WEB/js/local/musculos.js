@@ -54,8 +54,7 @@ function onSuccessMusculos(result) {
     $('#tblMusculos tbody').append(tbody);
     load();
 }
-function submit()
-{
+$('#btnAgregarMusculo').click(function () {
     var nombre = $('#txtnombreMusculo').val(),
          ubicacion = $('#txtubicacionMusculo').val(),
          origen = $('#txtorigenMusculo').val(),
@@ -67,8 +66,8 @@ function submit()
     var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
     service4.insertarMusculo(datos, onSuccesIngresar, null, null, null);
 
-};
-$('#btnAgregarMusculo').click(function () {
+});
+$('#btnIrAgregarMusculo').click(function () {
     location.href = "InsertarMusculo.aspx";
 })
 function onSuccesIngresar(result) {

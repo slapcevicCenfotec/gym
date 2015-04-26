@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EL
 {
-    class Programa
+    public class Programa : IEntity
     {
         private int _id;
         private int _idUsuario;

@@ -135,6 +135,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@pDescripcion", objEvento.Descripcion));
                 cmd.Parameters.Add(new SqlParameter("@pFechaInicial", objEvento.FechaInicial));
                 cmd.Parameters.Add(new SqlParameter("@pFechaFinal", objEvento.FechaFinal));
+                cmd.Parameters.Add(new SqlParameter("@pHabilitado", 1));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarEventoCalendario");
 
             }

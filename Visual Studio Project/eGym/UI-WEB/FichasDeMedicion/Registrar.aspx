@@ -61,6 +61,12 @@
                                 <button class="btn btn-default" type="button" id="btnGuardar">Guardar</button>
                             </a>
                         </li>
+                        <li>
+                            <a><i class="fa fa-lg fa-close (alias)"></i>
+                                <br />
+                                <button class="btn btn-default" type="button" id="btnCancelar">Cancelar</button>
+                            </a>
+                        </li>
                     </ul>
                     <div class="card-body tab-content style-default-bright">
                         <div class="tab-pane active" id="first">

@@ -18,11 +18,23 @@ namespace BLL
         {
             return UoW.RepositoryEventoCalendario.GetAll().ToList<EventoCalendario>();
         }
+
+
         public void insertarEvento(int pUsuario, int pTipo, String pTitulo, String pDescripcion, DateTime pFechaInicial, DateTime pFechaFinal)
         {
-            EventoCalendario auxEvento = new EventoCalendario(pUsuario, pTipo, pTitulo, pDescripcion, pFechaInicial, pFechaFinal);
-            UoW.RepositoryEventoCalendario.Insert(auxEvento);
-            UoW.RepositoryEventoCalendario.Save();
+            try
+            {
+                EventoCalendario auxEvento = new EventoCalendario(pUsuario, pTipo, pTitulo, pDescripcion, pFechaInicial, pFechaFinal);
+                UoW.RepositoryEventoCalendario.Insert(auxEvento);
+                UoW.RepositoryEventoCalendario.Save();
+            }
+
+
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public void modificarEvento(int pId, int pUsuario, int pTipo, String pTitulo, String pDescripcion, DateTime pFechaInicial, DateTime pFechaFinal)
         {
