@@ -13,7 +13,6 @@ namespace EL
         private TipoAcondicionamiento _tipoAcondicionamiento;        
         private List<EjercicioPrograma> _listaEjercicios;
 
-
         public int Id
         {
             get { return _id; }
