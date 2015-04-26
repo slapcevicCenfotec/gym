@@ -50,11 +50,15 @@
                             <h4>Contactos<br />
                                 <small>De emergencia</small></h4>
                         </a></li>
-                        <li><a href="#third"><i class="fa fa-lg fa-calendar"></i>
-                            <br />
-                            <h4>Horario<br />
-                                <small>De atencion</small></h4>
-                        </a></li>
+                        <li>
+                            <a href="#third">
+                                <i class="fa fa-lg fa-calendar"></i><br />
+                                <h4>
+                                    Horario<br />
+                                    <small>De atencion</small>
+                                </h4>
+                            </a>
+                        </li>
                     </ul>
                     <form runat="server" class="card-body tab-content style-default-bright form-validate">
                         <div class="tab-pane active" id="first">
@@ -151,13 +155,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-actionbar">
-                                <div class="card-actionbar-row" data-toggle="tabs">
-                                    <a href="#second" class="btn btn-flat btn-primary">Siguiente</a>
-                                    <button type="button" onclick="ingresarUsuario()" class="btn btn-flat btn-primary">Registrar</button>
-                                    <button type="submit" class="btn btn-flat btn-primary">Validate</button>
-                                </div>
-                            </div>
                         </div>
                         <div class="tab-pane" id="second">
                             <div class="row">
@@ -168,15 +165,15 @@
                                         </div>
                                         <div class="card-body floating-label">
                                             <div class="form-group">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="txtNombreContacto1">
                                                 <label>Nombre</label>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="txtParentescoContacto1">
                                                 <label>Parentesco</label>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="txtNumeroContacto1">
                                                 <label>Número</label>
                                             </div>
                                         </div>
@@ -189,24 +186,19 @@
                                         </div>
                                         <div class="card-body floating-label">
                                             <div class="form-group">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="txtNombreContacto2">
                                                 <label>Nombre</label>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="txtParentescoContacto2">
                                                 <label>Parentesco</label>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="txtNumeroContacto2">
                                                 <label>Número</label>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-actionbar">
-                                <div class="card-actionbar-row" data-toggle="tabs">
-                                    <a href="#third" class="btn btn-flat btn-primary ink-reaction">Siguiente</a>
                                 </div>
                             </div>
                         </div>
@@ -221,12 +213,12 @@
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtLunes1">
                                                         <label>Lunes</label>
                                                     </div>
                                                     <span class="input-group-addon">-</span>
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtLunes2">
                                                         <div class="form-control-line"></div>
                                                     </div>
                                                 </div>
@@ -234,12 +226,12 @@
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtMartes1">
                                                         <label>Martes</label>
                                                     </div>
                                                     <span class="input-group-addon">-</span>
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtMartes2">
                                                         <div class="form-control-line"></div>
                                                     </div>
                                                 </div>
@@ -247,12 +239,12 @@
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtMiercoles1">
                                                         <label>Mirércoles</label>
                                                     </div>
                                                     <span class="input-group-addon">-</span>
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtMiercoles2">
                                                         <div class="form-control-line"></div>
                                                     </div>
                                                 </div>
@@ -264,12 +256,12 @@
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtJueves1">
                                                         <label>Jueves</label>
                                                     </div>
                                                     <span class="input-group-addon">-</span>
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtJueves2">
                                                         <div class="form-control-line"></div>
                                                     </div>
                                                 </div>
@@ -277,12 +269,12 @@
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtViernes1">
                                                         <label>Viernes</label>
                                                     </div>
                                                     <span class="input-group-addon">-</span>
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtViernes2">
                                                         <div class="form-control-line"></div>
                                                     </div>
                                                 </div>
@@ -294,12 +286,12 @@
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtSabado1">
                                                         <label>Sábado</label>
                                                     </div>
                                                     <span class="input-group-addon">-</span>
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtSabado2">
                                                         <div class="form-control-line"></div>
                                                     </div>
                                                 </div>
@@ -307,12 +299,12 @@
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtDomingo1">
                                                         <label>Domingo</label>
                                                     </div>
                                                     <span class="input-group-addon">-</span>
                                                     <div class="input-group-content">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="txtDomingo2">
                                                         <div class="form-control-line"></div>
                                                     </div>
                                                 </div>
@@ -321,17 +313,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-actionbar">
-                                <div class="card-actionbar-row" data-toggle="tabs">
-                                    <a href="#third" class="btn btn-flat btn-primary ink-reaction">Siguiente</a>
-                                </div>
-                            </div>
                         </div>
 
-
+                        <a class="btn" onclick="ingresarUsuario()">Agregar</a>
                         <asp:ScriptManager runat="server">
                             <Services>
-                                <asp:ServiceReference Path="http://localhost/ServicioUsuario.svc" />
+                                <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
                             </Services>
                         </asp:ScriptManager>
                     </form>
@@ -371,7 +358,6 @@
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
-
                 reader.onload = function (e) {
                     $('#imgFoto').attr('src', e.target.result).fadeIn('slow');
                 }
