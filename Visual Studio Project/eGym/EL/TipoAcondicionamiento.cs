@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EL
 {
-    class TipoAcondicionamiento
+    public class TipoAcondicionamiento : IEntity
     {
         private int _id;
         private String _nombre;
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
         public String Nombre
         {
             get { return _nombre; }
             set { _nombre = value; }
-        }
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
         }
 
     }

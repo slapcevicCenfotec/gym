@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EL
 {
-    class EjercicioPrograma
+    public class EjercicioPrograma : IEntity
     {
         private int _id;
         private int _series;

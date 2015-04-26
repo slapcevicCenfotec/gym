@@ -27,6 +27,9 @@ namespace DAL
         private IRepository<Ejercicio> _ejercicioRepository;
         private IRepository<FichaMedicion> _fichaMedicionRepository;
         private IRepository<Formula> _formulasRepository;
+        private IRepository<Programa> _programaRepository;
+        private IRepository<EjercicioPrograma> _ejercicioProgramaRepository;
+        private IRepository<TipoAcondicionamiento> _tipoAcondicionamientoRepository;
 
 
         public IRepository<Usuario> RepositoryUsuario
@@ -208,6 +211,7 @@ namespace DAL
                 return _eventoRepository;
             }
         }
+
         public IRepository<FichaMedicion> FichaMedicionRepository
         {
             get
@@ -219,6 +223,7 @@ namespace DAL
                 return _fichaMedicionRepository;
             }
         }
+
         public IRepository<Formula> FormulasRepository
         {
             get
@@ -238,5 +243,44 @@ namespace DAL
                 return (DAL.Repositories.FichaMedicionRepository)FichaMedicionRepository;
             }
         }
+
+        public IRepository<Programa> ProgramaRepository
+        {
+            get
+            {
+                if (this._programaRepository == null)
+                {
+                    this._programaRepository = new ProgramaRepository();
+                }
+                return _programaRepository;
+            }
+        }
+
+
+        public IRepository<EjercicioPrograma> EjercicioProgramaRepository
+        {
+            get
+            {
+                if (this._ejercicioProgramaRepository == null)
+                {
+                    this._ejercicioProgramaRepository = new EjercicioProgramaRepository();
+                }
+                return _ejercicioProgramaRepository;
+            }
+        }
+
+        public IRepository<TipoAcondicionamiento> TipoAcondicionamientoRepository
+        {
+            get
+            {
+                if (this._tipoAcondicionamientoRepository == null)
+                {
+                    this._tipoAcondicionamientoRepository = new TipoAcondicionamientoRepository();
+                }
+                return _tipoAcondicionamientoRepository;
+            }
+        }
+
+        
     }
 }

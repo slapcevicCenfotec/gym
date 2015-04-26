@@ -35,7 +35,7 @@ namespace DAL.Repositories
         private List<IEntity> _updateItems;
 
         /// <summary>
-        /// Inicializa una nueva instancia de clase <ver cref="TipoDeMaquinaRepository"/>.
+        /// Inicializa una nueva instancia de clase <ver cref="MaquinaRepository"/>.
         /// </summary>
         public MaquinaRepository()
         {
