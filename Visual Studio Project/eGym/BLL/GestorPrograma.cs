@@ -1,10 +1,12 @@
-﻿using DAL;
-using EL;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Drawing;
-using System.Net;
-using System.Net.Mail;
+using DAL;
+using EL;
+using Exceptions.CustomExceptions;
 
 namespace BLL
 {
@@ -19,13 +21,11 @@ namespace BLL
             unitOfWork = new UnitOfWork();
         }
 
-        public IEnumerable<Programa> ListarProgramas()
+        public List<Programa> ListarProgramas()
         {
-            return unitOfWork.ProgramaRepository.GetAll();
+            return unitOfWork.ProgramaRepository.GetAll().ToList<Programa>();
         }
-
-
-
+        
         public Programa ObtenerPrograma(int pId)
         {
             var programa = unitOfWork.ProgramaRepository.GetById(pId);
@@ -46,12 +46,11 @@ namespace BLL
             return programa;
         }
 
-        public void AgregarPrograma(int pidUsuario, TipoAcondicionamiento ptipoAcondicionamiento, List<EjercicioPrograma> plistaEjerciciosPrograma)
+        public void AgregarPrograma(int pidUsuario, int ptipoAcondicionamiento)
         {
             Programa programa = new Programa();
             programa.IdUsuario = pidUsuario;
             programa.TipoAcondicionamiento = ptipoAcondicionamiento;
-            programa.ListaEjercicios = plistaEjerciciosPrograma;
 
             unitOfWork.ProgramaRepository.Insert(programa);
             unitOfWork.ProgramaRepository.Save();
@@ -63,13 +62,13 @@ namespace BLL
             unitOfWork.ProgramaRepository.Save();
         }
 
-        public void ModificarPrograma(int pid, int pidUsuario, TipoAcondicionamiento ptipoAcondicionamiento, List<EjercicioPrograma> plistaEjerciciosPrograma)
+        public void ModificarPrograma(int pid, int pidUsuario, int ptipoAcondicionamiento, int pestado)
         {
             Programa programa = new Programa();
             programa.Id = pid;
             programa.IdUsuario = pidUsuario;
             programa.TipoAcondicionamiento = ptipoAcondicionamiento;
-            programa.ListaEjercicios = plistaEjerciciosPrograma;
+            programa.Estado = pestado;
 
             unitOfWork.ProgramaRepository.Update(programa);
             unitOfWork.ProgramaRepository.Save();
