@@ -42,6 +42,7 @@ function onSuccess(result) {
     var tbody = "";
     $.each(object, function (i, item) {
         tbody += '<tr>';
+        tbody += '<td style="display:none">' + object[i].Id + '</td>';
         tbody += '<td>' + parseJsonDate(object[i].FechaCreacion) + '</td>';
         tbody += '<td>' + object[i].Peso + '</td>';
         tbody += '<td>' + object[i].Altura + '</td>';
@@ -67,4 +68,43 @@ function formattedDate(date) {
     if (day.length < 2) day = '0' + day;
 
     return [month, day, year].join('/');
+}
+
+$('#btnAgregar').click(function () {
+    window.location = 'Registrar.aspx';
+})
+
+$('#btnModificar').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblFichasDeMedicion').DataTable();
+    var rowData = table.rows(rows).data();
+    var idFicha = rowData[0][0];
+    window.location = "Modificar.aspx?id=" + idFicha;
+})
+
+$('#btnEliminar').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblFichasDeMedicion').DataTable();
+    var rowData = table.rows(rows).data();
+    var idFicha = rowData[0][0];
+
+    datos = JSON.stringify({ pidFicha: idFicha });
+
+    var serviceEliminar = new ServicioFichasDeMedicion();
+
+    serviceEliminar.eliminarFichaMedicion(datos, onSuccesEliminarFicha, errorMessage, null, null);
+
+    location.reload();
+})
+
+$('#btnGraficos').click(function () {
+    window.location = 'Graficos.aspx';
+})
+
+function onSuccesEliminarFicha(result) {
+    alert('Se eliminó correctamente la ficha de medición');
+}
+
+function errorMessage(resul) {
+    alert(resul.get_message());
 }

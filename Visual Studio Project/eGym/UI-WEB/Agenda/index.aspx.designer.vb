@@ -10,5 +10,15 @@
 Option Strict On
 Option Explicit On
 
+
 Partial Public Class index6
+
+    '''<summary>
+    '''ScriptManager2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptManager2 As Global.System.Web.UI.ScriptManager
 End Class

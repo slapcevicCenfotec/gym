@@ -46,6 +46,7 @@
     <Compile Include="DBAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ContactoRepository.cs" />
+    <Compile Include="Repositories\EjercicioProgramaRepository.cs" />
     <Compile Include="Repositories\EventoCalendarioRepository.cs" />
     <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\ExcepcionRepository.cs" />
@@ -53,9 +54,12 @@
     <Compile Include="Repositories\FormulasRepository.cs" />
     <Compile Include="Repositories\HorarioRepository.cs" />
     <Compile Include="Repositories\GimnasioRepository.cs" />
+    <Compile Include="Repositories\IGraficos.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
+    <Compile Include="Repositories\ProgramaRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
+    <Compile Include="Repositories\TipoAcondicionamientoRepository.cs" />
     <Compile Include="Repositories\TipoDeMaquinaRepository.cs" />
     <Compile Include="Repositories\EjercicioRepository.cs" />
     <Compile Include="Repositories\MaquinaRepository.cs" />

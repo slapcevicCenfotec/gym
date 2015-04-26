@@ -72,11 +72,11 @@ namespace ServicioEnClases
             var jss = new JavaScriptSerializer();
             var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-            int id = int.Parse(dictionary["pid"]);
-            string numeroActivo = dictionary["pnumeroActivo"];
-            string numeroMaquina = dictionary["pnumeroMaquina"];
-            Boolean habilitado = Boolean.Parse(dictionary["phabilitado"]);
-            int tipoMaquina = int.Parse(dictionary["ptipoMaquina"]);
+            int id = int.Parse(dictionary["Id"]);
+            string numeroActivo = dictionary["NumeroActivo"];
+            string numeroMaquina = dictionary["NumeroMaquina"];
+            Boolean habilitado = Boolean.Parse(dictionary["Habilitado"]);
+            int tipoMaquina = int.Parse(dictionary["TipoDeMaquina"]);
 
             Maquina maquinaPorEliminar = new Maquina(id, numeroActivo, numeroMaquina, habilitado, tipoMaquina);
 

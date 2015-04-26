@@ -289,6 +289,29 @@ namespace DAL.Repositories
 
             }
         }
+        
+        /// <summary>
+        /// Elimina una instancia de tipo de máquina.
+        /// </summary>
+        /// <param name="objTipoDeMaquina">Objeto de tipo de máquina.</param>
+        private void DeleteTipoDeMaquinaWeb(int idTipoDeMaquina)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@pId", idTipoDeMaquina));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarTipoDeMaquina");
+
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
 
     }
 }

@@ -14,16 +14,34 @@ function onSuccessTiposDeMaquinas(result) {
         option.value = idMaquina
         cmbTiposDeMaquinas.appendChild(option);
     });
+
+    $('#cmbTiposDeMaquinas').on('click', 'tr', function () {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else {
+            $('#cmbTiposDeMaquinas').$('li.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    });
 }
 
 $('#btnGuardar').click(function () {
-    var numeroActivo = $('#txtNumeroActivo').val(),
-        numeroMaquina = $('#txtNumeroMaquina').val(),
-        tipoMaquina = $('#cmbTiposDeMaquinas option:selected').val();
+    $("#maquinasForm").validate();
+
+    if ($("#maquinasForm").valid()) {
+
+        var numeroActivo = $('#txtNumeroActivo').val(),
+            numeroMaquina = $('#txtNumeroMaquina').val(),
+            tipoMaquina = $('#cmbTiposDeMaquinas option:selected').val();
         serviceInsertar = new ServiciosMaquinas();
 
         datos = JSON.stringify({ pnumeroActivo: numeroActivo, pnumeroMaquina: numeroMaquina, ptipoMaquina: tipoMaquina });
         serviceInsertar.insertarMaquina(datos, onSuccesIngresarMaquina, errorMessage, null, null);
+
+        window.location = 'Index.aspx';
+
+    }
 })
 
 function onSuccesIngresarMaquina(result) {
@@ -33,3 +51,8 @@ function onSuccesIngresarMaquina(result) {
 function errorMessage(resul) {
     alert(resul.get_message());
 }
+
+$('#btnCancelar').click(function () {
+    $("#maquinasForm").trigger('reset');
+    window.location = 'Index.aspx';
+})

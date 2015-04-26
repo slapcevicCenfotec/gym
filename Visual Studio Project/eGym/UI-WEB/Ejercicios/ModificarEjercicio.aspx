@@ -7,6 +7,12 @@
     <script src="../Scripts/jquery-1.9.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
 
+    <style>
+        #txtIdEjercicio {
+            display:none;
+        }
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="section-body">
@@ -32,6 +38,7 @@
                             <div class="form-group">
                                 <label for="name" class="col-sm-2 control-label">Nombre:</label>
                                 <div class="col-sm-7">
+                                    <input type="text" name="name" id="txtIdEjercicio" class="form-control">
                                     <input type="text" name="name" id="txtnombreEjercicio" class="form-control" placeholder="Nombre?">
                                 </div>
                                 <div class="col-sm-3">
@@ -83,7 +90,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <input type="submit" id="btnAgregarEjercicio" class="btn btn-primary" value="Guardar" />
+                                    <input type="submit" id="btnModificarEjercicio" class="btn btn-primary" value="Guardar" />
                                 </div>
                             </div>
                         </fieldset>
@@ -166,82 +173,81 @@
     <script src="<%= Page.ResolveUrl("~/js/local/ejercicios.js")%>"></script>
 
     <script>
-        $('form').validate({
-            rules: {
-                name: {
-                    required: true
-                },
-                alias: {
-                    required: true
-                },
-                descripcion: {
-                    required: true
-                },
-                erroresComunes: {
-                    required: true
-                },
-                txtPosInicial: {
-                    required: true
-                },
-                txtPosFinal: {
-                    required: true
-                },
-                Musculo: {
-                    required: true
-                }
-            },
-            messages: {
-                name: {
-                    required: "Campo es requerido"
-                },
-                alias: {
-                    required: "Campo es requerido"
-                },
-                descripcion: {
-                    required: "Campo es requerido"
-                },
-                erroresComunes: {
-                    required: "Campo es requerido"
-                },
-                txtPosInicial: {
-                    required: "Campo es requerido"
-                },
-                txtPosFinal: {
-                    required: "Campo es requerido"
-                },
-                Musculo: {
-                    required: "Debe selecionar a menos un musculo"
-                }
-            },
-            submitHandler: function (form) {
-                alert('ajax get called');
-            },
-            highlight: function (element, errorClass) {
-                $(element).closest('.form-group').addClass('has-error');
-            },
-            unhighlight: function (element, errorClass) {
-                $(element).closest('.form-group').removeClass('has-error');
-            },
+        //$('form').validate({
+        //    rules: {
+        //        name: {
+        //            required: true
+        //        },
+        //        alias: {
+        //            required: true
+        //        },
+        //        descripcion: {
+        //            required: true
+        //        },
+        //        erroresComunes: {
+        //            required: true
+        //        },
+        //        txtPosInicial: {
+        //            required: true
+        //        },
+        //        txtPosFinal: {
+        //            required: true
+        //        },
+        //        Musculo: {
+        //            required: true
+        //        }
+        //    },
+        //    messages: {
+        //        name: {
+        //            required: "Campo es requerido"
+        //        },
+        //        alias: {
+        //            required: "Campo es requerido"
+        //        },
+        //        descripcion: {
+        //            required: "Campo es requerido"
+        //        },
+        //        erroresComunes: {
+        //            required: "Campo es requerido"
+        //        },
+        //        txtPosInicial: {
+        //            required: "Campo es requerido"
+        //        },
+        //        txtPosFinal: {
+        //            required: "Campo es requerido"
+        //        },
+        //        Musculo: {
+        //            required: "Debe selecionar a menos un musculo"
+        //        }
+        //    },
+        //    submitHandler: function (form) {
+        //        alert('ajax get called');
+        //    },
+        //    highlight: function (element, errorClass) {
+        //        $(element).closest('.form-group').addClass('has-error');
+        //    },
+        //    unhighlight: function (element, errorClass) {
+        //        $(element).closest('.form-group').removeClass('has-error');
+        //    },
 
-            errorPlacement: function (error, element) {
+        //    errorPlacement: function (error, element) {
 
-                if (element.attr('type') == 'checkbox') {
-                    element.closest('.form-group').children(0).prepend(error)
-                }
-                else
-                    error.insertAfter(element);
+        //        if (element.attr('type') == 'checkbox') {
+        //            element.closest('.form-group').children(0).prepend(error)
+        //        }
+        //        else
+        //            error.insertAfter(element);
 
-                error.appendTo(element.parent().next());
-            }
-        });
+        //        error.appendTo(element.parent().next());
+        //    }
+        //});
         //$(':input').change(function(){
         //    $(this).css('border', '3px solid red');
         //});
 
         $(document).ready(function () {
+           
             buscarMusculos();
-            //alert($('form').serialize());
-            //$(':text').val('foo');
 
             var idMaquina = getQueryVariable('id');
 
@@ -252,16 +258,86 @@
         });
 
         function onSuccess(result) {
+            alert(result)
             var objeto = $.parseJSON(result);
+            $('#txtIdEjercicio').val(objeto.Id);
             $('#txtnombreEjercicio').val(objeto.Nombre);
-            $('#alias').val(objeto.Alias);
-            $('#descripcion').val(objeto.Descripcion);
+            $('#alias').val(objeto.Alias );
+            $('#descripcion').val(objeto.Descripcion );
             $('#erroresComunes').val(objeto.ErroresComunes);
-            $('#txtPosInicial').val(objeto.PosicionInicial);
+            $('#txtPosInicial').val(objeto.PosicionInicial );
             $('#txtPosFinal').val(objeto.PosicionFinal);
+            
+            $("#musculo-principal option[value=" + objeto.IdMusculoPrincipal + "]").attr("selected", true);
 
+            var image1 = drawImage(objeto['Foto']);
+            $('#myCanvas').val(image1);
+            
+
+
+            var service1 = new ServicioEjercicio();
+            var datos = JSON.stringify({ pid: objeto.Id });
+            service1.obtenerMusculosSecundarios(datos, onSuccessMuscSecundarios, errorMessage, null, null);
+
+
+    
+        }
+
+        function onSuccessMuscSecundarios(result) {
+
+            alert(result);
+            //Recorre el checkbox list
+            $('#listaMusculosSecundarios li input[type=checkbox]').each(function (i, itemMusculo) {
+                alert("primer ciclo " + itemMusculo.id);
+
+                var isChecked = false;
+
+                var objeto = $.parseJSON(result);
+
+                $.each(objeto, function (i, item) {
+                    alert(objeto[i].Id)
+                    if (itemMusculo.id == objeto[i].Id) {
+
+                        isChecked = true;
+                    }
+                })
+
+                if (isChecked == true) {
+                    this.checked = true;
+                }
+            });
 
         }
+
+        function drawImage(imgData) {
+            "use strict";
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+
+            //var uInt8Array = new Uint8Array(imgData);
+            var uInt8Array = imgData;
+            var i = uInt8Array.length;
+            var binaryString = [i];
+            while (i--) {
+                binaryString[i] = String.fromCharCode(uInt8Array[i]);
+            }
+            var data = binaryString.join('');
+
+            var base64 = window.btoa(data);
+
+            var img = new Image();
+            img.src = "data:image/png;base64," + base64;
+            canvas.width = img.width;
+            canvas.height = img.height;
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+            img.onerror = function (stuff) {
+                console.log("Img Onerror:", stuff);
+            };
+
+        }
+
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split('&');

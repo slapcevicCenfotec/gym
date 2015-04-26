@@ -36,17 +36,21 @@ namespace ServicioEnClases
         }
 
 
-        [WebMethod]
+        [WebGet()]
         [OperationContract]
-        public string obtenerRolPorId(string datosSerializados)
+        public string obtenerRolPorId(string pid)
         {
-            var jss = new JavaScriptSerializer();
-            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
-            string id = dictionary["pid"].ToString();
-            
-            List<Rol> listaRoles = new List<Rol>();
-            listaRoles = objGestorRol.obtenerRol(Convert.ToInt32(id));
-            return new JavaScriptSerializer().Serialize(listaRoles);
+            try
+            {
+                var idInt = Convert.ToInt32(pid);
+                List<Rol> listaRoles = new List<Rol>();
+                listaRoles = objGestorRol.obtenerRol(idInt);
+                return new JavaScriptSerializer().Serialize(listaRoles);
+            }
+            catch (Exception ex)
+            {
+                return new JavaScriptSerializer().Serialize(ex.Message);
+            }
         }
 
 

@@ -103,7 +103,7 @@ namespace DAL.Repositories
                     ErroresComunes = dr["ERRORES_COMUNES"].ToString(),
                     Descripcion = dr["DESCRIPCION"].ToString(),
                     PosicionInicialImg = fotoPosInic,
-                    PosicionFinalImg = fotoPosFinal ,
+                    PosicionFinalImg = fotoPosFinal 
                 };
             }
 

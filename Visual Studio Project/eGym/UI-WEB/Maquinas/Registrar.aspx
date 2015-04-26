@@ -25,22 +25,22 @@
 
         <div class="col-md-8">
             <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnGuardar">Guardar</button>
-            <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnCancelar">Cancelar</button>
+            <button type="submit" class="btn btn-default btn btn-primary ink-reaction" id="btnCancelar">Cancelar</button>
 			<div class="card">
 				<div class="card-body">
-					<form class="form" role="form">
+					<form class="form form-validate" role="form" id="maquinasForm">
 						<div class="form-group floating-label">
-							<select id="cmbTiposDeMaquinas" name="cmbTiposDeMaquinas" class="form-control">
+							<select id="cmbTiposDeMaquinas" name="cmbTiposDeMaquinas" class="form-control" required>
 								<option value="">&nbsp;</option>
                             </select>
                             <label for="cmbTiposDeMaquinas">Tipo de máquina</label>
 						</div>
 						<div class="form-group floating-label">
-                            <input type="text" class="form-control" id="txtNumeroActivo"/>
+                            <input type="text" class="form-control" id="txtNumeroActivo" required/>
 							<label for="txtNumeroActivo">Número de activo</label>
 						</div>
 						<div class="form-group floating-label">
-							<input type="text" class="form-control" id="txtNumeroMaquina">
+							<input type="text" class="form-control" id="txtNumeroMaquina" required/>
 							<label for="txtNumeroMaquina">Número de máquina</label>
 						</div>
 					</form>
@@ -51,7 +51,6 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/ServiciosMaquinas.svc" />
                 <asp:ServiceReference Path="http://localhost/egymServices/ServiciosMaquinas.svc" />
                 <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc"/>
             </Services>
@@ -60,6 +59,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
     <script src="<%= Page.ResolveUrl("~/js/localScripts/RegistrarMaquinas.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/jquery.validate.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/additional-methods.min.js")%>"></script>
     <script>
         $(document).ready(function () {
             search();

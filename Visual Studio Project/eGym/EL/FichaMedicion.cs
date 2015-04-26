@@ -56,186 +56,186 @@ namespace EL
 
         #endregion
 
-        #region Propiedades        
+        #region Propiedades
 
         public int Id
         {
-          get { return _id; }
-          set { _id = value; }
+            get { return _id; }
+            set { _id = value; }
         }
 
         public int Cliente
         {
-          get { return _cliente; }
-          set { _cliente = value; }
+            get { return _cliente; }
+            set { _cliente = value; }
         }
 
         public DateTime FechaCreacion
         {
-          get { return _fechaCreacion; }
-          set { _fechaCreacion = value; }
+            get { return _fechaCreacion; }
+            set { _fechaCreacion = value; }
         }
 
         public float Peso
         {
-          get { return _peso; }
-          set { _peso = value; }
+            get { return _peso; }
+            set { _peso = value; }
         }
 
         public float Altura
         {
-          get { return _altura; }
-          set { _altura = value; }
+            get { return _altura; }
+            set { _altura = value; }
         }
 
         public float Imc
         {
-          get { return _imc; }
-          set { _imc = value; }
+            get { return _imc; }
+            set { _imc = value; }
         }
 
         public string ClasificacionIMC
         {
-          get { return _clasificacionIMC; }
-          set { _clasificacionIMC = value; }
+            get { return _clasificacionIMC; }
+            set { _clasificacionIMC = value; }
         }
 
         public float PorcentajeGrasaCorporal
         {
-          get { return _porcentajeGrasaCorporal; }
-          set { _porcentajeGrasaCorporal = value; }
+            get { return _porcentajeGrasaCorporal; }
+            set { _porcentajeGrasaCorporal = value; }
         }
 
         public float PorcentajeMasaMuscular
         {
-          get { return _porcentajeMasaMuscular; }
-          set { _porcentajeMasaMuscular = value; }
+            get { return _porcentajeMasaMuscular; }
+            set { _porcentajeMasaMuscular = value; }
         }
 
         public float PesoGraso
         {
-          get { return _pesoGraso; }
-          set { _pesoGraso = value; }
+            get { return _pesoGraso; }
+            set { _pesoGraso = value; }
         }
 
         public float PerBicepsIzquierdo
         {
-          get { return _perBicepsIzquierdo; }
-          set { _perBicepsIzquierdo = value; }
+            get { return _perBicepsIzquierdo; }
+            set { _perBicepsIzquierdo = value; }
         }
 
         public float PerBicepsDerecho
         {
-          get { return _perBicepsDerecho; }
-          set { _perBicepsDerecho = value; }
+            get { return _perBicepsDerecho; }
+            set { _perBicepsDerecho = value; }
         }
 
         public float PerBicepsIzqContraido
         {
-          get { return _perBicepsIzqContraido; }
-          set { _perBicepsIzqContraido = value; }
+            get { return _perBicepsIzqContraido; }
+            set { _perBicepsIzqContraido = value; }
         }
 
         public float PerBicepsDerContraido
         {
-          get { return _perBicepsDerContraido; }
-          set { _perBicepsDerContraido = value; }
+            get { return _perBicepsDerContraido; }
+            set { _perBicepsDerContraido = value; }
         }
 
         public float PerPantorrillaIzquierda
         {
-          get { return _perPantorrillaIzquierda; }
-          set { _perPantorrillaIzquierda = value; }
+            get { return _perPantorrillaIzquierda; }
+            set { _perPantorrillaIzquierda = value; }
         }
 
         public float PerPantorrillaDerecha
         {
-          get { return _perPantorrillaDerecha; }
-          set { _perPantorrillaDerecha = value; }
+            get { return _perPantorrillaDerecha; }
+            set { _perPantorrillaDerecha = value; }
         }
 
         public float PerMusloIzquierdo
         {
-          get { return _perMusloIzquierdo; }
-          set { _perMusloIzquierdo = value; }
+            get { return _perMusloIzquierdo; }
+            set { _perMusloIzquierdo = value; }
         }
 
         public float PerMusloDerecho
         {
-          get { return _perMusloDerecho; }
-          set { _perMusloDerecho = value; }
+            get { return _perMusloDerecho; }
+            set { _perMusloDerecho = value; }
         }
 
         public float PerCintura
         {
-          get { return _perCintura; }
-          set { _perCintura = value; }
+            get { return _perCintura; }
+            set { _perCintura = value; }
         }
 
         public float PerAbdomen
         {
-          get { return _perAbdomen; }
-          set { _perAbdomen = value; }
+            get { return _perAbdomen; }
+            set { _perAbdomen = value; }
         }
 
         public float PerCadera
         {
-          get { return _perCadera; }
-          set { _perCadera = value; }
+            get { return _perCadera; }
+            set { _perCadera = value; }
         }
 
         public float PerPecho
         {
-          get { return _perPecho; }
-          set { _perPecho = value; }
+            get { return _perPecho; }
+            set { _perPecho = value; }
         }
 
         public float PerEspalda
         {
-          get { return _perEspalda; }
-          set { _perEspalda = value; }
+            get { return _perEspalda; }
+            set { _perEspalda = value; }
         }
 
         public float PliTricepsIzquierdo
         {
-          get { return _pliTricepsIzquierdo; }
-          set { _pliTricepsIzquierdo = value; }
+            get { return _pliTricepsIzquierdo; }
+            set { _pliTricepsIzquierdo = value; }
         }
 
         public float PliTricepsDerecho
         {
-          get { return _pliTricepsDerecho; }
-          set { _pliTricepsDerecho = value; }
+            get { return _pliTricepsDerecho; }
+            set { _pliTricepsDerecho = value; }
         }
 
         public float PliSubescapularIzquierdo
         {
-          get { return _pliSubescapularIzquierdo; }
-          set { _pliSubescapularIzquierdo = value; }
+            get { return _pliSubescapularIzquierdo; }
+            set { _pliSubescapularIzquierdo = value; }
         }
 
         public float PliSubescapularDerecho
         {
-          get { return _pliSubescapularDerecho; }
-          set { _pliSubescapularDerecho = value; }
+            get { return _pliSubescapularDerecho; }
+            set { _pliSubescapularDerecho = value; }
         }
 
         public float PliSupraespinalIzquierdo
         {
-          get { return _pliSupraespinalIzquierdo; }
-          set { _pliSupraespinalIzquierdo = value; }
+            get { return _pliSupraespinalIzquierdo; }
+            set { _pliSupraespinalIzquierdo = value; }
         }
 
         public float PliSupraespinalDerecho
         {
-          get { return _pliSupraespinalDerecho; }
-          set { _pliSupraespinalDerecho = value; }
+            get { return _pliSupraespinalDerecho; }
+            set { _pliSupraespinalDerecho = value; }
         }
 
         public float PliAbdominalIzquierdo
         {
-          get { return _pliAbdominalIzquierdo; }
-          set { _pliAbdominalIzquierdo = value; }
+            get { return _pliAbdominalIzquierdo; }
+            set { _pliAbdominalIzquierdo = value; }
         }
 
         public float PliAbdominalDerecho
@@ -246,26 +246,26 @@ namespace EL
 
         public float PliMusloIzquierdo
         {
-          get { return _pliMusloIzquierdo; }
-          set { _pliMusloIzquierdo = value; }
+            get { return _pliMusloIzquierdo; }
+            set { _pliMusloIzquierdo = value; }
         }
 
         public float PliMusloDerecho
         {
-          get { return _pliMusloDerecho; }
-          set { _pliMusloDerecho = value; }
+            get { return _pliMusloDerecho; }
+            set { _pliMusloDerecho = value; }
         }
 
         public float PliPantorrillaIzquierda
         {
-          get { return _pliPantorrillaIzquierda; }
-          set { _pliPantorrillaIzquierda = value; }
+            get { return _pliPantorrillaIzquierda; }
+            set { _pliPantorrillaIzquierda = value; }
         }
 
         public float PliPantorrillaDerecha
         {
-          get { return _pliPantorrillaDerecha; }
-          set { _pliPantorrillaDerecha = value; }
+            get { return _pliPantorrillaDerecha; }
+            set { _pliPantorrillaDerecha = value; }
         }
 
         public Boolean Habilitado
@@ -279,13 +279,13 @@ namespace EL
         #region Constructores
 
         public FichaMedicion(int pid, int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
-                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
-                            float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
-                            float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
-                            float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
-                            float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
-                            float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha, Boolean phabilitado)
+                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
+                            float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
+                            float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
+                            float pperPantorrillaIzquierda, float pperPantorrillaDerecha, float ppliAbdominalIzquierdo, float ppliAbdominalDerecho,
+                            float ppliMusloIzquierdo, float ppliMusloDerecho, float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha,
+                            float ppliTricepsIzquierdo, float ppliTricepsDerecho, float ppliSubescapularIzquierdo, float ppliSubescapularDerecho,
+                            float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho, Boolean phabilitado)
         {
             Id = pid;
             Cliente = pcliente;
@@ -297,42 +297,42 @@ namespace EL
             PorcentajeGrasaCorporal = pporcentajeGrasaCorporal;
             PorcentajeMasaMuscular = pporcentajeMasaMuscular;
             PesoGraso = ppesoGraso;
+            PerCintura = pperCintura;
+            PerCadera = pperCadera;
+            PerAbdomen = pperAbdomen;
+            PerPecho = pperPecho;
+            PerEspalda = pperEspalda;
+            PerMusloIzquierdo = pperMusloIzquierdo;
+            PerMusloDerecho = pperMusloDerecho;
             PerBicepsIzquierdo = pperBicepsIzquierdo;
             PerBicepsDerecho = pperBicepsDerecho;
             PerBicepsIzqContraido = pperBicepsIzqContraido;
             PerBicepsDerContraido = pperBicepsDerContraido;
             PerPantorrillaIzquierda = pperPantorrillaIzquierda;
             PerPantorrillaDerecha = pperPantorrillaDerecha;
-            PerMusloIzquierdo = pperMusloIzquierdo;
-            PerMusloDerecho = pperMusloDerecho;
-            PerCintura = pperCintura;
-            PerAbdomen = pperAbdomen;
-            PerCadera = pperCadera;
-            PerPecho = pperPecho;
-            PerEspalda = pperEspalda;
-            PliTricepsIzquierdo = ppliTricepsIzquierdo;
-            PliTricepsDerecho = ppliTricepsDerecho;
-            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
-            PliSubescapularDerecho = ppliSubescapularDerecho;
-            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
-            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             PliAbdominalIzquierdo = ppliAbdominalIzquierdo;
             PliAbdominalDerecho = ppliAbdominalDerecho;
             PliMusloIzquierdo = ppliMusloIzquierdo;
             PliMusloDerecho = ppliMusloDerecho;
             PliPantorrillaIzquierda = ppliPantorrillaIzquierda;
             PliPantorrillaDerecha = ppliPantorrillaDerecha;
+            PliTricepsIzquierdo = ppliTricepsIzquierdo;
+            PliTricepsDerecho = ppliTricepsDerecho;
+            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
+            PliSubescapularDerecho = ppliSubescapularDerecho;
+            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
+            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             Habilitado = phabilitado;
         }
 
         public FichaMedicion(int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
-                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
-                            float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
-                            float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
-                            float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
-                            float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
-                            float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
+                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
+                            float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
+                            float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
+                            float pperPantorrillaIzquierda, float pperPantorrillaDerecha, float ppliAbdominalIzquierdo, float ppliAbdominalDerecho,
+                            float ppliMusloIzquierdo, float ppliMusloDerecho, float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha,
+                            float ppliTricepsIzquierdo, float ppliTricepsDerecho, float ppliSubescapularIzquierdo, float ppliSubescapularDerecho,
+                            float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho)
         {
             Cliente = pcliente;
             FechaCreacion = pfecha;
@@ -343,31 +343,31 @@ namespace EL
             PorcentajeGrasaCorporal = pporcentajeGrasaCorporal;
             PorcentajeMasaMuscular = pporcentajeMasaMuscular;
             PesoGraso = ppesoGraso;
+            PerCintura = pperCintura;
+            PerCadera = pperCadera;
+            PerAbdomen = pperAbdomen;
+            PerPecho = pperPecho;
+            PerEspalda = pperEspalda;
+            PerMusloIzquierdo = pperMusloIzquierdo;
+            PerMusloDerecho = pperMusloDerecho;
             PerBicepsIzquierdo = pperBicepsIzquierdo;
             PerBicepsDerecho = pperBicepsDerecho;
             PerBicepsIzqContraido = pperBicepsIzqContraido;
             PerBicepsDerContraido = pperBicepsDerContraido;
             PerPantorrillaIzquierda = pperPantorrillaIzquierda;
             PerPantorrillaDerecha = pperPantorrillaDerecha;
-            PerMusloIzquierdo = pperMusloIzquierdo;
-            PerMusloDerecho = pperMusloDerecho;
-            PerCintura = pperCintura;
-            PerAbdomen = pperAbdomen;
-            PerCadera = pperCadera;
-            PerPecho = pperPecho;
-            PerEspalda = pperEspalda;
-            PliTricepsIzquierdo = ppliTricepsIzquierdo;
-            PliTricepsDerecho = ppliTricepsDerecho;
-            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
-            PliSubescapularDerecho = ppliSubescapularDerecho;
-            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
-            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             PliAbdominalIzquierdo = ppliAbdominalIzquierdo;
             PliAbdominalDerecho = ppliAbdominalDerecho;
             PliMusloIzquierdo = ppliMusloIzquierdo;
             PliMusloDerecho = ppliMusloDerecho;
             PliPantorrillaIzquierda = ppliPantorrillaIzquierda;
             PliPantorrillaDerecha = ppliPantorrillaDerecha;
+            PliTricepsIzquierdo = ppliTricepsIzquierdo;
+            PliTricepsDerecho = ppliTricepsDerecho;
+            PliSubescapularIzquierdo = ppliSubescapularIzquierdo;
+            PliSubescapularDerecho = ppliSubescapularDerecho;
+            PliSupraespinalIzquierdo = ppliSupraespinalIzquierdo;
+            PliSupraespinalDerecho = ppliSupraespinalDerecho;
             Habilitado = true;
         }
 
@@ -408,6 +408,46 @@ namespace EL
             PliSupraespinalIzquierdo = 0;
             PliSupraespinalDerecho = 0;
             Habilitado = true;
+        }
+
+        public FichaMedicion(int pid)
+        {
+            Id = pid;
+            Cliente = 0;
+            FechaCreacion = DateTime.MinValue;
+            Peso = 0;
+            Altura = 0;
+            Imc = 0;
+            ClasificacionIMC = "eliminar";
+            PorcentajeGrasaCorporal = 0;
+            PorcentajeMasaMuscular = 0;
+            PesoGraso = 0;
+            PerCintura = 0;
+            PerCadera = 0;
+            PerAbdomen = 0;
+            PerPecho = 0;
+            PerEspalda = 0;
+            PerMusloIzquierdo = 0;
+            PerMusloDerecho = 0;
+            PerBicepsIzquierdo = 0;
+            PerBicepsDerecho = 0;
+            PerBicepsIzqContraido = 0;
+            PerBicepsDerContraido = 0;
+            PerPantorrillaIzquierda = 0;
+            PerPantorrillaDerecha = 0;
+            PliAbdominalIzquierdo = 0;
+            PliAbdominalDerecho = 0;
+            PliMusloIzquierdo = 0;
+            PliMusloDerecho = 0;
+            PliPantorrillaIzquierda = 0;
+            PliPantorrillaDerecha = 0;
+            PliTricepsIzquierdo = 0;
+            PliTricepsDerecho = 0;
+            PliSubescapularIzquierdo = 0;
+            PliSubescapularDerecho = 0;
+            PliSupraespinalIzquierdo = 0;
+            PliSupraespinalDerecho = 0;
+            Habilitado = false;
         }
 
         #endregion

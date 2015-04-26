@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="modificar.aspx.vb" Inherits="UI_WEB.agregar" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="modificar.aspx.vb" Inherits="UI_WEB.modificarTipoPago" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
@@ -55,7 +55,7 @@
                         <div class="card-actionbar">
                                 <div data-toggle="tabs" class="card-actionbar-row">
                                     <a class="btn btn-flat btn-primary ink-reaction" href="index.aspx">Volver</a>
-                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="ingresarTipoDePago()" type="button">Registrar</button>
+                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="" type="button" id='btnModificarTipoDePago'>Registrar</button>
                                 </div>
                             </div>
 							</form>
@@ -66,7 +66,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost:60166/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioTipoPago.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
@@ -85,10 +85,5 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
     <script src="<%= Page.ResolveUrl("~/js/local/usuarios.js")%>"></script>
-    <script>
-        $('#demo-date').datepicker({ autoclose: true, todayHighlight: true });
-        $('txtTipoIdentificacion').select2();
-        $('txtGenero').select2();
-        $('txtRol').select2();
-    </script>
+    <script src="<%= Page.ResolveUrl("~/js/local/validaciones/validacionModificarTipoPago.js")%>"></script>
 </asp:Content>

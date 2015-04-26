@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestorEjercicio.cs" />
+    <Compile Include="GestorEjercicioPrograma.cs" />
     <Compile Include="GestorEventoCalendario.cs" />
     <Compile Include="GestorFichaMedicion.cs" />
     <Compile Include="GestorFormula.cs" />
@@ -52,8 +53,10 @@
     <Compile Include="GestorMaquina.cs" />
     <Compile Include="GestorMusculo.cs" />
     <Compile Include="Gestor.cs" />
+    <Compile Include="GestorPrograma.cs" />
     <Compile Include="GestorRol.cs" />
     <Compile Include="GestorSesion.cs" />
+    <Compile Include="GestorTipoAcondicionamiento.cs" />
     <Compile Include="GestorTipoDePago.cs" />
     <Compile Include="GestorTipoDeMaquina.cs" />
     <Compile Include="GestorTiposDeMaquina.cs" />

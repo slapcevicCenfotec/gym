@@ -45,33 +45,40 @@ namespace BLL
         }
 
         /// <summary>
+        /// Lista cada una de las instancias de fichas de medición.
+        /// </summary>
+        /// <returns></returns>
+        public List<FichaMedicion> listarFichasMedicionPorCliente(int pcliente)
+        {
+            return UoW.FichaMedicionRepositoryOriginal.GetAllByCliente(pcliente).ToList<FichaMedicion>();
+        }
+
+        /// <summary>
         /// Obtiene una instancia de ficha de medición por Id.
         /// </summary>
         /// <param name="pid">Id de la ficha de medición.</param>
         /// <returns></returns>
-        public FichaMedicion GetFichaMedicionById(int pid)
+        public FichaMedicion GetFichaById(int pid)
         {
             return UoW.FichaMedicionRepository.GetById(pid);
         }
 
         /// <summary>FALTA COMENTAR
         public void insertarFichaMedicion(int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
-                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
-                            float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
-                            float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
-                            float pperCadera, float pperPecho, float pperEspalda, float ppliTricepsIzquierdo, float ppliTricepsDerecho,
-                            float ppliSubescapularIzquierdo, float ppliSubescapularDerecho, float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho,
-                            float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
-                            float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha)
+                            float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
+                            float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
+                            float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
+                            float pperPantorrillaIzquierda, float pperPantorrillaDerecha, float ppliAbdominalIzquierdo, float ppliAbdominalDerecho,
+                            float ppliMusloIzquierdo, float ppliMusloDerecho, float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha,
+                            float ppliTricepsIzquierdo, float ppliTricepsDerecho, float ppliSubescapularIzquierdo, float ppliSubescapularDerecho,
+                            float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho)
         {
             FichaMedicion fichaMedicion = new FichaMedicion(pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
-                            pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperBicepsIzquierdo,
-                            pperBicepsDerecho, pperBicepsIzqContraido, pperBicepsDerContraido, pperPantorrillaIzquierda,
-                            pperPantorrillaDerecha, pperMusloIzquierdo, pperMusloDerecho, pperCintura, pperAbdomen,
-                            pperCadera, pperPecho, pperEspalda, ppliTricepsIzquierdo, ppliTricepsDerecho,
-                            ppliSubescapularIzquierdo, ppliSubescapularDerecho, ppliSupraespinalIzquierdo, ppliSupraespinalDerecho,
-                            ppliAbdominalIzquierdo, ppliAbdominalDerecho, ppliMusloIzquierdo, ppliMusloDerecho,
-                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha);
+                            pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperCintura, pperCadera, pperAbdomen, pperPecho, pperEspalda,
+                            pperMusloIzquierdo, pperMusloDerecho, pperBicepsIzquierdo, pperBicepsDerecho, pperBicepsIzqContraido, pperBicepsDerContraido,
+                            pperPantorrillaIzquierda, pperPantorrillaDerecha, ppliAbdominalIzquierdo, ppliAbdominalDerecho, ppliMusloIzquierdo, ppliMusloDerecho,
+                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha, ppliTricepsIzquierdo, ppliTricepsDerecho, ppliSubescapularIzquierdo, ppliSubescapularDerecho,
+                            ppliSupraespinalIzquierdo, ppliSupraespinalDerecho);
 
             try
             {
@@ -86,15 +93,15 @@ namespace BLL
 
                     //Registra la acción en la bitácora de acciones.
                     gestorEventos.insertarEvento("Insertar ficha de medición", "El usuario ha insertado una ficha de medición para el cliente " + fichaMedicion.Cliente + " en el sistema.");
-                }                    
+                }
                 else
                 {
-                    StringBuilder sb = new StringBuilder();
-                    foreach (RuleViolation rv in fichaMedicion.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
-                    throw new BusinessLogicException(sb.ToString());
+                    //StringBuilder sb = new StringBuilder();
+                    //foreach (RuleViolation rv in fichaMedicion.GetRuleViolations())
+                    //{
+                    //    sb.AppendLine(rv.ErrorMessage);
+                    //}
+                    //throw new BusinessLogicException(sb.ToString());
                 }
             }
             catch (SqlException ex)
