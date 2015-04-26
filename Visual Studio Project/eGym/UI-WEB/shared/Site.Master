@@ -307,7 +307,7 @@
             }
             if (entry.Id === 8) {
                 $(menuConfiguracion).removeClass("hidden");
-            }            
+            }
         });
     }
 
