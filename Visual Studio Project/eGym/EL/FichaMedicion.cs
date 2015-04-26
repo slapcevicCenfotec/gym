@@ -278,7 +278,7 @@ namespace EL
 
         #region Constructores
 
-        public FichaMedicion(int pid, int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
+        public FichaMedicion(int pid, int pcliente, float ppeso, float paltura, float pimc, string pclasificacionimc,
                             float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
                             float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
                             float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
@@ -289,7 +289,6 @@ namespace EL
         {
             Id = pid;
             Cliente = pcliente;
-            FechaCreacion = pfecha;
             Peso = ppeso;
             Altura = paltura;
             Imc = pimc;
@@ -325,7 +324,7 @@ namespace EL
             Habilitado = phabilitado;
         }
 
-        public FichaMedicion(int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
+        public FichaMedicion(int pcliente, float ppeso, float paltura, float pimc, string pclasificacionimc,
                             float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
                             float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
                             float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
@@ -335,7 +334,6 @@ namespace EL
                             float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho)
         {
             Cliente = pcliente;
-            FechaCreacion = pfecha;
             Peso = ppeso;
             Altura = paltura;
             Imc = pimc;

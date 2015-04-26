@@ -30,7 +30,6 @@ function onSuccessObtenerFicha(result) {
 
     $('#idFichaModificar').val(objeto['Id']);
     $('#clienteModificar').val(objeto['Cliente']);
-    $('#fechaCreacionModificar').val(parseJsonDate(objeto['FechaCreacion']));
     $('#habilitadoModificar').val(objeto['Habilitado']);
     $('#txtPeso').val(objeto['Peso']);
     $('#txtAltura').val(objeto['Altura']);
@@ -70,11 +69,10 @@ $('#btnGuardar').click(function () {
     $("#modificarFichasForm").validate();
 
     if ($("#modificarFichasForm").valid()) {
-        var idFichaModificar = parseFloat($('#idFichaModificar').val(),
-            fechaCreacionModificar = $('#fechaCreacionModificar').val(),
+        var idFichaModificar = $('#idFichaModificar').val(),
             clienteModificar = $('#clienteModificar').val(),
-            peso = parseFloat($('#txtPeso').val()),
-            altura = parseFloat($('#txtAltura').val()),
+            peso = $('#txtPeso').val().toString().replace(/\./g, ','),
+            altura = $('#txtAltura').val().toString().replace(/\./g, ','),
             imc = $('#txtIMC').val().toString().replace(/\./g, ','),
             clasificacionIMC = $('#txtClasificacionIMC').val(),
             porcentajeGrasa = $('#txtPorcGrasa').val().toString().replace(/\./g, ','),
@@ -105,13 +103,12 @@ $('#btnGuardar').click(function () {
             subescapularDerecho = $('#txtSubescapularDerecho').val().toString().replace(/\./g, ','),
             supraespinalIzquierdo = $('#txtSupraespinalIzquierdo').val().toString().replace(/\./g, ','),
             supraespinalDerecho = $('#txtSupraespinalDerecho').val().toString().replace(/\./g, ','),
-            habilitadoModificar = $('#habilitadoModificar').val());
+            habilitadoModificar = $('#habilitadoModificar').val();
 
         var servicioModificar = new ServicioFichasDeMedicion();
 
         var datos = JSON.stringify({
             pid: idFichaModificar,
-            pfecha: fechaCreacionModificar,
             pcliente: clienteModificar,
             ppeso: peso,
             paltura: altura,
@@ -148,7 +145,6 @@ $('#btnGuardar').click(function () {
             phabilitado: habilitadoModificar
         });
 
-        console.log(datos);
         servicioModificar.modificarFichaDeMedicion(datos, onSuccesModificarFicha, errorMessage, null, null);
 
         window.location = 'Index.aspx';
@@ -211,22 +207,22 @@ function calcularIMC() {
         case (imc < 16):
             clasificacionIMC = "Delgadez severa";
             break;
-        case (imc > 16 && imc < 16.99):
+        case (imc >= 16 && imc <= 16.99):
             clasificacionIMC = "Delgadez moderada";
             break;
-        case (imc > 17 && imc < 18.49):
+        case (imc >= 17 && imc <= 18.49):
             clasificacionIMC = "Delgadez leve";
             break;
-        case (imc > 18.5 && imc < 24.99):
+        case (imc >= 18.5 && imc <= 24.99):
             clasificacionIMC = "Peso normal";
             break;
-        case (imc > 25 && imc < 29.99):
+        case (imc >= 25 && imc <= 29.99):
             clasificacionIMC = "Pre obesidad";
             break;
-        case (imc > 30 && imc < 34.99):
+        case (imc >= 30 && imc <= 34.99):
             clasificacionIMC = "Obesidad leve";
             break;
-        case (imc > 35 && imc < 39.99):
+        case (imc >= 35 && imc <= 39.99):
             clasificacionIMC = "Obesidad media";
             break;
         case (imc > 40):
