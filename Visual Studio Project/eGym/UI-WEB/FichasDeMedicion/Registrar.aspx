@@ -61,6 +61,12 @@
                                 <button class="btn btn-default" type="button" id="btnGuardar">Guardar</button>
                             </a>
                         </li>
+                        <li>
+                            <a><i class="fa fa-lg fa-close (alias)"></i>
+                                <br />
+                                <button class="btn btn-default" type="button" id="btnCancelar">Cancelar</button>
+                            </a>
+                        </li>
                     </ul>
                     <div class="card-body tab-content style-default-bright">
                         <div class="tab-pane active" id="first">
@@ -431,11 +437,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-<<<<<<< HEAD
-                <asp:ServiceReference Path="http://localhost/eGymServices/ServicioFichasDeMedicion.svc" />
-=======
-                <asp:ServiceReference Path="http://localhost/ServiciosFichasDeMedicion.svc" />
->>>>>>> 05960df001edd0b9431c7e735ae96a64c437cec1
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioFichasDeMedicion.svc" />
             </Services>
         </asp:ScriptManager>
     </form>

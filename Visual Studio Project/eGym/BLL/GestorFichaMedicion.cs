@@ -77,7 +77,7 @@ namespace BLL
                             pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperCintura, pperCadera, pperAbdomen, pperPecho, pperEspalda,
                             pperMusloIzquierdo, pperMusloDerecho, pperBicepsIzquierdo, pperBicepsDerecho, pperBicepsIzqContraido, pperBicepsDerContraido,
                             pperPantorrillaIzquierda, pperPantorrillaDerecha, ppliAbdominalIzquierdo, ppliAbdominalDerecho, ppliMusloIzquierdo, ppliMusloDerecho,
-                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha, ppliTricepsIzquierdo, ppliTricepsDerecho,ppliSubescapularIzquierdo, ppliSubescapularDerecho,
+                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha, ppliTricepsIzquierdo, ppliTricepsDerecho, ppliSubescapularIzquierdo, ppliSubescapularDerecho,
                             ppliSupraespinalIzquierdo, ppliSupraespinalDerecho);
 
             try
@@ -93,7 +93,7 @@ namespace BLL
 
                     //Registra la acción en la bitácora de acciones.
                     gestorEventos.insertarEvento("Insertar ficha de medición", "El usuario ha insertado una ficha de medición para el cliente " + fichaMedicion.Cliente + " en el sistema.");
-                }                    
+                }
                 else
                 {
                     //StringBuilder sb = new StringBuilder();

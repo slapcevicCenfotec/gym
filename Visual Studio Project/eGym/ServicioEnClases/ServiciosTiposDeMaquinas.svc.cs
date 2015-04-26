@@ -52,6 +52,22 @@ namespace ServicioEnClases
         }
 
         [OperationContract]
+        public void modificarTiposDeMaquina(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            int id = Convert.ToInt32(dictionary["pid"]);
+            string nombre = dictionary["pnombre"];
+            string descripcion = dictionary["pdescripcion"];
+            Boolean habilitado = Convert.ToBoolean(dictionary["phabilitado"]);
+            byte[] foto = System.Convert.FromBase64String(dictionary["pfoto"]);
+
+            objGestorTiposMaquinas.modificarTipoDeMaquina(id, foto, nombre, descripcion, habilitado);
+
+        }
+
+        [OperationContract]
         public void eliminarTipoDeMaquina(string datosSerializados)
         {
             var jss = new JavaScriptSerializer();

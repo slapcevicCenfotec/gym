@@ -30,6 +30,8 @@ function onSuccessObtenerTipoMaquina(result) {
     
     $('#txtNombreTipoDeMaquina').val(objeto['Nombre']);
     $('#txtDescripcion').val(objeto['Descripcion']);
+    $('#txtIdTipoMaquina').val(objeto['Id']);
+    $('#txtHabilitado').val(objeto['Habilitado']);
 
     drawImage(objeto['Foto']);
 }
@@ -67,20 +69,48 @@ $('#btnGuardar').click(function () {
     $("#modificarTipoMaquinaForm").validate();
 
     if ($("#modificarTipoMaquinaForm").valid()) {
-        var nombre = $('#txtNombreTipoDeMaquina').val(),
+        var idTipoDeMaquina = $('#txtIdTipoMaquina').val(),
+            nombre = $('#txtNombreTipoDeMaquina').val(),
             descripcion = $('#txtDescripcion').val(),
+            habilitado = $('#txtHabilitado').val(),
             fotoUrl = $('#foto');
 
         var foto = getBase64Image();
 
         serviceInsertar = new ServiciosTiposDeMaquinas();
 
-        datos = JSON.stringify({ pnombre: nombre, pdescripcion: descripcion, pfoto: foto });
-        serviceInsertar.insertarTiposDeMaquina(datos, onSuccesIngresarTipoDeMaquina, errorMessage, null, null);
+        datos = JSON.stringify({ pid: idTipoDeMaquina, pfoto: foto, pnombre: nombre, pdescripcion: descripcion, phabilitado: habilitado });
+        console.log(datos);
+        serviceInsertar.modificarTiposDeMaquina(datos, onSuccesModificarTipoDeMaquina, errorMessage, null, null);
 
         window.location = 'Index.aspx';
     }
 })
+
+function onSuccesModificarTipoDeMaquina(result) {
+    alert('Se registró correctamente el tipo de máquina');
+}
+
+function errorMessage(resul) {
+    alert(resul.get_message());
+}
+
+function getBase64Image() {
+
+    var canvas = document.getElementById('myCanvas');
+    var imagen = document.getElementById('imgFoto');
+
+    canvas.width = imagen.width;
+    canvas.height = imagen.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(imagen, 0, 0);
+
+    var dataURL = canvas.toDataURL();
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+
+}
 
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
