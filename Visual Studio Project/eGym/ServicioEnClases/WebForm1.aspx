@@ -23,9 +23,13 @@
 
     <script>
         $(document).ready(function () {
-            var servicio = new ServicioEnClases.ServicioProyecto();
-           
+            var servicio1 = new ServicioEnClases.ServicioEventoCalendario();
+            servicio1.getAllEventoCalendario(onsucess, null, null);
         });
+        function onsucess(resul) {
+            alert(resul);
+        }
+
     </script>
 </head>
 <body>
@@ -33,9 +37,15 @@
    
      <script>
          //$(document).ready(function () {
-         //    dibujarCanvas();
-         //   var servcio = new Ser
+
+         //    onSuccess();
+
          //});
+
+         //function onSuccess() {
+         //    var servicio1 = ServicioEnClases.ServicioEventoCalendario();
+         //    servicio1.getAllEventoCalendario(null, null, null);
+         //}
 
 
          //function dibujarCanvas() {
@@ -64,7 +74,7 @@
     <form id="form1" runat="server">
          <asp:ScriptManager runat="server">
             <Services>
-                <asp:ServiceReference Path="~/ServicioProyecto.svc" />
+                <asp:ServiceReference Path="~/ServicioEventoCalendario.svc" />
             </Services>
         </asp:ScriptManager>
    

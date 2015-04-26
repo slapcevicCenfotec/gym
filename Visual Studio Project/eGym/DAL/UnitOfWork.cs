@@ -27,6 +27,8 @@ namespace DAL
         private IRepository<Ejercicio> _ejercicioRepository;
         private IRepository<FichaMedicion> _fichaMedicionRepository;
         private IRepository<Formula> _formulasRepository;
+     
+
 
 
         public IRepository<Usuario> RepositoryUsuario
@@ -44,7 +46,7 @@ namespace DAL
         {
             get
             {
-                if (_repositoryUsuario == null)
+                if (_eventoRepositoryCalendario == null)
                 {
                     _eventoRepositoryCalendario = new EventoCalendarioRepository();
                 }

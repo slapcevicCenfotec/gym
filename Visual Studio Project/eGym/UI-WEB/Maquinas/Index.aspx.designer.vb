@@ -11,9 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-
-'Partial Public Class Index5
-
 Partial Public Class index3
-
 End Class
