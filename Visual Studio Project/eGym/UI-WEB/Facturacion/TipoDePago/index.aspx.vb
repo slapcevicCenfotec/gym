@@ -1,4 +1,4 @@
-﻿Public Class index3
+﻿Public Class indexTipoDePago
     Inherits System.Web.UI.Page
 
 

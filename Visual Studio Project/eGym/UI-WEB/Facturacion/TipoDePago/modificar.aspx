@@ -60,7 +60,7 @@
                             </div>
 							</form>
                         </div>
-            </div>
+                </div>
         </div>
     </div>
     <form runat="server">
@@ -84,6 +84,6 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
-    <script src="<%= Page.ResolveUrl("~/js/local/usuarios.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/local/validaciones/validacionModificarTipoPago.js")%>"></script>
 </asp:Content>

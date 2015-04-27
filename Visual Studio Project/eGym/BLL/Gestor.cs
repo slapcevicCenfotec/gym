@@ -6,6 +6,12 @@ using System.Drawing;
 using System.Net;
 using System.Net.Mail;
 
+
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
 namespace BLL
 {
     public class Gestor
@@ -202,5 +208,12 @@ namespace BLL
             Console.ReadLine();
         }
 
+
+        // Listar usuariosXrol
+        public List<Usuario> listarUsuariosPorRol(int roleId)
+        {
+            Rol rol = new Rol(roleId);
+            return ((DAL.Repositories.UsuarioRepository)unitOfWork.RepositoryUsuario).GetUsuarioPorRol(rol).ToList<Usuario>();      
+        }        
     }
 }

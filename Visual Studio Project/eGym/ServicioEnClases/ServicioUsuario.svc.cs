@@ -8,10 +8,6 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
-<<<<<<< HEAD
-=======
-
->>>>>>> c5d508946dbceacf78a075aeb1afaf8e841b2b6f
 using System.Web.Script.Serialization;
 using System.Web.Services;
 
@@ -107,6 +103,19 @@ namespace ServicioEnClases
             byte[] bytes = new byte[str.Length * sizeof(char)];
             System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
+        }
+        [WebMethod]
+        [OperationContract]
+        public string getUsuarioPorRol(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+            int idRol = int.Parse(dictionary["pRol"]);
+            var objGestor = new Gestor();
+
+            List<Usuario> listaUsuario = new List<Usuario>();
+            listaUsuario = objGestor.listarUsuariosPorRol(idRol);
+            return new JavaScriptSerializer().Serialize(listaUsuario);
         }
     }
 }

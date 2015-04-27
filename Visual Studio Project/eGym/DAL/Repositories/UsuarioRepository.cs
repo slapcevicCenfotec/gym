@@ -15,7 +15,7 @@ namespace DAL.Repositories
     /// <summary>
     /// Repositorio de usuarios
     /// </summary>
-    class UsuarioRepository : IRepository<Usuario>
+    public class UsuarioRepository : IRepository<Usuario>
     {
         #region atributos
 
@@ -244,6 +244,30 @@ namespace DAL.Repositories
             _insertItems = new List<Usuario>();
             _deleteItems = new List<Usuario>();
             _updateItems = new List<Usuario>();
+        }
+        public IEnumerable<Usuario> GetUsuarioPorRol(Rol auxRol)
+        {
+            List<Usuario> listaUsuario = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@pRol", auxRol.Id));
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarUsuarioPorRole");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaUsuario = new List<Usuario>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Usuario auxUser = new Usuario();
+                    auxUser.Nombre = dr["NOMBRE"].ToString();
+                    auxUser.SegundoNombre = dr["SEGUNDO_NOMBRE"].ToString();
+                    auxUser.Apellido = dr["APELLIDO"].ToString();
+                    auxUser.SegundoApellido = dr["SEGUNDO_APELLIDO"].ToString();
+                    auxUser.CorreoElectronico = dr["CORREO_ELECTRONICO"].ToString();
+                    auxUser.NumeroCelular = dr["NUMERO_CELULAR"].ToString();
+                    
+                    listaUsuario.Add(auxUser);
+                }
+            }
+            return listaUsuario;
         }
     }
 }

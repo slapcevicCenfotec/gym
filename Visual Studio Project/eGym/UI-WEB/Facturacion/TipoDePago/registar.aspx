@@ -60,17 +60,13 @@
                             </div>
 							</form>
                         </div>
-
-                    
-                 
-                
-            </div>
+                </div>
         </div>
     </div>
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost:60166/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost/egym/ServicioTipoPago.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
@@ -87,7 +83,9 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-datepicker/bootstrap-datepicker.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
+    <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script> 
+    <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>  
     <script src="<%= Page.ResolveUrl("~/js/local/validaciones/validacionRegistrarTipoPago.js")%>"></script>
+    
     
 </asp:Content>
