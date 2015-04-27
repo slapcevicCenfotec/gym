@@ -1,11 +1,16 @@
 ﻿$('#bntIniciarSesion').click(function () {
-    var contrasena = $('#txtContrasena').val();
-    var correo = $('#txtCorreo').val();
-
-    datos = JSON.stringify({ pcontrasena: contrasena, pcorreo: correo });
-    serviceLogin = new ServicioLogin.ServicioSesion();
-    serviceLogin.iniciarSesion(datos, onSuccess, errorMessage, null, null);
-
+    $("#formLogin").validate();
+    if ($("#formLogin").valid()) {
+        var contrasena = $('#txtContrasena').val();
+        var correo = $('#txtCorreo').val(); 
+        datos = JSON.stringify({ pcontrasena: contrasena, pcorreo: correo });
+        serviceLogin = new ServicioLogin.ServicioSesion();
+        serviceLogin.iniciarSesion(datos, onSuccess, errorMessage, null, null);
+        } else {
+        $('#txtContrasena').focus();
+        $('#txtContrasena').blur();
+        $('#txtCorreo').focus();
+    };
 });
 
 function onSuccess(result) {
