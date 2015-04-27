@@ -40,12 +40,4 @@ Partial Public Class Site
     '''</remarks>
     Protected WithEvents javascript As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
-    '''<summary>
-    '''javascript control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents javascript As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class
