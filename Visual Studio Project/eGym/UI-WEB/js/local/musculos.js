@@ -1,4 +1,5 @@
-﻿/// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Ejercicios/ModificarEjercicio.aspx" />
+﻿/// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Musculo/ModificarMusculo.aspx" />
+/// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Ejercicios/ModificarEjercicio.aspx" />
 /// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Ejercicios/ModificarEjercicio.aspx" />
 /// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Ejercicios/ModificarEjercicio.aspx" />
 function load() {
@@ -53,8 +54,7 @@ function onSuccessMusculos(result) {
     $('#tblMusculos tbody').append(tbody);
     load();
 }
-function submit()
-{
+$('#btnAgregarMusculo').click(function () {
     var nombre = $('#txtnombreMusculo').val(),
          ubicacion = $('#txtubicacionMusculo').val(),
          origen = $('#txtorigenMusculo').val(),
@@ -66,8 +66,8 @@ function submit()
     var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
     service4.insertarMusculo(datos, onSuccesIngresar, null, null, null);
 
-};
-$('#btnAgregarMusculo').click(function () {
+});
+$('#btnIrAgregarMusculo').click(function () {
     location.href = "InsertarMusculo.aspx";
 })
 function onSuccesIngresar(result) {
@@ -82,11 +82,9 @@ $('#btnEliminarMus').click(function () {
 
     var id = rowData[0][0];
 
-    var service3 = new ServicioEnClases.ServicioProyecto();
-
-    var datos = JSON.stringify({ pid: id});
-
-    service3.eliminarMusculo(datos, onSuccesEliminar, errorMessage, null);
+    var service5 = new ServicioEnClases.ServicioProyecto();
+    var datos = JSON.stringify({ pid : id });
+    service5.eliminarMusculo(datos, onSuccesEliminar, errorMessage, null);
 
 })
 
@@ -96,4 +94,37 @@ function onSuccesEliminar (result)
 }
 function errorMessage(result) {
     alert("Error" + result);
+}
+$('#btnModificarMus').click(function(){
+    var rows = $('tr.selected');
+    var table = $('#tblMusculos').DataTable();
+
+    var rowData = table.rows(rows).data();
+
+    var id = rowData[0][0];
+
+    location.href = "ModificarMusculo.aspx?id=" + id;
+})
+$('#btnModificarMusculo').click(function () {
+    
+    var id = $('#txtIdMusculo').val(),
+        nombre = $('#txtnombreMusculo').val(),
+        ubicacion = $('#txtubicacionMusculo').val(),
+        origen = $('#txtorigenMusculo').val(),
+        inserccion =  $('#txtinserccionMusculo').val(),
+        inervacion =  $('#txtinervacionMusculo').val(),
+        irrigacion = $('#txtirrigacionMusculo').val()
+
+    var service2 = new ServicioEnClases.ServicioProyecto();
+
+    var datos = JSON.stringify({ pid: id, ppnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
+
+    service2.modificarMusculo(datos, onSuccesModificar, errorMessageModificar, null)
+})
+
+function onSuccesModificar(result) {
+    alert('Se modificó correctamente el músculo');
+}
+function errorMessageModificar(resul) {
+    alert(resul.get_message());
 }

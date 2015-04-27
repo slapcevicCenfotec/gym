@@ -60,27 +60,55 @@ function eliminarMusculo() {
     
     var service3 = new ServicioEnClases.ServicioProyecto();
 
-    //var datos = JSON.stringify({ pid: id});
+    var datos = JSON.stringify({ pid : id });
 
-    service3.eliminarMusculo(id, onSuccesEliminar, errorMessage, null);
+    service3.eliminarMusculo(datos, onSuccesEliminar, errorMessage, null);
 
 }
 
 function ingresarMusculo() {
-    var nombre ="",
-         ubicacion = "",
-         origen = "",
-         inserccion = "",
-         inervacion = "",
-         irrigacion = "",
+   var usuario = '116',
+        tipo = '1',
+      titulo = 'Titulo',
+      descripcion = 'Desp',
+      fechaInicio = '2015-04-29T10:00:00',
+      fechaFinal = '2015-04-29T10:30:00'
 
-        service4 = new ServicioEnClases.ServicioProyecto();
+    var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+    var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
 
-    var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
-    service4.insertarMusculo(datos, onSuccesIngresar, errorMessage, null, null);
+servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+
+
+    //var nombre ="",
+    //     ubicacion = "",
+    //     origen = "",
+    //     inserccion = "",
+    //     inervacion = "",
+    //     irrigacion = "",
+
+    //    service4 = new ServicioEnClases.ServicioProyecto();
+
+    //var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
+    //service4.insertarMusculo(datos, onSuccesIngresar, errorMessage, null, null);
 
 }
 
+    function onsucessInsertar(result) {
+                            alert("Yupiiii");
+                            eventData = {
+        title: titulo,
+    start: fechaInicio,
+    end: fechaFinal
+                            };
+
+                            $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+
+                        };
+                        function onFailInsetar(result) {
+                            alert(result.get_message());
+                            $('#calendar').fullCalendar('unselect');
+                        };
 function onSuccesModificar(result) {
     alert('Se modificó correctamente el músculo');
 }

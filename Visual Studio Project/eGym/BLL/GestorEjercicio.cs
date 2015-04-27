@@ -135,24 +135,24 @@ namespace BLL
             {
                 Ejercicio objEjercicio = new Ejercicio(pid, pnombre, palias, pposicionInc, pposIncImg, pposicionFinal, pposicionFinalImg, perroresComunes, pdescripcion, pidMusculoPrincipal, pmusculosSecundarios);
 
-                if (objEjercicio.IsValid)
-                {
+                //if (objEjercicio.IsValid)
+                //{
                     Uow.EjercicioRepository.Update(objEjercicio);
                     Uow.EjercicioRepository.Save();
 
-                    gestorEventos.insertarEvento("Modificar Ejercicio", "El usuario ha modificado el ejercicio " + objEjercicio.Nombre + " al sistema.");
-                }
-                else
-                {
-                    StringBuilder sb = new StringBuilder();
+                //    gestorEventos.insertarEvento("Modificar Ejercicio", "El usuario ha modificado el ejercicio " + objEjercicio.Nombre + " al sistema.");
+                //}
+                //else
+                //{
+                //    StringBuilder sb = new StringBuilder();
 
-                    foreach (RuleViolation rv in objEjercicio.GetRuleViolations())
-                    {
-                        sb.AppendLine(rv.ErrorMessage);
-                    }
+                //    foreach (RuleViolation rv in objEjercicio.GetRuleViolations())
+                //    {
+                //        sb.AppendLine(rv.ErrorMessage);
+                //    }
 
-                    throw new BusinessLogicException(sb.ToString());
-                }
+                //    throw new BusinessLogicException(sb.ToString());
+                //}
 
             }
             catch (SqlException ex)
@@ -178,10 +178,7 @@ namespace BLL
         /// <returns> Musculo </returns>
         public Musculo getMusculoPrincipal(int pid)
         {
-
             Musculo objMusculo = null;
-
-
             var sqlQuery = "SELECT E.ID_MUSCULO, M.[NOMBRE] FROM [T_MUSCULO_EJERCICIO] E JOIN [dbo].[T_MUSCULO] M ON(E.ID_MUSCULO=M.ID) WHERE E.ID_EJERCICIO = @idEjercicio AND E.[tipoRelacion] = 'Principal'";
             SqlCommand cmd = new SqlCommand(sqlQuery);
             cmd.Parameters.AddWithValue("@idEjercicio", pid);
@@ -237,7 +234,7 @@ namespace BLL
                 
             }
 
-            return objMusculos;
+            return objMusculos.ToList<Musculo>();
 
         }
 

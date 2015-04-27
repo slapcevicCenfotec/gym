@@ -78,6 +78,9 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -472,6 +475,7 @@
     <None Include="eGymDBDataSet.xss">
       <DependentUpon>eGymDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -499,6 +503,10 @@
     <ProjectReference Include="..\EL\EL.csproj">
       <Project>{fd8dc02f-abc9-474f-861f-21b79e2c001b}</Project>
       <Name>EL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicioEnClases\ServicioEnClases.csproj">
+      <Project>{b160c356-9239-4c13-8179-a9af849a8195}</Project>
+      <Name>ServicioEnClases</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -22,14 +22,16 @@ namespace DAL
         private IRepository<Horario> _repositoryHorario;
         private IRepository<Excepcion> _excepcionRepository;
         private IRepository<Evento> _eventoRepository;
+        private IRepository<EventoCalendario> _eventoRepositoryCalendario;
         private IRepository<Musculo> _musculoRepository;
         private IRepository<Ejercicio> _ejercicioRepository;
         private IRepository<FichaMedicion> _fichaMedicionRepository;
         private IRepository<Formula> _formulasRepository;
         private IRepository<PruebaResistencia> _pruebaResistenciaRepository;
         private IRepository<TipoPruebaResistencia> _tipoPruebaResistenciaReporsitory;
-
-
+        private IRepository<Programa> _programaRepository;
+        private IRepository<EjercicioPrograma> _ejercicioProgramaRepository;
+        private IRepository<TipoAcondicionamiento> _tipoAcondicionamientoRepository;
         public IRepository<Usuario> RepositoryUsuario
         {
             get
@@ -39,6 +41,17 @@ namespace DAL
                     _repositoryUsuario = new UsuarioRepository();
                 }
                 return _repositoryUsuario;
+            }
+        }
+        public IRepository<EventoCalendario> RepositoryEventoCalendario
+        {
+            get
+            {
+                if (_eventoRepositoryCalendario == null)
+                {
+                    _eventoRepositoryCalendario = new EventoCalendarioRepository();
+                }
+                return _eventoRepositoryCalendario;
             }
         }
         public IRepository<Contacto> RepositoryContacto
@@ -198,6 +211,7 @@ namespace DAL
                 return _eventoRepository;
             }
         }
+
         public IRepository<FichaMedicion> FichaMedicionRepository
         {
             get
@@ -209,6 +223,7 @@ namespace DAL
                 return _fichaMedicionRepository;
             }
         }
+
         public IRepository<Formula> FormulasRepository
         {
             get
@@ -242,5 +257,52 @@ namespace DAL
                 return _tipoPruebaResistenciaReporsitory;
             }
         }
+
+        public DAL.Repositories.FichaMedicionRepository FichaMedicionRepositoryOriginal
+        {
+            get
+            {
+                return (DAL.Repositories.FichaMedicionRepository)FichaMedicionRepository;
+            }
+        }
+
+        public IRepository<Programa> ProgramaRepository
+        {
+            get
+            {
+                if (this._programaRepository == null)
+                {
+                    this._programaRepository = new ProgramaRepository();
+                }
+                return _programaRepository;
+            }
+        }
+
+
+        public IRepository<EjercicioPrograma> EjercicioProgramaRepository
+        {
+            get
+            {
+                if (this._ejercicioProgramaRepository == null)
+                {
+                    this._ejercicioProgramaRepository = new EjercicioProgramaRepository();
+                }
+                return _ejercicioProgramaRepository;
+            }
+        }
+
+        public IRepository<TipoAcondicionamiento> TipoAcondicionamientoRepository
+        {
+            get
+            {
+                if (this._tipoAcondicionamientoRepository == null)
+                {
+                    this._tipoAcondicionamientoRepository = new TipoAcondicionamientoRepository();
+                }
+                return _tipoAcondicionamientoRepository;
+            }
+        }
+
+        
     }
 }

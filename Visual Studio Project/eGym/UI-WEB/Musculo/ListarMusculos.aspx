@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="row">
-                <button type="button" id="btnAgregarMusculo" class="btn btn-primary">Agregar</button>
+                <button type="button" id="btnIrAgregarMusculo" class="btn btn-primary">Agregar</button>
                 <button type="button" id="btnModificarMus" class="btn btn-primary">Modificar</button>
                 <button type="button" id="btnEliminarMus" class="btn btn-danger">Eliminar</button>
                 <div class="col-lg-12">

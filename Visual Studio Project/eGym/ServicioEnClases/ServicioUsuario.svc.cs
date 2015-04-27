@@ -8,7 +8,6 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
-//using System.Web.Http;
 using System.Web.Script.Serialization;
 using System.Web.Services;
 
@@ -37,6 +36,24 @@ namespace ServicioEnClases
             var serializer = new JavaScriptSerializer();
             return serializer.Serialize(gestor.listarRoles());
         }
+
+        [WebGet()]
+        [OperationContract]
+        public string ObtenerUsuario(string id)
+        {
+            var gestor = new Gestor();
+            var idInt = Convert.ToInt32(id);
+            Usuario usuario = gestor.ObtenerUsuario(idInt);
+            try
+            {
+                return new JavaScriptSerializer().Serialize(usuario);
+            }
+            catch(Exception ex)
+            {
+                return new JavaScriptSerializer().Serialize(ex.Message);
+            }
+        }
+
 
         [WebMethod]
         [OperationContract]

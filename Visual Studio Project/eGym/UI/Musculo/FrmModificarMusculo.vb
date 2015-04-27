@@ -37,6 +37,8 @@ Public Class FrmModificarMusculo
         txtInervacion.Text = musculoPorModificar.Inervacion
         txtIrrigacion.Text = musculoPorModificar.Irrigacion
 
+
+
     End Sub
     ''' <summary>
     ''' Autor: Danny Espinoza

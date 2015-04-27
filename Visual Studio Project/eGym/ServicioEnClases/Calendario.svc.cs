@@ -14,18 +14,17 @@ namespace ServicioEnClases
 {
     [ServiceContract(Namespace = "")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class Prueba
+    public class Calendario
     {
-        GestorMaquina objGestorMaquinas = new GestorMaquina();
-
+        GestorEventoCalendario objEvento = new GestorEventoCalendario();
         [WebGet()]
         [OperationContract]
-        public string obtenerMaquinas()
+        public string obtenerEjercicios()
         {
-            List<Maquina> listaMaquinas = new List<Maquina>();
-            listaMaquinas = objGestorMaquinas.listarMaquinas();
-            return new JavaScriptSerializer().Serialize(listaMaquinas);
-            
+            List<EventoCalendario> listaEventos = new List<EventoCalendario>();
+            listaEventos = objEvento.listarEventos();
+            return new JavaScriptSerializer().Serialize(listaEventos);
+
         }
     }
 }

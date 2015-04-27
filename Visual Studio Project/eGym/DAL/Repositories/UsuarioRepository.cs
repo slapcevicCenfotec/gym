@@ -187,7 +187,7 @@ namespace DAL.Repositories
             sqlCommand.Parameters.Add("@pNumeroCelular", usuario.NumeroCelular);
             sqlCommand.Parameters.Add("@pRol", usuario.Rol.Id);
             sqlCommand.Parameters.Add("@pTipoIdentificacion", usuario.IdTipoIdentificacion);
-            DBAccess.ExecuteSPWithDS(ref sqlCommand, "SP_InsertarUsuario");
+            DBAccess.ExecuteSPWithDS(ref sqlCommand, "SP_InsertarMedicamento");
         }
 
         /// <summary>

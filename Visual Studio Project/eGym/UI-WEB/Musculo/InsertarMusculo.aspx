@@ -98,68 +98,68 @@
     <script src="../Scripts/jquery.validate.min.js"></script>
     <script src="<%= Page.ResolveUrl("~/js/local/musculos.js")%>"></script>
     <script>
-        $('form').validate({
-            rules: {
-                name: {
-                    required: true
-                },
-                ubicacion: {
-                    required: true
-                },
-                origen: {
-                    required: true
-                },
-                insercccion: {
-                    required: true
-                },
-                inervacion: {
-                    required: true
-                },
-                irrigacion: {
-                    required: true
-                }
-            },
-            messages: {
-                name: {
-                    required: "Campo es requerido"
-                },
-                ubicacion: {
-                    required: "Campo es requerido"
-                },
-                origen: {
-                    required: "Campo es requerido"
-                },
-                insercccion: {
-                    required: "Campo es requerido"
-                },
-                inervacion: {
-                    required: "Campo es requerido"
-                },
-                irrigacion: {
-                    required: "Campo es requerido"
-                }
-            },
-            submitHandler: function (form) {
-                alert("formulario validado");
-                submit();
-            },
-            highlight: function (element, errorClass) {
-                $(element).closest('.form-group').addClass('has-error');
-            },
-            unhighlight: function (element, errorClass) {
-                $(element).closest('.form-group').removeClass('has-error');
-            },
+        //$('form').validate({
+        //    rules: {
+        //        name: {
+        //            required: true
+        //        },
+        //        ubicacion: {
+        //            required: true
+        //        },
+        //        origen: {
+        //            required: true
+        //        },
+        //        insercccion: {
+        //            required: true
+        //        },
+        //        inervacion: {
+        //            required: true
+        //        },
+        //        irrigacion: {
+        //            required: true
+        //        }
+        //    },
+        //    messages: {
+        //        name: {
+        //            required: "Campo es requerido"
+        //        },
+        //        ubicacion: {
+        //            required: "Campo es requerido"
+        //        },
+        //        origen: {
+        //            required: "Campo es requerido"
+        //        },
+        //        insercccion: {
+        //            required: "Campo es requerido"
+        //        },
+        //        inervacion: {
+        //            required: "Campo es requerido"
+        //        },
+        //        irrigacion: {
+        //            required: "Campo es requerido"
+        //        }
+        //    },
+        //    submitHandler: function (form) {
+        //        alert("formulario validado");
+        //        submit();
+        //    },
+        //    highlight: function (element, errorClass) {
+        //        $(element).closest('.form-group').addClass('has-error');
+        //    },
+        //    unhighlight: function (element, errorClass) {
+        //        $(element).closest('.form-group').removeClass('has-error');
+        //    },
 
-            errorPlacement: function (error, element) {
+        //    errorPlacement: function (error, element) {
 
-                if (element.attr('type') == 'checkbox') {
-                    element.closest('.form-group').children(0).prepend(error)
-                }
-                else
-                    error.insertAfter(element);
+        //        if (element.attr('type') == 'checkbox') {
+        //            element.closest('.form-group').children(0).prepend(error)
+        //        }
+        //        else
+        //            error.insertAfter(element);
 
-                error.appendTo(element.parent().next());
-            }
-        });
+        //        error.appendTo(element.parent().next());
+        //    }
+        //});
     </script>
 </asp:Content>

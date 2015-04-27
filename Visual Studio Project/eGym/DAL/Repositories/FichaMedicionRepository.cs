@@ -195,7 +195,7 @@ namespace DAL.Repositories
                             PliAbdominalIzquierdo = float.Parse(Convert.ToString(dr["PLI_ABDOMINAL_IZQ"])),
                             PliAbdominalDerecho = float.Parse(Convert.ToString(dr["PLI_ABDOMINAL_DER"])),
                             PliMusloIzquierdo = float.Parse(Convert.ToString(dr["PLI_MUSLO_IZQ"])),
-                            PliMusloDerecho = float.Parse(Convert.ToString(dr["PLI_MUSLO_DERECHO"])),
+                            PliMusloDerecho = float.Parse(Convert.ToString(dr["PLI_MUSLO_DER"])),
                             PliPantorrillaIzquierda = float.Parse(Convert.ToString(dr["PLI_PANTORRILLA_IZQ"])),
                             PliPantorrillaDerecha = float.Parse(Convert.ToString(dr["PLI_PANTORRILLA_DER"])),
                             PliTricepsIzquierdo = float.Parse(Convert.ToString(dr["PLI_TRICEPS_IZQ"])),
@@ -211,7 +211,7 @@ namespace DAL.Repositories
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex);
             }
 
             return fichaMedicion;
@@ -283,44 +283,44 @@ namespace DAL.Repositories
         /// <param name="objFichaMedicion">Objeto ficha de medición.</param>
         private void InsertFichaMedicion(FichaMedicion objFichaMedicion)
         {
-
             try
             {
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@pCliente", objFichaMedicion.Cliente));
-                cmd.Parameters.Add(new SqlParameter("@pFechaCreacion", objFichaMedicion.FechaCreacion));
-                cmd.Parameters.Add(new SqlParameter("@pAltura", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pImc", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@ClasificacionIMC", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPorcentajeGrasaCorporal", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPorcentajeMasaMuscular", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPesoGraso", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerCintura", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerCadera", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerAbdomen", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerPecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerEspalda", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerMusloIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerMusloDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzqContraido", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerContraido", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaIzquierda", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaDerecha", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliMusloIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliMusloDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaIzquierda", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaDerecha", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliTricepsIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliTricepsDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalDerecho", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPeso", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pAltura", objFichaMedicion.Altura));
+                cmd.Parameters.Add(new SqlParameter("@pImc", objFichaMedicion.Imc));
+                cmd.Parameters.Add(new SqlParameter("@ClasificacionIMC", objFichaMedicion.ClasificacionIMC));
+                cmd.Parameters.Add(new SqlParameter("@pPorcentajeGrasaCorporal", objFichaMedicion.PorcentajeGrasaCorporal));
+                cmd.Parameters.Add(new SqlParameter("@pPorcentajeMasaMuscular", objFichaMedicion.PorcentajeMasaMuscular));
+                cmd.Parameters.Add(new SqlParameter("@pPesoGraso", objFichaMedicion.PesoGraso));
+                cmd.Parameters.Add(new SqlParameter("@pPerCintura", objFichaMedicion.PerCintura));
+                cmd.Parameters.Add(new SqlParameter("@pPerCadera", objFichaMedicion.PerCadera));
+                cmd.Parameters.Add(new SqlParameter("@pPerAbdomen", objFichaMedicion.PerAbdomen));
+                cmd.Parameters.Add(new SqlParameter("@pPerPecho", objFichaMedicion.PerPecho));
+                cmd.Parameters.Add(new SqlParameter("@pPerEspalda", objFichaMedicion.PerEspalda));
+                cmd.Parameters.Add(new SqlParameter("@pPerMusloIzquierdo", objFichaMedicion.PerMusloIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPerMusloDerecho", objFichaMedicion.PerMusloDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzquierdo", objFichaMedicion.PerBicepsIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerecho", objFichaMedicion.PerBicepsDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzqContraido", objFichaMedicion.PerBicepsIzqContraido));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerContraido", objFichaMedicion.PerBicepsDerContraido));
+                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaIzquierda", objFichaMedicion.PerPantorrillaIzquierda));
+                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaDerecha", objFichaMedicion.PerPantorrillaDerecha));
+                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalIzquierdo", objFichaMedicion.PliAbdominalIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalDerecho", objFichaMedicion.PliAbdominalDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliMusloIzquierdo", objFichaMedicion.PliMusloIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliMusloDerecho", objFichaMedicion.PliMusloDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaIzquierda", objFichaMedicion.PliPantorrillaIzquierda));
+                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaDerecha", objFichaMedicion.PliPantorrillaDerecha));
+                cmd.Parameters.Add(new SqlParameter("@pPliTricepsIzquierdo", objFichaMedicion.PliTricepsIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliTricepsDerecho", objFichaMedicion.PliTricepsDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularIzquierdo", objFichaMedicion.PliSubescapularIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularDerecho", objFichaMedicion.PliSubescapularDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalIzquierdo", objFichaMedicion.PliSupraespinalIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalDerecho", objFichaMedicion.PliSupraespinalDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pHabilitado", objFichaMedicion.Habilitado));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarFichaDeMedicion");
 
@@ -341,40 +341,42 @@ namespace DAL.Repositories
             try
             {
                 SqlCommand cmd = new SqlCommand();
+
                 cmd.Parameters.Add(new SqlParameter("@pId", objFichaMedicion.Id));
                 cmd.Parameters.Add(new SqlParameter("@pCliente", objFichaMedicion.Cliente));
-                cmd.Parameters.Add(new SqlParameter("@pFechaCreacion", objFichaMedicion.FechaCreacion));
-                cmd.Parameters.Add(new SqlParameter("@pAltura", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pImc", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@ClasificacionIMC", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPorcentajeGrasaCorporal", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPorcentajeMasaMuscular", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPesoGraso", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzqContraido", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerContraido", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaIzquierda", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaDerecha", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerMusloIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerMusloDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerCintura", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerAbdomen", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerCadera", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerPecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPerEspalda", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliTricepsIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliTricepsDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliMusloIzquierdo", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliMusloDerecho", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaIzquierda", objFichaMedicion.Peso));
-                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaDerecha", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pPeso", objFichaMedicion.Peso));
+                cmd.Parameters.Add(new SqlParameter("@pAltura", objFichaMedicion.Altura));
+                cmd.Parameters.Add(new SqlParameter("@pImc", objFichaMedicion.Imc));
+                cmd.Parameters.Add(new SqlParameter("@ClasificacionIMC", objFichaMedicion.ClasificacionIMC));
+                cmd.Parameters.Add(new SqlParameter("@pPorcentajeGrasaCorporal", objFichaMedicion.PorcentajeGrasaCorporal));
+                cmd.Parameters.Add(new SqlParameter("@pPorcentajeMasaMuscular", objFichaMedicion.PorcentajeMasaMuscular));
+                cmd.Parameters.Add(new SqlParameter("@pPesoGraso", objFichaMedicion.PesoGraso));
+                cmd.Parameters.Add(new SqlParameter("@pPerCintura", objFichaMedicion.PerCintura));
+                cmd.Parameters.Add(new SqlParameter("@pPerCadera", objFichaMedicion.PerCadera));
+                cmd.Parameters.Add(new SqlParameter("@pPerAbdomen", objFichaMedicion.PerAbdomen));
+                cmd.Parameters.Add(new SqlParameter("@pPerPecho", objFichaMedicion.PerPecho));
+                cmd.Parameters.Add(new SqlParameter("@pPerEspalda", objFichaMedicion.PerEspalda));
+                cmd.Parameters.Add(new SqlParameter("@pPerMusloIzquierdo", objFichaMedicion.PerMusloIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPerMusloDerecho", objFichaMedicion.PerMusloDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzquierdo", objFichaMedicion.PerBicepsIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerecho", objFichaMedicion.PerBicepsDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsIzqContraido", objFichaMedicion.PerBicepsIzqContraido));
+                cmd.Parameters.Add(new SqlParameter("@pPerBicepsDerContraido", objFichaMedicion.PerBicepsDerContraido));
+                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaIzquierda", objFichaMedicion.PerPantorrillaIzquierda));
+                cmd.Parameters.Add(new SqlParameter("@pPerPantorrillaDerecha", objFichaMedicion.PerPantorrillaDerecha));
+                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalIzquierdo", objFichaMedicion.PliAbdominalIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliAbdominalDerecho", objFichaMedicion.PliAbdominalDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliMusloIzquierdo", objFichaMedicion.PliMusloIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliMusloDerecho", objFichaMedicion.PliMusloDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaIzquierda", objFichaMedicion.PliPantorrillaIzquierda));
+                cmd.Parameters.Add(new SqlParameter("@pPliPantorrillaDerecha", objFichaMedicion.PliPantorrillaDerecha));
+                cmd.Parameters.Add(new SqlParameter("@pPliTricepsIzquierdo", objFichaMedicion.PliTricepsIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliTricepsDerecho", objFichaMedicion.PliTricepsDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularIzquierdo", objFichaMedicion.PliSubescapularIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliSubescapularDerecho", objFichaMedicion.PliSubescapularDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalIzquierdo", objFichaMedicion.PliSupraespinalIzquierdo));
+                cmd.Parameters.Add(new SqlParameter("@pPliSupraespinalDerecho", objFichaMedicion.PliSupraespinalDerecho));
+                cmd.Parameters.Add(new SqlParameter("@pHabilitado", objFichaMedicion.Habilitado));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarFichaDeMedicion");
 
@@ -406,6 +408,73 @@ namespace DAL.Repositories
             {
 
             }
+        }
+
+        public IEnumerable<FichaMedicion> GetAllByCliente(int pcliente)
+        {
+            List<FichaMedicion> listaFichaMedicion = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@pCliente", pcliente);
+
+            try
+            {
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarFichasDeMedicionPorCliente");
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    listaFichaMedicion = new List<FichaMedicion>();
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        listaFichaMedicion.Add(new FichaMedicion
+                        {
+                            Id = Convert.ToInt32(dr["ID"]),
+                            Cliente = Convert.ToInt32(dr["CLIENTE"]),
+                            FechaCreacion = Convert.ToDateTime(dr["FECHA"]),
+                            Peso = float.Parse(Convert.ToString(dr["PESO"])),
+                            Altura = float.Parse(Convert.ToString(dr["ALTURA"])),
+                            Imc = float.Parse(Convert.ToString(dr["IMC"])),
+                            ClasificacionIMC = dr["CLASIFICACION_IMC"].ToString(),
+                            PorcentajeGrasaCorporal = float.Parse(Convert.ToString(dr["PORCENTAJE_GRASA_CORPORAL"])),
+                            PorcentajeMasaMuscular = float.Parse(Convert.ToString(dr["PORCENTAJE_MASA_MUSCULAR"])),
+                            PesoGraso = float.Parse(Convert.ToString(dr["PESO_GRASO"])),
+                            PerCintura = float.Parse(Convert.ToString(dr["PER_CINTURA"])),
+                            PerCadera = float.Parse(Convert.ToString(dr["PER_CADERA"])),
+                            PerAbdomen = float.Parse(Convert.ToString(dr["PER_ABDOMEN"])),
+                            PerPecho = float.Parse(Convert.ToString(dr["PER_PECHO"])),
+                            PerEspalda = float.Parse(Convert.ToString(dr["PER_ESPALDA"])),
+                            PerMusloIzquierdo = float.Parse(Convert.ToString(dr["PER_MUSLO_IZQ"])),
+                            PerMusloDerecho = float.Parse(Convert.ToString(dr["PER_MUSLO_DER"])),
+                            PerBicepsIzquierdo = float.Parse(Convert.ToString(dr["PER_BICEPS_IZQ"])),
+                            PerBicepsDerecho = float.Parse(Convert.ToString(dr["PER_BICEPS_DER"])),
+                            PerBicepsIzqContraido = float.Parse(Convert.ToString(dr["PER_BICEPS_IZQ_CONTRAIDO"])),
+                            PerBicepsDerContraido = float.Parse(Convert.ToString(dr["PER_BICEPS_DER_CONTRAIDO"])),
+                            PerPantorrillaIzquierda = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_IZQ"])),
+                            PerPantorrillaDerecha = float.Parse(Convert.ToString(dr["PER_PANTORRILLA_DER"])),
+                            PliAbdominalIzquierdo = float.Parse(Convert.ToString(dr["PLI_ABDOMINAL_IZQ"])),
+                            PliAbdominalDerecho = float.Parse(Convert.ToString(dr["PLI_ABDOMINAL_DER"])),
+                            PliMusloIzquierdo = float.Parse(Convert.ToString(dr["PLI_MUSLO_IZQ"])),
+                            PliMusloDerecho = float.Parse(Convert.ToString(dr["PLI_MUSLO_DER"])),
+                            PliPantorrillaIzquierda = float.Parse(Convert.ToString(dr["PLI_PANTORRILLA_IZQ"])),
+                            PliPantorrillaDerecha = float.Parse(Convert.ToString(dr["PLI_PANTORRILLA_DER"])),
+                            PliTricepsIzquierdo = float.Parse(Convert.ToString(dr["PLI_TRICEPS_IZQ"])),
+                            PliTricepsDerecho = float.Parse(Convert.ToString(dr["PLI_TRICEPS_DER"])),
+                            PliSubescapularIzquierdo = float.Parse(Convert.ToString(dr["PLI_SUBESCAPULAR_IZQ"])),
+                            PliSubescapularDerecho = float.Parse(Convert.ToString(dr["PLI_SUBESCAPULAR_DER"])),
+                            PliSupraespinalIzquierdo = float.Parse(Convert.ToString(dr["PLI_SUPRAESPINAL_IZQ"])),
+                            PliSupraespinalDerecho = float.Parse(Convert.ToString(dr["PLI_SUPRAESPINAL_DER"])),
+                            Habilitado = Convert.ToBoolean(dr["HABILITADO"]),
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return listaFichaMedicion;
         }
 
     }
