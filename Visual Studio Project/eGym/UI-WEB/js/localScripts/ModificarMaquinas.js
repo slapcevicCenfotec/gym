@@ -11,14 +11,6 @@
 function onSuccessTiposDeMaquinas(result) {
     var objeto = $.parseJSON(result);
     var cmbTiposDeMaquinas = document.getElementById('cmbTiposDeMaquinas');
-    //$.each(objeto, function (i, item) {
-    //    var idMaquina = objeto[i].Id;
-    //    var nombreMaquina = objeto[i].Nombre;
-    //    var option = document.createElement("option");
-    //    option.text = nombreMaquina;
-    //    option.value = idMaquina
-    //    cmbTiposDeMaquinas.appendChild(option);
-    //});
 
     $.each(objeto, function (i, item) {
         $("#cmbTiposDeMaquinas").append("<option value=\"" + objeto[i].Id + "\">" + objeto[i].Nombre + "</option>");
@@ -30,16 +22,10 @@ function onSuccessObtenerMaquina(result) {
 
     var tipoMaquina = objeto['TipoDeMaquina'];
 
-    console.log(objeto['TipoDeMaquina']);
-
-    console.log(objeto.TipoDeMaquina);
-
     $('#txtNumeroActivo').val(objeto['NumeroActivo']);
     $('#txtNumeroMaquina').val(objeto['NumeroMaquina']);
 
     $("#cmbTiposDeMaquinas option[value=" + objeto.TipoDeMaquina + "]").attr("selected", true);
-
-    //$("#musculo-principal option[value=" + objeto.itemMusculo + "]").attr("selected", true);
 
     $('#idMaquina').val(objeto['Id']);
     $('#habilitado').val(objeto['Habilitado']);
