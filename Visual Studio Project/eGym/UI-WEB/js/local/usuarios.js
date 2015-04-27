@@ -30,14 +30,14 @@
 
 function search() {
     var service = new ServicioEnClases.ServicioUsuario();
-    service.ObtenerUsuarios(onSuccess, null, null);
+    service.ObtenerUsuarios(onSuccess2, null, null);
 }
 
 function error(result) {
     alert(result);
 }
 
-function onSuccess(result) {
+function onSuccess2(result) {
     var object = $.parseJSON(result);
     var tbody = "";
     $.each(object, function (i, item) {

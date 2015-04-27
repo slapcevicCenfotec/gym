@@ -52,6 +52,7 @@
     <Compile Include="Gimnasio.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="Mensaje.cs" />
     <Compile Include="Pago.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Programa.cs" />
