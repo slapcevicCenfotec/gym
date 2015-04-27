@@ -89,133 +89,7 @@
                 </a>
             </div>
 <<<<<<< HEAD
-            <div class="nano has-scrollbar" style="height: 418px;">
-                <div class="nano-content" tabindex="0" style="right: -17px;">
-                    <div class="menubar-scroll-panel" style="padding-bottom: 33px;">
-                        <!-- BEGIN MENU PRINCIPAL -->
-                        <ul id="main-menu" class="gui-controls">
-                            <!-- BEGIN INICIO -->
-                            <li class="active expanding expanded">
-                                <a href="<%= Page.ResolveUrl("~/index.aspx")%>" class="active">
-                                    <div class="gui-icon"><i class="fa fa-home"></i>
-                                    </div>
-                                    <span class="title">Inicio</span>
-                                </a>
-                            </li>
-                            <!--end /menu-li -->
-                            <!-- END INICIO -->
-                            <!-- BEGIN USUARIOS -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Usuarios/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-users"></i>
-                                    </div>
-                                    <span class="title">Usuarios</span>
-                                </a>
-                            </li>
-                            <!-- END USUARIOS -->
-                            <!-- BEGIN FACTURACION -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Facturacion/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-dollar"></i>
-                                    </div>
-                                    <span class="title">Facturación</span>
-                                </a>
-                            </li>
-                            <!-- END FACTURACION -->
-                            <!-- BEGIN CALENDARIO -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Agenda/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-wrench"></i>
-                                    </div>
-                                    <span class="title">Agenda</span>
-                                </a>
-                            </li>
-                            <!-- END CALENDARIO -->
-
-
-
-                            <!-- BEGIN MAQUINAS -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Maquinas/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-wrench"></i>
-                                    </div>
-                                    <span class="title">Máquinas</span>
-                                </a>
-                            </li>
-                            <!-- END MAQUINAS -->
-                            <!-- BEGIN MUSCULOS -->
-                            <li>
-                                <a href="#">
-                                    <div class="gui-icon"><i class="fa fa-medium"></i>
-                                    </div>
-                                    <span class="title">Músculos</span>
-                                </a>
-                            </li>
-                            <!-- END MUSCULOS -->
-                            <!-- BEGIN EJERCICIOS -->
-                            <li>
-                                <a href="#">
-                                    <div class="gui-icon"><i class="fa fa-bicycle"></i>
-                                    </div>
-                                    <span class="title">Ejercicios</span>
-                                </a>
-                            </li>
-                            <!-- END EJERCICIOS -->
-                            <!-- BEGIN ROLES -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Roles/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-key"></i>
-                                    </div>
-                                    <span class="title">Roles</span>
-                                </a>
-                            </li>
-                            <!-- END ROLES -->
-                            <!-- BEGIN REPORTES -->
-                            <li>
-                                <a href="#">
-                                    <div class="gui-icon"><i class="fa fa-file-text-o"></i>
-                                    </div>
-                                    <span class="title">Reportes</span>
-                                </a>
-                            </li>
-                            <!-- END REPORTES -->
-                            <!-- BEGIN CONFIGURACION -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Configuracion/modificar.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-cog"></i>
-                                    </div>
-                                    <span class="title">Configuración</span>
-                                </a>
-                            </li>
-                            <!-- END CONFIGURACION -->
-                            <!-- BEGIN FORMULAS -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/Formulas/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-cog"></i>
-                                    </div>
-                                    <span class="title">Formulas</span>
-                                </a>
-                            </li>
-                            <!-- END FORMULAS -->
-                            <!-- BEGIN PRUEBAS -->
-                            <li>
-                                <a href="<%= Page.ResolveUrl("~/PruebasResistencia/index.aspx")%>">
-                                    <div class="gui-icon"><i class="fa fa-cog"></i>
-                                    </div>
-                                    <span class="title">Pruebas de Resistencia</span>
-                                </a>
-                            </li>
-                            <!-- END PRUEBAS -->
-                        </ul>
-                        <!--end .main-menu -->
-                        <!-- FINAL MENU PRINCIPAL -->
-                        <div class="menubar-foot-panel">
-                            <small class="no-linebreak hidden-folded">
-									<span class="opacity-75">Copyright © 2015</span> <strong>Cantaros</strong>
-									</small>
-                        </div>
-=======
-            <div class="expanded">
+ <div class="expanded">
                 <a href="http://www.codecovers.eu/materialadmin/dashboards/dashboard">
                     <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
                 </a>
@@ -333,7 +207,6 @@
                         <small class="no-linebreak hidden-folded">
 								<span class="opacity-75">Copyright © 2015</span> <strong>Cantaros</strong>
 								</small>
->>>>>>> cbaf28973249fd83e2827502c1573d7255347363
                     </div>
                 </div>
             </div>
@@ -344,26 +217,6 @@
         <!--end .menubar-scroll-panel-->
     </div>
 <<<<<<< HEAD
-    <!-- BEGIN JAVASCRIPT -->
-    <script src="<%= Page.ResolveUrl("~/js/libs/jquery/jquery-1.11.2.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/libs/jquery/jquery-migrate-1.2.1.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap/bootstrap.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/libs/spin.js/spin.min.js")%>"></script>
-    <asp:ContentPlaceHolder ID="javascript" runat="server" />
-    <script src="<%= Page.ResolveUrl("~/js/libs/autosize/jquery.autosize.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/libs/nanoscroller/jquery.nanoscroller.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/source/App.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/source/AppNavigation.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/source/AppOffcanvas.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/source/AppCard.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/source/AppForm.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/source/AppNavSearch.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/source/AppVendor.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/demo/Demo.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoTableDynamic.js")%>"></script>
-    <!-- END JAVASCRIPT -->
-=======
 </div>
 <!-- BEGIN JAVASCRIPT -->
 <script src="<%= Page.ResolveUrl("~/js/libs/jquery/jquery-1.11.2.min.js")%>"></script>
@@ -484,7 +337,5 @@
 
 </script>
 <!-- END JAVASCRIPT -->
-
->>>>>>> cbaf28973249fd83e2827502c1573d7255347363
 </body>
 </html>

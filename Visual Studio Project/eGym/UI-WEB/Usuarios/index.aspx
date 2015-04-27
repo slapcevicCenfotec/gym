@@ -43,7 +43,11 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
+<<<<<<< HEAD
                 <asp:ServiceReference Path="http://localhost:60166/ServicioUsuario.svc" />
+=======
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
+>>>>>>> 5569dec67fb85cbd0cac41703c48312b2a71e709
             </Services>
         </asp:ScriptManager>
     </form>
