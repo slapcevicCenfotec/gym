@@ -12,13 +12,4 @@ Option Explicit On
 
 
 Partial Public Class iniciarsesion
-
-    '''<summary>
-    '''formLogin control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents formLogin As Global.System.Web.UI.HtmlControls.HtmlForm
 End Class

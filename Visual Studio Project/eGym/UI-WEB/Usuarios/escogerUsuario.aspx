@@ -65,9 +65,9 @@
 						<div class="col-sm-4 col-md-3 col-lg-2">
 							<ul class="nav nav-pills nav-stacked">
 								<li><small>Roles</small></li>
-								<li class="active" id="btnClientes"><a href="">Clientes</a></li>
-								<li><a href="" id="btnInstructores">Instructores</a></li>
-								<li><a href="" id="btnCoordinadores">Coordinador de programas</a></li>
+								<li class="active"><a id="btnClientes">Clientes</a></li>
+								<li><a  id="btnInstructores">Instructores</a></li>
+								<li><a  id="btnCoordinadores">Coordinador de programas</a></li>
 								
 							</ul>
 						</div><!--end .col -->
@@ -95,7 +95,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egym/ServicioTipoPago.svc" />
+                <asp:ServiceReference Path="http://localhost/egym/ServicioUsuario.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
