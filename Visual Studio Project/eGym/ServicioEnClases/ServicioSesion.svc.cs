@@ -9,18 +9,19 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Web.Script.Serialization;
+using System.Web.Services;
 
 namespace ServicioEnClases
 {
-    [ServiceContract(Namespace = "ServicioEnClases")]
+    [ServiceContract(Namespace = "ServicioLogin")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class ServicioSesion
     {
         GestorSesion objGestorSesion = new GestorSesion();
 
-        [WebGet()]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        [WebMethod]
         [OperationContract]
-        //[WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         public String iniciarSesion(string datosSerializados)
         {
             try
@@ -28,10 +29,10 @@ namespace ServicioEnClases
                 var jss = new JavaScriptSerializer();
                 var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-                string correo = Convert.ToString(dictionary["pcorreo"]);
-                string contrasena = Convert.ToString(dictionary["pcontrasena"]);
+                string correo = dictionary["pcorreo"];
+                string contrasena = dictionary["pcontrasena"];
 
-                Usuario usuario = new GestorSesion().iniciarSesion(correo, contrasena);
+                Usuario usuario = objGestorSesion.iniciarSesion(correo, contrasena);
                 return new JavaScriptSerializer().Serialize(usuario);
             }
             catch (Exception e)
