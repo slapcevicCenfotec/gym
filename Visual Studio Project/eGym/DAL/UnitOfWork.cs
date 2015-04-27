@@ -258,6 +258,14 @@ namespace DAL
             }
         }
 
+        public DAL.Repositories.ProgramaRepository ProgramaRepositoryOriginal
+        {
+            get
+            {
+                return (DAL.Repositories.ProgramaRepository)ProgramaRepository;
+            }
+        }
+
 
         public IRepository<EjercicioPrograma> EjercicioProgramaRepository
         {

@@ -227,7 +227,7 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@idUsuario", objPrograma.IdUsuario));
-                cmd.Parameters.Add(new SqlParameter("@idTipoAcondicionamiento", objPrograma.TipoAcondicionamiento));
+                cmd.Parameters.Add(new SqlParameter("@idTipoAcondicionamiento", objPrograma.TipoAcondicionamiento.Id));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_GenerarProgramaEjercicios");
 
@@ -246,7 +246,7 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@pId", objPrograma.Id));
                 cmd.Parameters.Add(new SqlParameter("@pIdUsuario", objPrograma.IdUsuario));
-                cmd.Parameters.Add(new SqlParameter("@pTipoAcondicionamiento", objPrograma.TipoAcondicionamiento));
+                cmd.Parameters.Add(new SqlParameter("@pTipoAcondicionamiento", objPrograma.TipoAcondicionamiento.Id));
                 cmd.Parameters.Add(new SqlParameter("@pEstado", objPrograma.Estado));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarPrograma");

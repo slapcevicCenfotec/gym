@@ -52,7 +52,7 @@ namespace BLL
             ejercicioPrograma.Peso = ppeso;
             ejercicioPrograma.Semana = psemana;
             ejercicioPrograma.Ejercicio = pejercicio;
-            ejercicioPrograma.TipoMedida = ptipoMedida;
+            ejercicioPrograma.TipoMedida = new TipoMedida { Id = ptipoMedida };
 
             unitOfWork.EjercicioProgramaRepository.Insert(ejercicioPrograma);
             unitOfWork.EjercicioProgramaRepository.Save();
@@ -73,7 +73,7 @@ namespace BLL
             ejercicioPrograma.Peso = ppeso;
             ejercicioPrograma.Semana = psemana;
             ejercicioPrograma.Ejercicio = pejercicio;
-            ejercicioPrograma.TipoMedida = ptipoMedida;
+            ejercicioPrograma.TipoMedida = new TipoMedida { Id = ptipoMedida };
 
             unitOfWork.EjercicioProgramaRepository.Update(ejercicioPrograma);
             unitOfWork.EjercicioProgramaRepository.Save();

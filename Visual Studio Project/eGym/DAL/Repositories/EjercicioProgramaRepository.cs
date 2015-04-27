@@ -74,8 +74,39 @@ namespace DAL.Repositories
                         Repeticiones = Convert.ToInt32(dr["REPETICIONES"]),
                         Peso = float.Parse(Convert.ToString(dr["PESO"])),
                         Semana = Convert.ToInt32(dr["SEMANA"]),
+                        Ejercicio = new Ejercicio { Id = Convert.ToInt32(dr["EJERCICIO"]) },
+                        TipoMedida = new TipoMedida { Id = Convert.ToInt32(dr["ID_TIPO_MEDIDA"]), Nombre = Convert.ToString(dr["NOMBRE_TIPO_MEDIDA"])}
+                    });
+                }
+            }
+
+
+            return listaEjercicioProgramas;
+        }
+
+        public IEnumerable<EjercicioPrograma> GetByPrograma(int idPrograma)
+        {
+            List<EjercicioPrograma> listaEjercicioProgramas = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@idPrograma", idPrograma);
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarEjerciciosPorPrograma");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaEjercicioProgramas = new List<EjercicioPrograma>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    listaEjercicioProgramas.Add(new EjercicioPrograma
+                    {
+                        Id = Convert.ToInt32(dr["ID"]),
+                        Series = Convert.ToInt32(dr["SERIES"]),
+                        Repeticiones = Convert.ToInt32(dr["REPETICIONES"]),
+                        Peso = float.Parse(Convert.ToString(dr["PESO"])),
+                        Semana = Convert.ToInt32(dr["SEMANA"]),
                         //Ejercicio = dr["EJERCICIO"],
-                        TipoMedida = Convert.ToInt32(dr["TIPO_MEDIDA"]),
+                        TipoMedida = new TipoMedida { Id = Convert.ToInt32(dr["ID_TIPO_MEDIDA"]), Nombre = Convert.ToString(dr["NOMBRE_TIPO_MEDIDA"]) }
                     });
                 }
             }
@@ -109,7 +140,7 @@ namespace DAL.Repositories
                             Peso = float.Parse(Convert.ToString(dr["PESO"])),
                             Semana = Convert.ToInt32(dr["SEMANA"]),
                             //Ejercicio = dr["EJERCICIO"],
-                            TipoMedida = Convert.ToInt32(dr["TIPO_MEDIDA"]),
+                            TipoMedida = new TipoMedida { Id = Convert.ToInt32(dr["ID_TIPO_MEDIDA"]), Nombre = Convert.ToString(dr["NOMBRE_TIPO_MEDIDA"]) }
                         };
                     }
                 }
@@ -194,7 +225,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@pPeso", objEjercicioPrograma.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pSemana", objEjercicioPrograma.Semana));
                 cmd.Parameters.Add(new SqlParameter("@pEjercicio", objEjercicioPrograma.Ejercicio));
-                cmd.Parameters.Add(new SqlParameter("@pTipoMedida", objEjercicioPrograma.TipoMedida));
+                cmd.Parameters.Add(new SqlParameter("@pTipoMedida", objEjercicioPrograma.TipoMedida.Id));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarEjercicioPrograma");
 
@@ -217,7 +248,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@pPeso", objEjercicioPrograma.Peso));
                 cmd.Parameters.Add(new SqlParameter("@pSemana", objEjercicioPrograma.Semana));
                 cmd.Parameters.Add(new SqlParameter("@pEjercicio", objEjercicioPrograma.Ejercicio));
-                cmd.Parameters.Add(new SqlParameter("@pTipoMedida", objEjercicioPrograma.TipoMedida));
+                cmd.Parameters.Add(new SqlParameter("@pTipoMedida", objEjercicioPrograma.TipoMedida.Id));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarEjercicioPrograma");
 

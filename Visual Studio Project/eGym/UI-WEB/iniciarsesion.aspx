@@ -61,7 +61,7 @@
                                 </div>
                                 <!--end .col -->
                                 <div class="col-xs-6 text-right">
-                                    <button class="btn btn-primary btn-raised" id="bntIniciarSesion">Iniciar Sesión</button>
+                                    <a class="btn btn-primary btn-raised" id="bntIniciarSesion">Iniciar Sesión</a>
                                 </div>
                                 <!--end .col -->
                             </div>
@@ -88,7 +88,7 @@
         <form runat="server">
             <asp:ScriptManager runat="server">
                 <Services>
-                    <asp:ServiceReference Path="http://localhost:60166/ServicioSesion.svc" />
+                    <asp:ServiceReference Path="http://localhost/egymServices/ServicioSesion.svc" />
                 </Services>
             </asp:ScriptManager>
         </form>

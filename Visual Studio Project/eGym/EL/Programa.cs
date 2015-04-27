@@ -10,7 +10,7 @@ namespace EL
     {
         private int _id;
         private int _idUsuario;
-        private int _tipoAcondicionamiento;        
+        private TipoAcondicionamiento _tipoAcondicionamiento;        
         private List<EjercicioPrograma> _listaEjercicios;
         private int _estado;
 
@@ -24,7 +24,7 @@ namespace EL
             get { return _idUsuario; }
             set { _idUsuario = value; }
         }
-        public int TipoAcondicionamiento
+        public TipoAcondicionamiento TipoAcondicionamiento
         {
             get { return _tipoAcondicionamiento; }
             set { _tipoAcondicionamiento = value; }
