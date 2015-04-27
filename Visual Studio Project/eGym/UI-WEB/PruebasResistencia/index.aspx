@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index11" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%>' />
@@ -19,6 +19,9 @@
                     </article>
                 </div>
             </div>
+                        <div class="col-md-4">
+                        <a class="btn btn-raised btn-primary ink-reaction pull-right"  id="btnPruebaResistencia">Prueba de resistencia</a>
+                </div>
             <div class="row">
                 <!--end .col -->
                 <div class="col-lg-12">
@@ -40,10 +43,11 @@
             </div>
         </div>
     </section>
-    <form runat="server">
-        <asp:ScriptManager runat="server" >
+    <form id="Form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" >
             <Services>
                 <asp:ServiceReference Path="http://localhost:60166/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost:60166/ServicioPruebasResistencia.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
@@ -62,5 +66,44 @@
         $(document).ready(function () {
             search();
         });
+
+
+        $('#btnPruebaResistencia').click(function () {
+            var rows = $('tr.selected');
+            var table = $('#tblUsuarios').DataTable();
+            var rowData = table.rows(rows).data();
+            var id = rowData[0][0];
+            var cells = table.cells().nodes();
+            var datos = JSON.stringify({ pId: id });
+            var servicePruebas = new ServicioEnClases.ServicioPruebasResistencia();
+            servicePruebas.comprobarPruebaResistencia(datos,onSuccessComprobarPruebas, null, null);
+            //serviceRol.EliminarRoles(datos, onSuccesEliminar, errorMessage, null, null);
+        });
+
+        function onSuccessComprobarPruebas(result) {
+            var objeto = $.parseJSON(result);
+
+            var rows = $('tr.selected');
+            var table = $('#tblUsuarios').DataTable();
+            var rowData = table.rows(rows).data();
+            var id = rowData[0][0];
+
+
+            if (objeto == true) {
+                alert("Prueba Realizada");
+                window.location = "PruebaResistencia.aspx?id=" + id;
+
+            } else {
+                alert("Prueba No relizada");
+                if (confirm('Este Cliente no ha realizado la prueba de resistencia. Desea aplicar la prueba?')) {
+                    window.location = "PruebaResistencia.aspx";
+                } else {
+                    // Do nothing!
+                }
+
+            }
+        }
+
+
     </script>
 </asp:Content>

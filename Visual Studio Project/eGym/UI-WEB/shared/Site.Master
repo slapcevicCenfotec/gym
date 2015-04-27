@@ -15,7 +15,7 @@
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
     <!--Font Awesome Icon Font-->
-    <%--<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />--%>
+    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />
     <!--Material Design Iconic Font-->
     <!-- Additional CSS includes -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -202,6 +202,15 @@
                                 </a>
                             </li>
                             <!-- END FORMULAS -->
+                            <!-- BEGIN PRUEBAS -->
+                            <li>
+                                <a href="<%= Page.ResolveUrl("~/PruebasResistencia/index.aspx")%>">
+                                    <div class="gui-icon"><i class="fa fa-cog"></i>
+                                    </div>
+                                    <span class="title">Pruebas de Resistencia</span>
+                                </a>
+                            </li>
+                            <!-- END PRUEBAS -->
                         </ul>
                         <!--end .main-menu -->
                         <!-- FINAL MENU PRINCIPAL -->
@@ -236,11 +245,7 @@
     <script src="<%= Page.ResolveUrl("~/js/core/source/AppVendor.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/Demo.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
-
+    <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoTableDynamic.js")%>"></script>
     <!-- END JAVASCRIPT -->
-
 </body>
-
-
-
 </html>

@@ -51,10 +51,12 @@
     <Compile Include="GestorMaquina.cs" />
     <Compile Include="GestorMusculo.cs" />
     <Compile Include="Gestor.cs" />
+    <Compile Include="GestorPruebaResistencia.cs" />
     <Compile Include="GestorRol.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorTipoDePago.cs" />
     <Compile Include="GestorTipoDeMaquina.cs" />
+    <Compile Include="GestorTipoPruebaResistencia.cs" />
     <Compile Include="GestorTiposDeMaquina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

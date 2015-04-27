@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="true" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index2" %>
+﻿    <%@ Page Language="vb" AutoEventWireup="true" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%> />
@@ -55,7 +55,7 @@
         <!--end .section-body -->
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
-                <asp:ServiceReference Path="http://localhost/ServicioRol.svc" />
+                <asp:ServiceReference Path="http://localhost:60166/ServicioRol.svc" />
             </Services>
         </asp:ScriptManager>
 
