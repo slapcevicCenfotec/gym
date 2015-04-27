@@ -4,7 +4,6 @@
 <html lang="es">
 
 <head>
-<<<<<<< HEAD
     <title>Egym - Cantaros</title>
     <!-- BEGIN META -->
     <meta charset="utf-8">
@@ -27,30 +26,6 @@
     <script src="../js/localScripts/ejercicios.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-=======
-<title>Egym</title>
-<!-- BEGIN META -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- BEGIN STYLESHEETS -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css' />
-<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/bootstrap.css")%> />
-<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
-<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
-<!--Font Awesome Icon Font-->
-<%--<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />--%>
-<!--Material Design Iconic Font-->
-<!-- Additional CSS includes -->
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-	<script type="text/javascript" src="/assets/js/libs/utils/html5shiv.js"></script>
-	<script type="text/javascript" src="/assets/js/libs/utils/respond.min.js"></script>
-	<![endif]-->
-<script src="../js/localScripts/ejercicios.js"></script>
-<asp:ContentPlaceHolder ID="head" runat="server">
-</asp:ContentPlaceHolder>
->>>>>>> cbaf28973249fd83e2827502c1573d7255347363
 </head>
 
 <body class="menubar-hoverable header-fixed">
