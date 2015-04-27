@@ -69,9 +69,9 @@ namespace DAL.Repositories
                     listaProgramas.Add(new Programa
                     {
                         Id = Convert.ToInt32(dr["ID"]),
-                        IdUsuario = Convert.ToInt32(dr["ID_USUARIO"]),
-                        //TipoAcondicionamiento = dr["TIPO_ACONDICIONAMIENTO"],
-                        //ListaEjercicios = (dr["LISTA_EJERCICIOS"]),
+                        IdUsuario = Convert.ToInt32(dr["USUARIO"]),
+                        //TipoAcondicionamiento = dr["TIPO_ACONDICIONAMIENTO    "],
+                        Estado = Convert.ToInt32(dr["ESTADO"]),
                     });
                 }
             }
@@ -99,9 +99,9 @@ namespace DAL.Repositories
                         programa = new Programa
                         {
                             Id = Convert.ToInt32(dr["ID"]),
-                            IdUsuario = Convert.ToInt32(dr["ID_USUARIO"]),
-                            //TipoAcondicionamiento = dr["TIPO_ACONDICIONAMIENTO"],
-                            //ListaEjercicios = (dr["LISTA_EJERCICIOS"]),
+                            IdUsuario = Convert.ToInt32(dr["USUARIO"]),
+                            //TipoAcondicionamiento = dr["TIPO_ACONDICIONAMIENTO    "],
+                            Estado = Convert.ToInt32(dr["ESTADO"]),
                         };
                     }
                 }
@@ -181,11 +181,10 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@pIdUsuario", objPrograma.IdUsuario));
-                cmd.Parameters.Add(new SqlParameter("@pTipoUsuario", objPrograma.TipoAcondicionamiento));
-                cmd.Parameters.Add(new SqlParameter("@pListaEjercicios", objPrograma.ListaEjercicios));
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", objPrograma.IdUsuario));
+                cmd.Parameters.Add(new SqlParameter("@idTipoAcondicionamiento", objPrograma.TipoAcondicionamiento));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarPrograma");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_GenerarProgramaEjercicios");
 
             }
             catch (Exception ex)
@@ -202,8 +201,8 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@pId", objPrograma.Id));
                 cmd.Parameters.Add(new SqlParameter("@pIdUsuario", objPrograma.IdUsuario));
-                cmd.Parameters.Add(new SqlParameter("@pTipoUsuario", objPrograma.TipoAcondicionamiento));
-                cmd.Parameters.Add(new SqlParameter("@pListaEjercicios", objPrograma.ListaEjercicios));
+                cmd.Parameters.Add(new SqlParameter("@pTipoAcondicionamiento", objPrograma.TipoAcondicionamiento));
+                cmd.Parameters.Add(new SqlParameter("@pEstado", objPrograma.Estado));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarPrograma");
 
