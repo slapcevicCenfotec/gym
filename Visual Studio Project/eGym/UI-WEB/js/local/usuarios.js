@@ -71,77 +71,204 @@ function formattedDate(date) {
 
 function ingresarUsuario() {
 
+    // INSTANCIAR SERVICIO
 
-    $("#formulario").validate( {
-        rules: {
-            identificacion: {
-                required: true
-            }
-        }, messages: {
-            identificacion: {
-                required: "HEY!"
-            }
-        }, submitHandler: function (form) {
-            alert("formulario validado");
-            submit();
-        }, highlight: function (element, errorClass) {
-            $(element).closest('.form-group').addClass('has-error');
-        }, unhighlight: function (element, errorClass) {
-            $(element).closest('.form-group').removeClass('has-error');
-        }, errorPlacement: function (error, element) {
-            if (element.attr('type') == 'checkbox') {
-                element.closest('.form-group').children(0).prepend(error)
-            } else {
-                error.insertAfter(element);
-            }
-            error.appendTo(element.parent().next());
-        }
+    var servicio = new ServicioEnClases.ServicioUsuario();
+
+    // INSERTAR USUARIO
+
+    var identificacion = $('#txtIdentificacion').val();
+    var tipoIdentificacion = $('#txtTipoIdentificacion').val();
+    var primerNombre = $('#txtPrimerNombre').val();
+    var segundoNombre = $('#txtSegundoNombre').val();
+    var primerApellido = $('#txtPrimerApellido').val();
+    var segundoApellido = $('#txtSegundoApellido').val();
+    var alias = $('#txtAlias').val();
+    var genero = $('#txtGenero').val();
+    var fechaNacimiento = $('#txtFechaNacimiento').val();
+    var correoElectronico = $('#txtCorreoElectronico').val();
+    var numeroTelefono = $('#txtNumeroTelefono').val();
+    var numeroCelular = $('#txtNumeroCelular').val();
+    var rol = $('#txtRol').val();
+    var contrasena = $('#txtContrasena').val();
+    var imagen = $('#imgFoto').attr('src');
+    var repetirContrasena = $('#txtRepetirContrasena').val();
+
+    var datos = JSON.stringify({
+        pIdentificacion: identificacion,
+        pTipoIdentificacion: tipoIdentificacion,
+        pPrimerNombre: primerNombre,
+        pSegundoNombre: segundoNombre,
+        pSegundoApellido: segundoApellido,
+        pPrimerApellido: primerApellido,
+        pAlias: alias,
+        pIdGenero: genero,
+        pFechaNacimiento: fechaNacimiento,
+        pCorreoElectronico: correoElectronico,
+        pNumeroTelefono: numeroTelefono,
+        pNumeroCelular: numeroCelular,
+        pIdRol: rol,
+        pContrasena: contrasena,
+        pFoto: imagen
     });
 
+    var respuesta = servicio.InsertarUsuario(datos, onSuccessIngresarUsuario, errorMessage, null, null);
 
-    //var identificacion = $('#txtIdentificacion').val();
-    //var tipoIdentificacion = $('#txtTipoIdentificacion').val();
-    //var primerNombre = $('#txtPrimerNombre').val();
-    //var segundoNombre = $('#txtSegundoNombre').val();
-    //var primerApellido = $('#txtPrimerApellido').val();
-    //var segundoApellido = $('#txtSegundoApellido').val();
-    //var alias = $('#txtAlias').val();
-    //var genero = $('#txtGenero').val();
-    //var fechaNacimiento = $('#txtFechaNacimiento').val();
-    //var correoElectronico = $('#txtCorreoElectronico').val();
-    //var numeroTelefono = $('#txtNumeroTelefono').val();
-    //var numeroCelular = $('#txtNumeroCelular').val();
-    //var rol = $('#txtRol').val();
-    //var contrasena = $('#txtContrasena').val();
-    //var imagen = $('#imgFoto').attr('src');
-    //var repetirContrasena = $('#txtRepetirContrasena').val();
-
-    //var servicio = new ServicioEnClases.ServicioUsuario();
-
-    //var datos = JSON.stringify({
-    //    pIdentificacion: identificacion,
-    //    pTipoIdentificacion: tipoIdentificacion,
-    //    pPrimerNombre: primerNombre,
-    //    pSegundoNombre: segundoNombre,
-    //    pSegundoApellido: segundoApellido,
-    //    pPrimerApellido: primerApellido,
-    //    pAlias: alias,
-    //    pIdGenero: genero,
-    //    pFechaNacimiento: fechaNacimiento,
-    //    pCorreoElectronico: correoElectronico,
-    //    pNumeroTelefono: numeroTelefono,
-    //    pNumeroCelular: numeroCelular,
-    //    pIdRol: rol,
-    //    pContrasena: contrasena,
-    //    pFoto: imagen
-    //});
-    //var respuesta = servicio.InsertarUsuario(datos, onSuccesIngresar, errorMessage, null, null);
-
-    //var object = $.parseJSON(respuesta);
 }
 
-function onSuccesIngresar(result) {
-    alert(result);
+function onSuccessIngresarUsuario(result) {
+
+    // INSTANCIAR SERVICIO
+
+    var servicio = new ServicioEnClases.ServicioUsuario();
+
+    // INSERTAR CONTACTO #1 
+
+    var nombreContacto1 = $('#txtNombreContacto1').val();
+    var parentescoContacto1 = $('#txtParentescoContacto1').val();
+    var numeroContacto1 = $('#txtNumeroContacto1').val();
+
+    var datos = JSON.stringify({
+        pNombre: nombreContacto1,
+        pParentesco: parentescoContacto1,
+        pNumero: numeroContacto1,
+    });
+
+    respuesta = servicio.InsertarContacto(datos, onSuccess, errorMessage, null, null);
+
+    // INSERTAR CONTACTO #2
+
+    var nombreContacto2 = $('#txtNombreContacto2').val();
+    var parentescoContacto2 = $('#txtParentescoContacto2').val();
+    var numeroContacto2 = $('#txtNumeroContacto2').val();
+
+    if (nombreContacto2 && parentescoContacto2 && numeroContacto2) {
+
+        datos = JSON.stringify({
+            pNombre: nombreContacto2,
+            pParentesco: parentescoContacto2,
+            pNumero: numeroContacto2,
+        });
+
+        respuesta = servicio.InsertarContacto(datos, onSuccess, errorMessage, null, null);
+    }
+
+    // INSERTAR LUNES
+
+    var lunes1 = $('#txtLunes1').val();
+    var lunes2 = $('#txtLunes2').val();
+
+    if (lunes1 && lunes2) {
+
+        datos = JSON.stringify({
+            pHoraEntrada: lunes1,
+            pHoraSalida: lunes2,
+            pDiaSemana: 0
+        });
+
+        respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
+    }
+
+    // INSERTAR MARTES
+
+    var martes1 = $('#txtMartes1').val();
+    var martes2 = $('#txtMartes2').val();
+
+    if (martes1 && martes2) {
+
+        datos = JSON.stringify({
+            pHoraEntrada: martes1,
+            pHoraSalida: martes2,
+            pDiaSemana: 1
+        });
+
+        respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
+    }
+
+    // INSERTAR MIERCOLES
+
+    var miercoles1 = $('#txtMiercoles1').val();
+    var miercoles2 = $('#txtMiercoles2').val();
+
+    if (miercoles1 && miercoles2) {
+
+        datos = JSON.stringify({
+            pHoraEntrada: miercoles1,
+            pHoraSalida: miercoles2,
+            pDiaSemana: 2
+        });
+
+        respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
+    }
+
+    // INSERTAR JUEVES
+
+    var jueves1 = $('#txtJueves1').val();
+    var jueves2 = $('#txtJueves2').val();
+
+    if (jueves1 && jueves2) {
+
+        datos = JSON.stringify({
+            pHoraEntrada: jueves1,
+            pHoraSalida: jueves2,
+            pDiaSemana: 3
+        });
+
+        respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
+    }
+
+    // INSERTAR VIERNES
+
+    var viernes1 = $('#txtViernes1').val();
+    var viernes2 = $('#txtViernes2').val();
+
+    if (viernes1 && viernes2) {
+
+        datos = JSON.stringify({
+            pHoraEntrada: viernes1,
+            pHoraSalida: viernes2,
+            pDiaSemana: 4
+        });
+
+        respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
+    }
+
+    // INSERTAR SABADO
+
+    var sabado1 = $('#txtSabado1').val();
+    var sabado2 = $('#txtSabado2').val();
+
+    if (sabado1 && sabado2) {
+
+        datos = JSON.stringify({
+            pHoraEntrada: sabado1,
+            pHoraSalida: sabado2,
+            pDiaSemana: 5
+        });
+
+        respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
+    }
+
+    // INSERTAR DOMINGO
+
+    var domingo1 = $('#txtDomingo1').val();
+    var domingo2 = $('#txtDomingo2').val();
+
+    if (domingo1 && domingo2) {
+
+        datos = JSON.stringify({
+            pHoraEntrada: domingo1,
+            pHoraSalida: domingo2,
+            pDiaSemana: 6
+        });
+
+        respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
+    }
+}
+
+function onSuccess(result) {
+
+    alert("Yeah!");
 }
 
 function errorMessage(resul) {

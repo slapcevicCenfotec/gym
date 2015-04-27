@@ -45,7 +45,6 @@ namespace ServicioEnClases
             var diccionario = javaScriptSerializer.Deserialize<Dictionary<string, string>>(datosSerializados);
 
             int cliente = Convert.ToInt32(diccionario["pcliente"]);
-            DateTime fecha = Convert.ToDateTime(diccionario["pfecha"]);
             float peso = float.Parse(diccionario["ppeso"]);
             float altura = float.Parse(diccionario["paltura"]);
             float imc = float.Parse(diccionario["pimc"]);
@@ -79,11 +78,11 @@ namespace ServicioEnClases
             float supraespinalIzquierdo = float.Parse(diccionario["psupraespinalIzquierdo"]);
             float supraespinalDerecho = float.Parse(diccionario["psupraespinalDerecho"]);
 
-            gestorFicha.insertarFichaMedicion(cliente, fecha, peso, altura, imc, clasificacionIMC,porcentajeGrasa,
-            porcentajeMasa, pesoGraso, cintura, cadera, abdomen,pecho, espalda,musloIzquierdo, musloDerecho,
-            bicepsIzquierdo, bicepsDerecho, bicepIzquierdoContr,bicepDerechoContr, pantorrillaIzquierda,
-            pantorrillaDerecha, abdominalIzquierdo,abdominalDerecho, pliegueMusloIzquierdo, pliegueMusloDerecho,
-            pantorrillaIzquierda, pantorrillaDerecha,tricepsIzquierdo, tricepsDerecho, subescapularIzquierdo,
+            gestorFicha.insertarFichaMedicion(cliente, peso, altura, imc, clasificacionIMC, porcentajeGrasa,
+            porcentajeMasa, pesoGraso, cintura, cadera, abdomen, pecho, espalda, musloIzquierdo, musloDerecho,
+            bicepsIzquierdo, bicepsDerecho, bicepIzquierdoContr, bicepDerechoContr, pantorrillaIzquierda,
+            pantorrillaDerecha, abdominalIzquierdo, abdominalDerecho, pliegueMusloIzquierdo, pliegueMusloDerecho,
+            pantorrillaIzquierda, pantorrillaDerecha, tricepsIzquierdo, tricepsDerecho, subescapularIzquierdo,
             subescapularDerecho, supraespinalIzquierdo, supraespinalDerecho);
         }
 
@@ -95,7 +94,6 @@ namespace ServicioEnClases
 
             int id = Convert.ToInt32(diccionario["pid"]);
             int cliente = Convert.ToInt32(diccionario["pcliente"]);
-            DateTime fecha = Convert.ToDateTime(diccionario["pfecha"].ToString());
             float peso = float.Parse(diccionario["ppeso"]);
             float altura = float.Parse(diccionario["paltura"]);
             float imc = float.Parse(diccionario["pimc"]);
@@ -130,12 +128,14 @@ namespace ServicioEnClases
             float supraespinalDerecho = float.Parse(diccionario["psupraespinalDerecho"]);
             Boolean habilitado = Boolean.Parse(diccionario["phabilitado"]);
 
-            gestorFicha.modificarFichaMedicion(id, cliente, fecha, peso, altura, imc, clasificacionIMC, porcentajeGrasa,
-            porcentajeMasa, pesoGraso, cintura, cadera, abdomen, pecho, espalda, musloIzquierdo, musloDerecho,
-            bicepsIzquierdo, bicepsDerecho, bicepIzquierdoContr, bicepDerechoContr, pantorrillaIzquierda,
-            pantorrillaDerecha, abdominalIzquierdo, abdominalDerecho, pliegueMusloIzquierdo, pliegueMusloDerecho,
-            pantorrillaIzquierda, pantorrillaDerecha, tricepsIzquierdo, tricepsDerecho, subescapularIzquierdo,
-            subescapularDerecho, supraespinalIzquierdo, supraespinalDerecho, habilitado);
+            gestorFicha.modificarFichaMedicion(id, cliente, peso, altura, imc, clasificacionIMC,
+                            porcentajeGrasa, porcentajeMasa, pesoGraso, bicepsIzquierdo,
+                            bicepsDerecho, bicepIzquierdoContr, bicepDerechoContr, pantorrillaIzquierda,
+                            pantorrillaDerecha, musloIzquierdo, musloDerecho, cintura, abdomen,
+                            cadera, pecho, espalda, tricepsIzquierdo, tricepsDerecho,
+                            subescapularIzquierdo, subescapularDerecho, supraespinalIzquierdo, supraespinalDerecho,
+                            abdominalIzquierdo, abdominalDerecho, pliegueMusloIzquierdo, pliegueMusloDerecho,
+                            plieguePantorrillaIzquierda, plieguePantorrillaDerecha, habilitado);
 
         }
 

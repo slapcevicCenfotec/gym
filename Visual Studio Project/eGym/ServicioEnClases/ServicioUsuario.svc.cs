@@ -43,16 +43,17 @@ namespace ServicioEnClases
         {
             var gestor = new Gestor();
             var idInt = Convert.ToInt32(id);
-            var serializer = new JavaScriptSerializer();
+            Usuario usuario = gestor.ObtenerUsuario(idInt);
             try
             {
-                return serializer.Serialize(gestor.ObtenerUsuario(idInt));
+                return new JavaScriptSerializer().Serialize(usuario);
             }
             catch(Exception ex)
             {
                 return new JavaScriptSerializer().Serialize(ex.Message);
             }
         }
+
 
         [WebMethod]
         [OperationContract]
@@ -61,8 +62,7 @@ namespace ServicioEnClases
             var serializer = new JavaScriptSerializer();
             try
             {
-                var javaScriptSerializer = new JavaScriptSerializer();
-                var diccionario = javaScriptSerializer.Deserialize<Dictionary<string, string>>(datos);
+                var diccionario = serializer.Deserialize<Dictionary<string, string>>(datos);
                 var gestor = new Gestor();
 
                 string pIdentificacion = Convert.ToString(diccionario["pIdentificacion"]);
@@ -90,7 +90,57 @@ namespace ServicioEnClases
                     pCorreoElectronico, pContrasena, System.Convert.FromBase64String(pFotografia.Split(',')[1]), pFechaIngreso, pNumeroTelefono, 
                     pNumeroCelular, pIdRol, pIdGenero, pTipoIdentificacion);
 
-                return new JavaScriptSerializer().Serialize("Todod bien");
+                return serializer.Serialize(string.Empty);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        /// <summary>
+        /// Metodo web que permite ingresar un contacto en la base de datos
+        /// </summary>
+        /// <param name="datos">JSON: pNombre, pParentesco, pNumero</param>
+        [WebMethod]
+        [OperationContract]
+        public String InsertarContacto(string datos)
+        {
+            var serializer = new JavaScriptSerializer();
+
+            try
+            {
+                var diccionario = serializer.Deserialize<Dictionary<string, string>>(datos);
+                var gestor = new Gestor();
+                string pNombre = Convert.ToString(diccionario["pNombre"]);
+                string pParentesco = Convert.ToString(diccionario["pParentesco"]);
+                string pNumero = Convert.ToString(diccionario["pNumero"]);
+                gestor.AgregarContacto(pNombre, pNumero, pParentesco, 0);
+
+                return serializer.Serialize(string.Empty);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        [WebMethod]
+        [OperationContract]
+        public String InsertarHorario(string datos)
+        {
+            var serializer = new JavaScriptSerializer();
+
+            try
+            {
+                var diccionario = serializer.Deserialize<Dictionary<string, string>>(datos);
+                var gestor = new Gestor();
+                DateTime pHoraEntrada = DateTime.ParseExact(diccionario["pHoraEntrada"], "dd/MM/yyyy", null);
+                DateTime pHoraSalida = DateTime.ParseExact(diccionario["pHoraSalida"], "dd/MM/yyyy", null);
+                int pDiaSemana = Convert.ToInt32(diccionario["pDiaSemana"]);
+                gestor.AgregarHorario(pHoraEntrada, pHoraSalida, pDiaSemana, 0);
+
+                return serializer.Serialize(string.Empty);
             }
             catch (Exception ex)
             {

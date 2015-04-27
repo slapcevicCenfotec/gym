@@ -64,7 +64,7 @@ namespace BLL
         }
 
         /// <summary>FALTA COMENTAR
-        public void insertarFichaMedicion(int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
+        public void insertarFichaMedicion(int pcliente,float ppeso, float paltura, float pimc, string pclasificacionimc,
                             float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperCintura, float pperCadera,
                             float pperAbdomen, float pperPecho, float pperEspalda, float pperMusloIzquierdo, float pperMusloDerecho,
                             float pperBicepsIzquierdo, float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido,
@@ -73,11 +73,11 @@ namespace BLL
                             float ppliTricepsIzquierdo, float ppliTricepsDerecho, float ppliSubescapularIzquierdo, float ppliSubescapularDerecho,
                             float ppliSupraespinalIzquierdo, float ppliSupraespinalDerecho)
         {
-            FichaMedicion fichaMedicion = new FichaMedicion(pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
+            FichaMedicion fichaMedicion = new FichaMedicion(pcliente, ppeso, paltura, pimc, pclasificacionimc,
                             pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperCintura, pperCadera, pperAbdomen, pperPecho, pperEspalda,
                             pperMusloIzquierdo, pperMusloDerecho, pperBicepsIzquierdo, pperBicepsDerecho, pperBicepsIzqContraido, pperBicepsDerContraido,
                             pperPantorrillaIzquierda, pperPantorrillaDerecha, ppliAbdominalIzquierdo, ppliAbdominalDerecho, ppliMusloIzquierdo, ppliMusloDerecho,
-                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha, ppliTricepsIzquierdo, ppliTricepsDerecho,ppliSubescapularIzquierdo, ppliSubescapularDerecho,
+                            ppliPantorrillaIzquierda, ppliPantorrillaDerecha, ppliTricepsIzquierdo, ppliTricepsDerecho, ppliSubescapularIzquierdo, ppliSubescapularDerecho,
                             ppliSupraespinalIzquierdo, ppliSupraespinalDerecho);
 
             try
@@ -93,7 +93,7 @@ namespace BLL
 
                     //Registra la acción en la bitácora de acciones.
                     gestorEventos.insertarEvento("Insertar ficha de medición", "El usuario ha insertado una ficha de medición para el cliente " + fichaMedicion.Cliente + " en el sistema.");
-                }                    
+                }
                 else
                 {
                     //StringBuilder sb = new StringBuilder();
@@ -120,7 +120,7 @@ namespace BLL
         }
 
         /// FALTA COMENTAR
-        public void modificarFichaMedicion(int pid, int pcliente, DateTime pfecha, float ppeso, float paltura, float pimc, string pclasificacionimc,
+        public void modificarFichaMedicion(int pid, int pcliente, float ppeso, float paltura, float pimc, string pclasificacionimc,
                             float pporcentajeGrasaCorporal, float pporcentajeMasaMuscular, float ppesoGraso, float pperBicepsIzquierdo,
                             float pperBicepsDerecho, float pperBicepsIzqContraido, float pperBicepsDerContraido, float pperPantorrillaIzquierda,
                             float pperPantorrillaDerecha, float pperMusloIzquierdo, float pperMusloDerecho, float pperCintura, float pperAbdomen,
@@ -129,7 +129,7 @@ namespace BLL
                             float ppliAbdominalIzquierdo, float ppliAbdominalDerecho, float ppliMusloIzquierdo, float ppliMusloDerecho,
                             float ppliPantorrillaIzquierda, float ppliPantorrillaDerecha, Boolean phabilitado)
         {
-            FichaMedicion fichaMedicion = new FichaMedicion(pid, pcliente, pfecha, ppeso, paltura, pimc, pclasificacionimc,
+            FichaMedicion fichaMedicion = new FichaMedicion(pid, pcliente, ppeso, paltura, pimc, pclasificacionimc,
                             pporcentajeGrasaCorporal, pporcentajeMasaMuscular, ppesoGraso, pperBicepsIzquierdo,
                             pperBicepsDerecho, pperBicepsIzqContraido, pperBicepsDerContraido, pperPantorrillaIzquierda,
                             pperPantorrillaDerecha, pperMusloIzquierdo, pperMusloDerecho, pperCintura, pperAbdomen,

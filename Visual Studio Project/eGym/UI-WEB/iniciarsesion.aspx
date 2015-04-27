@@ -15,10 +15,10 @@
     <!-- BEGIN STYLESHEETS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css' />
     <link type="text/css" rel="stylesheet" href="css/theme-default/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="css/theme-default/materialadmin.css"/>
-    <link type="text/css" rel="stylesheet" href="css/theme-default/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/theme-default/materialadmin.css" />
+    <link type="text/css" rel="stylesheet" href="css/theme-default/font-awesome.min.css" />
     <!--Font Awesome Icon Font-->
-    <link type="text/css" rel="stylesheet" href="css/theme-default/material-design-iconic-font.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/theme-default/material-design-iconic-font.min.css" />
     <!-- END STYLESHEETS -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,13 +43,13 @@
                         <span class="text-lg text-bold text-primary">EGYM - NOMBRE GIMNASIO</span>
                         <br />
                         <br />
-                        <div class="form floating-label">
+                        <form id="formLogin" class="form floating-label form-validate" runat="server">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="txtCorreo">
-                                <label>Nombre de usuario</label>
+                                <input type="email" class="form-control" id="txtCorreo" required>
+                                <label>Correo electrónico</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="txtContrasena">
+                                <input type="password" class="form-control" id="txtContrasena" required>
                                 <label>Contraseña</label>
                                 <p class="help-block">
                                     <a href="#">Olvidó su contraseña?</a>
@@ -58,22 +58,21 @@
                             <br />
                             <div class="row">
                                 <div class="col-xs-6 text-left">
-                                    <div class="checkbox checkbox-inline checkbox-styled">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span>Recordarme</span>
-                                        </label>
-                                    </div>
                                 </div>
                                 <!--end .col -->
                                 <div class="col-xs-6 text-right">
-                                    <button class="btn btn-primary btn-raised" id="bntIniciarSesion">Iniciar Sesión</button>
+                                    <a class="btn btn-primary btn-raised" id="bntIniciarSesion">Iniciar Sesión</a>
                                 </div>
                                 <!--end .col -->
                             </div>
                             <!--end .row -->
-
-                        </div>
+                            
+                            <asp:ScriptManager runat="server" EnablePageMethods="True">
+                                <Services>
+                                    <asp:ServiceReference Path="http://localhost/egymServices/ServicioSesion.svc" />
+                                </Services>
+                            </asp:ScriptManager>
+                        </form>
                     </div>
                     <!--end .col -->
                     <div class="col-sm-5 col-sm-offset-1 text-center">
@@ -91,20 +90,12 @@
             </div>
             <!--end .card-body -->
         </div>
-        <!--end .card -->
-        <form runat="server">
-            <asp:ScriptManager runat="server">
-                <Services>
-                    <asp:ServiceReference Path="http://localhost:60166/ServicioSesion.svc" />
-                </Services>
-            </asp:ScriptManager>
-        </form>
     </section>
 
     <!-- END LOGIN SECTION -->
 
     <!-- BEGIN JAVASCRIPT -->
-    <script src="<%= Page.ResolveUrl("~/js/libs/jquery/jquery-1.11.2.min.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/jquery/jquery-1.11.2.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery/jquery-migrate-1.2.1.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap/bootstrap.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/spin.js/spin.min.js")%>"></script>
@@ -120,8 +111,62 @@
     <script src="<%= Page.ResolveUrl("~/js/core/demo/Demo.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/core/demo/DemoLayouts.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/localScripts/inicioSesion.js")%>"></script>
-    <!-- END JAVASCRIPT -->
+    <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/jquery.validate.js")%>"></script>
+    <script>
+        $('#bntIniciarSesion').click(function () {
+            $("#formLogin").validate();
+            if ($("#formLogin").valid()) {
+                var contrasena = $('#txtContrasena').val();
+                var correo = $('#txtCorreo').val();
 
+                var datos = JSON.stringify({ pcontrasena: contrasena, pcorreo: correo });
+                //var datos = '{"pcontrasena":"sebas","pcorreo":"sebaslamu@gmail.com"}';
+                alert(datos);
+                var serviceLogin = new ServicioEnClases.ServicioSesion();
+                serviceLogin.iniciarSesion(datos, onSuccess, errorMessage);
+            } else {
+                $('#txtContrasena').focus();
+                $('#txtContrasena').blur();
+                $('#txtCorreo').focus();
+            };
+
+        });
+
+        function onSuccess(result) {
+            console.log(result);
+            alert("onSuccess");
+            var object = $.parseJSON(result);
+            if (result) {
+                console.log(object.Id);
+                $.ajax({
+                    type: "POST",
+                    url: "Session.aspx/SetUserId",
+                    data: '{ userId: "' + object.Id + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onSuccessLogin
+                });
+            } else {
+                alert("Usuario invalido");
+            }
+        }
+
+        function errorMessage(result) {
+            alert("errorMessage");
+            console.log(result);
+        }
+
+        function validateEmail(email) {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            return re.test(email);
+        }
+
+        function onSuccessLogin(result) {
+            location.reload();
+            location.reload();
+        }
+    </script>
+    <!-- END JAVASCRIPT -->
 </body>
 
 </html>
