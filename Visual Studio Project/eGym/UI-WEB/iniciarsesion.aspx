@@ -69,7 +69,7 @@
                             
                             <asp:ScriptManager runat="server" EnablePageMethods="True">
                                 <Services>
-                                    <asp:ServiceReference Path="http://localhost/egymServices/ServicioSesion.svc" />
+                                    <asp:ServiceReference Path="http://localhost:60166/egymServices/ServicioSesion.svc" />
                                 </Services>
                             </asp:ScriptManager>
                         </form>

@@ -88,7 +88,6 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-<<<<<<< HEAD
  <div class="expanded">
                 <a href="http://www.codecovers.eu/materialadmin/dashboards/dashboard">
                     <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
@@ -200,6 +199,15 @@
                             </a>
                         </li>
                         <!-- END FORMULAS -->
+                                                <!-- BEGIN FORMULAS -->
+                        <li id="Li1" class="hidden">
+                            <a href="<%= Page.ResolveUrl("~/PruebasResistencia/index.aspx")%>">
+                                <div class="gui-icon"><i class="fa fa-cog"></i>
+                                </div>
+                                <span class="title">Pruebas de Resistencia</span>
+                            </a>
+                        </li>
+                        <!-- END FORMULAS -->
                     </ul>
                     <!--end .main-menu -->
                     <!-- FINAL MENU PRINCIPAL -->
@@ -216,7 +224,6 @@
         </div>
         <!--end .menubar-scroll-panel-->
     </div>
-<<<<<<< HEAD
 </div>
 <!-- BEGIN JAVASCRIPT -->
 <script src="<%= Page.ResolveUrl("~/js/libs/jquery/jquery-1.11.2.min.js")%>"></script>
@@ -245,7 +252,7 @@
     function setUsuarioSesion(datos) {
         $.ajax({
             type: "GET",
-            url: '<%= Page.ResolveUrl("http://localhost/egymServices/ServicioUsuario.svc/ObtenerUsuario")%>',
+            url: '<%= Page.ResolveUrl("http://localhost:60166/ServicioUsuario.svc")%>',
             data: JSON.parse(datos),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -265,7 +272,7 @@
         var datos = '{"pid": "' + id + '"}';
         $.ajax({
             type: "GET",
-            url: '<%= Page.ResolveUrl("http://localhost/egymServices/ServicioRol.svc/obtenerRolPorId")%>',
+            url: '<%= Page.ResolveUrl("http://localhost:60166/ServicioRol.svc/obtenerRolPorId")%>',
             data: JSON.parse(datos),
             contentType: "application/json; charset=utf-8",
             dataType: "json",

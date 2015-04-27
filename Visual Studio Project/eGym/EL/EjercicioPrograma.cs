@@ -13,7 +13,7 @@ namespace EL
         private float _peso;
         private int _semana;
         private Ejercicio _ejercicio;
-        private int _tipoMedida;
+        private TipoMedida _tipoMedida;
 
         public int Id
         {
@@ -57,7 +57,7 @@ namespace EL
         }
         
 
-        public int TipoMedida
+        public TipoMedida TipoMedida
         {
             get { return _tipoMedida; }
             set { _tipoMedida = value; }
