@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.indexTipoDePago" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="misPagos.aspx.vb" Inherits="UI_WEB.misPagos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/select2/select2.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/multi-select/multi-select.css")%>' />
@@ -14,21 +14,17 @@
         <!-- BEGIN INTRO -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="text-primary">Tipo de pago</h1>
+                <h1 class="text-primary">Mis pagos</h1>
             </div>
             <!--end .col -->
             <div class="col-lg-8">
                 <article class="margin-bottom-xxl">
                     <p class="lead">
-                        Lista de tipos de pago existentes
+                        Lista de pagos realizados
                     </p>
                 </article>
             </div>
-            <div class="col-md-4">
-                <a class="btn btn-raised btn-primary ink-reaction pull-right" href="../TipoDePago/index.aspx">Eliminar</a>        
-                <a class="btn btn-raised btn-primary ink-reaction pull-right" href="../TipoDePago/modificar.aspx">Modificar</a>
-                <a class="btn btn-raised btn-primary ink-reaction pull-right" href="../TipoDePago/registar.aspx">Agregar</a>      
-                </div>
+            
             <!--end .col -->
         </div>
         <!--end .row -->
@@ -41,9 +37,10 @@
                         <table id="tblTiposPago" class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Tipo de pago</th>
+                                    <th>Numero de factura</th>
                                     <th>Monto</th>
-                                    <th>Duración(Dias)</th>
+                                    <th>Tipo de pago</th>
+                                    <th>Fecha</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -77,7 +74,7 @@
     <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>
     <script>
         $(document).ready(function () {
-            getAllTipoDePago();
+            getMisPagos();
         });
     </script>
 </asp:Content>

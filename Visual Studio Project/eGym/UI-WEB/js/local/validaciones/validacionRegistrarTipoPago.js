@@ -20,7 +20,7 @@ $("#btnRegistarTipoDePago").click(function () {
     auxDuracion = validarInput(duracion, 'INT');
 
     if (auxNombre && auxMonto && auxDuracion) {
-        alert("todo bien!");
+        ingresarTipoDePago();
     }
 });
 

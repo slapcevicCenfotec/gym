@@ -45,7 +45,17 @@ namespace EL
             Contactos = new List<Contacto>();
             Horarios = new List<Horario>();
         }
-
+        public Usuario(string pNombre,string pSegundoNombre,string pApellido,string pSegundoApellido, string pCorreo, string pCel)
+        {
+            Contactos = new List<Contacto>();
+            Horarios = new List<Horario>();
+            this._nombre = pNombre;
+            this._segundoNombre = pSegundoNombre;
+            this._apellido = pApellido;
+            this._segundoApellido = pSegundoApellido;
+            this._correoElectronico = pCorreo;
+            this._numeroCelular = pCel;
+        }
 
         public int IdTipoIdentificacion
         {

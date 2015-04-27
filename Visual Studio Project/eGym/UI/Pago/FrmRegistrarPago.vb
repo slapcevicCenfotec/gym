@@ -158,9 +158,7 @@ Public Class FrmRegistrarPago
         End Try
     End Sub
 
-    Private Function validarAgregarTipoDePago() As Boolean
-
-    End Function
+   
 
     Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
 
