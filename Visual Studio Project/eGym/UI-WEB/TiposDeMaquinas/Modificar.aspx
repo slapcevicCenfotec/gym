@@ -32,11 +32,11 @@
 			<div class="card">
 				<div class="card-body">
 					<form class="form form-validate" role="form" id="modificarTipoMaquinaForm">
-						<div class="form-group floating-label">
+						<div class="form-group horizontal">
                             <input type="text" class="form-control" id="txtNombreTipoDeMaquina" required/>
 							<label for="txtNombreTipoDeMaquina">Nombre del tipo de máquina</label>
 						</div>
-						<div class="form-group floating-label">
+						<div class="form-group horizontal">
 							<textarea class="form-control control-4-rows" id="txtDescripcion" rows="1" required></textarea>
 							<label for="txtDescripcion">Descripción</label>
 						</div>

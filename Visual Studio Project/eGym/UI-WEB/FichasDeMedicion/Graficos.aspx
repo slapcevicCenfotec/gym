@@ -33,13 +33,13 @@
                 <div class="card tabs-left style-default-light">
                     <ul class="card-head nav nav-tabs text-center" data-toggle="tabs">
                         <li class="col-sm-12">
-                            <div class="form-group floating-label">
+                            <div class="form-group horizontal">
                                 <select id="cmbDesde" name="cmbDesde" class="form-control" required>
                                     <option value="">&nbsp;</option>
                                 </select>
                                 <label for="cmbDesde">Desde</label>
                             </div>
-                            <div class="form-group floating-label">
+                            <div class="form-group horizontal">
                                 <select id="cmbHasta" name="cmbHasta" class="form-control text-sm" required>
                                     <option value="">&nbsp;</option>
                                 </select>
