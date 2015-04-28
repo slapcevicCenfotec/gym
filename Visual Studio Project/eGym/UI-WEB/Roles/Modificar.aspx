@@ -41,8 +41,8 @@
     <form id="Form2" runat="server">
         <asp:ScriptManager ID="ScriptManager2" runat="server" >
                     <Services>
-                        <asp:ServiceReference Path="http://localhost/egymServices/ServicioRol.svc" />
-                        <asp:ServiceReference Path="http://localhost/egymServices/ServicioPermisos.svc" />
+                        <asp:ServiceReference Path="http://localhost:60166/ServicioRol.svc" />
+                        <asp:ServiceReference Path="http://localhost:60166/ServicioPermisos.svc" />
                     </Services>
         </asp:ScriptManager>
     </form>
