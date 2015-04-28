@@ -29,6 +29,7 @@
                         <table id="tblUsuarios" class="table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th style="display:none">Id</th>
                                     <th>Identificacion</th>
                                     <th>Nombre</th>
                                     <th>Alias</th>
@@ -46,7 +47,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost:60166/ServicioUsuario.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
