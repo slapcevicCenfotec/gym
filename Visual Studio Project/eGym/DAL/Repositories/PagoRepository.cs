@@ -84,7 +84,7 @@ namespace DAL.Repositories
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     Pago auxPago = new Pago();
-                    
+
                     auxPago.Id = Convert.ToInt32(dr["ID"]);
                     auxPago.Factura = dr["Factura"].ToString();
                     auxPago.Monto = float.Parse(Convert.ToString(dr["Monto"]));
@@ -102,7 +102,7 @@ namespace DAL.Repositories
 
         public Pago GetById(int id)
         {
-  
+
             return new Pago();
         }
 
@@ -124,7 +124,6 @@ namespace DAL.Repositories
                             InsertPago(objPago);
                         }
                     }
-
                     if (_updateItems.Count > 0)
                     {
                         foreach (Pago p in _updateItems)
@@ -213,7 +212,7 @@ namespace DAL.Repositories
             }
             catch (Exception ex)
             {
-                
+
             }
         }
 
@@ -231,5 +230,32 @@ namespace DAL.Repositories
             }
         }
 
+
+        public IEnumerable<Pago> GetAllPorUsuario(Pago objPago)
+        {
+            List<Pago> listaPagos = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@pUserId", objPago.Id));
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ListarMisPagos");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaPagos = new List<Pago>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Pago auxPago = new Pago();
+                    auxPago.Id = Convert.ToInt32(dr["ID"]);
+                    auxPago.Factura = dr["Factura"].ToString();
+                    auxPago.Monto = float.Parse(Convert.ToString(dr["Monto"]));
+                    auxPago.Tipo = Convert.ToInt32(dr["TIPO"]);
+                    auxPago.Desde = Convert.ToDateTime(dr["DESDE"]);
+                    auxPago.Hasta = Convert.ToDateTime(dr["HASTA"]);
+                    auxPago.Fecha = Convert.ToDateTime(dr["FECHA"]);
+                    auxPago.User = Convert.ToInt32(dr["USUARIO"]);
+                    auxPago.Habilitado = Convert.ToBoolean(dr["HABILITADO"]);
+                    listaPagos.Add(auxPago);
+                }
+            }
+            return listaPagos;
+        }
     }
 }

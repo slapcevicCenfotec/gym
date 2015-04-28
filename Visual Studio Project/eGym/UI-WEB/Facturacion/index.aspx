@@ -42,10 +42,6 @@
             <!-- BEGIN LAYOUT RIGHT SIDEBAR -->
             <div class="col-md-12">
                 <div class="card tabs-left style-default-light">
-
-
-
-                    
                     <div class="table-responsive">
                         <table id="tblUsuarios" class="table table-striped table-hover">
                             <thead>
@@ -60,10 +56,6 @@
                             </tbody>
                         </table>
                     </div>
-
-
-                    
-                 
                 </div>
             </div>
         </div>

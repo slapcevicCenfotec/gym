@@ -29,6 +29,7 @@
                         <table id="tblUsuarios" class="table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th style="display:none">Id</th>
                                     <th>Identificacion</th>
                                     <th>Nombre</th>
                                     <th>Alias</th>

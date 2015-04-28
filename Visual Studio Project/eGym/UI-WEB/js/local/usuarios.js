@@ -39,9 +39,12 @@ function error(result) {
 
 function onSuccess2(result) {
     var object = $.parseJSON(result);
+    console.log(object);
+    alert("hola");
     var tbody = "";
     $.each(object, function (i, item) {
         tbody += '<tr>';
+        tbody += '<td style="display:none"' + object[i].Id + '</td>';
         tbody += '<td>' + object[i].Identificacion + '</td>';
         tbody += '<td>' + object[i].Nombre + ' ' + object[i].Apellido + '</td>';
         tbody += '<td>' + object[i].Alias + '</td>';
@@ -273,11 +276,6 @@ respuesta = servicio.InsertarHorario(datos, null, errorMessage, null, null);
     }
 }
 
-function onSuccess(result) {
-
-    alert("");
-}
-
 function errorMessage(resul) {
     alert(resul.get_message());
 }
@@ -295,6 +293,39 @@ function onSuccesRoles(result) {
         option.val(objeto[i].Id);
         $('#txtRol').append(option);
     });
+}
+
+function getClientes() {
+    var datos = JSON.stringify({ pRol: 19 });
+    servicio = new ServicioEnClases.ServicioUsuario();
+    servicio.getUsuarioPorRol(datos, onSuccesGetClientes, null, null, null);
+}
+
+
+function onSuccesGetClientes(result) {
+    var objeto = $.parseJSON(result);
+    var tbody = "";
+
+    $.each(objeto, function (i, item) {
+        tbody += "<div class='col-xs-12 col-lg-6 hbox-xs'>";
+        tbody += "<div class='hbox-column width-2'>"
+        tbody += "<img class='img-circle img-responsive pull-left' src='' alt=''>"
+        tbody += "</div>"
+                                        
+        tbody += "<div class='hbox-column v-top'>"
+        tbody += "<div class='clearfix'>"
+        tbody += "<div class='col-lg-12 margin-bottom-lg'>"
+        tbody += "<a class='text-lg text-medium' href=''>Ann Laurens</a>"
+        tbody += "</div></div><div class='clearfix opacity-75'>"
+        tbody += "<div class='col-md-5'>"
+        tbody += "<span class='glyphicon glyphicon-phone text-sm'></span> &nbsp;567-890-1234"
+        tbody += "</div><div class='col-md-7'>"
+        tbody += "<span class='glyphicon glyphicon-envelope text-sm'></span> &nbsp;ann@laurens.com"
+        tbody += "</div></div><div class='clearfix'><div class='col-lg-12'>"
+        tbody += "<span class='opacity-75'><span class='glyphicon glyphicon-map-marker text-sm'></span> &nbsp;795 Folsom Ave, San Francisco, CA 94107</span>"
+        tbody += "</div></div></div></div>";
+    });
+    $('#list-results').append(tbody);
 }
 
 //OCULTAR HORARIOS
@@ -317,7 +348,7 @@ $('#txtRol').change(function () {
 //AGREGAR USUARIO
 
 $('#btnAgregar').click(function () {
-    window.location = 'agregar.aspx';
+    window.location = 'ir.aspx';
 })
 
 //MODIFICAR USUARIO
@@ -330,3 +361,4 @@ $('#btnModificar').click(function () {
     var idUsuario = rowData[0][0];
     window.location = "modificar.aspx?id=" + idUsuario;
 })
+

@@ -65,6 +65,11 @@ namespace EL
            
         }
 
+        public Rol(int rolId)
+        {
+            this.Id = rolId;
+        }
+
         #endregion Constructores
 
         public bool IsValid

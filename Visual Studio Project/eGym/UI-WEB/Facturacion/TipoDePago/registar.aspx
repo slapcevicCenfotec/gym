@@ -32,9 +32,7 @@
         </div>
         <!--end .row -->
         <!-- END INTRO -->
-
         <div class="row">
-
             <!-- BEGIN LAYOUT RIGHT SIDEBAR -->
             <div class="col-md-12">
                 <div class="card tabs-left style-default-light">
@@ -55,21 +53,18 @@
                         <div class="card-actionbar">
                                 <div data-toggle="tabs" class="card-actionbar-row">
                                     <a class="btn btn-flat btn-primary ink-reaction" href="index.aspx">Volver</a>
-                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="ingresarTipoDePago()" type="button">Registrar</button>
+                                    <button class="btn btn-flat btn-primary ink-reaction" id="btnRegistarTipoDePago" type="button">Registrar</button>
                                 </div>
                             </div>
 							</form>
                         </div>
-
-                    
-                 
-                
-            </div>
+                </div>
         </div>
     </div>
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
+
                 <asp:ServiceReference Path="http://localhost/egymServices/ServicioTipoPago.svc" />
             </Services>
         </asp:ScriptManager>
@@ -87,7 +82,9 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-datepicker/bootstrap-datepicker.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
+    <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script> 
+    <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>  
     <script src="<%= Page.ResolveUrl("~/js/local/validaciones/validacionRegistrarTipoPago.js")%>"></script>
+    
     
 </asp:Content>

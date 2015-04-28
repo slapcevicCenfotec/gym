@@ -67,17 +67,49 @@ function eliminarMusculo() {
 }
 
 function ingresarMusculo() {
-   var usuario = '116',
-        tipo = '1',
-      titulo = 'Titulo',
-      descripcion = 'Desp',
-      fechaInicio = '2015-04-29T10:00:00',
-      fechaFinal = '2015-04-29T10:30:00'
 
-    var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
-    var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
+    var nombre ='ppp',
+        alias = 'ppp',
+        descripcion = 'ppp',
+        erroresComunes = 'ppp',
+        posInicial = 'ppp',
+        posFinal = 'ppp',
+        musculoPrincipal = '1',
+        musculosSecundarios = '1,2';
 
-servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+        var foto = '';
+        var foto2 = '';
+
+
+    service4 = new ServicioEjercicio();
+
+    var datos = JSON.stringify({ pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal, pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto, pimagen2: foto2
+});
+        service4.insertarEjercicio(datos, onSuccesIngresar, errorMessage, null, null);
+
+
+
+
+   // var contrasena = 'danny';
+   // var correo = 'dannye629@gmail.com';
+   // var serviceLogin = new ServicioLogin.ServicioSesion();
+   // datos = JSON.stringify({ pcontrasena: contrasena, pcorreo: correo });
+   //serviceLogin.iniciarSesion(datos, onSuccess, errorMessage, null, null);
+
+
+//       var id = '30'
+//       usuario = '116',
+//       tipo = '1',
+//       titulo = 'Titulo',
+//       descripcion = 'Desp',
+//       fechaInicio = '2015-04-29T10:00:00',
+//       fechaFinal = '2015-04-29T10:30:00'
+
+//    var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+//    var datos = JSON.stringify({ ID: id, USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal
+//    });
+
+//servicio2.modificarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
 
 
     //var nombre ="",
@@ -92,7 +124,38 @@ servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null)
     //var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
     //service4.insertarMusculo(datos, onSuccesIngresar, errorMessage, null, null);
 
+    }
+
+    function onSuccesIngresar(result) {
+    alert("congratulations");
 }
+function errorMessage(result) {
+    alert(result.get_message());
+}
+
+
+function onSuccess(result) {
+    alert("Yupiii")
+    //var object = $.parseJSON(result);
+    //if (result !== 'null') {
+    //    console.log(object.Id);
+    //    $.ajax({
+    //type: "POST",
+    //    url: "Session.aspx/SetUserId",
+    //        data: '{ userId: "' + object.Id + '"}',
+    //    contentType: "application/json; charset=utf-8",
+    //    dataType: "json",
+    //    success: onSuccessLogin
+    //    });
+    //    } else {
+    //alert("Usuario invalido");
+    //}
+    }
+
+function errorMessage(resul) {
+        alert(resul.get_message());
+    }
+
 
     function onsucessInsertar(result) {
                             alert("Yupiiii");
