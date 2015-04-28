@@ -8,6 +8,14 @@
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/bootstrap-tagsinput/bootstrap-tagsinput.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/typeahead/typeahead.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/dropzone/dropzone-theme.css")%>' />
+
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%>' />
+    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990")%>' />
+    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990")%>' />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="section-body contain-lg">
@@ -41,6 +49,7 @@
                         <table id="tblTiposPago" class="table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th style="display:none">Id</th>
                                     <th>Tipo de pago</th>
                                     <th>Monto</th>
                                     <th>Duración(Dias)</th>
@@ -57,7 +66,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egym/ServicioTipoPago.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioTipoPago.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
@@ -75,9 +84,14 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
     <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>
+
+    <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/jquery.dataTables.min.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js")%>"></script>
     <script>
         $(document).ready(function () {
             getAllTipoDePago();
         });
+
     </script>
 </asp:Content>

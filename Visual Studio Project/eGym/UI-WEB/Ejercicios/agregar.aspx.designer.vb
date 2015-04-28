@@ -12,4 +12,13 @@ Option Explicit On
 
 
 Partial Public Class InsertarEjercicio
+
+    '''<summary>
+    '''frmInsertarEjercicio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents frmInsertarEjercicio As Global.System.Web.UI.HtmlControls.HtmlForm
 End Class

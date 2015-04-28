@@ -298,7 +298,6 @@ function getClientes() {
     var datos = JSON.stringify({ pRol: 19 });
     servicio = new ServicioEnClases.ServicioUsuario();
     servicio.getUsuarioPorRol(datos, onSuccesGetClientes, null, null, null);
-
 }
 
 

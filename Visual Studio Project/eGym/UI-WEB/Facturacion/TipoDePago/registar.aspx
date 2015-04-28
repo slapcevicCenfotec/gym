@@ -32,9 +32,7 @@
         </div>
         <!--end .row -->
         <!-- END INTRO -->
-
         <div class="row">
-
             <!-- BEGIN LAYOUT RIGHT SIDEBAR -->
             <div class="col-md-12">
                 <div class="card tabs-left style-default-light">
@@ -55,7 +53,7 @@
                         <div class="card-actionbar">
                                 <div data-toggle="tabs" class="card-actionbar-row">
                                     <a class="btn btn-flat btn-primary ink-reaction" href="index.aspx">Volver</a>
-                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="ingresarTipoDePago()" type="button">Registrar</button>
+                                    <button class="btn btn-flat btn-primary ink-reaction" id="btnRegistarTipoDePago" type="button">Registrar</button>
                                 </div>
                             </div>
 							</form>
@@ -66,11 +64,8 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-<<<<<<< HEAD
-                <asp:ServiceReference Path="http://localhost/egym/ServicioTipoPago.svc" />
-=======
+
                 <asp:ServiceReference Path="http://localhost/egymServices/ServicioTipoPago.svc" />
->>>>>>> 5569dec67fb85cbd0cac41703c48312b2a71e709
             </Services>
         </asp:ScriptManager>
     </form>

@@ -48,7 +48,7 @@ namespace ServicioEnClases
 
             objEvento.insertarEvento(usuario,tipo,titulo,descripcion,fechaInicial,fechaFinal);
         }
-        [WebGet()]
+        [WebMethod]
         [OperationContract]
         public void modificarEventoCalendario(string datosSerializados)
         {
@@ -60,8 +60,12 @@ namespace ServicioEnClases
             int tipo = int.Parse(dictionary["TIPO"]);
             String titulo = dictionary["TITULO"];
             String descripcion = dictionary["DESCRIPCION"];
-            DateTime fechaInicial = Convert.ToDateTime(dictionary["FECHA_INICIAL"]);
-            DateTime fechaFinal = Convert.ToDateTime(dictionary["FECHA_FINAL"]);
+            DateTime fechaInicial = DateTime.ParseExact(dictionary["FECHA_INICIAL"], "yyyy-MM-dd'T'hh:mm:ss", CultureInfo.InvariantCulture,
+                                       DateTimeStyles.AssumeUniversal |
+                                       DateTimeStyles.AdjustToUniversal);
+            DateTime fechaFinal = DateTime.ParseExact(dictionary["FECHA_FINAL"], "yyyy-MM-dd'T'hh:mm:ss", CultureInfo.InvariantCulture,
+                                       DateTimeStyles.AssumeUniversal |
+                                       DateTimeStyles.AdjustToUniversal);
 
             objEvento.modificarEvento(id,usuario, tipo, titulo, descripcion, fechaInicial, fechaFinal);
         }
