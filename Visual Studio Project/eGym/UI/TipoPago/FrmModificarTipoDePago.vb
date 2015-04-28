@@ -15,7 +15,7 @@ Public Class FrmModificarTipoDePago
     End Sub
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs)
         If validarModificarTipoDePago() = True Then
-            objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
+            objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text)
         End If
     End Sub
     Private Sub MetroLabel4_Click(sender As Object, e As EventArgs)
@@ -56,7 +56,7 @@ Public Class FrmModificarTipoDePago
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
             If validarModificarTipoDePago() = True Then
-                objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text, 1)
+                objGestorTipoPago.modificarTipoDePago(actual.Id, txtNombre.Text, txtMonto.Text, txtDuracion.Text)
                 Dim ctr As Control
                 ctr = New FrmListarTipoDePago
                 ctr.Dock = DockStyle.Fill

@@ -26,6 +26,8 @@ namespace ServicioEnClases
             listaPagos = objGestorPago.listarPagos();
             return new JavaScriptSerializer().Serialize(listaPagos);
         }
+        [WebGet()]
+        [OperationContract]
         public string getPagoPorUsuario(string datosSerializados)
         {
             var jss = new JavaScriptSerializer();

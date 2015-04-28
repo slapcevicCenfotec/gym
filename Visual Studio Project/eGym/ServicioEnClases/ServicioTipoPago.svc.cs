@@ -11,7 +11,6 @@ using BLL;
 using System.Web.Script.Serialization;
 using System.Web.Services;
 
-
 namespace ServicioEnClases
 {
     [ServiceContract(Namespace = "ServicioEnClases")]
@@ -82,6 +81,30 @@ namespace ServicioEnClases
             var id = Convert.ToInt32(dictionary["pId"]);
 
             objGestorTipoPago.eliminarTipoDePago(id);
+        }
+
+        [WebGet()]
+        [OperationContract]
+        public string getAllPago()
+        {
+            GestorPago objGestorPago = new GestorPago();
+            List<Pago> listaPagos = new List<Pago>();
+            listaPagos = objGestorPago.listarPagos();
+            return new JavaScriptSerializer().Serialize(listaPagos);
+        }
+
+        [WebGet()]
+        [OperationContract]
+        public string getPagoPorUsuario(string datosSerializados)
+        {
+            GestorPago objGestorPago = new GestorPago();
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+            int idUsuario = int.Parse(dictionary["pId"]);
+
+            List<Pago> listaPagos = new List<Pago>();
+            listaPagos = objGestorPago.listarPagosPorUsuario(idUsuario);
+            return new JavaScriptSerializer().Serialize(listaPagos);
         }
     }
 }

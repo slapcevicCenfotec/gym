@@ -31,11 +31,24 @@
 
 function getAllTipoDePago() {
     var servicio = new ServicioEnClases.ServicioTipoPago();
-    servicio.getAllTipoDePago(onSuccessGetAllTP, null, null);
+    servicio.getAllTipoDePago(onSuccessGetAllTP, onFail, null, null);
 }
-function getMisPagos() {
-    var servicio = new ServicioEnClases.ServicioPago();
-    servicio.getPagoPorUsuario(onSuccessGetAllTP, null, null);
+function getAllPagos() {
+    var servicio = new ServicioEnClases.ServicioTipoPago();
+    servicio.getAllPago(onSuccessGetAllPagos, onFail, null, null);
+
+
+
+    //var servicio = new ServicioEnClases.ServicioPago();
+   // servicio.getAllPago(onSuccessGetAllPagos, onFail, null, null);
+}
+
+function getMisPagos(item) {
+    var servicio = new ServicioEnClases.ServicioTipoPago();
+
+    var datos = JSON.stringify({ pId: item });
+    servicio.getPagoPorUsuario(datos, onSuccessMisPagos, onFail, null, null);
+
 }
 function onSuccesIngresar(result) {
     ///alert('Se registró correctamente el tipoDePago');
@@ -57,6 +70,41 @@ function onSuccessGetAllTP(result) {
         tbody += '<td>' + objeto[i].Nombre+ '</td>';
         tbody += '<td>' + objeto[i].Monto + '</td>';
         tbody += '<td>' + objeto[i].Duracion + '</td>';
+        tbody += '</tr>';
+    });
+    $('#tblTiposPago tbody').append(tbody);
+    load();
+}
+function onSuccessGetAllPagos(result) {
+    var objeto = $.parseJSON(result);
+    var tbody = "";
+
+    $.each(objeto, function (i, item) {
+        tbody += '<tr>';
+
+        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td>' + objeto[i].Factura + '</td>';
+        tbody += '<td>' + objeto[i].Monto + '</td>';
+        tbody += '<td>' + objeto[i].Tipo + '</td>';
+        tbody += '<td>' + objeto[i].Fecha + '</td>';
+        tbody += '<td>' + objeto[i].Nombre + '</td>';
+        tbody += '</tr>';
+    });
+    $('#tblTiposPago tbody').append(tbody);
+    load();
+}
+function onSuccessMisPagos(result) {
+    var objeto = $.parseJSON(result);
+    var tbody = "";
+
+    $.each(objeto, function (i, item) {
+        tbody += '<tr>';
+
+        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td>' + objeto[i].Factura + '</td>';
+        tbody += '<td>' + objeto[i].Monto + '</td>';
+        tbody += '<td>' + objeto[i].Tipo + '</td>';
+        tbody += '<td>' + objeto[i].Fecha + '</td>';
         tbody += '</tr>';
     });
     $('#tblTiposPago tbody').append(tbody);
@@ -109,4 +157,10 @@ $("#indexEliminar").click(function () {
 });
 $("#indexAgregar").click(function () {
     location.href = "registar.aspx";
+});
+$("#indexPago").click(function () {
+    location.href = "registar.aspx";
+});
+$("#indexTipoDePago").click(function () {
+    location.href = "TipoDePago/index.aspx";
 });
