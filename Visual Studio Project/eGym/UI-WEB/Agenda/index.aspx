@@ -59,6 +59,11 @@
                             <div class="nano-content" tabindex="0" style="right: -17px;">
                                 <div class="offcanvas-body">
                                     <form role="form" class="form">
+                                        <div class="form-group">
+									        <select class="form-control" name="select1" id="select1">
+									        </select>
+									        <label for="select1">Usuario</label>
+								        </div>
                                         <div class="form-group floating-label">
                                             <input type="text" id="txtTitulo" class="form-control">
                                             <label for="regular2">Titulo</label>
@@ -105,6 +110,11 @@
                             <div class="nano-content" tabindex="0" style="right: -17px;">
                                 <div class="offcanvas-body">
                                     <form role="form" class="form">
+                                        <div class="form-group">
+									        <select class="form-control" name="select1" id="select1">
+									        </select>
+									        <label for="select1">Usuario</label>
+								        </div>
                                         <div class="form-group floating-label">
                                             <input type="text" id="txtIdM" class="form-control">
                                             <input type="text" id="txtTituloM" class="form-control">

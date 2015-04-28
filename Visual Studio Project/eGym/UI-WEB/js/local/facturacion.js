@@ -85,7 +85,7 @@ function onSuccessGetAllPagos(result) {
         tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
         tbody += '<td>' + objeto[i].Factura + '</td>';
         tbody += '<td>' + objeto[i].Monto + '</td>';
-        tbody += '<td>' + objeto[i].Tipo + '</td>';
+        tbody += '<td>' + objeto[i].TipoNombre + '</td>';
         tbody += '<td>' + objeto[i].Fecha + '</td>';
         tbody += '<td>' + objeto[i].Nombre + '</td>';
         tbody += '</tr>';
@@ -103,7 +103,7 @@ function onSuccessMisPagos(result) {
         tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
         tbody += '<td>' + objeto[i].Factura + '</td>';
         tbody += '<td>' + objeto[i].Monto + '</td>';
-        tbody += '<td>' + objeto[i].Tipo + '</td>';
+        tbody += '<td>' + objeto[i].TipoNombre + '</td>';
         tbody += '<td>' + objeto[i].Fecha + '</td>';
         tbody += '</tr>';
     });

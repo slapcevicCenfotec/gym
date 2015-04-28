@@ -23,6 +23,13 @@ namespace EL
         private bool _habilitado;
         private int _usuario;
         private string _nombre;
+        private string _tipoNombre;
+
+        public string TipoNombre
+        {
+            get { return _tipoNombre; }
+            set { _tipoNombre = value; }
+        }
 
         public string Nombre
         {
