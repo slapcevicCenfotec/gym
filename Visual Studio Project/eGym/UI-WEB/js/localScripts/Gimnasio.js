@@ -21,10 +21,13 @@ function ModificarGimnasio() {
 
 }
 function onSuccesModificar(result) {
-    alert('Se modifico correctamente el gimnasio');
+    toastr.success('La información ha sido moficada');
+    //alert('Se modifico correctamente el gimnasio');
 }
 function errorMessage(resul) {
-    alert(resul.get_message());
+    toastr.error('La información no ha podido ser moficadad');
+
+    //alert(resul.get_message());
 }
 
 function onSuccessGimnasioPorId(result) {

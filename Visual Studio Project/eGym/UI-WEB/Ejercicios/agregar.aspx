@@ -86,6 +86,7 @@
                                             <a id="btnAgregarEjercicio"  class="btn btn-flat btn-primary">Guardar</a>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

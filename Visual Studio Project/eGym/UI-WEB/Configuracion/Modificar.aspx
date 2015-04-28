@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="true" MasterPageFile="~/shared/Site.Master" CodeBehind="Modificar.aspx.vb" Inherits="UI_WEB.Modificar4" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <link href="../css/theme-1/libs/toastr/toastr.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="style-default-bright">
@@ -63,4 +64,6 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/localScripts/Gimnasio.js")%>"></script>
+    
+        <script src="../js/libs/toastr/toastr.js"></script>
 </asp:Content>
