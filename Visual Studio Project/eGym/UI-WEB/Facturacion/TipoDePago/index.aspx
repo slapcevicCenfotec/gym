@@ -1,7 +1,5 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index9" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.indexTipoDePago" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/select2/select2.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/multi-select/multi-select.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/bootstrap-datepicker/datepicker3.css")%>' />
@@ -12,9 +10,7 @@
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/dropzone/dropzone-theme.css")%>' />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="section-body contain-lg">
-
         <!-- BEGIN INTRO -->
         <div class="row">
             <div class="col-lg-12">
@@ -37,34 +33,23 @@
         </div>
         <!--end .row -->
         <!-- END INTRO -->
-
         <div class="row">
-
             <!-- BEGIN LAYOUT RIGHT SIDEBAR -->
             <div class="col-md-12">
                 <div class="card tabs-left style-default-light">
-
-
-
-                    
                     <div class="table-responsive">
-                        <table id="tblUsuarios" class="table table-striped table-hover">
+                        <table id="tblTiposPago" class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Factura</th>
+                                    <th>Tipo de pago</th>
                                     <th>Monto</th>
-                                    <th>Tipo</th>
-                                    <th>Fecha</th>
+                                    <th>Duración(Dias)</th>
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
                     </div>
-
-
-                    
-                 
                 </div>
             </div>
         </div>
@@ -72,7 +57,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egymServices/ServicioTipoPago.svc" />
+                <asp:ServiceReference Path="http://localhost/egym/ServicioTipoPago.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
@@ -89,11 +74,10 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
-    <script src="<%= Page.ResolveUrl("~/js/local/usuarios.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>
     <script>
-        $('#demo-date').datepicker({ autoclose: true, todayHighlight: true });
-        $('txtTipoIdentificacion').select2();
-        $('txtGenero').select2();
-        $('txtRol').select2();
+        $(document).ready(function () {
+            getAllTipoDePago();
+        });
     </script>
 </asp:Content>

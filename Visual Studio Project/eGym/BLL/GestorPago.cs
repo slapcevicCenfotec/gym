@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using EL;
+using DAL.Repositories;
 
 namespace BLL
 {
@@ -25,6 +26,11 @@ namespace BLL
         public List<Pago> listarPagos()
         {
             return UoW.PagoRepository.GetAll().ToList<Pago>();
+        }
+        public List<Pago> listarPagosPorUsuario(int userId)
+        {
+            Pago pago = new Pago(userId);
+            return ((PagoRepository)UoW.PagoRepository).GetAllPorUsuario(pago).ToList<Pago>();
         }
         /// <summary>
         /// Autor:Alberto Arias

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class index11
+Partial Public Class index12
 
     '''<summary>
     '''Form1 control.

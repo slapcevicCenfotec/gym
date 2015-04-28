@@ -6,6 +6,12 @@ using System.Drawing;
 using System.Net;
 using System.Net.Mail;
 
+
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
 namespace BLL
 {
     public class Gestor
@@ -19,14 +25,35 @@ namespace BLL
             unitOfWork = new UnitOfWork();
         }
 
+        // MENSAJE
+
+        public IEnumerable<Mensaje> ListarMensajes()
+        {
+            return unitOfWork.RepositoryMensaje.GetAll();
+        }
+
+        public Mensaje ObtenerMensaje(int pId)
+        {
+            return unitOfWork.RepositoryMensaje.GetById(pId);
+        }
+
+        public void AgregarMensaje(int pDestinatarioId, int pRemitenteId, string texto)
+        {
+            var mensaje = new Mensaje();
+            mensaje.Destinatario.Id = pDestinatarioId;
+            mensaje.Remitente.Id = pRemitenteId;
+            mensaje.Texto = texto;
+
+            unitOfWork.RepositoryMensaje.Insert(mensaje);
+            unitOfWork.RepositoryMensaje.Save();
+        }
+
         // USUARIO
 
         public IEnumerable<Usuario> ListarUsuarios()
         {
             return unitOfWork.RepositoryUsuario.GetAll();
         }
-
-        
 
         public Usuario ObtenerUsuario(int pId)
         {
@@ -191,6 +218,8 @@ namespace BLL
             unitOfWork.RepositoryHorario.Save();
         }
 
+        // CORREO
+
         public void enviarCorreo()
         {
             var client = new SmtpClient("smtp.gmail.com", 25);
@@ -202,5 +231,12 @@ namespace BLL
             Console.ReadLine();
         }
 
+
+        // Listar usuariosXrol
+        public List<Usuario> listarUsuariosPorRol(int roleId)
+        {
+            Rol rol = new Rol(roleId);
+            return ((DAL.Repositories.UsuarioRepository)unitOfWork.RepositoryUsuario).GetUsuarioPorRol(rol).ToList<Usuario>();      
+        }        
     }
 }

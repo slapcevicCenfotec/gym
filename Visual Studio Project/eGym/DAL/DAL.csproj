@@ -56,6 +56,7 @@
     <Compile Include="Repositories\GimnasioRepository.cs" />
     <Compile Include="Repositories\IGraficos.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\MensajeRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
     <Compile Include="Repositories\PruebaResistenciaRepository.cs" />
     <Compile Include="Repositories\ProgramaRepository.cs" />

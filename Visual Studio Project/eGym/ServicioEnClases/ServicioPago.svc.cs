@@ -26,6 +26,16 @@ namespace ServicioEnClases
             listaPagos = objGestorPago.listarPagos();
             return new JavaScriptSerializer().Serialize(listaPagos);
         }
+        public string getPagoPorUsuario(string datosSerializados)
+        {
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+            int idUsuario = int.Parse(dictionary["id"]);
+
+            List<Pago> listaPagos = new List<Pago>();
+            listaPagos = objGestorPago.listarPagosPorUsuario(idUsuario);
+            return new JavaScriptSerializer().Serialize(listaPagos);
+        }
 
         [WebGet()]
         [OperationContract]

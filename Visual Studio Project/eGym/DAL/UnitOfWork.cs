@@ -32,6 +32,20 @@ namespace DAL
         private IRepository<Programa> _programaRepository;
         private IRepository<EjercicioPrograma> _ejercicioProgramaRepository;
         private IRepository<TipoAcondicionamiento> _tipoAcondicionamientoRepository;
+
+        private IRepository<Mensaje> _mensajeRepository;
+
+        public IRepository<Mensaje> RepositoryMensaje
+        {
+            get
+            {
+                if (_mensajeRepository == null)
+                {
+                    _mensajeRepository = new MensajeRepository();
+                }
+                return _mensajeRepository;
+            }
+        }
         public IRepository<Usuario> RepositoryUsuario
         {
             get
@@ -312,5 +326,6 @@ namespace DAL
         }
 
         
+
     }
 }
