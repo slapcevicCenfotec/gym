@@ -1,6 +1,7 @@
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link type="text/css" rel="stylesheet" href="assets/theme-default/libs/fullcalendar/fullcalendar.css">
     <link rel="stylesheet" href="css/modal.css">
     <link href="../css/calendar/fullcalendar.css" rel="stylesheet" />
     <%--<link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialadmin/css/theme-default/libs/fullcalendar/fullcalendar.css?1422823368">--%>
@@ -13,11 +14,35 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="col-md-12">
         <div class="card tabs-left style-default-light">
-            <div class="col-md-10 col-md-offset-1">
-                <div id="calendar" class="fc fc-ltr fc-unthemed">
-                  
-                </div>
-                <a class="btn btn-raised ink-reaction btn-default-bright" data-toggle="offcanvas" href="#offcanvas-demo-size3">Prueba</a>
+            <div class="col-md-12 col-md-offset-1">
+                <!-- BEGIN CALENDAR -->
+							<div class="col-sm-9">
+								<div class="card">
+									<div class="card-head style-primary">
+										<header>
+											<span class="selected-day">&nbsp;</span> &nbsp;<small class="selected-date">&nbsp;</small>
+										</header>
+										<div class="tools">
+											<div class="btn-group">
+												<a id="calender-prev" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-angle-left"></i></a>
+												<a id="calender-next" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-angle-right"></i></a>
+											</div>
+											<div class="btn-group pull-right">
+											</div>
+										</div>
+										<ul class="nav nav-tabs tabs-text-contrast tabs-accent" data-toggle="tabs">
+											<li data-mode="month" class="active"><a href="#">Month</a></li>
+											<li data-mode="agendaWeek"><a href="#">Week</a></li>
+											<li data-mode="agendaDay"><a href="#">Day</a></li>
+										</ul>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding">
+										<div id="calendar"></div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END CALENDAR -->
+                <%--<a class="btn btn-raised ink-reaction btn-default-bright" data-toggle="offcanvas" href="#offcanvas-demo-size3">Prueba</a>--%>
                 <div class="offcanvas">
                     <div class="offcanvas-pane width-10" id="offcanvas-demo-size3" style="">
                         <div class="offcanvas-head">
@@ -28,7 +53,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="nano has-scrollbar" style="height: 339.083px;">
                             <div class="nano-content" tabindex="0" style="right: -17px;">
                                 <div class="offcanvas-body">
@@ -125,7 +149,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
 
-
+    <script src="assets/js/libs/moment/moment.min.js"></script>
+    <script src="assets/js/libs/fullcalendar/fullcalendar.min.js"></script>
 
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery-ui/jquery-ui.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/autosize/jquery.autosize.min.js")%>"></script>
@@ -139,7 +164,6 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/local/calendar/fullcalendar.js")%>"></script>
-    
 
     <script src="../js/local/calendar/jquery.simplemodal.js"></script>
     <script src="../js/local/agenda.js"></script>
@@ -156,7 +180,44 @@
         //    alert(result);
         //    //eventos = result;
         //}
+
+        // =========================================================================
+        // CONTROLBAR
+        // =========================================================================
+
+        //p._handleCalendarPrevClick = function (e) {
+        //    $('#calendar').fullCalendar('prev');
+        //    this._displayDate();
+        //};
+        //p._handleCalendarNextClick = function (e) {
+        //    $('#calendar').fullCalendar('next');
+        //    this._displayDate();
+        //};
+        //p._handleCalendarMode = function (e) {
+        //    $('#calendar').fullCalendar('changeView', $(e.currentTarget).data('mode'));
+        //};
+
+
+
+
         $(document).ready(function () {
+
+            // =========================================================================
+            // EVENTS
+            // =========================================================================
+
+            // events
+            $('#calender-prev').on('click', function (e) {
+                $('#calendar').fullCalendar('prev');
+            });
+            $('#calender-next').on('click', function (e) {
+                $('#calendar').fullCalendar('next');
+            });
+            $('.nav-tabs li').on('show.bs.tab', function (e) {
+                $('#calendar').fullCalendar('changeView', $(e.currentTarget).data('mode'));
+            });
+
+
             var eventos = [];
             var servicio1 = new ServicioEnClases.ServicioEventoCalendario();
             servicio1.getAllEventoCalendario(onsucess, onFail, null);
@@ -175,32 +236,37 @@
                 });
 
                 $('#calendar').fullCalendar({
-                    height: 650,
-                    contentHeight: 465,
-                    aspectRatio: 3,
-                    theme: true,
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
+                    height: 700,
+                    header: false,
+                    editable: true,
+                    contentHeight: 520,
+                    //height: 700,
+                    //header: false,
+                    //contentHeight: 465,
+                    //aspectRatio: 3,
+                    //theme: true,
+                    ////header: {
+                    ////    left: 'prev,next today',
+                    ////    center: 'title',
+                    ////    right: 'month,agendaWeek,agendaDay'
+                    ////},
                     defaultView: 'agendaWeek',
                     editable: true,
                     disableDragging: true,
                     firstDay: 1,
-                    weekends: true,
+                    //weekends: true,
                     defaultEventMinutes: 30,
                     monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
                     monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
                     dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
                     dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-                    buttonText: {
-                        today: 'hoy',
-                        month: 'mes',
-                        week: 'semana',
-                        day: 'dia'
+                    //buttonText: {
+                    //    today: 'hoy',
+                    //    month: 'mes',
+                    //    week: 'semana',
+                    //    day: 'dia'
 
-                    },
+                    //},
                     //dayClick: function (date, view) {
                     //    $('#calendar').fullCalendar('changeView', 'agendaDay');
                     //    $('#calendar').fullCalendar('gotoDate', date);
@@ -350,15 +416,15 @@
             }
             function onFail(result) {
                 $('#calendar').fullCalendar({
-                    height: 650,
-                    contentHeight: 465,
-                    aspectRatio: 3,
-                    theme: true,
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
+                    height: 700,
+                    header: false,
+                    editable: true,
+                    contentHeight: 520,
+                    //header: {
+                    //    left: 'prev,next today',
+                    //    center: 'title',
+                    //    right: 'month,agendaWeek,agendaDay'
+                    //},
                     defaultView: 'agendaWeek',
                     editable: true,
                     disableDragging: true,
@@ -369,13 +435,13 @@
                     monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
                     dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
                     dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-                    buttonText: {
-                        today: 'hoy',
-                        month: 'mes',
-                        week: 'semana',
-                        day: 'dia'
+                    //buttonText: {
+                    //    today: 'hoy',
+                    //    month: 'mes',
+                    //    week: 'semana',
+                    //    day: 'dia'
 
-                    },
+                    //},
                     //dayClick: function (date, view) {
                     //    $('#calendar').fullCalendar('changeView', 'agendaDay');
                     //    $('#calendar').fullCalendar('gotoDate', date);

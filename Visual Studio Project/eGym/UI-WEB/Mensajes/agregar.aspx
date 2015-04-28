@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="agregar.aspx.vb" Inherits="UI_WEB.agregar13" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-1/libs/toastr/toastr.css")%>' />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -33,8 +35,8 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="txtIdentificacion">
-                                <label>Remitente</label>
+                                <input type="text" class="form-control" id="txtDestinatario">
+                                <label>Destinatario</label>
                             </div>
                         </div>
                     </div>
@@ -42,14 +44,14 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea name="textarea2" id="textarea2" class="form-control" rows="3" placeholder=""></textarea>
+                                <textarea id="txtMensaje" class="form-control" rows="3"></textarea>
                                 <label>Mensaje</label>
                             </div>
                         </div>
                     </div>
                     <div class="card-actionbar">
                         <div class="card-actionbar-row">
-                            <a class="btn btn-flat btn-primary">Enviar</a>
+                            <a id="btnEnviar" class="btn btn-flat btn-primary">Enviar</a>
                         </div>
                     </div>
                 </div>
@@ -59,11 +61,48 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Services>
-                <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioMensaje.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
+    <script src="<%= Page.ResolveUrl("~/js/libs/toastr/toastr.js")%>"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btnEnviar').click(function () {
+                // VALIDACION
+
+                // INSTANCIAR SERVICIO
+
+                var servicio = new ServicioEnClases.ServicioMensaje();
+
+                // INSERTAR USUARIO
+
+                var remitente = '<%= Session("_USERID") %>';
+                var destinatario = $('#txtDestinatario').val();
+                var mensaje = $('#txtMensaje').val();
+
+                // HACER EL JSON
+
+                var datos = JSON.stringify({
+                    pRemitenteId: remitente,
+                    pDestinatarioId: destinatario,
+                    pMensaje: mensaje
+                });
+
+                var respuesta = servicio.insertarMensaje(datos, onSuccessAgregarMensaje, errorMessageAgregarMensaje);
+
+            })
+
+            function onSuccessAgregarMensaje() {
+                window.location = 'index.aspx';
+            }
+
+            function errorMessageAgregarMensaje() {
+                toastr.error('Error al insertar'); 
+            }
+        });
+    </script>
 </asp:Content>

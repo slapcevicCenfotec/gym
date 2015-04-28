@@ -5,27 +5,26 @@
 
 <head>
     <title>Egym - Cantaros</title>
-    <!-- BEGIN META -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- BEGIN STYLESHEETS -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css' />
-    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/bootstrap.css")%> />
-    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
-    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
-    <!--Font Awesome Icon Font-->
+<!-- BEGIN META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BEGIN STYLESHEETS -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css' />
+<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/bootstrap.css")%> />
+<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
+<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
+<!--Font Awesome Icon Font-->
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />
-    <!--Material Design Iconic Font-->
-    <!-- Additional CSS includes -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-		<script type="text/javascript" src="/assets/js/libs/utils/html5shiv.js"></script>
-		<script type="text/javascript" src="/assets/js/libs/utils/respond.min.js"></script>
-		<![endif]-->
-    <script src="../js/localScripts/ejercicios.js"></script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+<!--Material Design Iconic Font-->
+<!-- Additional CSS includes -->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="/assets/js/libs/utils/html5shiv.js"></script>
+	<script type="text/javascript" src="/assets/js/libs/utils/respond.min.js"></script>
+	<![endif]-->
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
 </head>
 
 <body class="menubar-hoverable header-fixed">
@@ -52,8 +51,7 @@
             <ul class="header-nav header-nav-profile">
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        <img id="imgUsuarioMenu" src="<%= Page.ResolveUrl("~/img/UGM-default-user.png")%>" alt="">
-                        <!-- <img id="imgUsuarioMenu" src="img/UGM-default-user.png" alt=""> -->
+                        <img id="imgUsuarioMenu" src="http://localhost/egym/img/UGM-default-user.png" alt="">
                         <span class="profile-info">
 						    <span id="nombreUsuario"></span><br />
 						    <span id="nombreRol"><small></small></span>
@@ -89,7 +87,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
- <div class="expanded">
+            <div class="expanded">
                 <a href="http://www.codecovers.eu/materialadmin/dashboards/dashboard">
                     <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
                 </a>
@@ -293,7 +291,9 @@
 
     function setMenu(data) {
         console.log(data);
+        var permisos = "0";
         data.forEach(function (entry) {
+            permisos += "-" + entry.Id;
             if (entry.Id === 1) {
                 $(menuUsuario).removeClass("hidden");
             }
@@ -321,6 +321,17 @@
             if (entry.Id === 14) {
                 $(menuClientes).removeClass("hidden");
             }
+        });
+        setPermisos(permisos)
+    }
+
+    function setPermisos(permisos) {
+        $.ajax({
+            type: "POST",
+            url: '<%= Page.ResolveUrl("~/Session.aspx/SetPermissionList")%>',
+            data: '{ permissionIds: "' + permisos + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
         });
     }
 

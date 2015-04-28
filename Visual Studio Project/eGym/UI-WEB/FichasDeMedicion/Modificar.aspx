@@ -77,7 +77,7 @@
                                 <div class="card-head style-primary">
                                     <header>Medidas generales</header>
                                 </div>
-                                <div class="card-body floating-label">
+                                <div class="card-body horizontal">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group">
@@ -163,7 +163,7 @@
                             <div class="row">`
                                 <div class="col-md-6">
                                     <div class="form">
-                                        <div class="card-body floating-label">
+                                        <div class="card-body horizontal">
                                             <div class="form-group">
                                                 <div class="input-group">
 	                                                <div class="input-group-content">
@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form">
-                                        <div class="card-body floating-label">
+                                        <div class="card-body horizontal">
                                             <div class="form-group">
                                                 <div class="input-group">
 	                                                <div class="input-group-content">
@@ -305,7 +305,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form">
-                                                <div class="card-body floating-label">
+                                                <div class="card-body horizontal">
                                                     <div class="form-group">
                                                         <div class="input-group">
 	                                                        <div class="input-group-content">
@@ -365,7 +365,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form">
-                                                <div class="card-body floating-label">
+                                                <div class="card-body horizontal">
                                                     <div class="form-group">
                                                         <div class="input-group">
 	                                                        <div class="input-group-content">
