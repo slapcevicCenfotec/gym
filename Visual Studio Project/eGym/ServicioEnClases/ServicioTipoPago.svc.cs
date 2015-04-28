@@ -35,10 +35,11 @@ namespace ServicioEnClases
             var jss = new JavaScriptSerializer();
             var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-            int id = int.Parse(dictionary["id"]);
+            int id = Convert.ToInt32(dictionary["pId"]);
             TipoDePago auxTipoPago = new TipoDePago();
             auxTipoPago = objGestorTipoPago.tipoDePagoPorId(id);
             return new JavaScriptSerializer().Serialize(auxTipoPago);
+
         }
 
 
@@ -67,9 +68,8 @@ namespace ServicioEnClases
             string nombre = dictionary["nombre"];
             double monto = Convert.ToDouble(dictionary["monto"]);
             int duracion = int.Parse(dictionary["duracion"]);
-            bool habilitado = Convert.ToBoolean(dictionary["habilitado"]);
 
-            objGestorTipoPago.modificarTipoDePago(id, nombre, monto, duracion,habilitado);
+            objGestorTipoPago.modificarTipoDePago(id, nombre, monto, duracion);
         }
 
         [WebGet()]
@@ -79,7 +79,7 @@ namespace ServicioEnClases
             var jss = new JavaScriptSerializer();
             var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-            var id = Convert.ToInt32(dictionary["pid"]);
+            var id = Convert.ToInt32(dictionary["pId"]);
 
             objGestorTipoPago.eliminarTipoDePago(id);
         }

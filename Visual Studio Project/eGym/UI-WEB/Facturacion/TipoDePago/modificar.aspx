@@ -111,7 +111,7 @@
             //alert(idMusculo)
 
             var service5 = new ServicioEnClases.ServicioTipoPago();
-            var datos = JSON.stringify({ pid: idTipoPago });
+            var datos = JSON.stringify({ pId: idTipoPago });
 
             service5.getTipoDePagoById(datos, onSuccess, errorMessage, null, null);
 
