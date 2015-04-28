@@ -15,13 +15,6 @@
             <form id="form1" runat="server">
 
 <div class="col-lg-12">
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
-.tg .tg-rd2y{font-size:16px}
-.tg .tg-9vto{font-family:Verdana, Geneva, sans-serif !important;}
-</style>
 <div class="section-body contain-lg">
 
             <div class="row">
