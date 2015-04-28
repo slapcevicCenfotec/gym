@@ -43,7 +43,8 @@ function getMisPagos() {
     servicio.getPagoPorUsuario(onSuccessGetAllTP, null, null);
 }
 function onSuccesIngresar(result) {
-    alert('Se registró correctamente el tipoDePago');
+    ///alert('Se registró correctamente el tipoDePago');
+    location.windows = "index.aspx"
 }
 function onSuccesModificar(result) {
     alert('Se modificó correctamente el tipoDePago');

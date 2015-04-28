@@ -13,9 +13,6 @@ Option Explicit On
 
 
 
-'''<summary>
-'''Represents a strongly typed in-memory cache of data.
-'''</summary>
 <Global.System.Serializable(),  _
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _

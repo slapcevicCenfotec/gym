@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Modificar.aspx.vb" Inherits="UI_WEB.Modificar2" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../css/theme-1/libs/toastr/toastr.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -26,35 +28,39 @@
         <div class="col-md-8">
             <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnGuardar">Guardar</button>
             <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnCancelar">Cancelar</button>
-			<div class="card">
-				<div class="card-body">
-					<form class="form form-validate" role="form" id="ModificarForm">
-						<div class="form-group floating-label">
-							<select id="cmbTiposDeMaquinas" name="cmbTiposDeMaquinas" class="form-control" required>
-								<option value="">&nbsp;</option>
+            <div class="card">
+                <div class="card-body">
+                    <form class="form form-validate" role="form" id="ModificarForm">
+                        <div class="form-group horizontal">
+                            <select id="cmbTiposDeMaquinas" name="cmbTiposDeMaquinas" class="form-control" required>
+                                <option value="">&nbsp;</option>
                             </select>
                             <label for="cmbTiposDeMaquinas">Tipo de máquina</label>
-						</div>
-						<div class="form-group floating-label">
-                            <input type="text" class="form-control" id="txtNumeroActivo" required/>
-							<label for="txtNumeroActivo">Número de activo</label>
-						</div>
-						<div class="form-group floating-label">
-							<input type="text" class="form-control" id="txtNumeroMaquina" required>
-							<label for="txtNumeroMaquina">Número de máquina</label>
-							<label id="idMaquina" style="display:none"></label>
-							<label id="habilitado" style="display:none"></label>
-						</div>
-					</form>
-				</div><!--end .card-body -->
-			</div><!--end .card -->
-		</div><!--end .card -->
-	</div><!--end .card -->
+                        </div>
+                        <div class="form-group horizontal">
+                            <input type="text" class="form-control" id="txtNumeroActivo" required />
+                            <label for="txtNumeroActivo">Número de activo</label>
+                        </div>
+                        <div class="form-group horizontal">
+                            <input type="text" class="form-control" id="txtNumeroMaquina" required>
+                            <label for="txtNumeroMaquina">Número de máquina</label>
+                            <label id="idMaquina" style="display: none"></label>
+                            <label id="habilitado" style="display: none"></label>
+                        </div>
+                    </form>
+                </div>
+                <!--end .card-body -->
+            </div>
+            <!--end .card -->
+        </div>
+        <!--end .card -->
+    </div>
+    <!--end .card -->
     <form runat="server">
-        <asp:ScriptManager runat="server" >
+        <asp:ScriptManager runat="server">
             <Services>
                 <asp:ServiceReference Path="http://localhost/egymServices/ServiciosMaquinas.svc" />
-                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc"/>
+                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc" />
             </Services>
         </asp:ScriptManager>
     </form>
@@ -63,4 +69,5 @@
     <script src="<%= Page.ResolveUrl("~/js/localScripts/ModificarMaquinas.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/jquery.validate.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/additional-methods.min.js")%>"></script>
+    <script src="../js/libs/toastr/toastr.js"></script>
 </asp:Content>
