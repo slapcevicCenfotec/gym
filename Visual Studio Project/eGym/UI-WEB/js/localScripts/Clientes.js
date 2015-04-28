@@ -33,3 +33,12 @@ function onSuccessComprobarPruebas(result) {
 
     }
 }
+
+$('#btnFichaMedicion').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblUsuarios').DataTable();
+    var rowData = table.rows(rows).data();
+    var idCliente = rowData[0][0];
+    var genero = rowData[0][5];
+    window.location = "../FichasDeMedicion/Index.aspx?id=" + idCliente + "genero" + genero;
+})

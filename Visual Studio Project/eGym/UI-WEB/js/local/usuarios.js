@@ -40,7 +40,6 @@ function error(result) {
 function onSuccess2(result) {
     var object = $.parseJSON(result);
     console.log(object);
-    alert("hola");
     var tbody = "";
     $.each(object, function (i, item) {
         tbody += '<tr>';
@@ -49,6 +48,7 @@ function onSuccess2(result) {
         tbody += '<td>' + object[i].Nombre + ' ' + object[i].Apellido + '</td>';
         tbody += '<td>' + object[i].Alias + '</td>';
         tbody += '<td>' + parseJsonDate(object[i].FechaIngreso) + '</td>';
+        tbody += '<td style="display:none">' + object[i].IdGenero + '</td>';
         tbody += '</tr>';
     });
     $('#tblUsuarios tbody').append(tbody);

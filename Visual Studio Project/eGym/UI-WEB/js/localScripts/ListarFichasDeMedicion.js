@@ -29,8 +29,11 @@
 }
 
 function search() {
+
+    var idCliente = getQueryVariable('id');
+
     var service = new ServicioFichasDeMedicion();
-    service.obtenerFichasDeMedicion(onSuccess, null, null);
+    service.obtenerFichaById(idCliente, onSuccess, null, null);
 }
 
 function error(result) {
@@ -71,7 +74,8 @@ function formattedDate(date) {
 }
 
 $('#btnAgregar').click(function () {
-    window.location = 'Registrar.aspx';
+    var idGenero = getQueryVariable('genero');
+    window.location = 'Registrar.aspx?idGenero=' + idGenero;
 })
 
 $('#btnModificar').click(function () {
@@ -107,4 +111,14 @@ function onSuccesEliminarFicha(result) {
 
 function errorMessage(resul) {
     alert(resul.get_message());
+}
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (pair[0] == variable) { return pair[1]; }
+    }
+    return (false);
 }
