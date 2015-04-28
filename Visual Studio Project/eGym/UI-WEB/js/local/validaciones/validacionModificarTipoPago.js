@@ -19,10 +19,22 @@ $("#btnModificarTipoDePago").click(function () {
     auxMonto = validarInput(monto, 'INT');
     auxDuracion = validarInput(duracion, 'INT');
 
+    
     if (auxNombre && auxMonto && auxDuracion) {
         alert("todo bien!");
     }
 });
+
+
+$("#indexModificar").click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblTiposPago').DataTable();
+    var rowData = table.rows(rows).data();
+    var id = rowData[0][0];
+
+    location.href = "modificar.aspx?id=" + id;
+});
+
 
 function validarInput(entrada,tipo) {
     var error = 0;

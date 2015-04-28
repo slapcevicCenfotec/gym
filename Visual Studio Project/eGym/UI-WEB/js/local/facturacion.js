@@ -29,11 +29,6 @@
 }
 
 
-
-$("#tblTiposPago tbody tr").click(function () {
-    alert("s");
-});
-
 function getAllTipoDePago() {
     var servicio = new ServicioEnClases.ServicioTipoPago();
     servicio.getAllTipoDePago(onSuccessGetAllTP, null, null);
@@ -47,10 +42,10 @@ function onSuccesIngresar(result) {
     location.windows = "index.aspx"
 }
 function onSuccesModificar(result) {
-    alert('Se modificó correctamente el tipoDePago');
+    location.windows = "index.aspx"
 }
 function onSuccesEliminar(result) {
-    alert('Se elimino el tipoDePago');
+    location.windows = "index.aspx"
 }
 function onSuccessGetAllTP(result) {
     var objeto = $.parseJSON(result);
@@ -77,14 +72,14 @@ function ingresarTipoDePago() {
     servicio.insertarTipoDePago(datos, onSuccesIngresar, null, null, null);
 };
 function modificarTipoDePago() {
-    var auxId = 1,
+        var idTipoPago = getQueryVariable('id');
          auxNombre = $('#txtNombre').val(),
          auxMonto = $('#txtMonto').val(),
          auxDuracionen = $('#txtDuracion').val(),
          servicio = new ServicioEnClases.ServicioTipoPago();
 
-    var datos = JSON.stringify({ id: auxId, nombre: auxNombre, monto: auxMonto, duracion: auxDuracionen });
-    servicio.modificarTipoDePago(datos, onSuccesModificar, null, null, null);
+         var datos = JSON.stringify({ id: idTipoPago, nombre: auxNombre, monto: auxMonto, duracion: auxDuracionen });
+         servicio.modificarTipoDePago(datos, onSuccesModificar, null, null, null);
 };
 function eliminarTipoDePago() {
     var rows = $('tr.selected');
