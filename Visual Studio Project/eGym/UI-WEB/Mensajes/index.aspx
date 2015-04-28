@@ -19,7 +19,7 @@
                 </article>
             </div>
             <div class="col-lg-2">
-                <div class="btn-group pull-right" data-toggle="buttons">
+                <div class="btn-group pull-right">
                     
                     <a class="btn btn-raised btn-primary" href="#">Leer</a>
                     <a class="btn btn-raised btn-primary" href="agregar.aspx">Nuevo</a>
@@ -70,7 +70,8 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/jquery.dataTables.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js")%>"></script>
-    <script src="<%= Page.ResolveUrl("~/js/localScripts/mensajes.js")%>"></script>    <script>
+    <script src="<%= Page.ResolveUrl("~/js/localScripts/mensajes.js")%>"></script>    
+    <script>
         $(document).ready(function () {
             search();
         });

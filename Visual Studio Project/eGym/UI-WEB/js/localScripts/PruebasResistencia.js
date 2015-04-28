@@ -19,11 +19,16 @@ $(document).ready(function () {
 });
 
 
+
+
 function onSuccessPruebas(result) {
     var objeto = $.parseJSON(result);
     var label = "";
     var tr = "";
     $.each(objeto, function (i, item) {
+        label += '<div class="form-group">';
+        label += '<label for="id" id="pidPrueba" style="display:none >' + objeto[i].Id + '</label>';
+        label += '</div>';
         label += '<div class="form-group">';
         label += '<label for="descripcion"><h4>Usuario: ' + objeto[i].NombreUsuario + '</h4></label>';
         label += '</div>';
@@ -72,6 +77,11 @@ function onSuccessTipoPrueba(result) {
 }
 
 $('#btnAgregarPrueba').click(function () {
+    window.location = "Agregar.aspx?Mode=Ins";
+});
+
+$('#btnModificarPruebaResistencia').click(function () {
+    labelText = $("#pidPrueba").text();
     window.location = "Agregar.aspx?Mode=Ins";
 });
 

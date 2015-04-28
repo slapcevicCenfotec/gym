@@ -5,20 +5,21 @@ Public Class InsertarEjercicio
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'If IsPostBack Then
-        '    Dim imagen As String = Request.Form("fotoFile")
-        '    Dim fs As New FileStream(imagen, FileMode.Open, FileAccess.Read)
-        '    Dim bReader As New BinaryReader(fs)
-        '    Dim foto(fs.Length) As Byte
-        '    bReader.Read(foto, 0, fs.Length)
-        '    fs.Close()
-
-        '    Dim Gestor As GestorEjercicio = New GestorEjercicio()
-
-        '    Gestor.insertarEjercicio("1", "1", "1", foto, "1", foto, "1", "1", 1, "1")
-        'End If
-
-
+        If Session("_USERPERMISSION") Is Nothing Then
+            Response.Redirect("http://localhost/egym/iniciarsesion.aspx")
+        End If
+        Dim permissions = TryCast(Session("_USERPERMISSION"), List(Of String))
+        Dim valido = False
+        For Each permission As String In permissions
+            If permission = "11" Then
+                valido = True
+            End If
+        Next
+        If Session("_USERID") Is Nothing Or Session("_USERID") = String.Empty Then
+            Response.Redirect("http://localhost/egym/iniciarsesion.aspx")
+        ElseIf valido = False Then
+            Response.Redirect("http://localhost/egym/iniciarsesion.aspx")
+        End If
 
     End Sub
 

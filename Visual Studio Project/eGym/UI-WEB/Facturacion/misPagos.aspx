@@ -8,6 +8,8 @@
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/bootstrap-tagsinput/bootstrap-tagsinput.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/typeahead/typeahead.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/dropzone/dropzone-theme.css")%>' />
+
+        <link href="../css/theme-1/libs/toastr/toastr.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="section-body contain-lg">
@@ -72,6 +74,8 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
     <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>
+
+        <script src="../js/local/libs/toastr/toastr.js"></script>
     <script>
         $(document).ready(function () {
             getMisPagos();
