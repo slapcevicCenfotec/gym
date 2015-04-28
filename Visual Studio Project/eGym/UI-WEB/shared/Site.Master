@@ -23,7 +23,6 @@
 	<script type="text/javascript" src="/assets/js/libs/utils/html5shiv.js"></script>
 	<script type="text/javascript" src="/assets/js/libs/utils/respond.min.js"></script>
 	<![endif]-->
-<script src="../js/localScripts/ejercicios.js"></script>
 <asp:ContentPlaceHolder ID="head" runat="server">
 </asp:ContentPlaceHolder>
 </head>
@@ -52,7 +51,7 @@
             <ul class="header-nav header-nav-profile">
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        <img id="imgUsuarioMenu" src="img/UGM-default-user.png" alt="">
+                        <img id="imgUsuarioMenu" src="http://localhost/egym/img/UGM-default-user.png" alt="">
                         <span class="profile-info">
 						    <span id="nombreUsuario"></span><br />
 						    <span id="nombreRol"><small></small></span>
@@ -283,7 +282,9 @@
 
     function setMenu(data) {
         console.log(data);
+        var permisos = "0";
         data.forEach(function (entry) {
+            permisos += "-" + entry.Id;
             if (entry.Id === 1) {
                 $(menuUsuario).removeClass("hidden");
             }
@@ -308,6 +309,17 @@
             if (entry.Id === 8) {
                 $(menuConfiguracion).removeClass("hidden");
             }
+        });
+        setPermisos(permisos)
+    }
+
+    function setPermisos(permisos) {
+        $.ajax({
+            type: "POST",
+            url: '<%= Page.ResolveUrl("~/Session.aspx/SetPermissionList")%>',
+            data: '{ permissionIds: "' + permisos + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
         });
     }
 

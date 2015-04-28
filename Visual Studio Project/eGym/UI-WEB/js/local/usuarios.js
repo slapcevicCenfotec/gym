@@ -39,6 +39,8 @@ function error(result) {
 
 function onSuccess(result) {
     var object = $.parseJSON(result);
+    console.log(object);
+    alert("hola");
     var tbody = "";
     $.each(object, function (i, item) {
         tbody += '<tr>';
@@ -264,11 +266,6 @@ function onSuccessIngresarUsuario(result) {
 
         respuesta = servicio.InsertarHorario(datos, onSuccess, errorMessage, null, null);
     }
-}
-
-function onSuccess(result) {
-
-    alert("Yeah!");
 }
 
 function errorMessage(resul) {
