@@ -100,8 +100,9 @@ namespace ServicioEnClases
             string musculosSecundarios = dictionary["pmusculosSecundarios"]; ;
 
             Byte[] image = Convert.FromBase64String(dictionary["pimagen"]);
+            Byte[] image2 = Convert.FromBase64String(dictionary["pimagen2"]);
 
-            objGestorEjercicio.modificarEjercicio(id,nombre, alias, posInicial, image, posFinal, image, erroresComunes, descripcion, musculoPrincipal, musculosSecundarios);
+            objGestorEjercicio.modificarEjercicio(id, nombre, alias, posInicial, image, posFinal, image2, erroresComunes, descripcion, musculoPrincipal, musculosSecundarios);
 
         }
 

@@ -41,7 +41,7 @@ function onSuccess(result) {
         tbody += '<tr>';
         tbody += '<td>' + object[i].Id + '</td>';
         tbody += '<td>' + object[i].Nombre + '</td>';
-        tbody += '<td>' + object[i].Alias + ' ' + object[i].Apellido + '</td>';
+        tbody += '<td>' + object[i].Alias + '</td>';
         tbody += '<td>' + object[i].PosicionInicial + '</td>';
         tbody += '<td>' + object[i].PosicionFinal + '</td>';
         tbody += '<td>' + object[i].ErroresComunes + '</td>';
@@ -63,7 +63,7 @@ function onSuccessMusculos(result) {
     $.each(objeto, function (i, item) {
         Ulist += '<li>';
         Ulist += '<label>';
-        Ulist += '<input name="chkboxName" type="checkbox" id ="' + objeto[i].Id + '">';
+        Ulist += '<input name="chkboxName" type="checkbox" value ="' + objeto[i].Id + '" id ="' +objeto[i].Id + '">';
         Ulist += '<span>' + objeto[i].Nombre + '</span>';
         Ulist += '</label>';
         Ulist += '</li>';
@@ -71,7 +71,7 @@ function onSuccessMusculos(result) {
     $('#listaMusculosSecundarios').append(Ulist);
 
     $.each(objeto, function (i, item) {
-        $("#musculo-principal").append("<option value=\"" + objeto[i].Id + "\">" + objeto[i].Nombre + "</option>");
+        $("#musculo_principal").append("<option value=\"" + objeto[i].Id + "\">" + objeto[i].Nombre + "</option>");
 
     });
 
@@ -112,54 +112,63 @@ $('#fotoFile2').change(function handleFileSelect(evt) {
 })
 
 $('#btnAgregarEjercicio').click(function () {
+
+    $('frmInsertarEjercicio').validate({
+        messages: {
+        name: {
+        required : "Campo es requerido"
+        },
+        alias: {
+        required: "Campo es requerido"
+        },
+        descripcion: {
+        required: "Campo es requerido"
+        },
+        erroresComunes: {
+        required : "Campo es requerido"
+        },
+        txtPosInicial: {
+        required: "Campo es requerido"
+        },
+        txtPosFinal: {
+        required : "Campo es requerido"
+        },
+        musculo_principal: {
+         required : "Campo es requerido"
+        }
+    }});
    
-    var nombre = $('#txtnombreEjercicio').val(),
+    if($("#frmInsertarEjercicio").valid()) {
+    
+        var nombre = $('#txtnombreEjercicio').val(),
         alias = $('#alias').val(),
         descripcion = $('#descripcion').val(),
         erroresComunes = $('#erroresComunes').val(),
         posInicial = $('#txtPosInicial').val(),
         posFinal = $('#txtPosFinal').val(),
-        musculoPrincipal = $('#musculo-principal').val(),
+        musculoPrincipal = $('#musculo_principal').val(),
         musculosSecundarios = $("input[name=chkboxName]:checked").map(function () { return this.value; }).get().join(",");
+    
+        var foto = getBase64Image();
+        var foto2 = getBase64Image2();
 
-    var foto = getBase64Image();
-    var foto2 = getBase64Image2();
+        alert("Muscul principal" +musculoPrincipal);
+        alert("Muscul Secundario " +musculosSecundarios)
 
 
-    service4 = new ServicioEjercicio();
+        service4 = new ServicioEjercicio();
   
-    var datos = JSON.stringify({pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal,pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto , pimagen2 :foto2});
-    service4.insertarEjercicio(datos, onSuccesIngresar, errorMessage, null, null);
-
-    //        ;
-
-    //var foto = getBase64Image();
-    //console.log(foto);
-
-    //serviceInsertar = new ServicioEnClases.ServiciosTiposDeMaquinas();
-
-    //datos = JSON.stringify({ pnombre: nombre, pdescripcion: descripcion, pfoto: foto });
-    //serviceInsertar.insertarTiposDeMaquina(datos, onSuccesIngresarTipoDeMaquina, errorMessage, null, null);
-
-        //    $.ajax({
-        //        type: 'POST',
-        //        url: 'ServiciosTiposDeMaquinas.svc/insertarTiposDeMaquina',
-        //        data: '{ "pfoto" : "' + foto + '", "pnombre" : "' + nombre + '", "pdescripcion" : "' + descripcion +'"}',
-        //        contentType: 'application/json; charset=utf-8',
-        //        dataType: 'json',
-        //        success: function (msg) {
-        //            alert("Done, Picture Uploaded.");
-        //        }
-        //    })
+        var datos = JSON.stringify({pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal,pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto , pimagen2 :foto2});
+        service4.insertarEjercicio(datos, onSuccesIngresar, onFailModificar, null, null);
+    }
 
 })
 
 function onSuccesIngresar(result) {
-    alert("congratulations");
+    location.href = "index.aspx?agregado";
+    //alert("Ejericio agregado");
 }
-function errorMessage(result) {
-    alert(result.get_message());
-}
+
 function getBase64Image() {
 
     var canvas = document.getElementById('myCanvas');
@@ -202,7 +211,7 @@ $('#btnModificarEjer').click(function () {
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
-    location.href = "ModificarEjercicio.aspx?id="+id;
+    location.href = "modificar.aspx?id="+id;
 })
 
 function buscarEjercicioByID() {
@@ -223,12 +232,114 @@ $('#btnEliminarEjer').click(function () {
     var service4 = new ServicioEjercicio();
 
     var datos = JSON.stringify({ pid: id});
-    service4.eliminarEjercicio(datos, onSucessEli, errorMessage, null, null);
+    service4.eliminarEjercicio(datos, onSucessEli, onFailEli, null, null);
 })
 function onSucessEli(result) {
-    alert("Ejercicio Eliminado");
-}
+     toastr.success('El ejercicio ha sido eliminado')
+    //alert("Ejercicio Eliminado");
+    }
+    function onFailEli(result) {
+     toastr.error('El ejercicio no ha podido ser eliminado')
+    //alert("Ejercicio Eliminado");
+    }
 $('#btnModificarEjercicio').click(function () {
-    alert($('#txtIdEjercicio').val());
+    $('frmModificarEjercicio').validate({
+        messages: {
+        name: {
+        required : "Campo es requerido"
+        },
+        alias: {
+        required: "Campo es requerido"
+        },
+        descripcion: {
+        required: "Campo es requerido"
+        },
+        erroresComunes: {
+        required : "Campo es requerido"
+        },
+        txtPosInicial: {
+        required: "Campo es requerido"
+        },
+        txtPosFinal: {
+        required : "Campo es requerido"
+        },
+        musculo_principal: {
+         required : "Campo es requerido"
+        }
+    }});
+   
+    if ($("#frmModificarEjercicio").valid()) {
+        alert($('#txtIdEjercicio').val());
+        var id =  $('#txtIdEjercicio').val(),
+        nombre = $('#txtnombreEjercicio').val(),
+        alias = $('#alias').val(),
+        descripcion = $('#descripcion').val(),
+        erroresComunes = $('#erroresComunes').val(),
+        posInicial = $('#txtPosInicial').val(),
+        posFinal = $('#txtPosFinal').val(),
+        musculoPrincipal = $('#musculo_principal').val(),
+        musculosSecundarios = $("input[name=chkboxName]:checked").map(function () { return this.value; }).get().join(",");
+    getBase64Image()
+        getBase64Image2()
+        var foto = '';
+        var foto2 = '';
 
-})
+        alert("Muscul principal" +musculoPrincipal);
+        alert("Muscul Secundario " +musculosSecundarios)
+
+
+        service4 = new ServicioEjercicio();
+  
+        var datos = JSON.stringify({pid: id,pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal,pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto , pimagen2 :foto2});
+        service4.modificarEjercicio(datos, onSuccesModificar, onFailModificar, null, null);
+    }
+});
+
+ $('#imagen').change(function () {
+        readURL(this);
+    });
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgFoto').attr('src', e.target.result).fadeIn('slow');
+
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+
+    var canvas = document.getElementById("myCanvas");
+    canvas.hidden = true;
+}
+ $('#imagen2').change(function () {
+        readURL(this);
+    });
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgFoto2').attr('src', e.target.result).fadeIn('slow');
+
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+
+    var canvas = document.getElementById("myCanvas2");
+    canvas.hidden = true;
+}
+
+    function onSuccesModificar(result) {
+        location.href = "index.aspx?modificado";
+    //alert("Se modificó");
+}
+   function onFailModificar(result) {
+        location.href = "index.aspx?modificado";
+       //alert(result.get_message());
+    
+}

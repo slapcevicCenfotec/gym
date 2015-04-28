@@ -4,7 +4,7 @@
 <html lang="es">
 
 <head>
-<title>Egym</title>
+    <title>Egym - Cantaros</title>
 <!-- BEGIN META -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
 <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
 <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
 <!--Font Awesome Icon Font-->
-<%--<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />--%>
+    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />
 <!--Material Design Iconic Font-->
 <!-- Additional CSS includes -->
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -173,7 +173,7 @@
                         <!-- END ROLES -->
                         <!-- BEGIN REPORTES -->
                         <li id="menuReportes" class="hidden">
-                            <a href="#">
+                            <a href="<%= Page.ResolveUrl("~/Reportes/Reportes.aspx")%>">
                                 <div class="gui-icon"><i class="fa fa-file-text-o"></i>
                                 </div>
                                 <span class="title">Reportes</span>
@@ -195,6 +195,15 @@
                                 <div class="gui-icon"><i class="fa fa-cog"></i>
                                 </div>
                                 <span class="title">Formulas</span>
+                            </a>
+                        </li>
+                        <!-- END FORMULAS -->
+                                                <!-- BEGIN FORMULAS -->
+                        <li id="menuClientes" class="hidden">
+                            <a href="<%= Page.ResolveUrl("~/Clientes/index.aspx")%>">
+                                <div class="gui-icon"><i class="fa fa-cog"></i>
+                                </div>
+                                <span class="title">Clientes</span>
                             </a>
                         </li>
                         <!-- END FORMULAS -->
@@ -309,6 +318,9 @@
             if (entry.Id === 8) {
                 $(menuConfiguracion).removeClass("hidden");
             }
+            if (entry.Id === 14) {
+                $(menuClientes).removeClass("hidden");
+            }
         });
         setPermisos(permisos)
     }
@@ -347,9 +359,5 @@
 
 </script>
 <!-- END JAVASCRIPT -->
-
 </body>
-
-
-
 </html>

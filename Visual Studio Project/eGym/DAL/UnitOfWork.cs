@@ -27,13 +27,25 @@ namespace DAL
         private IRepository<Ejercicio> _ejercicioRepository;
         private IRepository<FichaMedicion> _fichaMedicionRepository;
         private IRepository<Formula> _formulasRepository;
+        private IRepository<PruebaResistencia> _pruebaResistenciaRepository;
+        private IRepository<TipoPruebaResistencia> _tipoPruebaResistenciaReporsitory;
         private IRepository<Programa> _programaRepository;
         private IRepository<EjercicioPrograma> _ejercicioProgramaRepository;
         private IRepository<TipoAcondicionamiento> _tipoAcondicionamientoRepository;
 
+        private IRepository<Mensaje> _mensajeRepository;
 
-
-
+        public IRepository<Mensaje> RepositoryMensaje
+        {
+            get
+            {
+                if (_mensajeRepository == null)
+                {
+                    _mensajeRepository = new MensajeRepository();
+                }
+                return _mensajeRepository;
+            }
+        }
         public IRepository<Usuario> RepositoryUsuario
         {
             get
@@ -237,6 +249,28 @@ namespace DAL
                 return _formulasRepository;
             }
         }
+        public IRepository<PruebaResistencia> PruebaResistenciaRepository
+        {
+            get
+            {
+                if (this._pruebaResistenciaRepository == null)
+                {
+                    this._pruebaResistenciaRepository = new PruebaResistenciaRepository();
+                }
+                return _pruebaResistenciaRepository;
+            }
+        }
+        public IRepository<TipoPruebaResistencia> TipoPruebaResistenciaRepository
+        {
+            get
+            {
+                if (this._tipoPruebaResistenciaReporsitory == null)
+                {
+                    this._tipoPruebaResistenciaReporsitory = new TipoPruebaResistenciaRepository();
+                }
+                return _tipoPruebaResistenciaReporsitory;
+            }
+        }
 
         public DAL.Repositories.FichaMedicionRepository FichaMedicionRepositoryOriginal
         {
@@ -292,5 +326,6 @@ namespace DAL
         }
 
         
+
     }
 }

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.Index3" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Index.aspx.vb" Inherits="UI_WEB.Index11" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990")%>' />
@@ -53,7 +52,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egymServices/ServiciosTiposDeMaquinas.svc"/>
+                <asp:ServiceReference Path="http://localhost/egym/ServiciosTiposDeMaquinas.svc"/>
             </Services>
         </asp:ScriptManager>
     </form>

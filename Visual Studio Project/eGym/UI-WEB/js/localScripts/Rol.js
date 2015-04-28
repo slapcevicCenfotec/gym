@@ -6,7 +6,6 @@ var idRol;
 
 $(document).ready(function () {
 
-
     var resulId = getParameterByName("id");
     var resulMode = getParameterByName("Mode");
     if (resulMode === "") {
@@ -15,7 +14,7 @@ $(document).ready(function () {
         servicePermiso.obtenerPermiso(onSuccessPermisos, null, null);
     }else if(resulMode === "Upd"){
         var datos = JSON.stringify({ pid: resulId});
-        serviceRol.obtenerRolPorId(datos, onSuccessRolesPorId, errorMessage, null, null);
+        serviceRol.obtenerRolPorPermiso(datos, onSuccessRolesPorId, errorMessage, null, null);
     }
 });
 
@@ -59,12 +58,23 @@ function getParameterByName(name) {
 
 
 function load() {
-    //var el = document.getElementById("tblDioses");frfrfrf
-    //el.addEventListener("click", function () { modificarMusculo($(this).find("td").eq(2).html()) }, false);
-
-    table = $('#tblRoles').DataTable();
-
-    var id = table.row('.selected');
+    var table = $('#tblRoles').DataTable({
+        "dom": 'lCfrtip',
+        "order": [],
+        "colVis": {
+            "buttonText": "Columnas",
+            "overlayFade": 0,
+            "align": "right"
+        },
+        "language": {
+            "lengthMenu": '_MENU_ entradas por página',
+            "search": '<i class="fa fa-search"></i>',
+            "paginate": {
+                "previous": '<i class="fa fa-angle-left"></i>',
+                "next": '<i class="fa fa-angle-right"></i>'
+            }
+        }
+    });
 
     $('#tblRoles tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
@@ -85,15 +95,27 @@ function ingresarRol() {
     var nombre = $('#nombre').val(),
         descripcion = $('#descripcion').val();
         //serviceRol = new ServicioEnClases.ServicioRol();
-    var listaPermisos = [];
-    $('#listaPermisos li input[type=checkbox]').each(function () {
-        if (this.checked === true) {
-            var idPermiso = this.id;
-            listaPermisos.push(idPermiso);
-        }
-    }); 
-    var datos = JSON.stringify({ pnombre: nombre, pdescripcion: descripcion, ppermisos: listaPermisos });
-    serviceRol.insertarRoles(datos, onSuccesIngresar, errorMessage, null, null);
+
+
+
+
+    $("#RolesForm").validate();
+    if ($("#RolesForm").valid()) {
+        var listaPermisos = [];
+        $('#listaPermisos li input[type=checkbox]').each(function () {
+            if (this.checked === true) {
+                var idPermiso = this.id;
+                listaPermisos.push(idPermiso);
+            }
+        });
+        var datos = JSON.stringify({ pnombre: nombre, pdescripcion: descripcion, ppermisos: listaPermisos });
+        serviceRol.insertarRoles(datos, onSuccesIngresar, errorMessage, null, null);
+    } else {
+        $('#nombre').focus();
+        $('#nombre').blur();
+        $('#descripcion').focus();
+    };
+
 
 }
 
@@ -144,7 +166,7 @@ function onSuccessRoles(result) {
         tbody += '</tr>';
     });
     $('#tblRoles tbody').append(tbody);
-    //$('#divMostrarHuesos').removeClass('ocultar');
+    load();
 }
 
 function onSuccessRolesPorId(result) {
@@ -153,15 +175,20 @@ function onSuccessRolesPorId(result) {
     $.each(objeto, function (i, item) {
         idRol = objeto[i].Id;
         input += '<div class="form-group">';
+        input += '<label for="nombre" class="col-sm-2 control-label">Nombre</label>';
+        input += '<div class="col-sm-10">';
         input += '<input type="text" class="form-control" id="nombre" value="' + objeto[i].Nombre + '">';
-        input += '<label for="nombre">Nombre</label>';
+        input += '</div>';
         input += '</div>';
         input += '<div class="form-group">';
-        input += '<input type="text" class="form-control" id="descripcion" value="' + objeto[i].Descripcion + '">';
-        input += '<label for="descripcion">Descripcion</label>';
+        input += '<label for="descripcion" class="col-sm-2 control-label">Descripcion</label>';
+        input += '<div class="col-sm-10">';
+        input += '<input type="text" class="form-control" id="descripcion" value="' + +objeto[i].Descripcion + '">';
         input += '</div>';
+        input += '</div>';
+
     });
-    $('#form1').append(input);
+    $('#RolesForm').append(input);
 
      objetoPermisos =  objeto[0].ListaPermisos;
 
