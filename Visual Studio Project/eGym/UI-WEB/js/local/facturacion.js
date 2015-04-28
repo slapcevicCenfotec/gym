@@ -29,28 +29,36 @@
 }
 
 
-
-$("#tblTiposPago tbody tr").click(function () {
-    alert("s");
-});
-
 function getAllTipoDePago() {
     var servicio = new ServicioEnClases.ServicioTipoPago();
-    servicio.getAllTipoDePago(onSuccessGetAllTP, null, null);
+    servicio.getAllTipoDePago(onSuccessGetAllTP, onFail, null, null);
 }
-function getMisPagos() {
-    var servicio = new ServicioEnClases.ServicioPago();
-    servicio.getPagoPorUsuario(onSuccessGetAllTP, null, null);
+function getAllPagos() {
+    var servicio = new ServicioEnClases.ServicioTipoPago();
+    servicio.getAllPago(onSuccessGetAllPagos, onFail, null, null);
+
+
+
+    //var servicio = new ServicioEnClases.ServicioPago();
+   // servicio.getAllPago(onSuccessGetAllPagos, onFail, null, null);
+}
+
+function getMisPagos(item) {
+    var servicio = new ServicioEnClases.ServicioTipoPago();
+
+    var datos = JSON.stringify({ pId: item });
+    servicio.getPagoPorUsuario(datos, onSuccessMisPagos, onFail, null, null);
+
 }
 function onSuccesIngresar(result) {
     ///alert('Se registró correctamente el tipoDePago');
-    location.windows = "index.aspx"
+    location.href = "index.aspx";
 }
 function onSuccesModificar(result) {
-    alert('Se modificó correctamente el tipoDePago');
+    location.href = "index.aspx";
 }
 function onSuccesEliminar(result) {
-    alert('Se elimino el tipoDePago');
+    location.href = "index.aspx";
 }
 function onSuccessGetAllTP(result) {
     var objeto = $.parseJSON(result);
@@ -67,6 +75,41 @@ function onSuccessGetAllTP(result) {
     $('#tblTiposPago tbody').append(tbody);
     load();
 }
+function onSuccessGetAllPagos(result) {
+    var objeto = $.parseJSON(result);
+    var tbody = "";
+
+    $.each(objeto, function (i, item) {
+        tbody += '<tr>';
+
+        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td>' + objeto[i].Factura + '</td>';
+        tbody += '<td>' + objeto[i].Monto + '</td>';
+        tbody += '<td>' + objeto[i].Tipo + '</td>';
+        tbody += '<td>' + objeto[i].Fecha + '</td>';
+        tbody += '<td>' + objeto[i].Nombre + '</td>';
+        tbody += '</tr>';
+    });
+    $('#tblTiposPago tbody').append(tbody);
+    load();
+}
+function onSuccessMisPagos(result) {
+    var objeto = $.parseJSON(result);
+    var tbody = "";
+
+    $.each(objeto, function (i, item) {
+        tbody += '<tr>';
+
+        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
+        tbody += '<td>' + objeto[i].Factura + '</td>';
+        tbody += '<td>' + objeto[i].Monto + '</td>';
+        tbody += '<td>' + objeto[i].Tipo + '</td>';
+        tbody += '<td>' + objeto[i].Fecha + '</td>';
+        tbody += '</tr>';
+    });
+    $('#tblTiposPago tbody').append(tbody);
+    load();
+}
 function ingresarTipoDePago() {
     var auxNombre = $('#txtNombre').val(),
          auxMonto = $('#txtMonto').val(),
@@ -77,14 +120,14 @@ function ingresarTipoDePago() {
     servicio.insertarTipoDePago(datos, onSuccesIngresar, null, null, null);
 };
 function modificarTipoDePago() {
-    var auxId = 1,
+        var idTipoPago = getQueryVariable('id');
          auxNombre = $('#txtNombre').val(),
          auxMonto = $('#txtMonto').val(),
          auxDuracionen = $('#txtDuracion').val(),
          servicio = new ServicioEnClases.ServicioTipoPago();
 
-    var datos = JSON.stringify({ id: auxId, nombre: auxNombre, monto: auxMonto, duracion: auxDuracionen });
-    servicio.modificarTipoDePago(datos, onSuccesModificar, null, null, null);
+         var datos = JSON.stringify({ id: idTipoPago, nombre: auxNombre, monto: auxMonto, duracion: auxDuracionen });
+         servicio.modificarTipoDePago(datos, onSuccesModificar, null, null, null);
 };
 function eliminarTipoDePago() {
     var rows = $('tr.selected');
@@ -94,7 +137,30 @@ function eliminarTipoDePago() {
     var auxId = rowData[0][0];
 
     var servicio = new ServicioEnClases.ServicioTipoPago();
-    var datos = JSON.stringify({ id: auxId });
+    var datos = JSON.stringify({ pId: auxId });
 
-    servicio.eliminarTipoDePago(datos, onSuccesEliminar, errorMessage, null);
+    servicio.eliminarTipoDePago(datos, onSuccesEliminar, onFail, null, null);
 };
+function onFail() {
+    alert("fail");
+}
+$("#indexModificar").click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblTiposPago').DataTable();
+    var rowData = table.rows(rows).data();
+    var id = rowData[0][0];
+
+    location.href = "modificar.aspx?id=" + id;
+});
+$("#indexEliminar").click(function () {
+    eliminarTipoDePago();
+});
+$("#indexAgregar").click(function () {
+    location.href = "registar.aspx";
+});
+$("#indexPago").click(function () {
+    location.href = "registar.aspx";
+});
+$("#indexTipoDePago").click(function () {
+    location.href = "TipoDePago/index.aspx";
+});

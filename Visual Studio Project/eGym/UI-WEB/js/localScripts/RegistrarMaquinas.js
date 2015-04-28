@@ -38,18 +38,17 @@ $('#btnGuardar').click(function () {
 
         datos = JSON.stringify({ pnumeroActivo: numeroActivo, pnumeroMaquina: numeroMaquina, ptipoMaquina: tipoMaquina });
         serviceInsertar.insertarMaquina(datos, onSuccesIngresarMaquina, errorMessage, null, null);
-
-        window.location = 'Index.aspx';
-
     }
 })
 
 function onSuccesIngresarMaquina(result) {
-    alert('Se registró correctamente la máquina');
+    window.location = 'Index.aspx?agregado';
+    //alert('Se registró correctamente la máquina');
 }
 
 function errorMessage(resul) {
-    alert(resul.get_message());
+    toastr.success('La maquina no pudo ser registrada');
+    //alert(resul.get_message());
 }
 
 $('#btnCancelar').click(function () {

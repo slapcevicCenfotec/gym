@@ -46,11 +46,11 @@
                         <br />
                         <form id="formLogin" class="form floating-label form-validate">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="txtCorreo" required>
+                                <input type="email" class="form-control" id="txtCorreo" value="sebaslamu@gmail.com" required>
                                 <label>Correo electrónico</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="txtContrasena" required>
+                                <input type="password" class="form-control" id="txtContrasena" value="sebas" required>
                                 <label>Contraseña</label>
                                 <p class="help-block">
                                     <a href="#">Olvidó su contraseña?</a>

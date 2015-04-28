@@ -163,11 +163,13 @@ function getQueryVariable(variable) {
 }
 
 function onSuccesModificarFicha(result) {
-    alert('Se modificó correctamente la ficha');
+    location.href = "Index.aspx?modificado";
+  //  alert('Se modificó correctamente la ficha');
 }
 
 function errorMessage(resul) {
-    alert(resul.get_message());
+    toastr.error('El ejercicio ha sido agregado');
+    //alert(resul.get_message());
 }
 
 function getQueryVariable(variable) {
@@ -238,9 +240,7 @@ function calcularIMC() {
 
 function calcularPorcGrasa() {
 
-    //asignar genero con variable de sesion.
-
-    var genero = 'm',
+    var genero = getQueryVariable('idGenero'),
         constante,
         porcentajeGrasa,
         sumatoriaPliegues,
@@ -260,11 +260,13 @@ function calcularPorcGrasa() {
         supraespinalIzq = parseFloat($('#txtSupraespinalIzquierdo').val()),
         supraespinalDer = parseFloat($('#txtSupraespinalDerecho').val());
 
-    if (genero == 'm') {
+
+    if (genero == 1) {
         constante = 0.1051;
     } else {
         constante = 0.1548;
     }
+
 
     sumatoriaPliegues = abdominalIzq + abdominalDer + musloIzq + musloDer + pantorrillaIzq + pantorrillaDer +
     tricepsIzq + tricepsDer + subescapularIzq + subescapularDer + supraespinalIzq + supraespinalDer;
@@ -294,6 +296,15 @@ $('#btnCancelar').click(function () {
     window.location = 'Index.aspx';
 })
 
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (pair[0] == variable) { return pair[1]; }
+    }
+    return (false);
+}
 
 
 

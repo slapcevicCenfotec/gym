@@ -92,6 +92,17 @@
     <script>
         $(document).ready(function () {
 
+            //$('#btnModificarMus').click(function () {
+            //    var rows = $('tr.selected');
+            //    var table = $('#tblMusculos').DataTable();
+
+            //    var rowData = table.rows(rows).data();
+
+            //    var id = rowData[0][0];
+
+            //    location.href = "modificar.aspx?id=" + id;
+            //})
+
             //alert($('form').serialize());
             //$(':text').val('foo');
 
@@ -100,7 +111,7 @@
             //alert(idMusculo)
 
             var service5 = new ServicioEnClases.ServicioTipoPago();
-            var datos = JSON.stringify({ pid: idTipoPago });
+            var datos = JSON.stringify({ pId: idTipoPago });
 
             service5.getTipoDePagoById(datos, onSuccess, errorMessage, null, null);
 
@@ -113,6 +124,15 @@
             $('#txtMonto').val(objeto.Monto);
             $('#txtDuracion').val(objeto.Duracion);
 
+        }
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
         }
         function errorMessage(resul) {
             alert(resul.get_message());

@@ -22,6 +22,13 @@ namespace EL
         private DateTime _fecha;
         private bool _habilitado;
         private int _usuario;
+        private string _nombre;
+
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
 
         public Pago()
         { 

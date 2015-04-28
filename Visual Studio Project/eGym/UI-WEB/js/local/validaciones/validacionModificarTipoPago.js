@@ -19,10 +19,15 @@ $("#btnModificarTipoDePago").click(function () {
     auxMonto = validarInput(monto, 'INT');
     auxDuracion = validarInput(duracion, 'INT');
 
+    
     if (auxNombre && auxMonto && auxDuracion) {
-        alert("todo bien!");
+        modificarTipoDePago();
     }
 });
+
+
+
+
 
 function validarInput(entrada,tipo) {
     var error = 0;

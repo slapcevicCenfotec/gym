@@ -52,9 +52,9 @@ namespace BLL
         /// <param name="pMonto">Monto.</param>
         /// <param name="pDuracion">Duracion.</param>
         /// /// <param name="pHabilitado">Habilitado.</param>
-        public void modificarTipoDePago(int pId, String pNombre, double pMonto, int pDuracion, bool pHabilitado)
+        public void modificarTipoDePago(int pId, String pNombre, double pMonto, int pDuracion)
         {
-            TipoDePago tipoDePago = new TipoDePago(pId, pNombre, pMonto, pDuracion, pHabilitado);
+            TipoDePago tipoDePago = new TipoDePago(pId, pNombre, pMonto, pDuracion, true);
             UoW.TipoDePagoRepository.Update(tipoDePago);
             UoW.TipoDePagoRepository.Save();
         }

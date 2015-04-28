@@ -31,8 +31,16 @@ namespace EL
         {
             this._id = pId;
         }
+        
         public TipoDePago(String pNommbre, double pMonto, int pDuracion)
         {
+            this._nombre = pNommbre;
+            this._monto = pMonto;
+            this._duracion = pDuracion;
+        }
+        public TipoDePago(int pId, String pNommbre, double pMonto, int pDuracion)
+        {
+            this._id = pId;
             this._nombre = pNommbre;
             this._monto = pMonto;
             this._duracion = pDuracion;

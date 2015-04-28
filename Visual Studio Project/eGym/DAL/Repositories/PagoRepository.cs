@@ -94,6 +94,7 @@ namespace DAL.Repositories
                     auxPago.Fecha = Convert.ToDateTime(dr["FECHA"]);
                     auxPago.User = Convert.ToInt32(dr["USUARIO"]);
                     auxPago.Habilitado = Convert.ToBoolean(dr["HABILITADO"]);
+                    auxPago.Nombre  = dr["NOMBRE"].ToString();
                     pagos.Add(auxPago);
                 }
             }

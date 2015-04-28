@@ -35,9 +35,9 @@
                 </article>
             </div>
             <div class="col-md-4">
-                <a class="btn btn-raised btn-primary ink-reaction pull-right" href="../TipoDePago/index.aspx">Eliminar</a>        
-                <a class="btn btn-raised btn-primary ink-reaction pull-right" href="../TipoDePago/modificar.aspx">Modificar</a>
-                <a class="btn btn-raised btn-primary ink-reaction pull-right" href="../TipoDePago/registar.aspx">Agregar</a>      
+                <button type="button" id="indexEliminar" class="btn btn-default btn btn-primary ink-reaction">Eliminar</button>
+                <button type="button" id="indexModificar" class="btn btn-default btn btn-primary ink-reaction">Modificar</button>
+                <button type="button" id="indexAgregar" class="btn btn-default btn btn-primary ink-reaction">Agregar</button>
                 </div>
             <!--end .col -->
         </div>
@@ -96,6 +96,14 @@
     <script>
         $(document).ready(function () {
             getAllTipoDePago();
+
+            if (window.location.href.indexOf("agregado") > -1) {
+                toastr.success('El músculo ha sido agregado');
+            }
+            if (window.location.href.indexOf("modificado") > -1) {
+                toastr.success('El músculo ha sido modificado');
+            }
+
         });
 
     </script>

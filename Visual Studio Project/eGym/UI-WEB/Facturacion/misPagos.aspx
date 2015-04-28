@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="misPagos.aspx.vb" Inherits="UI_WEB.misPagos" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.indexTipoDePago" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/select2/select2.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/multi-select/multi-select.css")%>' />
@@ -9,24 +9,31 @@
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/typeahead/typeahead.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/dropzone/dropzone-theme.css")%>' />
 
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%>' />
+    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990")%>' />
+    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990")%>' />
+
         <link href="../css/theme-1/libs/toastr/toastr.css" rel="stylesheet" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="section-body contain-lg">
         <!-- BEGIN INTRO -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="text-primary">Mis pagos</h1>
+                <h1 class="text-primary">Facturacion</h1>
             </div>
             <!--end .col -->
             <div class="col-lg-8">
                 <article class="margin-bottom-xxl">
                     <p class="lead">
-                        Lista de pagos realizados
+                        Mis pagos
                     </p>
                 </article>
             </div>
-            
             <!--end .col -->
         </div>
         <!--end .row -->
@@ -39,7 +46,8 @@
                         <table id="tblTiposPago" class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Numero de factura</th>
+                                    <th style="display:none">Id</th>
+                                    <th>Factura</th>
                                     <th>Monto</th>
                                     <th>Tipo de pago</th>
                                     <th>Fecha</th>
@@ -75,10 +83,24 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
     <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>
 
+    <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/jquery.dataTables.min.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js")%>"></script>
+
+
         <script src="../js/local/libs/toastr/toastr.js"></script>
     <script>
         $(document).ready(function () {
-            getMisPagos();
+            <%-- getMisPagos(<%= Session("_USERID")%>);--%>
+            getMisPagos(122);
+            if (window.location.href.indexOf("agregado") > -1) {
+                toastr.success('El músculo ha sido agregado');
+            }
+            if (window.location.href.indexOf("modificado") > -1) {
+                toastr.success('El músculo ha sido modificado');
+            }
+
         });
+
     </script>
 </asp:Content>
