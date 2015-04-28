@@ -1,29 +1,39 @@
-﻿//var table = $('#tblTiposPago').DataTable({
-//    "dom": 'lCfrtip',
-//    "order": [],
-//    "colVis": {
-//        "buttonText": "Columnas",
-//        "overlayFade": 0,
-//        "align": "right"
-//    },
-//    "language": {
-//        "lengthMenu": '_MENU_ entradas por página',
-//        "search": '<i class="fa fa-search"></i>',
-//        "paginate": {
-//            "previous": '<i class="fa fa-angle-left"></i>',
-//            "next": '<i class="fa fa-angle-right"></i>'
-//        }
-//    }
-//});
-//$('#tblTiposPago tbody').on('click', 'tr', function () {
-//    if ($(this).hasClass('selected')) {
-//        $(this).removeClass('selected');
-//    }
-//    else {
-//        table.$('tr.selected').removeClass('selected');
-//        $(this).addClass('selected');
-//    }
-//});
+﻿function load() {
+    var table = $('#tblTiposPago').DataTable({
+        "dom": 'lCfrtip',
+        "order": [],
+        "colVis": {
+            "buttonText": "Columnas",
+            "overlayFade": 0,
+            "align": "right"
+        },
+        "language": {
+            "lengthMenu": '_MENU_ entradas por página',
+            "Buscar": '<i class="fa fa-search"></i>',
+            "paginate": {
+                "Anterior": '<i class="fa fa-angle-left"></i>',
+                "Siguiente": '<i class="fa fa-angle-right"></i>'
+            }
+        }
+    });
+
+    $('#tblTiposPago tbody').on('click', 'tr', function () {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    });
+}
+
+
+
+$("#tblTiposPago tbody tr").click(function () {
+    alert("s");
+});
+
 function getAllTipoDePago() {
     var servicio = new ServicioEnClases.ServicioTipoPago();
     servicio.getAllTipoDePago(onSuccessGetAllTP, null, null);
@@ -47,12 +57,14 @@ function onSuccessGetAllTP(result) {
 
     $.each(objeto, function (i, item) {
         tbody += '<tr>';
+        tbody += '<td style="display:none">' + objeto[i].Id + '</td>';
         tbody += '<td>' + objeto[i].Nombre+ '</td>';
         tbody += '<td>' + objeto[i].Monto + '</td>';
         tbody += '<td>' + objeto[i].Duracion + '</td>';
         tbody += '</tr>';
     });
     $('#tblTiposPago tbody').append(tbody);
+    load();
 }
 function ingresarTipoDePago() {
     var auxNombre = $('#txtNombre').val(),

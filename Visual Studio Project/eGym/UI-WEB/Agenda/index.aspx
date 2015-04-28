@@ -42,7 +42,7 @@
                                             <label for="regular2">Asunto</label>
                                         </div>
                                         <div class="form-group floating-label">
-                                            <input type="text" id="txtHoraInicio" class="form-control">
+                                            <input type="text" id="txtHoraInicio time-mask" class="form-control">
                                             <%--<label for="regular2">Hora inicio</label>--%>
                                         </div>
                                         <div class="form-group floating-label">
