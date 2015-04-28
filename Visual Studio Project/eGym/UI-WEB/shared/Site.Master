@@ -174,7 +174,7 @@
                         <!-- END ROLES -->
                         <!-- BEGIN REPORTES -->
                         <li id="menuReportes" class="hidden">
-                            <a href="#">
+                            <a href="<%= Page.ResolveUrl("~/Reportes/Reportes.aspx")%>">
                                 <div class="gui-icon"><i class="fa fa-file-text-o"></i>
                                 </div>
                                 <span class="title">Reportes</span>
@@ -200,7 +200,7 @@
                         </li>
                         <!-- END FORMULAS -->
                                                 <!-- BEGIN FORMULAS -->
-                        <li id="Li1" class="hidden">
+                        <li id="menuPruebasResistencia" class="hidden">
                             <a href="<%= Page.ResolveUrl("~/PruebasResistencia/index.aspx")%>">
                                 <div class="gui-icon"><i class="fa fa-cog"></i>
                                 </div>
@@ -252,7 +252,7 @@
     function setUsuarioSesion(datos) {
         $.ajax({
             type: "GET",
-            url: '<%= Page.ResolveUrl("http://localhost:60166/ServicioUsuario.svc")%>',
+            url: '<%= Page.ResolveUrl("http://localhost:60166/ServicioUsuario.svc/ObtenerUsuario")%>',
             data: JSON.parse(datos),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -316,6 +316,9 @@
             }
             if (entry.Id === 8) {
                 $(menuConfiguracion).removeClass("hidden");
+            }
+            if (entry.Id === 14) {
+                $(menuPruebasResistencia).removeClass("hidden");
             }
         });
     }

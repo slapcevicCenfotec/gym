@@ -266,10 +266,10 @@ function onSuccessIngresarUsuario(result) {
     }
 }
 
-function onSuccess(result) {
+//function onSuccess(result) {
 
-    alert("Yeah!");
-}
+//    alert("Yeah!");
+//}
 
 function errorMessage(resul) {
     alert(resul.get_message());

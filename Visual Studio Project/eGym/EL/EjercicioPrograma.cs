@@ -14,6 +14,13 @@ namespace EL
         private int _semana;
         private Ejercicio _ejercicio;
         private TipoMedida _tipoMedida;
+        private int _idPrograma;
+
+        public int IdPrograma
+        {
+            get { return _idPrograma; }
+            set { _idPrograma = value; }
+        }
 
         public int Id
         {

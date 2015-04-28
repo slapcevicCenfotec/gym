@@ -48,6 +48,14 @@ namespace EL
             set { _nombreUsuario = value; }
         }
 
+        private String _nombrePrueba;
+
+        public String NombrePrueba
+        {
+            get { return _nombrePrueba; }
+            set { _nombrePrueba = value; }
+        }
+
         private int _idTipoPrueba;
 
         public int IdTipoPrueba

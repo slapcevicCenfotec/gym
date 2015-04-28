@@ -25,11 +25,15 @@ function onSuccessPruebas(result) {
     var tr = "";
     $.each(objeto, function (i, item) {
         label += '<div class="form-group">';
-        label += '<label for="nombre">Peso: ' + objeto[i].Peso + '</label>';
+        label += '<label for="descripcion"><h4>Usuario: ' + objeto[i].NombreUsuario + '</h4></label>';
         label += '</div>';
         label += '<div class="form-group">';
-        label += '<label for="descripcion">Usuario' + objeto[i].IdTipoPrueba + '</label>';
+        label += '<label for="nombre"><h4>Peso: ' + objeto[i].Peso + '</h4></label>';
         label += '</div>';
+        label += '<div class="form-group">';
+        label += '<label for="descripcion"><h4>Tipo Prueba: ' + objeto[i].NombrePrueba + '</h4></label>';
+        label += '</div>';
+
     });
     $('#prbResistencia').append(label);
 

@@ -13,7 +13,7 @@ using System.Web.Services;
 
 namespace ServicioEnClases
 {
-    [ServiceContract(Namespace = "ServicioEnClases")]
+    [ServiceContract(Namespace = "ServicioLogin")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class ServicioSesion
     {
@@ -29,10 +29,10 @@ namespace ServicioEnClases
                 var jss = new JavaScriptSerializer();
                 var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
 
-                string correo = Convert.ToString(dictionary["pcorreo"]);
-                string contrasena = Convert.ToString(dictionary["pcontrasena"]);
+                string correo = dictionary["pcorreo"];
+                string contrasena = dictionary["pcontrasena"];
 
-                Usuario usuario = new GestorSesion().iniciarSesion(correo, contrasena);
+                Usuario usuario = objGestorSesion.iniciarSesion(correo, contrasena);
                 return new JavaScriptSerializer().Serialize(usuario);
             }
             catch (Exception e)

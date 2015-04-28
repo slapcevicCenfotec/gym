@@ -13,9 +13,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
             <form id="form1" runat="server">
-    <div id="prbResistencia">
 
-    </div>
 <div class="col-lg-12">
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
@@ -24,23 +22,52 @@
 .tg .tg-rd2y{font-size:16px}
 .tg .tg-9vto{font-family:Verdana, Geneva, sans-serif !important;}
 </style>
-<table class="tg" id="tblPruebas">
-  <tr>
-    <th class="tg-031e">Evaluacion</th>
-    <th class="tg-031e" colspan="4">RM#</th>
-    <th class="tg-031e" colspan="3">Porcentajes</th>
-  </tr>
-  <tr>
-    <td class="tg-031e">Ejercicio</td>
-    <td class="tg-031e">Serie</td>
-    <td class="tg-031e">Repeticiones</td>
-    <td class="tg-031e">Peso</td>
-    <td class="tg-031e">1 RM<br></td>
-    <td class="tg-031e">60%</td>
-    <td class="tg-031e">70%</td>
-    <td class="tg-031e">80%</td>
-  </tr>
-</table>
+<div class="section-body contain-lg">
+
+            <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-primary">Prueba de Resistencia</h1>
+            </div>
+            <!--end .col -->
+            <div class="col-lg-8">
+                <article class="margin-bottom-xxl" id="prbResistencia">
+                    <p class="lead">
+                        Informacion de la prueba de resistencia del cliente
+                    </p>
+                </article>
+            </div>
+            <!--end .col -->
+        </div>
+            <div class="row">
+                            <div class="col-md-4">
+                        <a class="btn btn-raised btn-primary ink-reaction pull-right"  id="btnModificarPruebaResistencia">Modificar prueba de resistencia</a>
+                </div>
+            </div>
+<div class="card">
+<div class="card-body">
+    <table class="table table-striped no-margin" id="tblPruebas">
+      <thead>
+        <tr>
+        <th class="tg-031e">Evaluacion</th>
+        <th class="tg-031e" colspan="4">RM#</th>
+        <th class="tg-031e" colspan="3">Porcentajes</th>
+      </tr>
+      <tr>
+        <th class="tg-031e">Ejercicio</th>
+        <th class="tg-031e">Serie</th>
+        <th class="tg-031e">Repeticiones</th>
+        <th class="tg-031e">Peso</th>
+        <th class="tg-031e">1 RM<br></th>
+        <th class="tg-031e">60%</th>
+        <th class="tg-031e">70%</th>
+        <th class="tg-031e">80%</th>
+      </tr>
+    </thead>
+    </table>
+</div>
+</div>
+</div>
+ </div>
 
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>

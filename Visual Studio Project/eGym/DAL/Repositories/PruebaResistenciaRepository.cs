@@ -176,7 +176,7 @@ namespace DAL.Repositories
         {
             PruebaResistencia objPrueba = null;
             List<PruebaResistencia> listaPruebas = new List<PruebaResistencia>();
-            var sqlQuery = " SELECT A.ID,A.PESO,A.FECHA,A.USUARIO,A.TIPO_PRUEBA FROM T_PRUEBA_RESISTENCIA A INNER JOIN T_USUARIO B ON A.USUARIO = B.ID where B.IDENTIFICACION = @ID";
+            var sqlQuery = " SELECT A.ID,A.PESO,A.FECHA,A.USUARIO,B.NOMBRE +' '+ B.APELLIDO +' '+ B.SEGUNDO_APELLIDO AS NOMBRE_C0MPLETO, A.TIPO_PRUEBA,C.NOMBRE AS NOMBRE_PRUEBA FROM T_PRUEBA_RESISTENCIA A INNER JOIN T_USUARIO B ON A.USUARIO = B.ID INNER JOIN [dbo].[T_TIPO_PRUEBA_RESISTENCIA] C ON A.TIPO_PRUEBA = C.ID where B.IDENTIFICACION = @ID";
             //var sqlQuery = "SELECT ID,PESO,FECHA,USUARIO,TIPO_PRUEBA FROM T_PRUEBA_RESISTENCIA where USUARIO = @ID";
             SqlCommand cmd = new SqlCommand(sqlQuery);
             cmd.Parameters.AddWithValue("@ID", id.ToString());
@@ -193,6 +193,8 @@ namespace DAL.Repositories
                     Fecha = Convert.ToDateTime(dr["FECHA"]),
                     Peso = Convert.ToDouble(dr["PESO"]),
                     IdUsuario = Convert.ToInt32(dr["USUARIO"]),
+                    NombreUsuario = dr["NOMBRE_C0MPLETO"].ToString(),
+                    NombrePrueba= dr["NOMBRE_PRUEBA"].ToString(),
                     IdTipoPrueba = Convert.ToInt32(dr["TIPO_PRUEBA"]
                     )
                 };

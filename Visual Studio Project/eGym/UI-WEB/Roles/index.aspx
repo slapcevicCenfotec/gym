@@ -1,15 +1,12 @@
-﻿    <%@ Page Language="vb" AutoEventWireup="true" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%> />
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990")%> />
     <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990")%> />
-
-
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <form id="form1" runat="server">
+
     <section class="style-default-bright">
         <div class="section-header">
             <h2 class="text-primary">Roles</h2>
@@ -38,12 +35,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <!--end .table-responsive -->
                 </div>
-                <!--end .col -->
             </div>
-            <!--end .row -->
-            <!-- END DATATABLE 1 -->
             <p><button type="button" class="btn ink-reaction btn-flat btn-primary" id="btnAgregarRol">Agregar Rol</button>
             </p>
             <p><button type="button" class="btn ink-reaction btn-flat btn-primary" id="btnModificarRol" >Modificar Rol</button>
@@ -53,14 +46,16 @@
 
         </div>
         <!--end .section-body -->
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            <Services>
-                <asp:ServiceReference Path="http://localhost:60166/ServicioRol.svc" />
-            </Services>
-        </asp:ScriptManager>
+
 
     </section>
-        </form>
+        <form id="Form1" runat="server">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    <Services>
+                        <asp:ServiceReference Path="http://localhost:60166/ServicioRol.svc" />
+                    </Services>
+                </asp:ScriptManager>
+       </form>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server"> 
