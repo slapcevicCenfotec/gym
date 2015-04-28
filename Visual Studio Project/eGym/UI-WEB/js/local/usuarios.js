@@ -273,10 +273,6 @@ respuesta = servicio.InsertarHorario(datos, null, errorMessage, null, null);
     }
 }
 
-function onSuccess(result) {
-
-    alert("");
-}
 
 function errorMessage(resul) {
     alert(resul.get_message());

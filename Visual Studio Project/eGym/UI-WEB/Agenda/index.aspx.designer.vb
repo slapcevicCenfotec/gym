@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class index6
+Partial Public Class index
 
     '''<summary>
     '''ScriptManager2 control.

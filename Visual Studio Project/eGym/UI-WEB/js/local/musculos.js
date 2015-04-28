@@ -1,4 +1,6 @@
-﻿/// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Musculo/ModificarMusculo.aspx" />
+﻿/// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Musculo/modificar.aspx" />
+/// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Musculo/modificar.aspx" />
+/// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Musculo/ModificarMusculo.aspx" />
 /// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Ejercicios/ModificarEjercicio.aspx" />
 /// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Ejercicios/ModificarEjercicio.aspx" />
 /// <reference path="C:\Users\espindan\Documents\Cenfotec\Proyecto2\Segunda Iteracion\eGym2\gym\Visual Studio Project\eGym\UI-WEB\Ejercicios/ModificarEjercicio.aspx" />
@@ -30,9 +32,14 @@ function load() {
         }
     });
 }
+
 function buscarMusculos() {
     var service2 = new ServicioEnClases.ServicioProyecto();
-    service2.obtenerMusculos(onSuccessMusculos, null, null);
+    service2.obtenerMusculos(onSuccessMusculos, errorMessageListar, null);
+}
+
+function errorMessageListar(resul) {
+    alert(resul.get_message());
 }
 
 function onSuccessMusculos(result) {
@@ -55,24 +62,76 @@ function onSuccessMusculos(result) {
     load();
 }
 $('#btnAgregarMusculo').click(function () {
-    var nombre = $('#txtnombreMusculo').val(),
-         ubicacion = $('#txtubicacionMusculo').val(),
-         origen = $('#txtorigenMusculo').val(),
-         inserccion = $('#txtinserccionMusculo').val(),
-         inervacion = $('#txtinervacionMusculo').val(),
-         irrigacion = $('#txtirrigacionMusculo').val(),
+
+    $('frmIngresarMusculo').validate({
+        messages: {
+            name: {
+                required: "Campo es requerido"
+            },
+            ubicacion: {
+                required: "Campo es requerido"
+            },
+            origen: {
+                required: "Campo es requerido"
+            },
+            insercccion: {
+                required: "Campo es requerido"
+            },
+            inervacion: {
+                required: "Campo es requerido"
+            },
+            irrigacion: {
+                required: "Campo es requerido"
+            }
+        },
+        //submitHandler: function (form) {
+            
+        //    //alert("formulario validado");
+        //    //submit();
+        //}
+        //highlight: function (element, errorClass) {
+        //    $(element).closest('.form-group').addClass('has-error');
+        //},
+        //unhighlight: function (element, errorClass) {
+        //    $(element).closest('.form-group').removeClass('has-error');
+        //},
+
+        //errorPlacement: function (error, element) {
+
+        //    if (element.attr('type') == 'checkbox') {
+        //        element.closest('.form-group').children(0).prepend(error)
+        //    }
+        //    else
+        //        error.insertAfter(element);
+
+        //    error.appendTo(element.parent().next());
+        //}
+    });
+
+    if ($("#frmIngresarMusculo").valid()) {
+        var nombre = $('#txtnombreMusculo').val(),
+            ubicacion = $('#txtubicacionMusculo').val(),
+            origen = $('#txtorigenMusculo').val(),
+            inserccion = $('#txtinserccionMusculo').val(),
+            inervacion = $('#txtinervacionMusculo').val(),
+            irrigacion = $('#txtirrigacionMusculo').val(),
         service4 = new ServicioEnClases.ServicioProyecto();
 
-    var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
-    service4.insertarMusculo(datos, onSuccesIngresar, null, null, null);
-
+        var datos = JSON.stringify({ pnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
+        service4.insertarMusculo(datos, onSuccesIngresar, onFailIngresar, null, null);
+    }
 });
 $('#btnIrAgregarMusculo').click(function () {
-    location.href = "InsertarMusculo.aspx";
+    location.href = "agregar.aspx";
 })
 function onSuccesIngresar(result) {
-    alert('Se registró correctamente el demonio');
+    location.href = "index.aspx?agregado";
+   // alert('Se registró correctamente el músculo');
 }
+function onFailIngresar(result) {
+   toastr.error('El músculo no ha podido ser agregado');
+}
+
 
 $('#btnEliminarMus').click(function () {
     var rows = $('tr.selected');
@@ -83,48 +142,92 @@ $('#btnEliminarMus').click(function () {
     var id = rowData[0][0];
 
     var service5 = new ServicioEnClases.ServicioProyecto();
-    var datos = JSON.stringify({ pid : id });
-    service5.eliminarMusculo(datos, onSuccesEliminar, errorMessage, null);
+    var datos = JSON.stringify({ pid: id
+});
+    service5.eliminarMusculo(datos, onSuccesEliminar, onFailEliminar, null);
 
 })
 
-function onSuccesEliminar (result)
-{
-    alert("Musculo fue eliminado");
-}
-function errorMessage(result) {
-    alert("Error" + result);
-}
-$('#btnModificarMus').click(function(){
-    var rows = $('tr.selected');
-    var table = $('#tblMusculos').DataTable();
+function onSuccesEliminar(result) {
+    toastr.success('El músculo ha sido eliminado')
+    //alert("Musculo fue eliminado");
+    }
+    function onFailEliminar(result) {
+          toastr.error('El músculo no ha podido ser eliminado');
+
+     //   alert("Error" +result);
+        }
+    $('#btnModificarMus').click(function () {
+        var rows = $('tr.selected');
+        var table = $('#tblMusculos').DataTable();
 
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
 
-    location.href = "ModificarMusculo.aspx?id=" + id;
-})
+    location.href = "modificar.aspx?id=" +id;
+    })
 $('#btnModificarMusculo').click(function () {
-    
-    var id = $('#txtIdMusculo').val(),
-        nombre = $('#txtnombreMusculo').val(),
-        ubicacion = $('#txtubicacionMusculo').val(),
-        origen = $('#txtorigenMusculo').val(),
-        inserccion =  $('#txtinserccionMusculo').val(),
-        inervacion =  $('#txtinervacionMusculo').val(),
-        irrigacion = $('#txtirrigacionMusculo').val()
 
-    var service2 = new ServicioEnClases.ServicioProyecto();
+    $('#frmModificarMusculo').validate({
+            messages: {
+                name: {
+                    required: "Campo es requerido"
+            },
+                    ubicacion: {
+                            required: "Campo es requerido"
+            },
+                    origen: {
+                            required: "Campo es requerido"
+            },
+                    insercccion: {
+                            required: "Campo es requerido"
+            },
+                    inervacion: {
+                            required: "Campo es requerido"
+            },
+                    irrigacion: {
+                            required: "Campo es requerido"
+            }
+    }
+});
+if ($("#frmModificarMusculo").valid()) {
+        var id = $('#txtIdMusculo').val(),
+            nombre = $('#txtnombreMusculo').val(),
+            ubicacion = $('#txtubicacionMusculo').val(),
+            origen = $('#txtorigenMusculo').val(),
+            inserccion = $('#txtinserccionMusculo').val(),
+            inervacion = $('#txtinervacionMusculo').val(),
+            irrigacion = $('#txtirrigacionMusculo').val()
 
-    var datos = JSON.stringify({ pid: id, ppnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
+        var service2 = new ServicioEnClases.ServicioProyecto();
 
-    service2.modificarMusculo(datos, onSuccesModificar, errorMessageModificar, null)
-})
+        var datos = JSON.stringify({ pid: id, ppnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion
+});
 
-function onSuccesModificar(result) {
-    alert('Se modificó correctamente el músculo');
+        service2.modificarMusculo(datos, onSuccesModificar, errorMessageModificar, null)
 }
-function errorMessageModificar(resul) {
-    alert(resul.get_message());
+    //var id = $('#txtIdMusculo').val(),
+    //    nombre = $('#txtnombreMusculo').val(),
+    //    ubicacion = $('#txtubicacionMusculo').val(),
+    //    origen = $('#txtorigenMusculo').val(),
+    //    inserccion =  $('#txtinserccionMusculo').val(),
+    //    inervacion =  $('#txtinervacionMusculo').val(),
+    //    irrigacion = $('#txtirrigacionMusculo').val()
+
+    //var service2 = new ServicioEnClases.ServicioProyecto();
+
+    //var datos = JSON.stringify({ pid: id, ppnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion });
+
+    //service2.modificarMusculo(datos, onSuccesModificar, errorMessageModificar, null)
+});
+
+    function onSuccesModificar(result) {
+        location.href = "index.aspx?modificado";
+         //alert('Se modificó correctamente el músculo');
+    };
+    function errorMessageModificar(resul) {
+        toastr.error('El músculo no ha podido ser modificado');
+
+ //       alert(resul.get_message());
 }

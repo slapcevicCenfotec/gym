@@ -54,6 +54,28 @@ namespace ServicioEnClases
         }
 
 
+        [WebGet()]
+        [OperationContract]
+        public string obtenerRolPorPermiso(string datosSerializados)
+        {
+            try
+            {
+
+                var jss = new JavaScriptSerializer();
+                //var dictionary = jss.Deserialize<Dictionary<string, string,>>(datosSerializados);
+                var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+                int id = Convert.ToInt32(dictionary["pid"]);
+                List<Rol> listaRoles = new List<Rol>();
+                listaRoles = objGestorRol.obtenerRol(id);
+                return new JavaScriptSerializer().Serialize(listaRoles);
+            }
+            catch (Exception ex)
+            {
+                return new JavaScriptSerializer().Serialize(ex.Message);
+            }
+        }
+
+
         [WebMethod]
         [OperationContract]
         public void insertarRoles(string datosSerializados)
