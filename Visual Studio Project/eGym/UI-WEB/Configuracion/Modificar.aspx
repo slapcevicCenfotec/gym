@@ -37,7 +37,7 @@
  
                                             <asp:ScriptManager ID="ScriptManager1" runat="server">
                                                            <Services>
-                                                                <asp:ServiceReference Path="http://localhost/ServicioGimnasio.svc" />
+                                                                <asp:ServiceReference Path="http://localhost/egymServices/ServicioGimnasio.svc" />
                                                                 </Services>
                                             </asp:ScriptManager>
 													</div>
