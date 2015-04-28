@@ -347,7 +347,7 @@ $('#txtRol').change(function () {
 //AGREGAR USUARIO
 
 $('#btnAgregar').click(function () {
-    window.location = 'agregar.aspx';
+    window.location = 'ir.aspx';
 })
 
 //MODIFICAR USUARIO
