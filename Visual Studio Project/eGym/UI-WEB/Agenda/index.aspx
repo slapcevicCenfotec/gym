@@ -11,6 +11,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <div class="col-md-12">
         <div class="card tabs-left style-default-light">
             <div class="col-md-10 col-md-offset-1">
@@ -18,9 +19,11 @@
                   
                 </div>
                 <a class="btn btn-raised ink-reaction btn-default-bright" data-toggle="offcanvas" href="#offcanvas-demo-size3">Prueba</a>
+                
                 <div class="offcanvas">
                     <div class="offcanvas-pane width-10" id="offcanvas-demo-size3" style="">
                         <div class="offcanvas-head">
+
                             <header>Nuevo evento</header>
                             <div class="offcanvas-tools">
                                 <a data-dismiss="offcanvas" class="btn btn-icon-toggle btn-default-light pull-right">
@@ -42,12 +45,14 @@
                                             <label for="regular2">Asunto</label>
                                         </div>
                                         <div class="form-group floating-label">
-                                            <input type="text" id="txtHoraInicio time-mask" class="form-control">
-                                            <%--<label for="regular2">Hora inicio</label>--%>
+                                            <input type="text" id="txtHoraInicio" class="form-control time-mask">
+                                            <label>Hora inicial</label>
+                                            <p class="help-block">Formato: 24h</p>
                                         </div>
                                         <div class="form-group floating-label">
                                             <input type="text" id="txtHoraFinal" class="form-control">
-                                            <%--<label for="regular2">Hora final</label>--%>
+                                            <label>Hora final</label>
+                                            <p class="help-block">Formato: 24h</p>
                                         </div>
                                         <div class="card-actionbar">
                                             <div data-toggle="tabs" class="card-actionbar-row">
@@ -87,11 +92,14 @@
                                             <%--<label for="regular2">Asunto</label>--%>
                                         </div>
                                         <div class="form-group floating-label">
-                                            <input type="text" id="txtHoraInicioM" class="form-control">
-                                            <%--<label for="regular2">Hora inicio</label>--%>
+                                            <input type="text" id="txtHoraInicioM" class="form-control time-mask">
+                                            <label>Hora inicial</label>
+                                            <p class="help-block">Formato: 24h</p>
                                         </div>
                                         <div class="form-group floating-label">
-                                            <input type="text" id="txtHoraFinalM" class="form-control">
+                                            <input type="text" id="txtHoraFinalM" class="form-control time-mask">
+                                            <label>Hora final</label>
+                                            <p class="help-block">Formato: 24h</p>
                                             <%--<label for="regular2">Hora final</label>--%>
                                         </div>
                                         <div class="card-actionbar">
@@ -139,11 +147,9 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/typeahead/typeahead.bundle.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/local/calendar/fullcalendar.js")%>"></script>
-    
 
     <script src="../js/local/calendar/jquery.simplemodal.js"></script>
     <script src="../js/local/agenda.js"></script>
-
     <script>
 
 
@@ -157,373 +163,549 @@
         //    //eventos = result;
         //}
         $(document).ready(function () {
-            var eventos = [];
-            var servicio1 = new ServicioEnClases.ServicioEventoCalendario();
-            servicio1.getAllEventoCalendario(onsucess, onFail, null);
+            var eventos = [];$('#calendar').fullCalendar({
+                height: 650,
+                contentHeight: 465,
+                aspectRatio: 3,
+                theme: true,
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'agendaWeek',
+                editable: true,
+                disableDragging: true,
+                firstDay: 1,
+                weekends: true,
+                defaultEventMinutes: 30,
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                buttonText: {
+                    today: 'hoy',
+                    month: 'mes',
+                    week: 'semana',
+                    day: 'dia'
 
-            function onsucess(result) {
-                //alert(result)
-                var object = $.parseJSON(result);
+                },
+                //dayClick: function (date, view) {
+                //    $('#calendar').fullCalendar('changeView', 'agendaDay');
+                //    $('#calendar').fullCalendar('gotoDate', date);
 
-                $.each(object, function (i, item) {
-                    //alert(object[i].FechaInicial);
-                    object[i].FechaInicial = new Date(parseInt(object[i].FechaInicial.substr(6)));
-                    object[i].FechaFinal = new Date(parseInt(object[i].FechaFinal.substr(6)));
+                //    s
+                //    //var moment = $('#calendar').fullCalendar('getDate');
+                //    //alert("The current date of the calendar is " + moment.format());
 
-                    eventos.push({ 'id': object[i].Id, 'title': object[i].Titulo, 'start': object[i].FechaInicial, 'end': object[i].FechaFinal, 'description': object[i].Descripcion });
+                //    //alert(date);
+                //}, 
+                selectable: true,
+                selectHelper: true,
+                select: function (start, end, view) {
+                    var usuario = '116',
+                        tipo = '1',
+                        titulo = $('#txtTitulo').val(),
+                        descripcion = $('#txtAsunto').val(),
+                        fechaInicio = $('#txtHoraInicio').val(),
+                        fechaFinal = $('#txtHoraFinal').val()
 
-                });
+                    //var view = $('#calendar').fullCalendar('getView');
+                    //if (view.name == 'month') {
 
-                $('#calendar').fullCalendar({
-                    height: 650,
-                    contentHeight: 465,
-                    aspectRatio: 3,
-                    theme: true,
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
-                    defaultView: 'agendaWeek',
-                    editable: true,
-                    disableDragging: true,
-                    firstDay: 1,
-                    weekends: true,
-                    defaultEventMinutes: 30,
-                    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                    monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-                    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-                    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-                    buttonText: {
-                        today: 'hoy',
-                        month: 'mes',
-                        week: 'semana',
-                        day: 'dia'
+                    //    $('#calendar').fullCalendar('gotoDate', start)
 
-                    },
-                    //dayClick: function (date, view) {
-                    //    $('#calendar').fullCalendar('changeView', 'agendaDay');
-                    //    $('#calendar').fullCalendar('gotoDate', date);
+                    //} else {
 
-                    //    s
-                    //    //var moment = $('#calendar').fullCalendar('getDate');
-                    //    //alert("The current date of the calendar is " + moment.format());
-
-                    //    //alert(date);
-                    //}, 
-                    selectable: true,
-                    selectHelper: true,
-                    select: function (start, end, view) {
-                        var usuario = '116',
-                            tipo = '1',
-                            titulo = $('#txtTitulo').val(),
-                            descripcion = $('#txtAsunto').val(),
-                            fechaInicio = $('#txtHoraInicio').val(),
-                            fechaFinal = $('#txtHoraFinal').val()
-
-                        //var view = $('#calendar').fullCalendar('getView');
-                        //if (view.name == 'month') {
-
-                        //    $('#calendar').fullCalendar('gotoDate', start)
-
-                        //} else {
-
-
-                        //}
-
-
-                        //alert("The view's title is " + view.name);
-                        //alert(start.format());
-
-                        var widthPage = $(document).width();
-
-
-                        $('#offcanvas-demo-size3').modal({
-                            position: [10, widthPage - 400]
-
-                        })
-
-                        $('#txtHoraInicio').val(start.format());
-                        $('#txtHoraFinal').val(end.format());
-
-                        $("#btnSubmit").click(function () {
-                            var eventData;
-
-                            //if ($("#txtTitulo").val() != "") {
-                            usuario = '116',
-                            tipo = '1',
-                            titulo = $('#txtTitulo').val(),
-                            descripcion = $('#txtAsunto').val(),
-                            fechaInicio = $('#txtHoraInicio').val(),
-                            fechaFinal = $('#txtHoraFinal').val()
-
-                            var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
-                            var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
-
-                            servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
-
-                            //var title = $("#txtTitulo").val();
-
-                            //} else {
-                            //    alert("debe ingresar el titulo");
-
-                            //}
-
-                        });
-                        function onsucessInsertar(result) {
-                            alert("Yupiiii");
-                            eventData = {
-                                title: titulo,
-                                start: fechaInicio,
-                                end: fechaFinal
-                            };
-
-                            $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-
-                        };
-                        function onFailInsetar(result) {
-                            alert(result.get_message());
-                            $('#calendar').fullCalendar('unselect');
-                        };
-
-
-                        //var title = prompt('Event Title:');
-                        //alert(title)
-                    },
-                    editable: true,
-                    eventLimit: true, // allow "more" link when too many events
-                    events: eventos,
-                    editable: true,
-                    eventClick: function (calEvent, jsEvent, view) {
-
-                        var id = calEvent.id,
-                            titulo = calEvent.title,
-                            fechaInicio = calEvent.start,
-                            fechaFinal = calEvent.end,
-                            descripcion = calEvent.description
-
-                        var widthPage = $(document).width();
-
-                        $('#offcanvas-demo-size4').modal({
-                            position: [10, widthPage - 400]
-
-                        })
-
-                        $('#txtIdM').val(id);
-                        $('#txtTituloM').val(titulo);
-                        $('#txtAsuntoM').val(descripcion);
-                        $('#txtHoraInicioM').val(fechaInicio.format());
-                        $('#txtHoraFinalM').val(fechaFinal.format());
-
-                        $("#btnSubmitM").click(function () {
-                            usuario = '116',
-                            tipo = '1',
-                            titulo = $('#txtTitulo').val(),
-                            descripcion = $('#txtAsunto').val(),
-                            fechaInicio = $('#txtHoraInicio').val(),
-                            fechaFinal = $('#txtHoraFinal').val()
-
-                            var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
-                            var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
-
-                            servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
-
-                        });
-
-                    }
-
-                    //eventDrop: function (event, delta, revertFunc) {
-
-
-
-                    //    alert(event.id + " was dropped on " + event.start.format()+"Day "+ event.start.format());
-
-                    //    if (!confirm("Are you sure about this change?")) {
-                    //        revertFunc();
-                    //    }
 
                     //}
 
 
-                })
+                    //alert("The view's title is " + view.name);
+                    //alert(start.format());
 
-            }
-            function onFail(result) {
-                $('#calendar').fullCalendar({
-                    height: 650,
-                    contentHeight: 465,
-                    aspectRatio: 3,
-                    theme: true,
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
-                    defaultView: 'agendaWeek',
-                    editable: true,
-                    disableDragging: true,
-                    firstDay: 1,
-                    weekends: true,
-                    defaultEventMinutes: 30,
-                    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                    monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-                    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-                    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-                    buttonText: {
-                        today: 'hoy',
-                        month: 'mes',
-                        week: 'semana',
-                        day: 'dia'
+                    var widthPage = $(document).width();
 
-                    },
-                    //dayClick: function (date, view) {
-                    //    $('#calendar').fullCalendar('changeView', 'agendaDay');
-                    //    $('#calendar').fullCalendar('gotoDate', date);
 
-                    //    s
-                    //    //var moment = $('#calendar').fullCalendar('getDate');
-                    //    //alert("The current date of the calendar is " + moment.format());
+                    $('#offcanvas-demo-size3').modal({
+                        position: [10, widthPage - 400],
+                        opacity: 20,
+                        overlayClose:true,
+                        overlayCss: { backgroundColor: "#030303" }
 
-                    //    //alert(date);
-                    //}, 
-                    selectable: true,
-                    selectHelper: true,
-                    select: function (start, end, view) {
-                        var usuario = '116',
-                            tipo = '1',
-                            titulo = $('#txtTitulo').val(),
-                            descripcion = $('#txtAsunto').val(),
-                            fechaInicio = $('#txtHoraInicio').val(),
-                            fechaFinal = $('#txtHoraFinal').val()
+                    })
 
-                        //var view = $('#calendar').fullCalendar('getView');
-                        //if (view.name == 'month') {
+                    $('#txtHoraInicio').val(start.format());
+                    $('#txtHoraFinal').val(end.format());
 
-                        //    $('#calendar').fullCalendar('gotoDate', start)
+                    $("#btnSubmit").click(function () {
+                        var eventData;
+
+                        //if ($("#txtTitulo").val() != "") {
+                        usuario = '116',
+                        tipo = '1',
+                        titulo = $('#txtTitulo').val(),
+                        descripcion = $('#txtAsunto').val(),
+                        fechaInicio = $('#txtHoraInicio').val(),
+                        fechaFinal = $('#txtHoraFinal').val()
+
+                        var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+                        var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
+
+                        servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+
+                        //var title = $("#txtTitulo").val();
 
                         //} else {
-
+                        //    alert("debe ingresar el titulo");
 
                         //}
 
-
-                        //alert("The view's title is " + view.name);
-                        //alert(start.format());
-
-                        var widthPage = $(document).width();
-
-
-                        $('#offcanvas-demo-size3').modal({
-                            position: [10, widthPage - 400]
-
-                        })
-
-                        $('#txtHoraInicio').val(start.format());
-                        $('#txtHoraFinal').val(end.format());
-
-                        $("#btnSubmit").click(function () {
-                            var eventData;
-
-                            //if ($("#txtTitulo").val() != "") {
-                            usuario = '116',
-                            tipo = '1',
-                            titulo = $('#txtTitulo').val(),
-                            descripcion = $('#txtAsunto').val(),
-                            fechaInicio = $('#txtHoraInicio').val(),
-                            fechaFinal = $('#txtHoraFinal').val()
-
-                            var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
-                            var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
-
-                            servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
-
-                            //var title = $("#txtTitulo").val();
-
-                            //} else {
-                            //    alert("debe ingresar el titulo");
-
-                            //}
-
-                        });
-                        function onsucessInsertar(result) {
-                            alert("Yupiiii");
-                            eventData = {
-                                title: titulo,
-                                start: fechaInicio,
-                                end: fechaFinal
-                            };
-
-                            $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-
-                        };
-                        function onFailInsetar(result) {
-                            alert(result.get_message());
-                            $('#calendar').fullCalendar('unselect');
+                    });
+                    function onsucessInsertar(result) {
+                        alert("Yupiiii");
+                        eventData = {
+                            title: titulo,
+                            start: fechaInicio,
+                            end: fechaFinal
                         };
 
+                        $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
 
-                        //var title = prompt('Event Title:');
-                        //alert(title)
-                    },
-                    editable: true,
-                    eventLimit: true, // allow "more" link when too many events
-                    events: eventos,
-                    editable: true,
-                    eventClick: function (calEvent, jsEvent, view) {
-
-                        var id = calEvent.id,
-                            titulo = calEvent.title,
-                            fechaInicio = calEvent.start,
-                            fechaFinal = calEvent.end,
-                            descripcion = calEvent.description
-
-                        var widthPage = $(document).width();
-
-                        $('#offcanvas-demo-size4').modal({
-                            position: [10, widthPage - 400]
-
-                        })
-
-                        $('#txtIdM').val(id);
-                        $('#txtTituloM').val(titulo);
-                        $('#txtAsuntoM').val(descripcion);
-                        $('#txtHoraInicioM').val(fechaInicio.format());
-                        $('#txtHoraFinalM').val(fechaFinal.format());
-
-                        $("#btnSubmitM").click(function () {
-                            usuario = '116',
-                            tipo = '1',
-                            titulo = $('#txtTitulo').val(),
-                            descripcion = $('#txtAsunto').val(),
-                            fechaInicio = $('#txtHoraInicio').val(),
-                            fechaFinal = $('#txtHoraFinal').val()
-
-                            var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
-                            var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
-
-                            servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
-
-                        });
-
-                    }
-
-                    //eventDrop: function (event, delta, revertFunc) {
+                    };
+                    function onFailInsetar(result) {
+                        alert(result.get_message());
+                        $('#calendar').fullCalendar('unselect');
+                    };
 
 
+                    //var title = prompt('Event Title:');
+                    //alert(title)
+                },
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: eventos,
+                editable: true,
+                eventClick: function (calEvent, jsEvent, view) {
 
-                    //    alert(event.id + " was dropped on " + event.start.format()+"Day "+ event.start.format());
+                    var id = calEvent.id,
+                        titulo = calEvent.title,
+                        fechaInicio = calEvent.start,
+                        fechaFinal = calEvent.end,
+                        descripcion = calEvent.description
 
-                    //    if (!confirm("Are you sure about this change?")) {
-                    //        revertFunc();
-                    //    }
+                    var widthPage = $(document).width();
 
-                    //}
+                    $('#offcanvas-demo-size4').modal({
+                        position: [10, widthPage - 400]
+
+                    })
+
+                    $('#txtIdM').val(id);
+                    $('#txtTituloM').val(titulo);
+                    $('#txtAsuntoM').val(descripcion);
+                    $('#txtHoraInicioM').val(fechaInicio.format());
+                    $('#txtHoraFinalM').val(fechaFinal.format());
+
+                    $("#btnSubmitM").click(function () {
+                        usuario = '116',
+                        tipo = '1',
+                        titulo = $('#txtTitulo').val(),
+                        descripcion = $('#txtAsunto').val(),
+                        fechaInicio = $('#txtHoraInicio').val(),
+                        fechaFinal = $('#txtHoraFinal').val()
+
+                        var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+                        var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
+
+                        servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+
+                    });
+
+                }
+
+                //eventDrop: function (event, delta, revertFunc) {
 
 
-                })
 
-            };
+                //    alert(event.id + " was dropped on " + event.start.format()+"Day "+ event.start.format());
 
-        });
+                //    if (!confirm("Are you sure about this change?")) {
+                //        revertFunc();
+                //    }
+
+                //}
+
+
+            })
+
+        }
+           // var servicio1 = new ServicioEnClases.ServicioEventoCalendario();
+            //servicio1.getAllEventoCalendario(onsucess, onFail, null);
+
+            //function onsucess(result) {
+            //    //alert(result)
+            //    var object = $.parseJSON(result);
+
+            //    $.each(object, function (i, item) {
+            //        //alert(object[i].FechaInicial);
+            //        object[i].FechaInicial = new Date(parseInt(object[i].FechaInicial.substr(6)));
+            //        object[i].FechaFinal = new Date(parseInt(object[i].FechaFinal.substr(6)));
+
+            //        eventos.push({ 'id': object[i].Id, 'title': object[i].Titulo, 'start': object[i].FechaInicial, 'end': object[i].FechaFinal, 'description': object[i].Descripcion });
+
+            //    });
+
+            //    $('#calendar').fullCalendar({
+            //        height: 650,
+            //        contentHeight: 465,
+            //        aspectRatio: 3,
+            //        theme: true,
+            //        header: {
+            //            left: 'prev,next today',
+            //            center: 'title',
+            //            right: 'month,agendaWeek,agendaDay'
+            //        },
+            //        defaultView: 'agendaWeek',
+            //        editable: true,
+            //        disableDragging: true,
+            //        firstDay: 1,
+            //        weekends: true,
+            //        defaultEventMinutes: 30,
+            //        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            //        monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            //        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+            //        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+            //        buttonText: {
+            //            today: 'hoy',
+            //            month: 'mes',
+            //            week: 'semana',
+            //            day: 'dia'
+
+            //        },
+            //        //dayClick: function (date, view) {
+            //        //    $('#calendar').fullCalendar('changeView', 'agendaDay');
+            //        //    $('#calendar').fullCalendar('gotoDate', date);
+
+            //        //    s
+            //        //    //var moment = $('#calendar').fullCalendar('getDate');
+            //        //    //alert("The current date of the calendar is " + moment.format());
+
+            //        //    //alert(date);
+            //        //}, 
+            //        selectable: true,
+            //        selectHelper: true,
+            //        select: function (start, end, view) {
+            //            var usuario = '116',
+            //                tipo = '1',
+            //                titulo = $('#txtTitulo').val(),
+            //                descripcion = $('#txtAsunto').val(),
+            //                fechaInicio = $('#txtHoraInicio').val(),
+            //                fechaFinal = $('#txtHoraFinal').val()
+
+            //            //var view = $('#calendar').fullCalendar('getView');
+            //            //if (view.name == 'month') {
+
+            //            //    $('#calendar').fullCalendar('gotoDate', start)
+
+            //            //} else {
+
+
+            //            //}
+
+
+            //            //alert("The view's title is " + view.name);
+            //            //alert(start.format());
+
+            //            var widthPage = $(document).width();
+
+
+            //            $('#offcanvas-demo-size3').modal({
+            //                position: [10, widthPage - 400]
+
+            //            })
+
+            //            $('#txtHoraInicio').val(start.format());
+            //            $('#txtHoraFinal').val(end.format());
+
+            //            $("#btnSubmit").click(function () {
+            //                var eventData;
+
+            //                //if ($("#txtTitulo").val() != "") {
+            //                usuario = '116',
+            //                tipo = '1',
+            //                titulo = $('#txtTitulo').val(),
+            //                descripcion = $('#txtAsunto').val(),
+            //                fechaInicio = $('#txtHoraInicio').val(),
+            //                fechaFinal = $('#txtHoraFinal').val()
+
+            //                var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+            //                var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
+
+            //                servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+
+            //                //var title = $("#txtTitulo").val();
+
+            //                //} else {
+            //                //    alert("debe ingresar el titulo");
+
+            //                //}
+
+            //            });
+            //            function onsucessInsertar(result) {
+            //                alert("Yupiiii");
+            //                eventData = {
+            //                    title: titulo,
+            //                    start: fechaInicio,
+            //                    end: fechaFinal
+            //                };
+
+            //                $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+
+            //            };
+            //            function onFailInsetar(result) {
+            //                alert(result.get_message());
+            //                $('#calendar').fullCalendar('unselect');
+            //            };
+
+
+            //            //var title = prompt('Event Title:');
+            //            //alert(title)
+            //        },
+            //        editable: true,
+            //        eventLimit: true, // allow "more" link when too many events
+            //        events: eventos,
+            //        editable: true,
+            //        eventClick: function (calEvent, jsEvent, view) {
+
+            //            var id = calEvent.id,
+            //                titulo = calEvent.title,
+            //                fechaInicio = calEvent.start,
+            //                fechaFinal = calEvent.end,
+            //                descripcion = calEvent.description
+
+            //            var widthPage = $(document).width();
+
+            //            $('#offcanvas-demo-size4').modal({
+            //                position: [10, widthPage - 400]
+
+            //            })
+
+            //            $('#txtIdM').val(id);
+            //            $('#txtTituloM').val(titulo);
+            //            $('#txtAsuntoM').val(descripcion);
+            //            $('#txtHoraInicioM').val(fechaInicio.format());
+            //            $('#txtHoraFinalM').val(fechaFinal.format());
+
+            //            $("#btnSubmitM").click(function () {
+            //                usuario = '116',
+            //                tipo = '1',
+            //                titulo = $('#txtTitulo').val(),
+            //                descripcion = $('#txtAsunto').val(),
+            //                fechaInicio = $('#txtHoraInicio').val(),
+            //                fechaFinal = $('#txtHoraFinal').val()
+
+            //                var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+            //                var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
+
+            //                servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+
+            //            });
+
+            //        }
+
+            //        //eventDrop: function (event, delta, revertFunc) {
+
+
+
+            //        //    alert(event.id + " was dropped on " + event.start.format()+"Day "+ event.start.format());
+
+            //        //    if (!confirm("Are you sure about this change?")) {
+            //        //        revertFunc();
+            //        //    }
+
+            //        //}
+
+
+            //    })
+
+            //}
+            //function onFail(result) {
+            //    $('#calendar').fullCalendar({
+            //        height: 650,
+            //        contentHeight: 465,
+            //        aspectRatio: 3,
+            //        theme: true,
+            //        header: {
+            //            left: 'prev,next today',
+            //            center: 'title',
+            //            right: 'month,agendaWeek,agendaDay'
+            //        },
+            //        defaultView: 'agendaWeek',
+            //        editable: true,
+            //        disableDragging: true,
+            //        firstDay: 1,
+            //        weekends: true,
+            //        defaultEventMinutes: 30,
+            //        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            //        monthNameShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            //        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+            //        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+            //        buttonText: {
+            //            today: 'hoy',
+            //            month: 'mes',
+            //            week: 'semana',
+            //            day: 'dia'
+
+            //        },
+            //        //dayClick: function (date, view) {
+            //        //    $('#calendar').fullCalendar('changeView', 'agendaDay');
+            //        //    $('#calendar').fullCalendar('gotoDate', date);
+
+            //        //    s
+            //        //    //var moment = $('#calendar').fullCalendar('getDate');
+            //        //    //alert("The current date of the calendar is " + moment.format());
+
+            //        //    //alert(date);
+            //        //}, 
+            //        selectable: true,
+            //        selectHelper: true,
+            //        select: function (start, end, view) {
+            //            var usuario = '116',
+            //                tipo = '1',
+            //                titulo = $('#txtTitulo').val(),
+            //                descripcion = $('#txtAsunto').val(),
+            //                fechaInicio = $('#txtHoraInicio').val(),
+            //                fechaFinal = $('#txtHoraFinal').val()
+
+            //            //var view = $('#calendar').fullCalendar('getView');
+            //            //if (view.name == 'month') {
+
+            //            //    $('#calendar').fullCalendar('gotoDate', start)
+
+            //            //} else {
+
+
+            //            //}
+
+
+            //            //alert("The view's title is " + view.name);
+            //            //alert(start.format());
+
+            //            var widthPage = $(document).width();
+
+
+            //            $('#offcanvas-demo-size3').modal({
+            //                position: [10, widthPage - 400]
+
+            //            })
+
+            //            $('#txtHoraInicio').val(start.format());
+            //            $('#txtHoraFinal').val(end.format());
+
+            //            $("#btnSubmit").click(function () {
+            //                var eventData;
+
+            //                //if ($("#txtTitulo").val() != "") {
+            //                usuario = '116',
+            //                tipo = '1',
+            //                titulo = $('#txtTitulo').val(),
+            //                descripcion = $('#txtAsunto').val(),
+            //                fechaInicio = $('#txtHoraInicio').val(),
+            //                fechaFinal = $('#txtHoraFinal').val()
+
+            //                var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+            //                var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
+
+            //                servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+
+            //                //var title = $("#txtTitulo").val();
+
+            //                //} else {
+            //                //    alert("debe ingresar el titulo");
+
+            //                //}
+
+            //            });
+            //            function onsucessInsertar(result) {
+            //                alert("Yupiiii");
+            //                eventData = {
+            //                    title: titulo,
+            //                    start: fechaInicio,
+            //                    end: fechaFinal
+            //                };
+
+            //                $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+
+            //            };
+            //            function onFailInsetar(result) {
+            //                alert(result.get_message());
+            //                $('#calendar').fullCalendar('unselect');
+            //            };
+
+
+            //            //var title = prompt('Event Title:');
+            //            //alert(title)
+            //        },
+            //        editable: true,
+            //        eventLimit: true, // allow "more" link when too many events
+            //        events: eventos,
+            //        editable: true,
+            //        eventClick: function (calEvent, jsEvent, view) {
+
+            //            var id = calEvent.id,
+            //                titulo = calEvent.title,
+            //                fechaInicio = calEvent.start,
+            //                fechaFinal = calEvent.end,
+            //                descripcion = calEvent.description
+
+            //            var widthPage = $(document).width();
+
+            //            $('#offcanvas-demo-size4').modal({
+            //                position: [10, widthPage - 400]
+
+            //            })
+
+            //            $('#txtIdM').val(id);
+            //            $('#txtTituloM').val(titulo);
+            //            $('#txtAsuntoM').val(descripcion);
+            //            $('#txtHoraInicioM').val(fechaInicio.format());
+            //            $('#txtHoraFinalM').val(fechaFinal.format());
+
+            //            $("#btnSubmitM").click(function () {
+            //                usuario = '116',
+            //                tipo = '1',
+            //                titulo = $('#txtTitulo').val(),
+            //                descripcion = $('#txtAsunto').val(),
+            //                fechaInicio = $('#txtHoraInicio').val(),
+            //                fechaFinal = $('#txtHoraFinal').val()
+
+            //                var servicio2 = new ServicioEnClases.ServicioEventoCalendario();
+            //                var datos = JSON.stringify({ USUARIO: usuario, TIPO: tipo, TITULO: titulo, DESCRIPCION: descripcion, FECHA_INICIAL: fechaInicio, FECHA_FINAL: fechaFinal });
+
+            //                servicio2.insertarEventoCalendario(datos, onsucessInsertar, onFailInsetar, null);
+
+            //            });
+
+            //        }
+
+            //        //eventDrop: function (event, delta, revertFunc) {
+
+
+
+            //        //    alert(event.id + " was dropped on " + event.start.format()+"Day "+ event.start.format());
+
+            //        //    if (!confirm("Are you sure about this change?")) {
+            //        //        revertFunc();
+            //        //    }
+
+            //        //}
+
+
+            //    })
+
+            //};
+
+        );
     </script>
 </asp:Content>

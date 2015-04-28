@@ -86,4 +86,36 @@
     <script src="<%= Page.ResolveUrl("~/js/libs/dropzone/dropzone.min.js")%>"></script>   
     <script src="<%= Page.ResolveUrl("~/js/local/facturacion.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/local/validaciones/validacionModificarTipoPago.js")%>"></script>
+    <script>
+        $(document).ready(function () {
+
+            //alert($('form').serialize());
+            //$(':text').val('foo');
+
+            var idTipoPago = getQueryVariable('id');
+
+            //alert(idMusculo)
+
+            var service5 = new ServicioEnClases.ServicioTipoPago();
+            var datos = JSON.stringify({ pid: idTipoPago });
+
+            service5.getTipoDePagoById(datos, onSuccess, errorMessage, null, null);
+
+        });
+
+        function onSuccess(result) {
+            //alert(result);
+            var objeto = $.parseJSON(result);
+            $('#txtNombre').val(objeto.Nombre);
+            $('#txtMonto').val(objeto.Monto);
+            $('#txtDuracion').val(objeto.Duracion);
+
+        }
+        function errorMessage(resul) {
+            alert(resul.get_message());
+        }
+
+        
+
+    </script>
 </asp:Content>
