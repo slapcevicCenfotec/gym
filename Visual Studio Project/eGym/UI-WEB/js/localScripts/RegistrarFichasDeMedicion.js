@@ -196,11 +196,13 @@ $('#btnGuardar').click(function () {
 })
 
 function onSuccesIngresar(result) {
-    alert('Se registró correctamente la ficha de medición');
+    location.href = "Index.aspx?agregado";
+    //alert('Se registró correctamente la ficha de medición');
 }
 
 function errorMessage(resul) {
-    alert(resul.get_message());
+    toastr.error('Ficha de medición no ha podidido ser ingresada');
+    //alert(resul.get_message());
 }
 
 $('#btnCancelar').click(function () {

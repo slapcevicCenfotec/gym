@@ -9,7 +9,7 @@
         Dim permissions = TryCast(Session("_USERPERMISSION"), List(Of String))
         Dim valido = False
         For Each permission As String In permissions
-            If permission = "5" Then
+            If permission = "4" Then
                 valido = True
             End If
         Next

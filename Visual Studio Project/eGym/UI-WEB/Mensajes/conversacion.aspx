@@ -13,9 +13,16 @@
             <!--end .col -->
             <div class="col-lg-8">
                 <article class="margin-bottom-xxl">
+                    <% If (Session("_MESSAGETYPE") = "user") Then%>
                     <p class="lead">
-                        Esta es la conversación entre usted y [Administración/Cliente #3]
+                        Esta es la conversación entre usted y el gimnasio
                     </p>
+                    <% Else%>
+                        
+                    <p class="lead">
+                        Esta es la conversación entre usted y [Cliente #]
+                    </p>
+                    <% End If%>
                 </article>
             </div>
             <!--end .col -->
@@ -142,4 +149,14 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
+    <script>
+        $(document).ready(function () {
+            if ('<%=Session("_MESSAGETYPE")%>' == 'user') {
+                conversacion('<%=Session("_USERID")%>')
+                // Cargos los mensajes con el id de sesion
+            } else {
+                // Cargo los mensajes con el id del url
+            }
+        });
+    </script>
 </asp:Content>

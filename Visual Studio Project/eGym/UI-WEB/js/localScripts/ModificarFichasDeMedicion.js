@@ -163,11 +163,13 @@ function getQueryVariable(variable) {
 }
 
 function onSuccesModificarFicha(result) {
-    alert('Se modificó correctamente la ficha');
+    location.href = "Index.aspx?modificado";
+  //  alert('Se modificó correctamente la ficha');
 }
 
 function errorMessage(resul) {
-    alert(resul.get_message());
+    toastr.error('El ejercicio ha sido agregado');
+    //alert(resul.get_message());
 }
 
 function getQueryVariable(variable) {

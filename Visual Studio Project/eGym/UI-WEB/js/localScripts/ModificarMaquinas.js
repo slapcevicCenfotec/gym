@@ -46,7 +46,7 @@ $('#btnGuardar').click(function () {
         datos = JSON.stringify({ pid: id, pnumeroActivo: numeroActivo, pnumeroMaquina: numeroMaquina, phabilitado: habilitado, ptipoMaquina: tipoMaquina });
         serviceModificar.modificarMaquina(datos, onSuccesModificarMaquina, errorMessage, null, null);
 
-        window.location = 'Index.aspx';
+       
     }
 })
 
@@ -61,11 +61,13 @@ function getQueryVariable(variable) {
 }
 
 function onSuccesModificarMaquina(result) {
-    alert('Se registró correctamente la máquina');
+    window.location = 'Index.aspx?modificado"';
+    //alert('Se registró correctamente la máquina');
 }
 
 function errorMessage(resul) {
-    alert(resul.get_message());
+    toastr.success('La maquina no ha podido se modificada');
+    //alert(resul.get_message());
 }
 
 $('#btnCancelar').click(function () {

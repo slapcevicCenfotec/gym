@@ -108,6 +108,15 @@
                         </li>
                         <!--end /menu-li -->
                         <!-- END INICIO -->
+                        <!-- BEGIN MENSAJES -->
+                        <li id="menuMensajes" class="hidden">
+                            <a href="<%= Page.ResolveUrl("~/Mensajes/index.aspx")%>">
+                                <div class="gui-icon"><i class="fa fa-envelope"></i>
+                                </div>
+                                <span class="title">Mensajes</span>
+                            </a>
+                        </li>
+                        <!-- END MENSAJES -->
                         <!-- BEGIN USUARIOS -->
                         <li id="menuUsuario" class="hidden">
                             <a href="<%= Page.ResolveUrl("~/Usuarios/index.aspx")%>">
@@ -296,6 +305,9 @@
             permisos += "-" + entry.Id;
             if (entry.Id === 1) {
                 $(menuUsuario).removeClass("hidden");
+            }
+            if (entry.Id == 15 || entry.Id == 16) {
+                $(menuMensajes).removeClass("hidden");
             }
             if (entry.Id === 2) {
                 $(menuFacturacion).removeClass("hidden");

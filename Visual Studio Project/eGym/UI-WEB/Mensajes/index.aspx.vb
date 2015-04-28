@@ -11,6 +11,9 @@
             If permission = "15" Then
                 valido = True
             End If
+            If permission = "16" Then
+                Response.Redirect("http://localhost/egym/Mensajes/conversacion.aspx")
+            End If
         Next
         If Session("_USERID") Is Nothing Or Session("_USERID") = String.Empty Then
             Response.Redirect("http://localhost/egym/iniciarsesion.aspx")

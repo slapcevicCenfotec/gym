@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <select id="musculo_principal" name="musculo_principal" class="col-sm-10 form-control" required>
+                                        <select id="musculo_principal" name="musculo_principal" class="col-sm-10 form-control"  data-filter="true" required>
                                         </select>
                                         <label>Músculo principal</label>
                                     </div>
@@ -86,6 +86,7 @@
                                             <a id="btnAgregarEjercicio"  class="btn btn-flat btn-primary">Guardar</a>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
