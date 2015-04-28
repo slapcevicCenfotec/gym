@@ -43,7 +43,7 @@ function onSuccess2(result) {
     var tbody = "";
     $.each(object, function (i, item) {
         tbody += '<tr>';
-        tbody += '<td style="display:none"' + object[i].Id + '</td>';
+        tbody += '<td style="display:none">' + object[i].Id + '</td>';
         tbody += '<td>' + object[i].Identificacion + '</td>';
         tbody += '<td>' + object[i].Nombre + ' ' + object[i].Apellido + '</td>';
         tbody += '<td>' + object[i].Alias + '</td>';

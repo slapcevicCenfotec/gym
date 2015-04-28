@@ -40,5 +40,5 @@ $('#btnFichaMedicion').click(function () {
     var rowData = table.rows(rows).data();
     var idCliente = rowData[0][0];
     var genero = rowData[0][5];
-    window.location = "../FichasDeMedicion/Index.aspx?id=" + idCliente + "genero" + genero;
+    window.location = "../FichasDeMedicion/Index.aspx?id=" + idCliente + "&idGenero=" + genero;
 })

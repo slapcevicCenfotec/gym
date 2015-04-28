@@ -17,6 +17,8 @@
         }
     });
 
+    //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
     $('#tblFichasDeMedicion tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
@@ -31,16 +33,21 @@
 function search() {
 
     var idCliente = getQueryVariable('id');
+    var idGenero = getQueryVariable('idGenero');
+
+    var idMaquina = getQueryVariable('id');
 
     var service = new ServicioFichasDeMedicion();
-    service.obtenerFichaById(idCliente, onSuccess, null, null);
+    service.obtenerFichasPorCliente(idCliente, onSuccessObtenerFichas, error, null);
 }
 
 function error(result) {
-    alert(result);
+    alert('Cliente no posee fichas de medición');
+
+    window.location = '../Clientes/index.aspx';
 }
 
-function onSuccess(result) {
+function onSuccessObtenerFichas(result) {
     var object = $.parseJSON(result);
     var tbody = "";
     $.each(object, function (i, item) {
@@ -74,8 +81,11 @@ function formattedDate(date) {
 }
 
 $('#btnAgregar').click(function () {
-    var idGenero = getQueryVariable('genero');
-    window.location = 'Registrar.aspx?idGenero=' + idGenero;
+    var idGenero = getQueryVariable('idGenero');
+
+    var idCliente = getQueryVariable('id');
+
+    window.location = "Registrar.aspx?id=" + idCliente + "&idGenero=" + idGenero;
 })
 
 $('#btnModificar').click(function () {
@@ -83,7 +93,10 @@ $('#btnModificar').click(function () {
     var table = $('#tblFichasDeMedicion').DataTable();
     var rowData = table.rows(rows).data();
     var idFicha = rowData[0][0];
-    window.location = "Modificar.aspx?id=" + idFicha;
+
+    var idGenero = getQueryVariable('idGenero');
+
+    window.location = "Modificar.aspx?id=" + idFicha + "&idGenero=" + idGenero;
 })
 
 $('#btnEliminar').click(function () {
