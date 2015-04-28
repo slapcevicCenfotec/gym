@@ -19,9 +19,9 @@ namespace ServicioEnClases
     {
         GestorSesion objGestorSesion = new GestorSesion();
 
+
+        [WebGet()]
         [OperationContract]
-        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        [WebMethod]
         public String iniciarSesion(string datosSerializados)
         {
             try
