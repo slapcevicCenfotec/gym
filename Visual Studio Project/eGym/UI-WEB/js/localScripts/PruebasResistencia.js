@@ -27,7 +27,7 @@ function onSuccessPruebas(result) {
     var tr = "";
     $.each(objeto, function (i, item) {
         label += '<div class="form-group">';
-        label += '<label for="id" style="display:none id="pid"><h4>Id: ' + objeto[i].Id + '</h4></label>';
+        label += '<label for="id" id="pidPrueba" style="display:none >' + objeto[i].Id + '</label>';
         label += '</div>';
         label += '<div class="form-group">';
         label += '<label for="descripcion"><h4>Usuario: ' + objeto[i].NombreUsuario + '</h4></label>';
@@ -81,7 +81,7 @@ $('#btnAgregarPrueba').click(function () {
 });
 
 $('#btnModificarPruebaResistencia').click(function () {
-    var idPruebaResistencia = $('#pid').val();
+    labelText = $("#pidPrueba").text();
     window.location = "Agregar.aspx?Mode=Ins";
 });
 
