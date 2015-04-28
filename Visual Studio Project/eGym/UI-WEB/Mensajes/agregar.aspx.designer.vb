@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class agregar3
+Partial Public Class agregar13
 End Class

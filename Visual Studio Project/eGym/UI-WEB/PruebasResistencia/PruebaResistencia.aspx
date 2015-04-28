@@ -39,9 +39,10 @@
             <!--end .col -->
         </div>
             <div class="row">
-                            <div class="col-md-4">
+                <div class="col-md-4">
                         <a class="btn btn-raised btn-primary ink-reaction pull-right"  id="btnModificarPruebaResistencia">Modificar prueba de resistencia</a>
                 </div>
+                <div class="row"></div>
             </div>
 <div class="card">
 <div class="card-body">
