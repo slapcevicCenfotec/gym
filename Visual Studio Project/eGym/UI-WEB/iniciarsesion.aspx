@@ -1,4 +1,5 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="iniciarsesion.aspx.vb" Inherits="UI_WEB.iniciarsesion" %>
+﻿nes (109 sloc)  5.934 kb
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="iniciarsesion.aspx.vb" Inherits="UI_WEB.iniciarsesion" %>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -61,7 +62,7 @@
                                 </div>
                                 <!--end .col -->
                                 <div class="col-xs-6 text-right">
-                                    <button class="btn btn-primary btn-raised" id="bntIniciarSesion">Iniciar Sesión</button>
+                                    <a class="btn btn-primary btn-raised" id="bntIniciarSesion">Iniciar Sesión</a>
                                 </div>
                                 <!--end .col -->
                             </div>
@@ -88,7 +89,7 @@
         <form runat="server">
             <asp:ScriptManager runat="server">
                 <Services>
-                    <asp:ServiceReference Path="http://localhost/egymServices/ServicioSesion.svc" />
+                    <asp:ServiceReference Path="http://localhost:60166/ServicioSesion.svc" />
                 </Services>
             </asp:ScriptManager>
         </form>

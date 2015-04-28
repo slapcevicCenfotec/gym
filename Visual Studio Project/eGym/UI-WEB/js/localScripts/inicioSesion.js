@@ -2,22 +2,20 @@
     $("#formLogin").validate();
     if ($("#formLogin").valid()) {
         var contrasena = $('#txtContrasena').val();
-        var correo = $('#txtCorreo').val();
-
+        var correo = $('#txtCorreo').val(); 
         datos = JSON.stringify({ pcontrasena: contrasena, pcorreo: correo });
         serviceLogin = new ServicioLogin.ServicioSesion();
         serviceLogin.iniciarSesion(datos, onSuccess, errorMessage, null, null);
-    } else {
+        } else {
         $('#txtContrasena').focus();
         $('#txtContrasena').blur();
         $('#txtCorreo').focus();
     };
-
 });
 
 function onSuccess(result) {
-    var object = $.parseJSON(result);
     if (result !== 'null') {
+        var object = $.parseJSON(result);
         console.log(object.Id);
         $.ajax({
             type: "POST",

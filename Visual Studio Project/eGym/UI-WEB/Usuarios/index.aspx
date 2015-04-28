@@ -17,6 +17,9 @@
                     <article class="margin-bottom-xxl">
                         <p class="lead">Todos los usuarios del sistema</p>
                     </article>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnAgregar">Agregar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnModificar">Modificar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnEliminar">Eliminar</button>
                 </div>
             </div>
             <div class="row">
@@ -43,7 +46,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/ServicioUsuario.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioUsuario.svc" />
             </Services>
         </asp:ScriptManager>
     </form>

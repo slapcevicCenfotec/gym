@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class index9
+Partial Public Class indexTipoDePago
 End Class

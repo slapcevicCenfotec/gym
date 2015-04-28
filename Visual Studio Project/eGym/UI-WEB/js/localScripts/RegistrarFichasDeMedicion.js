@@ -41,22 +41,22 @@ function calcularIMC() {
         case (imc < 16):
             clasificacionIMC = "Delgadez severa";
             break;
-        case (imc > 16 && imc < 16.99):
+        case (imc >= 16 && imc <= 16.99):
             clasificacionIMC = "Delgadez moderada";
             break;
-        case (imc > 17 && imc < 18.49):
+        case (imc >= 17 && imc <= 18.49):
             clasificacionIMC = "Delgadez leve";
             break;
-        case (imc > 18.5 && imc < 24.99):
+        case (imc >= 18.5 && imc <= 24.99):
             clasificacionIMC = "Peso normal";
             break;
-        case (imc > 25 && imc < 29.99):
+        case (imc >= 25 && imc <= 29.99):
             clasificacionIMC = "Pre obesidad";
             break;
-        case (imc > 30 && imc < 34.99):
+        case (imc >= 30 && imc <= 34.99):
             clasificacionIMC = "Obesidad leve";
             break;
-        case (imc > 35 && imc < 39.99):
+        case (imc >= 35 && imc <= 39.99):
             clasificacionIMC = "Obesidad media";
             break;
         case (imc > 40):
@@ -117,9 +117,8 @@ $('#btnGuardar').click(function () {
 
     if ($("#fichasForm").valid()) {
         var cliente = 122,
-        fecha = new Date().toString();
-        peso = parseFloat($('#txtPeso').val()),
-        altura = parseFloat($('#txtAltura').val()),
+        peso = $('#txtPeso').val().toString().replace(/\./g, ','),
+        altura = $('#txtAltura').val().toString().replace(/\./g, ','),
         imc = $('#txtIMC').val().toString().replace(/\./g, ','),
         clasificacionIMC = $('#txtClasificacionIMC').val(),
         porcentajeGrasa = $('#txtPorcGrasa').val().toString().replace(/\./g, ','),
@@ -155,7 +154,6 @@ $('#btnGuardar').click(function () {
 
         var datos = JSON.stringify({
             pcliente: cliente,
-            pfecha: fecha,
             ppeso: peso,
             paltura: altura,
             pimc: imc,
@@ -190,9 +188,7 @@ $('#btnGuardar').click(function () {
             psupraespinalDerecho: supraespinalDerecho
         });
 
-        console.log(datos)
-
-        //servicioIngresar.insertarFichaDeMedicion(datos, onSuccesIngresar, errorMessage, null, null);
+        servicioIngresar.insertarFichaDeMedicion(datos, onSuccesIngresar, errorMessage, null, null);
 
         window.location = 'Index.aspx';
     }
