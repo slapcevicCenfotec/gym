@@ -1,4 +1,4 @@
-﻿Public Class index10
+﻿Public Class index14
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -8,7 +8,7 @@
         Dim permissions = TryCast(Session("_USERPERMISSION"), List(Of String))
         Dim valido = False
         For Each permission As String In permissions
-            If permission = "13" Then
+            If permission = "14" Then
                 valido = True
             End If
         Next
