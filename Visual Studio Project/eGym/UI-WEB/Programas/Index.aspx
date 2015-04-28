@@ -1,13 +1,8 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="index.aspx.vb" Inherits="UI_WEB.index" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/shared/Site.Master" CodeBehind="Index.aspx.vb" Inherits="UI_WEB.IndexProgramas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989")%>' />
-    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990")%>' />
-    <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990")%>' />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <section class="style-default-bright">
+       <section class="style-default-bright">
         <div class="section-header">
             <h2 class="text-primary">Usuarios</h2>
         </div>
@@ -17,9 +12,6 @@
                     <article class="margin-bottom-xxl">
                         <p class="lead">Todos los usuarios del sistema</p>
                     </article>
-                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnAgregar">Agregar</button>
-                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnModificar">Modificar</button>
-                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnEliminar">Eliminar</button>
                 </div>
             </div>
             <div class="row">
@@ -29,7 +21,6 @@
                         <table id="tblUsuarios" class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th style="display:none">Id</th>
                                     <th>Identificacion</th>
                                     <th>Nombre</th>
                                     <th>Alias</th>
@@ -52,11 +43,7 @@
         </asp:ScriptManager>
     </form>
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
-
-
-
     <script src="<%= Page.ResolveUrl("~/js/libs/autosize/jquery.autosize.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/jquery.dataTables.min.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js")%>"></script>

@@ -29,17 +29,17 @@
 			<div class="card">
 				<div class="card-body">
 					<form class="form form-validate" role="form" id="ModificarForm">
-						<div class="form-group floating-label">
+						<div class="form-group horizontal">
 							<select id="cmbTiposDeMaquinas" name="cmbTiposDeMaquinas" class="form-control" required>
 								<option value="">&nbsp;</option>
                             </select>
                             <label for="cmbTiposDeMaquinas">Tipo de máquina</label>
 						</div>
-						<div class="form-group floating-label">
+						<div class="form-group horizontal">
                             <input type="text" class="form-control" id="txtNumeroActivo" required/>
 							<label for="txtNumeroActivo">Número de activo</label>
 						</div>
-						<div class="form-group floating-label">
+						<div class="form-group horizontal">
 							<input type="text" class="form-control" id="txtNumeroMaquina" required>
 							<label for="txtNumeroMaquina">Número de máquina</label>
 							<label id="idMaquina" style="display:none"></label>
