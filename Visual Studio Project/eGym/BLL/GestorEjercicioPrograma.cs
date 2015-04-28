@@ -27,20 +27,6 @@ namespace BLL
         public EjercicioPrograma ObtenerEjercicioPrograma(int pId)
         {
             var ejercicioPrograma = unitOfWork.EjercicioProgramaRepository.GetById(pId);
-            //foreach (var contacto in unitOfWork.RepositoryContacto.GetAll())
-            //{
-            //    if (contacto.Usuario.Id == usuario.Id)
-            //    {
-            //        usuario.Contactos.Add(contacto);
-            //    }
-            //}
-            //foreach (var horario in unitOfWork.RepositoryHorario.GetAll())
-            //{
-            //    if (horario.Usuario.Id == usuario.Id)
-            //    {
-            //        usuario.Horarios.Add(horario);
-            //    }
-            //}
             return ejercicioPrograma;
         }
 

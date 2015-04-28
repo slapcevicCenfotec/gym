@@ -15,8 +15,10 @@ Public Class Session
     <WebMethod> _
     Public Shared Sub LogOff()
         HttpContext.Current.Session("_USERID") = Nothing
+        HttpContext.Current.Session("_USERPERMISSION") = Nothing
     End Sub
 
+    <WebMethod> _
     Public Shared Sub SetPermissionList(permissionIds As String)
         Dim list As List(Of String) = New List(Of String)
         Dim ids As String() = permissionIds.Split(New Char() {"-"c})
@@ -25,7 +27,6 @@ Public Class Session
             list.Add(id)
         Next
         HttpContext.Current.Session("_USERPERMISSION") = list
-
     End Sub
 
 
