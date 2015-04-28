@@ -55,6 +55,7 @@
     <Compile Include="Gestor.cs" />
     <Compile Include="GestorPruebaResistencia.cs" />
     <Compile Include="GestorPrograma.cs" />
+    <Compile Include="GestorResultadoPruebaResistencia.cs" />
     <Compile Include="GestorRol.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorTipoAcondicionamiento.cs" />

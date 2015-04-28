@@ -52,7 +52,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
-                <asp:ServiceReference Path="http://localhost/egym/ServiciosTiposDeMaquinas.svc"/>
+                <asp:ServiceReference Path="http://localhost:60166/ServiciosTiposDeMaquinas.svc"/>
             </Services>
         </asp:ScriptManager>
     </form>

@@ -46,6 +46,38 @@ namespace EL
             set { _repeticiones = value; }
         }
 
+        private Double _peso;
+
+        public Double Peso
+        {
+            get { return _peso; }
+            set { _peso = value; }
+        }
+
+        private Double _prc1;
+
+        public Double Prc1
+        {
+            get { return _prc1; }
+            set { _prc1 = value; }
+        }
+
+        private Double _prc2;
+
+        public Double Prc2
+        {
+            get { return _prc2; }
+            set { _prc2 = value; }
+        }
+
+        private Double _prc3;
+
+        public Double Prc3
+        {
+            get { return _prc3; }
+            set { _prc3 = value; }
+        }
+
         private Double _1Rm;
 
         public Double Rm1
@@ -63,7 +95,7 @@ namespace EL
         #endregion
          #region Constructores
 
-          public ResultadoPruebaResistencia(int pid,int pidEjercicio,int pseries,int prepeticiones, double p1Rm,int pidPrueba)
+        public ResultadoPruebaResistencia(int pid, int pidEjercicio, int pseries, int prepeticiones, double p1Rm, int pidPrueba, Double ppeso, Double pprc1, Double pprc2, Double pprc3)
         {
             Id = pid;
             IdEjericio = pidEjercicio;
@@ -71,6 +103,10 @@ namespace EL
             Repeticiones = prepeticiones;
             Rm1 = p1Rm;
             IdPrueba = pidPrueba;
+            Peso = ppeso;
+            Prc1 = pprc1;
+            Prc2 = pprc2;
+            Prc3 = pprc3;
         }
                  public ResultadoPruebaResistencia()
         {

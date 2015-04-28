@@ -33,7 +33,7 @@
                     <div class="card-body no-padding">
                          <ul class="list" data-sortable="true" id="listaPermisos">
                         </ul>
-                    </DIV>
+                    </div>
 				</div><!--end .card-body -->
 			</div><!--end .card -->
 		</div><!--end .card -->
