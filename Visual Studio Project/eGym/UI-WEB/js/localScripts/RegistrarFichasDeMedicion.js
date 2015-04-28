@@ -72,9 +72,8 @@ function calcularIMC() {
 
 function calcularPorcGrasa() {
 
-    //asignar genero con variable de sesion.
 
-    var genero = 'm',
+    var genero = getQueryVariable('genero'),
         constante,
         porcentajeGrasa,
         sumatoriaPliegues,
@@ -94,7 +93,7 @@ function calcularPorcGrasa() {
         supraespinalIzq = parseFloat($('#txtSupraespinalIzquierdo').val()),
         supraespinalDer = parseFloat($('#txtSupraespinalDerecho').val());
 
-    if (genero == 'm') {
+    if (genero == 1) {
         constante = 0.1051;
     } else {
         constante = 0.1548;
@@ -116,7 +115,8 @@ $('#btnGuardar').click(function () {
     $("#fichasForm").validate();
 
     if ($("#fichasForm").valid()) {
-        var cliente = 122,
+
+        var cliente = getQueryVariable('id');
         peso = $('#txtPeso').val().toString().replace(/\./g, ','),
         altura = $('#txtAltura').val().toString().replace(/\./g, ','),
         imc = $('#txtIMC').val().toString().replace(/\./g, ','),
@@ -196,14 +196,26 @@ $('#btnGuardar').click(function () {
 })
 
 function onSuccesIngresar(result) {
-    alert('Se registró correctamente la ficha de medición');
+    location.href = "Index.aspx?agregado";
+    //alert('Se registró correctamente la ficha de medición');
 }
 
 function errorMessage(resul) {
-    alert(resul.get_message());
+    toastr.error('Ficha de medición no ha podidido ser ingresada');
+    //alert(resul.get_message());
 }
 
 $('#btnCancelar').click(function () {
     $("#maquinasForm").trigger('reset');
     window.location = 'Index.aspx';
 })
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (pair[0] == variable) { return pair[1]; }
+    }
+    return (false);
+}

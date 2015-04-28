@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Repositories;
 
 
 namespace BLL
@@ -35,6 +36,18 @@ namespace BLL
         public Mensaje ObtenerMensaje(int pId)
         {
             return unitOfWork.RepositoryMensaje.GetById(pId);
+        }
+
+        public IEnumerable<Mensaje> ListarMensajesPorUsuario(int pId)
+        { 
+            var repository = (MensajeRepository)unitOfWork.RepositoryMensaje;
+            var mensajes = repository.GetByUser(pId);
+            foreach (var mensaje in mensajes)
+            {
+                mensaje.Remitente = ObtenerUsuario(mensaje.Remitente.Id);
+                mensaje.Destinatario = ObtenerUsuario(mensaje.Destinatario.Id);
+            }
+            return mensajes;
         }
 
         public void AgregarMensaje(int pDestinatarioId, int pRemitenteId, string texto)

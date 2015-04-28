@@ -11,7 +11,7 @@ Public Class InsertarEjercicio
         Dim permissions = TryCast(Session("_USERPERMISSION"), List(Of String))
         Dim valido = False
         For Each permission As String In permissions
-            If permission = "11" Then
+            If permission = "5" Then
                 valido = True
             End If
         Next

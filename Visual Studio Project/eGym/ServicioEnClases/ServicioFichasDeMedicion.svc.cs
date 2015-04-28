@@ -155,10 +155,10 @@ namespace ServicioEnClases
 
         [WebGet()]
         [OperationContract]
-        public string obtenerFichasPorCliente(int pcliente)
+        public string obtenerFichasPorCliente(string pcliente)
         {
             List<FichaMedicion> listaFichasDeMedicionPorCliente = new List<FichaMedicion>();
-            listaFichasDeMedicionPorCliente = gestorFicha.listarFichasMedicionPorCliente(pcliente);
+            listaFichasDeMedicionPorCliente = gestorFicha.listarFichasMedicionPorCliente(Convert.ToInt32(pcliente));
             return new JavaScriptSerializer().Serialize(listaFichasDeMedicionPorCliente);
         }
     }

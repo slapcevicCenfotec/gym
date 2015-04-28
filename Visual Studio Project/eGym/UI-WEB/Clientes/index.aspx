@@ -42,6 +42,7 @@
                                     <th>Nombre</th>
                                     <th>Alias</th>
                                     <th>Ingreso</th>
+                                    <th style="display:none">Género</th>
                                 </tr>
                             </thead>
                             <tbody>

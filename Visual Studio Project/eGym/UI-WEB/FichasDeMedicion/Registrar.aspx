@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+    <link href="../css/theme-1/libs/toastr/toastr.css" rel="stylesheet" />
+
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/select2/select2.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/multi-select/multi-select.css")%>' />
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/bootstrap-datepicker/datepicker3.css")%>' />
@@ -454,6 +456,7 @@
     <script src="<%= Page.ResolveUrl("~/js/localScripts/RegistrarFichasDeMedicion.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/jquery.validate.js")%>"></script>
     <script src="<%= Page.ResolveUrl("~/js/libs/jquery-validation/dist/additional-methods.min.js")%>"></script>
+    <script src="../js/libs/toastr/toastr.js"></script>
     <script>
     </script>
 </asp:Content>

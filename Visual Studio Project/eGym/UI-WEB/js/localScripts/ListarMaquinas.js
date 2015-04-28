@@ -87,9 +87,11 @@ $('#btnTiposDeMaquinas').click(function () {
 })
 
 function onSuccesEliminarMaquina(result) {
-    alert('Se eliminó correctamente la máquina');
+    toastr.success('La maquina ha sido eliminada');
+    //alert('Se eliminó correctamente la máquina');
 }
 
 function errorMessage(resul) {
+    toastr.error('La maquina no podido ser eliminada');
     alert(resul.get_message());
 }
