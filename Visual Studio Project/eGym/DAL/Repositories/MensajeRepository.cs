@@ -42,6 +42,7 @@ namespace DAL.Repositories
                 mensaje.FechaYHora = Convert.ToDateTime(dataRow["FECHA_Y_HORA"]);
                 mensaje.Leido = Convert.ToBoolean(dataRow["LEIDO"]);
                 mensaje.Remitente.Id = Convert.ToInt32(dataRow["REMITENTE"]);
+                mensaje.Remitente.Nombre = dataRow["NOMBRE"].ToString();
                 mensaje.Texto = dataRow["MENSAJE"].ToString();
                 mensajes.Add(mensaje);
             }
@@ -65,6 +66,26 @@ namespace DAL.Repositories
                 break;
             }
             return mensaje;
+        }
+
+        public IEnumerable<Mensaje> GetByUser(int id)
+        {
+            var mensajes = new List<Mensaje>();
+            var sqlCommand = new SqlCommand();
+            sqlCommand.Parameters.Add(new SqlParameter("@pId", id));
+            var dataSet = DBAccess.ExecuteSPWithDS(ref sqlCommand, "SP_ListarMensajesPorDestinatario");
+            foreach (DataRow dataRow in dataSet.Tables[0].Rows)
+            {
+                var mensaje = new Mensaje();
+                mensaje.Destinatario.Id = Convert.ToInt32(dataRow["DESTINATARIO"]);
+                mensaje.FechaYHora = Convert.ToDateTime(dataRow["FECHA_Y_HORA"]);
+                mensaje.Id = Convert.ToInt32(dataRow["ID"]);
+                mensaje.Leido = Convert.ToBoolean(dataRow["LEIDO"]);
+                mensaje.Remitente.Id = Convert.ToInt32(dataRow["REMITENTE"]);
+                mensaje.Texto = dataRow["MENSAJE"].ToString();
+                mensajes.Add(mensaje);
+            }
+            return mensajes;
         }
 
         public void Save()
