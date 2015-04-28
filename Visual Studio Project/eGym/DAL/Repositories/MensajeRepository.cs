@@ -35,13 +35,11 @@ namespace DAL.Repositories
         {
             var mensajes = new List<Mensaje>();
             var sqlCommand = new SqlCommand();
-            var dataSet = DBAccess.ExecuteSPWithDS(ref sqlCommand, "SP_ObtenerMensajes");
+            var dataSet = DBAccess.ExecuteSPWithDS(ref sqlCommand, "SP_ListarMensajes");
             foreach (DataRow dataRow in dataSet.Tables[0].Rows)
             {
                 var mensaje = new Mensaje();
-                mensaje.Destinatario.Id = Convert.ToInt32(dataRow["DESTINATARIO"]);
                 mensaje.FechaYHora = Convert.ToDateTime(dataRow["FECHA_Y_HORA"]);
-                mensaje.Id = Convert.ToInt32(dataRow["ID"]);
                 mensaje.Leido = Convert.ToBoolean(dataRow["LEIDO"]);
                 mensaje.Remitente.Id = Convert.ToInt32(dataRow["REMITENTE"]);
                 mensaje.Texto = dataRow["MENSAJE"].ToString();

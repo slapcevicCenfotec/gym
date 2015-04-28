@@ -58,6 +58,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\MensajeRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
+    <Compile Include="Repositories\PruebaResistenciaRepository.cs" />
     <Compile Include="Repositories\ProgramaRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
     <Compile Include="Repositories\TipoAcondicionamientoRepository.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Repositories\MaquinaRepository.cs" />
     <Compile Include="Repositories\MusculoRepository.cs" />
     <Compile Include="Repositories\TipoDePagoRepository.cs" />
+    <Compile Include="Repositories\TipoPruebaResistenciaRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UnitOfWork.cs" />

@@ -4,28 +4,28 @@
 <html lang="es">
 
 <head>
-<title>Egym</title>
-<!-- BEGIN META -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- BEGIN STYLESHEETS -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css' />
-<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/bootstrap.css")%> />
-<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
-<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
-<!--Font Awesome Icon Font-->
-<%--<link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />--%>
-<!--Material Design Iconic Font-->
-<!-- Additional CSS includes -->
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-	<script type="text/javascript" src="/assets/js/libs/utils/html5shiv.js"></script>
-	<script type="text/javascript" src="/assets/js/libs/utils/respond.min.js"></script>
-	<![endif]-->
-<script src="../js/localScripts/ejercicios.js"></script>
-<asp:ContentPlaceHolder ID="head" runat="server">
-</asp:ContentPlaceHolder>
+    <title>Egym - Cantaros</title>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css' />
+    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/bootstrap.css")%> />
+    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/materialadmin.css")%> />
+    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("~/css/theme-default/font-awesome.min.css")%> />
+    <!--Font Awesome Icon Font-->
+    <link type="text/css" rel="stylesheet" href=<%= Page.ResolveUrl("css/theme-default/material-design-iconic-font.min.css")%> />
+    <!--Material Design Iconic Font-->
+    <!-- Additional CSS includes -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="/assets/js/libs/utils/html5shiv.js"></script>
+		<script type="text/javascript" src="/assets/js/libs/utils/respond.min.js"></script>
+		<![endif]-->
+    <script src="../js/localScripts/ejercicios.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 
 <body class="menubar-hoverable header-fixed">
@@ -52,7 +52,8 @@
             <ul class="header-nav header-nav-profile">
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        <img id="imgUsuarioMenu" src="img/UGM-default-user.png" alt="">
+                        <img id="imgUsuarioMenu" src="<%= Page.ResolveUrl("~/img/UGM-default-user.png")%>" alt="">
+                        <!-- <img id="imgUsuarioMenu" src="img/UGM-default-user.png" alt=""> -->
                         <span class="profile-info">
 						    <span id="nombreUsuario"></span><br />
 						    <span id="nombreRol"><small></small></span>
@@ -88,7 +89,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-            <div class="expanded">
+ <div class="expanded">
                 <a href="http://www.codecovers.eu/materialadmin/dashboards/dashboard">
                     <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
                 </a>
@@ -174,7 +175,7 @@
                         <!-- END ROLES -->
                         <!-- BEGIN REPORTES -->
                         <li id="menuReportes" class="hidden">
-                            <a href="#">
+                            <a href="<%= Page.ResolveUrl("~/Reportes/Reportes.aspx")%>">
                                 <div class="gui-icon"><i class="fa fa-file-text-o"></i>
                                 </div>
                                 <span class="title">Reportes</span>
@@ -196,6 +197,15 @@
                                 <div class="gui-icon"><i class="fa fa-cog"></i>
                                 </div>
                                 <span class="title">Formulas</span>
+                            </a>
+                        </li>
+                        <!-- END FORMULAS -->
+                                                <!-- BEGIN FORMULAS -->
+                        <li id="menuPruebasResistencia" class="hidden">
+                            <a href="<%= Page.ResolveUrl("~/PruebasResistencia/index.aspx")%>">
+                                <div class="gui-icon"><i class="fa fa-cog"></i>
+                                </div>
+                                <span class="title">Pruebas de Resistencia</span>
                             </a>
                         </li>
                         <!-- END FORMULAS -->
@@ -308,6 +318,9 @@
             if (entry.Id === 8) {
                 $(menuConfiguracion).removeClass("hidden");
             }
+            if (entry.Id === 14) {
+                $(menuPruebasResistencia).removeClass("hidden");
+            }
         });
     }
 
@@ -335,9 +348,5 @@
 
 </script>
 <!-- END JAVASCRIPT -->
-
 </body>
-
-
-
 </html>
