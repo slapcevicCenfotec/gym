@@ -83,7 +83,7 @@ namespace DAL.Repositories
                     {
                         foreach (PruebaResistencia objPrueba in _updateItems)
                         {
-                            //UpdatePrueba(objRol);
+                            UpdatePrueba(objPrueba);
                         }
                     }
 
@@ -219,7 +219,11 @@ namespace DAL.Repositories
                         Series = Convert.ToInt32(dr["SERIES"]),
                         Repeticiones = Convert.ToInt32(dr["REPETICIONES"]),
                         Rm1 = Convert.ToDouble(dr["RM1"]),
-                        IdPrueba = Convert.ToInt32(dr["ID_PRUEBA"])
+                        IdPrueba = Convert.ToInt32(dr["ID_PRUEBA"]),
+                        Peso = Convert.ToDouble(dr["PESO"]),
+                        Prc1 = Convert.ToDouble(dr["PRC1"]),
+                        Prc2 = Convert.ToDouble(dr["PRC2"]),
+                        Prc3 = Convert.ToDouble(dr["PRC3"])
                     });
                 }
             }
@@ -227,6 +231,32 @@ namespace DAL.Repositories
 
             objPrueba.ListaPruebas = listaResultadosPruebas;
             return objPrueba;
+        }
+        /// <summary>
+        /// Autor: Alexis Soto
+        /// Fecha: 03/15/2015
+        /// Descripcion:Este metodo mosifica una instancia Rol en la base de datos
+        /// </summary>
+        /// <param name="objRol">The object rol.</param>
+        /// <returns></returns>
+        private void UpdatePrueba(PruebaResistencia objPrueba)
+        {
+            int id;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@PID", objPrueba.Id));
+                cmd.Parameters.Add(new SqlParameter("@PPESO", objPrueba.Peso));
+                cmd.Parameters.Add(new SqlParameter("@PID_TIPO_PRUEBA", objPrueba.IdTipoPrueba));
+
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_ModificarPruebaResistencia");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

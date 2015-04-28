@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -24,6 +25,7 @@ namespace ServicioEnClases
         //     and include the following line in the operation body:
         //         WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
         GestorPruebaResistencia objGestorPrueba = new GestorPruebaResistencia();
+        GestorResultadoPruebaResistencia objGestorPruebaEjercicio = new GestorResultadoPruebaResistencia();
 
         [WebGet()]
         [OperationContract]
@@ -84,7 +86,44 @@ namespace ServicioEnClases
             return new JavaScriptSerializer().Serialize(listaPruebas);
 
         }
+        [WebMethod]
+        [OperationContract]
+        public void ModificarPrueba(string datosSerializados)
+        {
 
+
+            var jss = new JavaScriptSerializer();
+            //var dictionary = jss.Deserialize<Dictionary<string, string,>>(datosSerializados);
+            var dictionary = jss.Deserialize<Dictionary<String, object>>(datosSerializados);
+            int id = Convert.ToInt32(dictionary["pId"].ToString());
+            Double peso = Convert.ToDouble(dictionary["ppeso"].ToString());
+            int idTipoPrueba = Convert.ToInt32(dictionary["pidTipoPrueba"].ToString());
+
+            //{
+            //    dato.GetType();
+            //}
+            objGestorPrueba.ModificarPrueba(id, peso, idTipoPrueba);
+        }
+
+        [WebMethod]
+        [OperationContract]
+        public void insertarPruebasEjercicio (string datosSerializados)
+        {
+
+
+            var jss = new JavaScriptSerializer();
+            //var dictionary = jss.Deserialize<Dictionary<string, string,>>(datosSerializados);
+            var dictionary = jss.Deserialize<Dictionary<String, object>>(datosSerializados);
+            int idPrueba = Convert.ToInt32(dictionary["pidPrueba"].ToString());
+            int series = Convert.ToInt32(dictionary["pseries"].ToString());
+            int repeticiones = Convert.ToInt32(dictionary["prepeticiones"].ToString());
+            Double peso = Convert.ToDouble(dictionary["ppeso"].ToString());
+            Double rm1 = Convert.ToDouble(dictionary["prm1"].ToString());
+            int idEjercicio = Convert.ToInt32(dictionary["pidEjercicio"].ToString());
+
+
+            objGestorPruebaEjercicio.insertarResultadoPrueba(idEjercicio,series,repeticiones,peso,rm1,idPrueba);
+        }
 
         [OperationContract]
         public void DoWork()

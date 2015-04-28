@@ -49,7 +49,7 @@
         <!--end .section-body -->
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
-                <asp:ServiceReference Path="http://localhost/ServicioFormulas.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioFormulas.svc" />
             </Services>
         </asp:ScriptManager>
 

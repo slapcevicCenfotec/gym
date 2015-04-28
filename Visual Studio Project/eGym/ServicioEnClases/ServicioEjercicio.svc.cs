@@ -13,7 +13,7 @@ using System.Web.Services;
 
 namespace ServicioEnClases
 {
-    [ServiceContract(Namespace = "")]
+    [ServiceContract(Namespace = "ServicioEnClases")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class ServicioEjercicio
     {

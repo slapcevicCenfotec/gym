@@ -87,10 +87,6 @@ namespace EL
                  yield return new RuleViolation("Id es requerido", "Id");
              }
 
-             if (String.IsNullOrEmpty(NombreUsuario))
-             {
-                 yield return new RuleViolation("Nombre requerido", "Nombre");
-             }
 
              yield break;
          }     

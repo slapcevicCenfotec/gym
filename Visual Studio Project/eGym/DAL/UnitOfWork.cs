@@ -32,6 +32,7 @@ namespace DAL
         private IRepository<Programa> _programaRepository;
         private IRepository<EjercicioPrograma> _ejercicioProgramaRepository;
         private IRepository<TipoAcondicionamiento> _tipoAcondicionamientoRepository;
+        private IRepository<ResultadoPruebaResistencia> _resultadoPruebaResistenciaRepository;
 
         private IRepository<Mensaje> _mensajeRepository;
 
@@ -322,6 +323,17 @@ namespace DAL
                     this._tipoAcondicionamientoRepository = new TipoAcondicionamientoRepository();
                 }
                 return _tipoAcondicionamientoRepository;
+            }
+        }
+        public IRepository<ResultadoPruebaResistencia> ResultadoPruebaResistencia
+        {
+            get
+            {
+                if (this._resultadoPruebaResistenciaRepository == null)
+                {
+                    this._resultadoPruebaResistenciaRepository = new PruebaEjercicioRepository();
+                }
+                return _resultadoPruebaResistenciaRepository;
             }
         }
 

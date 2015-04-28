@@ -58,6 +58,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\MensajeRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
+    <Compile Include="Repositories\PruebaEjercicioRepository.cs" />
     <Compile Include="Repositories\PruebaResistenciaRepository.cs" />
     <Compile Include="Repositories\ProgramaRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
