@@ -17,5 +17,16 @@ Public Class Session
         HttpContext.Current.Session("_USERID") = Nothing
     End Sub
 
+    Public Shared Sub SetPermissionList(permissionIds As String)
+        Dim list As List(Of String) = New List(Of String)
+        Dim ids As String() = permissionIds.Split(New Char() {"-"c})
+        Dim id As String
+        For Each id In ids
+            list.Add(id)
+        Next
+        HttpContext.Current.Session("_USERPERMISSION") = list
+
+    End Sub
+
 
 End Class
