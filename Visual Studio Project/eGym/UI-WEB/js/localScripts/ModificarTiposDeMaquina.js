@@ -27,7 +27,7 @@ function readURL(input) {
 
 function onSuccessObtenerTipoMaquina(result) {
     var objeto = $.parseJSON(result);
-    
+
     $('#txtNombreTipoDeMaquina').val(objeto['Nombre']);
     $('#txtDescripcion').val(objeto['Descripcion']);
     $('#txtIdTipoMaquina').val(objeto['Id']);
