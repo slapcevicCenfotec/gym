@@ -89,11 +89,6 @@ function getAllUsers() {
 function getAllPagos() {
     var servicio = new ServicioEnClases.ServicioTipoPago();
     servicio.getAllPago(onSuccessGetAllPagos, onFail, null, null);
-
-
-
-    //var servicio = new ServicioEnClases.ServicioPago();
-   // servicio.getAllPago(onSuccessGetAllPagos, onFail, null, null);
 }
 
 function getMisPagos(item) {
@@ -107,7 +102,12 @@ function onSuccesIngresar(result) {
     ///alert('Se registró correctamente el tipoDePago');
     location.href = "index.aspx";
 }
-
+("#regresarButton").click(function () {
+    location.href = "index.aspx";
+});
+function volverIndex() {
+    location.href = "index.aspx";
+}
 function OnSuccessRegistrarPago(result) {
     location.href = "index.aspx";
 }
@@ -252,9 +252,7 @@ function onFail() {
 $("#btnVolverTP").click(function () {
     location.href = "index.aspx";
 });
-("#btnVolverP").click(function () {
-    location.href = "index.aspx";
-});
+
 $("#indexModificar").click(function () {
     var rows = $('tr.selected');
     var table = $('#tblTiposPago').DataTable();
@@ -269,3 +267,19 @@ $("#indexEliminar").click(function () {
 $("#indexAgregar").click(function () {
     location.href = "registar.aspx";
 });
+
+function agregarTipoPago() {
+    location.href = "registar.aspx";
+}
+function modificarTipoPago() {
+    var rows = $('tr.selected');
+    var table = $('#tblTiposPago').DataTable();
+    var rowData = table.rows(rows).data();
+    var id = rowData[0][0];
+
+    location.href = "modificar.aspx?id=" + id;
+};
+function eliminarTipoPago() {
+
+    eliminarTipoDePago();
+};

@@ -35,10 +35,10 @@
                 </article>
             </div>
             <div class="col-md-4">
-                <button type="button" id="indexEliminar" class="btn btn-default btn btn-primary ink-reaction">Eliminar</button>
-                <button type="button" id="indexModificar" class="btn btn-default btn btn-primary ink-reaction">Modificar</button>
-                <button type="button" id="indexAgregar" class="btn btn-default btn btn-primary ink-reaction">Agregar</button>
-                </div>
+                <button type="button" id="indexEliminar" onclick="eliminarTipoPago()" class="btn btn-default btn btn-primary ink-reaction">Eliminar</button>
+                <button type="button" id="indexModificar" onclick="modificarTipoPago()"  class="btn btn-default btn btn-primary ink-reaction">Modificar</button>
+                <button type="button" id="indexAgregar" onClick="agregarTipoPago()" class="btn btn-default btn btn-primary ink-reaction">Agregar</button>
+                </div> 
             <!--end .col -->
         </div>
         <!--end .row -->
@@ -94,7 +94,7 @@
 
         <script src="../js/local/libs/toastr/toastr.js"></script>
     <script>
-        $(document).ready(function () {
+       
             getAllTipoDePago();
 
             if (window.location.href.indexOf("agregado") > -1) {
@@ -104,7 +104,7 @@
                 toastr.success('El músculo ha sido modificado');
             }
 
-        });
+       
 
     </script>
 </asp:Content>
