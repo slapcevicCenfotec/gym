@@ -12,7 +12,7 @@ using System.Web.Script.Serialization;
 
 namespace ServicioEnClases
 {
-    [ServiceContract(Namespace = "")]
+    [ServiceContract(Namespace = "ServicioEnClases")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class Calendario
     {

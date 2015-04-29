@@ -107,6 +107,10 @@ function onSuccesIngresar(result) {
     ///alert('Se registró correctamente el tipoDePago');
     location.href = "index.aspx";
 }
+
+function OnSuccessRegistrarPago(result) {
+    location.href = "index.aspx";
+}
 function onSuccesModificar(result) {
     location.href = "index.aspx";
 }
@@ -199,8 +203,21 @@ function ingresarTipoDePago() {
          servicio = new ServicioEnClases.ServicioTipoPago();
 
     var datos = JSON.stringify({ nombre: auxNombre, monto: auxMonto, duracion: auxDuracionen});
-    servicio.insertarTipoDePago(datos, onSuccesIngresar, null, null, null);
+    servicio.insertarTipoDePago(datos, onSuccesIngresar, onFail, null, null);
 };
+function registrarPago(id) {
+    
+    var auxTipo = $('#txtTipo').val();
+    var auxMonto = $('#txtMonto').val();
+    var auxFactura = $('#txtFactura').val();
+    var auxDesde = $('#txtDesde').val();
+    var auxHasta = $('#txtHasta').val();
+
+    servicio = new ServicioEnClases.ServicioTipoPago();
+    var datos = JSON.stringify({ factura: auxFactura, monto: auxMonto, tipo: auxTipo, hasta: '2015/4/29', desde: '2015/4/29', usuario: id });
+    servicio.insertarPago(datos, OnSuccessRegistrarPago, onFail, null, null);
+
+}
 function modificarTipoDePago() {
         var idTipoPago = getQueryVariable('id');
          auxNombre = $('#txtNombre').val(),
@@ -209,7 +226,7 @@ function modificarTipoDePago() {
          servicio = new ServicioEnClases.ServicioTipoPago();
 
          var datos = JSON.stringify({ id: idTipoPago, nombre: auxNombre, monto: auxMonto, duracion: auxDuracionen });
-         servicio.modificarTipoDePago(datos, onSuccesModificar, null, null, null);
+         servicio.modificarTipoDePago(datos, onSuccesModificar, onFail, null, null);
 };
 function eliminarTipoDePago() {
     var rows = $('tr.selected');

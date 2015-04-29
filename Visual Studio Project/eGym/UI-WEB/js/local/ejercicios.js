@@ -31,11 +31,7 @@ function load() {
     });
 }
 function buscarEjericicio() {
-    var service3 = new ServicioPago();
-    var service2 = new ServicioProyecto();
-    
-    var service1 = new ServicioEjercicio();
-    var service1 = new ServicioEjercicio();
+    var service1 = new ServicioEnClases.ServicioEjercicio();
     service1.obtenerEjercicios(onSuccess, onFail, null,null);
 }
 
@@ -165,7 +161,7 @@ $('#btnAgregarEjercicio').click(function () {
         var foto = getBase64Image();
         var foto2 = getBase64Image2();
 
-        service4 = new ServicioEjercicio();
+        service4 = new ServicioEnClases.ServicioEjercicio();
 
         var datos = JSON.stringify({ pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal, pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto, pimagen2: foto2 });
         service4.insertarEjercicio(datos, onSuccesIngresar, onFailModificar, null, null);
@@ -224,7 +220,7 @@ $('#btnModificarEjer').click(function () {
 })
 
 function buscarEjercicioByID() {
-    var service1 = new ServicioEjercicio();
+    var service1 = new ServicioEnClases.ServicioEjercicio();
     service1.obtenerEjercicioByID(onSuccess, null, null);
 }
 
@@ -238,7 +234,7 @@ $('#btnEliminarEjer').click(function () {
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
-    var service4 = new ServicioEjercicio();
+    var service4 = new ServicioEnClases.ServicioEjercicio();
 
     var datos = JSON.stringify({ pid: id });
     service4.eliminarEjercicio(datos, onSucessEli, onFailEli, null, null);
@@ -300,7 +296,7 @@ $('#btnModificarEjercicio').click(function () {
         //alert("Muscul Secundario " +musculosSecundarios)
 
 
-        service4 = new ServicioEjercicio();
+        service4 = new ServicioEnClases.ServicioEjercicio();
 
         var datos = JSON.stringify({ pid: id, pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal, pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto, pimagen2: foto2 });
         service4.modificarEjercicio(datos, onSuccesModificar, onFailModificar, null, null);

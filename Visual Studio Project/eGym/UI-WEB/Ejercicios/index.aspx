@@ -110,7 +110,6 @@
     <script>
         $(document).ready(function () {
 
-            toastr.success('El ejercicio ha sido agregado');
 
 
             if (window.location.href.indexOf("agregado") > -1) {
@@ -119,6 +118,9 @@
             if (window.location.href.indexOf("modificado") > -1) {
                 toastr.success('El ejercicio ha sido modificado');
             }
+
+            
+
             buscarEjericicio();
         });
     </script>

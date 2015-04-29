@@ -39,7 +39,8 @@ $("#btnRegistrarPago").click(function () {
         var table = $('#tblUsuarios').DataTable();
         var rowData = table.rows(rows).data();
         var id = rowData[0][0];
-        alert("boton" + id);
+
+        registrarPago(id, auxTipo.value, auxMonto.value, auxFactura.value, auxDesde.value, auxHasta.value);
 
     }
     
