@@ -76,7 +76,7 @@ $('#btnEliminar').click(function () {
     function onSuccessObtenerMaquina(result) {
         var serviceEliminar = new ServiciosMaquinas();
 
-        serviceEliminar.eliminarMaquina(result, onSuccesEliminarMaquina, errorMessage, null, null);
+        serviceEliminar.eliminarMaquina(result, onSuccesEliminarMaquina, null, null, null);
 
         location.reload();
     }
@@ -93,5 +93,4 @@ function onSuccesEliminarMaquina(result) {
 
 function errorMessage(resul) {
     toastr.error('La maquina no podido ser eliminada');
-    alert(resul.get_message());
 }

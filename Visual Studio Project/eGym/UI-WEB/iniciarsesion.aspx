@@ -1,5 +1,4 @@
-﻿nes (109 sloc)  5.934 kb
-<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="iniciarsesion.aspx.vb" Inherits="UI_WEB.iniciarsesion" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="iniciarsesion.aspx.vb" Inherits="UI_WEB.iniciarsesion" %>
 
 <!DOCTYPE html>
 <html lang="es">

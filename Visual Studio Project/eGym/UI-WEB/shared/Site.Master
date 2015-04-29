@@ -215,7 +215,7 @@
                         <!-- BEGIN CLIENTES -->
                         <li id="menuClientes" class="hidden">
                             <a href="<%= Page.ResolveUrl("~/Clientes/index.aspx")%>">
-                                <div class="gui-icon"><i class="fa fa-cog"></i>
+                                <div class="gui-icon"><i class="fa fa-users"></i>
                                 </div>
                                 <span class="title">Clientes</span>
                             </a>

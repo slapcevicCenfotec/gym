@@ -4,6 +4,20 @@
 
     var servicioBuscarUsuario = new ServicioEnClases.ServicioUsuario();
     servicioBuscarUsuario.ObtenerUsuario(idUsuario, onSuccessObtenerUsuario, null, null);
+
+
+    var service = new ServicioEnClases.ServicioUsuario();
+    service.ObtenerRoles(onSuccesRoles, null, null);
+
+    function onSuccesRoles(result) {
+        var objeto = $.parseJSON(result);
+        $.each(objeto, function (i, item) {
+            var option = $(document.createElement('option'));
+            option.text(objeto[i].Nombre).val();
+            option.val(objeto[i].Id);
+            $('#txtRol').append(option);
+        });
+    }
 });
 
 function onSuccessObtenerUsuario(result){
@@ -11,21 +25,21 @@ function onSuccessObtenerUsuario(result){
     var objeto = $.parseJSON(result);
 
     $('#txtIdentificacion').val(objeto['Identificacion']);
-    $('#txtTipoIdentificacion option:selected').val(objeto['IdTipoIdentificacion']);
+    $("#txtTipoIdentificacion option[value=" + objeto.IdTipoIdentificacion + "]").attr("selected", true);
     $('#txtPrimerNombre').val(objeto['Nombre']);
     $('#txtSegundoNombre').val(objeto['SegundoNombre']);
     $('#txtPrimerApellido').val(objeto['Apellido']);
     $('#txtSegundoApellido').val(objeto['SegundoApellido']);
     $('#txtAlias').val(objeto['Alias']);
-    $('#txtGenero option:selected').val(objeto['IdGenero']);
-    $('#txtFechaNacimiento').val(objeto['FechaNacimiento']);
+    $("#txtGenero option[value=" + objeto.IdGenero + "]").attr("selected", true);
+    $('#txtFechaNacimiento').val(parseJsonDate(objeto['FechaNacimiento']));
     $('#txtCorreoElectronico').val(objeto['CorreoElectronico']);
     $('#txtNumeroTelefono').val(objeto['NumeroTelefono']);
     $('#txtNumeroCelular').val(objeto['NumeroCelular']);
     $('#imgFoto').val(objeto['Fotografia']);
-    $('#txtRol option:selected').val(objeto['NumeroActivo']);
+    $("#txtRol").text("Administrador");
     $('#txtContrasena').val(objeto['Contrasena']);
-    $('#txtRepetirContrasena').val(objeto['NumeroActivo']);
+    $('#txtRepetirContrasena').val(objeto['Contrasena']);
 
     $('#txtNombreContacto1').val(objeto['NumeroActivo']);
     $('#txtParentescoContacto1').val(objeto['NumeroActivo']);
@@ -50,10 +64,6 @@ function onSuccessObtenerUsuario(result){
     $('#txtDomingo1').val(objeto['NumeroActivo']);
     $('#txtDomingo2').val(objeto['NumeroActivo']);
 
-    $("#cmbTiposDeMaquinas option[value=" + objeto.TipoDeMaquina + "]").attr("selected", true);
-
-    $('#idMaquina').val(objeto['Id']);
-    $('#habilitado').val(objeto['Habilitado']);
 }
 
 function getQueryVariable(variable) {
@@ -64,4 +74,23 @@ function getQueryVariable(variable) {
         if (pair[0] == variable) { return pair[1]; }
     }
     return (false);
+}
+
+
+
+function parseJsonDate(jsonDateString) {
+    var date = new Date(parseInt(jsonDateString.replace('/Date(', '')));
+    return formattedDate(date);
+}
+
+function formattedDate(date) {
+    var d = new Date(date || Date.now()),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [month, day, year].join('/');
 }
