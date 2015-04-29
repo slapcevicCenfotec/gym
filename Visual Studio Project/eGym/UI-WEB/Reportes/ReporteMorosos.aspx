@@ -16,14 +16,14 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="938px">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="405px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="950px">
             <LocalReport ReportEmbeddedResource="UI_WEB.ReporteMorosos.rdlc" ReportPath="Reportes/ReporteMorosos.rdlc">
                 <DataSources>
                     <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DsMorosos" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="UI_WEB.eGymDBDataSetTableAdapters.SP_ReporteClientesMorososTableAdapter" OldValuesParameterFormatString="original_{0}"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="UI_WEB.eGymDBDataSetTableAdapters.SP_ReporteClientesMorososTableAdapter"></asp:ObjectDataSource>
     </form>
 
                 </div>

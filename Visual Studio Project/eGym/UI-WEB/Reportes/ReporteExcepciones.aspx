@@ -17,10 +17,10 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="945px">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="397px" style="margin-right: 2px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="952px">
             <LocalReport ReportEmbeddedResource="UI_WEB.ReporteExcepciones.rdlc" ReportPath="Reportes/ReporteExcepciones.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DsEgym" />
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DsExcepciones" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>

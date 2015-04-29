@@ -16,14 +16,14 @@
                 <div class="col-lg-12">
                                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                                     </asp:ScriptManager>
-                                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="935px">
+                                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="395px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="945px">
                                         <LocalReport ReportEmbeddedResource="UI_WEB.ReporteHorarios.rdlc" ReportPath="Reportes/ReporteHorarios.rdlc">
                                             <DataSources>
                                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DsHorarios" />
                                             </DataSources>
                                         </LocalReport>
                                     </rsweb:ReportViewer>
-                                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="UI_WEB.eGymDBDataSetTableAdapters.SP_ListarReporteHorariosTableAdapter" OldValuesParameterFormatString="original_{0}"></asp:ObjectDataSource>
+                                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="UI_WEB.eGymDBDataSetTableAdapters.SP_ReporteHorariosFuncionariosTableAdapter"></asp:ObjectDataSource>
                                     </div>
 
             </div>
