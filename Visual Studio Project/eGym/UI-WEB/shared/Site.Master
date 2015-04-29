@@ -142,7 +142,7 @@
                         <!-- BEGIN AGENDA -->
                         <li id="menuAgenda" class="hidden">
                             <a href="../Agenda/index.aspx?id=<%= Session("_USERID")%>">
-                                <div class="gui-icon"><i class="fa fa-dollar"></i>
+                                <div class="gui-icon"><i class="fa fa-file-text-o"></i>
                                 </div>
                                 <span class="title">Agenda</span>
                             </a>
