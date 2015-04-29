@@ -31,8 +31,20 @@ function load() {
     });
 }
 function buscarEjericicio() {
+    var service3 = new ServicioPago();
+    var service2 = new ServicioProyecto();
+    
     var service1 = new ServicioEjercicio();
-    service1.obtenerEjercicios(onSuccess, null, null);
+    var service1 = new ServicioEjercicio();
+    service1.obtenerEjercicios(onSuccess, onFail, null,null);
+}
+
+
+
+
+
+function onFail(result) {
+    alert("fail "+get_message());
 }
 function onSuccess(result) {
     var object = $.parseJSON(result);
@@ -217,7 +229,7 @@ function buscarEjercicioByID() {
 }
 
 $('#btnAgregarEjer').click(function () {
-    location.href = "InsertarEjercicio.aspx";
+    location.href = "agregar.aspx";
 })
 $('#btnEliminarEjer').click(function () {
     var rows = $('tr.selected');

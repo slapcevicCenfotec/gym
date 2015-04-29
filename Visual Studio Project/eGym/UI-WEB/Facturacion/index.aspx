@@ -35,8 +35,8 @@
                 </article>
             </div>
             <div class="col-md-4">
-                <button type="button" id="indexPago" class="btn btn-default btn btn-primary ink-reaction">Reguistrar pago</button>
-                <button type="button" id="indexTipoDePago" class="btn btn-default btn btn-primary ink-reaction">Tipo de pago</button>
+                <button type="button" id="goRegistrarPago" class="btn btn-default btn btn-primary ink-reaction">Reguistrar pago</button>
+                <button type="button" id="goTipoDePago" class="btn btn-default btn btn-primary ink-reaction">Tipo de pago</button>
                 </div>
             <!--end .col -->
         </div>
@@ -104,7 +104,13 @@
             if (window.location.href.indexOf("modificado") > -1) {
                 toastr.success('El músculo ha sido modificado');
             }
-
+            $("#goRegistrarPago").click(function () {
+                location.href = "registrar.aspx";
+            });
+            $("#goTipoDePago").click(function () {
+                location.href = "TipoDePago/index.aspx";
+                
+            });
         });
 
     </script>

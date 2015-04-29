@@ -106,5 +106,14 @@ namespace ServicioEnClases
             listaPagos = objGestorPago.listarPagosPorUsuario(idUsuario);
             return new JavaScriptSerializer().Serialize(listaPagos);
         }
+
+        [WebGet()]
+        [OperationContract]
+        public string ObtenerUsuarios()
+        {
+            var gestor = new Gestor();
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(gestor.ListarUsuarios());
+        }
     }
 }

@@ -60,9 +60,20 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+									<select class="form-control" name="select1" id="select1">
+										<option value="">&nbsp;</option>
+										<option value="30">30</option>
+										<option value="40">40</option>
+										<option value="50">50</option>
+										<option value="60">60</option>
+										<option value="70">70</option>
+									</select>
+									<label for="select1">Select</label>
+								    </div>
+                                    <div class="form-group">
                                         <select id="musculo_principal" name="musculo_principal" class="col-sm-10 form-control"  data-filter="true" required>
                                         </select>
-                                        <label>Músculo principal</label>
+                                        <label for="select1">Músculo principal</label>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-9 checkbox">

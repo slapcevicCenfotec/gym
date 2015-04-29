@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class agregar
+Partial Public Class registrarPago
 End Class
