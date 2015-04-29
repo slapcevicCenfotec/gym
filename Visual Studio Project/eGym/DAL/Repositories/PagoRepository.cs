@@ -95,6 +95,7 @@ namespace DAL.Repositories
                     auxPago.User = Convert.ToInt32(dr["USUARIO"]);
                     auxPago.Habilitado = Convert.ToBoolean(dr["HABILITADO"]);
                     auxPago.Nombre  = dr["NOMBRE"].ToString();
+                    auxPago.TipoNombre = dr["TIPONOMBRE"].ToString();
                     pagos.Add(auxPago);
                 }
             }

@@ -133,6 +133,9 @@
                                 </div>
                                 <span class="title">Facturación</span>
                             </a>
+
+
+
                         </li>
                         <!-- END FACTURACION -->
                         <!-- BEGIN CALENDARIO -->
@@ -275,6 +278,7 @@
                 }
             }
         });
+
     }
     function setRolSesion(id) {
         var datos = '{"pid": "' + id + '"}';
