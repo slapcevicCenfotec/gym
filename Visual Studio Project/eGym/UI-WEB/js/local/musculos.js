@@ -85,7 +85,7 @@ $('#btnAgregarMusculo').click(function () {
             }
         },
         //submitHandler: function (form) {
-            
+
         //    //alert("formulario validado");
         //    //submit();
         //}
@@ -126,10 +126,10 @@ $('#btnIrAgregarMusculo').click(function () {
 })
 function onSuccesIngresar(result) {
     location.href = "index.aspx?agregado";
-   // alert('Se registró correctamente el músculo');
+    // alert('Se registró correctamente el músculo');
 }
 function onFailIngresar(result) {
-   toastr.error('El músculo no ha podido ser agregado');
+    toastr.error('El músculo no ha podido ser agregado');
 }
 
 
@@ -142,56 +142,59 @@ $('#btnEliminarMus').click(function () {
     var id = rowData[0][0];
 
     var service5 = new ServicioEnClases.ServicioProyecto();
-    var datos = JSON.stringify({ pid: id
-});
+    var datos = JSON.stringify({
+        pid: id
+    });
     service5.eliminarMusculo(datos, onSuccesEliminar, onFailEliminar, null);
+
+    window.location = 'Index.aspx';
 
 })
 
 function onSuccesEliminar(result) {
     toastr.success('El músculo ha sido eliminado')
     //alert("Musculo fue eliminado");
-    }
-    function onFailEliminar(result) {
-          toastr.error('El músculo no ha podido ser eliminado');
+}
+function onFailEliminar(result) {
+    toastr.error('El músculo no ha podido ser eliminado');
 
-     //   alert("Error" +result);
-        }
-    $('#btnModificarMus').click(function () {
-        var rows = $('tr.selected');
-        var table = $('#tblMusculos').DataTable();
+    //   alert("Error" +result);
+}
+$('#btnModificarMus').click(function () {
+    var rows = $('tr.selected');
+    var table = $('#tblMusculos').DataTable();
 
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
 
-    location.href = "modificar.aspx?id=" +id;
-    })
+    location.href = "modificar.aspx?id=" + id;
+})
 $('#btnModificarMusculo').click(function () {
 
     $('#frmModificarMusculo').validate({
-            messages: {
-                name: {
-                    required: "Campo es requerido"
+        messages: {
+            name: {
+                required: "Campo es requerido"
             },
-                    ubicacion: {
-                            required: "Campo es requerido"
+            ubicacion: {
+                required: "Campo es requerido"
             },
-                    origen: {
-                            required: "Campo es requerido"
+            origen: {
+                required: "Campo es requerido"
             },
-                    insercccion: {
-                            required: "Campo es requerido"
+            insercccion: {
+                required: "Campo es requerido"
             },
-                    inervacion: {
-                            required: "Campo es requerido"
+            inervacion: {
+                required: "Campo es requerido"
             },
-                    irrigacion: {
-                            required: "Campo es requerido"
+            irrigacion: {
+                required: "Campo es requerido"
             }
-    }
-});
-if ($("#frmModificarMusculo").valid()) {
+        }
+    });
+    if ($("#frmModificarMusculo").valid()) {
         var id = $('#txtIdMusculo').val(),
             nombre = $('#txtnombreMusculo').val(),
             ubicacion = $('#txtubicacionMusculo').val(),
@@ -202,11 +205,12 @@ if ($("#frmModificarMusculo").valid()) {
 
         var service2 = new ServicioEnClases.ServicioProyecto();
 
-        var datos = JSON.stringify({ pid: id, ppnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion
-});
+        var datos = JSON.stringify({
+            pid: id, ppnombre: nombre, pubicacion: ubicacion, porigen: origen, pinserccion: inserccion, pinervacion: inervacion, pirrigacion: irrigacion
+        });
 
         service2.modificarMusculo(datos, onSuccesModificar, errorMessageModificar, null)
-}
+    }
     //var id = $('#txtIdMusculo').val(),
     //    nombre = $('#txtnombreMusculo').val(),
     //    ubicacion = $('#txtubicacionMusculo').val(),
@@ -222,12 +226,24 @@ if ($("#frmModificarMusculo").valid()) {
     //service2.modificarMusculo(datos, onSuccesModificar, errorMessageModificar, null)
 });
 
-    function onSuccesModificar(result) {
-        location.href = "index.aspx?modificado";
-         //alert('Se modificó correctamente el músculo');
-    };
-    function errorMessageModificar(resul) {
-        toastr.error('El músculo no ha podido ser modificado');
+function onSuccesModificar(result) {
+    location.href = "index.aspx?modificado";
+    //alert('Se modificó correctamente el músculo');
+};
+function errorMessageModificar(resul) {
+    toastr.error('El músculo no ha podido ser modificado');
 
- //       alert(resul.get_message());
+    //       alert(resul.get_message());
 }
+btnCancelarMusculo
+$('#btnCancelarMusculo').click(function () {
+    $("#frmIngresarMusculo").trigger('reset');
+    window.location = 'index.aspx';
+})
+
+
+btnCancelarMusculo
+$('#btnCancelarMusculoM').click(function () {
+    $("#frmModificarMusculo").trigger('reset');
+    window.location = 'index.aspx';
+})

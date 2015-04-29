@@ -17,7 +17,6 @@
         }
     });
 
-    //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
     $('#tblFichasDeMedicion tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
@@ -38,11 +37,10 @@ function search() {
     var idMaquina = getQueryVariable('id');
 
     var service = new ServicioFichasDeMedicion();
-    service.obtenerFichasPorCliente(idCliente, onSuccessObtenerFichas, error, null);
+    service.obtenerFichasPorCliente(idCliente, onSuccessObtenerFichas, error2, null);
 }
 
-function error(result) {
-    alert('Cliente no posee fichas de medición');
+function error2(result) {
 
     window.location = '../Clientes/index.aspx';
 }

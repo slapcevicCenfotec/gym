@@ -38,6 +38,8 @@ $('#btnGuardar').click(function () {
 
         datos = JSON.stringify({ pnumeroActivo: numeroActivo, pnumeroMaquina: numeroMaquina, ptipoMaquina: tipoMaquina });
         serviceInsertar.insertarMaquina(datos, onSuccesIngresarMaquina, errorMessage, null, null);
+
+        window.location = 'Index.aspx';
     }
 })
 

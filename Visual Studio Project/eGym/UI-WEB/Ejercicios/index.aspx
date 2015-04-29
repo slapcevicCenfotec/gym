@@ -58,7 +58,7 @@
         <form action="/" runat="server" method="post">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
-                <asp:ServiceReference Path="http://localhost:85/eGym/ServicioEjercicio.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioEjercicio.svc" />
             </Services>
         </asp:ScriptManager>
       </form>

@@ -81,7 +81,7 @@
                         </div>
                         <asp:ScriptManager runat="server">
                             <Services>
-                                <asp:ServiceReference Path=" http://localhost:85/eGym/ServicioProyecto.svc" />
+                                 <asp:ServiceReference Path="http://localhost/egymServices/ServicioProyecto.svc" />
                             </Services>
                         </asp:ScriptManager>
                     </form>
