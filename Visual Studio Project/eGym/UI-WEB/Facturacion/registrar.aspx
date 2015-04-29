@@ -133,8 +133,8 @@
                                         </div>
                                         <div class="card-actionbar">
                                             <div class="card-actionbar-row" data-toggle="tabs">
-                                                <button id="regresarButton" type="button" onclick="volverIndex()" class="btn btn-flat btn-primary ink-reaction">Volver</button>
-                                                <button id="btnRegistrarPago" type="button" onclick="" class="btn btn-flat btn-primary ink-reaction">Registrar</button>
+                                                <button id="btnRegistrarPago" type="button" onclick="" class="btn btn-flat btn-primary ink-reaction pull-right">Registrar</button>
+                                                <button id="regresarButton" type="button" onclick="volverIndex()" class="btn btn-flat btn-primary ink-reaction pull-right">Volver</button>
                                             </div>
                                         </div>
                                     </div>

@@ -56,8 +56,8 @@
 
                         <div class="card-actionbar">
                                 <div data-toggle="tabs" class="card-actionbar-row">
-                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="volverIndex()" type="button" id='btnVolverTP'>Volver</button>
-                                    <button class="btn btn-flat btn-primary ink-reaction" onclick="" type="button" id='btnModificarTipoDePago'>Registrar</button>
+                                    <button class="btn btn-flat btn-primary ink-reaction pull-right" onclick="" type="button" id='btnModificarTipoDePago'>Registrar</button>
+                                    <button class="btn btn-flat btn-primary ink-reaction pull-right" onclick="volverIndex()" type="button" id='btnVolverTP'>Volver</button>
                                 </div>
                             </div>
 							</form>

@@ -35,9 +35,9 @@
                 </article>
             </div>
             <div class="col-md-4">
-                <button type="button" id="indexEliminar" onclick="eliminarTipoPago()" class="btn btn-default btn btn-primary ink-reaction">Eliminar</button>
-                <button type="button" id="indexModificar" onclick="modificarTipoPago()"  class="btn btn-default btn btn-primary ink-reaction">Modificar</button>
-                <button type="button" id="indexAgregar" onClick="agregarTipoPago()" class="btn btn-default btn btn-primary ink-reaction">Agregar</button>
+                <button type="button" id="indexEliminar" onclick="eliminarTipoPago()" class="btn btn-default btn btn-primary ink-reaction pull-right">Eliminar</button>
+                <button type="button" id="indexModificar" onclick="modificarTipoPago()"  class="btn btn-default btn btn-primary ink-reaction pull-right">Modificar</button>
+                <button type="button" id="indexAgregar" onClick="agregarTipoPago()" class="btn btn-default btn btn-primary ink-reaction pull-right">Agregar</button>
                 </div> 
             <!--end .col -->
         </div>

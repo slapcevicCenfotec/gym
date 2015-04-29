@@ -35,8 +35,9 @@
                 </article>
             </div>
             <div class="col-md-4">
-                <button type="button" id="goRegistrarPago" class="btn btn-default btn btn-primary ink-reaction">Registrar pago</button>
-                <button type="button" id="goTipoDePago" class="btn btn-default btn btn-primary ink-reaction">Tipo de pago</button>
+                <button type="button" id="goTipoDePago" class="btn btn-default btn btn-primary ink-reaction pull-right">Tipo de pago</button>
+                <button type="button" id="goRegistrarPago" class="btn btn-default btn btn-primary ink-reaction pull-right">Registrar pago</button>
+                
                 </div>
             <!--end .col -->
         </div>

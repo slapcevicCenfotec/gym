@@ -6,25 +6,35 @@
     <link type="text/css" rel="stylesheet" href='<%= Page.ResolveUrl("~/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990")%>' />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <section class="style-default-bright">
-        <div class="section-header">
-            <h2 class="text-primary">Usuarios</h2>
-        </div>
-        <div class="section-body">
-            <div class="row">
-                <div class="col-md-8">
-                    <article class="margin-bottom-xxl">
-                        <p class="lead">Todos los usuarios del sistema</p>
-                    </article>
-                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnAgregar">Agregar</button>
-                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnModificar">Modificar</button>
-                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnEliminar">Eliminar</button>
-                </div>
+    <div class="section-body contain-lg">
+        <!-- BEGIN INTRO -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-primary">Usuarios</h1>
             </div>
-            <div class="row">
-                <!--end .col -->
-                <div class="col-lg-12">
+            <!--end .col -->
+            <div class="col-lg-8">
+                <article class="margin-bottom-xxl">
+                    <p class="lead">
+                        Lista de usuarios del sistema
+                    </p>
+                </article>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-default btn btn-primary ink-reaction pull-right" id="btnEliminar">Eliminar</button>
+                <button type="button" class="btn btn-default btn btn-primary ink-reaction pull-right" id="btnModificar">Modificar</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction pull-right" id="btnAgregar">Agregar</button>
+                    
+                    
+               </div> 
+            <!--end .col -->
+        </div>
+        <!--end .row -->
+        <!-- END INTRO -->
+        <div class="row">
+            <!-- BEGIN LAYOUT RIGHT SIDEBAR -->
+            <div class="col-md-12">
+                <div class="card tabs-left style-default-light">
                     <div class="table-responsive">
                         <table id="tblUsuarios" class="table table-striped table-hover">
                             <thead>
@@ -39,12 +49,11 @@
                             </thead>
                             <tbody>
                             </tbody>
-                        </table>
-                    </div>
+                        </table></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <form runat="server">
         <asp:ScriptManager runat="server" >
             <Services>
