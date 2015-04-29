@@ -136,8 +136,9 @@ $('#btnAgregarPrueba').click(function () {
 });
 
 $('#AgregarEjercicios').click(function () {
-   id  = idTipoPrueba = $('#idPrueba').val();
-    window.location = "../PruebaEjercicios/Agregar.aspx?id=" + id + "&Mode=Ins";
+    id = idTipoPrueba = $('#idPrueba').val();
+    var resulId = getParameterByName("id");
+    window.location = "../PruebaEjercicios/Agregar.aspx?id=" + id + "&Mode=Ins&idUser=" + resulId;
 });
 
 $('#btnCancelar').click(function () {
@@ -165,6 +166,24 @@ function errorMessage(resul) {
     alert(resul.get_message());
 }
 
+
+$('#EliminarEjejrcicios').click(function () {
+    var resulId = getParameterByName("id");
+    var rows = $('tr.selected');
+    var table = $('#tblPruebas').DataTable();
+    var rowData = table.rows(rows).data();
+    var id = rowData[0][0];
+    var datos = JSON.stringify({ pId: id });
+    servicePruebas.EliminarPrueba(datos, onSuccesEliminar, errorMessage, null, null);
+    //window.location = "Modificar.aspx?id=" + resulId + "&Mode=Upd"
+});
+
+function onSuccesEliminar(result) {
+    alert('Se elimino correctamente la prueba');
+    //window.location.reload();
+    //var resulId = getParameterByName("id");
+    //window.location = "PruebaResistencia.aspx?id=" + resulId;
+}
 
 $('#btnModificarPruebaResistencia').click(function () {
     var resulId = getParameterByName("id");

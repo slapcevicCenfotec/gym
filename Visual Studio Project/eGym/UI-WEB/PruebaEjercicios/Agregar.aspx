@@ -40,9 +40,21 @@
 												<input type="text" class="form-control" id="peso">
 												<label for="peso">Peso</label>
 						</div>
-                                                <div class="form-group floating-label">
+                         <div class="form-group floating-label">
 												<input type="text" class="form-control" id="rm1">
 												<label for="rm1">Rm1</label>
+						</div>
+                        <div class="form-group floating-label">
+												<input type="text" class="form-control" id="prc1">
+												<label for="rm1">70%</label>
+						</div>
+                        <div class="form-group floating-label">
+												<input type="text" class="form-control" id="prc2">
+												<label for="rm1">80%</label>
+						</div>
+                                                <div class="form-group floating-label">
+												<input type="text" class="form-control" id="prc3">
+												<label for="rm1">90%</label>
 						</div>
 					</form>
 				</div><!--end .card-body -->

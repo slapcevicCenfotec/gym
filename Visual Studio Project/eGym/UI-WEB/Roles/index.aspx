@@ -17,8 +17,12 @@
                     <article class="margin-bottom-xxl">
                         <p class="lead">Todos los Roles del sistema</p>
                     </article>
+                     <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnAgregarRol">Agregar Rol</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnModificarRol">Modificar Rol</button>
+                    <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="btnEliminiarRol">Eliminar Rol</button>
                 </div>
             </div>
+
             <div class="row">
                 <!--end .col -->
                 <div class="col-lg-12">
@@ -37,13 +41,6 @@
                     </div>
                 </div>
             </div>
-            <p><button type="button" class="btn ink-reaction btn-flat btn-primary" id="btnAgregarRol">Agregar Rol</button>
-            </p>
-            <p><button type="button" class="btn ink-reaction btn-flat btn-primary" id="btnModificarRol" >Modificar Rol</button>
-            </p>
-            <p><button type="button" class="btn ink-reaction btn-flat btn-primary" id="btnEliminiarRol" >Eliminar Rol</button>
-            </p>
-
         </div>
         <!--end .section-body -->
 

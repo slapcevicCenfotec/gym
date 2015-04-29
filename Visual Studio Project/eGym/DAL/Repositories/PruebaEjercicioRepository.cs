@@ -91,7 +91,7 @@ namespace DAL.Repositories
                     {
                         foreach (ResultadoPruebaResistencia objPrueba in _deleteItems)
                         {
-                            //DeletePrueba(objPrueba);
+                            DeletePrueba(objPrueba);
                         }
                     }
 
@@ -276,9 +276,35 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@PRM1", objPrueba.Rm1));
                 cmd.Parameters.Add(new SqlParameter("@PPESO", objPrueba.Peso));
                 cmd.Parameters.Add(new SqlParameter("@ID_PRUEBA", objPrueba.IdPrueba));
+                cmd.Parameters.Add(new SqlParameter("@PPRC1", objPrueba.Prc1));
+                cmd.Parameters.Add(new SqlParameter("@PPRC2", objPrueba.Prc2));
+                cmd.Parameters.Add(new SqlParameter("@PPRC3", objPrueba.Prc3));
 
 
                 ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_InsertarPruebasEjercicio");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        private void DeletePrueba(ResultadoPruebaResistencia objPrueba)
+        {
+            DataSet ds;
+            ds = null;
+            int id;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@PID", objPrueba.Id));
+
+
+
+                ds = DBAccess.ExecuteSPWithDS(ref cmd, "SP_EliminarResultadoPrueba");
 
             }
             catch (Exception ex)

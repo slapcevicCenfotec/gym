@@ -107,6 +107,23 @@ namespace ServicioEnClases
 
         [WebMethod]
         [OperationContract]
+        public void EliminarPrueba(string datosSerializados)
+        {
+
+
+            var jss = new JavaScriptSerializer();
+            //var dictionary = jss.Deserialize<Dictionary<string, string,>>(datosSerializados);
+            var dictionary = jss.Deserialize<Dictionary<String, object>>(datosSerializados);
+            int id = Convert.ToInt32(dictionary["pId"].ToString());
+
+            //{
+            //    dato.GetType();
+            //}
+            objGestorPruebaEjercicio.EliminarResultadoPrueba(id);
+        }
+
+        [WebMethod]
+        [OperationContract]
         public void insertarPruebasEjercicio (string datosSerializados)
         {
 
@@ -120,9 +137,12 @@ namespace ServicioEnClases
             Double peso = Convert.ToDouble(dictionary["ppeso"].ToString());
             Double rm1 = Convert.ToDouble(dictionary["prm1"].ToString());
             int idEjercicio = Convert.ToInt32(dictionary["pidEjercicio"].ToString());
+            Double prc1 = Convert.ToDouble(dictionary["pprc1"].ToString());
+            Double prc2 = Convert.ToDouble(dictionary["pprc2"].ToString());
+            Double prc3 = Convert.ToDouble(dictionary["pprc3"].ToString());
 
 
-            objGestorPruebaEjercicio.insertarResultadoPrueba(idEjercicio,series,repeticiones,peso,rm1,idPrueba);
+            objGestorPruebaEjercicio.insertarResultadoPrueba(idEjercicio, series, repeticiones, peso, rm1, idPrueba, prc1, prc2, prc3);
         }
 
         [OperationContract]

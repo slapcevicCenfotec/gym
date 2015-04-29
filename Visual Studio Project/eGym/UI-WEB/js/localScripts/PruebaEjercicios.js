@@ -23,20 +23,36 @@ function errorMessage(resul) {
     alert(resul.get_message());
 }
 
+$('#btnCancelar').click(function () {
+    var idUser = getParameterByName("idUser");
+    window.location = "../PruebasResistencia/Modificar.aspx?id=" + idUser + "&Mode=Upd"
+});
+
 $('#btnGuardar').click(function () {
-    var cantPermisos = 0;
-    var resulId = getParameterByName("id");
-    var series = $('#series').val(),
-        repeticiones = $('#repeticiones').val(),
-        peso = $('#peso').val(),
-        idEjericio = $('#selectEjercicio').val();
+
+    $("#PruebaEjericiosForm").validate();
+
+    if ($("#PruebaEjericiosForm").valid()) {
+        var cantPermisos = 0;
+        var resulId = getParameterByName("id");
+        var idUser = getParameterByName("idUser");
+        var series = $('#series').val(),
+            repeticiones = $('#repeticiones').val(),
+            peso = $('#peso').val(),
+            idEjericio = $('#selectEjercicio').val();
         rm1 = $('#rm1').val();
-        var datos = JSON.stringify({ pidPrueba: resulId, pseries: series, prepeticiones: repeticiones, ppeso: peso, prm1: rm1, pidEjercicio: idEjericio });
+        prc1 = $('#prc1').val();
+        prc2 = $('#prc2').val();
+        prc3 = $('#prc3').val();
+        var datos = JSON.stringify({ pidPrueba: resulId, pseries: series, prepeticiones: repeticiones, ppeso: peso, prm1: rm1, pidEjercicio: idEjericio, pprc1: prc1, pprc2: prc2, pprc3: prc3, });
         servicePruebas.insertarPruebasEjercicio(datos, onSuccessinsertarPruebasEjercicio, errorMessage, null, null);
+    }
 });
 
 function onSuccessinsertarPruebasEjercicio(result) {
     alert('Se registró correctamente la prueba');
+    var idUser = getParameterByName("idUser");
+    window.location = "../PruebasResistencia/Modificar.aspx?id=" + idUser + "&Mode=Upd"
 }
 
 
