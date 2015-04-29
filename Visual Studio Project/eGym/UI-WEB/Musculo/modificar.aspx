@@ -42,7 +42,7 @@
                             <div class="card-head style-primary">
                                 <header>Músculo</header>
                             </div>
-                            <div class="card-body floating-label">
+                            <div class="card-body horizontal">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="text" name="name" id="txtIdMusculo">

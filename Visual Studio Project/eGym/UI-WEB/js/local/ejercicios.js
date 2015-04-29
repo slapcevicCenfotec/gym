@@ -31,8 +31,16 @@ function load() {
     });
 }
 function buscarEjericicio() {
-    var service1 = new ServicioEjercicio();
-    service1.obtenerEjercicios(onSuccess, null, null);
+    var service1 = new ServicioEnClases.ServicioEjercicio();
+    service1.obtenerEjercicios(onSuccess, onFail, null,null);
+}
+
+
+
+
+
+function onFail(result) {
+    alert("fail "+get_message());
 }
 function onSuccess(result) {
     var object = $.parseJSON(result);
@@ -153,7 +161,7 @@ $('#btnAgregarEjercicio').click(function () {
         var foto = getBase64Image();
         var foto2 = getBase64Image2();
 
-        service4 = new ServicioEjercicio();
+        service4 = new ServicioEnClases.ServicioEjercicio();
 
         var datos = JSON.stringify({ pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal, pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto, pimagen2: foto2 });
         service4.insertarEjercicio(datos, onSuccesIngresar, onFailModificar, null, null);
@@ -212,12 +220,12 @@ $('#btnModificarEjer').click(function () {
 })
 
 function buscarEjercicioByID() {
-    var service1 = new ServicioEjercicio();
+    var service1 = new ServicioEnClases.ServicioEjercicio();
     service1.obtenerEjercicioByID(onSuccess, null, null);
 }
 
 $('#btnAgregarEjer').click(function () {
-    location.href = "InsertarEjercicio.aspx";
+    location.href = "agregar.aspx";
 })
 $('#btnEliminarEjer').click(function () {
     var rows = $('tr.selected');
@@ -226,7 +234,7 @@ $('#btnEliminarEjer').click(function () {
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
-    var service4 = new ServicioEjercicio();
+    var service4 = new ServicioEnClases.ServicioEjercicio();
 
     var datos = JSON.stringify({ pid: id });
     service4.eliminarEjercicio(datos, onSucessEli, onFailEli, null, null);
@@ -288,7 +296,7 @@ $('#btnModificarEjercicio').click(function () {
         //alert("Muscul Secundario " +musculosSecundarios)
 
 
-        service4 = new ServicioEjercicio();
+        service4 = new ServicioEnClases.ServicioEjercicio();
 
         var datos = JSON.stringify({ pid: id, pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal, pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto, pimagen2: foto2 });
         service4.modificarEjercicio(datos, onSuccesModificar, onFailModificar, null, null);

@@ -26,8 +26,8 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cantaros.no-ip.info;Initial Catalog=eGymDB;Persist Security Info=True" +
-            ";User ID=Cantaros;Password=cantaros123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cantaros.no-ip.info;Initial Catalog=eGymDB;Integrated Security=False;" +
+            "User ID=Cantaros;Password=cantaros123")]
         public string coneccion {
             get {
                 return ((string)(this["coneccion"]));

@@ -157,7 +157,7 @@
         <form runat="server">
             <asp:ScriptManager ID="ScriptManager2" runat="server">
                 <Services>
-                    <asp:ServiceReference Path="http://localhost/eGym/ServicioEventoCalendario.svc" />
+                    <asp:ServiceReference Path="http://localhost/egymServices/ServicioEventoCalendario.svc" />
                 </Services>
 
             </asp:ScriptManager>

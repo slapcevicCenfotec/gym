@@ -106,5 +106,31 @@ namespace ServicioEnClases
             listaPagos = objGestorPago.listarPagosPorUsuario(idUsuario);
             return new JavaScriptSerializer().Serialize(listaPagos);
         }
+
+        [WebGet()]
+        [OperationContract]
+        public string ObtenerUsuarios()
+        {
+            var gestor = new Gestor();
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(gestor.ListarUsuarios());
+        }
+        [WebMethod]
+        [OperationContract]
+        public void insertarPago(string datosSerializados)
+        {
+            GestorPago objGestorPago = new GestorPago();
+            var jss = new JavaScriptSerializer();
+            var dictionary = jss.Deserialize<Dictionary<string, string>>(datosSerializados);
+
+            string factura = dictionary["factura"];
+            double monto = Convert.ToDouble(dictionary["monto"]);
+            int tipo = int.Parse(dictionary["tipo"]);
+            DateTime hasta = Convert.ToDateTime(dictionary["hasta"]);
+            DateTime desde = Convert.ToDateTime(dictionary["desde"]);
+            int usuario = int.Parse(dictionary["usuario"]);
+
+            objGestorPago.insertarPago(factura, monto, tipo, hasta, desde, usuario);
+        }
     }
 }

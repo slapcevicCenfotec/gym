@@ -41,18 +41,19 @@
                 <div class="card tabs-left style-default-light">
                     <div class="col-md-4 col-md-offset-4 ">
                     <form role="form" class="form">
-                            	<div class="form-group floating-label">
+                            	<div class="form-group horizontal">
 									<input type="text" id="txtNombre" class="form-control">
 									<label for="regular2">Nombre</label>
 								</div>
-                                <div class="form-group floating-label">
+                                <div class="form-group horizontal">
 									<input type="text" id="txtMonto" class="form-control">
 									<label for="regular2">Monto</label>
 								</div>
-                                <div class="form-group floating-label">
+                                <div class="form-group horizontal">
 									<input type="text" id="txtDuracion" class="form-control">
 									<label for="regular2">Duracion(Dias)</label>
 								</div>
+
                         <div class="card-actionbar">
                                 <div data-toggle="tabs" class="card-actionbar-row">
                                     <button class="btn btn-flat btn-primary ink-reaction" onclick="" type="button" id='btnVolverTP'>Volver</button>
