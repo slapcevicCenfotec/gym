@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Agregar3
+Partial Public Class Agregar4
 
     '''<summary>
     '''Form1 control.
