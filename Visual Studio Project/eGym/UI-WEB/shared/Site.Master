@@ -133,20 +133,22 @@
                                 </div>
                                 <span class="title">Facturación</span>
                             </a>
-
-
-
                         </li>
+
+
                         <!-- END FACTURACION -->
-                        <!-- BEGIN CALENDARIO -->
+
+
+                        <!-- BEGIN AGENDA -->
                         <li id="menuAgenda" class="hidden">
-                            <a href="<%= Page.ResolveUrl("~/Agenda/index.aspx")%>">
-                                <div class="gui-icon"><i class="fa fa-wrench"></i>
+                            <a href="../Agenda/index.aspx?id=<%= Session("_USERID")%>">
+                                <div class="gui-icon"><i class="fa fa-dollar"></i>
                                 </div>
                                 <span class="title">Agenda</span>
                             </a>
                         </li>
-                        <!-- END CALENDARIO -->
+                        <!-- end AGENDA -->
+
                         <!-- BEGIN MAQUINAS -->
                         <li id="menuMaquinas" class="hidden">
                             <a href="<%= Page.ResolveUrl("~/Maquinas/index.aspx")%>">

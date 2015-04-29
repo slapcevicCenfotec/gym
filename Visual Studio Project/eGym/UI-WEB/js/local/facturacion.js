@@ -28,6 +28,22 @@
     });
 }
 
+function parseJsonDate(jsonDateString) {
+    var date = new Date(parseInt(jsonDateString.replace('/Date(', '')));
+    return formattedDate(date);
+}
+
+function formattedDate(date) {
+    var d = new Date(date || Date.now()),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [month, day, year].join('/');
+}
 
 function getAllTipoDePago() {
     var servicio = new ServicioEnClases.ServicioTipoPago();
@@ -86,7 +102,7 @@ function onSuccessGetAllPagos(result) {
         tbody += '<td>' + objeto[i].Factura + '</td>';
         tbody += '<td>' + objeto[i].Monto + '</td>';
         tbody += '<td>' + objeto[i].TipoNombre + '</td>';
-        tbody += '<td>' + objeto[i].Fecha + '</td>';
+        tbody += '<td>' + parseJsonDate(objeto[i].Fecha) + '</td>';
         tbody += '<td>' + objeto[i].Nombre + '</td>';
         tbody += '</tr>';
     });
@@ -143,7 +159,16 @@ function eliminarTipoDePago() {
 };
 function onFail() {
     alert("fail");
+
+    //alert("fail");
+
+
 }
+
+
+$("#btnVolverTP").click(function () {
+    location.href = "index.aspx";
+});
 $("#indexModificar").click(function () {
     var rows = $('tr.selected');
     var table = $('#tblTiposPago').DataTable();
