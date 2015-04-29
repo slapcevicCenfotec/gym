@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
     var eventos = [];
+
+
     $('#calendar').fullCalendar({
         height: 700,
         header: false,
@@ -110,7 +112,6 @@
         }
     });
 
-
     //Buttons events
     $('#calender-prev').on('click', function (e) {
         $('#calendar').fullCalendar('prev');
@@ -125,6 +126,7 @@
     var servicio1 = new ServicioEnClases.ServicioEventoCalendario();
     servicio1.getAllEventoCalendario(onsucess, onFail, null);
 
+
     function onsucess(result) {
         alert("on suceess");
         var object = $.parseJSON(result);
@@ -137,10 +139,24 @@
             eventos.push({ 'id': object[i].Id, 'title': object[i].Titulo, 'start': object[i].FechaInicial, 'end': object[i].FechaFinal, 'description': object[i].Descripcion });
         })
 
-        $('#calendar').fullCalendar({
-            events: eventos
-        });
+        events = eventos;
+
+        alert(events)
+        $('#calendar').fullCalendar('removeEvents');
+        $('#calendar').fullCalendar('addEventSource', eventos)
+        $('#calendar').fullCalendar('rerenderEvents');
+
+
+        //$('#calendar').fullCalendar({
+        //    events: eventos
+        //})
+        //$('#calendar').fullCalendar('refetchEvents');
+
     };
+
+
+    
+
     function onFail(result) {
         
     };

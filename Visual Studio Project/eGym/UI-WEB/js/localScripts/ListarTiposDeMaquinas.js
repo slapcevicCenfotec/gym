@@ -79,7 +79,7 @@ $('#btnEliminar').click(function () {
 
     var serviceEliminar = new ServiciosTiposDeMaquinas();
 
-    serviceEliminar.eliminarTipoDeMaquina(datos, onSuccesEliminarTipoMaquina, errorMessage, null, null);
+    serviceEliminar.eliminarTipoDeMaquina(datos, onSuccesEliminarTipoMaquina, null, null);
 
     location.reload();
 })
