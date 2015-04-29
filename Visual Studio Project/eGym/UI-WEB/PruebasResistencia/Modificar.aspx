@@ -34,7 +34,7 @@
 					</form>
                     <div class="card-body no-padding">
             <button type="button" class="btn btn-default btn btn-primary ink-reaction"  id="AgregarEjercicios" ">Agregar Ejercicios</button>
-            <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="ModificarEjejrcicios" >Modificar Ejercicios</button>
+            <button type="button" class="btn btn-default btn btn-primary ink-reaction" id="EliminarEjejrcicios" >Eliminar Ejercicios</button>
                     <div class="card-body">
                     <div class="table-responsive">
                         <table id="tblPruebas" class="table table-striped table-hover">

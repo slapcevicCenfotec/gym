@@ -27,8 +27,8 @@ $('#btnModificarRol').click(function () {
     window.location = "Modificar.aspx?id=" + id + "&Mode=Upd";
 });
 
-$('#Cancelar').click(function () {
-    window.location = "FrmListarRolesWeb.aspx";
+$('#btnCancelar').click(function () {
+    window.location = "index.aspx";
 });
 
 $('#btnAgregarRol').click(function () {
@@ -94,11 +94,7 @@ function ingresarRol() {
     var cantPermisos = 0;
     var nombre = $('#nombre').val(),
         descripcion = $('#descripcion').val();
-        //serviceRol = new ServicioEnClases.ServicioRol();
-
-
-
-
+    //serviceRol = new ServicioEnClases.ServicioRol();
     $("#RolesForm").validate();
     if ($("#RolesForm").valid()) {
         var listaPermisos = [];
@@ -110,11 +106,7 @@ function ingresarRol() {
         });
         var datos = JSON.stringify({ pnombre: nombre, pdescripcion: descripcion, ppermisos: listaPermisos });
         serviceRol.insertarRoles(datos, onSuccesIngresar, errorMessage, null, null);
-    } else {
-        $('#nombre').focus();
-        $('#nombre').blur();
-        $('#descripcion').focus();
-    };
+    } 
 
 
 }
