@@ -133,20 +133,22 @@
                                 </div>
                                 <span class="title">Facturación</span>
                             </a>
-
-
-
                         </li>
+
+
                         <!-- END FACTURACION -->
-                        <!-- BEGIN CALENDARIO -->
+
+
+                        <!-- BEGIN AGENDA -->
                         <li id="menuAgenda" class="hidden">
-                            <a href="<%= Page.ResolveUrl("~/Agenda/index.aspx")%>">
-                                <div class="gui-icon"><i class="fa fa-wrench"></i>
+                            <a href="../Agenda/index.aspx?id=<%= Session("_USERID")%>">
+                                <div class="gui-icon"><i class="fa fa-file-text-o"></i>
                                 </div>
                                 <span class="title">Agenda</span>
                             </a>
                         </li>
-                        <!-- END CALENDARIO -->
+                        <!-- end AGENDA -->
+
                         <!-- BEGIN MAQUINAS -->
                         <li id="menuMaquinas" class="hidden">
                             <a href="<%= Page.ResolveUrl("~/Maquinas/index.aspx")%>">
@@ -158,7 +160,7 @@
                         <!-- END MAQUINAS -->
                         <!-- BEGIN MUSCULOS -->
                         <li id="menuMusculos" class="hidden">
-                            <a href="#">
+                            <a href="<%= Page.ResolveUrl("~/Musculo/index.aspx")%>">
                                 <div class="gui-icon"><i class="fa fa-medium"></i>
                                 </div>
                                 <span class="title">Músculos</span>
@@ -167,7 +169,7 @@
                         <!-- END MUSCULOS -->
                         <!-- BEGIN EJERCICIOS -->
                         <li id="menuEjercicios" class="hidden">
-                            <a href="#">
+                            <a href="<%= Page.ResolveUrl("~/Ejercicios/index.aspx")%>">
                                 <div class="gui-icon"><i class="fa fa-bicycle"></i>
                                 </div>
                                 <span class="title">Ejercicios</span>
@@ -213,7 +215,7 @@
                         <!-- BEGIN CLIENTES -->
                         <li id="menuClientes" class="hidden">
                             <a href="<%= Page.ResolveUrl("~/Clientes/index.aspx")%>">
-                                <div class="gui-icon"><i class="fa fa-cog"></i>
+                                <div class="gui-icon"><i class="fa fa-users"></i>
                                 </div>
                                 <span class="title">Clientes</span>
                             </a>
@@ -336,6 +338,9 @@
             }
             if (entry.Id === 14) {
                 $(menuClientes).removeClass("hidden");
+            }
+            if (entry.Id === 11) {
+                $(menuAgenda).removeClass("hidden");
             }
         });
         setPermisos(permisos)

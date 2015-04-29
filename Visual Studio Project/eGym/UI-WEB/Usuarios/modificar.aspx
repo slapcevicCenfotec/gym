@@ -65,7 +65,7 @@
                                 <div class="card-head style-primary">
                                     <header>Perfil</header>
                                 </div>
-                                <div class="card-body floating-label">
+                                <div class="card-body horizontal">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="txtIdentificacion">
@@ -163,7 +163,7 @@
                                         <div class="card-head style-primary">
                                             <header>Contacto #1</header>
                                         </div>
-                                        <div class="card-body floating-label">
+                                        <div class="card-body horizontal">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="txtNombreContacto1">
                                                 <label>Nombre</label>
@@ -184,7 +184,7 @@
                                         <div class="card-head style-primary">
                                             <header>Contacto #2</header>
                                         </div>
-                                        <div class="card-body floating-label">
+                                        <div class="card-body horizontal">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="txtNombreContacto2">
                                                 <label>Nombre</label>
@@ -209,7 +209,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="card-body floating-label">
+                                        <div class="card-body horizontal">
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
@@ -252,7 +252,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="card-body floating-label">
+                                        <div class="card-body horizontal">
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
@@ -282,7 +282,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="card-body floating-label">
+                                        <div class="card-body horizontal">
                                             <div class="form-group">
                                                 <div class="input-daterange input-group">
                                                     <div class="input-group-content">
