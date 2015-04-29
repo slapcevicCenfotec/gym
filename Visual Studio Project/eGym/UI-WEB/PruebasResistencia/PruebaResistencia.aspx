@@ -65,7 +65,7 @@
 
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
-                <asp:ServiceReference Path="http://localhost:60166/ServicioPruebasResistencia.svc" />
+                <asp:ServiceReference Path="http://localhost/egymServices/ServicioPruebasResistencia.svc" />
             </Services>
         </asp:ScriptManager>
 

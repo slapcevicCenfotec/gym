@@ -265,7 +265,7 @@
     function setUsuarioSesion(datos) {
         $.ajax({
             type: "GET",
-            url: '<%= Page.ResolveUrl("http://localhost:60166/ServicioUsuario.svc/ObtenerUsuario")%>',
+            url: '<%= Page.ResolveUrl("http://localhost/egymServices/ServicioUsuario.svc/ObtenerUsuario")%>',
             data: JSON.parse(datos),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -286,7 +286,7 @@
         var datos = '{"pid": "' + id + '"}';
         $.ajax({
             type: "GET",
-            url: '<%= Page.ResolveUrl("http://localhost:60166/ServicioRol.svc/obtenerRolPorId")%>',
+            url: '<%= Page.ResolveUrl("http://localhost/egymServices/ServicioRol.svc/obtenerRolPorId")%>',
             data: JSON.parse(datos),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
