@@ -34,5 +34,26 @@ namespace ServicioEnClases
             var gestor = new Gestor();
             gestor.AgregarMensaje(destinatario, remitente, texto);
         }
+
+        [WebGet()]
+        [OperationContract]
+        public string obtenerMensajesPorUsuario(string datos)
+        {
+            var serializer = new JavaScriptSerializer();
+            var result = "";
+            try
+            {
+                var dictionary = serializer.Deserialize<Dictionary<string, string>>(datos);
+                var destinatario = Convert.ToInt32(dictionary["pDestinatarioId"]);
+                var gestor = new Gestor();
+                var mensajes = gestor.ListarMensajesPorUsuario(destinatario);
+                result = serializer.Serialize(mensajes);
+            }
+            catch (Exception e)
+            {
+                result = e.Message;
+            }
+            return result;
+        }
     }
 }

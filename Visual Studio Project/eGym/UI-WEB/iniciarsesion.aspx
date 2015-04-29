@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <br />
-                        <span class="text-lg text-bold text-primary">EGYM - NOMBRE GIMNASIO</span>
+                        <span class="text-lg text-bold text-primary">EGYM</span>
                         <br />
                         <br />
                         <form id="formLogin" class="form floating-label form-validate">
@@ -51,9 +51,6 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" id="txtContrasena" value="sebas" required>
                                 <label>Contraseña</label>
-                                <p class="help-block">
-                                    <a href="#">Olvidó su contraseña?</a>
-                                </p>
                             </div>
                             <br />
                             <div class="row">
@@ -69,15 +66,6 @@
                         </form>
                     </div>
                     <!--end .col -->
-                    <div class="col-sm-5 col-sm-offset-1 text-center">
-                        <br>
-                        <br>
-                        <h3 class="text-light">No tiene cuenta aún?
-                        </h3>
-                        <a class="btn btn-block btn-raised btn-primary" href="#">Inscríbase aquí</a>
-                        <br>
-                        <br>
-                    </div>
                     <!--end .col -->
                 </div>
                 <!--end .row -->

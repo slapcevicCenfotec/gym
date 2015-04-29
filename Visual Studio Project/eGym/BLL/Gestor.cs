@@ -39,13 +39,15 @@ namespace BLL
         }
 
         public IEnumerable<Mensaje> ListarMensajesPorUsuario(int pId)
-        { 
+        {
             var repository = (MensajeRepository)unitOfWork.RepositoryMensaje;
             var mensajes = repository.GetByUser(pId);
             foreach (var mensaje in mensajes)
             {
-                mensaje.Remitente = ObtenerUsuario(mensaje.Remitente.Id);
-                mensaje.Destinatario = ObtenerUsuario(mensaje.Destinatario.Id);
+                if (mensaje.Remitente != null && mensaje.Remitente.Id != null)
+                    mensaje.Remitente = ObtenerUsuario(mensaje.Remitente.Id);
+                if (mensaje.Destinatario != null && mensaje.Destinatario.Id != null)
+                    mensaje.Destinatario = ObtenerUsuario(mensaje.Destinatario.Id);
             }
             return mensajes;
         }
@@ -107,7 +109,7 @@ namespace BLL
             usuario.IdGenero = pIdGenero;
             usuario.Rol = new GestorRol().obtenerRol(pIdRol)[0];
             usuario.IdTipoIdentificacion = pTipoIdentificacion;
-            
+
             unitOfWork.RepositoryUsuario.Insert(usuario);
             unitOfWork.RepositoryUsuario.Save();
         }
@@ -206,7 +208,7 @@ namespace BLL
             horario.DiaSemana = pDiaSemana;
             horario.HoraEntrada = pHoraEntrada;
             horario.HoraSalida = pHoraSalida;
-            horario. Usuario = usuario;
+            horario.Usuario = usuario;
             unitOfWork.RepositoryHorario.Insert(horario);
             unitOfWork.RepositoryHorario.Save();
         }
@@ -249,7 +251,7 @@ namespace BLL
         public List<Usuario> listarUsuariosPorRol(int roleId)
         {
             Rol rol = new Rol(roleId);
-            return ((DAL.Repositories.UsuarioRepository)unitOfWork.RepositoryUsuario).GetUsuarioPorRol(rol).ToList<Usuario>();      
-        }        
+            return ((DAL.Repositories.UsuarioRepository)unitOfWork.RepositoryUsuario).GetUsuarioPorRol(rol).ToList<Usuario>();
+        }
     }
 }
