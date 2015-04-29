@@ -63,7 +63,7 @@ function onSuccessMusculos(result) {
     $.each(objeto, function (i, item) {
         Ulist += '<li>';
         Ulist += '<label>';
-        Ulist += '<input name="chkboxName" type="checkbox" value ="' + objeto[i].Id + '" id ="' +objeto[i].Id + '">';
+        Ulist += '<input name="chkboxName" type="checkbox" value ="' + objeto[i].Id + '" id ="' + objeto[i].Id + '">';
         Ulist += '<span>' + objeto[i].Nombre + '</span>';
         Ulist += '</label>';
         Ulist += '</li>';
@@ -115,31 +115,32 @@ $('#btnAgregarEjercicio').click(function () {
 
     $('frmInsertarEjercicio').validate({
         messages: {
-        name: {
-        required : "Campo es requerido"
-        },
-        alias: {
-        required: "Campo es requerido"
-        },
-        descripcion: {
-        required: "Campo es requerido"
-        },
-        erroresComunes: {
-        required : "Campo es requerido"
-        },
-        txtPosInicial: {
-        required: "Campo es requerido"
-        },
-        txtPosFinal: {
-        required : "Campo es requerido"
-        },
-        musculo_principal: {
-         required : "Campo es requerido"
+            name: {
+                required: "Campo es requerido"
+            },
+            alias: {
+                required: "Campo es requerido"
+            },
+            descripcion: {
+                required: "Campo es requerido"
+            },
+            erroresComunes: {
+                required: "Campo es requerido"
+            },
+            txtPosInicial: {
+                required: "Campo es requerido"
+            },
+            txtPosFinal: {
+                required: "Campo es requerido"
+            },
+            musculo_principal: {
+                required: "Campo es requerido"
+            }
         }
-    }});
-   
-    if($("#frmInsertarEjercicio").valid()) {
-    
+    });
+
+    if ($("#frmInsertarEjercicio").valid()) {
+
         var nombre = $('#txtnombreEjercicio').val(),
         alias = $('#alias').val(),
         descripcion = $('#descripcion').val(),
@@ -148,17 +149,13 @@ $('#btnAgregarEjercicio').click(function () {
         posFinal = $('#txtPosFinal').val(),
         musculoPrincipal = $('#musculo_principal').val(),
         musculosSecundarios = $("input[name=chkboxName]:checked").map(function () { return this.value; }).get().join(",");
-    
+
         var foto = getBase64Image();
         var foto2 = getBase64Image2();
 
-        alert("Muscul principal" +musculoPrincipal);
-        alert("Muscul Secundario " +musculosSecundarios)
-
-
         service4 = new ServicioEjercicio();
-  
-        var datos = JSON.stringify({pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal,pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto , pimagen2 :foto2});
+
+        var datos = JSON.stringify({ pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal, pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto, pimagen2: foto2 });
         service4.insertarEjercicio(datos, onSuccesIngresar, onFailModificar, null, null);
     }
 
@@ -211,7 +208,7 @@ $('#btnModificarEjer').click(function () {
     var rowData = table.rows(rows).data();
 
     var id = rowData[0][0];
-    location.href = "modificar.aspx?id="+id;
+    location.href = "modificar.aspx?id=" + id;
 })
 
 function buscarEjercicioByID() {
@@ -231,46 +228,49 @@ $('#btnEliminarEjer').click(function () {
     var id = rowData[0][0];
     var service4 = new ServicioEjercicio();
 
-    var datos = JSON.stringify({ pid: id});
+    var datos = JSON.stringify({ pid: id });
     service4.eliminarEjercicio(datos, onSucessEli, onFailEli, null, null);
+
+    window.location = 'Index.aspx';
 })
 function onSucessEli(result) {
-     toastr.success('El ejercicio ha sido eliminado')
+    toastr.success('El ejercicio ha sido eliminado')
     //alert("Ejercicio Eliminado");
-    }
-    function onFailEli(result) {
-     toastr.error('El ejercicio no ha podido ser eliminado')
+}
+function onFailEli(result) {
+    toastr.error('El ejercicio no ha podido ser eliminado')
     //alert("Ejercicio Eliminado");
-    }
+}
 $('#btnModificarEjercicio').click(function () {
     $('frmModificarEjercicio').validate({
         messages: {
-        name: {
-        required : "Campo es requerido"
-        },
-        alias: {
-        required: "Campo es requerido"
-        },
-        descripcion: {
-        required: "Campo es requerido"
-        },
-        erroresComunes: {
-        required : "Campo es requerido"
-        },
-        txtPosInicial: {
-        required: "Campo es requerido"
-        },
-        txtPosFinal: {
-        required : "Campo es requerido"
-        },
-        musculo_principal: {
-         required : "Campo es requerido"
+            name: {
+                required: "Campo es requerido"
+            },
+            alias: {
+                required: "Campo es requerido"
+            },
+            descripcion: {
+                required: "Campo es requerido"
+            },
+            erroresComunes: {
+                required: "Campo es requerido"
+            },
+            txtPosInicial: {
+                required: "Campo es requerido"
+            },
+            txtPosFinal: {
+                required: "Campo es requerido"
+            },
+            musculo_principal: {
+                required: "Campo es requerido"
+            }
         }
-    }});
-   
+    });
+
     if ($("#frmModificarEjercicio").valid()) {
-        alert($('#txtIdEjercicio').val());
-        var id =  $('#txtIdEjercicio').val(),
+        //alert($('#txtIdEjercicio').val());
+        var id = $('#txtIdEjercicio').val(),
         nombre = $('#txtnombreEjercicio').val(),
         alias = $('#alias').val(),
         descripcion = $('#descripcion').val(),
@@ -279,25 +279,25 @@ $('#btnModificarEjercicio').click(function () {
         posFinal = $('#txtPosFinal').val(),
         musculoPrincipal = $('#musculo_principal').val(),
         musculosSecundarios = $("input[name=chkboxName]:checked").map(function () { return this.value; }).get().join(",");
-    getBase64Image()
+        getBase64Image()
         getBase64Image2()
         var foto = '';
         var foto2 = '';
 
-        alert("Muscul principal" +musculoPrincipal);
-        alert("Muscul Secundario " +musculosSecundarios)
+        //alert("Muscul principal" +musculoPrincipal);
+        //alert("Muscul Secundario " +musculosSecundarios)
 
 
         service4 = new ServicioEjercicio();
-  
-        var datos = JSON.stringify({pid: id,pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal,pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto , pimagen2 :foto2});
+
+        var datos = JSON.stringify({ pid: id, pnombre: nombre, palias: alias, pdescripcion: descripcion, perroresComunes: erroresComunes, pposInicial: posInicial, pposFinal: posFinal, pmusculoPrincipal: musculoPrincipal, pmusculosSecundarios: musculosSecundarios, pimagen: foto, pimagen2: foto2 });
         service4.modificarEjercicio(datos, onSuccesModificar, onFailModificar, null, null);
     }
 });
 
- $('#imagen').change(function () {
-        readURL(this);
-    });
+$('#imagen').change(function () {
+    readURL(this);
+});
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -314,9 +314,9 @@ function readURL(input) {
     var canvas = document.getElementById("myCanvas");
     canvas.hidden = true;
 }
- $('#imagen2').change(function () {
-        readURL(this);
-    });
+$('#imagen2').change(function () {
+    readURL(this);
+});
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -334,12 +334,22 @@ function readURL(input) {
     canvas.hidden = true;
 }
 
-    function onSuccesModificar(result) {
-        location.href = "index.aspx?modificado";
+function onSuccesModificar(result) {
+    location.href = "index.aspx?modificado";
     //alert("Se modificó");
 }
-   function onFailModificar(result) {
-        location.href = "index.aspx?modificado";
-       //alert(result.get_message());
-    
+function onFailModificar(result) {
+    location.href = "index.aspx?modificado";
+    //alert(result.get_message());
+
 }
+
+$('#btnCancelarEjercicio').click(function () {
+    $("#frmInsertarEjercicio").trigger('reset');
+    window.location = 'index.aspx';
+})
+
+$('#btnCancelarEjercicioM').click(function () {
+    $("#frmModificarEjercicio").trigger('reset');
+    window.location = 'index.aspx';
+})
